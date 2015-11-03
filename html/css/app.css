@@ -193,14 +193,14 @@ a.list-group-item:focus {
 .list-group-item.media {
   margin-top: 0;
 }
-.list-group-item.active,.active .list-group-item {
+.list-group-item.done,.done .list-group-item {
 /*  color: #545a5f;
   border-color: #1ab667 !important;*/
 	background-color: #eef3f4 !important;
 	 text-decoration: line-through;
 }
 .list-group-item.active .text-muted {
-  color: #c3e6ed;
+/*  color: #c3e6ed;*/
 }
 
 .list-group-item.active .text-active,.list-group-item.active .text {

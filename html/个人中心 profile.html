@@ -1,728 +1,566 @@
 <!DOCTYPE html>
 <html lang="en" class="app">
 <head>  
-  <meta charset="utf-8" />
-  <title>Musik | Web Application</title>
-  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" href="js/jPlayer/jplayer.flat.css" type="text/css" />
-  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-  <link rel="stylesheet" href="css/animate.css" type="text/css" />
-  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-  <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
-  <link rel="stylesheet" href="css/font.css" type="text/css" />
-  <link rel="stylesheet" href="css/app.css" type="text/css" />  
-  
-  <!--[if lt IE 9]>
+<meta charset="utf-8" />
+<title>Musik | Web Application</title>
+<meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="js/jPlayer/jplayer.flat.css" type="text/css" />
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+<link rel="stylesheet" href="css/animate.css" type="text/css" />
+<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
+<link rel="stylesheet" href="css/font.css" type="text/css" />
+<link rel="stylesheet" href="css/app.css" type="text/css" />  
+
+<link rel="stylesheet" href="js/nestable/nestable.css" type="text/css" />
+<!--[if lt IE 9]>
     <script src="js/ie/html5shiv.js"></script>
     <script src="js/ie/respond.min.js"></script>
     <script src="js/ie/excanvas.js"></script>
   <![endif]-->
 </head>
 <body class="">
-  <section class="vbox">
-    <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
-      <div class="navbar-header aside bg-info dk">
-        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
-          <i class="icon-list"></i>
-        </a>
-        <a href="index.html" class="navbar-brand text-lt">
-          <i class="icon-earphones"></i>
-          <img src="images/logo.png" alt="." class="hide">
-          <span class="hidden-nav-xs m-l-sm">Musik</span>
-        </a>
-        <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
-          <i class="icon-settings"></i>
-        </a>
-      </div>      <ul class="nav navbar-nav hidden-xs">
-        <li>
-          <a href="#nav,.navbar-header" data-toggle="class:nav-xs,nav-xs" class="text-muted">
-            <i class="fa fa-indent text"></i>
-            <i class="fa fa-dedent text-active"></i>
-          </a>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
-        <div class="form-group">
-          <div class="input-group">
-            <span class="input-group-btn">
-              <button type="submit" class="btn btn-sm bg-white btn-icon rounded"><i class="fa fa-search"></i></button>
-            </span>
-            <input type="text" class="form-control input-sm no-border rounded" placeholder="Search songs, albums...">
-          </div>
+<section class="vbox">
+  <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
+    <div class="navbar-header aside bg-primary dk">
+      <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+        <i class="icon-list"></i>
+      </a>
+      <a href="index.html" class="navbar-brand text-lt">
+        <i class="icon-bell"></i>
+        <img src="images/logo.png" alt="." class="hide">
+        <span class="hidden-nav-xs m-l-sm">TaskDone</span>
+      </a>
+      <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
+        <i class="icon-settings"></i>
+      </a>
+    </div>      <ul class="nav navbar-nav hidden-xs">
+      <li>
+      <a href="#nav,.navbar-header" data-toggle="class:nav-xs,nav-xs" class="text-muted">
+        <i class="fa fa-indent text"></i>
+        <i class="fa fa-dedent text-active"></i>
+      </a>
+      </li>
+    </ul>
+    <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-sm bg-white btn-icon rounded"><i class="fa fa-search"></i></button>
+          </span>
+          <input type="text" class="form-control input-sm no-border rounded" placeholder="Search songs, albums...">
         </div>
-      </form>
-      <div class="navbar-right ">
-        <ul class="nav navbar-nav m-n hidden-xs nav-user user">
-          <li class="hidden-xs">
-            <a href="#" class="dropdown-toggle lt" data-toggle="dropdown">
-              <i class="icon-bell"></i>
-              <span class="badge badge-sm up bg-danger count">2</span>
-            </a>
-            <section class="dropdown-menu aside-xl animated fadeInUp">
-              <section class="panel bg-white">
-                <div class="panel-heading b-light bg-light">
-                  <strong>You have <span class="count">2</span> notifications</strong>
-                </div>
-                <div class="list-group list-group-alt">
-                  <a href="#" class="media list-group-item">
-                    <span class="pull-left thumb-sm">
-                      <img src="images/a0.png" alt="..." class="img-circle">
-                    </span>
-                    <span class="media-body block m-b-none">
-                      Use awesome animate.css<br>
-                      <small class="text-muted">10 minutes ago</small>
-                    </span>
-                  </a>
-                  <a href="#" class="media list-group-item">
-                    <span class="media-body block m-b-none">
-                      1.0 initial released<br>
-                      <small class="text-muted">1 hour ago</small>
-                    </span>
-                  </a>
-                </div>
-                <div class="panel-footer text-sm">
-                  <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
-                  <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
-                </div>
-              </section>
-            </section>
+      </div>
+    </form>
+    <div class="navbar-right ">
+      <ul class="nav navbar-nav m-n hidden-xs nav-user user">
+        <li class="hidden-xs">
+        <a href="#" class="dropdown-toggle lt" data-toggle="dropdown">
+          <i class="icon-bell"></i>
+          <span class="badge badge-sm up bg-danger count">2</span>
+        </a>
+        <section class="dropdown-menu aside-xl animated fadeInUp">
+          <section class="panel bg-white">
+            <div class="panel-heading b-light bg-light">
+              <strong>You have <span class="count">2</span> notifications</strong>
+            </div>
+            <div class="list-group list-group-alt">
+              <a href="#" class="media list-group-item">
+                <span class="pull-left thumb-sm">
+                  <img src="images/a0.png" alt="..." class="img-circle">
+                </span>
+                <span class="media-body block m-b-none">
+                  Use awesome animate.css<br>
+                  <small class="text-muted">10 minutes ago</small>
+                </span>
+              </a>
+              <a href="#" class="media list-group-item">
+                <span class="media-body block m-b-none">
+                  1.0 initial released<br>
+                  <small class="text-muted">1 hour ago</small>
+                </span>
+              </a>
+            </div>
+            <div class="panel-footer text-sm">
+              <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+              <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
+            </div>
+          </section>
+        </section>
+        </li>
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
+          <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+            <img src="images/a0.png" alt="...">
+          </span>
+          John.Smith <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu animated fadeInRight">            
+          <li>
+          <span class="arrow top"></span>
+          <a href="#">Settings</a>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
-              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                <img src="images/a0.png" alt="...">
-              </span>
-              John.Smith <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu animated fadeInRight">            
-              <li>
-                <span class="arrow top"></span>
-                <a href="#">Settings</a>
-              </li>
-              <li>
-                <a href="profile.html">Profile</a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="badge bg-danger pull-right">3</span>
-                  Notifications
-                </a>
-              </li>
-              <li>
-                <a href="docs.html">Help</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
-              </li>
-            </ul>
+          <li>
+          <a href="profile.html">Profile</a>
+          </li>
+          <li>
+          <a href="#">
+            <span class="badge bg-danger pull-right">3</span>
+            Notifications
+          </a>
+          </li>
+          <li>
+          <a href="docs.html">Help</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+          <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
           </li>
         </ul>
-      </div>      
-    </header>
-    <section>
-      <section class="hbox stretch">
-        <!-- .aside -->
-        <aside class="bg-black dk aside hidden-print" id="nav">          
-          <section class="vbox">
-            <section class="w-f-md scrollable">
-              <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
-                
+        </li>
+      </ul>
+    </div>      
+  </header>
+  <section>
+    <section class="hbox stretch">
+      <!-- .aside -->
+      <aside class="bg-black dk aside hidden-print" id="nav">          
+        <section class="vbox">
+         <section class="w-f-md scrollable">
+            <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
 
+              <!-- nav -->                 
+              <nav class="nav-primary hidden-xs">
+                <ul class="nav bg clearfix">
+                  <li class="hidden- padder m-t m-b-sm text-xs text-muted">
+                  Menu
+                  </li>
 
-                <!-- nav -->                 
-                <nav class="nav-primary hidden-xs">
-                  <ul class="nav bg clearfix">
-                    <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
-                      Discover
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i class="icon-disc icon text-success"></i>
-                        <span class="font-bold">What's new</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="genres.html">
-                        <i class="icon-music-tone-alt icon text-info"></i>
-                        <span class="font-bold">Genres</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="events.html">
-                        <i class="icon-drawer icon text-primary-lter"></i>
-                        <b class="badge bg-primary pull-right">6</b>
-                        <span class="font-bold">Events</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="listen.html">
-                        <i class="icon-list icon  text-info-dker"></i>
-                        <span class="font-bold">Listen</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="video.html" data-target="#content" data-el="#bjax-el" data-replace="true">
-                        <i class="icon-social-youtube icon  text-primary"></i>
-                        <span class="font-bold">Video</span>
-                      </a>
-                    </li>
-                    <li class="m-b hidden-nav-xs"></li>
-                  </ul>
-                  <ul class="nav" data-ride="collapse">
-                    <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
-                      Interface
-                    </li>
+                  <li>
+                  <a href="listen.html">
+                    <i class="icon-list icon  text-info-dker"></i>
+                    <b class="badge bg-info pull-right">6</b>
+                    <span class="font-bold">任务</span>
+                  </a>
+                  </li>
+                  <li>
+                  <a href="events.html">
+                    <i class="icon-drawer icon text-primary-lter"></i>
+                    <span class="font-bold">统计</span>
+                  </a>
+                  </li>
+                  <li>
+                  <a href="events.html">
+                    <i class="icon-user icon  text-success-dker"></i>
+                    <span class="font-bold">个人中心</span>
+                  </a>
+                  </li>
+                  <li class="m-b hidden-"></li>
+                </ul>
+                <ul class="nav" data-ride="collapse">
+                  <li class="hidden- padder m-t m-b-sm text-xs text-muted">
+                  任务列表
+                  </li>
+                  <li >
+                  <a href="#" class="auto">
+                    <span class="pull-right text-muted">
+                      <i class="fa fa-angle-left text"></i>
+                      <i class="fa fa-angle-down text-active"></i>
+                    </span>
+                    <i class="icon-screen-desktop icon">
+                    </i>
+                    <span>任务列表</span>
+                  </a>
+                  <ul class="nav dk text-sm">
                     <li >
-                      <a href="#" class="auto">
-                        <span class="pull-right text-muted">
-                          <i class="fa fa-angle-left text"></i>
-                          <i class="fa fa-angle-down text-active"></i>
-                        </span>
-                        <i class="icon-screen-desktop icon">
-                        </i>
-                        <span>Layouts</span>
-                      </a>
-                      <ul class="nav dk text-sm">
-                        <li >
-                          <a href="layout-color.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Color option</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="layout-boxed.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Boxed layout</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="layout-fluid.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Fluid layout</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li >
-                      <a href="#" class="auto">
-                        <span class="pull-right text-muted">
-                          <i class="fa fa-angle-left text"></i>
-                          <i class="fa fa-angle-down text-active"></i>
-                        </span>
-                        <i class="icon-chemistry icon">
-                        </i>
-                        <span>UI Kit</span>
-                      </a>
-                      <ul class="nav dk text-sm">
-                        <li >
-                          <a href="buttons.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Buttons</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="icons.html" class="auto">                            
-                            <b class="badge bg-info pull-right">369</b>                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Icons</span>
-                          </a>
-                        </li><li >
-                          <a href="http://www.weidea.net" class="auto">                            
-                            <b class="badge bg-info pull-right">369</b>                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>More</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="grid.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Grid</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="widgets.html" class="auto">                            
-                            <b class="badge bg-dark pull-right">8</b>                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Widgets</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="components.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Components</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="list.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>List group</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="#table" class="auto">                            
-                            <span class="pull-right text-muted">
-                              <i class="fa fa-angle-left text"></i>
-                              <i class="fa fa-angle-down text-active"></i>
-                            </span>                            
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Table</span>
-                          </a>
-                          <ul class="nav dker">
-                            <li >
-                              <a href="table-static.html">
-                                <i class="fa fa-angle-right"></i>
-                                <span>Table static</span>
-                              </a>
-                            </li>
-                            <li >
-                              <a href="table-datatable.html">
-                                <i class="fa fa-angle-right"></i>
-                                <span>Datatable</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li >
-                          <a href="#form" class="auto">                            
-                            <span class="pull-right text-muted">
-                              <i class="fa fa-angle-left text"></i>
-                              <i class="fa fa-angle-down text-active"></i>
-                            </span>                            
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Form</span>
-                          </a>
-                          <ul class="nav dker">
-                            <li >
-                              <a href="form-elements.html">
-                                <i class="fa fa-angle-right"></i>
-                                <span>Form elements</span>
-                              </a>
-                            </li>
-                            <li >
-                              <a href="form-validation.html">
-                                <i class="fa fa-angle-right"></i>
-                                <span>Form validation</span>
-                              </a>
-                            </li>
-                            <li >
-                              <a href="form-wizard.html">
-                                <i class="fa fa-angle-right"></i>
-                                <span>Form wizard</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li >
-                          <a href="chart.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Chart</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="portlet.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Portlet</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="timeline.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Timeline</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li  class="active">
-                      <a href="#" class="auto">
-                        <span class="pull-right text-muted">
-                          <i class="fa fa-angle-left text"></i>
-                          <i class="fa fa-angle-down text-active"></i>
-                        </span>
-                        <i class="icon-grid icon">
-                        </i>
-                        <span>Pages</span>
-                      </a>
-                      <ul class="nav dk text-sm">
-                        <li  class="active">
-                          <a href="profile.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Profile</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="blog.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Blog</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="invoice.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Invoice</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="gmap.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Google Map</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="jvectormap.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Vector Map</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="signin.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Signin</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="signup.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>Signup</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="404.html" class="auto">                                                        
-                            <i class="fa fa-angle-right text-xs"></i>
-
-                            <span>404</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <ul class="nav text-sm">
-                    <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
-                      <span class="pull-right"><a href="#"><i class="icon-plus i-lg"></i></a></span>
-                      Playlist
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="icon-music-tone icon"></i>
-                        <span>Hip-Pop</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="icon-playlist icon text-success-lter"></i>
-                        <b class="badge bg-success dker pull-right">9</b>
-                        <span>Jazz</span>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-                <!-- / nav -->
-              </div>
-            </section>
-            
-            <footer class="footer hidden-xs no-padder text-center-nav-xs">
-              <div class="bg hidden-xs ">
-                  <div class="dropdown dropup wrapper-sm clearfix">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <span class="thumb-sm avatar pull-left m-l-xs">                        
-                        <img src="images/a3.png" class="dker" alt="...">
-                        <i class="on b-black"></i>
-                      </span>
-                      <span class="hidden-nav-xs clear">
-                        <span class="block m-l">
-                          <strong class="font-bold text-lt">John.Smith</strong> 
-                          <b class="caret"></b>
-                        </span>
-                        <span class="text-muted text-xs block m-l">Art Director</span>
-                      </span>
+                    <a href="layout-color.html" class="auto">                                                        
+                      <i class="fa fa-angle-right text-xs"></i>
+                      <span>任务列表一</span>
                     </a>
-                    <ul class="dropdown-menu animated fadeInRight aside text-left">                      
-                      <li>
-                        <span class="arrow bottom hidden-nav-xs"></span>
-                        <a href="#">Settings</a>
-                      </li>
-                      <li>
-                        <a href="profile.html">Profile</a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <span class="badge bg-danger pull-right">3</span>
-                          Notifications
-                        </a>
-                      </li>
-                      <li>
-                        <a href="docs.html">Help</a>
-                      </li>
-                      <li class="divider"></li>
-                      <li>
-                        <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>            </footer>
+                    </li>
+                    <li >
+                    <a href="layout-boxed.html" class="auto">                                                        
+                      <i class="fa fa-angle-right text-xs"></i>
+                      <span>插件列表</span>
+                    </a>
+                    </li>
+                    <li >
+                    <a href="layout-fluid.html" class="auto">                                                        
+                      <i class="fa fa-angle-right text-xs"></i>
+
+                      <span>Fluid layout</span>
+                    </a>
+                    </li>
+                  </ul>
+                  </li>
+
+                </ul>
+                <ul class="nav text-sm">
+                  <li class="hidden- padder m-t m-b-sm text-xs text-muted">
+                  <span class="pull-right"><a href="#"><i class="icon-plus i-lg"></i></a></span>
+                  插件列表
+                  </li>
+                  <li>
+                  <a href="#">
+                    <i class="icon-music-tone icon"></i>
+                    <span>Hip-Pop</span>
+                  </a>
+                  </li>
+                  <li>
+                  <a href="#">
+                    <i class="icon-playlist icon text-success-lter"></i>
+                    <b class="badge bg-info dker pull-right">9</b>
+                    <span>Jazz</span>
+                  </a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- / nav -->
+            </div>
           </section>
-        </aside>
-        <!-- /.aside -->
-        <section id="content">
-          <section class="vbox">
-            <section class="scrollable">
-              <section class="hbox stretch">
-                <aside class="aside-lg bg-light lter b-r">
-                  <section class="vbox">
-                    <section class="scrollable">
-                      <div class="wrapper">
-                        <div class="text-center m-b m-t">
-                          <a href="#" class="thumb-lg">
-                            <img src="images/a0.png" class="img-circle">
-                          </a>
-                          <div>
-                            <div class="h3 m-t-xs m-b-xs">John.Smith</div>
-                            <small class="text-muted"><i class="fa fa-map-marker"></i> London, UK</small>
-                          </div>                
-                        </div>
-                        <div class="panel wrapper">
-                          <div class="row text-center">
-                            <div class="col-xs-6">
-                              <a href="#">
-                                <span class="m-b-xs h4 block">245</span>
-                                <small class="text-muted">Followers</small>
-                              </a>
-                            </div>
-                            <div class="col-xs-6">
-                              <a href="#">
-                                <span class="m-b-xs h4 block">55</span>
-                                <small class="text-muted">Following</small>
-                              </a>
-                            </div>
+        </section>
+      </aside>
+      <!-- /.aside -->
+      <section id="content">
+        <section class="vbox">
+          <section class="scrollable">
+            <section class="hbox stretch">
+              <aside class="aside-lg bg-light lter b-r">
+                <section class="vbox">
+                  <section class="scrollable">
+                    <div class="wrapper">
+                      <div class="text-center m-b m-t">
+                        <a href="#" class="thumb-lg">
+                          <img src="images/a0.png" class="img-circle">
+                        </a>
+                        <div>
+                          <div class="h3 m-t-xs m-b-xs">顶置任务名称</div>
+                          <small class="text-muted"><i class="fa fa-map-marker"></i> 任务说明</small>
+                        </div>                
+                      </div>
+                     
+                      <div class="btn-group btn-group-justified m-b">
+                        <a class="btn btn-success btn-rounded" data-toggle="button">
+                          <span class="text">
+                            <i class="fa fa-play"></i> 开始
+                          </span>
+                          <span class="text-active">
+                            <i class="fa fa-pause"></i> 暂停
+
+                          </span>
+                        </a>
+                        <a class="btn btn-dark btn-rounded">
+                          <i class="fa fa-comment-o"></i>  提交
+                        </a>
+                      </div>
+                       <div class="panel wrapper">
+                        <div class="row text-center">
+                          <div class="col-xs-6">
+                            <a href="#">
+                              <span class="m-b-xs h4 block">5</span>
+                              <small class="text-muted">今天</small>
+                            </a>
+                          </div>
+                          <div class="col-xs-6">
+                            <a href="#">
+                              <span class="m-b-xs h4 block">55</span>
+                              <small class="text-muted"> 历史</small>
+                            </a>
                           </div>
                         </div>
-                        <div class="btn-group btn-group-justified m-b">
-                          <a class="btn btn-success btn-rounded" data-toggle="button">
-                            <span class="text">
-                              <i class="fa fa-eye"></i> Follow
-                            </span>
-                            <span class="text-active">
-                              <i class="fa fa-eye"></i> Following
-                            </span>
-                          </a>
-                          <a class="btn btn-dark btn-rounded">
-                            <i class="fa fa-comment-o"></i> Chat
-                          </a>
-                        </div>
-                        <div>
-                          <small class="text-uc text-xs text-muted">about me</small>
-                          <p>Artist</p>
-                          <small class="text-uc text-xs text-muted">info</small>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat.</p>
-                          <div class="line"></div>
-                          <small class="text-uc text-xs text-muted">connection</small>
-                          <p class="m-t-sm">
-                            <a href="#" class="btn btn-rounded btn-twitter btn-icon"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="btn btn-rounded btn-facebook btn-icon"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="btn btn-rounded btn-gplus btn-icon"><i class="fa fa-google-plus"></i></a>
-                          </p>
-                        </div>
                       </div>
-                    </section>
+
+                      <div>
+                        <small class="text-uc text-xs text-muted">今日时间轴</small>
+                        <p>Artist   今日小计</p>
+                        <small class="text-uc text-xs text-muted">info</small>
+                        <p>今日时间轴、 最近时间轴。或小日历。或心太调查，或。。。</p>
+                        <div class="line"></div>
+                        <small class="text-uc text-xs text-muted">connection</small>
+                        <p class="m-t-sm">
+                        <a href="#" class="btn btn-rounded btn-twitter btn-icon"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="btn btn-rounded btn-facebook btn-icon"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="btn btn-rounded btn-gplus btn-icon"><i class="fa fa-google-plus"></i></a>
+                        </p>
+                      </div>
+                    </div>
                   </section>
-                </aside>
-                <aside class="bg-white">
-                  <section class="vbox">
-                    <header class="header bg-light lt">
-                      <ul class="nav nav-tabs nav-white">
-                        <li class="active"><a href="#task" data-toggle="tab">Activity</a></li>
-                        <li class=""><a href="#pomo" data-toggle="tab">Events</a></li>
-                        <li class=""><a href="#interaction" data-toggle="tab">Interaction</a></li>
-                      </ul>
-                    </header>
-                    <section class="scrollable">
-                      <div class="tab-content">
-                        <div class="tab-pane active" id="task">
-          <ul class="list-group list-group-lg no-radius no-border no-bg m-t-n-xxs m-b-none auto">
-            <li class="list-group-item">
-              <div class="pull-right m-l">
-                <a href="#" class="m-r-sm"><i class="icon-cloud-download"></i></a>
-                <a href="#" class="m-r-sm"><i class="icon-plus"></i></a>
-                <a href="#"><i class="icon-close"></i></a>
-              </div>
-              <a href="#" class="jp-play-me m-r-sm pull-left">
-                <i class="fa fa-square-o "></i>
-                <i class="fa fa-check-square-o "></i>
-              </a>
-              <div class="clear text-ellipsis">
-                <span  contenteditable="true">E.T.M</span>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="pull-right m-l">
-                <a href="#" class="m-r-sm"><i class="icon-cloud-download"></i></a>
-                <a href="#"><i class="icon-plus"></i></a>
-              </div>
-              <a href="#" class="jp-play-me m-r-sm pull-left">
-                <i class="icon-control-play text"></i>
-                <i class="icon-control-pause text-active"></i>
-              </a>
-              <div class="clear text-ellipsis">
-                <span  contenteditable="true">Vestibulum id ligula porta</span>
-              </div>
-            </li>
-		  <li class="list-group-item active">
-		                          <div class="pull-right m-l">
-		                            <a href="#" class="m-r-sm"><i class="icon-cloud-download"></i></a>
-		                            <a href="#" class="m-r-sm"><i class="icon-plus"></i></a>
-		                            <a href="#"><i class="icon-close"></i></a>
-		                          </div>
-		                          <a href="#" class="jp-play-me m-r-sm pull-left active">
-		                            <i class="icon-control-play text"></i>
-		                            <i class="icon-control-pause text-active"></i>
-		                          </a>
-		                          <div class="clear text-ellipsis">
-		                            <span>E.T.M</span>
-		                            <span class="text-muted"> -- 04:35</span>
-		                          </div>
-		                        </li>
-          </ul>
-		<div class="dd" id="nestable3">
-		                    <ol class="dd-list">
-		                      <li class="dd-item dd3-item" data-id="13">
-		                          <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 13</div>
-		                      </li><li class="dd-item dd3-item" data-id="15"><button data-action="collapse" type="button">Collapse</button><button data-action="expand" type="button" style="display: none;">Expand</button>
-		                          <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 15</div>
-		                          <ol class="dd-list">
-		                              <li class="dd-item dd3-item" data-id="14">
-		                          <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 14</div>
-		                      </li><li class="dd-item dd3-item" data-id="16">
-		                                  <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 16</div>
-		                              </li>
-		                              <li class="dd-item dd3-item" data-id="17">
-		                                  <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 17</div>
-		                              </li>
-		                              <li class="dd-item dd3-item" data-id="18">
-		                                  <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 18</div>
-		                              </li>
-		                          </ol>
-		                      </li>
-                      
-                      
-		                    </ol>
-		                  </div>
-					   
+                </section>
+              </aside>
+              <aside class="bg-white">
+                <section class="vbox">
+                  <header class="header bg-light lt">
+                    <ul class="nav nav-tabs nav-white">
+                      <li class="active"><a href="#task" data-toggle="tab">未完成</a></li>
+                      <li class=""><a href="#pomo" data-toggle="tab">转交的</a></li>
+                      <li class=""><a href="#interaction" data-toggle="tab">时间轴</a></li>
+                    </ul>
+                  </header>
+                  <section class="scrollable">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="task">
+
+                        <!-- tasklist -->
+                        <div class="dd" id="nestable3">
+                          <!--   <ol class="dd-list">
+                      <li class="dd-item dd3-item" data-id="13">
+                          <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 13</div>
+                      </li>
+                      <li class="dd-item dd3-item" data-id="14">
+                          <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 15</div>
+                          <ol class="dd-list">
+                              <li class="dd-item dd3-item" data-id="15">
+                                  <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 18</div>
+                              </li>
+                          </ol>
+                      </li>
+                    </ol> -->
+                          <ol class="dd-list list-group list-group-lg no-radius no-border m-t-n-xxs m-b-none auto" id="task">
+                            <li class="list-group-item dd-item dd3-item" data-id="1">
+                            <div class="dd-handle dd3-handle">Drag</div>
+                            <div class="pull-right m-l">
+                              <a href="#"><i class="icon-list"></i></a>
+                            </div>
+                            <a href="#" class="jp-play-me m-r-sm pull-left checkit">
+                              <i class="icon-check text-muted text"></i>
+                              <i class="icon-check bg-success text-active"></i>
+                            </a>
+                            <div class="clear text-ellipsis">
+                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
+                            </div>
+                            </li>
+                            <li class="list-group-item dd-item dd3-item" data-id="2">
+                            <div class="dd-handle dd3-handle">Drag</div>
+                            <div class="pull-right m-l">
+                              <a href="#"><i class="icon-list"></i></a>
+                            </div>
+                            <a href="#" class="jp-play-me m-r-sm pull-left">
+                              <i class="icon-check text-muted text"></i>
+                              <i class="icon-check bg-success text-active"></i>
+                            </a>
+                            <div class="clear text-ellipsis" data-id="3">
+                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
+                            </div>
+                            </li>
+                            <li class="list-group-item dd-item dd3-item" data-id="3">
+                            <div class="dd-handle dd3-handle">Drag</div>
+                            <div class="pull-right m-l">
+                              <a href="#"><i class="icon-list"></i></a>
+                            </div>
+                            <a href="#" class="jp-play-me m-r-sm pull-left">
+                              <i class="icon-check text-muted text"></i>
+                              <i class="icon-check bg-success text-active"></i>
+                            </a>
+                            <div class="clear text-ellipsis" data-id="4">
+                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
+                            </div>
+                            </li>
+                            <li class="list-group-item dd-item dd3-item" data-id="1">
+                            <div class="dd-handle dd3-handle">Drag</div>
+                            <div class="pull-right m-l">
+                              <a href="#"><i class="icon-list"></i></a>
+                            </div>
+                            <a href="#" class="jp-play-me m-r-sm pull-left checkit">
+                              <i class="icon-check text-muted text"></i>
+                              <i class="icon-check bg-success text-active"></i>
+                            </a>
+                            <div class="clear text-ellipsis">
+                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
+                            </div>
+                            </li>
+                            <li class="list-group-item dd-item dd3-item" data-id="2">
+                            <div class="dd-handle dd3-handle">Drag</div>
+                            <div class="pull-right m-l">
+                              <a href="#"><i class="icon-list"></i></a>
+                            </div>
+                            <a href="#" class="jp-play-me m-r-sm pull-left">
+                              <i class="icon-check text-muted text"></i>
+                              <i class="icon-check bg-success text-active"></i>
+                            </a>
+                            <div class="clear text-ellipsis" data-id="3">
+                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
+                            </div>
+                            </li>
+                            <li class="list-group-item dd-item dd3-item" data-id="3">
+                            <div class="dd-handle dd3-handle">Drag</div>
+                            <div class="pull-right m-l">
+                              <a href="#"><i class="icon-list"></i></a>
+                            </div>
+                            <a href="#" class="jp-play-me m-r-sm pull-left">
+                              <i class="icon-check text-muted text"></i>
+                              <i class="icon-check bg-success text-active"></i>
+                            </a>
+                            <div class="clear text-ellipsis" data-id="4">
+                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
+                            </div>
+                            </li>
+                            <li class="list-group-item dd-item dd3-item" data-id="1">
+                            <div class="dd-handle dd3-handle">Drag</div>
+                            <div class="pull-right m-l">
+                              <a href="#"><i class="icon-list"></i></a>
+                            </div>
+                            <a href="#" class="jp-play-me m-r-sm pull-left checkit">
+                              <i class="icon-check text-muted text"></i>
+                              <i class="icon-check bg-success text-active"></i>
+                            </a>
+                            <div class="clear text-ellipsis">
+                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
+                            </div>
+                            </li>
+                            <li class="list-group-item dd-item dd3-item" data-id="2">
+                            <div class="dd-handle dd3-handle">Drag</div>
+                            <div class="pull-right m-l">
+                              <a href="#"><i class="icon-list"></i></a>
+                            </div>
+                            <a href="#" class="jp-play-me m-r-sm pull-left">
+                              <i class="icon-check text-muted text"></i>
+                              <i class="icon-check bg-success text-active"></i>
+                            </a>
+                            <div class="clear text-ellipsis" data-id="3">
+                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
+                            </div>
+                            </li>
+                            <li class="list-group-item dd-item dd3-item" data-id="3">
+                            <div class="dd-handle dd3-handle">Drag</div>
+                            <div class="pull-right m-l">
+                              <a href="#"><i class="icon-list"></i></a>
+                            </div>
+                            <a href="#" class="jp-play-me m-r-sm pull-left">
+                              <i class="icon-check text-muted text"></i>
+                              <i class="icon-check bg-success text-active"></i>
+                            </a>
+                            <div class="clear text-ellipsis" data-id="4">
+                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
+                            </div>
+                            </li>
+                            <li class="list-group-item dd-item dd3-item" data-id="1">
+                            <div class="dd-handle dd3-handle">Drag</div>
+                            <div class="pull-right m-l">
+                              <a href="#"><i class="icon-list"></i></a>
+                            </div>
+                            <a href="#" class="jp-play-me m-r-sm pull-left checkit">
+                              <i class="icon-check text-muted text"></i>
+                              <i class="icon-check bg-success text-active"></i>
+                            </a>
+                            <div class="clear text-ellipsis">
+                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
+                            </div>
+                            </li>
+                            <li class="list-group-item dd-item dd3-item" data-id="2">
+                            <div class="dd-handle dd3-handle">Drag</div>
+                            <div class="pull-right m-l">
+                              <a href="#"><i class="icon-list"></i></a>
+                            </div>
+                            <a href="#" class="jp-play-me m-r-sm pull-left">
+                              <i class="icon-check text-muted text"></i>
+                              <i class="icon-check bg-success text-active"></i>
+                            </a>
+                            <div class="clear text-ellipsis" data-id="3">
+                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
+                            </div>
+                            </li>
+                            <li class="list-group-item dd-item dd3-item" data-id="3">
+                            <div class="dd-handle dd3-handle">Drag</div>
+                            <div class="pull-right m-l">
+                              <a href="#"><i class="icon-list"></i></a>
+                            </div>
+                            <a href="#" class="jp-play-me m-r-sm pull-left">
+                              <i class="icon-check text-muted text"></i>
+                              <i class="icon-check bg-success text-active"></i>
+                            </a>
+                            <div class="clear text-ellipsis" data-id="4">
+                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
+                            </div>
+                            </li>
+                          </ol>
                         </div>
-                        <div class="tab-pane" id="pomo">
-                          <div class=""><!-- text-center wrapper -->
-                            
+
+                      </div>
+                      <div class="tab-pane" id="pomo">
+                        <div class=""><!-- text-center wrapper -->
+
 
                           <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-lg no-border">
                             <li class="list-group-item">
-                              <a href="#" class="thumb-sm pull-left m-r-sm">
-                                <img src="images/a0.png" class="img-circle">
-                              </a>
-                              <a href="#" class="clear">
-                                <small class="pull-right">3 minuts ago</small>
-                                <strong class="block">Drew Wllon</strong>
-                                <small>Wellcome and play this web application template ... </small>
-                              </a>
+                            <a href="#" class="thumb-sm pull-left m-r-sm">
+                              <img src="images/a0.png" class="img-circle">
+                            </a>
+                            <a href="#" class="clear">
+                              <small class="pull-right">3 minuts ago</small>
+                              <strong class="block">Drew Wllon</strong>
+                              <small>Wellcome and play this web application template ... </small>
+                            </a>
                             </li>
                             <li class="list-group-item">
-                              <a href="#" class="thumb-sm pull-left m-r-sm">
-                                <img src="images/a1.png" class="img-circle">
-                              </a>
-                              <a href="#" class="clear">
-                                <small class="pull-right">1 hour ago</small>
-                                <strong class="block">Jonathan George</strong>
-                                <small>Morbi nec nunc condimentum...</small>
-                              </a>
+                            <a href="#" class="thumb-sm pull-left m-r-sm">
+                              <img src="images/a1.png" class="img-circle">
+                            </a>
+                            <a href="#" class="clear">
+                              <small class="pull-right">1 hour ago</small>
+                              <strong class="block">Jonathan George</strong>
+                              <small>Morbi nec nunc condimentum...</small>
+                            </a>
                             </li>
-                           
                           </ul>
-					   
-                          </div>
-                        </div>
-                        <div class="tab-pane" id="interaction">
-                          <div class="text-center wrapper">
-                            <i class="fa fa-spinner fa fa-spin fa fa-large"></i>
-                          </div>
                         </div>
                       </div>
-                    </section>
+                      <div class="tab-pane" id="interaction">
+                        <div class="text-center wrapper">
+                          <i class="fa fa-spinner fa fa-spin fa fa-large"></i>
+                        </div>
+                      </div>
+                    </div>
                   </section>
-                </aside>
-                <aside class="col-lg-3 b-l">
-                  <section class="vbox">
-                    <section class="scrollable padder-v">
-                      <div class="panel">
-                        <h4 class="font-thin padder">Latest Tweets</h4>
-                        <ul class="list-group">
-                          <li class="list-group-item">
-                              <p>Wellcome <a href="#" class="text-info">@Drew Wllon</a> and play this web application template, have fun1 </p>
-                              <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 minuts ago</small>
-                          </li>
-                          <li class="list-group-item">
-                              <p>Morbi nec <a href="#" class="text-info">@Jonathan George</a> nunc condimentum ipsum dolor sit amet, consectetur</p>
-                              <small class="block text-muted"><i class="fa fa-clock-o"></i> 1 hour ago</small>
-                          </li>
-                          <li class="list-group-item">                     
-                              <p><a href="#" class="text-info">@Josh Long</a> Vestibulum ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis</p>
-                              <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 hours ago</small>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="panel clearfix">
-                        <div class="panel-body">
-                          <a href="#" class="thumb pull-left m-r">
-                            <img src="images/a0.png" class="img-circle">
-                          </a>
-                          <div class="clear">
-                            <a href="#" class="text-info">@Mike Mcalidek <i class="fa fa-twitter"></i></a>
-                            <small class="block text-muted">2,415 followers / 225 tweets</small>
-                            <a href="#" class="btn btn-xs btn-success m-t-xs">Follow</a>
-                          </div>
-                        </div>
-                      </div>
-                    </section>
-                  </section>              
-                </aside>
-              </section>
+                </section>
+              </aside>
+              <aside class="col-lg-4 b-l">
+                <section class="vbox">
+                  <section class="scrollable padder-v">
+                    <div class="panel">
+                      <h4 class="font-thin padder">记事本</h4>
+                      <div id="epiceditor" class="" style="height:500px"></div>
+                    </div>
+                  </section>
+                </section>              
+              </aside>
             </section>
           </section>
-          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
         </section>
+        <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
       </section>
-    </section>    
-  </section>
-  <script src="js/jquery.min.js"></script>
-  <!-- Bootstrap -->
-  <script src="js/bootstrap.js"></script>
-  <!-- App -->
-  <script src="js/app.js"></script>  
-  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
-  <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
-  <script src="js/app.plugin.js"></script>
-  <script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
+    </section>
+  </section>    
+</section>
+<script src="js/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="js/bootstrap.js"></script>
+<!-- App -->
+<script src="js/app.js"></script>  
+<script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+<script src="js/app.plugin.js"></script>
+<script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
+<script type="text/javascript" src="js/jPlayer/demo.js"></script>
+
+<script src="js/sortable/jquery.sortable.js"></script>
+<script src="js/nestable/jquery.nestable.js"></script>
+<script src="js/nestable/demo.js"></script>
+<script src="js/app.plugin.js"></script>   <!-- markdown -->
+  <script src="js/markdown/epiceditor.min.js"></script>
+  <script src="js/markdown/demo.js"></script>
+<!--
+   <script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
   <script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
-  <script type="text/javascript" src="js/jPlayer/demo.js"></script>
+  <script type="text/javascript" src="js/jPlayer/demo.js"></script> -->
+<script type="text/javascript">
+$('body').on('click', '.jp-play-me',  function(){
+    var me = $(this);
+    me.find('.text').toggle();
+    me.find('.text-active').toggle();
+    me.closest('li').toggleClass('done');
+    })
+</script>
 </body>
 </html>
