@@ -230,14 +230,17 @@
                 <section class="vbox">
                   <section class="scrollable">
                     <div class="wrapper">
-                      <div class="text-center m-b m-t">
-                        <a href="#" class="thumb-lg">
-                          <img src="images/a0.png" class="img-circle">
-                        </a>
-                        <div>
-                          <div class="h3 m-t-xs m-b-xs">顶置任务名称</div>
-                          <small class="text-muted"><i class="fa fa-map-marker"></i> 任务说明</small>
-                        </div>                
+        
+        <div class="clearfix text-center m-t">
+                        <div class="inline">
+                          <div class="easypiechart" data-percent="75" data-line-width="5" data-bar-color="#1ab667" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="134" data-line-cap='butt' data-animate="1000">
+                            <div class="thumb-lg">
+                              <img src="images/a5.png" class="img-circle" alt="...">
+                            </div>
+                          </div>
+                          <div class="h4 m-t m-b-xs">John.Smith</div>
+                          <small class="text-muted m-b">Art director</small>
+                        </div>                      
                       </div>
                      
                       <div class="btn-group btn-group-justified m-b">
@@ -292,9 +295,11 @@
                 <section class="vbox">
                   <header class="header bg-light lt">
                     <ul class="nav nav-tabs nav-white">
-                      <li class="active"><a href="#task" data-toggle="tab">未完成</a></li>
-                      <li class=""><a href="#pomo" data-toggle="tab">转交的</a></li>
-                      <li class=""><a href="#interaction" data-toggle="tab">时间轴</a></li>
+                      <li class="active"><a href="#task" data-toggle="tab">自定义  <i class="fa fa-sort-numeric-asc"></i> </a></li>
+                      <li class=""><a href="#pomo" data-toggle="tab">时间 <i class="icon-clock"></i></a></li>
+                      <li class=""><a href="#pomo" data-toggle="tab">重要性 <i class="icon-flag"></i></a></li>
+
+                      <li class="pull-right"><a href="#interaction" data-toggle="tab">已完成 <i class="icon-check"></i></a></li>
                     </ul>
                   </header>
                   <section class="scrollable">
@@ -319,8 +324,11 @@
                           <ol class="dd-list list-group list-group-lg no-radius no-border m-t-n-xxs m-b-none auto" id="task">
                             <li class="list-group-item dd-item dd3-item" data-id="1">
                             <div class="dd-handle dd3-handle">Drag</div>
-                            <div class="pull-right m-l">
-                              <a href="#"><i class="icon-list"></i></a>
+                            <div class="pull-right m-r">
+                              <!--<a href="#"><i class="icon-clock"></i></a>-->
+                              <!--<a href="#"><i class="icon-list"></i></a>-->
+                              <a href="#"><i class="icon-note"></i></a>
+                              <a href="#"><i class="icon-control-play"></i></a>
                             </div>
                             <a href="#" class="jp-play-me m-r-sm pull-left checkit">
                               <i class="icon-check text-muted text"></i>
@@ -328,11 +336,11 @@
                             </a>
                             <div class="clear text-ellipsis">
                               <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
-                            </div>
+                            </div><ol class="dd-list"></ol>
                             </li>
                             <li class="list-group-item dd-item dd3-item" data-id="2">
                             <div class="dd-handle dd3-handle">Drag</div>
-                            <div class="pull-right m-l">
+                            <div class="pull-right m-r">
                               <a href="#"><i class="icon-list"></i></a>
                             </div>
                             <a href="#" class="jp-play-me m-r-sm pull-left">
@@ -341,11 +349,12 @@
                             </a>
                             <div class="clear text-ellipsis" data-id="3">
                               <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
-                            </div>
+                            </div><ol class="dd-list"></ol>
+
                             </li>
                             <li class="list-group-item dd-item dd3-item" data-id="3">
                             <div class="dd-handle dd3-handle">Drag</div>
-                            <div class="pull-right m-l">
+                            <div class="pull-right m-r">
                               <a href="#"><i class="icon-list"></i></a>
                             </div>
                             <a href="#" class="jp-play-me m-r-sm pull-left">
@@ -354,126 +363,11 @@
                             </a>
                             <div class="clear text-ellipsis" data-id="4">
                               <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
-                            </div>
+                            </div><ol class="dd-list"></ol>
+
                             </li>
-                            <li class="list-group-item dd-item dd3-item" data-id="1">
-                            <div class="dd-handle dd3-handle">Drag</div>
-                            <div class="pull-right m-l">
-                              <a href="#"><i class="icon-list"></i></a>
-                            </div>
-                            <a href="#" class="jp-play-me m-r-sm pull-left checkit">
-                              <i class="icon-check text-muted text"></i>
-                              <i class="icon-check bg-success text-active"></i>
-                            </a>
-                            <div class="clear text-ellipsis">
-                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
-                            </div>
-                            </li>
-                            <li class="list-group-item dd-item dd3-item" data-id="2">
-                            <div class="dd-handle dd3-handle">Drag</div>
-                            <div class="pull-right m-l">
-                              <a href="#"><i class="icon-list"></i></a>
-                            </div>
-                            <a href="#" class="jp-play-me m-r-sm pull-left">
-                              <i class="icon-check text-muted text"></i>
-                              <i class="icon-check bg-success text-active"></i>
-                            </a>
-                            <div class="clear text-ellipsis" data-id="3">
-                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
-                            </div>
-                            </li>
-                            <li class="list-group-item dd-item dd3-item" data-id="3">
-                            <div class="dd-handle dd3-handle">Drag</div>
-                            <div class="pull-right m-l">
-                              <a href="#"><i class="icon-list"></i></a>
-                            </div>
-                            <a href="#" class="jp-play-me m-r-sm pull-left">
-                              <i class="icon-check text-muted text"></i>
-                              <i class="icon-check bg-success text-active"></i>
-                            </a>
-                            <div class="clear text-ellipsis" data-id="4">
-                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
-                            </div>
-                            </li>
-                            <li class="list-group-item dd-item dd3-item" data-id="1">
-                            <div class="dd-handle dd3-handle">Drag</div>
-                            <div class="pull-right m-l">
-                              <a href="#"><i class="icon-list"></i></a>
-                            </div>
-                            <a href="#" class="jp-play-me m-r-sm pull-left checkit">
-                              <i class="icon-check text-muted text"></i>
-                              <i class="icon-check bg-success text-active"></i>
-                            </a>
-                            <div class="clear text-ellipsis">
-                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
-                            </div>
-                            </li>
-                            <li class="list-group-item dd-item dd3-item" data-id="2">
-                            <div class="dd-handle dd3-handle">Drag</div>
-                            <div class="pull-right m-l">
-                              <a href="#"><i class="icon-list"></i></a>
-                            </div>
-                            <a href="#" class="jp-play-me m-r-sm pull-left">
-                              <i class="icon-check text-muted text"></i>
-                              <i class="icon-check bg-success text-active"></i>
-                            </a>
-                            <div class="clear text-ellipsis" data-id="3">
-                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
-                            </div>
-                            </li>
-                            <li class="list-group-item dd-item dd3-item" data-id="3">
-                            <div class="dd-handle dd3-handle">Drag</div>
-                            <div class="pull-right m-l">
-                              <a href="#"><i class="icon-list"></i></a>
-                            </div>
-                            <a href="#" class="jp-play-me m-r-sm pull-left">
-                              <i class="icon-check text-muted text"></i>
-                              <i class="icon-check bg-success text-active"></i>
-                            </a>
-                            <div class="clear text-ellipsis" data-id="4">
-                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
-                            </div>
-                            </li>
-                            <li class="list-group-item dd-item dd3-item" data-id="1">
-                            <div class="dd-handle dd3-handle">Drag</div>
-                            <div class="pull-right m-l">
-                              <a href="#"><i class="icon-list"></i></a>
-                            </div>
-                            <a href="#" class="jp-play-me m-r-sm pull-left checkit">
-                              <i class="icon-check text-muted text"></i>
-                              <i class="icon-check bg-success text-active"></i>
-                            </a>
-                            <div class="clear text-ellipsis">
-                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
-                            </div>
-                            </li>
-                            <li class="list-group-item dd-item dd3-item" data-id="2">
-                            <div class="dd-handle dd3-handle">Drag</div>
-                            <div class="pull-right m-l">
-                              <a href="#"><i class="icon-list"></i></a>
-                            </div>
-                            <a href="#" class="jp-play-me m-r-sm pull-left">
-                              <i class="icon-check text-muted text"></i>
-                              <i class="icon-check bg-success text-active"></i>
-                            </a>
-                            <div class="clear text-ellipsis" data-id="3">
-                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
-                            </div>
-                            </li>
-                            <li class="list-group-item dd-item dd3-item" data-id="3">
-                            <div class="dd-handle dd3-handle">Drag</div>
-                            <div class="pull-right m-l">
-                              <a href="#"><i class="icon-list"></i></a>
-                            </div>
-                            <a href="#" class="jp-play-me m-r-sm pull-left">
-                              <i class="icon-check text-muted text"></i>
-                              <i class="icon-check bg-success text-active"></i>
-                            </a>
-                            <div class="clear text-ellipsis" data-id="4">
-                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
-                            </div>
-                            </li>
-                          </ol>
+                          
+                            </ol>
                         </div>
 
                       </div>
