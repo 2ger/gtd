@@ -1,0 +1,1360 @@
+<!doctype html>
+
+<html version="39639a20d4feedde9d6ab1a75eab0930">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="unity-">Unity &#x6307;&#x5357;</h1>
+<p version="40082f1fd6ef07262feb3107836a49ab">&#x5982;&#x679C;&#x8FD8;&#x6CA1;&#x6709;&#x5B89;&#x88C5; LeanCloud Unity SDK&#xFF0C;&#x8BF7;&#x9605;&#x8BFB; <a href="/start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a> &#x6765;&#x83B7;&#x5F97;&#x8BE5; SDK&#x3002;&#x6211;&#x4EEC;&#x7684; SDK &#x517C;&#x5BB9; Unity 4.2 &#x53CA;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#xFF0C;&#x652F;&#x6301;&#x4F7F;&#x7528; Unity &#x5F00;&#x53D1;&#x7684; iOS&#x3001;Android&#x3001;Windows Phone 8&#x3001;Windows Store&#x3001;Windows Desktop&#xFF0C;&#x4EE5;&#x53CA;&#x7F51;&#x9875;&#x6E38;&#x620F;&#x3002;</p>
+<p version="1c05acb51127c85b837deafe7ae85105">&#x5982;&#x679C;&#x5E0C;&#x671B;&#x4ECE;&#x6F14;&#x793A;&#x9879;&#x76EE;&#x4E2D;&#x5B66;&#x4E60;&#xFF0C;&#x8BF7;&#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684; GitHub &#x8D44;&#x6E90;&#x5E93;&#xFF0C;&#x4E0B;&#x8F7D; <a href="https://github.com/leancloud/unity-sdk-demos">Unity SDK Demos</a> &#x3002;</p>
+<h2 id="-">&#x4ECB;&#x7ECD;</h2>
+<p version="679d6c2acca32396cba128c2622127ca">Unity &#x652F;&#x6301; Mono &#x4F7F;&#x7528; .NET &#x8BED;&#x8A00;&#x6765;&#x5B9E;&#x73B0;&#x8DE8;&#x5E73;&#x53F0;&#x5F00;&#x53D1;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x6240;&#x4EE5; LeanCloud &#x91C7;&#x7528;&#x4E86; C# &#x6765;&#x5B9E;&#x73B0;&#x5BA2;&#x6237;&#x7AEF;&#x7684; SDK&#x3002;&#x5982;&#x679C;&#x4F60;&#x6709; .NET &#x65B9;&#x9762;&#x7684;&#x7F16;&#x7A0B;&#x7ECF;&#x9A8C;&#xFF0C;&#x5C31;&#x5F88;&#x5BB9;&#x6613;&#x638C;&#x63E1; LeanCloud Unity SDK &#x63A5;&#x53E3;&#x7684;&#x98CE;&#x683C;&#x548C;&#x7528;&#x6CD5;&#x3002;</p>
+<p version="721b075e640af363e450bcc42f11f5c1">LeanCloud Unity SDK &#x5728;&#x5F88;&#x591A;&#x91CD;&#x8981;&#x7684;&#x529F;&#x80FD;&#x70B9;&#x4E0A;&#x90FD;&#x91C7;&#x7528;&#x4E86;&#x5FAE;&#x8F6F;&#x63D0;&#x4F9B;&#x7684; <a href="http://msdn.microsoft.com/zh-cn/library/hh873175.aspx">&#x57FA;&#x4E8E;&#x4EFB;&#x52A1;&#x7684;&#x5F02;&#x6B65;&#x6A21;&#x5F0F; (TAP)</a>&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x4F60;&#x5177;&#x5907; .NET Framework 4.5 &#x7684;&#x5F00;&#x53D1;&#x7ECF;&#x9A8C;&#xFF0C;&#x6216;&#x5BF9; .NET Framework 4.5 &#x7684; &#x65B0; API  &#x6709;&#x6240;&#x4E86;&#x89E3;&#xFF0C;&#x5C06;&#x6709;&#x52A9;&#x4E8E;&#x5FEB;&#x901F;&#x4E0A;&#x624B;&#x3002;</p>
+<h2 id="-">&#x5FEB;&#x901F;&#x5165;&#x95E8;</h2>
+<p version="1087668bdfeb518061b9364d45a518f4">&#x5EFA;&#x8BAE;&#x5728;&#x9605;&#x8BFB;&#x672C;&#x6587;&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x9605;&#x8BFB; <a href="/start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a>&#xFF0C;&#x4E86;&#x89E3;&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x548C;&#x4F7F;&#x7528; LeanCloud&#x3002;</p>
+<h2 id="-">&#x5E94;&#x7528;</h2>
+<p version="e71795283f0250947b4a64b31c12df06">&#x90E8;&#x7F72;&#x5728; LeanCloud &#x4E91;&#x7AEF;&#x7684;&#x6BCF;&#x4E2A;&#x5E94;&#x7528;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684; ID &#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x5BC6;&#x94A5;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x4EE3;&#x7801;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x6765;&#x521D;&#x59CB;&#x5316; SDK&#x3002;</p>
+<p version="3a63b73096bf6f771b62100163a34a86">LeanCloud &#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x8D26;&#x6237;&#x90FD;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x591A;&#x4E2A;&#x5E94;&#x7528;&#x3002;&#x540C;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x53EF;&#x5206;&#x522B;&#x5728;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x548C;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#xFF0C;&#x90E8;&#x7F72;&#x4E0D;&#x540C;&#x7684;&#x7248;&#x672C;&#x3002;</p>
+<h3 id="-">&#x521D;&#x59CB;&#x5316;</h3>
+<p version="7e9b092b72ba71c6b969b7bb23cf0b91">&#x76EE;&#x524D; Unity &#x7684;&#x521D;&#x59CB;&#x5316;&#x53EA;&#x63A8;&#x8350;&#x7528; <code>GameObject</code> &#x7ED1;&#x5B9A; <code>AVOSCloudInitializeBehaviour</code> &#x811A;&#x672C;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x663E;&#x5F0F;&#x8C03;&#x7528; <code>AVClient.Initialize</code> &#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<h2 id="-">&#x5BF9;&#x8C61;</h2>
+<h3 id="avobject">AVObject</h3>
+<p version="140b8d093014d4f47af9b82c7ef3de35">&#x5728; LeanCloud &#x4E0A;&#xFF0C;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x662F;&#x56F4;&#x7ED5; <code>AVObject</code> &#x8FDB;&#x884C;&#x7684;&#x3002;&#x6BCF;&#x4E2A; <code>AVObject</code> &#x90FD;&#x5305;&#x542B;&#x4E0E; JSON &#x517C;&#x5BB9;&#x7684;&#x952E;&#x503C;&#x5BF9;&#xFF08;key-value&#xFF09;&#x6570;&#x636E;&#x3002;&#x8BE5;&#x6570;&#x636E;&#x4E0D;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#xFF08;schema&#xFF09;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x7528;&#x63D0;&#x524D;&#x6307;&#x5B9A; <code>AVObject</code> &#x90FD;&#x6709;&#x54EA;&#x4E9B;&#x952E;&#xFF0C;&#x53EA;&#x8981;&#x76F4;&#x63A5;&#x8BBE;&#x5B9A;&#x952E;&#x503C;&#x5BF9;&#x5373;&#x53EF;&#x3002;</p>
+<p version="0489f79a9439d300efd9c186274440f5">&#x4F8B;&#x5982;&#xFF0C;&#x8BB0;&#x5F55;&#x6E38;&#x620F;&#x73A9;&#x5BB6;&#x7684;&#x5206;&#x6570;&#xFF0C;&#x76F4;&#x63A5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684; <code>AVObject</code> &#x5373;&#x53EF;&#xFF1A;</p>
+<pre version="f8b6607a9bcd5a296fcb4aa010a5fb57"><code class="lang-json">score: 1337, playerName: &quot;Steve&quot;, cheatMode: false
+</code></pre>
+<p version="1c25f830340040c7e6fc5959b3515bf7">&#x952E;&#xFF0C;&#x5FC5;&#x987B;&#x662F;&#x7531;&#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x6216;&#x4E0B;&#x5212;&#x7EBF;&#x7EC4;&#x6210;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF1B;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x952E;&#xFF0C;&#x4E0D;&#x80FD;&#x4EE5; <code>_</code>&#xFF08;&#x4E0B;&#x5212;&#x7EBF;&#xFF09;&#x5F00;&#x5934;&#x3002;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x6570;&#x5B57;&#x3001;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x6216;&#x662F;&#x6570;&#x7EC4;&#x548C;&#x5B57;&#x5178;&#x3002;</p>
+<p version="db128c43c91303011a57e03949b05322">&#x6BCF;&#x4E2A; <code>AVObject</code> &#x90FD;&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;&#x7C7B;&#xFF08;Class&#xFF09;&#x540D;&#x79F0;&#xFF0C;&#x4EE5;&#x4FBF;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6E38;&#x620F;&#x5206;&#x6570;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x53EF;&#x53D6;&#x540D;&#x4E3A; <code>GameScore</code>&#x3002;</p>
+<p version="dc6580085889501203fcf1d13a96dcd1">&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x5C06;&#x7C7B;&#x548C;&#x952E;&#x5206;&#x522B;&#x6309;&#x7167; <code>NameYourClassesLikeThis</code> &#x548C; <code>nameYourKeysLikeThis</code> &#x8FD9;&#x6837;&#x7684;&#x60EF;&#x4F8B;&#x6765;&#x547D;&#x540D;&#xFF0C;&#x5373;&#x533A;&#x5206;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BCD;&#x7684;&#x5927;&#x5C0F;&#x5199;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#x548C;&#x53EF;&#x7EF4;&#x62A4;&#x6027;&#x3002;</p>
+<h3 id="-">&#x4FDD;&#x5B58;&#x5BF9;&#x8C61;</h3>
+<p version="7f03b2cf6a363ab1ab3a79ca9feb70f1">&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x9700;&#x8981;&#x5C06;&#x4E0A;&#x6587;&#x4E2D;&#x7684; <code>GameScore</code> &#x5B58;&#x50A8;&#x5230; LeanCloud &#x7684;&#x670D;&#x52A1;&#x3002;LeanCloud &#x7684;&#x76F8;&#x5173;&#x63A5;&#x53E3;&#x548C; <code>IDictionary&lt;string, object&gt;</code> &#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x53EA;&#x6709;&#x5728;&#x8C03;&#x7528; <code>SaveAsync</code> &#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x6570;&#x636E;&#x624D;&#x4F1A;&#x88AB;&#x771F;&#x6B63;&#x4FDD;&#x5B58;&#x4E0B;&#x6765;&#x3002;</p>
+<pre version="a805f7071a0daf4c369bed3edc0cd207"><code class="lang-c#">AVObject gameScore = new AVObject(&quot;GameScore&quot;);
+gameScore[&quot;score&quot;] = 1337;
+gameScore[&quot;playerName&quot;] = &quot;Neal Caffrey&quot;;
+Task saveTask = gameScore.SaveAsync();
+</code></pre>
+<p version="9bcf484c6f0f366d54dac7bc453fe7bd">&#x8FD0;&#x884C;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x540E;&#xFF0C;&#x8981;&#x60F3;&#x786E;&#x8BA4;&#x4FDD;&#x5B58;&#x52A8;&#x4F5C;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x751F;&#x6548;&#xFF0C;&#x53EF;&#x4EE5;&#x5230; LeanCloud &#x5E94;&#x7528;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x7684; <a href="/data.html?appid={{appid}}">&#x6570;&#x636E;&#x7BA1;&#x7406;</a>  &#x9875;&#x9762;&#x6765;&#x67E5;&#x770B;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;&#x60C5;&#x51B5;&#x3002;</p>
+<p version="6a333920b96f892777115f9b1b589971">&#x5982;&#x679C;&#x4FDD;&#x5B58;&#x6210;&#x529F;&#xFF0C;<code>GameScore</code> &#x7684;&#x6570;&#x636E;&#x5217;&#x8868;&#x5E94;&#x8BE5;&#x663E;&#x793A;&#x51FA;&#x4EE5;&#x4E0B;&#x8BB0;&#x5F55;&#xFF1A;</p>
+<pre version="aac85702d067d94653b7dd4bc648946a"><code class="lang-json">objectId: &quot;53706cd1e4b0d4bef5eb32ab&quot;, score: 1337, playerName: &quot;Neal Caffrey&quot;,
+createdAt:&quot;2014-05-12T14:40:17.706Z&quot;, updatedAt:&quot;2014-05-12T14:40:17.706Z&quot;
+</code></pre>
+<p version="c8e0894e903ec0c3d0fb31ddb5e45878">&#x5728;&#x6B64;&#x8981;&#x7279;&#x522B;&#x8BF4;&#x660E;&#x4E24;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x8FD0;&#x884C;&#x6B64;&#x4EE3;&#x7801;&#x524D;&#xFF0C;&#x4E0D;&#x7528;&#x914D;&#x7F6E;&#x6216;&#x8BBE;&#x7F6E; <code>GameScore</code> &#x7C7B;&#xFF0C;LeanCloud &#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x7C7B;&#x3002;</li>
+<li><p version="4caf0bb61181d957af084a39a8bc4e37">&#x4E3A;&#x66F4;&#x65B9;&#x4FBF;&#x5730;&#x4F7F;&#x7528; LeanCloud&#xFF0C;&#x4EE5;&#x4E0B;&#x5B57;&#x6BB5;&#x4E0D;&#x9700;&#x8981;&#x63D0;&#x524D;&#x6307;&#x5B9A;&#xFF1A;</p>
+<ul>
+<li><code>objectId</code> &#x662F;&#x4E3A;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#x552F;&#x4E00;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#x3002;</li>
+<li><code>createdAt</code> &#x548C; <code>updatedAt</code> &#x5206;&#x522B;&#x4EE3;&#x8868;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x5728; LeanCloud &#x4E2D;&#x521B;&#x5EFA;&#x548C;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x8D4B;&#x503C;&#x3002;</li>
+</ul>
+<p version="9052ab9611a32767f7dfbbc77043cdbc">&#x5728;&#x6267;&#x884C;&#x4FDD;&#x5B58;&#x64CD;&#x4F5C;&#x4E4B;&#x524D;&#xFF0C;&#x8FD9;&#x4E9B;&#x5B57;&#x6BB5;&#x4E0D;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x4FDD;&#x5B58;&#x5230; <code>AVObject</code> &#x4E2D;&#x3002;</p>
+</li>
+</ol>
+<h3 id="-">&#x68C0;&#x7D22;&#x5BF9;&#x8C61;</h3>
+<p version="81d01a5287f8a2f999ba5f92eeac4273">&#x5C06;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x5230; LeanCloud &#x4E0A;&#x5B9E;&#x73B0;&#x8D77;&#x6765;&#x7B80;&#x5355;&#x800C;&#x76F4;&#x89C2;&#xFF0C;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x4E5F;&#x662F;&#x5982;&#x6B64;&#x3002;&#x5982;&#x679C;&#x5DF2;&#x77E5; <code>objectId</code>&#xFF0C;&#x7528; <code>AVQuery</code> &#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x5BF9;&#x5E94;&#x7684; <code>AVObject</code> &#xFF1A;</p>
+<pre version="517153e2b87e178ccbd99534de481471"><code class="lang-c#">AVQuery&lt;AVObject&gt; query=new AVQuery&lt;AVObject&gt;(&quot;GameScore&quot;);
+query.GetAsync(&quot;53706cd1e4b0d4bef5eb32ab&quot;).ContinueWith(t =&gt;
+{
+    AVObject gameScore = t.Result;//&#x5982;&#x679C;&#x6210;&#x529F;&#x83B7;&#x53D6;&#xFF0C;t.Result&#x5C06;&#x662F;&#x4E00;&#x4E2A;&#x5408;&#x6CD5;&#x6709;&#x6548;&#x7684;AVObject
+});
+</code></pre>
+<p version="f8a379288e44f4e04286705e37a249c2">&#x8981;&#x4ECE;&#x68C0;&#x7D22;&#x5230;&#x7684; <code>AVObject</code> &#x5BF9;&#x8C61;&#x4E2D;&#x83B7;&#x53D6;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x76F8;&#x5E94;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684; <code>Get&lt;T&gt;&#x8303;&#x578B;</code> &#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="8dfce75c5594ebde5f7491fd7688a6be"><code class="lang-c#">int score = gameScore.Get&lt;int&gt;(&quot;score&quot;);
+string playerName = gameScore.Get&lt;string&gt;(&quot;playerName&quot;);
+</code></pre>
+<h3 id="-">&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;</h3>
+<p version="ada09d76f780b4947c0677d70688a5bb">&#x8981;&#x60F3;&#x7528; Unity &#x6253;&#x9020;&#x4E00;&#x6B3E;&#x6709;&#x826F;&#x597D;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#xFF0C;&#x5E76;&#x80FD;&#x5B9E;&#x65F6;&#x54CD;&#x5E94;&#x7684;&#x6E38;&#x620F;&#xFF0C;&#x5E94;&#x8BE5;&#x9075;&#x5FAA;&#x4E00;&#x4E2A;&#x6700;&#x57FA;&#x672C;&#x7684;&#x539F;&#x5219;&#xFF1A;&#x4E0D;&#x5E94;&#x8BE5;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x8FDB;&#x884C;&#x8017;&#x65F6;&#x8F83;&#x957F;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x7F51;&#x7EDC;&#x8BBF;&#x95EE;&#x7C7B;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x540E;&#x53F0;&#x8FDB;&#x7A0B;&#x6765;&#x5904;&#x7406;&#x3002;</p>
+<p version="44746436da579cc5eab0db3ab06bdacf">&#x4E3A;&#x4E86;&#x8BA9;&#x4EE3;&#x7801;&#x7B80;&#x6D01;&#x800C;&#x4F18;&#x96C5;&#xFF0C;&#x6211;&#x4EEC;&#x5728;  Unity &#x4E0A;&#x5B9E;&#x73B0;&#x4E86;&#x4E0E; .NET Framework 4.5 &#x6240;&#x91C7;&#x7528;&#x7684; <a href="http://msdn.microsoft.com/zh-cn/library/hh873175.aspx">&#x57FA;&#x4E8E;&#x4EFB;&#x52A1;&#x7684;&#x5F02;&#x6B65;&#x6A21;&#x5F0F; (TAP)</a> &#x76F8;&#x540C;&#x7684;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x3002;&#x6211;&#x4EEC;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A; <code>Task</code> &#x7C7B;&#xFF0C;&#x4E00;&#x4E2A; <code>Task</code> &#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<p version="503d9470a81852184eac5aa9f8cb7f69"><code>Task</code> &#x7684;&#x5178;&#x578B;&#x7528;&#x6CD5;&#xFF0C;&#x662F;&#x4ECE;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>Task</code>&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6267;&#x884C; <code>Task</code> &#x4E4B;&#x524D;&#xFF0C;&#x4F20;&#x5165;&#x8981;&#x5904;&#x7406; <code>Task</code> &#x6267;&#x884C;&#x7ED3;&#x679C;&#x7684;&#x65B9;&#x6CD5;&#x4EE3;&#x7406;&#x3002;</p>
+<p version="63eb25c6632c1abc959ebab70e413788">&#x5F53;&#x4E00;&#x4E2A; <code>Task</code> &#x88AB;&#x8FD4;&#x56DE;&#xFF0C;&#x8BF4;&#x660E;&#x8FD9;&#x4E2A; <code>Task</code> &#x5DF2;&#x7ECF;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x3002;&#x8FD9;&#x79CD;&#x57FA;&#x4E8E; <code>Task</code> &#x7684;&#x7F16;&#x7A0B;&#x6A21;&#x578B;&#x5E76;&#x4E0D;&#x7B49;&#x540C;&#x4E8E;&#x591A;&#x7EBF;&#x7A0B;&#x7F16;&#x7A0B;&#x6A21;&#x578B;&#xFF0C;&#x5B83;&#x4EC5;&#x4EC5;&#x4EE3;&#x8868;&#x8FD9;&#x9879;&#x64CD;&#x4F5C;&#x6B63;&#x5728;&#x6267;&#x884C;&#xFF0C;&#x4F46;&#x5E76;&#x672A;&#x6307;&#x660E;&#x5B83;&#x8FD0;&#x884C;&#x5728;&#x54EA;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E4B;&#x4E2D;&#x3002;</p>
+<p version="93a5421a7a3225e4e90746b21c3d0491"><a href="http://msdn.microsoft.com/zh-cn/library/hh873175.aspx">&#x57FA;&#x4E8E;&#x4EFB;&#x52A1;&#x7684;&#x5F02;&#x6B65;&#x6A21;&#x5F0F; (TAP)</a> &#x7684;&#x7F16;&#x7A0B;&#x6A21;&#x5F0F;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x56DE;&#x8C03;&#x6A21;&#x578B;&#x548C;&#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#xFF0C;&#x6709;&#x5F88;&#x591A;&#x53EF;&#x53D6;&#x4E4B;&#x5904;&#xFF0C;&#x5177;&#x4F53;&#x8FD8;&#x9700;&#x8981;&#x5F00;&#x53D1;&#x8005;&#x5BF9; TAP &#x7F16;&#x7A0B;&#x6A21;&#x578B;&#x6709;&#x66F4;&#x6DF1;&#x5165;&#x7684;&#x4E86;&#x89E3;&#x3002;</p>
+<p version="83a653be005f3622ff1328d92484b3af">&#x57FA;&#x4E8E;&#x4E0A;&#x8FF0;&#x89C2;&#x70B9;&#xFF0C;&#x5728; LeanCloud Unity SDK &#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x90FD;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>Task</code>&#x3002;&#x5173;&#x4E8E; <code>Task</code> &#x7684;&#x5177;&#x4F53;&#x4ECB;&#x7ECD;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003; <a href="#&#x4EFB;&#x52A1;">&#x4EFB;&#x52A1;</a> &#x4E00;&#x8282;&#x3002;</p>
+<!--TODO: ###离线存储对象 ?-->
+<h3 id="-">&#x66F4;&#x65B0;&#x5BF9;&#x8C61;</h3>
+<p version="4df5744004b60dca68766992627f1812">&#x66F4;&#x65B0;&#x5BF9;&#x8C61;&#x548C;&#x4FDD;&#x5B58;&#x5BF9;&#x8C61;&#x6709;&#x70B9;&#x76F8;&#x4F3C;&#xFF0C;&#x53EA;&#x662F;&#x66F4;&#x65B0;&#x5BF9;&#x8C61;&#x4F1A;&#x8986;&#x76D6;&#x540C;&#x540D;&#x5C5E;&#x6027;&#x7684;&#x503C;&#xFF0C;&#x5728;&#x8C03;&#x7528; <code>SaveAsync</code> &#x4E4B;&#x540E;&#xFF0C;&#x6570;&#x636E;&#x4F1A;&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x6765;&#x8BA9;&#x4FEE;&#x6539;&#x751F;&#x6548;&#x3002;</p>
+<pre version="0c71413721fea61042943a9e98393603"><code class="lang-c#">var gameScore = new AVObject(&quot;GameScore&quot;)
+{
+    { &quot;score&quot;, 1338 },
+    { &quot;playerName&quot;, &quot;Peter Burke&quot; },
+    { &quot;cheatMode&quot;, false },
+    { &quot;skills&quot;, new List&lt;string&gt; { &quot;FBI&quot;, &quot;Agent Leader&quot; } },
+};//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684; GameScore &#x5BF9;&#x8C61;
+gameScore.SaveAsync().ContinueWith(t =&gt;//&#x7B2C;&#x4E00;&#x6B21;&#x8C03;&#x7528; SaveAsync &#x662F;&#x4E3A;&#x4E86;&#x589E;&#x52A0;&#x8FD9;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#x5BF9;&#x8C61;
+{
+    // &#x4FDD;&#x5B58;&#x6210;&#x529F;&#x4E4B;&#x540E;&#xFF0C;&#x4FEE;&#x6539;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x751F;&#x6548;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4FEE;&#x6539; cheatMode &#x548C; score
+    // LeanCloud &#x53EA;&#x4F1A;&#x9488;&#x5BF9;&#x6307;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x8986;&#x76D6;&#x64CD;&#x4F5C;&#xFF0C;&#x672C;&#x4F8B;&#x4E2D;&#x7684; playerName &#x4E0D;&#x4F1A;&#x88AB;&#x4FEE;&#x6539;
+    gameScore[&quot;cheatMode&quot;] = true;
+    gameScore[&quot;score&quot;] = 9999;
+    gameScore.SaveAsync();//&#x7B2C;&#x4E8C;&#x6B21;&#x8C03;&#x7528;&#x662F;&#x4E3A;&#x4E86;&#x628A;&#x521A;&#x624D;&#x4FEE;&#x6539;&#x7684;2&#x4E2A;&#x5C5E;&#x6027;&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x751F;&#x6548;&#x3002;
+});
+</code></pre>
+<!--TODO: 
+### 计数器
+### 数组
+-->
+<h3 id="-">&#x5220;&#x9664;&#x5BF9;&#x8C61;</h3>
+<p version="56c28be5d7f520909314b9e5f79a68a8">&#x8981;&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4F7F;&#x7528; <code>AVObject</code> &#x7684; <code>DeleteAsync</code> &#x65B9;&#x6CD5;&#x3002;</p>
+<pre version="738486be99bbdd47934a4e7d04aef792"><code class="lang-c#">Task deleteTask = myObject.DeleteAsync();
+</code></pre>
+<p version="8beb33eb9ce3fe4437a3c7c45571009f">&#x5982;&#x679C;&#x4EC5;&#x4EC5;&#x60F3;&#x5220;&#x9664;&#x5BF9;&#x8C61;&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x4F7F;&#x7528; <code>Remove</code> &#x65B9;&#x6CD5;&#x3002;</p>
+<pre version="b4fbf321d6505265bd217dbb63278642"><code class="lang-c#">//&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x8BED;&#x53E5;&#x4F1A;&#x5C06; playerName &#x5B57;&#x6BB5;&#x7F6E;&#x4E3A;&#x7A7A;
+myObject.Remove(&quot;playerName&quot;);
+
+// &#x5C06;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x53D1;&#x5F80;&#x670D;&#x52A1;&#x5668;&#x751F;&#x6548;&#x3002;
+Task saveTask = myObject.SaveAsync();
+</code></pre>
+<h3 id="-">&#x5173;&#x7CFB;</h3>
+<p version="31cfa9b6564ccb798119bf4e1ac6110a">&#x8F6F;&#x4EF6;&#x7A0B;&#x5E8F;&#xFF0C;&#x5C31;&#x662F;&#x5728;&#x62BD;&#x8C61;&#x73B0;&#x5B9E;&#x4E2D;&#xFF0C;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x4E16;&#x754C;&#x91CC;&#x7684;&#x89E3;&#x91CA;&#x548C;&#x5C55;&#x73B0;&#x3002;&#x6709;&#x5BF9;&#x8C61;&#x5FC5;&#x7136;&#x5C31;&#x4F1A;&#x6709;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;LeanCloud &#x4E3A;&#x8FD9;&#x79CD;&#x4F20;&#x7EDF;&#x7684;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x63D0;&#x4F9B;&#x4E86;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x51CF;&#x5C11;&#x4E86;&#x4EE3;&#x7801;&#x91CF;&#xFF0C;&#x8BA9;&#x4EE3;&#x7801;&#x53D8;&#x5F97;&#x7B80;&#x6D01;&#x4E14;&#x6613;&#x4E8E;&#x7EF4;&#x62A4;&#x3002;</p>
+<p version="41c19b5e2b916af5cd88e255a8c1e546">&#x5047;&#x8BBE;&#x8FD9;&#x6837;&#x4E00;&#x79CD;&#x573A;&#x666F;&#xFF1A;&#x505A;&#x4E00;&#x6B3E;&#x65F6;&#x9AE6;&#x7684;&#x76F8;&#x4EB2;&#x793E;&#x4EA4;&#x8F6F;&#x4EF6;&#xFF0C;&#x7537;&#x5B69;&#x4F1A;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x8D44;&#x6599;&#x91CC;&#x9762;&#x6807;&#x660E;&#x81EA;&#x5DF1;&#x559C;&#x6B22;&#x7684;&#x5973;&#x751F;&#x7C7B;&#x578B;&#xFF0C;&#x4E8E;&#x662F;&#x6709;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre version="7ad127a411397fa8505c2fa95446044d"><code class="lang-c#">AVObject girlType = new AVObject(&quot;GirType&quot;);
+girlType[&quot;typeName&quot;] = &quot;Hot&quot;;
+AVObject beckham = new AVObject(&quot;Boy&quot;);
+beckham[&quot;name&quot;]= &quot;David Beckham&quot;;
+beckham[&quot;age&quot;] = 38;
+beckham[&quot;focusType&quot;] = girlType;
+Task saveTask =    beckham.SaveAsync();//&#x4FDD;&#x5B58; beckham &#x7684;&#x65F6;&#x5019;&#x4F1A;&#x81EA;&#x52A8;&#x5C06; girlType &#x4E5F;&#x4FDD;&#x5B58;&#x5230;&#x670D;&#x52A1;&#x5668;&#x3002;
+</code></pre>
+<p version="eabc16a158a13d12003923389b021c47">&#x5F53;&#x7136;&#xFF0C;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>ObjectId</code> &#x6765;&#x4E0E;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x5173;&#x8054;&#xFF1A;</p>
+<pre version="bc2ba1e91f601d7877ad3ec97f9757c5"><code class="lang-c#">beckham[&quot;focusType&quot;] = AVObject.CreateWithoutData(&quot;GirType&quot;, &quot;5372d119e4b0d4bef5f036ae&quot;);
+</code></pre>
+<p version="8a16d4587d5df7f78165748b042e401d">&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x5F53;&#x4ECE; LeanCloud &#x4E0A;&#x8BFB;&#x53D6;&#x67D0;&#x4E00;&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684; <code>Fetch</code> &#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x52A0;&#x8F7D;&#x4E0E;&#x4E4B;&#x76F8;&#x5173;&#x8054;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x53EA;&#x6709;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x540E;&#xFF0C;&#x8FD9;&#x4E9B;&#x5173;&#x8054;&#x6570;&#x636E;&#x5B57;&#x6BB5;&#xFF08;&#x5982;&#x4E0A;&#x4F8B;&#x4E2D; Boy &#x7684; focusType &#x5B57;&#x6BB5;&#xFF09;&#x624D;&#x4F1A;&#x88AB;&#x5B9E;&#x4F8B;&#x5316;&#x3002;</p>
+<pre version="fd07f295bfa2553ea4e2d94454fcd336"><code class="lang-c#">AVObject focusType = beckham.Get&lt;AVObject&gt;(&quot;focusType&quot;);
+Task&lt;AVObject&gt; fetchTask = focusType.FetchIfNeededAsync();
+</code></pre>
+<h2 id="-">&#x67E5;&#x8BE2;</h2>
+<p version="826cd69d7b3f6c0d42a3977b9769f0c3">&#x901A;&#x8FC7; <code>objectId</code> &#x6765;&#x68C0;&#x7D22;&#x6570;&#x636E;&#xFF0C;&#x663E;&#x7136;&#x65E0;&#x6CD5;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#xFF0C;&#x6240;&#x4EE5; LeanCloud Unity SDK &#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x591A;&#x7684;&#x67E5;&#x8BE2;&#x65B9;&#x6CD5;&#x6765;&#x7B80;&#x5316;&#x64CD;&#x4F5C;&#x3002;</p>
+<p version="ac3d50f6482e1dda9d4420b2c5c45866">&#x9996;&#x5148;&#x9700;&#x8981;&#x660E;&#x786E;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x4E00;&#x70B9;&#xFF0C;&#x5728;&#x6211;&#x4EEC;&#x7684; SDK &#x4E2D;&#xFF0C;<code>AVQuery</code> &#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x4EE5; <code>Where</code> &#x5F00;&#x5934;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x53CA;&#x9650;&#x5B9A;&#x67E5;&#x8BE2;&#x8303;&#x56F4;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#xFF08;<code>Skip</code>&#x3001; <code>Limit</code>&#x3001; <code>ThenBy</code>&#x3001; <code>Include</code> &#x7B49;&#xFF09;&#x90FD;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x5E76;&#x4E0D;&#x662F;&#x5728;&#x539F;&#x59CB;&#x7684; <code>AVQuery</code> &#x5BF9;&#x8C61;&#x4E0A;&#x4FEE;&#x6539;&#x5185;&#x90E8;&#x5C5E;&#x6027;&#x3002;&#x6BD4;&#x5982;:</p>
+<pre version="d01c6d8d9036dcc675802eb19db5635b"><code class="lang-c#">AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(&quot;GameScore&quot;);
+query.WhereEqualTo(&quot;score&quot;, 999);//&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x662F;&#x9519;&#x8BEF;&#x7684;&#xFF01;&#xFF01;&#xFF01;
+query.FindAsync();
+</code></pre>
+<p version="86fdfda881ea6a1826f2bf4e7158e64e"><strong>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x662F;&#x7528;&#x6237;&#x7ECF;&#x5E38;&#x4F1A;&#x72AF;&#x7684;&#x9519;&#x8BEF;&#x6848;&#x4F8B;&#xFF0C;&#x8BF7;&#x52FF;&#x62F7;&#x8D1D;&#x5230;&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;&#xFF01;</strong></p>
+<p version="004620e2a4ceba9cea26fe243e2aa84c">&#x4E0A;&#x9762;&#x90A3;&#x6BB5;&#x4EE3;&#x7801;&#x4F1A;&#x8FD4;&#x56DE; <code>GameScore</code> &#x4E2D;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6240;&#x8BBE;&#x60F3;&#x7684;&#x53EA;&#x6709; score &#x7B49;&#x4E8E; 999 &#x7684;&#x6570;&#x636E;&#x3002;&#x6B63;&#x786E;&#x7684;&#x5199;&#x6CD5;&#x662F;&#xFF1A;</p>
+<pre version="149e59239d23afb58d91e91f62fb4b1d"><code class="lang-c#">AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(&quot;GameScore&quot;).WhereEqualTo(&quot;score&quot;, 999);
+</code></pre>
+<p version="7bab65016cf53bafff1da51a592169bf">&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#xFF0C;<code>AVQuery&lt;T&gt;</code> &#x7684;&#x6240;&#x6709;&#x590D;&#x5408;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x90FD;&#x5E94;&#x8BE5;&#x4F7F;&#x7528; <code>.</code> &#x8FD9;&#x4E2A;&#x7B26;&#x53F7;&#x6765;&#x521B;&#x5EFA;&#x94FE;&#x5F0F;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x67E5;&#x627E;&#x6240;&#x6709; score &#x7B49;&#x4E8E; 999&#xFF0C;&#x4E14; name &#x5305;&#x542B; neal &#x7684; <code>GameScore</code>&#xFF1A;</p>
+<pre version="ef8364238a38497af3d4ddc873606ddc"><code class="lang-c#">AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt; (&quot;GameScore&quot;).WhereEqualTo(&quot;score&quot;, 999).WhereContains(&quot;playerName&quot;,&quot;neal&quot;);
+</code></pre>
+<h3 id="-">&#x57FA;&#x672C;&#x67E5;&#x8BE2;</h3>
+<p version="973dc1bcba519f92325ec4a63f66e7ef"><code>AVQuery&lt;T&gt;.WhereEqualTo</code>&#xFF0C; &#x903B;&#x8F91;&#x4E0A;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x7C7B;&#x4F3C;&#x4E8E; SQL &#x8BED;&#x53E5;&#x4E2D;&#x7684; <code>=</code> &#x64CD;&#x4F5C;&#x3002;</p>
+<pre version="e852d4e699754c0ec89c75dea4f5b9a8"><code class="lang-sql">SELECT * FROM Persons WHERE FirstName = &apos;Bush&apos;
+</code></pre>
+<pre version="b5ff744b8f4bc393f8aa779112f1c66c"><code class="lang-c#">AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(&quot;GameScore&quot;).WhereEqualTo(&quot;score&quot;, 999);
+query.FindAsync().ContinueWith(t =&gt; {
+    IEnumerable&lt;AVObject&gt; avObjects = t.Result;
+    //&#x83B7;&#x53D6;&#x8FD4;&#x56DE;&#x8BB0;&#x5F55;&#x6570;
+    int sum = avObjects.Count();
+});
+</code></pre>
+<h3 id="-">&#x67E5;&#x8BE2;&#x6761;&#x4EF6;</h3>
+<p version="524a7e448f5ffca70ce73294ef29c80c">&#x8981;&#x8FC7;&#x6EE4;&#x6389;&#x7279;&#x5B9A;&#x952E;&#x7684;&#x503C;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>whereNotEqualTo</code> &#x65B9;&#x6CD5;&#x3002;&#x6BD4;&#x5982;&#x68C0;&#x7D22; playerName &#x4E0D;&#x7B49;&#x4E8E; steve &#x7684;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A;</p>
+<pre version="48d1763554beeb12f98e8fe3047255bf"><code class="lang-c#">query = query.WhereNotEqualTo(&quot;playerName&quot;, &quot;steve&quot;);
+</code></pre>
+<p version="d104175b1a54dbcd35d6cbaebd3577c7">&#x540C;&#x65F6;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#x7684;&#x67E5;&#x8BE2;&#xFF1A;</p>
+<pre version="060f7c7b8f1a9204481d48470c7c88fb"><code class="lang-c#">query = query.WhereNotEqualTo(&quot;playerName&quot;, &quot;steve&quot;);
+query = query.WhereGreaterThan(&quot;age&quot;, 18);//&#x8FD9;&#x6837;&#x4E66;&#x5199;&#x662F;&#x4E3A;&#x4E86;&#x6587;&#x6863;&#x9605;&#x8BFB;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x63A8;&#x8350;&#x4E0A;&#x4E00;&#x8282;&#x4ECB;&#x7ECD;&#x7684;&#x94FE;&#x5F0F;&#x8868;&#x8FBE;&#x5F0F;&#x53BB;&#x521B;&#x5EFA; AVQuery
+</code></pre>
+<p version="05d8d4fda612e313ca9a4120f7196066">&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x591A;&#x4E2A;&#xFF0C;&#x5B83;&#x4EEC;&#x5F7C;&#x6B64;&#x662F; <code>AND</code> &#x7684;&#x5173;&#x7CFB;&#x3002;</p>
+<p version="cad33a7c09afee7e669ee3d0a4e8143b">&#x5F53;&#x4EC5;&#x9700;&#x8981;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x8F83;&#x5C11;&#x7684;&#x7ED3;&#x679C;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>Limit</code> &#x65B9;&#x6CD5;&#x6765;&#x9650;&#x5B9A;&#x6570;&#x91CF;&#xFF1A;</p>
+<pre version="b3d48bf6ca1f8f7540d65eb89c21700e"><code class="lang-c#">query = query.Limit(10);
+</code></pre>
+<p version="5d7bbd4dbb4b1c32131f6c9c9674fe7a">&#x5728;&#x6570;&#x636E;&#x8F83;&#x591A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5206;&#x9875;&#x663E;&#x793A;&#x6570;&#x636E;&#x662F;&#x6BD4;&#x8F83;&#x5408;&#x7406;&#x7684;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF0C;limit &#x9ED8;&#x8BA4; 100&#xFF0C;&#x6700;&#x5927;1000&#xFF0C;&#x5728; 0 &#x5230; 1000 &#x8303;&#x56F4;&#x4E4B;&#x5916;&#x7684;&#x90FD;&#x5F3A;&#x5236;&#x8F6C;&#x6210;&#x9ED8;&#x8BA4;&#x7684; 100&#x3002;
+Skip &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x8DF3;&#x8FC7;&#x9996;&#x6B21;&#x67E5;&#x8BE2;&#x7684;&#x591A;&#x5C11;&#x6761;&#x6570;&#x636E;&#x6765;&#x5B9E;&#x73B0;&#x5206;&#x9875;&#x7684;&#x529F;&#x80FD;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x4E00;&#x9875;&#x663E;&#x793A;10&#x6761;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x8DF3;&#x8FC7;&#x524D;10&#x4E2A;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#xFF1A;</p>
+<pre version="64df9bcfefe47a15b9c0e91ced7a27f3"><code class="lang-javascript">query = query.Skip (10);
+</code></pre>
+<p version="c7116c37d851e987157b0a3d4a638ffb">&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x7684;&#x6392;&#x5E8F;&#xFF0C;&#x5982;&#x6570;&#x5B57;&#x6216;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5347;&#x5E8F;&#x6216;&#x964D;&#x5E8F;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x63A7;&#x5236;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x7684;&#x7ED3;&#x679C;&#x987A;&#x5E8F;&#xFF1A;</p>
+<pre version="48b60d1a7f13ef3bd762be13305b7d44"><code class="lang-javascript">// &#x6839;&#x636E;score&#x5B57;&#x6BB5;&#x5347;&#x5E8F;&#x663E;&#x793A;&#x6570;&#x636E;
+query = query.OrderBy(&quot;score&quot;);
+
+// &#x6839;&#x636E;score&#x5B57;&#x6BB5;&#x964D;&#x5E8F;&#x663E;&#x793A;&#x6570;&#x636E;
+query = query.OrderByDescending(&quot;score&quot;);
+
+//&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x6BD4;&#x8F83;&#x67E5;&#x8BE2;&#xFF1A;
+// &#x5206;&#x6570; &lt; 50
+query = query.WhereLessThan(&quot;score&quot;, 50);
+
+//&#x5206;&#x6570; &lt;= 50
+query = query.WhereLessThanOrEqualTo(&quot;score&quot;, 50);
+
+//&#x5206;&#x6570; &gt; 50
+query.WhereGreaterThan(&quot;score&quot;, 50);
+
+//&#x5206;&#x6570; &gt;= 50
+query = query.WhereGreaterThanOrEqualTo(&quot;score&quot;, 50);
+</code></pre>
+<p version="1ac4644038624137ff33518afc04d54e">&#x5982;&#x679C;&#x4F60;&#x60F3;&#x67E5;&#x8BE2;&#x5339;&#x914D;&#x51E0;&#x4E2A;&#x4E0D;&#x540C;&#x503C;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982;&#xFF1A;&#x8981;&#x67E5;&#x8BE2;&#x201C;steve&#x201D;&#xFF0C;&#x201C;chard&#x201D;&#xFF0C;&#x201C;vj&#x201D;&#x4E09;&#x4E2A;&#x4EBA;&#x7684;&#x6210;&#x7EE9;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; WhereContainedIn&#xFF08;&#x7C7B;&#x4F3C; SQL &#x4E2D;&#x7684; in &#x67E5;&#x8BE2;&#xFF09;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<pre version="fb14e3b53331e7d8bb44f30c79844660"><code class="lang-javascript">var names = new[] { &quot;steve&quot;, &quot;chard&quot;, &quot;vj&quot; };
+query = query.WhereContainedIn(&quot;playerName&quot;, names);
+</code></pre>
+<p version="8ebf2078d738d81d718b2e9a43648fd9">&#x76F8;&#x53CD;&#xFF0C;&#x4F60;&#x60F3;&#x67E5;&#x8BE2;&#x6392;&#x9664;&#x201C;steve&#x201D;&#xFF0C;&#x201C;chard&#x201D;&#xFF0C;&#x201C;vj&#x201D;&#x8FD9;&#x4E09;&#x4E2A;&#x4EBA;&#x7684;&#x5176;&#x4ED6;&#x540C;&#x5B66;&#x7684;&#x4FE1;&#x606F;&#xFF08;&#x7C7B;&#x4F3C; SQL &#x4E2D;&#x7684; not in &#x67E5;&#x8BE2;&#xFF09;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; WhereNotContainedIn &#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<pre version="2cae9cc5fda74d23fa0a020c330156e5"><code class="lang-javascript">query = query.WhereNotContainedIn (&quot;playerName&quot;, names);
+</code></pre>
+<p version="53ca0a9b20d7a60e12f78987bb34f544">&#x5BF9;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#x7684;&#x67E5;&#x8BE2; &#x67E5;&#x8BE2;&#x5305;&#x542B;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x503C;&#xFF0C;&#x6709;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x6B63;&#x786E;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6765;&#x68C0;&#x7D22;&#x76F8;&#x5339;&#x914D;&#x7684;&#x503C;&#xFF0C;&#x4F7F;&#x7528; WhereMatches &#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="b535acf55e6764d08f1bb99c9d335a5b"><code class="lang-javascript">query = query.WhereMatches(&quot;playerName&quot;, &quot;^[A-Z]\\d&quot;);
+</code></pre>
+<p version="ef4e70c56b07f5f6bdd4ba0184074bfe">&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x5305;&#x542B;&#x201C;XX&#x201C;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="5ef47b6efe447052a4c7e8184f8e3b46"><code class="lang-javascript">// &#x67E5;&#x8BE2;playerName&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x4E2D;&#x5305;&#x542B;&#x201C;ste&#x201C;&#x5B57;&#x7684;&#x6570;&#x636E;
+query = query.WhereContains(&quot;playerName&quot;, &quot;ste&quot;);
+
+// &#x67E5;&#x8BE2;playerName&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x662F;&#x4EE5;&#x201C;cha&#x201C;&#x5B57;&#x5F00;&#x5934;&#x7684;&#x6570;&#x636E;
+query = query.WhereStartsWith(&quot;playerName&quot;, &quot;cha&quot;);
+
+// &#x67E5;&#x8BE2;playerName&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x662F;&#x4EE5;&#x201C;vj&#x201C;&#x5B57;&#x7ED3;&#x5C3E;&#x7684;&#x6570;&#x636E;
+query = query.WhereEndsWith(&quot;playerName&quot;, &quot;vj&quot;);
+</code></pre>
+<h3 id="-">&#x6570;&#x7EC4;&#x503C;&#x7684;&#x67E5;&#x8BE2;</h3>
+<p version="d9de66b920d004a185c62f53780be0f5">&#x5982;&#x679C;&#x4E00;&#x4E2A; Key &#x5BF9;&#x5E94;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2; key &#x7684;&#x6570;&#x7EC4;&#x5305;&#x542B;&#x4E86;&#x6570;&#x5B57; 2 &#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;:</p>
+<pre version="d06b1e3b2bdab621d9b1f189a2e07950"><code class="lang-javascript">// &#x67E5;&#x627E;&#x51FA;&#x6240;&#x6709;arrayKey&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x7EC4;&#x540C;&#x65F6;&#x5305;&#x542B;&#x4E86;&#x6570;&#x5B57;2&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;
+query = query.WhereEqualTo(&quot;arrayKey&quot;, 2);
+</code></pre>
+<p version="efc406c4a2328d0527f65bc8c1755a3f">&#x540C;&#x6837;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x51FA; Key &#x7684;&#x6570;&#x7EC4;&#x540C;&#x65F6;&#x5305;&#x542B;&#x4E86; 2,3 &#x548C; 4 &#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre version="4b5fb978df2ad125bea87bf3947637f3"><code class="lang-javascript">//&#x67E5;&#x627E;&#x51FA;&#x6240;&#x6709;arrayKey&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x7EC4;&#x540C;&#x65F6;&#x5305;&#x542B;&#x4E86;&#x6570;&#x5B57;2,3,4&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x3002;
+List&lt;int&gt; numbers = new List&lt;int&gt;();
+numbers.Add(2);
+numbers.Add(3);
+numbers.Add(4);
+query = query.WhereContainsAll(&quot;arrayKey&quot;, numbers);
+</code></pre>
+<h3 id="-">&#x67E5;&#x8BE2;&#x5BF9;&#x8C61;&#x4E2A;&#x6570;</h3>
+<p version="f9ec53b7721455feb08520f16caee683">&#x5982;&#x679C;&#x4F60;&#x53EA;&#x662F;&#x60F3;&#x7EDF;&#x8BA1;&#x6709;&#x591A;&#x5C11;&#x4E2A;&#x5BF9;&#x8C61;&#x6EE1;&#x8DB3;&#x67E5;&#x8BE2;&#xFF0C;&#x4F60;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x5339;&#x914D;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528; <code>CountAsync</code> &#x66FF;&#x4EE3; <code>FindAsync</code>&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x67E5;&#x8BE2;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x73A9;&#x5BB6;&#x73A9;&#x4E86;&#x591A;&#x5C11;&#x573A;&#x6E38;&#x620F;&#xFF1A;</p>
+<pre version="50ead271978282abd02aa23e6085778c"><code class="lang-javascript">query = query.WhereNotEqualTo (&quot;playerName&quot;, &quot;steve&quot;);
+query.CountAsync().ContinueWith(t =&gt;
+{
+    int count = t.Result;
+});
+</code></pre>
+<p version="17fff6376b1649ed4f36b15e7623ada2"><code>&#x5BF9;&#x4E8E;&#x8D85;&#x8FC7; 1000 &#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x67E5;&#x8BE2;&#xFF0C;&#x8FD9;&#x79CD;&#x8BA1;&#x6570;&#x8BF7;&#x6C42;&#x53EF;&#x80FD;&#x88AB;&#x8D85;&#x65F6;&#x9650;&#x5236;&#x3002;&#x4ED6;&#x4EEC;&#x53EF;&#x80FD;&#x9047;&#x5230;&#x8D85;&#x65F6;&#x9519;&#x8BEF;&#x6216;&#x8005;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8FD1;&#x4F3C;&#x7684;&#x503C;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x8BF7;&#x4ED4;&#x7EC6;&#x8BBE;&#x8BA1;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x67B6;&#x6784;&#x6765;&#x907F;&#x514D;&#x4F9D;&#x8D56;&#x8FD9;&#x79CD;&#x8BA1;&#x6570;&#x67E5;&#x8BE2;&#x3002;</code></p>
+<p version="bf96435d1eaf281d74b30974f0a9d3c7"><em>&#x67E5;&#x8BE2;&#x6570;&#x91CF;&#x9650;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&apos;Limit(int)&apos;&#x5728;CountAsync&#x4E2D;&#x4E0D;&#x4F1A;&#x751F;&#x6548;&#x3002;</em></p>
+<h3 id="-">&#x5173;&#x7CFB;&#x67E5;&#x8BE2;</h3>
+<p version="8a1f55c4a488f8d92c85ab1f958bc7e6">LeanCloud&#x652F;&#x6301;&#x7528;&#x5173;&#x7CFB;<code>AVRelation</code>&#x5173;&#x8054;2&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x652F;&#x6301;&#x7528;&#x5173;&#x7CFB;&#x67E5;&#x8BE2;&#x6765;&#x83B7;&#x53D6;&#x76F8;&#x5173;&#x8054;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre version="bada8ffb09a35d26a8f0512ed0fe4b7b"><code class="lang-javascript">AVObject girlType = new AVObject (&quot;GirType&quot;);
+girlType [&quot;typeName&quot;] = &quot;Hot&quot;;
+girlType [&quot;ageMax&quot;] = 27;
+girlType [&quot;ageMin&quot;] = 18;
+AVObject beckham = new AVObject (&quot;Boy&quot;);
+beckham[&quot;name&quot;]=&quot;David Beckham&quot;;
+beckham [&quot;age&quot;] = 38;
+beckham [&quot;focusType&quot;] = girlType;
+//&#x4FDD;&#x5B58;beckham&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;girlType&#x4E5F;&#x4FDD;&#x5B58;&#x5230;&#x670D;&#x52A1;&#x5668;&#x3002;
+Task saveTask = beckham.SaveAsync ().ContinueWith (t =&gt;
+    {
+        AVQuery&lt;AVObject&gt; boyQuery=new AVQuery&lt;AVObject&gt;(&quot;Boy&quot;);
+        boyQuery = boyQuery.WhereEqualTo(&quot;focusType&quot;, girlType);
+        boyQuery.FindAsync().ContinueWith(s=&gt;
+        {
+            IEnumerable&lt;AVObject&gt; boys = s.Result;
+        });
+    });
+</code></pre>
+<p version="ee2cca0e3cdee16e7196b73aab4b34f2">&#x5173;&#x7CFB;&#x7684;&#x5185;&#x5D4C;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x5F00;&#x53D1;&#x8005;&#x7528;&#x7B80;&#x6D01;&#x7684;&#x4EE3;&#x7801;&#x5904;&#x7406;&#x590D;&#x6742;&#x7684;&#x5173;&#x7CFB;&#x5185;&#x5D4C;&#x67E5;&#x8BE2;&#xFF0C;&#x6BD4;&#x5982;&#x8981;&#x67E5;&#x8BE2;<code>&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5173;&#x6CE8;&#x4E86;&#x5E74;&#x9F84;&#x5C0F;&#x4E8E;27&#x5C81;&#x5973;&#x751F;&#x7C7B;&#x578B;&#x7684;&#x90A3;&#x4E9B;&#x7537;&#x751F;&#x4EEC;</code>&#xFF1A;</p>
+<pre version="55438cb83cafc13a833a53cc307aeec1"><code class="lang-javascript">AVQuery&lt;AVObject&gt; girlTypeQuery=new AVQuery&lt;AVObject&gt;(&quot;GirType&quot;);//
+girlTypeQuery = girlTypeQuery.WhereLessThan (&quot;ageMax&quot;, 27);//&#x5E74;&#x9F84;&#x5C0F;&#x4E8E;27&#x7684;&#x840C;&#x59B9;&#x7EB8;
+AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(&quot;Boy&quot;);
+query = query.WhereMatchesQuery (&quot;focusType&quot;, girlTypeQuery);//&#x627E;&#x51FA;&#x559C;&#x6B22;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x7684;&#x7537;&#x751F;&#x4EEC;
+</code></pre>
+<p version="fba34040e7c8b61d2a3df59ad8937f50">&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684; limit &#x9650;&#x5236; 100 &#x4E5F;&#x540C;&#x6837;&#x4F5C;&#x7528;&#x5728;&#x5185;&#x5D4C;&#x67E5;&#x8BE2;&#x4E0A;&#x3002;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x662F;&#x5927;&#x89C4;&#x6A21;&#x7684;&#x6570;&#x636E;&#x67E5;&#x8BE2;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4ED4;&#x7EC6;&#x6784;&#x9020;&#x4F60;&#x7684;&#x67E5;&#x8BE2;&#x5BF9;&#x8C61;&#x6765;&#x83B7;&#x53D6;&#x60F3;&#x8981;&#x7684;&#x884C;&#x4E3A;&#x3002;&#x53CD;&#x4E4B;&#xFF0C;&#x4E0D;&#x60F3;&#x5339;&#x914D;&#x67D0;&#x4E2A;&#x5B50;&#x67E5;&#x8BE2;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>WhereDoesNotMatchQuery</code> &#x65B9;&#x6CD5;&#xFF0C;&#x4EE3;&#x7801;&#x4E0D;&#x518D;&#x6556;&#x8FF0;&#x3002;</p>
+<p version="14bc60a2cfe92725101cd84c85062979">&#x67E5;&#x8BE2;&#x5DF2;&#x7ECF;&#x9009;&#x62E9;&#x4E86;&#x559C;&#x6B22;&#x7684;&#x7C7B;&#x578B;&#x7684;&#x7537;&#x751F;&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x9650;&#x5B9A;&#x5728;&#x6700;&#x8FD1;10&#x4E2A;&#x52A0;&#x5165;&#x7CFB;&#x7EDF;&#x7684;&#x7537;&#x751F;&#xFF0C;&#x53EF;&#x4EE5;&#x5982;&#x6B64;&#x505A;&#xFF1A;</p>
+<pre version="8082d3982a75aba19596560e4365db66"><code class="lang-javascript">AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(&quot;Boy&quot;);
+query = query.OrderByDescending(&quot;createdAt&quot;);
+query = query.Limit(10);
+query = query.Include(&quot;focusType&quot;);
+</code></pre>
+<p version="abc6e5d4043dfb63907cfbb7e4cfe7e5">&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; dot&#xFF08;&#x82F1;&#x8BED;&#x53E5;&#x53F7;:&quot;.&quot;&#xFF09;&#x64CD;&#x4F5C;&#x7B26;&#x6765;&#x591A;&#x5C42; Include &#x5185;&#x5D4C;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x4F60;&#x8FD8;&#x60F3;&#x8FDB;&#x4E00;&#x6B65;&#x83B7;&#x53D6;<code>GirType</code>&#x6240;&#x5173;&#x8054;&#x7684;&#x5973;&#x751F;&#xFF08;&#x5C31;&#x662F;&#x90A3;&#x4E9B;&#x6807;&#x660E;&#x4E86;&#x81EA;&#x5DF1;&#x96B6;&#x5C5E;&#x4E8E;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x5973;&#x751F;&#xFF09;&#xFF1A;</p>
+<pre version="ac276a187fce995721612407b67b41f2"><code class="lang-javascript">query = query.Include(&quot;focusType.girls&quot;);
+</code></pre>
+<h2 id="-">&#x4EFB;&#x52A1;</h2>
+<h3 id="-">&#x5EF6;&#x7EED;&#x4EFB;&#x52A1;</h3>
+<p version="5fe701f4584ab8617dda365fabd6654f">&#x6BCF;&#x4E00;&#x4E2A;<code>Task</code>&#x90FD;&#x4F1A;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x53EB;&#x505A;<code>ContinueWith</code>&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x8868;&#x793A;<code>Task</code>&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#x7684;<code>&#x5EF6;&#x7EED;&#x4EFB;&#x52A1;</code>&#x7684;&#x4EE3;&#x7406;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;<code>Task</code>&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF0C;&#x6216;&#x8005;&#x901A;&#x8FC7;&#x8BBF;&#x95EE;<code>Task</code>&#x81EA;&#x5E26;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5224;&#x65AD;&#x4EFB;&#x52A1;&#x662F;&#x5426;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x6216;&#x8005;&#x4EFB;&#x52A1;&#x662F;&#x5426;&#x6709;&#x5F02;&#x5E38;&#xFF1A;</p>
+<pre version="3dd10034bad45a20d4fd772ee10851d0"><code class="lang-javascript">gameScore.SaveAsync().ContinueWith(t=&gt;
+{
+    if(t.IsCanceled)
+    {
+        //&#x4FDD;&#x5B58;&#x56E0;&#x4E3A;&#x67D0;&#x4E9B;&#x539F;&#x56E0;&#x53D6;&#x6D88;&#x4E86;
+    }
+    else if(t.IsFaulted)
+    {
+        //&#x6709;&#x5F02;&#x5E38;,&#x83B7;&#x53D6;&#x51FA;&#x6765;&#x4EE5;&#x4FBF;&#x5904;&#x7406;
+        AggregateException exception = t.Exception;
+    }
+    else
+    {
+        //&#x4FDD;&#x5B58;&#x6210;&#x529F;&#x4E86;
+    }
+});
+</code></pre>
+<h3 id="-">&#x4EFB;&#x52A1;&#x7684;&#x94FE;&#x5F0F;&#x4E32;&#x8054;</h3>
+<p version="fdfe6fce5954e76f1fd4749b5980aa37">&#x5982;&#x679C;&#x60A8;&#x6709;JavaScript&#x4E0A;jQuery&#x7684;&#x7F16;&#x7A0B;&#x7ECF;&#x9A8C;&#xFF0C;&#x94FE;&#x5F0F;&#x5199;&#x6CD5;&#x4E0D;&#x4F1A;&#x964C;&#x751F;&#x3002;<code>&#x5EF6;&#x7EED;&#x4EFB;&#x52A1;</code>&#x4E5F;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<code>Task&lt;T&gt;</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x6CDB;&#x578B;<code>T</code>&#x5C31;&#x662F;<code>xxxxAsync()</code>&#x8FD9;&#x7C7B;&#x547D;&#x540D;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x9645;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x6240;&#x4EE5;<code>ContinueWith</code>&#x7684;&#x53C2;&#x6570;&#x5C31;&#x662F;<code>xxxxAsync()</code>&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x8FD9;&#x8DDF;&#x4F20;&#x7EDF;&#x56DE;&#x8C03;&#x6A21;&#x578B;&#x53C8;&#x5F88;&#x76F8;&#x4F3C;&#x4E86;&#xFF08;&#x6CE8;&#xFF1A;&#x53EA;&#x662F;&#x5F62;&#x4F3C;&#xFF0C;&#x672C;&#x8D28;&#x4E0D;&#x4E00;&#x6837;&#xFF09;&#xFF0C;&#x8FD9;&#x6837;&#x5728;<code>xxxxAsync()</code>&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;<code>ContinueWith</code>&#x4E2D;&#x62FF;&#x5230;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x3002;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;<code>Unwrap</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;<code>Task</code>&#xFF0C;&#x5B83;&#x80FD;&#x4FDD;&#x8BC1;&#x524D;&#x4E00;&#x4E2A;<code>Task</code>&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x518D;&#x6267;&#x884C;<code>ContinueWith</code>&#x91CC;&#x9762;&#x7684;<code>Task</code>&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x80FD;&#x4FDD;&#x8BC1;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;&#x94FE;&#x5F0F;&#x7684;&#x4EFB;&#x52A1;&#x91CC;&#x9762;&#x8D77;&#x5230;&#x9010;&#x6B65;&#x6267;&#x884C;&#x5E76;&#x4E14;&#x80FD;&#x5F88;&#x597D;&#x7684;&#x533A;&#x5206;&#x6A21;&#x5757;&#x3002;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x8FD9;&#x6BB5;&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;
+&#x5B83;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x529F;&#x80FD;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x7ED9;&#x6392;&#x540D;&#x7B2C;&#x4E00;&#x7684;&#x73A9;&#x5BB6;&#x6DFB;&#x52A0;&#x201C;&#x4E00;&#x5468;&#x4E4B;&#x661F;&#x201D;&#x7684;&#x6B21;&#x6570;&#xFF1B;</li>
+<li>&#x7ED9;&#x6392;&#x540D;&#x7B2C;&#x4E00;&#x7684;&#x73A9;&#x5BB6;&#x5956;&#x52B1;100&#x4E2A;&#x91D1;&#x5E01;&#xFF0C;&#x7ED9;&#x7B2C;&#x4E8C;&#x540D;&#x7684;&#x73A9;&#x5BB6;&#x5956;&#x52B1;80&#x4E2A;&#x91D1;&#x5E01;&#xFF1B;
+&#xFF08;&#x7B97;&#x6CD5;&#x4E0D;&#x503C;&#x5F97;&#x53C2;&#x8003;&#xFF0C;&#x53EA;&#x662F;&#x63D0;&#x4F9B;<code>&#x94FE;&#x5F0F;&#x4EFB;&#x52A1;</code>&#x7684;&#x5199;&#x6CD5;&#x53C2;&#x8003;&#xFF09;</li>
+</ul>
+<pre version="8e347768c9502969b95ad9728dbc991d"><code class="lang-javascript">AVQuery&lt;AVObject&gt; query =AVObject.GetQuery(&quot;GameScore&quot;).OrderByDescending(&quot;score&quot;);
+query.FindAsync().ContinueWith(t =&gt;
+{
+    var players = t.Result;
+    IEnumerator&lt;AVObject&gt; enumerator = players.GetEnumerator();
+    enumerator.MoveNext();
+    var golden_player = enumerator.Current;//&#x83B7;&#x53D6;&#x76EE;&#x524D;&#x5F97;&#x5206;&#x6392;&#x540D;&#x7B2C;&#x4E00;&#x7684;&#x73A9;&#x5BB6;
+    int currentweeklyStar = golden_player.Get&lt;int&gt;(&quot;weeklyStar&quot;);
+    int currentAward=golden_player.Get&lt;int&gt;(&quot;gold&quot;);
+    golden_player[&quot;weeklyStar&quot;] =currentweeklyStar + 1;//&#x672C;&#x5468;&#x4E4B;&#x661F; &#x6B21;&#x6570;&#x52A0;1
+    golden_player[&quot;gold&quot;] = currentAward + 100;//&#x5956;&#x52B1;&#x4ED6;&#xFF08;&#x5979;&#xFF09;100&#x4E2A;&#x91D1;&#x5E01;
+    return golden_player.SaveAsync();
+    }).Unwrap().ContinueWith(t =&gt;
+    {
+        return query.FindAsync();//&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x6B63;&#x786E;&#x53EF;&#x4EE5;&#x518D;&#x67E5;&#x4E00;&#x904D;
+    }).Unwrap().ContinueWith(t =&gt;
+    {
+        var players = t.Result;
+        IEnumerator&lt;AVObject&gt; enumerator = players.GetEnumerator();
+        enumerator.MoveNext();
+        enumerator.MoveNext();
+        var second_player=enumerator.Current;//&#x83B7;&#x53D6;&#x6392;&#x540D;&#x7B2C;&#x4E8C;&#x7684;&#x73A9;&#x5BB6;
+        int currentAward=second_player.Get&lt;int&gt;(&quot;gold&quot;);
+        second_player[&quot;gold&quot;]=currentAward + 80;//&#x5956;&#x52B1;&#x7B2C;&#x4E8C;&#x540D;80&#x4E2A;&#x91D1;&#x5E01;
+        return second_player.SaveAsync();
+    }).Unwrap().ContinueWith(t=&gt;
+    {
+       //&#x8FD9;&#x91CC;&#x8FD8;&#x80FD;&#x7EE7;&#x7EED;&#x6DFB;&#x52A0;&#x6301;&#x7EED;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;
+       //......
+    });//&#x8FD9;&#x79CD;&#x98CE;&#x683C;&#x53EF;&#x4EE5;&#x4F7F;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x53D8;&#x5F97;&#x5C42;&#x6B21;&#x9C9C;&#x660E;
+</code></pre>
+<h3 id="-">&#x81EA;&#x5B9A;&#x4E49;&#x4EFB;&#x52A1;</h3>
+<p version="96255abd1cf4d8014f832a8dda824184">&#x4EE5;&#x4E0A;&#x5B9E;&#x4F8B;&#x63D0;&#x4F9B;&#x4E86;&#x57FA;&#x4E8E;<code>Task</code>&#x7528;&#x6CD5;&#xFF0C;&#x5B9E;&#x9645;&#x9700;&#x6C42;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x81EA;&#x5B9A;&#x4E49;<code>Task</code>&#xFF0C;&#x5728;<code>Task</code>&#x4E2D;&#x5305;&#x542B;&#x4E86;<code>3</code>&#x4E2A;&#x6700;&#x57FA;&#x672C;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li>SetResult</li>
+<li>SetException</li>
+<li>SetCancelled</li>
+</ul>
+<p version="7a10eac9fbcde93637c6682910237fbe">&#x5728;&#x81EA;&#x5B9A;&#x4E49;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x9700;&#x8981;&#x9700;&#x8981;&#x663E;&#x793A;&#x8C03;&#x7528;&#x8FD9;<code>3</code>&#x65B9;&#x6CD5;&#x4E2D;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x51FA;&#x73B0;&#x610F;&#x5916;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<p version="fcc2ad71b6ed494c06f59d96bdd41db5">&#x5B9E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="8540ae7bc9a59f3130d68d62e5de6194"><code class="lang-javascript">public Task&lt;string&gt; SucceedAsync()
+{
+    var successful = new TaskCompletionSource&lt;string&gt; ();
+    successful.SetResult (&quot;An expected result&quot;);
+    return successful.Task;
+}
+public Task&lt;string&gt; failAsync()
+{
+    var failed = new TaskCompletionSource&lt;string&gt;();
+    failed.SetException(new Exception(&quot;An error message.&quot;));
+    return failed.Task;
+}
+</code></pre>
+<p version="54aa61af9089cae3dcdcbd3211afe826">&#x5982;&#x679C;&#x5728;&#x521B;&#x5EFA;&#x4EFB;&#x52A1;&#x65F6;&#x5C31;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x8BE5;&#x4EFB;&#x52A1;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7B80;&#x5316;&#x7684;&#x7528;&#x4E0B;&#x9762;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="3f80b8ec851aed7092e228ddab90585a"><code class="lang-javascript">Task&lt;string&gt; successful = Task.FromResult(&quot;An expected result.&quot;);
+</code></pre>
+<h3 id="-">&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x6B65;&#x65B9;&#x6CD5;</h3>
+<p version="1f7b76afa2724c646def33f4bea58993">&#x6709;&#x4E86;&#x4EE5;&#x4E0A;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x5C31;&#x4F1A;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x6253;&#x9020;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5F02;&#x6B65;&#x65B9;&#x6CD5;(<code>asynchronous functions</code>)&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x65B9;&#x6CD5;&#x90FD;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<code>Task</code>&#xFF0C;&#x4F8B;&#x5982;&#x4F60;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5982;&#x4E0B;<code>Sleep</code>&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="f3756ed33df40c940163f06942783c99"><code class="lang-javascript">public Task SleepAsync(TimeSpan duration)
+{
+    var tcs = new TaskCompletionSource&lt;int&gt;();
+    var timer = new Timer(_ =&gt;
+    {
+        tcs.SetResult(0);
+    });
+    timer.Change ((long)duration.TotalMilliseconds, Timeout.Infinite);
+    return tcs.Task;
+}
+//&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x5EF6;&#x8FDF;&#x6267;&#x884C;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;
+SleepAsync(TimeSpan.FromSeconds(1)).ContinueWith(task =&gt;
+{
+    // &#x8FD9;&#x91CC;&#x7684;&#x5185;&#x5BB9;&#x5C31;&#x4F1A;&#x5728;1s&#x4E4B;&#x540E;&#x6267;&#x884C;&#x3002;
+});
+</code></pre>
+<h3 id="-">&#x987A;&#x5E8F;&#x4EFB;&#x52A1;</h3>
+<p version="f4d658057e85100b27b8079b133c56b3">&#x4F7F;&#x7528;<code>Task</code>&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x5730;&#x7528;&#x7B80;&#x6D01;&#x5730;&#x4EE3;&#x7801;&#x8C03;&#x7528;&#x4E00;&#x4E9B;&#x6309;&#x7167;&#x4E00;&#x5B9A;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#x6216;&#x8005;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x91CC;&#x8BF4;&#x7684;<code>&#x6309;&#x7167;&#x4E00;&#x5B9A;&#x987A;&#x5E8F;</code>&#x6307;&#x7684;&#x662F; <code>&#x76F4;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E0B;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x624D;&#x4F1A;&#x5F00;&#x59CB;</code>&#xFF0C;&#x5B9E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="a611770e2383d6fa60ecc48f7344454e"><code class="lang-javascript">var query = new AVQuery&lt;AVObject&gt;(&quot;GameScore&quot;).WhereGreaterThanOrEqualTo(&quot;score&quot;, 100000);
+query.FindAsync().ContinueWith(t =&gt;
+    {
+      // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x57FA;&#x7840;&#x7684;Task&#x3002;
+      Task task = Task.FromResult(0);
+      foreach (AVObject result in t.Result)
+      {
+      AVObject toStared = result;
+      toStared[&quot;Stared&quot;]=true;&#xFF0F;&#xFF0F;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x603B;&#x5206;&#x8D85;&#x8FC7;100000&#x6DFB;&#x52A0;&#x201C;&#x661F;&#x73A9;&#x5BB6;&#x201D;&#x7684;&#x79F0;&#x53F7;&#x3002;
+      // &#x9488;&#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;AVObject,task&#x90FD;&#x53BB;&#x8C03;&#x7528;SaveAsync&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;
+      task = task.ContinueWith(_ =&gt;
+      {
+        // &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Task&#x3002;&#x5F53;&#x4FDD;&#x5B58;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#x8FD9;&#x4E2A;Task&#x5C31;&#x4F1A;&#x6807;&#x8BB0;&#x4E3A;&#x5B8C;&#x6210;&#x3002;
+         return result.SaveAsync();
+      }).Unwrap();
+      };
+      return task;
+    }).Unwrap().ContinueWith(_ =&gt;
+      {
+        // &#x6BCF;&#x4E2A;&#x52A0;&#x661F;&#x73A9;&#x5BB6;&#x7684;&#x4FE1;&#x606F;&#x90FD;&#x66F4;&#x65B0;&#x5B8C;&#x6BD5;&#x3002;
+      });
+</code></pre>
+<h3 id="-">&#x5E73;&#x884C;&#x4EFB;&#x52A1;</h3>
+<p version="231808630f75cba679bc61ddad2a775b">&#x5F53;&#x7136;&#x5728;&#x7F16;&#x7A0B;&#x4E16;&#x754C;&#x91CC;&#x6709;&#x987A;&#x5E8F;&#x7684;&#x5C31;&#x5FC5;&#x7136;&#x5B58;&#x5728;&#x5E73;&#x884C;&#x7684;&#x3002;<code>&#x5E73;&#x884C;&#x4EFB;&#x52A1;</code>&#x6307;&#x7684;&#x662F;&#x5B9A;&#x4E49;&#x4E00;&#x7CFB;&#x5217;<code>&#x540C;&#x65F6;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;</code>&#x3002;<code>Task</code>&#x5185;&#x90E8;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x65B9;&#x6CD5;<code>WhenAll</code>&#xFF0C;&#x8C03;&#x7528;&#x5B83;&#x9700;&#x8981;&#x4F20;&#x5165;&#x4E00;&#x4E2A;<code>Task</code>&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x7136;&#x540E;&#x5B83;&#x5C31;&#x5E2E;&#x52A9;&#x540C;&#x65F6;&#x542F;&#x52A8;&#x96C6;&#x5408;&#x91CC;&#x9762;&#x7684;<code>Task</code>&#xFF0C;&#x5B83;&#x8FD4;&#x56DE;&#x7684;<code>Task</code>&#x7684;<code>IsCompleted</code>&#x5C5E;&#x6027;&#x4F1A;&#x5728;&#x96C6;&#x5408;&#x4E2D;&#x6240;&#x6709;<code>Task</code>&#x90FD;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x624D;&#x4F1A;&#x88AB;&#x7F6E;&#x4E3A;<code>true</code>&#xFF0C;&#x5B9E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="988e2d8c79003697754159ab273cb64d"><code class="lang-javascript">var query = new AVQuery&lt;AVObject&gt;(&quot;GameScore&quot;).WhereEqualTo(&quot;score&quot;, 1000000000);
+query.FindAsync().ContinueWith(t =&gt;
+    {
+        // &#x628A;&#x7CFB;&#x7EDF;&#x91CC;&#x9762;&#x6240;&#x6709;&#x5F97;&#x5206;&#x8D85;&#x8FC7;1000000000&#x7684;&#x8FD9;&#x79CD;&#x5F00;&#x53D1;&#x6570;&#x636E;&#x4ECE;&#x5E93;&#x4E2D;&#x5220;&#x9664;&#x3002;
+        var tasks = new List&lt;Task&gt;();
+        Task task = Task.FromResult(0);
+        foreach (AVObject result in t.Result)
+        {
+            // &#x5F80;&#x4EFB;&#x52A1;&#x96C6;&#x5408;&#x91CC;&#x9762;&#x6DFB;&#x52A0;DeleteAsync&#x4EFB;&#x52A1;&#x3002;
+            tasks.Add(result.DeleteAsync());
+        }
+        // &#x8FD4;&#x56DE;&#x7684;Task.WhenAll(tasks)&#x7684;IsCompleted&#x5C5E;&#x6027;&#x4F1A;&#x5728;&#x6240;&#x6709;&#x7684;&#x4EFB;&#x52A1;&#x90FD;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#x7F6E;&#x4E3A;true&#x3002;
+        return Task.WhenAll(tasks);
+     }
+    ).Unwrap().ContinueWith(_ =&gt;
+     {
+        // &#x6700;&#x540E;&#x5C31;&#x662F;&#x6240;&#x6709;&#x7684;&#x5F00;&#x53D1;&#x6570;&#x636E;&#x90FD;&#x88AB;&#x5220;&#x9664;&#x4E86;&#x3002;
+     });
+</code></pre>
+<h2 id="-">&#x7528;&#x6237;</h2>
+<p version="4aa734468c8a327e94ca8f3d6a935682">&#x6E38;&#x620F;&#x4E2D;&#x7684;&#x7528;&#x6237;&#x65E2;&#x662F;&#x6E38;&#x620F;&#x672C;&#x8EAB;&#x7684;&#x73A9;&#x5BB6;&#x4E5F;&#x662F;&#x5E26;&#x6709;&#x7EDF;&#x8BA1;&#x610F;&#x4E49;&#x548C;&#x793E;&#x4EA4;&#x610F;&#x4E49;&#x7684;&#x8F7D;&#x4F53;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x6E38;&#x620F;&#x4E2D;&#x6700;&#x57FA;&#x672C;&#x5173;&#x4E8E;&#x7528;&#x6237;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x5C31;&#x662F;&#x7528;&#x6237;&#x6240;&#x83B7;&#x5F97;&#x5206;&#x6570;&#x4EE5;&#x53CA;&#x6392;&#x540D;&#xFF0C;LeanCloud&#x5DF2;&#x7ECF;&#x5728;SDK&#x4E2D;&#x5185;&#x5D4C;&#x4E86;&#x5173;&#x4E8E;&#x7528;&#x6237;&#x8FD9;&#x4E2A;&#x8F83;&#x4E3A;&#x7279;&#x6B8A;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E9B;&#x6700;&#x57FA;&#x672C;&#x7684;&#x64CD;&#x4F5C;&#x548C;&#x6570;&#x636E;&#x670D;&#x52A1;&#x3002;</p>
+<h3 id="-">&#x6CE8;&#x518C;</h3>
+<p version="22fe7c2fd6d427bd956c00a6200c5542">&#x6CE8;&#x518C;&#x7528;&#x6237;&#x5728;LeanCloud SDK&#x4E2D;&#x6781;&#x4E3A;&#x7B80;&#x5355;&#xFF0C;&#x770B;&#x5982;&#x4E0B;&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre version="1cb25920a938e34337b846fa115a24ac"><code class="lang-javascript">var userName = &quot;demoUser&quot;;
+var pwd = &quot;leancloud&quot;;
+var email = &quot;xxx@xxx.com&quot;;
+var user = new AVUser();
+user.Username = userName;
+user.Password = pwd;
+user.Email = email;
+user.SignUpAsync().ContinueWith(t =&gt;
+{
+   var uid = user.ObjectId;
+});
+</code></pre>
+<p version="d10ade831393a245a7df223022cb880e">&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x5C31;&#x53EF;&#x4EE5;&#x5F88;&#x5FEB;&#x7684;&#x6CE8;&#x518C;&#x4E3A;&#x5F53;&#x524D;&#x7684;&#x5E94;&#x7528;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#x4E5F;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x552F;&#x4E00;&#x7684;<code>ObjectId</code>&#x3002;
+<strong>&#x7528;&#x6237;&#x7684;&#x5BC6;&#x7801;&#x5728;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x754C;&#x9762;&#x662F;&#x65E0;&#x6CD5;&#x663E;&#x793A;&#x7684;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x670D;&#x52A1;&#x7AEF;&#x5B58;&#x50A8;&#x7684;&#x5E76;&#x4E0D;&#x662F;&#x660E;&#x6587;&#xFF0C;&#x662F;&#x901A;&#x8FC7;&#x4E0D;&#x53EF;&#x9006;&#x7684;&#x7279;&#x6B8A;&#x7B97;&#x6CD5;&#x52A0;&#x5BC6;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x4E32;</strong></p>
+<h3 id="-">&#x624B;&#x673A;&#x53F7;&#x6CE8;&#x518C;</h3>
+<p version="34600806838e9152093b55cecc16a90e">&#x4E3A;&#x4E86;&#x9002;&#x5E94;&#x79FB;&#x52A8;&#x4E92;&#x8054;&#x65F6;&#x4EE3;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x6211;&#x4EEC;&#x7279;&#x5730;&#x589E;&#x52A0;&#x4E86;&#x624B;&#x673A;&#x53F7;&#x6CE8;&#x518C;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5F53;&#x7136;&#x524D;&#x63D0;&#x662F;&#x4F1A;&#x8FDB;&#x884C;&#x77ED;&#x4FE1;&#x8BA4;&#x8BC1;&#xFF0C;&#x5C31;&#x5982;&#x540C;&#x5FAE;&#x4FE1;&#x4E00;&#x6837;&#xFF0C;&#x6CE8;&#x518C;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x53D1;&#x9001;6&#x4F4D;&#x6570;&#x5B57;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x5230;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x624B;&#x673A;&#x4E0A;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x56DE;&#x8C03;&#x6211;&#x4EEC;&#x7684;&#x9A8C;&#x8BC1;&#x63A5;&#x53E3;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x4E00;&#x6B21;&#x624B;&#x673A;&#x53F7;&#x7684;&#x6CE8;&#x518C;&#x3002;
+&#x5728;<a href="/app.html?appid={{appid}}#/permission">&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a>&#x53EF;&#x4EE5;&#x5F00;&#x542F;&#x8FD9;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x3002;</p>
+<pre version="faa6919462a341643164ccba6b5e36c2"><code class="lang-javascript">&#x9A8C;&#x8BC1;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x624B;&#x673A;&#x53F7;&#x7801;
+&#x5141;&#x8BB8;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x624B;&#x673A;&#x77ED;&#x4FE1;&#x767B;&#x5F55;
+</code></pre>
+<p version="6b32f76c0644c74bc139753c7bd64461">&#x5982;&#x4E0B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6848;&#x4F8B;&#xFF1A;</p>
+<pre version="31ce4418bc068f2a7c03216994658a1e"><code class="lang-javascript">//&#x7B2C;&#x4E00;&#x6B65;&#x5148;&#x6CE8;&#x518C;
+var user = new AVUser();
+user.Username = &quot;UnityUser&quot;;
+user.Password = &quot;leancloud&quot;;
+user.MobilePhoneNumber = &quot;18688888888&quot;;
+var task= user.SignUpAsync ();
+//&#x5982;&#x6B64;&#x505A;&#xFF0C;&#x77ED;&#x4FE1;&#x5C31;&#x4F1A;&#x53D1;&#x9001;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x624B;&#x673A;&#x53F7;
+</code></pre>
+<p version="44660b5ca3fa9a1851a47739baecb6bc">&#x4EE5;&#x4E0A;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x7ED9;&#x7528;&#x6237;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x754C;&#x9762;&#xFF0C;&#x8BA9;&#x7528;&#x6237;&#x8F93;&#x5165;&#x6536;&#x5230;&#x7684;6&#x4F4D;&#x6570;&#x5B57;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8FD0;&#x884C;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre version="9327debb4684b0635b3cf6f9b8b6a81b"><code class="lang-javascript">//&#x7B2C;&#x4E8C;&#x6B65;&#x56DE;&#x8C03;&#x8BA4;&#x8BC1;
+var task = AVUser.VerifyMobilePhoneAsync(code);//code&#x4EE3;&#x8868;6&#x4F4D;&#x6570;&#x5B57;&#x7684;&#x9A8C;&#x8BC1;&#x7801;
+task.ContinueWith(t =&gt;
+{
+    var success= t.Result;
+});
+</code></pre>
+<p version="accd4c7c01a45c215e164a1ef68c8fae">&#x4EE5;&#x4E0A;&#x4E24;&#x6B65;&#xFF0C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x624B;&#x673A;&#x53F7;&#x6CE8;&#x518C;&#x6D41;&#x7A0B;&#x3002;</p>
+<h3 id="-">&#x767B;&#x5F55;</h3>
+<p version="9f87f78bfd3816ceb354d9409c8f55a2">&#x767B;&#x5F55;&#x662F;&#x4E00;&#x4E2A;<code>AVUser</code>&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x901A;&#x8FC7;&#x5982;&#x4E0B;<code>&#x4E09;&#x79CD;</code>&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x767B;&#x5F55;&#xFF0C;&#x767B;&#x5F55;&#x4E4B;&#x540E;&#xFF0C;SDK&#x4F1A;&#x9ED8;&#x8BA4;&#x5C06;&#x6B64;&#x6B21;&#x767B;&#x5F55;&#x7684;&#x7528;&#x6237;&#x8BBE;&#x7F6E;&#x4E3A;<code>AVUser.CurrentUser</code>&#xFF1A;</p>
+<h4 id="-">&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x767B;&#x5F55;</h4>
+<pre version="6df0fb28a706e01ae501dad32709a5b2"><code class="lang-javascript">var userName = &quot;demoUser&quot;;
+var pwd = &quot;leancloud&quot;;
+AVUser.LogInAsync(userName, pwd).ContinueWith(t =&gt;
+{
+    if (t.IsFaulted || t.IsCanceled)
+    {
+       var error = t.Exception.Message; // &#x767B;&#x5F55;&#x5931;&#x8D25;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;
+    }
+    else
+    {
+       //&#x767B;&#x5F55;&#x6210;&#x529F;
+    }
+});
+</code></pre>
+<h4 id="-">&#x624B;&#x673A;&#x53F7;&#x548C;&#x5BC6;&#x7801;&#x767B;&#x5F55;</h4>
+<p version="8bb3c2041e4980174f31de48ba34e588">&#x5728;&#x77ED;&#x4FE1;&#x670D;&#x52A1;&#x4E0A;&#x7EBF;&#x4E4B;&#x540E;&#xFF0C;&#x53EA;&#x8981;&#x662F;<code>&#x901A;&#x8FC7;&#x8BA4;&#x8BC1;</code>&#x7684;&#x624B;&#x673A;&#x53F7;&#x53EF;&#x4EE5;&#x5F53;&#x505A;&#x7528;&#x6237;&#x540D;&#x5728; LeanCloud &#x670D;&#x52A1;&#x7AEF;&#x8FDB;&#x884C;&#x767B;&#x5F55;&#xFF0C;&#x81EA;&#x7136;SDK&#x91CC;&#x9762;&#x4E5F;&#x52A0;&#x5165;&#x4E86;&#x76F8;&#x5E94;&#x7684;&#x652F;&#x6301;(Unity SDK &#x81EA;V1.1.0&#x4EE5;&#x53CA;&#x4EE5;&#x540E;&#x7684;&#x7248;&#x672C;&#x90FD;&#x6709;&#x652F;&#x6301;)&#x3002;&#x5B83;&#x7684;&#x8C03;&#x7528;&#x4E0E;&#x7528;&#x6237;&#x540D;&#x767B;&#x5F55;&#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x662F;&#x65B9;&#x6CD5;&#x540D;&#x5B57;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;:</p>
+<pre version="ced62964cad70feb16c7fff09190255a"><code class="lang-javascript">AVUser.LogInByMobilePhoneNumberAsync (mobilePhone, password).ContinueWith (t =&gt;
+        {
+            AVUser user=t.Result;
+            //&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x767B;&#x5F55;&#x4E4B;&#x540E;&#x7684;AVUser&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;AVUser.CurrentUser&#x5DF2;&#x7ECF;&#x662F;&#x5F53;&#x524D;&#x767B;&#x5F55;&#x7684;&#x7528;&#x6237;&#x4E86;&#x3002;
+            //&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4E3A;&#x4E86;&#x4F7F;&#x94FE;&#x5F0F;&#x8868;&#x8FBE;&#x5F0F;&#x8131;&#x79BB;&#x5BF9;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x5F53;&#x7136;&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B;AVUser.CurrentUser&#x5E94;&#x8BE5;&#x5DF2;&#x7ECF;&#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x4E00;&#x822C;&#x7684;&#x9700;&#x6C42;&#x3002;
+        });
+</code></pre>
+<h4 id="-">&#x624B;&#x673A;&#x53F7;&#x548C;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x767B;&#x5F55;</h4>
+<p version="09a1bf2f7c8c730d73fc9d20b30faa02">&#x5728;&#x5BF9;&#x5BA2;&#x6237;&#x7AEF;&#x9A8C;&#x8BC1;&#x8981;&#x6C42;&#x6BD4;&#x8F83;&#x9AD8;&#x7684;&#x5E94;&#x7528;&#x91CC;&#x9762;&#xFF0C;&#x4E5F;&#x8BB8;&#x6709;&#x4E9B;&#x5E94;&#x7528;&#x8981;&#x6C42;&#x652F;&#x6301;&#x77ED;&#x4FE1;&#x968F;&#x673A;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x4F5C;&#x4E3A;&#x4E34;&#x65F6;&#x7684;&#x5BC6;&#x7801;&#x767B;&#x5F55;&#xFF0C;&#x8FD9;&#x4E2A;&#x5E94;&#x7528;&#x573A;&#x666F;&#x5728;&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x88AB;&#x666E;&#x904D;&#x7684;&#x91C7;&#x7528;&#x4E86;&#xFF0C;&#x8FD9;&#x79CD;&#x9A8C;&#x8BC1;&#x673A;&#x5236;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x5B89;&#x5168;&#x6027;&#x9AD8;&#x7684;&#x4E00;&#x79CD;&#x673A;&#x5236;&#xFF0C;&#x81EA;&#x7136; LeanCloud &#x4E5F;&#x7ED9;&#x4E88;&#x4E86;&#x652F;&#x6301;&#x3002;&#x5B83;&#x6BD4;&#x524D;2&#x79CD;&#x9759;&#x6001;&#x767B;&#x5F55;&#x7684;&#x65B9;&#x6CD5;&#x591A;&#x4E86;<code>&#x53D1;&#x9001;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;</code>&#x8FD9;&#x4E00;&#x6B65;&#xFF0C;&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="d313eefa144e419f8d60a84e4b097162"><code class="lang-javascript">//&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x8BF7;&#x6C42;&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x9001;6&#x4E3A;&#x6570;&#x5B57;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x5230;&#x6307;&#x5B9A;mobilePhoneNumber&#x4E0A;&#x3002;
+try
+{
+    AVUser.RequestLoginSmsCodeAsync(mobilePhoneNumber).ContinueWith(t =&gt;
+       {
+            var success=t.Result;
+            //&#x5224;&#x65AD;&#x8FD4;&#x56DE;&#x503C;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x662F;&#x5426;&#x53D1;&#x9001;&#x6210;&#x529F;&#xFF0C;&#x4E0D;&#x6210;&#x529F;&#x4F1A;&#x629B;&#x51FA;&#x5E26;&#x6709;error&#x7684;AVException&#xFF0C;&#x5E76;&#x4E14;t.Result&#x4F1A;&#x88AB;&#x7F6E;&#x4E3A;false.
+            //&#x5728;&#x5904;&#x7406;&#x8FD9;&#x79CD;&#x5BB9;&#x6613;&#x56E0;&#x4E3A;&#x7528;&#x6237;&#x8F93;&#x5165;&#x4E0D;&#x5408;&#x6CD5;&#x800C;&#x4EA7;&#x751F;&#x7684;&#x5F02;&#x5E38;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x7A0B;&#x5E8F;&#x7684;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;try/catch&#x673A;&#x5236;&#x8FDB;&#x884C;&#x63D0;&#x524D;&#x7684;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x3002;
+        });
+}
+catch(AVException avException)
+{
+}
+</code></pre>
+<pre version="f4180387421f07c8c2148af8f28b93e7"><code class="lang-javascript">//&#x7B2C;&#x4E8C;&#x6B65;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x9A8C;&#x8BC1;&#x7801;&#x767B;&#x5F55;&#xFF0C;&#x5982;&#x679C;&#x9A8C;&#x8BC1;&#x7801;&#x8F93;&#x5165;&#x9519;&#x8BEF;&#x4E5F;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;
+try
+{
+    AVUser.LoginBySmsCodeAsync (mobilePhoneNumber, code).ContinueWith(t=&gt;
+        {
+            var success=t.Result;
+        });
+}
+catch(AVException avException)
+{
+}
+</code></pre>
+<h3 id="-">&#x90AE;&#x7BB1;&#x8BA4;&#x8BC1;</h3>
+<p version="deb0d9fe3615a27c433ac027f40116b8">&#x5728;&#x79FB;&#x52A8;&#x4E92;&#x8054;&#x65F6;&#x4EE3;&#xFF0C;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x90FD;&#x662F;&#x5FC5;&#x987B;&#x5728;&#x53CC;&#x65B9;&#x7EDF;&#x4E00;&#x8BA4;&#x8BC1;&#x4E4B;&#x540E;&#x624D;&#x4F1A;&#x88AB;&#x89C6;&#x4E3A;&#x4E00;&#x79CD;&#x5B89;&#x5168;&#x673A;&#x5236;&#xFF0C;&#x6BD4;&#x5982;&#x90AE;&#x7BB1;&#x7684;&#x8BA4;&#x8BC1;&#xFF0C;&#x540C;&#x6837;&#xFF0C;&#x5728;<code>AVUser</code>&#x8FD9;&#x4E2A;&#x7279;&#x6B8A;&#x7684;<code>AVObject</code>&#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x5B57;&#x6BB5;<code>email</code>&#xFF0C;&#x53EF;&#x4EE5;&#x5728;<a href="/data.html?appid={{appid}}">&#x6570;&#x636E;&#x7BA1;&#x7406;</a>&#x7684;<code>_User</code>&#x8868;&#x770B;&#x5230;&#x8FD9;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x5728;&#x6CE8;&#x518C;&#x662F;&#x63D0;&#x4F9B;&#x7684;&#x90AE;&#x7BB1;&#xFF0C;&#x5F53;&#x5728;<a href="/app.html?appid={{appid}}#/permission">&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a>&#x4E2D;&#x52FE;&#x9009;&#x4E86;</p>
+<pre version="79070fb7ad17aa0d3d584d052cd60f60"><code class="lang-javascript">&#x542F;&#x7528;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x90AE;&#x7BB1;&#x9A8C;&#x8BC1;
+</code></pre>
+<p version="34db1c8334da3756a200adb7f24d883d">&#x8FD9;&#x6837;&#x5728;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x7684;&#x65F6;&#x5019;&#xFF0C;LeanCloud&#x9ED8;&#x8BA4;&#x5C31;&#x4F1A;&#x53D1;&#x9001;&#x4E00;&#x5C01;&#x90AE;&#x4EF6;&#xFF0C;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x90AE;&#x4EF6;&#x7684;&#x6A21;&#x677F;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;<a href="/app.html?appid={{appid}}#/email">&#x90AE;&#x4EF6;&#x6A21;&#x677F;</a>&#x4E2D;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p version="5e4808d95500306624a4399fbd05b2b8">&#x6CE8;&#x610F;&#xFF0C;&#x9A8C;&#x8BC1;&#x8FC7;&#x7684;&#x7528;&#x6237;&#xFF0C;TA&#x7684;<code>emailVerified</code>&#x5C06;&#x4F1A;&#x7F6E;&#x6210;<code>true</code>&#xFF0C;&#x53CD;&#x4E4B;<code>false</code>&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;<strong>&#x672A;&#x542F;&#x7528;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x90AE;&#x7BB1;&#x9A8C;&#x8BC1;</strong>&#xFF0C;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x4F1A;&#x4E3A;&#x7A7A;&#x3002;</p>
+<p version="2d4e4543731ef52067cedf737cd08461">&#x7528;&#x6237;&#x90AE;&#x7BB1;&#x9A8C;&#x8BC1;&#x540E;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;<code>AV.Cloud.onVerified(&apos;email&apos;,function)</code>&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x65B9;&#x4FBF;&#x60A8;&#x505A;&#x4E00;&#x4E9B;&#x540E;&#x5904;&#x7406;&#x3002;</p>
+<h3 id="-">&#x624B;&#x673A;&#x53F7;&#x8BA4;&#x8BC1;</h3>
+<p version="d82166f74f36555a9bb988e3ed930fed">&#x76F8;&#x5BF9;&#x4E8E;&#x90AE;&#x7BB1;&#x8BA4;&#x8BC1;&#xFF0C;&#x624B;&#x673A;&#x53F7;&#x8BA4;&#x8BC1;&#x7684;&#x8FC7;&#x7A0B;&#x7A0D;&#x5FAE;&#x9700;&#x8981;&#x591A;&#x4E00;&#x70B9;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x679C;&#x5F53;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x5728;&#x6CE8;&#x518C;&#x7684;&#x65F6;&#x5019;&#x6CA1;&#x6709;&#x5F00;&#x542F;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#xFF0C;&#x4F34;&#x968F;&#x4E1A;&#x52A1;&#x53D1;&#x5C55;&#xFF0C;&#x53D1;&#x73B0;&#x9700;&#x8981;&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#x7684;&#x624B;&#x673A;&#xFF0C;LeanCloud&#x6B63;&#x597D;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x4E00;&#x63A5;&#x53E3;&#x3002;</p>
+<pre version="f63d214f2310b253c54c7c04a6ec4031"><code class="lang-javascript">//&#x8C03;&#x7528;&#x7684;&#x524D;&#x63D0;&#x662F;&#xFF0C;&#x6539;&#x624B;&#x673A;&#x53F7;&#x5DF2;&#x7ECF;&#x4E0E;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x7528;&#x6237;&#x6709;&#x5173;&#x8054;(_User&#x8868;&#x4E2D;&#x7684;mobilePhoneNumber&#x5373;&#x53EF;&#x5173;&#x8054;&#x624B;&#x673A;&#xFF0C;&#x81F3;&#x4E8E;&#x5982;&#x4F55;&#x5173;&#x8054;&#x53D6;&#x51B3;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;)
+AVUser.RequestMobilePhoneVerifyAsync (&quot;18688888888&quot;).ContinueWith(t=&gt;
+        {
+           //&#x8FD9;&#x6837;&#x5C31;&#x6210;&#x529F;&#x7684;&#x53D1;&#x9001;&#x4E86;&#x9A8C;&#x8BC1;&#x7801;
+        });
+</code></pre>
+<p version="a9cbe451a8da9f5074687f123485f7f9">&#x56DE;&#x8C03;&#x8BA4;&#x8BC1;&#x7684;&#x63A5;&#x53E3;&#x4E0E;<code>&#x624B;&#x673A;&#x53F7;&#x6CE8;&#x518C;</code>&#x5C0F;&#x8282;&#x7684;&#x7B2C;&#x4E8C;&#x6B65;&#x4E00;&#x6837;&#x3002;</p>
+<p version="069b8e06f53a8b31d5d48e23d4eb3914">&#x9A8C;&#x8BC1;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x7684;<code>mobilePhoneVerified</code>&#x5C5E;&#x6027;&#x53D8;&#x4E3A;true&#xFF0C;&#x5E76;&#x4E14;&#x8C03;&#x7528;&#x4E91;&#x5F15;&#x64CE;&#x7684;<code>AV.Cloud.onVerifed(&apos;sms&apos;, function)</code>&#x65B9;&#x6CD5;&#x3002;</p>
+<p version="158adc519009f772015e5f08d3217ebb"><strong>&#x4EE5;&#x4E0A;&#x53EA;&#x662F;&#x9488;&#x5BF9;_User&#x8868;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;mobilePhoneNumber&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x4F46;&#x662F;&#x5B58;&#x5728;&#x53E6;&#x4E00;&#x79CD;&#x9700;&#x6C42;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x652F;&#x4ED8;&#x5B9D;&#x5728;&#x8FDB;&#x884C;&#x4EA4;&#x6613;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x8981;&#x6C42;&#x8FDB;&#x884C;&#x5B9E;&#x65F6;&#x7684;&#x77ED;&#x4FE1;&#x8BA4;&#x8BC1;&#xFF0C;&#x8FD9;&#x4E00;&#x673A;&#x5236;&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x666E;&#x904D;&#x5B58;&#x5728;&#x4E8E;&#x5404;&#x79CD;&#x5E94;&#x7528;&#x4E2D;&#x8FDB;&#x884C;&#x654F;&#x611F;&#x64CD;&#x4F5C;&#x7684;&#x9996;&#x9009;&#xFF0C;LeanCloud &#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x4E00;&#x673A;&#x5236;</strong></p>
+<h4 id="-">&#x624B;&#x673A;&#x77ED;&#x4FE1;&#x9488;&#x5BF9;&#x5E94;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#x7684;&#x9A8C;&#x8BC1;</h4>
+<p version="1a04dc262252d9d78ce1f945a57bbf49"><code>AVCloud</code>&#x7C7B;&#x5305;&#x542B;&#x4E86;&#x76F8;&#x5173;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="dee3a3b6b09b7e1379093ecf65645cbc"><code class="lang-javascript">//&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x5148;&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#xFF0C;&#x5982;&#x679C;&#x624B;&#x673A;&#x53F7;&#x65E0;&#x6548;&#x5219;&#x4F1A;&#x53D1;&#x9001;&#x5931;&#x8D25;&#x3002;
+public void RequestSMSCode()
+{
+    var task=AVCloud.RequestSMSCode (&quot;18688888888&quot;).ContinueWith(t=&gt;
+    {
+        if(t.Result)
+        {
+            msg=&quot;sent!&quot;;
+        }
+    });
+}
+</code></pre>
+<p version="e59ad892ecc3f6adac7eac9ff81aa0c4">&#x5982;&#x679C;&#x5F00;&#x53D1;&#x8005;&#x60F3;&#x7B80;&#x5355;&#x5730;&#x81EA;&#x5B9A;&#x4E49;&#x77ED;&#x4FE1;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="10cda8302b7e861136a260d8189c6850"><code class="lang-javascript">public void RequestSMSCodeWithCustomParameters()
+{
+   var task=AVCloud.RequestSMSCode (&quot;18688888888&quot;,&quot;PP&#x6253;&#x8F66;&quot;,&quot;&#x53EB;&#x8F66;&#x670D;&#x52A1;&quot;,8).ContinueWith(t=&gt;
+   {
+       if(t.Result)
+        {
+          msg=&quot;sent!&quot;;
+       }
+    });
+}
+</code></pre>
+<p version="ebecfc2ad82c5587c3f718b971d0a73d">&#x7528;&#x6237;&#x5C31;&#x4F1A;&#x6536;&#x5230;&#x5982;&#x4E0B;&#x77ED;&#x4FE1;&#xFF1A;</p>
+<pre version="469a950d4ac6a57852f7b6c1e0224ab2"><code class="lang-javascript">&#x60A8;&#x6B63;&#x5728;&#x4F7F;&#x7528; PP&#x6253;&#x8F66; &#x670D;&#x52A1;&#x8FDB;&#x884C; &#x53EB;&#x8F66;&#x670D;&#x52A1;&#xFF0C;&#x60A8;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x662F;012345&#xFF0C;&#x8BF7;&#x5728;8&#x5206;&#x949F;&#x4E4B;&#x5185;&#x5B8C;&#x6210;&#x9A8C;&#x8BC1;&#x3002;
+</code></pre>
+<p version="7337207206d29e2bdd633a3dc92130ca">&#x4EE5;&#x4E0A;&#x662F;&#x8C03;&#x7528;&#x53D1;&#x9001;&#xFF0C;&#x4E0B;&#x4E00;&#x6B65;&#x5C31;&#x662F;&#x9A8C;&#x8BC1;&#x3002;</p>
+<pre version="a3ac9d5d5a8e930e45986a67891a2895"><code class="lang-javascript">public void VerifySMSCode(string code)
+{
+    var task=AVCloud.VerifySmsCode (code).ContinueWith(t=&gt;
+    {
+        if(t.Result)
+        {
+            msg=&quot;verified&quot;;
+        }
+        else
+        {
+            msg=&quot;valid code&quot;;
+        }
+    });
+}
+</code></pre>
+<h3 id="-">&#x5F53;&#x524D;&#x7528;&#x6237;</h3>
+<p version="8369d9a2a93183c597dda3c5e39e1419">&#x8BDA;&#x5982;&#x6240;&#x6709;&#x79FB;&#x52A8;&#x5E94;&#x7528;&#x4E00;&#x6837;&#x5F53;&#x524D;&#x7528;&#x6237;&#x4E00;&#x76F4;&#x662F;&#x88AB;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x89C6;&#x4F5C;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x5904;&#x7406;&#xFF0C;&#x6BD4;&#x5982;&#x624B;&#x673A;QQ&#x7B49;&#x6D41;&#x884C;&#x7684;App&#xFF0C;LeanCloud&#x5FC5;&#x7136;&#x4E5F;&#x4F1A;&#x5982;&#x6B64;&#x4E3A;&#x5F00;&#x53D1;&#x8005;&#x89E3;&#x51B3;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x5F53;&#x524D;&#x7528;&#x6237;&#xFF0C;&#x53EA;&#x8981;&#x8C03;&#x7528;&#x4E86;<code>&#x767B;&#x5F55;</code>&#x76F8;&#x5173;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5F53;&#x524D;&#x7528;&#x6237;&#x5C31;&#x4F1A;&#x88AB;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x3002;</p>
+<pre version="a182a62edb554600ea28d33dcf6a31ba"><code class="lang-javascript">var user = AVUser.CurrentUser;
+</code></pre>
+<p version="1542b184521379a1a771fda6ea8efcc2">&#x5982;&#x679C;&#x8C03;&#x7528;&#x4E86;&#x767B;&#x51FA;&#x63A5;&#x53E3;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x524D;&#x7528;&#x6237;&#x5C31;&#x4F1A;&#x88AB;&#x6E05;&#x9664;&#xFF0C;&#x5E76;&#x7F6E;&#x4E3A;<code>null</code>&#xFF1A;</p>
+<pre version="88740af03a29d75862597aebc7baee16"><code class="lang-javascript">AVUser.LogOut();
+var user = AVUser.CurrentUser;    //&#x5982;&#x6B64;&#x505A;&#x5C31;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x56E0;&#x4E3A;&#x767B;&#x51FA;&#x4E4B;&#x540E;&#xFF0C;CurrentUser&#x5DF2;&#x7ECF;&#x4E3A;&#x7A7A;&#x3002;
+</code></pre>
+<h3 id="-">&#x91CD;&#x7F6E;&#x5BC6;&#x7801;</h3>
+<h4 id="-">&#x90AE;&#x7BB1;&#x91CD;&#x7F6E;</h4>
+<p version="afc01444998c890a2035fb4bf3ef9548">&#x5BC6;&#x7801;&#x7BA1;&#x7406;&#x4E00;&#x76F4;&#x662F;&#x79FB;&#x52A8;&#x5E94;&#x7528;&#x7684;&#x6BD4;&#x8F83;&#x901A;&#x7528;&#x53C8;&#x6BD4;&#x8F83;&#x7E41;&#x7410;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;LeanCloud&#x4E5F;&#x4E3A;&#x5F00;&#x53D1;&#x8005;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957;&#x901A;&#x7528;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x5C06;&#x5F00;&#x53D1;&#x8005;&#x4ECE;&#x7E41;&#x7410;&#x4E2D;&#x89E3;&#x8131;&#x51FA;&#x6765;&#x3002;
+&#x5F53;&#x7528;&#x6237;&#x5FD8;&#x8BB0;&#x5BC6;&#x7801;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x505A;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6309;&#x94AE;&#xFF0C;&#x7136;&#x540E;&#x505A;&#x4E00;&#x4E9B;&#x53CB;&#x597D;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x4F46;&#x662F;&#x771F;&#x6B63;&#x5B9E;&#x73B0;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x7684;&#x529F;&#x80FD;&#x53EA;&#x9700;&#x8981;&#x5982;&#x4E0B;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre version="302957643e025141409c444b898ae5c8"><code class="lang-javascript">AVUser.RequestPasswordResetAsync(user.Email);
+</code></pre>
+<p version="48932a51ddb174670a8f6a8c490c4f6f">&#x8FD9;&#x6837;&#x670D;&#x52A1;&#x7AEF;&#x5C31;&#x4F1A;&#x518D;&#x6B21;&#x53D1;&#x9001;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x7684;&#x90AE;&#x4EF6;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EA;&#x8981;&#x5F15;&#x5BFC;&#x7528;&#x6237;&#x767B;&#x5F55;&#x90AE;&#x7BB1;&#xFF0C;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
+<h4 id="-">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x91CD;&#x7F6E;</h4>
+<p version="fbb6a2e0803d1198cb374efbe534aac0">&#x5982;&#x679C;&#x7528;&#x6237;&#x7684;&#x624B;&#x673A;&#x662F;&#x6709;&#x6548;&#x5730;&#xFF0C;&#x5E76;&#x4E14;&#x5DF2;&#x7ECF;&#x901A;&#x8FC7;&#x4E86;&#x9A8C;&#x8BC1;&#x7801;&#x9A8C;&#x8BC1;&#x624B;&#x673A;&#x7684;&#x6709;&#x6548;&#x6027;&#xFF0C;&#x90A3;&#x4E48;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x53E6;&#x4E00;&#x79CD;&#x5728;&#x624B;&#x673A;&#x4E0A;&#x4F53;&#x9A8C;&#x8F83;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;&#x901A;&#x8FC7;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x3002;&#x5177;&#x4F53;&#x5B9E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;
+&#x9996;&#x5148;&#xFF0C;&#x9700;&#x8981;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x53BB;&#x53D1;&#x9001;6&#x4F4D;&#x6570;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#xFF1A;</p>
+<pre version="477f8c1103120062692565db48ecbde5"><code class="lang-javascript">var smsCodeResetPasswordTask =    AVUser.RequestPasswordResetBySmsCode (&quot;138012345678&quot;);//&#x53EA;&#x9700;&#x8981;&#x624B;&#x673A;&#x53F7;&#x5373;&#x53EF;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x4F1A;&#x81EA;&#x52A8;&#x5BFB;&#x627E;&#x4E0E;&#x4E4B;&#x5339;&#x914D;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7528;&#x6237;&#x4E0E;&#x6B64;&#x624B;&#x673A;&#x53F7;&#x7ED1;&#x5B9A;&#xFF0C;&#x5C06;&#x4F1A;&#x63D0;&#x793A;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;
+</code></pre>
+<p version="5c79c8218e8340b53cd31987dd5edeb6">&#x53D1;&#x9001;&#x4E4B;&#x540E;&#xFF0C;&#x518D;&#x7ED9;&#x4E00;&#x4E2A;&#x754C;&#x9762;&#x7ED9;&#x7528;&#x6237;&#xFF0C;&#x8BA9;&#x7528;&#x6237;&#x8F93;&#x5165;6&#x4F4D;&#x6570;&#x7684;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x5E76;&#x4E14;&#x540C;&#x65F6;&#x8F93;&#x5165;&#x65B0;&#x7684;&#x5BC6;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x5982;&#x4E0B;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre version="37e67196d83886b9dd555e610f97ffd8"><code class="lang-javascript">var resetTask = AVUser.ResetPasswordBySmsCode(NewPassword,SMSCode);//&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x65B0;&#x5BC6;&#x7801;&#xFF08;&#x660E;&#x6587;&#x4F20;&#x9012;&#xFF0C;&#x8BF7;&#x653E;&#x5FC3;&#x6211;&#x4EEC;&#x4F20;&#x8F93;&#x7684;&#x65F6;&#x5019;&#x505A;&#x4E86;&#x52A0;&#x5BC6;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x4E5F;&#x7EDD;&#x4E0D;&#x53EF;&#x80FD;&#x660E;&#x6587;&#x5B58;&#x50A8;&#xFF09;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E0A;&#x4E00;&#x6B65;&#x53D1;&#x9001;&#x5230;&#x7528;&#x6237;&#x624B;&#x673A;&#x7684;6&#x4F4D;&#x6570;&#x9A8C;&#x8BC1;&#x7801;&#x3002;
+</code></pre>
+<p version="b09f8deae2acd9229afe01ac929721a8">&#x8FD9;&#x6837;2&#x6B65;&#x5C31;&#x53EF;&#x4EE5;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#xFF0C;&#x8FD9;&#x9879;&#x529F;&#x80FD;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x5728;&#x4E00;&#x4E9B;&#x5E94;&#x7528;&#x5185;&#x64CD;&#x4F5C;&#x6BD4;&#x8F83;&#x9891;&#x7E41;&#x7684;&#x5E94;&#x7528;&#x4F7F;&#x7528;&#xFF0C;&#x90AE;&#x7BB1;&#x91CD;&#x7F6E;&#x7684;&#x8BDD;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x7528;&#x6237;&#x53BB;&#x5355;&#x72EC;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x90AE;&#x7BB1;&#x5E94;&#x7528;&#x6216;&#x8005;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x8DF3;&#x8F6C;&#x3002;</p>
+<h3 id="-">&#x67E5;&#x8BE2;&#x7528;&#x6237;</h3>
+<p version="3290b5b9b9c79be58fb34c3b7cdeb1f1">&#x7528;&#x6237;&#x65E2;&#x7136;&#x662F;&#x4E2A;&#x7279;&#x6B8A;&#x7684;<code>AVObject</code>&#xFF0C;&#x5B83;&#x5F53;&#x7136;&#x4E5F;&#x5177;&#x5907;&#x4E86;<code>AVObject</code>&#x7684;&#x4E00;&#x4E9B;&#x5171;&#x540C;&#x7279;&#x6027;&#xFF0C;&#x5F88;&#x591A;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x5173;&#x4E8E;&#x7528;&#x6237;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x9996;&#x5148;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#xFF0C;&#x628A;&#x7B26;&#x5408;&#x7279;&#x5B9A;&#x6761;&#x4EF6;&#x7684;&#x7528;&#x6237;&#x67E5;&#x8BE2;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x8FDB;&#x884C;&#x5C55;&#x73B0;&#x6216;&#x8005;&#x4E00;&#x4E9B;&#x4FEE;&#x6539;&#x4E4B;&#x7C7B;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<pre version="d3548854bb77c2b23f1cf40b50ffef91"><code class="lang-javascript">AVUser.Query.WhereEqualTo(&quot;gender&quot;, &quot;female&quot;).FindAsync().ContinueWith(t =&gt;
+{
+     IEnumerable&lt;AVUser&gt; women = t.Result;
+});
+</code></pre>
+<p version="74dcb1cdd14e875cd48a8d544d296b25">&#x5F53;&#x7136;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>GetAsync</code>&#x65B9;&#x6CD5;&#x901A;&#x8FC7;<code>objectId</code>&#x83B7;&#x53D6;&#x7279;&#x5B9A;&#x7684;&#x4E00;&#x4E2A;<code>AVUser</code>&#x3002;</p>
+<h3 id="-">&#x7528;&#x6237;&#x5B89;&#x5168;&#x6570;&#x636E;&#x7684;&#x8BA4;&#x8BC1;&#x89C4;&#x5219;</h3>
+<p version="cc47df7543aa8cea38f6e611b571e6d9">&#x5F88;&#x591A;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x7B97;&#x662F;&#x5F00;&#x53D1;&#x8005;&#x4E5F;&#x4E0D;&#x8981;&#x8F7B;&#x6613;&#x4FEE;&#x6539;&#x7528;&#x6237;&#x7684;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#xFF0C;&#x6BD4;&#x5982;&#x7528;&#x6237;&#x7684;&#x4E00;&#x4E9B;&#x6BD4;&#x8F83;&#x654F;&#x611F;&#x7684;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982;&#x624B;&#x673A;&#x53F7;&#xFF0C;&#x793E;&#x4EA4;&#x8D26;&#x53F7;&#x7B49;&#xFF0C;&#x8FD9;&#x4E9B;&#x90FD;&#x5E94;&#x8BE5;&#x8BA9;&#x7528;&#x6237;&#x5728;App&#x4E2D;&#x81EA;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x6240;&#x4EE5;&#x4E3A;&#x4E86;&#x7528;&#x6237;&#x6570;&#x636E;&#x7684;&#x6570;&#x636E;&#x6709;&#x4E14;&#x4EC5;&#x6709;&#x81EA;&#x5DF1;&#x5728;&#x767B;&#x5F55;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5F97;&#x4EE5;&#x4FEE;&#x6539;&#xFF0C;LeanCloud&#x670D;&#x52A1;&#x7AEF;&#x5BF9;&#x6240;&#x6709;&#x9488;&#x5BF9;<code>AVUser</code>&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x636E;&#x505A;&#x4E86;&#x9A8C;&#x8BC1;&#x3002;</p>
+<pre version="768fd8485b338508c4d08bcae63dae8f"><code class="lang-javascript">AVUser user = null;
+AVUser.LogInAsync(&quot;demoUser&quot;, &quot;asvscloud&quot;).ContinueWith(t =&gt;
+{
+    user = t.Result;
+    user.Username = &quot;testUser&quot;; // &#x4FEE;&#x6539;&#x7528;&#x6237;&#x540D;
+    return user.SaveAsync();
+}).Unwrap().ContinueWith(t =&gt;
+{
+    if (!t.IsFaulted)
+    {
+        // &#x5728;&#x767B;&#x5F55;&#x4E4B;&#x540E;&#xFF0C;&#x63D0;&#x4EA4;&#x4FEE;&#x6539;&#x7528;&#x6237;&#x76F8;&#x5173;&#x5B57;&#x6BB5;&#xFF08;&#x5BC6;&#x7801;&#x9664;&#x5916;&#xFF09;&#xFF0C;&#x90FD;&#x4F1A;&#x6210;&#x529F;&#x3002;
+        AVUser.LogOut();
+    }
+}).ContinueWith(t =&gt;
+{
+    // &#x901A;&#x8FC7;Id&#x83B7;&#x53D6;&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#xFF0C;&#x6CE8;&#xFF1A;&#x5982;&#x6B64;&#x505A;&#x5E76;&#x672A;&#x4F7F;&#x5F53;&#x524D;&#x7528;&#x6237;&#x767B;&#x5F55;&#x3002;
+    return AVUser.Query.GetAsync(user.ObjectId);
+}).Unwrap().ContinueWith(t =&gt;
+{
+    user = t.Result;
+    user.Username = &quot;devUser&quot;;
+    return user.SaveAsync();
+}).Unwrap().ContinueWith(t =&gt;
+{
+    if (t.IsFaulted)
+    {
+        // &#x663E;&#x7136;&#xFF0C;&#x5982;&#x6B64;&#x505A;&#x5C31;&#x4F1A;&#x5931;&#x8D25;&#xFF0C;&#x56E0;&#x4E3A;&#x5355;&#x5355;&#x4ECE;Id&#x83B7;&#x53D6;&#x7528;&#x6237;&#xFF0C;&#x5F53;&#x524D;&#x7684;&#x8BF7;&#x6C42;&#x4E0D;&#x5177;&#x5907;&#x6743;&#x9650;&#x53BB;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x76F8;&#x5173;&#x5C5E;&#x6027;&#x3002;
+    }
+});
+</code></pre>
+<h2 id="acl-">ACL &#x6743;&#x9650;&#x63A7;&#x5236;</h2>
+<p version="69eb54c02b0ecf280cb0cb0ea5d87aa8">&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x6210;&#x719F;&#x7684;&#x5E76;&#x4E14;&#x53EF;&#x63A7;&#x7684;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5FC5;&#x7136;&#x4F1A;&#x5B58;&#x5728;&#x6743;&#x9650;&#x63A7;&#x5236;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x7ECF;&#x5178;&#x7684;&#x6848;&#x4F8B;&#x5C31;&#x662F;&#x8BBA;&#x575B;&#x7684;&#x6591;&#x7AF9;&#x53EF;&#x4EE5;&#x5220;&#x5E16;&#x800C;&#x666E;&#x901A;&#x6E38;&#x5BA2;&#x53EA;&#x80FD;&#x770B;&#x5E16;&#xFF0C;&#x5982;&#x6B64;&#x4E00;&#x6765;&#xFF0C;&#x53D1;&#x5C55;&#x51FA;&#x6765;&#x7684;<a href="http://zh.wikipedia.org/wiki/%E4%BB%A5%E8%A7%92%E8%89%B2%E7%82%BA%E5%9F%BA%E7%A4%8E%E7%9A%84%E5%AD%98%E5%8F%96%E6%8E%A7%E5%88%B6">&#x57FA;&#x4E8E;&#x89D2;&#x8272;&#x7684;&#x8BBF;&#x95EE;&#x63A7;&#x5236;</a>&#x88AB;&#x666E;&#x904D;&#x5E94;&#x7528;&#x4E8E;&#x5404;&#x7C7B;&#x4F20;&#x7EDF;&#x7684;&#x8F6F;&#x4EF6;&#x4E2D;&#xFF0C;&#x5373;&#x4FBF;&#x662F;&#x4E92;&#x8054;&#x7F51;&#x65F6;&#x4EE3;&#x7684;&#x4ECA;&#x5929;&#xFF0C;&#x5B83;&#x4F9D;&#x7136;&#x662F;&#x53EF;&#x4EE5;&#x5F88;&#x7B80;&#x4FBF;&#x5730;&#x5E2E;&#x52A9;&#x5F00;&#x53D1;&#x8005;&#x4EE5;&#x53CA;&#x4F7F;&#x7528;&#x8005;&#x7406;&#x89E3;&#x548C;&#x5E94;&#x7528;&#x3002;</p>
+<p version="9123007a5001ce4aed697d6f3e099a6e">&#x57FA;&#x4E8E;&#x4EE5;&#x4E0A;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;LeanCloud&#x5728;&#x5F00;&#x53D1;&#x8005;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9ED8;&#x8BA4;&#x5730;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x4E3A;&#x8BE5;&#x5E94;&#x7528;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x5F20;<code>_Role</code>&#x7684;&#x8868;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5728;<a href="/data.html?appid={{appid}}">&#x6570;&#x636E;&#x7BA1;&#x7406;</a>&#x4E2D;&#x770B;&#x5230;&#x8FD9;&#x5F20;&#x8868;&#x3002;</p>
+<h3 id="-">&#x9ED8;&#x8BA4;&#x8BBF;&#x95EE;&#x6743;&#x9650;</h3>
+<p version="d4f388aba2d4bb02081e938c7d689079">&#x5728;&#x6CA1;&#x6709;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;LeanCloud &#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684; ACL &#x503C;&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x4EE3;&#x8868;&#x4E86;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x5BF9;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x53EF;&#x8BFB;&#x53EF;&#x5199;&#x7684;&#x3002;&#x6B64;&#x65F6;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x7684;&#x8868;&#x4E2D; ACL &#x5C5E;&#x6027;&#x4E2D;&#x770B;&#x5230;&#x8FD9;&#x6837;&#x7684;&#x503C;:</p>
+<pre version="c940c3415ed35cf8ffc114891e3a1edf"><code class="lang-javascript">  {&quot;*&quot;:{&quot;read&quot;:true,&quot;write&quot;:true}}
+</code></pre>
+<p version="641a1f91b082b251e9189b731f1d271b">&#x5728;Unity&#x4E2D;&#x521B;&#x5EFA;&#x7B26;&#x5408;&#x9ED8;&#x8BA4;&#x7684;&#x5F00;&#x653E;&#x8BFB;&#x5199;&#x6743;&#x9650;&#x7684;<code>AVACL</code>&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="cc12af9f8206a034347212fd926507a2"><code class="lang-javascript">var defaultACL = new AVACL();
+defaultACL.PublicWriteAccess = true;
+defaultACL.PublicReadAccess = true;
+</code></pre>
+<h3 id="-">&#x6307;&#x5B9A;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x6743;&#x9650;</h3>
+<p version="fe37dee6da2de82ee34521fb0645356f">&#x5F53;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x5728;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7F51;&#x76D8;&#x7C7B;&#x5E94;&#x7528;&#x65F6;&#xFF0C;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x6587;&#x4EF6;&#x7684;&#x79C1;&#x5BC6;&#x6027;&#xFF0C;&#x7528;&#x6237;&#x5C31;&#x9700;&#x8981;&#x4E0D;&#x540C;&#x7684;&#x6587;&#x4EF6;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x3002; &#x8B6C;&#x5982;&#x516C;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x5176;&#x4ED6;&#x7528;&#x6237;&#x90FD;&#x6709;&#x8BFB;&#x7684;&#x6743;&#x9650;&#xFF0C;&#x7136;&#x540E;&#x4EC5;&#x4EC5;&#x53EA;&#x6709;&#x521B;&#x5EFA;&#x8005;&#x624D;&#x62E5;&#x6709;&#x66F4;&#x6539;&#x548C;&#x5220;&#x9664;&#x7684;&#x6743;&#x9650;&#x3002;</p>
+<pre version="20adc4d14b15cbc03b569417aa0d7475"><code class="lang-javascript">byte[] data = System.Text.Encoding.UTF8.GetBytes(&quot;LeanCloud is a great cloud service!&quot;);
+AVFile file = new AVFile(&quot;mytxtFile.txt&quot;, data, new Dictionary&lt;string, object&gt;()
+    {
+        {&quot;author&quot;,&quot;LeanCloud&quot;}
+    });
+AVObject book = new AVObject(&quot;book&quot;);
+book[&quot;content&quot;] = file;
+
+AVACL acl = new AVACL();
+acl.PublicReadAccess = true;
+acl.SetWriteAccess(AVUser.CurrentUser, true);
+book.ACL = acl;
+var saveTask = book.SaveAsync();
+</code></pre>
+<h3 id="-">&#x6307;&#x5B9A;&#x89D2;&#x8272;&#x8BBF;&#x95EE;&#x6743;&#x9650;</h3>
+<h4 id="-">&#x89D2;&#x8272;</h4>
+<p version="8b07bcdebc211ee989d7ae3877471ed3"><code>AVRole</code>&#x62E5;&#x6709;&#x4E00;&#x4E9B;&#x9ED8;&#x8BA4;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5F53;&#x7136;&#x5B83;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;<code>AVObject</code>&#xFF0C;&#x81EA;&#x7136;&#x5F00;&#x53D1;&#x8005;&#x4E5F;&#x53EF;&#x4EE5;&#x4E3A;&#x89D2;&#x8272;&#x6DFB;&#x52A0;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x6240;&#x9700;&#x7684;&#x5B57;&#x6BB5;&#x3002;</p>
+<ul>
+<li><code>name</code>: <code>string</code>&#x7C7B;&#x578B;&#xFF0C;&#x89D2;&#x8272;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x662F;&#x521B;&#x5EFA;&#x89D2;&#x8272;&#x7684;<code>&#x5FC5;&#x987B;&#x5B57;&#x6BB5;</code>&#xFF0C;&#x5E76;&#x4E14;<code>&#x552F;&#x4E00;</code>&#xFF0C;&#x5E76;&#x4E14;&#x53EA;&#x5728;&#x521B;&#x5EFA;&#x65F6;&#x8D4B;&#x503C;&#xFF0C;&#x4E0D;&#x80FD;&#x88AB;<code>&#x4FEE;&#x6539;</code>&#xFF0C;&#x547D;&#x540D;&#x5FC5;&#x987B;&#x7531;&#x5B57;&#x6BCD;&#xFF0C;&#x8FDE;&#x63A5;&#x7B26;&#xFF0C;&#x4E0B;&#x5212;&#x7EBF;&#x7EC4;&#x6210;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x53EF;&#x89C6;&#x4E3A;&#x4E3B;&#x952E;&#x3002;</li>
+<li><code>users</code>:<code>AVACL</code>&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x6307;&#x5411;&#x6240;&#x6709;&#x62E5;&#x6709;&#xFF08;&#x5373;<code>&#x5355;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x62E5;&#x6709;&#x591A;&#x89D2;&#x8272;</code>&#x7684;&#x7CFB;&#x7EDF;&#xFF09;&#x8FD9;&#x4E2A;<code>&#x89D2;&#x8272;</code>&#x7684;&#x7528;&#x6237;&#x3002;</li>
+<li><code>roles</code>:<code>AVACL</code>&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x6307;&#x5411;&#x6240;&#x6709;&#x8BE5;&#x89D2;&#x8272;&#x7684;&#x5B50;&#x89D2;&#x8272;&#xFF0C;<code>&#x5B50;&#x89D2;&#x8272;&#x81EA;&#x52A8;&#x7EE7;&#x627F;&#x7236;&#x89D2;&#x8272;&#x7684;&#x6240;&#x6709;&#x6743;&#x9650;</code>&#x3002;&#x5173;&#x4E8E;&#x8FD9;&#x4E00;&#x70B9;&#x4E0B;&#x4E00;&#x8282;&#x4F1A;&#x505A;&#x8BE6;&#x7EC6;&#x9610;&#x8FF0;&#x3002;</li>
+</ul>
+<h4 id="avuser-avrole-">AVUser &#x4E0E; AVRole &#x7684;&#x4ECE;&#x5C5E;&#x5173;&#x7CFB;</h4>
+<p version="5eb0f4ee3cbe81f69a3ac3217f2c2602">&#x6307;&#x5B9A;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x867D;&#x7136;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x662F;&#x4F9D;&#x7136;&#x4F1A;&#x6709;&#x5C40;&#x9650;&#x6027;&#x3002; &#x4EE5;&#x5DE5;&#x8D44;&#x7CFB;&#x7EDF;&#x4E3A;&#x4F8B;&#xFF0C;&#x4E00;&#x5BB6;&#x516C;&#x53F8;&#x7684;&#x5DE5;&#x8D44;&#x7CFB;&#x7EDF;&#xFF0C;&#x5DE5;&#x8D44;&#x6700;&#x7EC8;&#x7684;&#x5F52;&#x5C5E;&#x8005;&#x548C;&#x516C;&#x53F8;&#x7684;&#x51FA;&#x7EB3;&#x4EEC;&#x53EA;&#x62E5;&#x6709;&#x5DE5;&#x8D44;&#x7684;&#x8BFB;&#x6743;&#x9650;&#xFF0C;&#x800C;&#x516C;&#x53F8;&#x7684;&#x4EBA;&#x4E8B;&#x548C;&#x8001;&#x677F;&#x624D;&#x62E5;&#x6709;&#x5168;&#x90E8;&#x7684;&#x8BFB;&#x5199;&#x6743;&#x9650;&#x3002;&#x5F53;&#x7136;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x591A;&#x6B21;&#x8BBE;&#x7F6E;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x529F;&#x80FD;&#xFF08;&#x591A;&#x4E2A;&#x7528;&#x6237;&#x7684; ACL &#x8BBE;&#x7F6E;&#x662F;&#x8FFD;&#x52A0;&#x7684;&#x800C;&#x975E;&#x8986;&#x76D6;&#xFF09;&#x3002;</p>
+<pre version="7d91992784e10aab17ded344f3d7ae32"><code class="lang-javascript">AVObject salary = new AVObject(&quot;salary&quot;);
+salary[&quot;value&quot;] = 2000000;
+
+AVUser boss=new AVUser();//&#x5047;&#x8BBE;&#x6B64;&#x5904;&#x4E3A;&#x8001;&#x677F;
+AVUser hrWang=new AVUser();  //&#x4EBA;&#x4E8B;&#x5C0F;&#x738B;
+AVUser me = new AVUser(); //&#x6211;&#x4EEC;&#x5C31;&#x5728;&#x6587;&#x6863;&#x91CC;&#x723D;&#x4E00;&#x723D;&#x5427;
+AVUser cashierZhou = new AVUser(); //&#x51FA;&#x7EB3;&#x8001;&#x5468;
+
+AVACL acl = new AVACL();
+acl.SetReadAccess(boss, true);
+acl.SetReadAccess(hrWang, true);
+acl.SetReadAccess(me, true);
+acl.SetReadAccess(cashierZhou, true);
+
+acl.SetWriteAccess(boss, true);
+acl.SetWriteAccess(hrWang, true);
+salary.ACL = acl;
+var saveTask = salary.SaveAsync();
+</code></pre>
+<p version="ff163ff4e1e969b318af738531933e2e">&#x4F46;&#x662F;&#x8FD9;&#x4E9B;&#x6D89;&#x53CA;&#x5176;&#x4E2D;&#x7684;&#x4EBA;&#x53EF;&#x80FD;&#x4E0D;&#x6B62;&#x4E00;&#x4E2A;&#xFF0C;&#x4E5F;&#x6709;&#x79BB;&#x804C;&#x6362;&#x5C97;&#x65B0;&#x5458;&#x5DE5;&#x7684;&#x95EE;&#x9898;&#x5B58;&#x5728;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x65E2;&#x4E0D;&#x4F18;&#x96C5;&#xFF0C;&#x4E5F;&#x592A;&#x5570;&#x55E6;, &#x540C;&#x6837;&#x4F1A;&#x5F88;&#x96BE;&#x7EF4;&#x62A4;&#x3002; &#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5C31;&#x5F15;&#x5165;&#x4E86; <code>AVRole</code> &#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002; &#x516C;&#x53F8;&#x7684;&#x5458;&#x5DE5;&#x53EF;&#x4EE5;&#x6210;&#x767E;&#x4E0A;&#x5343;&#xFF0C;&#x7136;&#x800C;&#x4E00;&#x4E2A;&#x516C;&#x53F8;&#x7EC4;&#x7EC7;&#x91CC;&#x7684;&#x89D2;&#x8272;&#x5374;&#x80FD;&#x591F;&#x5728;&#x5F88;&#x957F;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x65F6;&#x95F4;&#x5185;&#x76F8;&#x5BF9;&#x7A33;&#x5B9A;&#x3002;</p>
+<pre version="4d75450535a593b2dfe2637277d6ae60"><code class="lang-javascript">AVObject salary = new AVObject(&quot;salary&quot;);
+salary[&quot;value&quot;] = 2000000;
+
+var roleACL = new AVACL();
+roleACL.PublicReadAccess = true;//AVRole&#x672C;&#x8EAB;&#x5728;&#x521B;&#x5EFA;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x5B83;&#x88AB;&#x4FEE;&#x6539;&#xFF0C;&#x8FD9;&#x91CC;&#x662F;&#x4E3A;&#x4E86;&#x8BBE;&#x5B9A;AVRole&#x81EA;&#x8EAB;&#x7684;ACL&#x8BBF;&#x95EE;&#x9650;&#x5236;&#x3002;
+
+//&#x4EE5;&#x4E0B;&#x8FD9;&#x4E9B;&#x89D2;&#x8272;&#x53EA;&#x4E3A;&#x793A;&#x610F;&#xFF0C;&#x5982;&#x8981;&#x6B63;&#x786E;&#x6267;&#x884C;&#x672C;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x4EE5;&#x4E0B;&#x8FD9;&#x4E9B;AVUser&#x5FC5;&#x987B;&#x662F;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x4E8E;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x3002;
+AVUser boss = new AVUser();//&#x5047;&#x8BBE;&#x6B64;&#x5904;&#x4E3A;&#x8001;&#x677F;
+AVUser hrWang = new AVUser();  //&#x4EBA;&#x4E8B;&#x5C0F;&#x738B;
+AVUser me = new AVUser(); //&#x6211;&#x4EEC;&#x5C31;&#x5728;&#x6587;&#x6863;&#x91CC;&#x723D;&#x4E00;&#x723D;&#x5427;
+AVUser cashierZhou = new AVUser(); //&#x51FA;&#x7EB3;&#x8001;&#x5468;
+AVUser cashierGe = new AVUser();//&#x51FA;&#x7EB3;&#x5C0F;&#x845B;
+
+AVRole hr = new AVRole(&quot;hr&quot;, roleACL);
+AVRole cashier = new AVRole(&quot;cashier&quot;, roleACL);
+
+hr.Users.Add(hrWang);
+
+cashier.Users.Add(cashier);
+cashier.Users.Add(cashierGe);
+
+var saveUsersTask = new List&lt;Task&gt;()
+{
+    {hr.SaveAsync()},
+    {cashier.SaveAsync()}
+};
+var saveTask = Task.WhenAll(saveUsersTask).ContinueWith(t =&gt;
+{
+    AVACL acl = new AVACL();
+    acl.SetReadAccess(boss, true);
+    acl.SetReadAccess(me, true);
+
+    acl.SetRoleReadAccess(hr, true);
+    acl.SetRoleReadAccess(cashier,true);
+
+    acl.SetWriteAccess(boss, true);
+    acl.SetRoleWriteAccess(hr, true);
+
+    salary.ACL = acl;
+
+    return salary.SaveAsync();
+});
+</code></pre>
+<h4 id="avrole-">AVRole &#x4E4B;&#x95F4;&#x7684;&#x4ECE;&#x5C5E;&#x5173;&#x7CFB;</h4>
+<p version="8f1061f16c7fecf9dca0d4ba8e1c6278">&#x5728;&#x8BB2;&#x6E05;&#x695A;&#x4E86;&#x7528;&#x6237;&#x4E0E;&#x89D2;&#x8272;&#x7684;&#x5173;&#x7CFB;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x6709;&#x4E00;&#x5C42;&#x89D2;&#x8272;&#x4E0E;&#x89D2;&#x8272;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x3002;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x7406;&#x89E3;&#x53EF;&#x80FD;&#x4F1A;&#x5BF9;&#x6211;&#x4EEC;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#xFF1A;</p>
+<p version="378edac11e55c8c986fb6cfbbd1e3c23">&#x4E00;&#x5BB6;&#x521B;&#x4E1A;&#x516C;&#x53F8;&#x6709;&#x79FB;&#x52A8;&#x90E8;&#x95E8;&#xFF0C;&#x90E8;&#x95E8;&#x4E0B;&#x9762;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x5C0F;&#x7EC4;&#xFF0C;Android &#x548C; iOS&#x3002;&#x800C;&#x6BCF;&#x4E2A;&#x5C0F;&#x7EC4;&#x53EA;&#x62E5;&#x6709;&#x81EA;&#x5DF1;&#x7EC4;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x8BFB;&#x5199;&#x6743;&#x9650;&#x3002;&#x4F46;&#x662F;&#x4ED6;&#x4EEC;&#x540C;&#x65F6;&#x62E5;&#x6709;&#x6838;&#x5FC3;&#x5E93;&#x4EE3;&#x7801;&#x7684;&#x8BFB;&#x53D6;&#x6743;&#x9650;&#x3002;</p>
+<pre version="2c488ef2a4eed2e89ef1e49367f29c1b"><code class="lang-javascript">        var roleACL = new AVACL();
+        roleACL.PublicReadAccess = true;//AVRole&#x672C;&#x8EAB;&#x5728;&#x521B;&#x5EFA;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x5B83;&#x88AB;&#x4FEE;&#x6539;&#xFF0C;&#x8FD9;&#x91CC;&#x662F;&#x4E3A;&#x4E86;&#x8BBE;&#x5B9A;AVRole&#x81EA;&#x8EAB;&#x7684;ACL&#x8BBF;&#x95EE;&#x9650;&#x5236;&#x3002;
+
+        AVRole androidTeam = new AVRole(&quot;androidTeam&quot;, roleACL);
+        AVRole iOSTeam = new AVRole(&quot;iOSTeam&quot;, roleACL);
+        AVRole mobileDep = new AVRole(&quot;mobileDep&quot;, roleACL);
+
+        AVObject androidCode = new AVObject(&quot;code&quot;);
+        androidCode[&quot;name&quot;] = &quot;android&quot;;
+
+        AVObject iOSCode = new AVObject(&quot;code&quot;);
+        iOSCode[&quot;name&quot;] = &quot;ios&quot;;
+
+        AVObject coreCode = new AVObject(&quot;code&quot;);
+        coreCode[&quot;name&quot;] = &quot;core&quot;;
+
+        var saveTeamTasks = new List&lt;Task&gt;()
+            {
+                {androidTeam.SaveAsync()},
+                {iOSTeam.SaveAsync()},
+            };
+
+        var saveTask = Task.WhenAll(saveTeamTasks).ContinueWith(t =&gt;
+         {
+             mobileDep.Roles.Add(androidTeam);
+             mobileDep.Roles.Add(iOSTeam);
+             return mobileDep.SaveAsync();
+         }).Unwrap().ContinueWith(s =&gt;
+         {
+             var saveCodeTasks = new List&lt;Task&gt;()
+             {
+                 {androidCode.SaveAsync()},
+                 {iOSCode.SaveAsync()},
+                 {coreCode.SaveAsync()},
+             };
+             return Task.WhenAll(saveCodeTasks);
+
+         }).Unwrap().ContinueWith(x =&gt;
+         {
+
+             //androidCode&#x7684;&#x8BFB;&#x5199;&#x6743;&#x9650;&#x5BF9;androidTeam&#x5F00;&#x653E;
+             androidCode.ACL.SetRoleReadAccess(androidTeam, true);
+             androidCode.ACL.SetRoleWriteAccess(androidTeam, true);
+
+             //iOSCode&#x7684;&#x8BFB;&#x5199;&#x6743;&#x9650;&#x5BF9;iOSTeam&#x5F00;&#x653E;
+             iOSCode.ACL.SetRoleReadAccess(iOSTeam, true);
+             iOSCode.ACL.SetRoleWriteAccess(iOSTeam, true);
+
+             //coreCode&#x5BF9;mobileDep&#x5F00;&#x653E;&#x8BFB;&#x53D6;&#x6743;&#x9650;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;mobileDep&#x672C;&#x8EAB;&#x5C31;&#x5DF2;&#x7ECF;&#x5305;&#x542B;&#x4E86;iOSTeam&#x548C;androidTeam&#x4F5C;&#x4E3A;&#x5B83;&#x7684;&#x5B50;&#x89D2;&#x8272;
+             coreCode.ACL.SetRoleReadAccess(mobileDep, true);
+
+             var saveCodeTasks = new List&lt;Task&gt;()
+             {
+                 {androidCode.SaveAsync()},
+                 {iOSCode.SaveAsync()},
+                 {coreCode.SaveAsync()},
+             };
+             return Task.WhenAll(saveCodeTasks);
+         }).Unwrap().ContinueWith(y =&gt;
+         {
+             //&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x5168;&#x90E8;&#x5B8C;&#x6210;&#x3002;
+         });
+</code></pre>
+<h2 id="-">&#x6587;&#x4EF6;</h2>
+<h3 id="-">&#x4E0A;&#x4F20;&#x6587;&#x4EF6;</h3>
+<p version="89f1a62fe0d2258b18bce51e8ab8a16f">AVFile&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5C06;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x5230;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#xFF0C;&#x6BD4;&#x5982;&#x5E38;&#x89C1;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x56FE;&#x50CF;&#x6587;&#x4EF6;&#x3001;&#x5F71;&#x50CF;&#x6587;&#x4EF6;&#x3001;&#x97F3;&#x4E50;&#x6587;&#x4EF6;&#x548C;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x3002;
+&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4E00;&#x6BB5;&#x6587;&#x672C;&#x4FDD;&#x5B58;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF1A;</p>
+<pre version="09e728ab8e933c851ea868d6130ec7c2"><code class="lang-javascript">private string fildId;
+void OnGUI()
+{
+    GUI.Label(new Rect(260, 50, 160, 50), fildId);
+    if (GUI.Button(new Rect(50, 50, 200, 50), &quot;Create a txt file&quot;))
+    {
+       byte[] data = System.Text.Encoding.UTF8.GetBytes(&quot;LeanCloud is a great cloud service!&quot;);
+       AVFile file = new AVFile(&quot;mytxtFile.txt&quot;, data, new Dictionary&lt;string, object&gt;()
+       {
+          {&quot;author&quot;,&quot;LeanCloud&quot;}
+       });
+       file.SaveAsync().ContinueWith(t =&gt;
+       {
+          Debug.Log(t.IsFaulted);
+          if (!t.IsFaulted)
+          {
+             fildId = file.ObjectId;
+          }
+          else
+          {
+             Debug.Log(t.Exception.Message);
+             Debug.LogException(t.Exception);
+          }
+       });
+     }
+}
+</code></pre>
+<p version="e7f9e9f8e11d785eb6669d95714d371b">AVFile&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x4E00;&#x4E2A;byte&#x6570;&#x7EC4;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5C06;&#x8981;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x5143;&#x6570;&#x636E;&#x7684;&#x5B57;&#x5178;&#xFF0C;&#x6BD4;&#x5982;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x6587;&#x4EF6;&#x7684;&#x4F5C;&#x8005;&#x7684;&#x540D;&#x5B57;&#x5F53;&#x505A;&#x5143;&#x6570;&#x636E;&#x5B58;&#x5165;&#x8FD9;&#x4E2A;&#x5B57;&#x5178;&#xFF0C;LeanCloud &#x7684;&#x670D;&#x52A1;&#x7AEF;&#x4F1A;&#x628A;&#x5B83;&#x4FDD;&#x7559;&#x8D77;&#x6765;&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x4EE5;&#x540E;&#x83B7;&#x53D6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x79CD;&#x7C7B;&#x4F3C;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5143;&#x6570;&#x636E;&#x90FD;&#x4F1A;&#x88AB;&#x83B7;&#x53D6;&#x3002;</p>
+<h3 id="-">&#x672C;&#x5730;&#x6587;&#x4EF6;</h3>
+<p version="985f37131292a3083ef12c736785265e">&#x5728;Unity&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x5F88;&#x6E05;&#x695A;&#x5730;&#x77E5;&#x9053;&#x67D0;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x6240;&#x5B58;&#x5728;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x6BD4;&#x5982;&#x5728;&#x6E38;&#x620F;&#x4E2D;&#x4E0A;&#x4F20;&#x4E00;&#x5F20;&#x6E38;&#x620F;&#x622A;&#x56FE;&#x5230;LeanCloud&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;SDK&#x76F4;&#x63A5;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4E0A;&#x4F20;&#x5230;LeanCloud&#x4E2D;&#x3002;</p>
+<pre version="5f4015723b00978ee74876edb8e597d6"><code class="lang-javascript">GUI.Label(new Rect(260, 50, 160, 50), fildId);
+if (GUI.Button(new Rect(50, 50, 200, 50), &quot;Upload a screenshot&quot;))
+{
+   AVFile file = AVFile.CreateFileWithLocalPath(&quot;screenshot.PNG&quot;, Path.Combine(Application.persistentDataPath, &quot;screenshot.PNG&quot;));
+   file.SaveAsync().ContinueWith(t =&gt;
+   {
+       Debug.Log(t.IsFaulted);
+       if (!t.IsFaulted)
+       {
+           fildId = file.ObjectId;
+       }
+       else
+       {
+           Debug.Log(t.Exception.Message);
+           Debug.LogException(t.Exception);
+       }
+    });
+}
+</code></pre>
+<h3 id="-">&#x6587;&#x4EF6;&#x5143;&#x4FE1;&#x606F;</h3>
+<p version="fbce451d91b23be73ec053e9feec4075">AVFile&#x9ED8;&#x8BA4;&#x4F1A;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x548C;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x8005;objectId&#x4F5C;&#x4E3A;&#x5143;&#x4FE1;&#x606F;&#x3002;&#x540C;&#x6837;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x5B57;&#x5178;&#x63A5;&#x53E3;&#x5E2E;&#x52A9;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x672A;&#x4EFB;&#x610F;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x4EFB;&#x610F;&#x7B26;&#x5408;&#x5B57;&#x5178;&#x547D;&#x540D;&#x89C4;&#x5219;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5143;&#x6570;&#x636E;&#x3002;&#x5728;&#x672C;&#x5C0F;&#x8282;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x4E86;&#x5DF2;&#x7ECF;&#x4E3A;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5143;&#x6570;&#x636E;&#xFF1A;</p>
+<pre version="f4cedca289ebb6ae02147650b5111d9a"><code class="lang-javascript"> AVFile file = new AVFile(&quot;mytxtFile.txt&quot;, data, new Dictionary&lt;string, object&gt;()
+ {
+     {&quot;author&quot;,&quot;LeanCloud&quot;}
+ });
+</code></pre>
+<p version="c355765a39a36836bcbb1b38ac086f9f">&#x8FD9;&#x4E2A;&#x5C31;&#x662F;&#x7B80;&#x5355;&#x7684;&#x7528;&#x6CD5;&#xFF0C;&#x5728;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E00;&#x7EC4;&#x5B57;&#x5178;&#x53BB;&#x4FDD;&#x7559;&#x6587;&#x4EF6;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5143;&#x6570;&#x636E;&#x3002;</p>
+<p version="828458ae20ed11726296c12069c5d0d9">&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x4E0A;&#x4F20;&#x524D;&#x81EA;&#x52A8;&#x4E00;&#x4E9B;&#x5143;&#x4FE1;&#x606F;&#x4FDD;&#x5B58;&#x8D77;&#x6765;&#xFF0C;&#x4EE5;&#x4FBF;&#x540E;&#x7EED;&#x83B7;&#x53D6;&#xFF0C;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x8FD8;&#x4FDD;&#x5B58;&#x56FE;&#x7247;&#x7684;&#x9AD8;&#x5EA6;&#x548C;&#x5BBD;&#x5EA6;&#xFF1A;</p>
+<pre version="2b804778efb9d65b22805b28b17a39ee"><code class="lang-javascript"> file.MetaData.Add(&quot;width&quot;, 100);
+ file.MetaData.Add(&quot;height&quot;, 100);
+</code></pre>
+<h3 id="-">&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;</h3>
+<p version="c22bf0f9de6fc8842c8b284217dc64e5">&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;&#x5176;&#x5B9E;&#x8DDF;&#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#x4E00;&#x6837;&#xFF0C;&#x9996;&#x5148;&#x5FC5;&#x987B;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;<code>objectdId</code>&#xFF0C;&#x6216;&#x8005;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x5148;&#x83B7;&#x53D6;&#x8FD9;&#x4E2A;<code>objectdId</code>&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;<code>AVFile.GetFileWithObjectIdAsync</code>&#x65B9;&#x6CD5;&#x9996;&#x5148;&#x5B9E;&#x4F8B;&#x5316;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x4E0B;&#x8F7D;&#xFF1A;</p>
+<pre version="d929d2c592b86e07db4202617174507b"><code class="lang-javascript">if (GUI.Button(new Rect(50, 50, 200, 50), &quot;Download file&quot;))
+{
+   AVFile.GetFileWithObjectIdAsync(&quot;538ed669e4b0e335f6102809&quot;).ContinueWith(t =&gt;
+   {
+       var file = t.Result;
+       file.DownloadAsync().ContinueWith(s =&gt;
+       {
+           var dataByte = file.DataByte;//&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x6D41;&#x7684;byte&#x6570;&#x7EC4;&#xFF0C;&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x505A;&#x4FDD;&#x5B58;&#xFF0C;&#x53D1;&#x9001;&#x7B49;&#x64CD;&#x4F5C;&#x3002;
+       });
+   });
+}
+</code></pre>
+<h4 id="-">&#x66F4;&#x63A8;&#x8350;&#x7684;&#x4E0B;&#x8F7D;&#x65B9;&#x5F0F;</h4>
+<p version="e147837e97ca9a0326695b20d90ecdf3">&#x5BF9; Unity &#x6709;&#x7ECF;&#x9A8C;&#x7684;&#x5F00;&#x53D1;&#x8005;&#xFF0C;&#x6211;&#x4EEC;&#x66F4;&#x63A8;&#x8350;&#x7528;  Unity &#x81EA;&#x5E26;&#x7684; WWW &#x7C7B;&#x89E3;&#x51B3;&#x6587;&#x4EF6;&#x4E0B;&#x8F7D;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="26ffc344999eba62b64162e8b8d82cfd"><code class="lang-javascript">var req = new WWW(file.Url.AbsoluteUri);
+yield return req;
+string text = req.text;
+</code></pre>
+<p version="8ba5a7a78f001b2d42ce523d812c3da9">&#x4EE5;&#x4E0A;&#x662F;&#x9488;&#x5BF9;&#x7EAF;&#x6587;&#x4EF6;&#x6587;&#x4EF6;&#x7684;&#x64CD;&#x4F5C;&#x3002;
+&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x7684;&#x4E0B;&#x8F7D;&#xFF0C;&#x8FD8;&#x662F;&#x5EFA;&#x8BAE;&#x5F00;&#x53D1;&#x8005;&#x81EA;&#x884C;&#x5229;&#x7528; <code>AVFile.Url</code> &#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x5982;&#x4E0A;&#x64CD;&#x4F5C;&#x3002;</p>
+<h3 id="-">&#x5220;&#x9664;&#x6587;&#x4EF6;</h3>
+<p version="33325a8c2a9c98052f749cf651c43b0c"><strong>&#x5220;&#x9664;&#x6587;&#x4EF6;&#x5C31;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x6267;&#x884C;&#x4E4B;&#x540E;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7ACB;&#x523B;&#x5220;&#x9664;&#x8BB0;&#x5F55;&#xFF0C;&#x5E76;&#x4E14;&#x539F;&#x59CB;&#x6587;&#x4EF6;&#x4E5F;&#x4F1A;&#x4ECE;&#x5B58;&#x50A8;&#x4ED3;&#x5E93;&#x4E2D;&#x5220;&#x9664;&#xFF08;&#x6240;&#x6709;&#x6D89;&#x53CA;&#x5230;&#x7269;&#x7406;&#x7EA7;&#x522B;&#x5220;&#x9664;&#x7684;&#x64CD;&#x4F5C;&#x8BF7;&#x8C28;&#x614E;&#x4F7F;&#x7528;&#xFF09;</strong></p>
+<pre version="6bfe9d918595f72548fb344e96073244"><code class="lang-javascript">if (GUI.Button(new Rect(50, 50, 200, 50), &quot;Delete file&quot;))
+{
+   AVFile.GetFileWithObjectIdAsync(&quot;538ed669e4b0e335f6102809&quot;).ContinueWith(t =&gt;
+   {
+      var file = t.Result;
+      file.DeleteAsync();
+   });
+}
+</code></pre>
+<h2 id="-">&#x8C03;&#x7528;&#x4E91;&#x5F15;&#x64CE;</h2>
+<p version="e3d76740af70e5b943e411d3f8a6bafc">&#x4E91;&#x5F15;&#x64CE;&#x662F; LeanCloud &#x63D0;&#x4F9B;&#x7ED9;&#x5F00;&#x53D1;&#x8005;&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;&#x7AEF;&#x903B;&#x8F91;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x4F8B;&#x5982;&#x60F3;&#x5728;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x7EDF;&#x4E00;&#x7ED9;&#x7528;&#x6237;&#x5206;&#x914D;&#x968F;&#x673A;&#x7684;&#x6635;&#x79F0;&#xFF0C;&#x8FD9;&#x4E00;&#x64CD;&#x4F5C;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x4E91;&#x5F15;&#x64CE;&#x5B9E;&#x73B0;&#x3002;&#x5177;&#x4F53;&#x5173;&#x4E8E;&#x4E91;&#x5F15;&#x64CE;&#x7684;&#x4E00;&#x4E9B;&#x76F8;&#x5173;&#x6982;&#x5FF5;&#x548C;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x5148;&#x67E5;&#x770B; <a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#x6307;&#x5357;</a>&#x3002;</p>
+<p version="6e4f7a0d0a5d405a5bddf73ca153a959">&#x8C03;&#x7528;&#x4E91;&#x5F15;&#x64CE;&#x5728; SDK &#x4E2D;&#x6BD4;&#x8F83;&#x65B9;&#x4FBF;&#xFF0C;&#x5B83;&#x662F; <code>AVCloud</code> &#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x5168;&#x5C40;&#x5747;&#x53EF;&#x8C03;&#x7528;&#x3002;</p>
+<pre version="62ed6f92aa12783e72e40d46ae02c60a"><code class="lang-javascript">var dic = new Dictionary&lt;string, object&gt;();
+dic.Add(&quot;name&quot;, &quot;Justin&quot;);
+//...
+//&#x589E;&#x52A0;&#x53C2;&#x6570;
+//...
+//...
+var callTask = AVCloud.CallFunctionAsync&lt;string&gt;(&quot;TestFunctionName&quot;, dic);
+</code></pre>
+<p version="dca1c9ee4c504bc15b7e1d39aae1b9c2">&#x53EA;&#x9700;&#x8981;&#x4F20;&#x5165;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x51FD;&#x6570;&#x7684;&#x540D;&#x5B57;&#x548C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x9700;&#x8981;&#x53C2;&#x6570;&#x5373;&#x53EF;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x65E0;&#x53C2;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x76F4;&#x63A5;&#x4F20;&#x5165;<code>null</code>&#x5373;&#x53EF;&#x3002;</p>
+<h2 id="-">&#x6D88;&#x606F;&#x63A8;&#x9001;</h2>
+<p version="1b72cad0bd001c8d5eed399e14c677d6">&#x5728;Unity&#x4E2D;&#x6D88;&#x606F;&#x7684;&#x63A8;&#x9001;&#x53EA;&#x9700;&#x8981;&#x638C;&#x63E1;<code>AVPush</code>&#x7684;&#x7528;&#x6CD5;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x63A8;&#x9001;&#x6D88;&#x606F;&#x53D1;&#x7ED9;&#x670D;&#x52A1;&#x7AEF;&#xFF0C;&#x518D;&#x7531; LeanCloud &#x7684;&#x670D;&#x52A1;&#x7AEF;&#x5C06;&#x6D88;&#x606F;&#x90FD;&#x63A8;&#x9001;&#x5404;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x4F46;&#x8981;&#x6CE8;&#x610F;<strong>Unity&#x60F3;&#x5B9E;&#x73B0;&#x63A5;&#x53D7;&#x6D88;&#x606F;&#xFF0C;&#x6700;&#x597D;&#x4F9D;&#x8D56;&#x4E8E;&#x5F53;&#x524D;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x672C;&#x5730;&#x7684;API</strong>&#xFF0C;&#x6362;&#x8A00;&#x4E4B;&#xFF0C;&#x56E0;&#x4E3A;&#x63A5;&#x53D7;&#x6D88;&#x606F;&#x8FD9;&#x4E00;&#x64CD;&#x4F5C;&#x5728;&#x5404;&#x4E2A;&#x79FB;&#x52A8;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x6700;&#x597D;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x7684;API&#x53BB;&#x5B9E;&#x73B0;&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x53BB;&#x5B9E;&#x73B0;&#x3002;&#x8003;&#x8651;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;LeanCloud &#x6682;&#x65F6;&#x4E0D;&#x8003;&#x8651;&#x5728;Unity &#x505A;&#x8FC7;&#x591A;&#x7684;&#x5F3A;&#x5236;&#x6027;&#xFF0C;&#x5982;&#x4F55;&#x5C55;&#x73B0;&#x6D88;&#x606F;&#x63A5;&#x53D7;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x5F00;&#x53D1;&#x8005;&#x81EA;&#x5DF1;&#x53BB;&#x638C;&#x63A7;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x63A8;&#x8350;&#x5728;Unity&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x5E73;&#x53F0;&#x642D;&#x914D;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x9488;&#x5BF9;&#x8FD9;&#x4E2A;&#x5E73;&#x53F0;&#x7684;SDK&#xFF08;iOS,Android,Windows Phone&#x7B49;&#xFF09;&#x53BB;&#x8C03;&#x7528;&#x5E26;&#x6709;&#x5E73;&#x53F0;&#x7279;&#x5F81;&#x6027;&#x7684;&#x4E00;&#x4E9B;&#x529F;&#x80FD;&#x548C;API&#x3002;</p>
+<h3 id="-">&#x63A8;&#x9001;&#x7ED9;&#x6240;&#x6709;&#x7684;&#x8BBE;&#x5907;</h3>
+<pre version="4f1d8a5f81ae7bccca4ec2a7735cd04c"><code class="lang-javascript">AVPush push = new AVPush();
+push.Alert = &quot;message to all devices.&quot;;
+var task = push.SendAsync();
+</code></pre>
+<p version="ae261cda7e903de012253ba49a47f943">&#x4EE5;&#x4E0A;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5411;&#x6240;&#x6709;&#x5B89;&#x88C5;&#x4E86;&#x5F53;&#x524D;App&#x7684;&#x8BBE;&#x5907;&#x63A8;&#x9001;&#x6D88;&#x606F;&#x3002;</p>
+<h3 id="-">&#x53D1;&#x9001;&#x7ED9;&#x7279;&#x5B9A;&#x7684;&#x7528;&#x6237;</h3>
+<p version="ee4e1294b28c0179b1122be571f4ead8">&#x53D1;&#x9001;&#x7ED9;public&#x9891;&#x9053;&#x7684;&#x7528;&#x6237;&#xFF1A;</p>
+<pre version="711ff82c620b0536017a5f4d4855d198"><code class="lang-javascript"> AVPush push = new AVPush();
+ push.Alert = &quot;message to public channel.&quot;;
+
+ push.Query = new AVQuery&lt;AVInstallation&gt;().WhereEqualTo(&quot;channels&quot;, &quot;public&quot;);
+ var task = push.SendAsync();
+</code></pre>
+<h2 id="unity-sdk-">Unity SDK &#x6CE8;&#x610F;&#x4E8B;&#x9879;</h2>
+<ol>
+<li>&#x57FA;&#x4E8E; Unity &#x81EA;&#x8EAB;&#x7684; WWW &#x7C7B;&#x53D1;&#x9001; Http &#x8BF7;&#x6C42;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x5355;&#x4E2A;&#x8BF7;&#x6C42;&#x7684;&#x5927;&#x5C0F;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7; 2MB&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x4F7F;&#x7528; Unity SDK &#x65F6;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF0C;&#x6784;&#x5EFA;&#x67E5;&#x8BE2;&#x7B49;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x505A;&#x5230;&#x7B80;&#x6D01;&#x9AD8;&#x6548;&#x3002;</li>
+<li>Unity &#x4E2D;&#x8BF7;&#x5C06; <code>Optimization</code> &#x4E2D;&#x7684; <code>Stripping Level</code> &#x8BBE;&#x7F6E;&#x4E3A; <code>Disabled</code>&#x3002;</li>
+<li>&#x4ECE;&#x5B98;&#x7F51;&#x4E0A;&#x4E0B;&#x8F7D;&#x7684; SDK &#xFF0C;&#x5728; Unity 4.3 &#x4EE5;&#x540E;&#x7684;&#x7248;&#x672C;&#x90FD;&#x9700;&#x8981;&#x91CD;&#x547D;&#x540D;&#xFF0C;&#x628A;&#x7248;&#x672C;&#x53F7;&#x53BB;&#x6389;&#xFF0C;&#x4F8B;&#x5982;&#x4E0B;&#x8F7D;&#x7684;&#x6587;&#x4EF6;&#x53EB;&#x505A; <code>AVOSCloud.Unity-v1.1.5.dll</code>&#xFF0C;&#x8BF7;&#x91CD;&#x547D;&#x540D;&#x4E3A; <code>AVOSCloud.Unity.dll</code>&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x51FA;&#x73B0;&#x5F15;&#x5165;&#x811A;&#x672C;&#x5931;&#x8D25;&#x7684;&#x9519;&#x8BEF;&#x3002;</li>
+<li><p version="9b25fc7328ce04b6f848afe1d930f9a4">Unity &#x81EA;&#x4ECE;&#x5347;&#x7EA7;&#x5230; 5.0 &#x4E4B;&#x540E;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x4E2A; iOS &#x4E0A;&#x8BBF;&#x95EE; HTTPS &#x8BF7;&#x6C42;&#x65F6;&#x7684; SSL &#x8BC1;&#x4E66;&#x8BBF;&#x95EE;&#x9519;&#x8BEF;&#xFF1A;NSURLErrorDomain error -1012.
+&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;&#xFF1A;
+&#x5728; Unity &#x6784;&#x5EFA;&#x5B8C;&#x6210; iOS &#x9879;&#x76EE;&#x4E4B;&#x540E;&#xFF0C;&#x4F7F;&#x7528; XCode &#x6253;&#x5F00;&#x9879;&#x76EE;&#xFF0C;&#x627E;&#x5230; Classes/Unity/WWWConnection.mm &#x6587;&#x4EF6;
+&#x627E;&#x5230;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="9cc19a9165e2a0d41d6be3de1c3a518c"><code>(void)connection:(NSURLConnection*)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge
+</code></pre><p version="9e5851f746b0016b3c3b1e95b66dec9f">&#x628A;&#x8BE5;&#x65B9;&#x6CD5;&#x6309;&#x7167;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x4FEE;&#x6539;&#x5373;&#x53EF;&#xFF1A;</p>
+<p version="3022884942eb05fa4b5034a8cf9a1fdd">```</p>
+</li>
+<li><p version="773290e1ecadbe85af6b1cabdd78d92e">(void)connection:(NSURLConnection<em>)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge</em>)challenge
+{
+  if ([[challenge protectionSpace] authenticationMethod] == NSURLAuthenticationMethodServerTrust) {</p>
+<pre version="21160f2eb61ae25d5be63c7015aff468"><code>  [challenge.sender performDefaultHandlingForAuthenticationChallenge:challenge];
+</code></pre><p version="7d4ce7b460f361fa52565e5f71466745">  }
+  else
+  {</p>
+<pre version="dad70ece4fc7f2b6d57c53c57db4caa4"><code>  BOOL authHandled = [self connection:connection handleAuthenticationChallenge:challenge];
+
+  if(authHandled == NO)
+  {
+      self-&gt;_retryCount++;
+
+      // Empty user or password
+      if(self-&gt;_retryCount &gt; 1 || self.user == nil || [self.user length] == 0 || self.password == nil || [self.password length]  == 0)
+      {
+          [[challenge sender] cancelAuthenticationChallenge:challenge];
+          return;
+      }
+
+      NSURLCredential* newCredential =
+      [NSURLCredential credentialWithUser:self.user password:self.password persistence:NSURLCredentialPersistenceNone];
+
+      [challenge.sender useCredential:newCredential forAuthenticationChallenge:challenge];
+  }
+</code></pre><p version="09a42cf93abb9621f33aec53da095a66">  }
+}
+```
+&#x76EE;&#x524D; Unity &#x5B98;&#x65B9;&#x8FD8;&#x5728;&#x4FEE;&#x590D;&#x6B64;&#x95EE;&#x9898;&#xFF0C;&#x622A;&#x6B62;&#x5230; V5.0.1f1 &#x8BE5;&#x95EE;&#x9898;&#x4E00;&#x76F4;&#x5B58;&#x5728;&#xFF0C;&#x56E0;&#x6B64;&#x6240;&#x6709;&#x5347;&#x7EA7;&#x5230; Unity 5.0 &#x7684;&#x5F00;&#x53D1;&#x8005;&#x90FD;&#x9700;&#x8981;&#x5982;&#x6B64;&#x4FEE;&#x6539;&#xFF0C;&#x624D;&#x80FD;&#x786E;&#x4FDD; iOS &#x6B63;&#x786E;&#x8FD0;&#x884C;&#x3002;</p>
+</li>
+</ol>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,1127 @@
+<!doctype html>
+
+<html version="514c7d6ff6a2934db282cb2ed8e3d2f2">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="-">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x6A21;&#x5757;</h1>
+<p version="b6d4e1554009bb45b6bf5ad23224e8e5">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#xFF0C;&#x53C8;&#x79F0;&#x300C;&#x4E8B;&#x4EF6;&#x6D41;&#x300D;&#xFF0C;&#x5728;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x573A;&#x666F;&#x975E;&#x5E38;&#x591A;&#xFF0C;&#x5305;&#x62EC;&#x7528;&#x6237;&#x95F4;&#x5173;&#x6CE8;&#xFF08;&#x597D;&#x53CB;&#xFF09;&#x3001;&#x670B;&#x53CB;&#x5708;&#xFF08;&#x65F6;&#x95F4;&#x7EBF;&#xFF09;&#x3001;&#x72B6;&#x6001;&#x3001;&#x4E92;&#x52A8;&#xFF08;&#x70B9;&#x8D5E;&#xFF09;&#x3001;&#x79C1;&#x4FE1;&#x7B49;&#x5E38;&#x7528;&#x529F;&#x80FD;&#x3002;</p>
+<h2 id="-">&#x57FA;&#x672C;&#x6982;&#x5FF5;</h2>
+<h3 id="status">Status</h3>
+<p version="4bf1b1c8305313948fde776547992697">Status &#x662F;&#x6307;&#x4E00;&#x6761;&#x5E7F;&#x4E49;&#x4E0A;&#x7684;&#x300C;&#x72B6;&#x6001;&#x300D;&#xFF0C;&#x5B83;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x66F4;&#x65B0;&#x4E86;&#x72B6;&#x6001;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x4EFB;&#x610F;&#x7684;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x6BD4;&#x5982;&#x67D0;&#x4EBA;&#x53D1;&#x5E03;&#x4E86;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#xFF0C;&#x67D0;&#x4E2A;&#x56FE;&#x7247;&#x88AB;&#x8D5E;&#x7B49;&#x7B49;&#x3002;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x8868;&#x540D;&#x79F0;&#x4E3A; _Status&#x3002;</p>
+<p version="30a79add44fa0b83701fb034b047ff8d">&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;<strong>&#x5B58;&#x5165; _Status &#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x65E0;&#x6CD5;&#x4FEE;&#x6539;&#xFF0C;&#x4EFB;&#x4F55;&#x5BF9;&#x5DF2;&#x5B58;&#x5728;&#x8BB0;&#x5F55;&#x7684;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#x90FD;&#x4F1A;&#x62A5;&#x9519;&#x3002;</strong>&#x5C31;&#x50CF;&#x5FAE;&#x535A;&#x3001;&#x5FAE;&#x4FE1;&#x670B;&#x53CB;&#x5708;&#x4E4B;&#x7C7B;&#x7684;&#x7CFB;&#x7EDF;&#x4E0D;&#x5141;&#x8BB8;&#x5BF9;&#x5DF2;&#x53D1;&#x5E03;&#x7684;&#x5185;&#x5BB9;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9; _Status &#x8868;&#x4E2D;&#x7684;&#x8BB0;&#x5F55;&#x4E5F;&#x5E94;&#x7528;&#x4E86;&#x540C;&#x6837;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x5373;&#x5982;&#x9700;&#x4FEE;&#x6539;&#xFF0C;&#x53EA;&#x80FD;&#x5220;&#x9664;&#x8001;&#x8BB0;&#x5F55;&#xFF0C;&#x6DFB;&#x52A0;&#x65B0;&#x8BB0;&#x5F55;&#x3002;</p>
+<p version="ab201bdb747365e9943c34d8e1970466">&#x5982;&#x679C;&#x4E1A;&#x52A1;&#x7684;&#x786E;&#x8981;&#x6C42;&#x72B6;&#x6001;&#x7684;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x66F4;&#x6539;&#xFF0C;&#x8BF7;&#x5C06;&#x53EF;&#x53D8;&#x7684;&#x5185;&#x5BB9;/&#x5B57;&#x6BB5;&#x653E;&#x5165;&#x81EA;&#x5EFA;&#x7684;&#x8868;&#x4E2D;&#x7EF4;&#x62A4;&#xFF0C;&#x5E76;&#x901A;&#x8FC7; _Status &#x8868;&#x8BB0;&#x5F55;&#x7684; objectId &#x6765;&#x5EFA;&#x7ACB;&#x5173;&#x8054;&#x3002;</p>
+<h3 id="follower-followee">Follower/Followee</h3>
+<p version="92d9d73935834f3fb0c86812c50500cc">&#x5206;&#x522B;&#x8868;&#x793A;&#x7528;&#x6237;&#x7684;&#x7C89;&#x4E1D;&#x548C;&#x7528;&#x6237;&#x7684;&#x5173;&#x6CE8;&#xFF0C;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x4E2D;&#x5BF9;&#x5E94;&#x7740;&#x4E24;&#x5F20;&#x8868; <code>_Follower</code> &#x548C; <code>_Followee</code>&#x3002;</p>
+<h3 id="-">&#x7279;&#x522B;&#x63D0;&#x793A;</h3>
+<p version="b1adc44f541cfd4e70eb8fcf42ab1e4c">&#x53D1;&#x4E86;&#x4E00;&#x6761;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4E0D;&#x4EE3;&#x8868;&#x4F1A;&#x81EA;&#x52A8;&#x53D1;&#x9001;&#x4E86;&#x4E00;&#x6761; push &#x6D88;&#x606F;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x63A8;&#x9001;&#x901A;&#x77E5;&#xFF09;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x63A7;&#x5236;&#x662F;&#x5426;&#x4F7F;&#x7528; push&#x3002;&#x5173;&#x4E8E;&#x6D88;&#x606F;&#x63A8;&#x9001;&#x8BF7;&#x53C2;&#x8003;<a href="./push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></p>
+<h2 id="javascript-sdk-">JavaScript SDK &#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h2>
+<h3 id="-">&#x7528;&#x6237;&#x5173;&#x7CFB;</h3>
+<p version="b92eb79c6c36f830bcf7cd03205a8bd5">AV.User &#x65B0;&#x589E;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5; <code>follow</code> &#x548C; <code>unfollow</code> &#x6765;&#x5EFA;&#x7ACB;&#x7528;&#x6237;&#x5173;&#x7CFB;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5173;&#x6CE8;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#xFF1A;</p>
+<pre version="22b680476282a20e634f2b050dbcb60e"><code class="lang-javascript">AV.User.current().follow(&apos;52f9be45e4b035debf88b6e2&apos;).then(function(){
+  //&#x5173;&#x6CE8;&#x6210;&#x529F;
+}, function(err){
+  //&#x5173;&#x6CE8;&#x5931;&#x8D25;
+  console.dir(err);
+});
+</code></pre>
+<p version="98e7facece8c93d527d88795087bf5bf">follow&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x4E00;&#x4E2A;AV.User&#x5BF9;&#x8C61;&#x6216;&#x8005;User&#x5BF9;&#x8C61;&#x7684;objectId&#xFF08;&#x901A;&#x8FC7;user.id&#x62FF;&#x5230;&#xFF09;&#x3002;</p>
+<p version="f649608fb26ed4f8433cf428c5907394">&#x53D6;&#x6D88;&#x5173;&#x6CE8;&#x4F7F;&#x7528;unfollow&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="93007aaaf712230dff9b8e6061107fa8"><code class="lang-javascript">AV.User.current().unfollow(&apos;52f9be45e4b035debf88b6e2&apos;).then(function(){
+  //&#x53D6;&#x6D88;&#x5173;&#x6CE8;&#x6210;&#x529F;
+}, function(err){
+  //&#x53D6;&#x6D88;&#x5173;&#x6CE8;&#x5931;&#x8D25;
+  console.dir(err);
+});
+</code></pre>
+<p version="c0a3a022058abe4954e69d04841c421b">&#x5173;&#x6CE8;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x81EA;&#x5DF1;&#x5173;&#x6CE8;&#x7684;&#x7528;&#x6237;&#x5217;&#x8868;&#xFF0C;&#x4F7F;&#x7528;<code>AV.User#followeeQuery</code>&#x5F97;&#x5230;&#x4E00;&#x4E2A;<code>AV.Query</code>&#x5BF9;&#x8C61;&#x6765;&#x67E5;&#x8BE2;&#x5173;&#x6CE8;&#x7684;&#x7528;&#x6237;&#x5217;&#x8868;&#xFF1A;</p>
+<pre version="4052ee7a191963d018a009b6ee7d13c2"><code class="lang-javascript">var query = AV.User.current().followeeQuery();
+query.include(&apos;followee&apos;);
+query.find().then(function(followees){
+  //&#x5173;&#x6CE8;&#x7684;&#x7528;&#x6237;&#x5217;&#x8868;followees
+});
+</code></pre>
+<p version="99566f263d11cd2c9917c07471b93e63">followee&#x662F;&#x4E00;&#x4E2A;Pointer&#x7C7B;&#x578B;&#xFF0C;&#x901A;&#x8FC7;include&#x5C06;&#x5B83;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#x67E5;&#x8BE2;&#x5305;&#x62EC;&#x8FDB;&#x6765;&#xFF0C;&#x5426;&#x5219;&#x53EA;&#x4F1A;&#x8FD4;&#x56DE;&#x7528;&#x6237;&#x7684;id&#x3002;&#x5F53;&#x67E5;&#x8BE2;&#x8BA1;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF08;&#x4F7F;&#x7528;AV.Query#count&#x65B9;&#x6CD5;&#xFF09;&#x4E0D;&#x5EFA;&#x8BAE;include&#x3002;</p>
+<p version="6fed02bb5f40229ae3ceaf3eef0c7a94">&#x67E5;&#x8BE2;&#x81EA;&#x5DF1;&#x7684;&#x7C89;&#x4E1D;&#xFF08;&#x4ED6;&#x4EBA;&#x5173;&#x6CE8;&#x4E86;&#x6211;&#xFF0C;&#x4ED6;&#x4EBA;&#x5C31;&#x662F;&#x6211;&#x7684;&#x7C89;&#x4E1D;&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>followerQuery</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="52214cef0a12715a3915880384b0e51f"><code class="lang-javascript">var query = AV.User.current().followerQuery();
+query.include(&apos;follower&apos;);
+query.find().then(function(followers){
+  //&#x7C89;&#x4E1D;&#x5217;&#x8868;followers
+});
+</code></pre>
+<p version="e11c254d2bd695f6cbc64bd5c430ee64">followerQuery&#x548C;followerQuery&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;AV.Query&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x50CF;&#x666E;&#x901A;&#x7684;<a href="/api-docs/javascript/symbols/AV.Query.html">AV.Query</a>&#x5BF9;&#x8C61;&#x90A3;&#x6837;&#x4F7F;&#x7528;&#xFF0C;&#x4ED6;&#x4EEC;&#x672C;&#x8D28;&#x4E0A;&#x90FD;&#x662F;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x4E2D;&#x7684;<code>_Follower</code>&#x548C;<code>_Followee</code>&#x8868;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;order,skip,limit&#x4EE5;&#x53CA;&#x5176;&#x4ED6;where&#x6761;&#x4EF6;&#x7B49;&#x4FE1;&#x606F;&#x3002;</p>
+<h3 id="-">&#x72B6;&#x6001;</h3>
+<p version="4e5f9af39653bb025607ad05662b4dee">&#x5173;&#x6CE8;&#x4E86;&#x7528;&#x6237;&#x4E4B;&#x540E;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x6210;&#x4E3A;&#x4ED6;&#x7684;&#x7C89;&#x4E1D;&#xFF09;&#xFF0C;&#x4F60;&#x5C31;&#x4F1A;&#x63A5;&#x6536;&#x5230;&#x8BE5;&#x7528;&#x6237;&#x53D1;&#x9001;&#x7ED9;&#x4ED6;&#x7684;&#x7C89;&#x4E1D;&#x7684;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x559C;&#x6B22;&#x4E86;&#x67D0;&#x4E2A;&#x89C6;&#x9891;&#xFF0C;&#x6211;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x8FD9;&#x6761;&#x4FE1;&#x606F;&#x201C;&#x6211;&#x559C;&#x6B22;&#x4E86;&#x89C6;&#x9891;xxxx&#x201D;&#x7ED9;&#x6211;&#x7684;&#x7C89;&#x4E1D;&#x3002;&#x6211;&#x7684;&#x7C89;&#x4E1D;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x4ED6;&#x4EEC;&#x7684;&#x6536;&#x4EF6;&#x7BB1;(inbox)&#x91CC;&#x6536;&#x5230;&#x8FD9;&#x6761;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#x3002;</p>
+<h4 id="-">&#x53D1;&#x5E03;&#x72B6;&#x6001;</h4>
+<p version="98fac0d0e9f233991f883dbf2fc83273">&#x5F53;&#x524D;&#x767B;&#x5F55;&#x7528;&#x6237;&#x53D1;&#x9001;&#x4E00;&#x6761;&#x72B6;&#x6001;&#x7ED9;&#x5173;&#x6CE8;&#x4ED6;&#x7684;&#x7C89;&#x4E1D;&#xFF1A;
+&#x7684;&#x7C89;&#x4E1D;&#xFF1A;</p>
+<pre version="fb56a2eda7d6cf9d767d05e016ff73cb"><code class="lang-javascript">var status = new AV.Status(&apos;&#x89C6;&#x9891;url&apos;, &apos;&#x6211;&#x559C;&#x6B22;&#x4E86;&#x89C6;&#x9891;xxxx.&apos;);
+status.set(&apos;sound&apos;, &apos;sound.wmv&apos;);
+AV.Status.sendStatusToFollowers(status).then(function(status){
+  //&#x53D1;&#x5E03;&#x72B6;&#x6001;&#x6210;&#x529F;&#xFF0C;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x4FE1;&#x606F;
+  console.dir(status);
+}, function(err){
+  //&#x53D1;&#x5E03;&#x5931;&#x8D25;
+  console.dir(err);
+});
+</code></pre>
+<p version="09f73e6acb937dab8a8b567d7ba2bdf7">&#x53D1;&#x5E03;&#x72B6;&#x6001;&#x6210;&#x529F;&#xFF0C;&#x7C89;&#x4E1D;&#x7684;&#x6536;&#x4EF6;&#x7BB1;&#x4E0D;&#x4E00;&#x5B9A;&#x9A6C;&#x4E0A;&#x80FD;&#x770B;&#x5230;&#xFF0C;&#x56E0;&#x4E3A;&#x53D1;&#x5E03;&#x8FC7;&#x7A0B;&#x662F;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4F1A;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x5EF6;&#x8FDF;&#xFF0C;&#x901A;&#x5E38;&#x8FD9;&#x4E2A;&#x5EF6;&#x8FDF;&#x90FD;&#x4E0D;&#x5927;&#xFF08;&#x51E0;&#x79D2;&#x4E4B;&#x5185;&#xFF09;&#x3002;&#x53D1;&#x9001;&#x72B6;&#x6001;&#x5FC5;&#x987B;&#x5904;&#x4E8E;&#x7528;&#x6237;&#x767B;&#x5F55;&#x72B6;&#x6001;&#xFF0C;&#x4F7F;&#x7528;<code>AV.Status.sendStatusToFollowers</code>&#x5C06;&#x53D1;&#x9001;&#x7ED9;&#x767B;&#x5F55;&#x7528;&#x6237;&#x7684;&#x7C89;&#x4E1D;&#x3002;</p>
+<p version="29506524354aff51924d47f289443426">AV.Status&#x5BF9;&#x8C61;&#x5305;&#x542B;&#x4E0B;&#x5217;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li>id &#x5BF9;&#x8C61;&#x7684;objectId</li>
+<li>messageId &#x72B6;&#x6001;&#x5728;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x6536;&#x4EF6;&#x7BB1;&#x7684;&#x6D88;&#x606F;&#x7F16;&#x53F7;&#xFF0C;&#x53D1;&#x4EF6;&#x7BB1;&#x8FD4;&#x56DE;&#x7684;status&#x5219;&#x6CA1;&#x6709;&#x6B64;&#x5C5E;&#x6027;&#xFF0C;messageId&#x53EF;&#x7528;&#x4E8E;&#x6536;&#x4EF6;&#x7BB1;&#x7684;&#x5206;&#x9875;&#x67E5;&#x8BE2;&#xFF0C;&#x89C1;&#x4E0B;&#x6587;&#x3002;</li>
+<li>inboxType &#x6536;&#x4EF6;&#x7BB1;&#x7C7B;&#x578B;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;timeline&#x6536;&#x4EF6;&#x7BB1;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;default&#x3002;SDK&#x9ED8;&#x8BA4;&#x63D0;&#x4F9B;private&#x8868;&#x793A;&#x79C1;&#x4FE1;&#xFF0C;default&#x8868;&#x793A;timeline&#xFF0C;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x3002;</li>
+<li>data  &#x72B6;&#x6001;&#x5C5E;&#x6027;&#xFF0C;&#x4E00;&#x4E2A;JSON&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;get&#x548C;set&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x548C;&#x8BBE;&#x7F6E;</li>
+<li>createdAt &#x6D88;&#x606F;&#x7684;&#x521B;&#x5EFA;&#x65F6;&#x95F4;</li>
+</ul>
+<p version="0a08203491e9fa2bfe65590a0624a420">&#x5176;&#x4E2D;data.source&#x5C5E;&#x6027;&#x662F;&#x4FDD;&#x7559;&#x5C5E;&#x6027;&#xFF0C;&#x9ED8;&#x8BA4;&#x6307;&#x5411;&#x72B6;&#x6001;&#x7684;&#x53D1;&#x5E03;&#x8005;&#x3002;</p>
+<h4 id="-">&#x53D1;&#x9001;&#x79C1;&#x4FE1;&#x7ED9;&#x67D0;&#x4E2A;&#x7528;&#x6237;</h4>
+<p version="b98f3aa09719ca557ad07a3dc0feb909">&#x6211;&#x8FD8;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x4E00;&#x6761;&#x79C1;&#x4FE1;&#x7ED9;&#x5355;&#x72EC;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#xFF1A;</p>
+<pre version="77ba94c13ffbd0ef8307914a06c50f82"><code class="lang-javascript">var status = new AV.Status(null, &apos;&#x79D8;&#x5BC6;&#x6D88;&#x606F;&apos;);
+AV.Status.sendPrivateStatus(status,&apos;52f9be45e4b035debf88b6e2&apos;).
+  then(function(status){
+    //&#x53D1;&#x9001;&#x6210;&#x529F;
+    console.dir(status);
+  }, function(err){
+    //&#x53D1;&#x5E03;&#x5931;&#x8D25;
+    console.dir(err);
+});
+</code></pre>
+<p version="d542f03801d1d342dccc7152582ad9f0"><code>AV.Status.sendPrivateStatus</code>&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x79C1;&#x4FE1;&#x63A5;&#x6536;&#x7684;&#x7528;&#x6237;&#x6216;&#x8005;&#x7528;&#x6237;&#x7684;objectId&#x3002;</p>
+<h4 id="-">&#x53D1;&#x9001;&#x7ED9;&#x81EA;&#x5B9A;&#x4E49;&#x6536;&#x4EF6;&#x7BB1;</h4>
+<p version="8def7ea209b15439380f36e0d2f0eb9a">&#x901A;&#x8FC7;send&#x65B9;&#x6CD5;&#x8FD8;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;inboxType:</p>
+<pre version="10dd1c756411da90bf74a82058bccc2b"><code class="lang-javascript">var query = ... //&#x4E00;&#x4E2A;AV.Query&#x5BF9;&#x8C61;&#xFF0C;&#x5B9A;&#x4E49;&#x63A5;&#x6536;&#x8005;&#x3002;
+var status = new AV.Status(null, &apos;&#x6211;&#x8BFB;&#x4E86;&#x300A;clojure&#x7F16;&#x7A0B;&#x4E50;&#x8DA3;&#x300B;&apos;);
+//&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;book&#x6536;&#x4EF6;&#x7BB1;
+status.inboxType = &apos;book&apos;;
+status.query = query;
+status.send().then(function(status){
+  //&#x53D1;&#x9001;&#x6210;&#x529F;
+});
+</code></pre>
+<h4 id="-">&#x67E5;&#x8BE2;&#x6536;&#x4EF6;&#x7BB1;</h4>
+<p version="011ae5cb4a5bf12ee74028d38ab018aa">&#x67E5;&#x8BE2;&#x6211;&#x7684;timeline&#x6536;&#x4EF6;&#x7BB1;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>AV.Status.inboxQuery</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="ebed89c01d64e4d425569226df050daa"><code class="lang-javascript">var query = AV.Status.inboxQuery(AV.User.current());
+query.find().then(function(statuses){
+  //&#x67E5;&#x8BE2;&#x6210;&#x529F;&#xFF0C;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x5217;&#x8868;&#xFF0C;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x90FD;&#x662F;AV.Status
+}, function(err){
+  //&#x67E5;&#x8BE2;&#x5931;&#x8D25;
+  console.dir(err);
+});
+</code></pre>
+<p version="679b555a089a996b117bca1ff2efcc4b">&#x6536;&#x4EF6;&#x7BB1;&#x8FD4;&#x56DE;&#x7684;status&#x5217;&#x8868;&#xFF0C;&#x6BCF;&#x4E2A;status&#x90FD;&#x6709;messageId&#x5C5E;&#x6027;&#xFF0C;&#x8868;&#x793A;&#x8FD9;&#x6761;status&#x5728;&#x8FD9;&#x4E2A;&#x6536;&#x4EF6;&#x7BB1;&#x91CC;&#x7684;&#x552F;&#x4E00;&#x7F16;&#x53F7;&#xFF0C;<code>AV.InboxQuery</code>&#x6709;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x9650;&#x5236;messageId&#x7684;&#x8303;&#x56F4;&#xFF1A;<code>sinceId</code>&#x548C;<code>maxId</code>&#x3002;&#x5176;&#x4E2D;:</p>
+<ul>
+<li>sinceId&#x8BBE;&#x5B9A;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;status&#x7684;messageId&#x5FC5;&#x987B;<strong>&#x5927;&#x4E8E;</strong>&#x4F20;&#x5165;&#x7684;message id&#xFF0C;</li>
+<li>maxId&#x9650;&#x5B9A;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;status&#x7684;messageId&#x5FC5;&#x987B;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x4F20;&#x5165;&#x7684;message id&#x3002;</li>
+</ul>
+<p version="d1fb7469a7f80627dbb291752764d4eb">&#x901A;&#x8FC7;sinceId&#x548C;maxId&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5206;&#x9875;&#x67E5;&#x8BE2;&#xFF1A;</p>
+<ul>
+<li>&#x67E5;&#x8BE2;&#x672C;&#x6B21;&#x67E5;&#x8BE2;&#x4E4B;&#x540E;&#x65B0;&#x589E;&#x7684;status&#xFF08;&#x5411;&#x540E;&#x7FFB;&#x9875;&#x5237;&#x65B0;&#xFF09;:</li>
+</ul>
+<pre version="f4d817a06b6e3ce95bc80195bf396d25"><code class="lang-javascript">//&#x5047;&#x8BBE;messageId&#x662F;&#x4E0A;&#x6B21;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;status&#x7684;&#x6700;&#x5927;messageId&#x7F16;&#x53F7;
+var messageId = ...
+var query = AV.Status.inboxQuery(AV.User.current());
+query.sinceId(messageId);
+//&#x67E5;&#x8BE2;&#x4ECE;&#x4E0A;&#x6B21;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4E4B;&#x540E;&#x7684;&#x66F4;&#x65B0;status
+query.find().then(function(statuses){
+  //&#x67E5;&#x8BE2;&#x6210;&#x529F;&#xFF0C;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x5217;&#x8868;&#xFF0C;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x90FD;&#x662F;AV.Status
+}, function(err){
+  //&#x67E5;&#x8BE2;&#x5931;&#x8D25;
+  console.dir(err);
+});
+</code></pre>
+<ul>
+<li>&#x67E5;&#x8BE2;&#x672C;&#x6B21;&#x67E5;&#x8BE2;&#x7684;&#x524D;&#x4E00;&#x9875;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x66F4;&#x8001;&#x7684;status&#xFF0C;&#x5411;&#x524D;&#x7FFB;&#x9875;&#xFF09;:</li>
+</ul>
+<pre version="850fcfa77c14cc6cccd6737cf8bb9483"><code class="lang-javascript">//&#x5047;&#x8BBE;messageId&#x662F;&#x4E0A;&#x6B21;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;status&#x7684;&#x6700;&#x5927;messageId&#x7F16;&#x53F7;
+var messageId = ...
+var query = AV.Status.inboxQuery(AV.User.current());
+query.maxId(messageId);
+</code></pre>
+<p version="f8c9a893f62260e9fdadea52f75553ff"><code>AV.Status.inboxQuery</code>&#x8FD8;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x6536;&#x4EF6;&#x7BB1;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x67E5;&#x8BE2;timeline&#x6536;&#x4EF6;&#x7BB1;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x79C1;&#x4FE1;&#x6536;&#x4EF6;&#x7BB1;&#xFF1A;</p>
+<pre version="dd5f0a3e821aa59d8567d12feef76ea4"><code class="lang-javascript">var query = AV.Status.inboxQuery(AV.User.current(), &apos;private&apos;);
+</code></pre>
+<h4 id="-">&#x67E5;&#x8BE2;&#x6536;&#x4EF6;&#x7BB1;&#x672A;&#x8BFB;&#x72B6;&#x6001;&#x6570;&#x76EE;</h4>
+<p version="ca825c13ef9257051ebf42d18575f7ad">&#x4F7F;&#x7528;<code>AV.Status.countUnreadStatuses</code>&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x67D0;&#x4E2A;&#x6536;&#x4EF6;&#x7BB1;&#x7684;&#x672A;&#x8BFB;&#x72B6;&#x6001;&#x6570;&#x76EE;&#x548C;&#x603B;&#x6570;&#x76EE;&#xFF1A;</p>
+<pre version="6db444f3e6dd00a684d08ee4b73d8133"><code class="lang-javascript">AV.Status.countUnreadStatuses(AV.User.current()).then(function(result){
+  console.dir(result);
+  var total = result.total;
+  var unread  = result.unread;
+}, function(err){
+    //&#x67E5;&#x8BE2;&#x5931;&#x8D25;
+});
+</code></pre>
+<p version="9075dcc1fddf46e9a61f2543cef64235">&#x540C;&#x6837;&#x7684;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x67E5;&#x8BE2;&#x5F53;&#x524D;&#x767B;&#x5F55;&#x7528;&#x6237;&#x672A;&#x8BFB;&#x79C1;&#x4FE1;&#x7684;&#x672A;&#x8BFB;&#x6570;&#x76EE;&#x548C;&#x603B;&#x6570;&#x76EE;&#xFF1A;</p>
+<pre version="49350f78907f573c86cd71f367d4f8d3"><code class="lang-javascript">AV.Status.countUnreadStatuses(AV.User.current(),&apos;private&apos;).then(function(result){
+  console.dir(result);
+  var total = result.total;
+  var unread  = result.unread;
+}, function(err){
+    //&#x67E5;&#x8BE2;&#x5931;&#x8D25;
+});
+</code></pre>
+<h4 id="-">&#x67E5;&#x8BE2;&#x53D1;&#x4EF6;&#x7BB1;</h4>
+<p version="5dd3e57121f8ec91133e10236f071c2b">&#x67E5;&#x8BE2;&#x6211;&#x53D1;&#x51FA;&#x53BB;&#x7684;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>statusQuery</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="a7d02b579996300fdc3a5b9617adf858"><code class="lang-javascript">var query = AV.Status.statusQuery(AV.User.current());
+query.find().then(function(statuses){
+  //&#x67E5;&#x8BE2;&#x6210;&#x529F;&#xFF0C;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x5217;&#x8868;&#xFF0C;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x90FD;&#x662F;AV.Object
+}, function(err){
+  //&#x67E5;&#x8BE2;&#x5931;&#x8D25;
+  console.dir(err);
+});
+</code></pre>
+<p version="f873bed24fe33fb2b13fe37bb6dbbcc5"><code>AV.Status.statusQuery</code>&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;AV.Query&#x5BF9;&#x8C61;&#xFF0C;&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x7684;<code>_Status</code>&#x8868;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x81EA;&#x4E3B;&#x6DFB;&#x52A0;&#x66F4;&#x591A;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x3002;</p>
+<h2 id="ios-sdk-">iOS SDK&#x4E2D;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h2>
+<h3 id="-">&#x597D;&#x53CB;&#x5173;&#x7CFB;</h3>
+<h4 id="-">&#x5173;&#x6CE8;/&#x53D6;&#x6D88;&#x5173;&#x6CE8;</h4>
+<p version="7f1e3a61b984d805eb82d6aa0919e990">&#x5F53;&#x524D;&#x767B;&#x5F55;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5173;&#x6CE8;&#x67D0;&#x4EBA;&#xFF1A;</p>
+<pre version="de6ff0052197648d6b3cfed7b61786a8"><code>NSString *userObjectId = @&quot;XXXXXX&quot;;
+
+//&#x5173;&#x6CE8;
+[[AVUser currentUser] follow:userObjectId andCallback:^(BOOL succeeded, NSError *error) {
+
+}];
+
+//&#x53D6;&#x6D88;&#x5173;&#x6CE8;
+[[AVUser currentUser] unfollow:userObjectId andCallback:^(BOOL succeeded, NSError *error) {
+
+}];
+</code></pre><p version="b721dc16b48d6d934d1c9a8490c5d440">&#x5982;&#x679C;&#x60A8;&#x5728;&#x5E94;&#x7528;&#x8BBE;&#x7F6E;&#x7684;&#x5E94;&#x7528;&#x9009;&#x9879;&#x91CC;&#x52FE;&#x9009;&#x4E86;<code>&#x81EA;&#x52A8;&#x4E92;&#x76F8;&#x5173;&#x6CE8;&#xFF08;&#x4E8B;&#x4EF6;&#x6D41;&#xFF09;</code>&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x5F53;&#x524D;&#x7528;&#x6237;&#x5173;&#x6CE8;&#x67D0;&#x4E2A;&#x4EBA;&#xFF0C;&#x90A3;&#x4E2A;&#x4EBA;&#x4E5F;&#x4F1A;&#x81EA;&#x52A8;&#x5173;&#x6CE8;&#x5F53;&#x524D;&#x7528;&#x6237;&#x3002;</p>
+<p version="41bfce8bb9d74238a9ea2fd0e7f291d7">&#x4ECE; 2.6.7 &#x7248;&#x672C;&#x5F00;&#x59CB;&#xFF0C;&#x6211;&#x4EEC;&#x5141;&#x8BB8;&#x5728; follow &#x7684;&#x65F6;&#x5019;&#x540C;&#x65F6;&#x4F20;&#x5165;&#x4E00;&#x4E2A; attribute &#x5217;&#x8868;&#xFF0C;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5173;&#x7CFB;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x90FD;&#x5C06;&#x5728; <code>_Follower</code> &#x548C; <code>_Followee</code> &#x8868;&#x540C;&#x65F6;&#x5B58;&#x5728;:</p>
+<pre version="1d02e9108d33dab765e181a804c51b49"><code class="lang-objc">   NSDictionary * attrs = &#x2026;&#x2026;
+   [[AVUser currentUser] follow:userObjectId userDictionary:attrs andCallback:^(BOOL succeeded, NSError *error) {
+        //&#x5904;&#x7406;&#x7ED3;&#x679C;
+    }];
+</code></pre>
+<h4 id="-">&#x83B7;&#x53D6;&#x7C89;&#x4E1D;/&#x5173;&#x6CE8;&#x5217;&#x8868;</h4>
+<p version="40a052142f342809e3e766dd3ae5db8a">&#x6709;2&#x4E2A;&#x7279;&#x6B8A;&#x7684;<code>AVQuery</code>:</p>
+<pre version="95c2c1000a03319c21905d8a0aa096de"><code class="lang-objc">//&#x7C89;&#x4E1D;&#x5217;&#x8868;&#x67E5;&#x8BE2;
+AVQuery *query= [AVUser followerQuery:@&quot;USER_OBJECT_ID&quot;];
+
+//&#x5173;&#x6CE8;&#x5217;&#x8868;&#x67E5;&#x8BE2;
+AVQuery *query= [AVUser followeeQuery:@&quot;USER_OBJECT_ID&quot;];
+</code></pre>
+<p version="4c896497f9ba13dfd03d65b163c059ab"><code>followerQuery</code> &#x548C; <code>followeeQuery</code> &#x8FD4;&#x56DE;&#x7684; AVQuery &#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x5176;&#x4ED6;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF0C;&#x53EA;&#x8981;&#x5728;<code>_Followee</code>&#x548C;<code>_Follower</code> &#x8868;&#x91CC;&#x5B58;&#x5728;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x67E5;&#x8BE2;&#x6216;&#x8005;&#x6392;&#x5E8F;&#x6761;&#x4EF6;&#x3002;</p>
+<p version="18abe6cd899286c37d7a365ce198c7e9"><strong>&#x6CE8;&#xFF1A;&#x9ED8;&#x8BA4;&#x7684;&#x67E5;&#x8BE2;&#x5F97;&#x5230;&#x7684;AVUser&#x5BF9;&#x8C61;&#x4EC5;&#x4EC5;&#x6709;ObjectId&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x6574;&#x4E2A;AVUser&#x5BF9;&#x8C61;&#x6240;&#x6709;&#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x8C03;&#x7528;include&#x65B9;&#x6CD5;</strong>&#x3002;&#x4F8B;&#x5982;</p>
+<pre version="b3e2f725b780b493fca7e8652d86bf04"><code class="lang-objc">AVQuery *query= [AVUser followeeQuery:@&quot;USER_OBJECT_ID&quot;];
+[query includeKey:@&quot;followee&quot;];
+</code></pre>
+<p version="bfa5a22bcc8ea6f6974821c0375f9393">&#x662F;&#x5206;&#x522B;&#x83B7;&#x5F97;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x7C89;&#x4E1D;&#x548C;&#x5173;&#x6CE8;, &#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x53D6;&#x5F97;&#x8FD9;&#x8FD9;&#x4E24;&#x79CD;:</p>
+<pre version="05968843fcf584a3490ae830ddbbe4f0"><code class="lang-objc">[[AVUser currentUser] getFollowersAndFollowees:^(NSDictionary *dict, NSError *error) {
+    NSArray *followers=dict[@&quot;followers&quot;];
+    NSArray *followees=dict[@&quot;followees&quot;];
+}];
+</code></pre>
+<h3 id="-">&#x72B6;&#x6001;</h3>
+<h4 id="-">&#x53D1;&#x5E03;&#x72B6;&#x6001;</h4>
+<p version="90bcbc52accec042d489e015adec90f7">&#x53D1;&#x5E03;&#x4E00;&#x6761;&#x65F6;&#x95F4;&#x7EBF;&#x72B6;&#x6001;, &#x5373;&#x53D1;&#x4E00;&#x6761;&#x6211;&#x7684;&#x7C89;&#x4E1D;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x7684;&#x72B6;&#x6001;</p>
+<pre version="6866374d2e163933d9127380cc751014"><code class="lang-objc">AVStatus *status=[[AVStatus alloc] init];
+
+status.data=@{@&quot;text&quot;:@&quot;data type change&quot;};
+
+[AVUser logInWithUsername:@&quot;travis&quot; password:@&quot;123456&quot;];
+[AVStatus sendStatusToFollowers:status andCallback:^(BOOL succeeded, NSError *error) {
+    NSLog(@&quot;============ Send %@&quot;, [status debugDescription]);
+}];
+</code></pre>
+<p version="d15f6724511398c58fa09c64a395a263">&#x5176;&#x4E2D;<code>status.data</code>&#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#x6307;&#x5B9A;NSDictionary&#x6570;&#x636E;. <strong>&#x6CE8;&#x610F;: &#x8FD9;&#x4E2A;&#x5B57;&#x5178;&#x4E2D;&#x7684;source&#x5B57;&#x6BB5;&#x4E0D;&#x53EF;&#x7528;&#xFF0C;&#x5185;&#x90E8;&#x4FDD;&#x7559;</strong></p>
+<h4 id="-">&#x53D1;&#x79C1;&#x4FE1;</h4>
+<p version="adaa04f4f9d7bf12efac932b4af19119">&#x7ED9;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x53D1;&#x79C1;&#x4FE1;&#x4E5F;&#x975E;&#x5E38;&#x7B80;&#x5355;</p>
+<pre version="e97b8fa5a4507624469012ccf1a28877"><code class="lang-objc">AVStatus *status=[[AVStatus alloc] init];
+status.data=@{@&quot;text&quot;:@&quot;this is a private message&quot;};
+
+NSString *userObjectId=@&quot;XXXXXXXXXXXXX&quot;;
+
+[AVStatus sendPrivateStatus:status toUserWithID:userObjectId andCallback:^(BOOL succeeded, NSError *error) {
+    NSLog(@&quot;============ Send %@&quot;, [status debugDescription]);
+}];
+</code></pre>
+<h4 id="-">&#x81EA;&#x5B9A;&#x4E49;&#x72B6;&#x6001;</h4>
+<p version="908ba76536a3f543edd3d16ea00f3d68">&#x9664;&#x4E86;&#x4E0A;&#x9762;&#x5E38;&#x89C1;&#x4E24;&#x79CD;&#x573A;&#x666F;, &#x81EA;&#x5B9A;&#x4E49;&#x72B6;&#x6001;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;<strong>&#x53D7;&#x4F17;&#x7FA4;&#x4F53;&#x548C;&#x53D1;&#x9001;&#x8005;</strong> &#x6765;&#x5B9E;&#x73B0;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x7684;&#x529F;&#x80FD;</p>
+<pre version="f156fef5dfada05a666bb4d566a2ef13"><code class="lang-objc">AVStatus *status=[[AVStatus alloc] init];
+[status setData:@{@&quot;text&quot;:@&quot;we have new website, take a look!&quot;,@&quot;link&quot;:@&quot;http://leancloud.cn&quot;}];
+
+status.type=@&quot;system&quot;;
+
+AVQuery *query=[AVUser query];
+[query whereKey:@&quot;age&quot; equalTo:@(20)];
+[status setQuery:query];
+
+[status sendInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+}];
+</code></pre>
+<p version="d3df4a7c5981f2e8f8558fbabddc729a">&#x4E0A;&#x9762;&#x662F;&#x7CFB;&#x7EDF;&#x5E7F;&#x64AD;&#x7684;&#x57FA;&#x672C;&#x5B9E;&#x73B0;. &#x56E0;&#x4E3A;&#x6307;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;AVUser&#x67E5;&#x8BE2;,&#x6240;&#x4EE5;&#x4F1A;&#x53D1;&#x9001;&#x7ED9;&#x6240;&#x6709;<code>age=20</code>&#x7684;&#x7528;&#x6237;, &#x6307;&#x5B9A;&#x4E86;<code>type</code>&#x662F;<code>system</code>&#x6216;&#x8005;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x4E32;, &#x5219;&#x6240;&#x6709;&#x7528;&#x6237;&#x4F1A;&#x5728;&#x67E5;&#x8BE2;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x72B6;&#x6001;&#x4E2D;&#x770B;&#x5230;&#x8FD9;&#x4E00;&#x6761;.</p>
+<h4 id="-">&#x83B7;&#x53D6;&#x72B6;&#x6001;</h4>
+<p version="c7bb64ae4e73e63914e143c75ad13bd9">&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x4F1A;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x65F6;&#x95F4;&#x7EBF;&#x4E0A;&#x7684;50&#x6761;&#x72B6;&#x6001;</p>
+<pre version="a2b5f7858acd50323d32dfcfc342308f"><code class="lang-objc">AVStatusQuery *query=[AVStatus inboxQuery:kAVStatusTypeTimeline];
+
+//&#x9650;&#x5236;50&#x6761;
+query.limit=50;
+
+//&#x9650;&#x5236;1397&#x8FD9;&#x4E2A;messageId&#x4E0A;&#x6B21;&#x67E5;&#x8BE2;&#x7684;&#x6700;&#x5927;messageId, &#x5982;&#x679C;&#x4E0D;&#x8BBE;&#x7F6E;,&#x9ED8;&#x8BA4;&#x4E3A;&#x6700;&#x65B0;&#x7684;
+query.maxId=1397;
+
+//&#x9700;&#x8981;&#x540C;&#x65F6;&#x9644;&#x5E26;&#x53D1;&#x9001;&#x8005;&#x7684;&#x6570;&#x636E;
+[query includeKey:@&quot;source&quot;];
+
+[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    //&#x83B7;&#x5F97;AVStatus&#x6570;&#x7EC4;
+}];
+</code></pre>
+<p version="1443a838ebab8b1f01d1768e7f0b4f50">&#x540C;&#x7406;, &#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x7528;&#x6237;&#x7684;&#x79C1;&#x4FE1;,&#x53EA;&#x8981;&#x628A;&#x53C2;&#x6570;&#x6539;&#x4E3A;<code>kAVStatusTypePrivateMessage</code>&#x3002;&#x8FD4;&#x56DE;&#x7684;<code>AVStatus</code>&#x5BF9;&#x8C61;&#x6709;&#x4E00;&#x4E2A;<code>messageId</code>&#x5C5E;&#x6027;&#xFF0C;&#x7528;&#x4E8E;&#x552F;&#x4E00;&#x8868;&#x793A;&#x8FD9;&#x6761;Status&#x5728;&#x8FD9;&#x4E2A;inbox&#x91CC;&#x7684;&#x6807;&#x793A;&#x7B26;&#x3002;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x4E2A;id&#x7ED3;&#x5408;query&#x505A;&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x3002;</p>
+<p version="28a2b377333ad5d2bd3b54a010361a4a"><code>AVStatusQuery</code>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;sinceId&#x548C;maxId:</p>
+<ul>
+<li>sinceId  &#x8BBE;&#x5B9A;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;status&#x7684;messageId&#x5FC5;&#x987B;&#x5927;&#x4E8E;&#x4F20;&#x5165;&#x7684;message id&#xFF0C;</li>
+<li>maxId  &#x9650;&#x5B9A;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;status&#x7684;messageId&#x5FC5;&#x987B;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x4F20;&#x5165;&#x7684;message id&#x3002;</li>
+</ul>
+<p version="9983da113630d83560fbe7b06cc840a1">&#x4F7F;&#x7528;&#x8FD9;&#x4E24;&#x4E2A;id&#x5C31;&#x53EF;&#x4EE5;&#x505A;&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x3002;<strong><code>AVStatusQuery</code>&#x67E5;&#x8BE2;&#x4E0D;&#x652F;&#x6301;skip</strong></p>
+<p version="3afa9d7250b6273f903739c07ef5ed47">&#x83B7;&#x53D6;&#x6536;&#x4EF6;&#x7BB1;&#x7684;&#x672A;&#x8BFB;status&#x6570;&#x76EE;&#xFF08;&#x4ECE;&#x4E0A;&#x6B21;&#x8BBF;&#x95EE;&#x6536;&#x4EF6;&#x7BB1;&#x6700;&#x65B0;status&#x5230;&#x73B0;&#x5728;&#x7684;&#x672A;&#x8BFB;status&#x6570;&#x76EE;&#xFF09;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>[AVStatus getUnreadStatusesCountWithType:andCallback]</code>&#x65B9;&#x6CD5;&#x3002;</p>
+<p version="2b59f6b9aec3612e3fac0e50f3322547">&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x53D1;&#x9001;&#x51FA;&#x53BB;&#x7684;&#x72B6;&#x6001;,<strong>&#x8BF7;&#x6CE8;&#x610F;,&#x67E5;&#x8BE2;&#x53D1;&#x9001;&#x51FA;&#x53BB;&#x7684;&#x72B6;&#x6001;,&#x662F;&#x65E0;&#x6CD5;&#x7528;messageId(sinceId,maxId)&#x6765;&#x505A;&#x5206;&#x7247;&#x67E5;&#x8BE2;&#x7684;,&#x56E0;&#x4E3A;messageId&#x53EA;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x7684;Inbox&#x624D;&#x6709;&#x610F;&#x4E49;, &#x540C;&#x65F6;&#x8FD4;&#x56DE;&#x7684;&#x72B6;&#x6001;&#x4E2D;&#x4E5F;&#x6CA1;&#x6709;messageId&#x7684;&#x6570;&#x636E;</strong></p>
+<pre version="a83a06895644694a8edeb4a9c346fa29"><code class="lang-objc">AVStatusQuery *query=[AVStatus statusQuery];
+
+//&#x8BBE;&#x7F6E;&#x67E5;&#x8BE2;&#x67D0;&#x4E2A;&#x7528;&#x6237;, &#x9ED8;&#x8BA4;&#x662F;&#x67E5;&#x8BE2;&#x5F53;&#x524D;&#x7528;&#x6237;
+[query whereKey:@&quot;source&quot; equalTo:&lt;AVUser&gt;];
+
+//&#x9650;&#x5236;&#x6761;&#x6570;
+query.limit=20;
+
+//&#x8BBE;&#x7F6E;&#x6D88;&#x606F;&#x7C7B;&#x578B;
+query.inboxType=kAVStatusTypeTimeline;
+
+[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    //&#x83B7;&#x5F97;AVStatus&#x6570;&#x7EC4;
+}];
+</code></pre>
+<h2 id="android-sdk-">Android SDK&#x4E2D;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h2>
+<p version="5b22fb814c8cf569d4c3c5a05e61d5c6"> Android &#x7684;&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x6A21;&#x5757;&#x5DF2;&#x7ECF;&#x6B63;&#x5F0F;&#x53D1;&#x5E03;&#xFF0C;&#x6B22;&#x8FCE;&#x5C1D;&#x8BD5;&#xFF01;</p>
+<h3 id="-">&#x597D;&#x53CB;&#x5173;&#x7CFB;</h3>
+<h4 id="-">&#x5173;&#x6CE8;&#x548C;&#x53D6;&#x6D88;&#x5173;&#x6CE8;</h4>
+<p version="cd35be2f19b2263b6f4fe7f13c31275d">&#x767B;&#x5F55;&#x7684;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5173;&#x6CE8;&#x5176;&#x4ED6;&#x7528;&#x6237;&#xFF0C;&#x6210;&#x4E3A;&#x4ED6;&#x4EEC;&#x7684;&#x7C89;&#x4E1D;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre version="c405597a9e8bb8338281ab66ee3bc9a0"><code class="lang-java">//&#x5173;&#x6CE8;
+AVUser.getCurrentUser().followInBackground(userObjectId, new FollowCallback() {
+        @Override
+        public void done(AVObject object, AVException e) {
+            if (e == null) {
+                Log.i(TAG, &quot;follow succeed.&quot;);
+            } else if (e.getCode() == AVException.DUPLICATE_VALUE) {
+                Log.w(TAG, &quot;Already followed.&quot;);
+            }
+        }
+    });
+
+//&#x53D6;&#x6D88;&#x5173;&#x6CE8;
+AVUser.getCurrentUser().unfollowInBackground(&quot;the user object id&quot;, new FollowCallback() {
+        @Override
+        public void done(AVObject object, AVException e) {
+            if (e == null) {
+                Log.i(TAG, &quot;unfollow succeed.&quot;);
+            } else {
+                Log.w(TAG, &quot;unfollow failed.&quot;);
+            }
+        }
+    });
+</code></pre>
+<p version="b721dc16b48d6d934d1c9a8490c5d440">&#x5982;&#x679C;&#x60A8;&#x5728;&#x5E94;&#x7528;&#x8BBE;&#x7F6E;&#x7684;&#x5E94;&#x7528;&#x9009;&#x9879;&#x91CC;&#x52FE;&#x9009;&#x4E86;<code>&#x81EA;&#x52A8;&#x4E92;&#x76F8;&#x5173;&#x6CE8;&#xFF08;&#x4E8B;&#x4EF6;&#x6D41;&#xFF09;</code>&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x5F53;&#x524D;&#x7528;&#x6237;&#x5173;&#x6CE8;&#x67D0;&#x4E2A;&#x4EBA;&#xFF0C;&#x90A3;&#x4E2A;&#x4EBA;&#x4E5F;&#x4F1A;&#x81EA;&#x52A8;&#x5173;&#x6CE8;&#x5F53;&#x524D;&#x7528;&#x6237;&#x3002;</p>
+<p version="41bfce8bb9d74238a9ea2fd0e7f291d7">&#x4ECE; 2.6.7 &#x7248;&#x672C;&#x5F00;&#x59CB;&#xFF0C;&#x6211;&#x4EEC;&#x5141;&#x8BB8;&#x5728; follow &#x7684;&#x65F6;&#x5019;&#x540C;&#x65F6;&#x4F20;&#x5165;&#x4E00;&#x4E2A; attribute &#x5217;&#x8868;&#xFF0C;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x5173;&#x7CFB;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x90FD;&#x5C06;&#x5728; <code>_Follower</code> &#x548C; <code>_Followee</code> &#x8868;&#x540C;&#x65F6;&#x5B58;&#x5728;:</p>
+<pre version="c7168527e5b53849c07eca2932c33dbe"><code class="lang-java">Map&lt;String, Object&gt; attributes = ......
+AVUser.getCurrentUser().followInBackground(&quot;target user objectId&quot;, attributes, new FollowCallback{
+            @Override
+            public void done(AVObject object, AVException e) {
+                  //&#x5904;&#x7406;&#x7ED3;&#x679C;
+            }
+});
+</code></pre>
+<h4 id="-">&#x83B7;&#x53D6;&#x7C89;&#x4E1D;&#x548C;&#x5173;&#x6CE8;&#x5217;&#x8868;</h4>
+<p version="4ed790039f7ae3bd196e242024d2dc5c">&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;followerQuery/followeeQuery&#x6765;&#x67E5;&#x8BE2;&#x60A8;&#x7684;&#x7C89;&#x4E1D;/&#x5173;&#x6CE8;&#x5217;&#x8868;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x66F4;&#x591A;&#x7684;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF0C;&#x6BD4;&#x5982;</p>
+<pre version="ab7a38091d7896c6bd10280dda8def7b"><code class="lang-java">// &#x5176;&#x4E2D;userA&#x662F;AVUser&#x5BF9;&#x8C61;&#xFF0C;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;AVUser&#x7684;&#x5B50;&#x7C7B;&#x5316;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;
+//vhaxun&#x7C89;&#x4E1D;
+AVQuery&lt;AVUser&gt; followerQuery = userA.followerQuery(AVUser.class);
+//AVQuery&lt;AVUser&gt; followerQuery = AVUser.followerQuery(userA.getObjectId(),AVUser.class); &#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6;&#x975E;&#x767B;&#x5F55;&#x7528;&#x6237;&#x7684;&#x597D;&#x53CB;&#x5173;&#x7CFB;
+followerQuery.findInBackground(new FindCallback&lt;AVUser&gt;() {
+    @Override
+    public void done(List&lt;AVUser&gt; avObjects, AVException avException) {
+        // avObjects&#x5305;&#x542B;&#x4E86;userA&#x7684;&#x7C89;&#x4E1D;&#x5217;&#x8868;
+    }
+});
+
+//&#x67E5;&#x8BE2;&#x5173;&#x6CE8;&#x8005;
+AVQuery&lt;AVUser&gt; followeeQuery = AVUser.followeeQuery(userB.getObjectId(), AVUser.class);
+//AVQuery&lt;AVUser&gt; followeeQuery = userB.followeeQuery(AVUser.class);
+followeeQuery.findInBackground(new FindCallback&lt;AVUser&gt;() {
+    @Override
+    public void done(List&lt;AVUser&gt; avObjects, AVException avException) {
+        //avObjects&#x5C31;&#x662F;&#x7528;&#x6237;&#x7684;&#x5173;&#x6CE8;&#x7528;&#x6237;&#x5217;&#x8868;
+
+    }
+});
+</code></pre>
+<p version="40cf8cc57e095352b90b39c15d7c88c4">&#x901A;&#x8FC7;AVQuery&#xFF0C;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x589E;&#x52A0;skip&#x6216;&#x8005;limit&#x64CD;&#x4F5C;&#x6765;&#x5206;&#x9875;&#x67E5;&#x8BE2;&#xFF0C;&#x6BD4;&#x5982;</p>
+<pre version="3beeaa0c3ff2bd8107e19b60b8078e62"><code class="lang-java">    AVQuery&lt;AVUser&gt; followerSkipQuery = AVUser.followerQuery(userA.getObjectId(), AVUser.class);
+    followerSkipQuery.setLimit(50);
+    followerSkipQuery.skip(100);
+    followerSkipQuery.findInBackground(new FindCallback&lt;AVUser&gt;() {
+        @Override
+        public void done(List&lt;AVUser&gt; avObjects, AVException avException) {
+            // avObjects.size() == 1
+        }
+    });
+}
+</code></pre>
+<p version="ef0271f823041cff925100a41e5f170e">&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x67E5;&#x627E;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x7C89;&#x4E1D;&#xFF0C;&#x6BD4;&#x5982;</p>
+<pre version="3ecc2bd5164e6a6f475ff584fbbbddb4"><code class="lang-java">AVQuery&lt;AVUser&gt; followerNameQuery = userA.followerQuery(userA.getObjectId(), AVUser.class);
+followerNameQuery.whereEqualTo(&quot;follower&quot;, userC);
+followerNameQuery.findInBackground(new FindCallback&lt;AVUser&gt;() {
+    @Override
+    public void done(List&lt;AVUser&gt; avObjects, AVException avException) {
+        // avObjects&#x4E2D;&#x5E94;&#x5F53;&#x53EA;&#x5305;&#x542B;userC
+    }
+});
+</code></pre>
+<p version="90a349989d42638e5abb71bb5209cd6f">&#x603B;&#x4E4B; <code>followerQuery</code> &#x548C; <code>followeeQuery</code> &#x8FD4;&#x56DE;&#x7684; AVQuery &#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x5176;&#x4ED6;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF0C;&#x53EA;&#x8981;&#x5728;<code>_Followee</code>&#x548C;<code>_Follower</code> &#x8868;&#x91CC;&#x5B58;&#x5728;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x67E5;&#x8BE2;&#x6216;&#x8005;&#x6392;&#x5E8F;&#x6761;&#x4EF6;&#x3002;</p>
+<p version="b8f5029e68ceaca3b5eece808344ffba"><strong>&#x6CE8;&#xFF1A;&#x9ED8;&#x8BA4;&#x7684;&#x5F97;&#x5230;&#x7684;AVUser&#x5BF9;&#x8C61;&#x4EC5;&#x4EC5;&#x6709;ObjectId&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x6574;&#x4E2A;AVUser&#x5BF9;&#x8C61;&#x6240;&#x6709;&#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x8C03;&#x7528;include&#x65B9;&#x6CD5;</strong>&#x3002;&#x4F8B;&#x5982;</p>
+<pre version="7c20885d956696621c1186b7659ee8e4"><code class="lang-java">AVQuery&lt;AVUser&gt; followerNameQuery = AVUser.followerQuery(userA.getObjectId(), AVUser.class);
+followerNameQuery.include(&quot;follower&quot;);
+
+AVQuery&lt;AVUser&gt; followeeNameQuery = AVUser.followeeQuery(userA.getObjectId(), AVUser.class);
+followerNameQuery.include(&quot;followee&quot;);
+</code></pre>
+<h5 id="-">&#x4E00;&#x6B21;&#x6027;&#x83B7;&#x53D6;&#x7C89;&#x4E1D;&#x548C;&#x5173;&#x6CE8;&#x5217;&#x8868;</h5>
+<p version="1e32b60e63addc293d1e822111483d48">&#x5F88;&#x591A;&#x7528;&#x6237;&#x53CD;&#x6620;&#x4ED6;&#x4EEC;&#x9700;&#x8981;&#x80FD;&#x591F;&#x4E00;&#x6B21;&#x6027;&#x83B7;&#x53D6;&#x6027;&#x83B7;&#x53D6;&#x7C89;&#x4E1D;&#x548C;&#x5173;&#x6CE8;&#x5217;&#x8868;&#x7684;API&#x63A5;&#x53E3;&#xFF0C;&#x4E8E;&#x662F;&#x6211;&#x4EEC;&#x52A0;&#x5165;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x3002;</p>
+<pre version="73254dbcccbe84d99445603b6c0fcd2e"><code class="lang-java">    AVFriendshipQuery query = AVUser.friendshipQuery(userId, SubUser.class);
+    query.include(&quot;followee&quot;);
+    query.include(&quot;follower&quot;);
+    query.getInBackground(new AVFriendshipCallback() {
+      @Override
+      public void done(AVFriendship friendship, AVException e) {
+        List&lt;SubUser&gt; followers = friendship.getFollowers();//&#x83B7;&#x53D6;&#x5173;&#x6CE8;&#x5217;&#x8868;
+        List&lt;SubUser&gt; followees = friendship.getFollowees();//&#x83B7;&#x53D6;&#x7C89;&#x4E1D;
+    AVUser user = friendship.getUser();//&#x83B7;&#x53D6;&#x7528;&#x6237;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;
+      }
+    });
+</code></pre>
+<h3 id="-">&#x72B6;&#x6001;</h3>
+<h4 id="-">&#x53D1;&#x5E03;&#x72B6;&#x6001;</h4>
+<p version="90bcbc52accec042d489e015adec90f7">&#x53D1;&#x5E03;&#x4E00;&#x6761;&#x65F6;&#x95F4;&#x7EBF;&#x72B6;&#x6001;, &#x5373;&#x53D1;&#x4E00;&#x6761;&#x6211;&#x7684;&#x7C89;&#x4E1D;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x7684;&#x72B6;&#x6001;</p>
+<pre version="f0a56655aa0711462f295405bd555409"><code class="lang-java">AVStatus status= new AVStatus();
+// &#x6216;&#x8005;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x9759;&#x6001;&#x65B9;&#x6CD5;
+// AVStatus status = AVStatus.createStatus(&quot;my image&quot;, &quot;my message&quot;);
+status.setImageUrl(&quot;myImageUrl&quot;);
+status.setMessage(&quot;myMessage&quot;);
+// &#x6216;&#x8005;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;
+// setData(Map&lt;String, Object&gt; data)
+
+AVUser.logIn(&quot;myUserName&quot;, &quot;myPassword&quot;);
+AVStatus.sendStatusToFollowersInBackgroud(status, new SaveCallback() {
+    @Override
+    public void done(AVException avException) {
+        Log.i(TAG, &quot;Send status finished.&quot;);
+    }
+});
+</code></pre>
+<p version="cfbd62febc61673b168349eba5d23894">&#x5176;&#x4E2D;<code>status.setData</code>&#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#x6307;&#x5B9A;Map<string, object="">&#x6570;&#x636E;. <strong>&#x6CE8;&#x610F;: &#x8FD9;&#x4E2A;map&#x4E2D;&#x7684;source&#x5B57;&#x6BB5;&#x4E0D;&#x53EF;&#x7528;</strong></string,></p>
+<h4 id="-">&#x53D1;&#x79C1;&#x4FE1;</h4>
+<p version="adaa04f4f9d7bf12efac932b4af19119">&#x7ED9;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x53D1;&#x79C1;&#x4FE1;&#x4E5F;&#x975E;&#x5E38;&#x7B80;&#x5355;</p>
+<pre version="fd96d58d1a9b44785ef063549675dc41"><code class="lang-java">AVStatus status = AVStatus.createStatus(&quot;test image&quot;, &quot;test message&quot;);
+AVStatus.sendPrivateStatusInBackgroud(status, &quot;user object id&quot;, new SaveCallback() {
+    @Override
+    public void done(AVException avException) {
+        Log.i(TAG, &quot;Send private status finished.&quot;);
+    }
+});
+</code></pre>
+<h4 id="-status">&#x81EA;&#x5B9A;&#x4E49;Status</h4>
+<p version="d3ea83b8efbad722c8ff19b02fbd13e2">&#x9664;&#x4E86;&#x4E0A;&#x9762;&#x5E38;&#x89C1;&#x4E24;&#x79CD;&#x573A;&#x666F;, &#x81EA;&#x5B9A;&#x4E49;Status&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;<strong>&#x53D7;&#x4F17;&#x7FA4;&#x4F53;&#x548C;&#x53D1;&#x9001;&#x8005;</strong>&#x6765;&#x5B9E;&#x73B0;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x7684;&#x529F;&#x80FD;</p>
+<pre version="3d038296cd199493738b659a06a010ab"><code class="lang-java">Map&lt;String, Object&gt; data = new HashMap&lt;String, Object&gt;();
+data.put(&quot;text&quot;, &quot;we have new website, take a look!&quot;);
+data.put(&quot;link&quot;, &quot;http://leancloud.cn&quot;);
+AVStatus status = AVStatus.createStatusWithData(data);
+status.setInboxType(&quot;system&quot;);
+
+    status.sendInBackgroundWithBlock(new SaveCallback() {
+        @Override
+        public void done(AVException e) {
+            Log.i(TAG, &quot;Send finished&quot;);
+
+        }
+    });
+</code></pre>
+<p version="bcb9b03f36b521c61790d70ec6595059">&#x4E0A;&#x9762;&#x662F;&#x7CFB;&#x7EDF;&#x5E7F;&#x64AD;&#x7684;&#x57FA;&#x672C;&#x5B9E;&#x73B0;. &#x56E0;&#x4E3A;&#x6307;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;&#x65E0;&#x6761;&#x4EF6;&#x7684;AVUser&#x67E5;&#x8BE2;,&#x6240;&#x4EE5;&#x4F1A;&#x53D1;&#x9001;&#x7ED9;&#x6240;&#x6709;&#x7684;&#x7528;&#x6237;, &#x6307;&#x5B9A;&#x4E86;<code>inboxType</code>&#x662F;<code>system</code>&#x6216;&#x8005;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x4E32;, &#x5219;&#x6240;&#x6709;&#x7528;&#x6237;&#x4F1A;&#x5728;&#x67E5;&#x8BE2;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x72B6;&#x6001;&#x4E2D;&#x770B;&#x5230;&#x8FD9;&#x4E00;&#x6761;.&#x6211;&#x4EEC;&#x5728;SDK&#x4E2D;&#x95F4;&#x4E3A;&#x60A8;&#x51C6;&#x5907;&#x4E24;&#x79CD;&#x9884;&#x5B9A;&#x7684;&#x7C7B;&#x578B;:<code>AVStatus.INBOX_TYPE.TIMELINE</code>&#x548C;<code>AVStatus.INBOX_TYPE.PRIVATE</code>&#x3002;</p>
+<h4 id="-">&#x83B7;&#x53D6;&#x6536;&#x4EF6;&#x7BB1;&#x72B6;&#x6001;</h4>
+<p version="213b5fb67a79d2769697b9c4f588ae7e">&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x4F1A;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x6536;&#x4EF6;&#x7BB1;&#x5185;&#x65F6;&#x95F4;&#x7EBF;&#x4E0A;&#x7684;50&#x6761;&#x72B6;&#x6001;</p>
+<pre version="877732d5345189d989b0c0daba51aadc"><code class="lang-java">AVStatusQuery&lt;AVStatus&gt; inboxQuery = AVStatus.inboxQuery(AVStatus.class, userB,AVStatus.INBOX_TYPE.TIMELINE.toString());
+inboxQuery.setLimit(50);  //&#x8BBE;&#x7F6E;&#x6700;&#x591A;&#x8FD4;&#x56DE;50&#x6761;&#x72B6;&#x6001;
+inboxQuery.setSinceId(0);  //&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;status&#x7684;messageId&#x5FC5;&#x987B;&#x5927;&#x4E8E;sinceId&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;0
+inboxQuery.findInBackground(new InboxStatusFindCallback(){
+  @Override
+  public void done(final List&lt;AVStatus&gt; avObjects, final AVException avException) {
+
+  }
+});
+</code></pre>
+<p version="bbb608a7fba75239e3ad4d97821feff8">&#x540C;&#x7406;, &#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x7528;&#x6237;&#x6536;&#x4EF6;&#x7BB1;&#x7684;&#x79C1;&#x4FE1;,&#x53EA;&#x8981;&#x628A;type&#x53C2;&#x6570;&#x6539;&#x4E3A;<code>AVStatus.INBOX_TYPE.PRIVATE.toString()</code>&#x5373;&#x53EF;</p>
+<p version="054b6c144879f71ceed3c22ba3b1cdbd"><code>AVStatus</code>&#x6709;&#x4E00;&#x4E2A;<code>messageId</code>&#x5C5E;&#x6027;&#xFF0C;&#x7528;&#x4E8E;&#x6807;&#x793A;&#x8FD9;&#x6761;status&#x5728;inbox&#x91CC;&#x7684;&#x552F;&#x4E00;&#x4F4D;&#x7F6E;&#x3002;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;<code>messageId</code>&#x7ED3;&#x5408;<code>AVStatusQuery</code>&#x53EF;&#x4EE5;&#x505A;&#x5206;&#x9875;&#x67E5;&#x8BE2;&#xFF0C;AVStatusQuery&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;<code>sinceId</code>&#x548C;<code>maxId</code>&#xFF1A;</p>
+<ul>
+<li>sinceId  &#x8BBE;&#x5B9A;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;status&#x7684;messageId&#x5FC5;&#x987B;&#x5927;&#x4E8E;&#x4F20;&#x5165;&#x7684;message id&#xFF0C;</li>
+<li>maxId  &#x9650;&#x5B9A;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;status&#x7684;messageId&#x5FC5;&#x987B;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x4F20;&#x5165;&#x7684;message id&#x3002;</li>
+</ul>
+<p version="9415040b7131b072f6d6a433ed5c2278">&#x4F7F;&#x7528;&#x8FD9;&#x4E24;&#x4E2A;id&#x5C31;&#x53EF;&#x4EE5;&#x505A;&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x3002;<strong><code>AVStatusQuery</code>&#x67E5;&#x8BE2;&#x4E0D;&#x652F;&#x6301;skip</strong>&#x3002;</p>
+<p version="edecd2bb777ed98911a2f057b353fdcc">&#x4ECE; v2.6.7 &#x7248;&#x672C;&#x5F00;&#x59CB;&#xFF0C;<code>InboxStatusFindCallback</code> &#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x53EB;&#x505A;isEnd(),&#x7528;&#x6765;<strong>&#x5728;&#x67E5;&#x8BE2;&#x540E;</strong>&#x68C0;&#x67E5;&#x6536;&#x4EF6;&#x7BB1;&#x67E5;&#x8BE2;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5230;&#x4E86;&#x6700;&#x65E9;&#x7684;&#x4E00;&#x9875;&#x6570;&#x636E;&#x3002;</p>
+<h3 id="-">&#x83B7;&#x53D6;&#x6536;&#x4EF6;&#x7BB1;&#x7684;&#x8BA1;&#x6570;</h3>
+<p version="51a0eaedce5ddf7a18f1cac1d3d10ad0">&#x4F7F;&#x7528;<code>AVStatus.getUnreadStatusesCountInBackground</code>&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x6536;&#x4EF6;&#x7BB1;&#x7684;&#x672A;&#x8BFB;status&#x6570;&#x76EE;&#x548C;&#x603B;status&#x6570;&#x76EE;&#xFF1A;</p>
+<pre version="df62effd7c7d70ce1decd6f18f9015f5"><code class="lang-java">AVStatus.getUnreadStatusesCountInBackground(AVStatus.INBOX_TYPE.TIMELINE.toString(), new CountCallback() {
+        public void done(int count, AVException e) {
+            if (e == null) {
+                //count&#x5C31;&#x662F;&#x672A;&#x8BFB;status&#x6570;&#x76EE;
+            } else {
+                //&#x6709;&#x9519;&#x8BEF;&#x53D1;&#x751F;&#x3002;
+            }
+        }
+    });
+</code></pre>
+<h4 id="-">&#x67E5;&#x8BE2;&#x53D1;&#x4EF6;&#x7BB1;&#x72B6;&#x6001;</h4>
+<p version="429f1155ccd0179085f51eeed37f6677">&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x80FD;&#x591F;&#x67E5;&#x8BE2;&#x5F53;&#x524D;&#x7528;&#x6237;&#x53D1;&#x4EF6;&#x7BB1;&#x5185;&#x5DF2;&#x7ECF;&#x53D1;&#x9001;&#x7684;50&#x6761;&#x72B6;&#x6001;</p>
+<pre version="ef2185b1dd697f873528bb0800357f54"><code class="lang-java">AVStatusQuery&lt;AVStatus&gt; query = AVStatus.statusQuery(AVStatus.class,AVUser.getCurrentUser());
+query.setLimit(50);    //&#x8BBE;&#x7F6E;&#x6700;&#x591A;&#x8FD4;&#x56DE;50&#x6761;&#x72B6;&#x6001;
+query.setSinceId(0);   //&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;status&#x7684;messageId&#x5FC5;&#x987B;&#x5927;&#x4E8E;sinceId&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;0
+//query.setInboxType(AVStatus.INBOX_TYPE.TIMELINE.toString()); &#x6B64;&#x5904;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x6DFB;&#x52A0;&#x67E5;&#x8BE2;&#x7684;&#x72B6;&#x6001;&#x6761;&#x4EF6;&#xFF0C;&#x5F53;&#x7136;&#x8FD9;&#x91CC;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4F60;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x7684;&#x72B6;&#x6001;&#x7C7B;&#x578B;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x91CC;&#x63A5;&#x53D7;&#x7684;&#x5176;&#x5B9E;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x3002;
+query.findInBackground(new FindCallback&lt;AVStatus&gt;(){
+  @Override
+  public void done(final List&lt;AVStatus&gt; avObjects,final AVException avException) {
+
+  }
+});
+</code></pre>
+<h2 id="rest-api">REST API</h2>
+<p version="970ac6ec488436e1b903b91b729665b0">&#x672C;&#x8282;&#x4ECB;&#x7ECD;&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x7684; REST API&#x3002;</p>
+<h3 id="-api">&#x7528;&#x6237;&#x5173;&#x7CFB; API</h3>
+<p version="b866ca91d5278bc7abbc85e271037353">&#x4F7F;&#x7528;&#x8FD9;&#x91CC;&#x7684; API &#x6765;&#x5EFA;&#x7ACB;&#x7528;&#x6237;&#x5173;&#x7CFB;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5173;&#x6CE8;&#x3001;&#x53D6;&#x6D88;&#x5173;&#x6CE8;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x3002;</p>
+<ul>
+<li>&#x8FD9;&#x91CC;&#x7684;3&#x4E2A;&#x67E5;&#x8BE2;API&#x90FD;&#x9075;&#x5FAA;&#x6211;&#x4EEC;&#x7684; REST API &#x89C4;&#x8303;&#xFF0C;&#x652F;&#x6301; <code>where,order,skip,limit,count,include</code> &#x7B49;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7279;&#x6B8A;&#x8BF4;&#x660E;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x90FD;&#x662F;<code>{results: [&#x6570;&#x7EC4;&#x7ED3;&#x679C;]}</code>&#xFF0C;&#x8DDF;&#x5176;&#x4ED6;&#x67E5;&#x8BE2; API &#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;</li>
+<li>&#x7528;&#x6237;&#x5728;<code>_Follower</code>&#x548C;<code>_Followee</code>&#x8868;&#x4E2D;&#x90FD;&#x5B58;&#x50A8;&#x4E3A; pointer &#x7C7B;&#x578B;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x8981;&#x67E5;&#x8BE2;&#x51FA;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x5E94;&#x8BE5;&#x52A0;&#x4E0A;include &#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x3002;</li>
+</ul>
+<h4 id="-api">&#x5173;&#x6CE8;&#x548C;&#x53D6;&#x6D88;&#x5173;&#x6CE8;&#x7528;&#x6237; API</h4>
+<p version="54d7c177cde465353901853b4c1c648b">&#x901A;&#x8FC7;&#x64CD;&#x4F5C; <code>/users/:user_id/friendship/:target_id</code> &#x8D44;&#x6E90;&#x53EF;&#x4EE5;&#x5173;&#x6CE8;&#x6216;&#x8005;&#x53D6;&#x6D88;&#x5173;&#x6CE8;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#xFF0C;&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li><code>:user_id</code> &#x8868;&#x793A;&#x53D1;&#x8D77;&#x5173;&#x6CE8;&#x52A8;&#x4F5C;&#x7684;&#x7528;&#x6237;&#x7684; objectId&#xFF0C;(&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;<code>X-LC-Session</code>&#x5934;, &#x53EF;&#x4EE5;&#x4E3A;<code>self</code>&#x8868;&#x793A;&#x5F53;&#x524D;&#x767B;&#x5F55;&#x7528;&#x6237;)</li>
+<li><code>:target_id</code> &#x8868;&#x793A;&#x60F3;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x76EE;&#x6807;&#x7528;&#x6237;&#x7684; objectId</li>
+</ul>
+<p version="db6813cf40a5df2785ddb81cf49f11ea">&#x4F8B;&#x5982;&#xFF0C;&#x8BA9;&#x5F53;&#x524D;&#x7528;&#x6237; <code>51fa6886e4b0cc0b5a3792e9</code> &#x5173;&#x6CE8;&#x76EE;&#x6807;&#x7528;&#x6237; <code>51e3a334e4b0b3eb44adbe1a</code>&#xFF1A;</p>
+<pre version="fa9621680f7d7d81bc362f18c9575778"><code class="lang-sh">curl -X POST \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  https://leancloud.cn/1.1/users/51fa6886e4b0cc0b5a3792e9/friendship/51e3a334e4b0b3eb44adbe1a
+</code></pre>
+<p version="fae0953d3cb3adcd1111782a2ea12363">&#x5173;&#x6CE8;&#x540E;&#xFF0C;<code>_Follower</code>&#x548C;<code>_Followee</code>&#x90FD;&#x4F1A;&#x591A;&#x51FA;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x5982;&#x679C;&#x9009;&#x62E9;&#x4E86;&#x81EA;&#x52A8;&#x4E92;&#x76F8;&#x5173;&#x6CE8;&#x9009;&#x9879;&#xFF0C;&#x4F1A;&#x5404;&#x591A;&#x51FA;&#x4E24;&#x6761;&#x8BB0;&#x5F55;&#x3002;</p>
+<p version="546b51dee88cb0a1cbf0b7368ace614c">&#x53D6;&#x6D88;&#x5173;&#x6CE8;&#x901A;&#x8FC7;:</p>
+<pre version="f7310be6b0f88532333b0f8d55eeadb8"><code class="lang-sh">curl -X DELETE \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  https://leancloud.cn/1.1/users/51fa6886e4b0cc0b5a3792e9/friendship/51e3a334e4b0b3eb44adbe1a
+</code></pre>
+<p version="341492d1841342ceda826b690468bc85">&#x5173;&#x6CE8;&#x8FD8;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#xFF1A;</p>
+<pre version="1261ce33578c5330023278bc4129d961"><code class="lang-sh">curl -X POST \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &apos;{&quot;score&quot;: 100}&apos; \
+  https://leancloud.cn/1.1/users/51fa6886e4b0cc0b5a3792e9/friendship/51e3a334e4b0b3eb44adbe1a
+</code></pre>
+<p version="50788dd7d56741f8eb830ca03980f94e">&#x90A3;&#x4E48;<code>score</code>&#x5B57;&#x6BB5;&#x5C06;&#x540C;&#x65F6;&#x51FA;&#x73B0;&#x5728;<code>_Follower</code>&#x548C;<code>_Followee</code>&#x8868;&#xFF0C;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x67E5;&#x8BE2;&#x6216;&#x8005;&#x6392;&#x5E8F;&#x6761;&#x4EF6;&#x3002;</p>
+<h4 id="-api">&#x67E5;&#x8BE2;&#x7C89;&#x4E1D;&#x6216;&#x8005;&#x5173;&#x6CE8;&#x8005;&#x5217;&#x8868; API</h4>
+<p version="44f5bbd3cce33e99e36f3f07a15163c2">&#x67E5;&#x8BE2;&#x7C89;&#x4E1D;&#x5217;&#x8868;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x5173;&#x6CE8;&#x6211;&#x7684;&#x4EBA;&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#xFF1A;</p>
+<pre version="819d277e8b6bf0b00136c33ec4f7c14a"><code class="lang-sh">curl -X GET \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  https://leancloud.cn/1.1/users/51fa6886e4b0cc0b5a3792e9/followers
+</code></pre>
+<p version="f8150022da961667262f4b5242bfeba9">&#x8FD4;&#x56DE;&#x7684;&#x7528;&#x6237;&#x5217;&#x8868;&#x662F; Pointer &#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x5C06;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x4E5F;&#x8FD4;&#x56DE;&#xFF0C;&#x9700;&#x8981; include:</p>
+<pre version="84054f30342c0fc5008883796b986ffc"><code class="lang-sh">curl -X GET \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -G \
+  --data-urlencode &apos;include=follower&apos; \
+  https://leancloud.cn/1.1/users/51fa6886e4b0cc0b5a3792e9/followers
+</code></pre>
+<p version="b85d90ee166407b51f8c2b6a9efc89b6">&#x67E5;&#x8BE2;&#x5173;&#x6CE8;&#x7684;&#x7528;&#x6237;&#x5217;&#x8868;&#xFF1A;</p>
+<pre version="5fa05cbde720bedfd53dc95b4ffff45a"><code class="lang-sh">curl -X GET \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -G \
+  --data-urlencode &apos;include=followee&apos; \
+  https://leancloud.cn/1.1/users/51fa6886e4b0cc0b5a3792e9/followees
+</code></pre>
+<p version="86e6d46a214a297dc0e330785fd93f78">&#x540C;&#x65F6;&#x67E5;&#x8BE2;&#x7C89;&#x4E1D;&#x548C;&#x5173;&#x6CE8;&#x7684;&#x4EBA;&#xFF1A;</p>
+<pre version="dad6ca0d78778cbe27b10dcb4f79de30"><code class="lang-sh">curl -X GET \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -G \
+  --data-urlencode &apos;include=followee&apos; \
+  https://leancloud.cn/1.1/users/51fa6886e4b0cc0b5a3792e9/followersAndFollowees
+</code></pre>
+<p version="b7e267eba404225ee503cbd3e1f19ff1">&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#xFF1A;</p>
+<pre version="ec43acf25c3b78a60c06070f70c90caa"><code class="lang-json">{followers: [&#x7C89;&#x4E1D;&#x5217;&#x8868;], followees: [&#x5173;&#x6CE8;&#x7528;&#x6237;&#x5217;&#x8868;]}
+</code></pre>
+<p version="a38d498fc16dda380c23e72c7ba69404">&#x5982;&#x679C;&#x6307;&#x5B9A;count=1&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x91CC;&#x52A0;&#x4E0A;followers_count&#x548C;followees_count &#x8868;&#x793A;&#x7C89;&#x4E1D;&#x6570;&#x76EE;&#x548C;&#x5173;&#x6CE8;&#x8005;&#x6570;&#x76EE;&#xFF1A;</p>
+<pre version="cbb2866e709a35d7d6424079907fb49c"><code class="lang-sh">curl -X GET \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -G \
+  --data-urlencode &apos;include=followee&apos; \
+  --data-urlencode &apos;count=1&apos; \
+  https://leancloud.cn/1.1/users/51fa6886e4b0cc0b5a3792e9/followersAndFollowees
+</code></pre>
+<h3 id="-api">&#x72B6;&#x6001; API</h3>
+<p version="fa1d892b4b934a1529d4385c93673aa8">&#x518D;&#x6B21;&#x89E3;&#x91CA;&#x4E0B;&#x672F;&#x8BED;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<ul>
+<li>status  &#x4E00;&#x6761;&#x72B6;&#x6001;&#xFF0C;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x9884;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;<code>messageId</code>&#x548C;<code>inboxType</code>&#xFF0C;&#x5176;&#x4ED6;&#x5C5E;&#x6027;&#x90FD;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;&#x3002;</li>
+<li>target  Status &#x7684;&#x76EE;&#x6807;&#x63A5;&#x6536;&#x8005;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; inbox &#x7684; owner&#x3002;</li>
+<li>inbox   target &#x7684;&#x6536;&#x4EF6;&#x7BB1;&#xFF0C;&#x62E5;&#x6709; owner,inboxType &#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#x8868;&#x793A;&#x6240;&#x6709;&#x8005;&#x548C;&#x6536;&#x4EF6;&#x7BB1;&#x7C7B;&#x578B;</li>
+</ul>
+<h4 id="-status-api">&#x53D1;&#x5E03; Status API</h4>
+<p version="1f117d7a3187fa7849de3e850d97fdb4">&#x8C03;&#x7528; API &#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="78ad66a09c995929d92880e422e32e52"><code>POST /statuses
+</code></pre><p version="5c4c7ab85507097539236ea9f74349c9">&#x63A5;&#x53D7;&#x7684;JSON&#x5BF9;&#x8C61;&#x53C2;&#x6570;&#xFF1A;</p>
+<ul>
+<li>query &#x67E5;&#x8BE2;target&#x7684;&#x6761;&#x4EF6;&#xFF0C;&#x5305;&#x62EC;&#x4E0B;&#x5217;&#x5C5E;&#x6027;&#xFF1A;<ul>
+<li>where &#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF0C;&#x53EF;&#x4E3A;&#x7A7A;{}&#xFF0C;&#x8868;&#x793A;&#x67E5;&#x8BE2;&#x5168;&#x8868;</li>
+<li>className target&#x7684;className</li>
+<li>key &#x67E5;&#x8BE2;&#x6307;&#x5B9A;&#x7684;&#x5217;&#x4F5C;&#x4E3A;inbox&#x7684;owner&#x5C5E;&#x6027;&#x5B58;&#x50A8;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C06;&#x4E3A;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;pointer&#x5B58;&#x50A8;&#x5230;owner&#x3002;</li>
+</ul>
+</li>
+<li>data  status&#x7684;&#x6570;&#x636E;json&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x3002;&#x5982;&#x679C;&#x5305;&#x542B;source&#xFF08;&#x6307;&#x5411;&#x53D1;&#x9001;&#x8005;&#x7684;pointer&#xFF09;&#xFF0C;&#x5E76;&#x4E14;inboxType&#x8BBE;&#x5B9A;&#x4E3A;default&#xFF0C;&#x8FD9;status&#x4F1A;&#x540C;&#x65F6;&#x5F80;&#x53D1;&#x9001;&#x8005;&#x7684;inbox&#x6295;&#x9012;&#x3002;</li>
+<li>inboxType  &#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6307;&#x5B9A;&#x63A5;&#x6536;&#x8FD9;&#x6761;status&#x7684;inbox&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4E3A;&#x7A7A;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;<code>default</code>&#x3002;</li>
+</ul>
+<p version="6e2a4f0ac44187f9c4b97513171e5059">&#x793A;&#x4F8B;1&#xFF0C;&#x5F80; dennis &#x7684;&#x7C89;&#x4E1D;&#x7FA4;&#x4F53;&#x53D1;&#x9001;&#x4E00;&#x6761;status&#xFF1A;</p>
+<pre version="dcaa34209aedb5e358ddd997a40f00d7"><code class="lang-sh">curl -X POST \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &apos;{
+         &quot;data&quot;: {
+            &quot;image&quot;: &quot;paas-files.qiniudn.comwQUf3WohbJpyuXutPjKHPmkSj4gbiYMeNJmTulNo.jpg&quot;,
+            &quot;message&quot;: &quot;AVOS Cloud is great!&quot;
+         },
+         &quot;inboxType&quot;: &quot;default&quot;,
+         &quot;query&quot;: {
+             &quot;className&quot;: &quot;_Follower&quot;,
+             &quot;keys&quot;: &quot;follower&quot;,
+             &quot;where&quot;: {
+                 &quot;user&quot;: {
+                     &quot;__type&quot;: &quot;Pointer&quot;,
+                     &quot;className&quot;: &quot;_User&quot;,
+                     &quot;objectId&quot;: &quot;dennis&apos;id&quot;
+                 }
+              }
+         }
+      }&apos; \
+   https://leancloud.cn/1.1/statuses
+</code></pre>
+<p version="9d05419117b104c1fdb84a9ffd91d6d5">&#x8FD9;&#x6761;&#x72B6;&#x6001;&#x7684;&#x5185;&#x5BB9;&#x662F; data &#x6307;&#x5B9A;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x8BBE;&#x5B9A; inboxType &#x662F; <code>default</code>&#xFF1A;</p>
+<pre version="dd155f6e49503185394d5b38c8e19e27"><code class="lang-json">{
+     &quot;image&quot;: &quot;paas-files.qiniudn.comwQUf3WohbJpyuXutPjKHPmkSj4gbiYMeNJmTulNo.jpg&quot;,
+      &quot;message&quot;: &quot;AVOS Cloud is great!&quot;
+}
+</code></pre>
+<p version="5628face89b0b50e09caf7f0ecd8875c">&#x8FD9;&#x6761;&#x72B6;&#x6001;&#x7684;&#x76EE;&#x6807;&#x7528;&#x6237;&#x7FA4;&#x4F53;&#x662F; query &#x6307;&#x5B9A;&#x7684;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF0C;&#x67E5;&#x8BE2;&#x7684;&#x662F;<code>_Follower</code>&#x8868;&#x4E2D; <code>dennis id</code>&#x7684;&#x7C89;&#x4E1D;&#x7528;&#x6237;&#x3002;</p>
+<p version="d8d674105ed060b18b3eb51cdaeeaf41">&#x793A;&#x4F8B;2&#xFF0C;dennis&#x5411;catty&#x53D1;&#x9001;&#x79C1;&#x4FE1;&#x7684;&#x8BF7;&#x6C42;&#x7C7B;&#x4F3C;&#xFF1A;</p>
+<pre version="d753ecea6bc11aca11c78dcde20290f4"><code class="lang-json">{
+    &quot;data&quot;: {
+        &quot;message&quot;: &quot;hello catty!&quot;
+    },
+    &quot;inboxType&quot;: &quot;private&quot;,
+    &quot;query&quot;: {
+        &quot;className&quot;: &quot;_User&quot;,
+        &quot;where&quot;: {
+            &quot;objectId&quot;: &quot;catty&apos;s id&quot;
+        }
+    }
+}
+</code></pre>
+<h4 id="-status-api">&#x67E5;&#x8BE2;&#x53D1;&#x51FA;&#x7684;status API</h4>
+<pre version="376ef549c8e9347ab406a0fb7fd07f23"><code>GET /statuses
+</code></pre><p version="99d2fe4af4690dbb58f7decc979e41f1">&#x8DDF;&#x67E5;&#x8BE2;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x4E00;&#x6837;&#x3002;</p>
+<p version="f2a6878cfb4ad0b54b012e22fe246dfc">&#x77E5;&#x9053;objectId&#xFF0C;&#x67E5;&#x8BE2;&#x5355;&#x6761;status:</p>
+<pre version="799a303e2f3ef9eac7db08e49cbfff33"><code>GET /statuses/:status_id
+</code></pre><h4 id="-status-api">&#x5220;&#x9664;status API</h4>
+<pre version="ecd95b1114d176b688f2797baacfb80c"><code>DELETE /statuses/:status_id
+</code></pre><h4 id="-status-api">&#x67E5;&#x8BE2;&#x5DF2;&#x7ECF;&#x5173;&#x6CE8;&#x7684;&#x7528;&#x6237;&#x7684;status&#x805A;&#x5408;&#x5217;&#x8868; API</h4>
+<p version="cb51499940d01eed11a091b6dd83f458">&#x67E5;&#x8BE2;&#x6211;&#x5173;&#x6CE8;&#x7684;&#x7528;&#x6237;&#x53D1;&#x51FA;&#x6765;&#x7684;&#x72B6;&#x6001;&#x805A;&#x5408;&#x800C;&#x6210;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x67E5;&#x8BE2;&#x81EA;&#x5DF1;&#x7684;&#x6536;&#x4EF6;&#x7BB1;&#xFF0C;&#x901A;&#x8FC7;</p>
+<pre version="1328d43a534d0706ae64427c7430e486"><code>GET /subscribe/statuses
+</code></pre><p version="a5a37309cf803f4b09ddfa6cc1b21e3c">&#x63A5;&#x6536;&#x53C2;&#x6570;&#xFF08;&#x53C2;&#x6570;&#x90FD;&#x5FC5;&#x987B;&#x7ECF;&#x8FC7;url encode&#xFF09;&#xFF1A;</p>
+<ul>
+<li>owner JSON&#x5E8F;&#x5217;&#x5316;&#x540E;&#x7684;owner&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8868;&#x793A;inbox&#x6240;&#x6709;&#x8005;&#x3002;</li>
+<li>inboxType  inbox&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;<code>default</code>&#xFF0C;&#x53EF;&#x4E3A;&#x7A7A;&#x3002;</li>
+<li>where  &#x7528;&#x4E8E;&#x8FC7;&#x6EE4;status&#x7684;where&#x6761;&#x4EF6;&#xFF0C;&#x4E5F;&#x662F;JSON&#x5E8F;&#x5217;&#x5316;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</li>
+<li>order &#x6392;&#x5E8F;status&#x7684;&#x5B57;&#x6BB5;&#x5217;&#x8868;&#xFF0C;&#x5FC5;&#x987B;&#x662F;status&#x672C;&#x8EAB;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x9ED8;&#x8BA4;<code>-createdAt</code>&#x3002;</li>
+<li>sinceId  &#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;status&#x7684;messageId&#x5FC5;&#x987B;&#x5927;&#x4E8E;sinceId&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;0&#x3002;</li>
+<li>maxId  &#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;status&#x7684;messageId&#x5FC5;&#x987B;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;maxId&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;0&#x3002;</li>
+<li>limit &#x6700;&#x591A;&#x8FD4;&#x56DE;&#x591A;&#x5C11;&#x6761;status&#xFF0C;&#x9ED8;&#x8BA4;100&#xFF0C;&#x6700;&#x5927;100&#x3002;</li>
+<li>count &#x9ED8;&#x8BA4;&#x4E3A;&#x7A7A;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;&quot;1&quot;&#x8868;&#x793A;&#x5728;&#x7ED3;&#x679C;&#x4E2D;&#x5E26;&#x4E0A;status&#x7684;count&#x8BA1;&#x6570;&#x3002;</li>
+</ul>
+<p version="62dd0bb46083fe9f3a24ab8e630c2244">&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E9B;&#x4F8B;&#x5B50;</p>
+<ul>
+<li>&#x793A;&#x4F8B;1&#xFF0C;&#x67E5;&#x8BE2;&#x6211;&#x7684;&#x4E3B;&#x9875; timeline:</li>
+</ul>
+<pre version="833e1349f7b0b3131db2e6dc1145bff9"><code class="lang-sh">curl -X GET \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -G \
+  --data-urlencode &apos;owner={&quot;__type&quot;:&quot;Pointer&quot;,&quot;className&quot;:&quot;_User&quot;,&quot;objectId&quot;:&quot;dennis id&quot;}&apos; \
+  https://leancloud.cn/1.1/subscribe/statuses
+</code></pre>
+<ul>
+<li>&#x793A;&#x4F8B;2&#xFF0C;&#x67E5;&#x8BE2;&#x6211;&#x7684;&#x6700;&#x65B0;&#x79C1;&#x4FE1;&#x5217;&#x8868;</li>
+</ul>
+<pre version="0b7e8811416dfe2e83a06968d4756532"><code class="lang-sh">    --data-urlencode &apos;owner={&quot;__type&quot;:&quot;Pointer&quot;,&quot;className&quot;:&quot;_User&quot;,&quot;objectId&quot;:&quot;dennis&quot;}&apos; \
+    --data-urlencode &apos;inboxType=private&apos;
+</code></pre>
+<ul>
+<li>&#x793A;&#x4F8B;3&#xFF0C;&#x5047;&#x8BBE;&#x4E0A;&#x6B21;&#x8FD4;&#x56DE;&#x7684;&#x6700;&#x5927;messageId&#x662F;99&#xFF0C;&#x67E5;&#x8BE2;&#x4ECE;mesageId&#x4E3A;99&#x5F00;&#x59CB;&#x6700;&#x65B0;&#x7684;status:</li>
+</ul>
+<pre version="c8eee2a05d3f310261337199dfcecb69"><code class="lang-sh">    --data-urlencode &apos;owner={&quot;__type&quot;:&quot;Pointer&quot;, &quot;className&quot;:&quot;_User&quot;,&quot;objectId&quot;:&quot;dennis&quot;}&apos; \
+    --data-urlencode &apos;sinceId=99&apos;
+</code></pre>
+<ul>
+<li>&#x793A;&#x4F8B;4&#xFF0C;&#x67E5;&#x8BE2;messageId&#x5728;99&#x5230;199&#x4E4B;&#x95F4;&#x7684;status&#xFF1A;</li>
+</ul>
+<pre version="25f5530fcf74ddcfd170cc0e51d82758"><code class="lang-sh">    --data-urlencode &apos;owner={&quot;__type&quot;:&quot;Pointer&quot;,&quot;className&quot;:&quot;_User&quot;,&quot;objectId&quot;:&quot;dennis&quot;}&apos; \
+    --data-urlencode &apos;sinceId=99&apos; \
+    --data-urlencode &apos;maxId=199&apos;
+</code></pre>
+<ul>
+<li>&#x793A;&#x4F8B;5&#xFF0C;&#x67E5;&#x8BE2;&#x6700;&#x65B0;&#x7684;status&#xFF0C;&#x5E76;&#x4E14;status&#x7684;image&#x5C5E;&#x6027;&#x5B58;&#x5728;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x67E5;&#x8BE2;&#x5305;&#x542B;&#x56FE;&#x7247;&#x7684;&#x6700;&#x65B0;status:</li>
+</ul>
+<pre version="2c8b391203e8184973e6dbd1e2406927"><code class="lang-sh">    --data-urlencode &apos;owner={&quot;__type&quot;:&quot;Pointer&quot;,&quot;className&quot;:&quot;_User&quot;,&quot;objectId&quot;:&quot;dennis&quot;}&apos; \
+    --data-urlencode &apos;where={&quot;image&quot;:{&quot;$exists&quot;:true }}&apos;
+</code></pre>
+<h4 id="-status-api">&#x67E5;&#x8BE2;status&#x8BA1;&#x6570; API</h4>
+<ul>
+<li>&#x67E5;&#x8BE2;inbox&#x603B;&#x6D88;&#x606F;&#x6570;&#x76EE;&#x548C;&#x672A;&#x8BFB;&#x6D88;&#x606F;&#x6570;&#x76EE;&#xFF1A;</li>
+</ul>
+<pre version="860ce07cd095d234ea7ae93cb638a44f"><code>GET &quot;/subscribe/statuses/count
+</code></pre><p version="e177834029ef9590b18832a632343a78">&#x53EF;&#x6307;&#x5B9A;&#x7684;&#x6761;&#x4EF6;&#xFF1A;</p>
+<ul>
+<li>owner JSON&#x5E8F;&#x5217;&#x5316;&#x540E;&#x7684;owner&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8868;&#x793A;inbox&#x6240;&#x6709;&#x8005;&#x3002;</li>
+<li>inboxType inbox&#x7C7B;&#x578B;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;<code>default</code>&#xFF0C;&#x53EF;&#x4E3A;&#x7A7A;</li>
+</ul>
+<p version="d98f0b9f8d9481433ed629a361142f94">&#x793A;&#x4F8B;1,&#x67E5;&#x8BE2;&#x6211;&#x7684;&#x672A;&#x8BFB;&#x6D88;&#x606F;&#x6570;&#x76EE;</p>
+<pre version="6352a7e4f664a11315bcf22c5c83e324"><code class="lang-sh">curl -X GET \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -G \
+  --data-urlencode &apos;owner={&quot;__type&quot;:&quot;Pointer&quot;,&quot;className&quot;:&quot;_User&quot;,&quot;objectId&quot;:&quot;dennis&quot;}&apos; \
+  https://leancloud.cn/1.1/subscribe/statuses/count
+</code></pre>
+<p version="1c5995b3479b2a45020765198f4af2f4">&#x8FD4;&#x56DE;&#xFF1A;</p>
+<pre version="9777b79f127398715d8dedf93c2da13e"><code class="lang-json">{ &quot;total&quot;: 100, &quot;unread&quot;:20}
+</code></pre>
+<p version="035367ee7cf19cc23f6fbc038f72f710">&#x793A;&#x4F8B;2&#xFF0C;&#x67E5;&#x8BE2;&#x79C1;&#x4FE1;&#x6D88;&#x606F;&#x6570;&#x76EE;&#xFF1A;</p>
+<pre version="4a505249b36aa2120a74c25fdbc99494"><code class="lang-sh">curl -X GET \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -G \
+   --data-urlencode &apos;owner={&quot;__type&quot;:&quot;Pointer&quot;,&quot;className&quot;:&quot;_User&quot;,&quot;objectId&quot;:&quot;dennis&quot;}&apos; \
+   --data-urlencode &apos;inboxType=private&apos; \
+   https://leancloud.cn/1.1/subscribe/statuses/count
+</code></pre>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

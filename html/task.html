@@ -141,7 +141,7 @@
                   </li>
 
                   <li>
-                  <a href="task.html">
+                  <a href="task.html" onclick="islogin()">
                     <i class="icon-list icon  text-info-dker"></i>
                     <b class="badge bg-info pull-right">6</b>
                     <span class="font-bold">任务</span>
@@ -250,7 +250,7 @@
                         <div class="inline">
                           <div class="easypiechart" data-percent="75" data-line-width="5" data-bar-color="#1ab667" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="134" data-line-cap='butt' data-animate="1000">
                             <div class="thumb-lg">
-                              <img src="images/a5.png" class="img-circle" alt="...">
+                              <img src="images/icon.png" class="img-circle" alt="...">
                             </div>
                           </div>
                           <div class="h4 m-t m-b-xs">John.Smith</div>
@@ -350,7 +350,7 @@
                               <i class="icon-check bg-success text-active"></i>
                             </a>
                             <div class="clear text-ellipsis">
-                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
+                              <span  contenteditable="true" id="text1">11我也不知道呀要要在在在工要要在地</span>
                             </div><ol class="dd-list"></ol>
                             </li>
                             <li class="list-group-item dd-item dd3-item" data-id="2">
@@ -363,7 +363,7 @@
                               <i class="icon-check bg-success text-active"></i>
                             </a>
                             <div class="clear text-ellipsis" data-id="3">
-                              <span  contenteditable="true">我也不知道呀要要在在在工要要在地</span>
+                              <span  contenteditable="true" id="text2">22我也不知道呀要要在在在工要要在地</span>
                             </div><ol class="dd-list"></ol>
 
                             </li>
@@ -533,13 +533,7 @@
    <script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
   <script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
   <script type="text/javascript" src="js/jPlayer/demo.js"></script> -->
-<script type="text/javascript">
-$('body').on('click', '.jp-play-me',  function(){
-    var me = $(this);
-    me.find('.text').toggle();
-    me.find('.text-active').toggle();
-    me.closest('li').toggleClass('done');
-    })
-</script>
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="js/leancloud.js"></script>
 </body>
 </html>

@@ -1,0 +1,1645 @@
+<!doctype html>
+
+<html version="90c59b985954adac03102b496e617e6b">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="android-">Android &#x5F00;&#x53D1;&#x6307;&#x5357;</h1>
+<p version="8f7f6f26e1f7024b0eed4e97522fed7a">&#x5982;&#x679C;&#x4F60;&#x8FD8;&#x6CA1;&#x6709;&#x5B89;&#x88C5; LeanCloud SDK &#xFF0C;&#x8BF7;&#x524D;&#x5F80;<a href="/start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;&#x6307;&#x5357;</a>&#x3002;</p>
+<p version="afbc81ad5e4f7c78eda3e0eb9ed954f9">&#x5982;&#x679C;&#x4F60;&#x5E0C;&#x671B;&#x4ECE;&#x9879;&#x76EE;&#x91CC;&#x5B66;&#x4E60;&#xFF0C;&#x8BF7;&#x524D;&#x5F80; <a href="https://github.com/leancloud/leancloud-demos#android">Android SDK Demos</a> &#x3002;&#x5176;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x63A8;&#x8350;&#x4E0E;&#x672C;&#x6307;&#x5357;&#x914D;&#x5957;&#x7684; <a href="https://github.com/leancloud/LeanStorageDemo-Android">LeanStorageDemo-Android</a> &#x9879;&#x76EE;&#x3002;</p>
+<h2 id="-">&#x5FEB;&#x901F;&#x5165;&#x95E8;</h2>
+<p version="c6711e90a4ae152b14ed5ab2e9b11fa5">&#x5EFA;&#x8BAE;&#x60A8;&#x5728;&#x9605;&#x8BFB;&#x672C;&#x6587;&#x6863;&#x4E4B;&#x524D;&#xFF0C;&#x9605;&#x8BFB;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x7684;<a href="/start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a>&#x6587;&#x6863;&#xFF0C;&#x83B7;&#x53D6; LeanCloud &#x4F7F;&#x7528;&#x7684;&#x914D;&#x7F6E;&#x548C;&#x7B2C;&#x4E00;&#x5370;&#x8C61;&#x3002;</p>
+<h2 id="sdk-">SDK &#x5B89;&#x88C5;</h2>
+<p version="051e334dfae35e1dcff668215a743c97">&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x9488;&#x5BF9; Android SDK &#x8BE6;&#x7EC6;&#x7684;&#x5B89;&#x88C5;&#x6307;&#x5357;&#xFF1A;<a href="sdk_setup-android.html">LeanCloud Android SDK &#x5B89;&#x88C5;&#x6307;&#x5357;</a></p>
+<h2 id="-">&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;</h2>
+<p version="22a35e35cfab11dffac9eed9b9383103">LeanCloud &#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x662F;&#x5EFA;&#x7ACB;&#x5728;&#x5BF9;&#x8C61;&#x2014;&#x2014;<code>AVObject</code> &#x57FA;&#x7840;&#x4E0A;&#x7684;&#xFF0C;&#x6BCF;&#x4E2A; <code>AVObject</code> &#x5305;&#x542B;&#x82E5;&#x5E72;&#x5C5E;&#x6027;&#xFF0C;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x662F;&#x4E0E; JSON &#x683C;&#x5F0F;&#x517C;&#x5BB9;&#x7684;&#x6570;&#x636E;&#x3002;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x9884;&#x5148;&#x6307;&#x5B9A;&#x6BCF;&#x4E2A; <code>AVObject</code> &#x5305;&#x542B;&#x54EA;&#x4E9B;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x589E;&#x52A0;&#x65B0;&#x7684;&#x5C5E;&#x6027;&#x3002;</p>
+<p version="fb50a8b31469a29204faaf93d43b5074">&#x5047;&#x5982;&#x6211;&#x4EEC;&#x8981;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x4E8E;&#x5FAE;&#x535A;&#x7684;&#x793E;&#x4EA4; app&#xFF0C;&#x4E3B;&#x8981;&#x6709;&#x4E09;&#x7C7B;&#x6570;&#x636E;&#xFF1A;&#x8D26;&#x6237;&#x3001;&#x5E16;&#x5B50;&#x3001;&#x8BC4;&#x8BBA;&#x3002;&#x4EE5;&#x5FAE;&#x535A;&#x7684;&#x5E16;&#x5B50;&#x4E3A;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x7C7B;&#x540D;&#x4E3A; <code>Post</code> &#x7684; <code>AVObject</code> &#x5BF9;&#x8C61;&#xFF0C;&#x5305;&#x542B;&#x4E0B;&#x9762;&#x51E0;&#x4E2A;&#x5C5E;&#x6027;&#xFF1A;</p>
+<pre version="1d92d27ea23ecb05d47c030d97278688"><code>content: &quot;&#x6BCF;&#x4E2A;Java&#x7A0B;&#x5E8F;&#x5458;&#x5FC5;&#x5907;&#x7684;8&#x4E2A;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&quot;, pubUser: &quot;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D;&quot;, pubTimestamp: 1435541999
+</code></pre><p version="163b2dd3e00faed69547faf8676b7477">&#x5C5E;&#x6027;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x662F;&#x7531;&#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x7EC4;&#x6210;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x6570;&#x5B57;&#x3001;&#x5E03;&#x5C14;&#x503C;&#x3001;JSON &#x6570;&#x7EC4;&#xFF0C;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#x5176;&#x4ED6; <code>AVObject</code>&#x3002;&#x6BCF;&#x4E2A; <code>AVObject</code> &#x6709;&#x4E00;&#x4E2A;&#x7C7B;&#x540D;&#xFF0C;&#x4E5F;&#x662F; Dashboard &#x91CC;&#x7684;&#x6570;&#x636E;&#x8868;&#x540D;&#x3002;</p>
+<h3 id="-">&#x4FDD;&#x5B58;&#x5BF9;&#x8C61;</h3>
+<p version="81ca75927ba5fdc42425ea93c76c4c6c">&#x8981;&#x4FDD;&#x5B58; <code>Post</code> &#x6570;&#x636E;&#x5230;&#x4E91;&#x7AEF;&#xFF0C;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;&#x7684;&#x65B9;&#x6CD5;&#x4E0E; Java &#x4E2D;&#x7684; <code>Map</code> &#x7C7B;&#x4F3C;&#xFF1A;</p>
+<pre version="a54ffc535a003fccb61fa493a2bba82a"><code>AVObject post = new AVObject(&quot;Post&quot;);
+post.put(&quot;content&quot;, &quot;&#x6BCF;&#x4E2A;Java&#x7A0B;&#x5E8F;&#x5458;&#x5FC5;&#x5907;&#x7684;8&#x4E2A;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&quot;);
+post.put(&quot;pubUser&quot;, &quot;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D;&quot;);
+post.put(&quot;pubTimestamp&quot;, 1435541999);
+try {
+    post.save();
+} catch (AVException e) {
+    // e.getMessage() &#x6355;&#x83B7;&#x7684;&#x5F02;&#x5E38;&#x4FE1;&#x606F;
+}
+</code></pre><p version="b91f1acecd435292c52e1724b7d87ba0">&#x6210;&#x529F;&#x8FD0;&#x884C;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x540E;&#xFF0C;&#x6570;&#x636E;&#x5C31;&#x5DF2;&#x7ECF;&#x4FDD;&#x5B58;&#x5230; LeanCloud&#x3002;&#x4E3A;&#x786E;&#x8BA4;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7528; LeanCloud &#x63A7;&#x5236;&#x53F0;&#x7684;&#x6570;&#x636E;&#x6D4F;&#x89C8;&#x5668;&#x67E5;&#x770B; <a href="/data.html?appid={{appid}}">&#x8BE5;&#x5E94;&#x7528;&#x7684;&#x6570;&#x636E;</a>&#xFF0C;&#x627E;&#x5230;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre version="5edaf326df3bdec7f362438b15d25f90"><code class="lang-java">objectId: &quot;558e20cbe4b060308e3eb36c&quot;, content: &quot;&#x6BCF;&#x4E2A;Java&#x7A0B;&#x5E8F;&#x5458;&#x5FC5;&#x5907;&#x7684;8&#x4E2A;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&quot;, pubUser: &quot;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D;&quot;, pubTimestamp: 1435541999,
+createdAt:&quot;2015-06-29 09:39:35&quot;, updatedAt:&quot;2015-06-29 09:39:35&quot;
+</code></pre>
+<p version="708816b57671d65cb5baffd3f4cbf121">&#x56E0;&#x4E3A; <code>AVObject</code> &#x662F;&#x65E0;&#x6A21;&#x5F0F;&#x7684;&#xFF0C;&#x540E;&#x7EED;&#x4F60;&#x53EF;&#x4EE5;&#x5411; <code>Post</code> &#x91CC;&#x9762;&#x589E;&#x52A0;&#x65B0;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x4F8B;&#x5982;&#x53D1;&#x5E03;&#x8005;&#x4FE1;&#x606F;&#x4E2D;&#x8FD8;&#x5305;&#x62EC;&#x5934;&#x50CF;&#x3001;&#x8BA4;&#x8BC1;&#x7B49;&#x7EA7;&#x7B49;&#xFF1A;</p>
+<pre version="9b4cab97d0d235add5adb2f3de6e9988"><code class="lang-java">AVObject post = new AVObject(&quot;Post&quot;);
+post.put(&quot;content&quot;, &quot;&#x5C45;&#x6709;&#x826F;&#x7530;&#xFF0C;&#x98DF;&#x6709;&#x9ECD;&#x7A37;&#xFF1B;&#x8EAC;&#x8015;&#x5C71;&#x9593;&#xFF0C;&#x512A;&#x6E38;&#x4EBA;&#x4E16;&#xFF1B;&#x751F;&#x4E4B;&#x6240;&#x5F80;&#xFF0C;&#x4E0D;&#x904E;&#x826F;&#x98A8;&#x5E74;&#x5E74;&#x3002;&quot;);
+post.put(&quot;pubUser&quot;, &quot;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D;&quot;);
+post.put(&quot;pubUserAvatar&quot;, &quot;http://tp1.sinaimg.cn/3652761852/50/5730347813/0&quot;);
+post.put(&quot;pubUserCertificate&quot;, 4); // 4 &#x8868;&#x793A;&#x5FAE;&#x535A;&#x673A;&#x6784;&#x8BA4;&#x8BC1;&#xFF0C;&#x5047;&#x8BBE;&#x7684;&#x3002;
+post.put(&quot;pubTimestamp&quot;, 1435540999);
+try {
+    post.save();
+} catch (AVException e) {
+    // e.getMessage() &#x6355;&#x83B7;&#x7684;&#x5F02;&#x5E38;&#x4FE1;&#x606F;
+}
+</code></pre>
+<p version="7ed4137910319f9a1adb5318454cf829">&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x51E0;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x5728;&#x8FD0;&#x884C;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x4E91;&#x7AEF;&#xFF08;LeanCloud &#x7684;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4EE5;&#x4E0B;&#x7B80;&#x79F0;&#x4E91;&#x7AEF;&#xFF09;&#x4E0D;&#x5B58;&#x5728; <code>Post</code> &#x6570;&#x636E;&#x8868;&#xFF0C;&#x90A3;&#x4E48; LeanCloud &#x5C06;&#x6839;&#x636E;&#x4F60;&#x7B2C;&#x4E00;&#x6B21;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x8FD0;&#x884C;&#x7684;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#xFF09;&#x4FDD;&#x5B58;&#x7684; <code>Post</code> &#x5BF9;&#x8C61;&#x6765;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x8868;&#xFF0C;&#x5E76;&#x4E14;&#x63D2;&#x5165;&#x76F8;&#x5E94;&#x6570;&#x636E;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4E91;&#x7AEF;&#x7684;&#x8FD9;&#x4E2A;&#x5E94;&#x7528;&#x4E2D;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x540D;&#x4E3A; <code>Post</code> &#x7684;&#x6570;&#x636E;&#x8868;&#xFF0C;&#x800C;&#x4E14;&#x4E5F;&#x5305;&#x62EC; <code>content</code>&#x3001;<code>pubUser</code>&#x3001;<code>pubTimestamp</code> &#x7B49;&#x5C5E;&#x6027;&#xFF0C;&#x65B0;&#x52A0;&#x5165;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8981;&#x548C;&#x521B;&#x5EFA;&#x8BE5;&#x5C5E;&#x6027;&#x65F6;&#x4E00;&#x81F4;&#xFF0C;&#x5426;&#x5219;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x5C06;&#x5931;&#x8D25;&#x3002;</li>
+<li>&#x6BCF;&#x4E2A; <code>AVObject</code> &#x5BF9;&#x8C61;&#x6709;&#x51E0;&#x4E2A;&#x4FDD;&#x5B58;&#x5143;&#x6570;&#x636E;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x5F00;&#x53D1;&#x8005;&#x6307;&#x5B9A;&#x7684;&#xFF0C;&#x5305;&#x62EC; <code>objectId</code> &#x662F;&#x6BCF;&#x4E2A;&#x6210;&#x529F;&#x4FDD;&#x5B58;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7B26;&#x3002;<code>createdAt</code> &#x548C; <code>updatedAt</code> &#x662F;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x521B;&#x5EFA;&#x548C;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x7684;&#x65F6;&#x95F4;&#x3002;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x66F4;&#x65B0;&#x662F;&#x7531;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x8BF7;&#x4E0D;&#x8981;&#x5728;&#x4EE3;&#x7801;&#x91CC;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x6765;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x3002;</li>
+<li>&#x5728; Android &#x5E73;&#x53F0;&#x4E0A;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x8FDB;&#x884C;&#x8017;&#x65F6;&#x7684;&#x963B;&#x585E;&#x6027;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x8BBF;&#x95EE;&#x7F51;&#x7EDC;&#x7B49;&#xFF0C;<strong>&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x80FD;&#x4F1A;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x8FD0;&#x884C;</strong>&#xFF0C;&#x907F;&#x514D;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x65B9;&#x6CD5;&#x662F;<strong>&#x628A;&#x4F1A;&#x5BFC;&#x81F4;&#x963B;&#x585E;&#x7684;&#x540C;&#x6B65;&#x64CD;&#x4F5C;&#x6539;&#x4E3A;&#x5F02;&#x6B65;</strong>&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x540E;&#x53F0;&#x7EBF;&#x7A0B;&#x8FD0;&#x884C;&#xFF0C;&#x4F8B;&#x5982; <code>save()</code> &#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x7684;&#x7248;&#x672C; <strong><code>saveInBackground()</code></strong>&#xFF0C;&#x9700;&#x8981;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x5728;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x540E;&#x8FD0;&#x884C;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x67E5;&#x8BE2;&#x3001;&#x66F4;&#x65B0;&#x3001;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x4E5F;&#x90FD;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x5F02;&#x6B65;&#x7248;&#x672C;&#x3002;</li>
+</ul>
+<p version="3cb742702d5ac621498e35593f5460c2"><strong>&#x6CE8;&#x610F;&#xFF1A;&#x4EE5;&#x4E0B;&#x4E3A;&#x7CFB;&#x7EDF;&#x4FDD;&#x7559;&#x5B57;&#x6BB5;&#xFF0C;&#x4E0D;&#x80FD;&#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x540D;&#x6765;&#x4F7F;&#x7528;&#x3002;</strong></p>
+<pre version="b51db73436095fd7f429069f76984455"><code>acl             error            pendingKeys
+ACL             fetchWhenSave    running
+className       id               updatedAt
+code            isDataReady      uuid
+createdAt       keyValues
+description     objectId
+</code></pre><h3 id="-">&#x6570;&#x636E;&#x68C0;&#x7D22;</h3>
+<p version="73fad351154cb47a2d3acc18b1765e7c">&#x4F7F;&#x7528; LeanCloud &#x67E5;&#x8BE2;&#x6570;&#x636E;&#x6BD4;&#x4FDD;&#x5B58;&#x66F4;&#x5BB9;&#x6613;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x67D0;&#x6761;&#x6570;&#x636E;&#x7684; <code>objectId</code>&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>AVQuery</code> &#x76F4;&#x63A5;&#x68C0;&#x7D22;&#x5230;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684; <code>AVObject</code>&#xFF1A;</p>
+<pre version="aa506767fee9bb9e3e9dde0446497341"><code class="lang-java">AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(&quot;Post&quot;);
+AVObject post;
+try {
+    post = query.get(&quot;558e20cbe4b060308e3eb36c&quot;);
+} catch (AVException e) {
+    // e.getMessage()
+}
+</code></pre>
+<p version="a93bbfb891cbe03a4dafe113cd369377">&#x8981;&#x4ECE;&#x68C0;&#x7D22;&#x5230;&#x7684; <code>AVObject</code> &#x5B9E;&#x4F8B;&#x4E2D;&#x83B7;&#x53D6;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x76F8;&#x5E94;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684; <code>getType</code> &#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="1e4c11ad6d2742b95bf56762ae618f67"><code>String content = post.getString(&quot;content&quot;);
+String userName = post.getString(&quot;pubUser&quot;);
+int userVerified = post.getInt(&quot;pubUserCertificate&quot;);
+</code></pre><h3 id="-">&#x5728;&#x540E;&#x53F0;&#x5DE5;&#x4F5C;</h3>
+<p version="9c2d269036badf6f866728e6168b6162">&#x5728; Android &#x5E73;&#x53F0;&#x4E0A;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x662F;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x8FDB;&#x884C;&#x8017;&#x65F6;&#x7684;&#x963B;&#x585E;&#x6027;&#x64CD;&#x4F5C;&#xFF0C;&#x4F8B;&#x5982;&#x67E5;&#x8BE2;&#x5927;&#x91CF;&#x6570;&#x636E;&#xFF0C;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#x3002;&#x907F;&#x514D;&#x8FD9;&#x4E2A;&#x98CE;&#x9669;&#x7684;&#x529E;&#x6CD5;&#x662F;&#x53D8;&#x540C;&#x6B65;&#x4E3A;&#x5F02;&#x6B65;&#xFF0C;LeanCloud SDK &#x63D0;&#x4F9B;&#x4E86;&#x73B0;&#x6210;&#x7684;&#x5F02;&#x6B65;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528; <code>saveInBackground</code> &#x65B9;&#x6CD5;&#x6765;&#x5728;&#x4E00;&#x4E2A;&#x540E;&#x53F0;&#x7EBF;&#x7A0B;&#x4E2D;&#x4FDD;&#x5B58;&#x4E4B;&#x524D;&#x7684; <code>AVObject</code> &#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre version="6f2402469153592c34b7a1cb452d43c8"><code class="lang-java">post.saveInBackground();
+</code></pre>
+<p version="26807eff21804080e2ee5990d636b99c">&#x5F00;&#x53D1;&#x8005;&#x4E0D;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x52A8;&#x624B;&#x5B9E;&#x73B0;&#x591A;&#x7EBF;&#x7A0B;&#xFF0C;<code>saveInBackground()</code> &#x7684;&#x64CD;&#x4F5C;&#x5C06;&#x5728;&#x540E;&#x53F0;&#x7EBF;&#x7A0B;&#x4E2D;&#x8FDB;&#x884C;&#xFF0C;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x54CD;&#x5E94;&#x3002;</p>
+<p version="0416e2dc87512c0a923294f467e9bd71">&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x77E5;&#x9053;&#x540E;&#x53F0;&#x7EBF;&#x7A0B;&#x4EFB;&#x52A1;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x6BD4;&#x5982;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x662F;&#x5426;&#x6210;&#x529F;&#xFF1F;LeanCloud &#x4E5F;&#x4E3A;&#x6B64;&#x63D0;&#x4F9B;&#x4E86;&#x56DE;&#x8C03;&#x7C7B;&#x3002;&#x5BF9;&#x4E8E; <code>saveInBackground()</code> &#x65B9;&#x6CD5;&#xFF0C;&#x6709;&#x4E00;&#x4E2A; <code>saveCallback</code> &#x56DE;&#x8C03;&#x65B9;&#x5F0F;&#x3002;&#x6700;&#x7B80;&#x5355;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x662F;&#x5199;&#x4E00;&#x4E2A;&#x533F;&#x540D;&#x5185;&#x90E8;&#x7C7B;&#x6765;&#x63A5;&#x6536;&#x56DE;&#x8C03;&#x7ED3;&#x679C;&#x3002;&#x4F8B;&#x5982;&#x4F60;&#x60F3;&#x77E5;&#x9053;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x662F;&#x5426;&#x6210;&#x529F;&#xFF1A;</p>
+<pre version="59a388b17492bf4286e07858255e63ab"><code class="lang-java">post.saveInBackground(new SaveCallback() {
+    public void done(AVException e) {
+        if (e == null) {
+            // &#x4FDD;&#x5B58;&#x6210;&#x529F;
+        } else {
+            // &#x4FDD;&#x5B58;&#x5931;&#x8D25;&#xFF0C;&#x8F93;&#x51FA;&#x9519;&#x8BEF;&#x4FE1;&#x606F;
+        }
+    }
+});
+</code></pre>
+<p version="fd05affb3ec11bf43d1b820975b2bcce"><code>SaveCallback()</code> &#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x5C06;&#x5728;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x5B8C;&#x6210;&#x540E;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x4E2D;&#x8FDB;&#x884C;&#x66F4;&#x65B0;&#x7528;&#x6237;&#x754C;&#x9762;&#x7B49;&#x64CD;&#x4F5C;&#x3002;</p>
+<p version="2c147cc7ac23731cd62f93465fd249aa"><code>AVQuery</code> &#x7684; <code>getInBackground</code> &#x65B9;&#x6CD5;&#x662F;&#x4ECE;&#x4E91;&#x7AEF;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x7684;&#x5F02;&#x6B65;&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x63D0;&#x4F9B;&#x7C7B;&#x4F3C;&#x7684;&#x56DE;&#x8C03;&#x7C7B;&#x3002;&#x4EE5;&#x83B7;&#x53D6; <code>Post</code> &#x5BF9;&#x8C61;&#x4E3A;&#x4F8B;&#xFF1A;</p>
+<pre version="093ccb321158b0e6b90087c121f5ffab"><code class="lang-java">AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(&quot;Post&quot;);
+query.getInBackground(&quot;558e20cbe4b060308e3eb36c&quot;, new GetCallback&lt;AVObject&gt;() {
+    public void done(AVObject post, AVException e) {
+        if (e == null) {
+            Log.d(&quot;&#x83B7;&#x53D6;&#x5FAE;&#x535A;&quot;, &quot;&#x5185;&#x5BB9;&#x662F;&#xFF1A;&quot; + post.getString(&quot;content&quot;));
+        } else {
+            Log.e(&quot;&#x83B7;&#x53D6;&#x5FAE;&#x535A;&quot;, &quot;&#x9519;&#x8BEF;: &quot; + e.getMessage());
+        }
+    }
+});
+</code></pre>
+<h3 id="-">&#x66F4;&#x65B0;&#x5BF9;&#x8C61;</h3>
+<p version="20841ed7717ff7abb485b0c5b284855e">&#x66F4;&#x65B0;&#x4FDD;&#x5B58;&#x5728;&#x4E91;&#x7AEF;&#x7684;&#x5BF9;&#x8C61;&#x4E5F;&#x662F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x7684;&#x3002;&#x9996;&#x5148;&#x83B7;&#x53D6;&#x5230;&#x8981;&#x66F4;&#x65B0;&#x7684; <code>AVObject</code> &#x5B9E;&#x4F8B;&#xFF0C;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x540E;&#x518D;&#x4FDD;&#x5B58;&#x5373;&#x53EF;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre version="778c28540b1d3ba96bc153dcbd8d2c64"><code class="lang-java">String tableName = &quot;Post&quot;;
+AVObject post = new AVObject(tableName);
+AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(tableName);
+
+
+post = query.get(&quot;558e20cbe4b060308e3eb36c&quot;);
+post.put(&quot;content&quot;,&quot;&#x6BCF;&#x4E2A;Java&#x7A0B;&#x5E8F;&#x5458;&#x5FC5;&#x5907;&#x7684;8&#x4E2A;&#x5F00;&#x53D1;&#x5DE5;&#x5177; &#x2014;&#x2014; http://itindex.net/detail/52950-java-%E5%BC%80%E5%8F%91-%E5%B7%A5%E5%85%B7&quot;);
+post.saveInBackground(new SaveCallback() {
+   @Override
+   public void done(AVException e) {
+        if (e == null) {
+            Log.i(&quot;LeanCloud&quot;, &quot;Save successfully.&quot;);
+        } else {
+            Log.e(&quot;LeanCloud&quot;, &quot;Save failed.&quot;);
+        }
+    }
+});
+</code></pre>
+<p version="e090a107a06529abe4efae096efad99c"><strong>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;LeanCloud &#x4E0A;&#x7684;&#x66F4;&#x65B0;&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x9488;&#x5BF9;&#x5355;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x83B7;&#x5F97;&#x5BF9;&#x8C61;&#x7684; objectId &#x4E3B;&#x952E;&#x624D;&#x53EF;&#x4EE5;&#x53BB;&#x66F4;&#x65B0;&#x5BF9;&#x8C61;&#x3002;&#x670D;&#x52A1;&#x7AEF;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x65B0;&#x589E;&#x8FD8;&#x662F;&#x66F4;&#x65B0;&#xFF0C;&#x662F;&#x6839;&#x636E;&#x6709;&#x6CA1;&#x6709; objectId &#x6765;&#x51B3;&#x5B9A;&#x7684;&#x3002;</strong></p>
+<p version="91ddfff054d56c8e91becb5596a04f8a">&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x662F;&#x5148;&#x67E5;&#x8BE2;&#x51FA;&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x4FEE;&#x6539;&#x5C5E;&#x6027;&#xFF0C;&#x8C03;&#x7528; saveInBackground &#x4FDD;&#x5B58;&#x3002;</p>
+<p version="5a4f122cc6ed37137b786198464d7f4a">&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x4E86; objectId&#xFF08;&#x4F8B;&#x5982;&#x4ECE;&#x67E5;&#x8BE2;&#x540E;&#x7684;&#x5217;&#x8868;&#x9875;&#x8FDB;&#x5165;&#x4E00;&#x4E2A;&#x8BE6;&#x60C5;&#x9875;&#x9762;&#xFF0C;&#x4F20;&#x5165;&#x4E86; objectId&#xFF09;&#xFF0C;&#x60F3;&#x8981;&#x4FEE;&#x6539;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x7C7B;&#x4F3C;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6765;&#x66F4;&#x65B0;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#xFF1A;</p>
+<pre version="42bcbb00dd2f1efd94bc227fc7c24a91"><code class="lang-java">// &#x77E5;&#x9053; objectId&#xFF0C;&#x521B;&#x5EFA; AVObject
+AVObject post = AVObject.createWithoutData(&quot;Post&quot;, &quot;5590cdfde4b00f7adb5860c8&quot;);
+//&#x66F4;&#x65B0;&#x5C5E;&#x6027;
+post.put(&quot;content&quot;,&quot;&#x6BCF;&#x4E2A;Java&#x7A0B;&#x5E8F;&#x5458;&#x5FC5;&#x5907;&#x7684;8&#x4E2A;&#x5F00;&#x53D1;&#x5DE5;&#x5177; &#x2014;&#x2014; http://itindex.net/detail/52950-java-%E5%BC%80%E5%8F%91-%E5%B7%A5%E5%85%B7&quot;);
+//&#x4FDD;&#x5B58;
+post.saveInBackground();
+</code></pre>
+<h3 id="-">&#x8BA1;&#x6570;&#x5668;</h3>
+<p version="b5eb1d0286bb1ef4dee75bab696e5deb">&#x8BB8;&#x591A;&#x5E94;&#x7528;&#x90FD;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x8BA1;&#x6570;&#x5668;&#x529F;&#x80FD;&#x2014;&#x2014;&#x6BD4;&#x5982;&#x4E00;&#x6761;&#x5FAE;&#x535A;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8BB0;&#x5F55;&#x6709;&#x591A;&#x5C11;&#x4EBA;&#x559C;&#x6B22;&#x6216;&#x8005;&#x8F6C;&#x53D1;&#x4E86;&#x5B83;&#x3002;&#x4F46;&#x53EF;&#x80FD;&#x5F88;&#x591A;&#x6B21;&#x559C;&#x6B22;&#x90FD;&#x662F;&#x540C;&#x65F6;&#x53D1;&#x751F;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x6BCF;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x90FD;&#x76F4;&#x63A5;&#x628A;&#x5B83;&#x4EEC;&#x8BFB;&#x5230;&#x7684;&#x8BA1;&#x6570;&#x503C;&#x589E;&#x52A0;&#x4E4B;&#x540E;&#x518D;&#x5199;&#x56DE;&#x53BB;&#xFF0C;&#x90A3;&#x4E48;&#x6781;&#x5BB9;&#x6613;&#x5F15;&#x53D1;&#x51B2;&#x7A81;&#x548C;&#x8986;&#x76D6;&#xFF0C;&#x5BFC;&#x81F4;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x4E0D;&#x51C6;&#x3002;&#x8FD9;&#x65F6;&#x5019;&#x600E;&#x4E48;&#x529E;&#xFF1F;LeanCloud &#x63D0;&#x4F9B;&#x4E86;&#x4FBF;&#x6377;&#x7684;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#x6765;&#x5B9E;&#x73B0;&#x8BA1;&#x6570;&#x5668;&#xFF1A;</p>
+<pre version="21404c76fca17a932b59033859aee61a"><code class="lang-java">AVObject post = new AVObject(&quot;Post&quot;);
+post.put(&quot;upvotes&quot;, 0); //&#x521D;&#x59CB;&#x503C;&#x4E3A; 0
+post.saveInBackground();
+</code></pre>
+<p version="49801aa9591b39bd3d8775ffc559613d">&#x7136;&#x540E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x9012;&#x589E;&#x6216;&#x8005;&#x9012;&#x51CF; <code>upvotes</code>&#xFF0C;&#x6CA1;&#x9519;&#x5C31;&#x8FD9;&#x4E48;&#x7B80;&#x5355;&#xFF1A;</p>
+<pre version="240c473b596c8270f9155f4f86a6189f"><code class="lang-java">post.increment(&quot;upvotes&quot;);
+post.saveInBackground();
+</code></pre>
+<p version="458cfc1a2e5bfe5a034e1001c3c4d594">&#x53E6;&#x5916;&#xFF0C;&#x901A;&#x8FC7;&#x4F7F;&#x7528; <code>increment(key, amount)</code> &#x65B9;&#x6CD5;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x5B9A;&#x4E49;&#x589E;&#x51CF;&#x7684;&#x5E45;&#x5EA6;&#x3002;</p>
+<h3 id="-">&#x66F4;&#x65B0;&#x540E;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x503C;</h3>
+<p version="c9293390232d773d0fa6efbc52ca656a">&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#xFF0C;&#x5728;&#x66F4;&#x65B0;&#x5BF9;&#x8C61;&#x64CD;&#x4F5C;&#x540E;&#xFF0C;&#x5BF9;&#x8C61;&#x672C;&#x5730;&#x7684; <code>updatedAt</code> &#x5B57;&#x6BB5;&#xFF08;&#x6700;&#x540E;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF09;&#x4F1A;&#x88AB;&#x5237;&#x65B0;&#xFF0C;&#x4F46;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x4E0D;&#x4F1A;&#x4ECE;&#x4E91;&#x7AEF;&#x91CD;&#x65B0;&#x83B7;&#x53D6;&#x3002;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E; <code>fetchWhenSave</code> &#x5C5E;&#x6027;&#x4E3A; <code>true</code>&#xFF0C;&#x6765;&#x83B7;&#x53D6;&#x66F4;&#x65B0;&#x5B57;&#x6BB5;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x6700;&#x65B0;&#x7ED3;&#x679C;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre version="9583ce81c24d455f37707310cb13d394"><code class="lang-java">post.setFetchWhenSave(true);
+post.increment(&quot;upvotes&quot;);
+post.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(AVException e) {
+                // &#x4ECE;&#x8FD9;&#x65F6;&#x5019;&#x5F00;&#x59CB;&#xFF0C;post &#x4FEE;&#x6539;&#x7684;&#x5C5E;&#x6027;&#x5168;&#x90E8;&#x66F4;&#x65B0;&#x5230;&#x6700;&#x65B0;&#x72B6;&#x6001;
+                // &#x518D;&#x6B21;&#x83B7;&#x53D6; upvotes &#x7684;&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x5C31;&#x662F;&#x6700;&#x65B0;&#x7684;&#x70B9;&#x8D5E;&#x4EBA;&#x6570;
+            }
+ });
+</code></pre>
+<p version="ad492ad38a4cc87f4c19a06212b517b2">&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x5728;&#x5B9E;&#x73B0;&#x67D0;&#x4E9B;&#x8BA1;&#x6570;&#x64CD;&#x4F5C;&#xFF0C;&#x8B6C;&#x5982;&#x51CF;&#x5E93;&#x5B58;&#x65F6;&#x7279;&#x522B;&#x6709;&#x7528;&#xFF0C;&#x6BCF;&#x6B21;&#x9012;&#x51CF;&#x5E93;&#x5B58;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x68C0;&#x67E5;&#x6700;&#x65B0;&#x7684;&#x503C;&#x662F;&#x5426;&#x5C0F;&#x4E8E; 0&#xFF0C;&#x6765;&#x5224;&#x65AD;&#x662F;&#x5426;&#x552E;&#x7A7A;&#x3002;</p>
+<h3 id="-">&#x5220;&#x9664;&#x5BF9;&#x8C61;</h3>
+<p version="f861985cf7b93b56150672608b2c671c">&#x4ECE;&#x4E91;&#x7AEF;&#x5220;&#x9664;&#x5BF9;&#x8C61;&#xFF0C;&#x8BF7;&#x8C03;&#x7528;&#x8BE5;&#x5BF9;&#x8C61;&#x7684; <code>deleteInBackground()</code> &#x65B9;&#x6CD5;&#x3002;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x5728;&#x4E4E;&#x4F1A;&#x963B;&#x585E;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>delete()</code> &#x65B9;&#x6CD5;&#x3002;&#x786E;&#x8BA4;&#x5220;&#x9664;&#x662F;&#x5426;&#x6210;&#x529F;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>DeleteCallback</code> &#x56DE;&#x8C03;&#x6765;&#x5904;&#x7406;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<pre version="88e314783f15ff5c7db50ddc4fc79f84"><code class="lang-java">myObject.deleteInBackground();
+</code></pre>
+<p version="2875683bb42c748838f97756aea943ce">&#x9664;&#x4E86;&#x5B8C;&#x6574;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x5916;&#xFF0C;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x53EA;&#x5220;&#x9664;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x67D0;&#x4E9B;&#x6307;&#x5B9A;&#x7684;&#x503C;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#x53EA;&#x6709;&#x8C03;&#x7528; <code>saveInBackground()</code> &#x4E4B;&#x540E;&#xFF0C;&#x4FEE;&#x6539;&#x624D;&#x4F1A;&#x540C;&#x6B65;&#x5230;&#x4E91;&#x7AEF;&#x3002;</p>
+<pre version="339989d3136832df40acc4b22d479a31"><code class="lang-java">// &#x5220;&#x9664; post &#x5B9E;&#x4F8B;&#x4E2D; pubTimestamp &#x5B57;&#x6BB5;&#x7684;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528; createdAt &#x8FD9;&#x4E2A;&#x5C5E;&#x6027;
+post.remove(&quot;pubTimestamp&quot;);
+// &#x4FDD;&#x5B58;&#x5220;&#x9664;&#x6570;&#x636E;&#x540E;&#x7684; post &#x5B9E;&#x4F8B;&#x5230;&#x670D;&#x52A1;&#x5668;
+post.saveInBackground();
+</code></pre>
+<p version="b7bf443c91f4dc079d30bc2429e805e7">&#x6279;&#x91CF;&#x5220;&#x9664;&#x5B9E;&#x4F8B;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>deleteAll()</code> &#x65B9;&#x6CD5;&#xFF0C;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x9A6C;&#x4E0A;&#x751F;&#x6548;&#x3002;</p>
+<pre version="a6669937ec13166b4c870d866fc1b5f8"><code class="lang-java">List&lt;AVObject&gt; objects = ...
+AVObject.deleteAll(objects);
+</code></pre>
+<h3 id="-">&#x5173;&#x8054;&#x6570;&#x636E;</h3>
+<p version="6a25d79dcf4a440b9f24b7924e987ac4">&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x4E0E;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x76F8;&#x8054;&#x7CFB;&#x3002;&#x5982;&#x524D;&#x9762;&#x6240;&#x8FF0;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E2A; AVObject &#x7684;&#x5B9E;&#x4F8B; a&#xFF0C;&#x5F53;&#x6210;&#x53E6;&#x4E00;&#x4E2A; AVObject &#x5B9E;&#x4F8B; b &#x7684;&#x5C5E;&#x6027;&#x503C;&#x4FDD;&#x5B58;&#x8D77;&#x6765;&#x3002;&#x8FD9;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x6570;&#x636E;&#x4E4B;&#x95F4;&#x4E00;&#x5BF9;&#x4E00;&#x6216;&#x8005;&#x4E00;&#x5BF9;&#x591A;&#x7684;&#x5173;&#x7CFB;&#x6620;&#x5C04;&#xFF0C;&#x5C31;&#x50CF;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x4E3B;&#x5916;&#x952E;&#x5173;&#x7CFB;&#x4E00;&#x6837;&#x3002;</p>
+<p version="86d33dd91c76395e411ded2c2ea6966d">&#x6CE8;&#xFF1A;LeanCloud &#x4E91;&#x7AEF;&#x662F;&#x901A;&#x8FC7; Pointer &#x7C7B;&#x578B;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x79CD;&#x6570;&#x636E;&#x5F15;&#x7528;&#x7684;&#xFF0C;&#x5E76;&#x4E0D;&#x4F1A;&#x5C06;&#x6570;&#x636E; a &#x5728;&#x6570;&#x636E; b &#x7684;&#x8868;&#x4E2D;&#x518D;&#x989D;&#x5916;&#x5B58;&#x50A8;&#x4E00;&#x4EFD;&#xFF0C;&#x8FD9;&#x4E5F;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x3002;</p>
+<p version="ce06caee91fadb5815df2f889155f268">&#x4F8B;&#x5982;&#xFF1A;&#x4E00;&#x6761;&#x5FAE;&#x535A;&#x4FE1;&#x606F;&#x53EF;&#x80FD;&#x4F1A;&#x5BF9;&#x5E94;&#x591A;&#x6761;&#x8BC4;&#x8BBA;&#x3002;&#x521B;&#x5EFA;&#x4E00;&#x6761;&#x5FAE;&#x535A;&#x4FE1;&#x606F;&#x5E76;&#x5BF9;&#x5E94;&#x4E00;&#x6761;&#x8BC4;&#x8BBA;&#x4FE1;&#x606F;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A;</p>
+<pre version="704457ae3f00091f081ecba137817359"><code class="lang-java">// &#x521B;&#x5EFA;&#x5FAE;&#x535A;&#x4FE1;&#x606F;
+AVObject myWeibo = new AVObject(&quot;Post&quot;);
+myWeibo.put(&quot;content&quot;, &quot;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x5458;&#xFF0C;&#x4F60;&#x8BA4;&#x4E3A;&#x56DE;&#x5BB6;&#x4EE5;&#x540E;&#x8981;&#x4E0D;&#x8981;&#x7EE7;&#x7EED;&#x5199;&#x4EE3;&#x7801;&#xFF1F;&quot;);
+
+// &#x521B;&#x5EFA;&#x8BC4;&#x8BBA;&#x4FE1;&#x606F;
+AVObject myComment = new AVObject(&quot;Comment&quot;);
+myComment.put(&quot;content&quot;, &quot;&#x6211;&#x82E5;&#x662F;&#x5199;&#x4EE3;&#x7801;&#xFF0C;&#x8FDB;&#x5165;&#x72B6;&#x6001;&#x4E4B;&#x540E;&#x6700;&#x597D;&#x4E0D;&#x8981;&#x505C;&#x3002;&#x4E0B;&#x4E0D;&#x4E0B;&#x73ED;&#x5DF2;&#x7ECF;&#x4E0D;&#x91CD;&#x8981;&#x4E86;&#xFF0C;&#x90A3;&#x79CD;&#x611F;&#x89C9;&#x6700;&#x91CD;&#x8981;&#x3002;&quot;);
+
+// &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5173;&#x8054;&#x7684;&#x5FAE;&#x535A;&#x5BF9;&#x8C61;
+// &#x5982;&#x679C;&#x9700;&#x8981;&#x9884;&#x5148;&#x5EFA;&#x8868;&#xFF0C;&#x53EF;&#x4EE5;&#x5728; Comment &#x8868;&#x4E2D;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A; Pointer &#x5C5E;&#x6027;&#x7684; post &#x5217;&#xFF1B;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x9700;&#x8981;&#x8FD9;&#x4E48;&#x505A;&#x3002;
+myComment.put(&quot;post&quot;, myWeibo);
+
+// &#x8FD9;&#x5C06;&#x4FDD;&#x5B58;&#x4E24;&#x6761;&#x6570;&#x636E;&#xFF0C;&#x5206;&#x522B;&#x4E3A;&#x5FAE;&#x535A;&#x4FE1;&#x606F;&#x548C;&#x8BC4;&#x8BBA;&#x4FE1;&#x606F;
+myComment.saveInBackground();
+</code></pre>
+<p version="05509bf3456a96eefab01e4b4c999800">&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; objectId &#x6765;&#x5173;&#x8054;&#x5DF2;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre version="a970a5236af34d84aabb7965344aaa3f"><code class="lang-java">// &#x628A;&#x8BC4;&#x8BBA;&#x5173;&#x8054;&#x5230; objectId &#x4E3A; 5590cdfde4b00f7adb5860c8 &#x7684;&#x8FD9;&#x6761;&#x5FAE;&#x535A;&#x4E0A;
+myComment.put(&quot;post&quot;, AVObject.createWithoutData(&quot;Post&quot;, &quot;5590cdfde4b00f7adb5860c8&quot;));
+</code></pre>
+<p version="d5c9380b7613ee7272e4652940e89d84">&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F53;&#x4F60;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5173;&#x8054;&#x7684; <code>AVObject</code> &#x4E0D;&#x4F1A;&#x88AB;&#x83B7;&#x53D6;&#x3002;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x9664;&#x4E86; <code>objectId</code> &#x4E4B;&#x5916;&#xFF0C;&#x5176;&#x4ED6;&#x5C5E;&#x6027;&#x503C;&#x90FD;&#x662F;&#x7A7A;&#x7684;&#xFF0C;&#x8981;&#x5F97;&#x5230;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x7684;&#x5168;&#x90E8;&#x5C5E;&#x6027;&#x6570;&#x636E;&#xFF0C;&#x9700;&#x8981;&#x518D;&#x6B21;&#x8C03;&#x7528; <code>fetch</code> &#x7CFB;&#x65B9;&#x6CD5;&#xFF08;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x5047;&#x8BBE;&#x5DF2;&#x7ECF;&#x901A;&#x8FC7; <code>AVQuery</code> &#x5F97;&#x5230;&#x4E86; Comment &#x7684;&#x5B9E;&#x4F8B;&#xFF09;:</p>
+<pre version="32ab847ca03abd1ad7c6d2e1d8aab25f"><code class="lang-java">fetchedComment.getAVObject(&quot;post&quot;)
+    .fetchIfNeededInBackground(new GetCallback&lt;AVObject&gt;() {
+        public void done(AVObject object, AVException e) {
+          String title = post.getString(&quot;title&quot;);
+        }
+    });
+</code></pre>
+<p version="1bf561bb9f9a983eab49652e70539154">&#x8FD8;&#x6709;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x590D;&#x6742;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>AVRelation</code> &#x6765;&#x5EFA;&#x6A21;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x3002;&#x8FD9;&#x6709;&#x70B9;&#x50CF; List &#x94FE;&#x8868;&#xFF0C;&#x4F46;&#x662F;&#x533A;&#x522B;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#xFF0C;&#x5728;&#x83B7;&#x53D6;&#x9644;&#x52A0;&#x5C5E;&#x6027;&#x7684;&#x65F6;&#x5019;&#xFF0C;<code>AVRelation</code> &#x4E0D;&#x9700;&#x8981;&#x540C;&#x6B65;&#x83B7;&#x53D6;&#x5173;&#x8054;&#x7684;&#x6240;&#x6709; <code>AVObject</code> &#x5B9E;&#x4F8B;&#x3002;&#x8FD9;&#x4F7F;&#x5F97; <code>AVRelation</code> &#x6BD4;&#x94FE;&#x8868;&#x7684;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x66F4;&#x591A;&#x5B9E;&#x4F8B;&#xFF0C;&#x8BFB;&#x53D6;&#x65B9;&#x5F0F;&#x4E5F;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E2A; <code>User</code> &#x53EF;&#x4EE5;&#x559C;&#x6B22;&#x5F88;&#x591A; <code>Post</code>&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7528; <code>getRelation</code> &#x65B9;&#x6CD5;&#x4FDD;&#x5B58;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x559C;&#x6B22;&#x7684;&#x6240;&#x6709; <code>Post</code> &#x96C6;&#x5408;&#x3002;&#x4E3A;&#x4E86;&#x65B0;&#x589E;&#x4E00;&#x4E2A;&#x559C;&#x6B22;&#x7684; <code>Post</code>&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x505A;&#xFF1A;</p>
+<pre version="33c551b6c5806f9a06637ba58893ce02"><code class="lang-java">AVUser user = AVUser.getCurrentUser();
+AVRelation&lt;AVObject&gt; relation = user.getRelation(&quot;likes&quot;);
+relation.add(post);
+user.saveInBackground();
+</code></pre>
+<p version="24e9fa8972dc13be829974963ec1067e">&#x4F60;&#x53EF;&#x4EE5;&#x4ECE; AVRelation &#x4E2D;&#x79FB;&#x9664;&#x4E00;&#x4E2A; Post:</p>
+<pre version="fdb1323324253a2fc06ae51b75c402d6"><code class="lang-java">relation.remove(post);
+</code></pre>
+<p version="2e38ced8f889545f05543b2fd30986a7">&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5904;&#x4E8E;&#x5173;&#x7CFB;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x96C6;&#x5408;&#x4E0D;&#x4F1A;&#x88AB;&#x540C;&#x6B65;&#x83B7;&#x53D6;&#x5230;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>getQuery</code> &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684; <code>AVQuery</code> &#x5BF9;&#x8C61;&#xFF0C;&#x4F7F;&#x7528;&#x5B83;&#x7684; <code>findInBackground</code> &#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6; Post &#x94FE;&#x8868;&#xFF0C;&#x50CF;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre version="c65b370380c1d9ceb1a80a91e711f396"><code class="lang-java">relation.getQuery().findInBackground(new FindCallback&lt;AVObject&gt;() {
+    void done(List&lt;AVObject&gt; results, AVException e) {
+      if (e != null) {
+        // &#x67E5;&#x8BE2;&#x51FA;&#x9519;&#xFF0C;&#x6CA1;&#x6709;&#x62FF;&#x5230;&#x6570;&#x636E;
+      } else {
+        // &#x5F53;&#x524D;&#x7528;&#x6237;&#x559C;&#x6B22;&#x7684;&#x6240;&#x6709; Post &#x90FD;&#x4FDD;&#x5B58;&#x5728; results &#x91CC;&#x9762;&#x4E86;.
+      }
+    }
+});
+</code></pre>
+<p version="9701d9e3c7eba140584173be8f6a28a7">&#x5982;&#x679C;&#x4F60;&#x53EA;&#x60F3;&#x83B7;&#x53D6;&#x94FE;&#x8868;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#x5408;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x66F4;&#x591A;&#x7684;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#x5230; <code>getQuery</code> &#x8FD4;&#x56DE; <code>AVQuery</code> &#x5BF9;&#x8C61;&#x4E0A;&#xFF08;&#x8FD9;&#x4E00;&#x70B9;&#x662F;&#x76F4;&#x63A5;&#x4F7F;&#x7528; List &#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x503C;&#x505A;&#x4E0D;&#x5230;&#x7684;&#xFF09;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre version="e6f99cfc5bb8714f9f5158d1d443e82a"><code class="lang-java">AVQuery&lt;AVObject&gt; query = relation.getQuery();
+// &#x5728; query &#x5BF9;&#x8C61;&#x4E0A;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x66F4;&#x591A;&#x67E5;&#x8BE2;&#x7EA6;&#x675F;
+query.skip(10);
+query.limit(10);
+</code></pre>
+<p version="53581e5ba00f79c02d9cc3fe4ee61ce8">&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x6301;&#x6709;&#x4E00;&#x4E2A; post &#x5BF9;&#x8C61;&#xFF0C;&#x60F3;&#x77E5;&#x9053;&#x5B83;&#x88AB;&#x54EA;&#x4E9B; User &#x6240;&#x559C;&#x6B22;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x53CD;&#x5411;&#x67E5;&#x8BE2;&#xFF08;&#x540C;&#x6837;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x76F4;&#x63A5;&#x4F7F;&#x7528; List &#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x503C;&#x65E0;&#x6CD5;&#x5B8C;&#x6210;&#x7684;&#xFF09;&#xFF0C;&#x50CF;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre version="dcf89fe8eaebd01546a5b02983c1b8d9"><code class="lang-java">// &#x5047;&#x8BBE; myPost &#x662F;&#x5DF2;&#x77E5;&#x7684; Post &#x5BF9;&#x8C61;
+AVQuery&lt;AVObject&gt; userQuery = AVRelation.reverseQuery(&quot;_User&quot;,&quot;likes&quot;,myPost);
+userQuery.findInBackground(new FindCallback&lt;AVObject&gt;() {
+            @Override
+            public void done(List&lt;AVObject&gt; users, AVException avException) {
+                // users &#x5C31;&#x662F;&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x7684;&#x559C;&#x6B22; myPost &#x7684;&#x6240;&#x6709; User &#x5217;&#x8868;&#x3002;
+            }
+        });
+</code></pre>
+<p version="953521166934ee1ff05e9e18df8dac8b"><code>AVRelation.reverseQuery</code>&#x8FD4;&#x56DE;&#x7684; <code>AVQuery</code> &#x5BF9;&#x8C61;&#x8FD8;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x66F4;&#x591A;&#x7684;&#x67E5;&#x8BE2;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#x3002;</p>
+<p version="a982f6026d216cb22bc8980d01abaf31">&#x66F4;&#x591A;&#x5173;&#x4E8E; <code>AVQuery</code> &#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x770B;&#x672C;&#x6307;&#x5357;&#x7684;&#x67E5;&#x8BE2;&#x90E8;&#x5206;&#x3002;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x4E2A; <code>AVRelation</code> &#x5BF9;&#x8C61;&#x8FD0;&#x4F5C;&#x8D77;&#x6765;&#x50CF;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x94FE;&#x8868;&#xFF0C;&#x56E0;&#x6B64;&#x4EFB;&#x4F55;&#x4F60;&#x4F5C;&#x7528;&#x5728;&#x94FE;&#x8868;&#x4E0A;&#x7684;&#x67E5;&#x8BE2;&#xFF08;&#x9664;&#x4E86; include&#xFF09;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x4F5C;&#x7528;&#x5728; <code>AVRelation</code>&#x4E0A;&#x3002;</p>
+<h3 id="-">&#x6570;&#x636E;&#x7C7B;&#x578B;</h3>
+<p version="c7d5ba323b2f90681581c809307460a6">&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6211;&#x4EEC;&#x652F;&#x6301;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6709; <code>String</code>&#x3001;<code>Int</code>&#x3001;<code>Boolean</code> &#x4EE5;&#x53CA; <code>AVObject</code> &#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x3002;&#x540C;&#x65F6; LeanCloud &#x4E5F;&#x652F;&#x6301; <code>java.util.Date</code>&#x3001;<code>byte[]</code>&#x6570;&#x7EC4;&#x3001;<code>JSONObject</code>&#x3001;<code>JSONArray</code> &#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;
+&#x4F60;&#x53EF;&#x4EE5;&#x5728; <code>JSONArray</code> &#x5BF9;&#x8C61;&#x4E2D;&#x5D4C;&#x5957; <code>JSONObject</code> &#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x5728;&#x4E00;&#x4E2A; <code>AVObject</code> &#x4E2D;&#x3002;
+&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E9B;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre version="de6d2768f4e7af095559d31d3e81a2e2"><code class="lang-java">int myNumber = 2014;
+String myString = &quot;famous film name is &quot; + myNumber;
+Date myDate = new Date();
+
+JSONArray myArray = new JSONArray();
+myArray.put(myString);
+myArray.put(myNumber);
+
+JSONObject myObject = new JSONObject();
+myObject.put(&quot;number&quot;, myNumber);
+myObject.put(&quot;string&quot;, myString);
+
+byte[] myData = { 2, 3, 5, 8, 13 };
+
+AVObject testDataObject = new AVObject(&quot;DataTypeTest&quot;);
+testDataObject.put(&quot;testInteger&quot;, myNumber);
+testDataObject.put(&quot;testString&quot;, myString);
+testDataObject.put(&quot;testDate&quot;, myDate);
+testDataObject.put(&quot;testData&quot;, myData);
+testDataObject.put(&quot;testArray&quot;, myArray);
+testDataObject.put(&quot;testObject&quot;, myObject);
+testDataObject.put(&quot;testNull&quot;, JSONObject.NULL);
+testDataObject.saveInBackground();
+</code></pre>
+<p version="9174708340ee5db58fae7d7a98eddfcc">&#x6211;&#x4EEC;&#x4E0D;&#x5EFA;&#x8BAE;&#x5B58;&#x50A8;&#x8F83;&#x5927;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x56FE;&#x50CF;&#x6216;&#x6587;&#x4EF6;&#x4E0D;&#x5E94;&#x4F7F;&#x7528; <code>AVObject</code> &#x7684; byte[] &#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x3002;<code>AVObject</code> &#x7684;&#x5927;&#x5C0F;<strong>&#x4E0D;&#x5E94;&#x8D85;&#x8FC7; 128 KB</strong>&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x5B58;&#x50A8;&#x8F83;&#x5927;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x5982;&#x56FE;&#x50CF;&#x3001;&#x6587;&#x4EF6;&#x3001;&#x97F3;&#x4E50;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>AVFile</code> &#x5BF9;&#x8C61;&#x6765;&#x5B58;&#x50A8;&#xFF0C;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x53EF;&#x89C1; <a href="#%E6%96%87%E4%BB%B6">AVFile &#x6307;&#x5357;&#x90E8;&#x5206;</a>&#x3002;
+&#x5173;&#x4E8E;&#x5904;&#x7406;&#x6570;&#x636E;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x67E5;&#x770B;&#x5F00;&#x53D1;&#x6307;&#x5357;&#x7684;&#x6570;&#x636E;&#x5B89;&#x5168;&#x90E8;&#x5206;&#x3002;</p>
+<h3 id="avobject-">AVObject &#x5E8F;&#x5217;&#x5316;&#x4E0E;&#x53CD;&#x5E8F;&#x5217;&#x5316;</h3>
+<p version="a8a7132238491979eff2621c1b916ec8">&#x5728; v3.4 &#x7248;&#x672C;&#x4E4B;&#x524D;&#xFF0C;&#x60F3;&#x8981;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#x4E2D;&#x95F4;&#x4F20;&#x9012; <code>AVObject</code> &#x6570;&#x636E;&#xFF0C;&#x6211;&#x4EEC;&#x6BD4;&#x8F83;&#x63A8;&#x8350;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#xFF0C;&#x9996;&#x5148;&#x5C06; objectId-object pair &#x5B58;&#x5165;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x7684; Map &#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x628A; objectId &#x901A;&#x8FC7; Intent &#x4F20;&#x9012;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E2D;&#xFF0C;&#x6700;&#x540E;&#x65B0;&#x7EC4;&#x4EF6;&#x518D;&#x4ECE;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x7684; Map &#x4E2D;&#x901A;&#x8FC7; objectId &#x62FF;&#x5230; object &#x5B9E;&#x4F8B;&#x3002;
+&#x800C;&#x5728; v3.4 &#x7248;&#x672C;&#x4E4B;&#x540E;&#xFF0C; <code>AVObject</code> &#x5B9E;&#x73B0;&#x4E86;&#x539F;&#x751F;&#x7684; <code>Parcelable</code> &#x63A5;&#x53E3;&#xFF0C;&#x4EE5;&#x652F;&#x6301;&#x901A;&#x8FC7; Intent &#x5728;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#x4E2D;&#x95F4;&#x4F20;&#x9012; <code>AVObject</code> &#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x3002;
+&#x540C;&#x65F6; <code>AVObject</code> &#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>avobject.toString()</code> &#x4E0E; <code>AVObject.parseAVObject(String str)</code> &#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x5E8F;&#x5217;&#x5316;&#x4E0E;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x3002;</p>
+<pre version="b82ed1ed69bb92e983c22da11ab13ee8"><code class="lang-java">AVObject child = new AVObject(&quot;child&quot;);
+child.put(&quot;intVal&quot;,123);
+child.put(&quot;strVal&quot;,&quot;str&quot;);
+String objectStr = child.toString();
+try{
+  AVObject deserializedObject = AVObject.parseAVObject(objectStr);
+}catch(Exception e){
+ //&#x5904;&#x7406;&#x89E3;&#x6790;&#x5F02;&#x5E38;
+}
+</code></pre>
+<h2 id="-">&#x67E5;&#x8BE2;</h2>
+<h3 id="-">&#x57FA;&#x672C;&#x67E5;&#x8BE2;</h3>
+<p version="87fbcbc8e9004ce9ff87d56e1187948b">&#x5728;&#x8BB8;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>getInBackground</code> &#x662F;&#x4E0D;&#x80FD;&#x68C0;&#x7D22;&#x5230;&#x7B26;&#x5408;&#x4F60;&#x7684;&#x8981;&#x6C42;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x7684;&#x3002;<code>AVQuery</code> &#x63D0;&#x4F9B;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x67E5;&#x8BE2;&#x4E0D;&#x540C;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x3002;
+&#x4F7F;&#x7528; <code>AVQuery</code> &#x65F6;&#xFF0C;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>AVQuery</code> &#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x6DFB;&#x52A0;&#x4E0D;&#x540C;&#x7684;&#x6761;&#x4EF6;&#xFF0C;&#x4F7F;&#x7528; <code>findInBackground</code> &#x65B9;&#x6CD5;&#x7ED3;&#x5408;<code>FindCallback</code> &#x56DE;&#x8C03;&#x7C7B;&#x6765;&#x67E5;&#x8BE2;&#x4E0E;&#x6761;&#x4EF6;&#x5339;&#x914D;&#x7684; <code>AVObject</code> &#x6570;&#x636E;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x67E5;&#x8BE2;&#x6307;&#x5B9A;&#x4EBA;&#x5458;&#x7684;&#x5FAE;&#x535A;&#x4FE1;&#x606F;&#xFF0C;&#x4F7F;&#x7528; <code>whereEqualTo</code> &#x65B9;&#x6CD5;&#x6765;&#x6DFB;&#x52A0;&#x6761;&#x4EF6;&#x503C;&#xFF1A;</p>
+<pre version="c7df9182e630b687e9cd0c47258d5c45"><code class="lang-java">AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(&quot;Post&quot;);
+query.whereEqualTo(&quot;pubUser&quot;, &quot;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D;&quot;);
+query.findInBackground(new FindCallback&lt;AVObject&gt;() {
+    public void done(List&lt;AVObject&gt; avObjects, AVException e) {
+        if (e == null) {
+            Log.d(&quot;&#x6210;&#x529F;&quot;, &quot;&#x67E5;&#x8BE2;&#x5230;&quot; + avObjects.size() + &quot; &#x6761;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;&quot;);
+        } else {
+            Log.d(&quot;&#x5931;&#x8D25;&quot;, &quot;&#x67E5;&#x8BE2;&#x9519;&#x8BEF;: &quot; + e.getMessage());
+        }
+    }
+});
+</code></pre>
+<p version="148d7a30eeba0eef942050f9943fc0f2"><code>findInBackground</code> &#x65B9;&#x6CD5;&#x662F;&#x5728;&#x540E;&#x53F0;&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#xFF0C;&#x5B83;&#x548C; <code>getInBackground</code> &#x7684;&#x8FD0;&#x884C;&#x65B9;&#x5F0F;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x8FD0;&#x884C;&#x5728;&#x4E00;&#x4E2A;&#x540E;&#x53F0;&#x4E0A;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4F60;&#x7684;&#x540E;&#x53F0;&#x7EBF;&#x7A0B;&#x4E2D;&#x76F4;&#x63A5;&#x4F7F;&#x7528; <code>query.find()</code> &#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF1A;</p>
+<pre version="b19d04f52d9cc78edcac77bfdae63969"><code class="lang-java">// &#x5982;&#x679C;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x5DF2;&#x7ECF;&#x8FD0;&#x884C;&#x5728;&#x4E00;&#x4E2A;&#x540E;&#x53F0;&#x7EBF;&#x7A0B;&#xFF0C;&#x6216;&#x53EA;&#x662F;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x3002;
+AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(&quot;Post&quot;);
+query.whereEqualTo(&quot;pubUser&quot;, &quot;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D;&quot;);
+try {
+    List&lt;AVObject&gt; avObjects = query.find();
+} catch (AVException e) {
+    Log.d(&quot;&#x5931;&#x8D25;&quot;, &quot;&#x67E5;&#x8BE2;&#x9519;&#x8BEF;: &quot; + e.getMessage());
+}
+</code></pre>
+<h3 id="-">&#x67E5;&#x8BE2;&#x6761;&#x4EF6;</h3>
+<p version="14df3d12194ef4b97f413ef2041dd84f">&#x5982;&#x679C;&#x8981;&#x8FC7;&#x6EE4;&#x6389;&#x7279;&#x5B9A;&#x952E;&#x7684;&#x503C;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>whereNotEqualTo</code> &#x65B9;&#x6CD5;&#x3002;&#x6BD4;&#x5982;&#x9700;&#x8981;&#x67E5;&#x8BE2; <code>pubUser</code> &#x4E0D;&#x7B49;&#x4E8E; &#x300C;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D;&#x300D; &#x7684;&#x6570;&#x636E;&#x65F6;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A;</p>
+<pre version="d05993c1908a80097b73d4f5154bba5a"><code class="lang-java">query.whereNotEqualTo(&quot;pubUser&quot;, &quot;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D;&quot;);
+</code></pre>
+<p version="2cbe77d6fceb10f2e6f7aabb846b539b">&#x5F53;&#x7136;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x4E2D;&#x6DFB;&#x52A0;&#x591A;&#x4E2A;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#xFF0C;&#x6765;&#x8FC7;&#x6EE4;&#x7B26;&#x5408;&#x8981;&#x6C42;&#x7684;&#x6570;&#x636E;&#x3002;&#x8FD9;&#x4E9B;&#x6761;&#x4EF6;&#x4E4B;&#x95F4;&#x662F; and &#x5173;&#x7CFB;&#xFF0C;&#x5373; <code>where a == b and c == d</code>&#x3002;&#x82E5;&#x60F3;&#x7528; or &#x5173;&#x7CFB;&#x6765;&#x7EC4;&#x7EC7;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#xFF0C;&#x8981;&#x4F7F;&#x7528; <a href="#&#x590D;&#x5408;&#x67E5;&#x8BE2;">&#x590D;&#x5408;&#x67E5;&#x8BE2;</a>&#x3002;</p>
+<pre version="2cdc22e9297ab386545009ca12031e18"><code class="lang-java">DateFormat format = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+query.whereNotEqualTo(&quot;pubUser&quot;, &quot;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D;&quot;);
+query.whereGreaterThan(&quot;createdAt&quot;, format.parse(&quot;2015-06-26 18:37:09&quot;));
+</code></pre>
+<p version="efe78682c253b8459d9a58ed8ddc3632">&#x6709;&#x4E9B;&#x65F6;&#x5019;&#xFF0C;&#x5728;&#x6570;&#x636E;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x5E0C;&#x671B;&#x53EA;&#x67E5;&#x8BE2;&#x7B26;&#x5408;&#x8981;&#x6C42;&#x7684;&#x591A;&#x5C11;&#x6761;&#x6570;&#x636E;&#x5373;&#x53EF;&#xFF0C;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>setLimit</code> &#x65B9;&#x6CD5;&#x6765;&#x9650;&#x5236;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x7684;&#x6570;&#x636E;&#x6761;&#x6570;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B; Limit &#x7684;&#x503C;&#x4E3A; 100&#xFF0C;&#x6700;&#x5927; 1000&#xFF0C;&#x5728; 0 &#x5230; 1000 &#x8303;&#x56F4;&#x4E4B;&#x5916;&#x7684;&#x90FD;&#x5F3A;&#x5236;&#x8F6C;&#x6210;&#x9ED8;&#x8BA4;&#x7684; 100&#x3002;</p>
+<pre version="c6b8067caaa4958a2cf838adf173a8c5"><code class="lang-java">query.setLimit(10); // &#x9650;&#x5236;&#x6700;&#x591A;10&#x4E2A;&#x7ED3;&#x679C;
+</code></pre>
+<p version="7c7e62071b77a8f05aa835818a9d1bdb">&#x5728;&#x6570;&#x636E;&#x8F83;&#x591A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5206;&#x9875;&#x663E;&#x793A;&#x6570;&#x636E;&#x662F;&#x6BD4;&#x8F83;&#x5408;&#x7406;&#x7684;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF0C;<code>setSkip</code> &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x8DF3;&#x8FC7;&#x9996;&#x6B21;&#x67E5;&#x8BE2;&#x7684;&#x591A;&#x5C11;&#x6761;&#x6570;&#x636E;&#x6765;&#x5B9E;&#x73B0;&#x5206;&#x9875;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<pre version="522134f479e09b00745a8a28f75ee993"><code class="lang-java">query.setSkip(10); // &#x5FFD;&#x7565;&#x524D;10&#x4E2A;
+</code></pre>
+<p version="c7116c37d851e987157b0a3d4a638ffb">&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x7684;&#x6392;&#x5E8F;&#xFF0C;&#x5982;&#x6570;&#x5B57;&#x6216;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5347;&#x5E8F;&#x6216;&#x964D;&#x5E8F;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x63A7;&#x5236;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x7684;&#x7ED3;&#x679C;&#x987A;&#x5E8F;&#xFF1A;</p>
+<pre version="b58b0efced031710de8993b638c0fe21"><code class="lang-java">// &#x6839;&#x636E; createdAt &#x5B57;&#x6BB5;&#x5347;&#x5E8F;&#x663E;&#x793A;&#x6570;&#x636E;
+query.orderByAscending(&quot;createdAt&quot;);
+
+// &#x6839;&#x636E; createdAt &#x5B57;&#x6BB5;&#x964D;&#x5E8F;&#x663E;&#x793A;&#x6570;&#x636E;
+query.orderByDescending(&quot;createdAt&quot;);
+
+//&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x6BD4;&#x8F83;&#x67E5;&#x8BE2;&#xFF1A;
+// &#x8BA4;&#x8BC1;&#x7C7B;&#x578B; &lt; 4
+query.whereLessThan(&quot;pubUserCertificate&quot;, 4);
+
+// &#x8BA4;&#x8BC1;&#x7C7B;&#x578B; &lt;= 4
+query.whereLessThanOrEqualTo(&quot;pubUserCertificate&quot;, 4);
+
+// &#x8BA4;&#x8BC1;&#x7C7B;&#x578B; &gt; 4
+query.whereGreaterThan(&quot;pubUserCertificate&quot;, 4);
+
+// &#x8BA4;&#x8BC1;&#x7C7B;&#x578B; &gt;= 4
+query.whereGreaterThanOrEqualTo(&quot;pubUserCertificate&quot;, 4);
+</code></pre>
+<p version="3f25270232e5d3680bcf09aa26a80a96">&#x5982;&#x679C;&#x4F60;&#x60F3;&#x67E5;&#x8BE2;&#x5339;&#x914D;&#x51E0;&#x4E2A;&#x4E0D;&#x540C;&#x503C;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982;&#xFF1A;&#x8981;&#x67E5;&#x8BE2; &#x300C;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D;&#x300D;&#x3001;&#x300C;LeanCloud&#x6C5F;&#x5B8F;&#x300D;&#x3001;&#x300C;&#x6EDA;&#x6EDA;&#x827E;&#x4E70;&#x63D0;&#x300D; &#x4E09;&#x4E2A;&#x8D26;&#x53F7;&#x7684;&#x5FAE;&#x535A;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>whereContainedIn</code>&#xFF08;&#x7C7B;&#x4F3C; SQL &#x4E2D;&#x7684; in &#x67E5;&#x8BE2;&#xFF09;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<pre version="7a5f8f8f64b73715f7c9e3d6ff389878"><code class="lang-java">String[] names = {&quot;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D;&quot;, &quot;LeanCloud&#x6C5F;&#x5B8F;&quot;, &quot;&#x6EDA;&#x6EDA;&#x827E;&#x4E70;&#x63D0;&quot;};
+query.whereContainedIn(&quot;pubUser&quot;, Arrays.asList(names));
+</code></pre>
+<p version="aa09d2d732e816e1bfb3166be0f04aa4">&#x76F8;&#x53CD;&#xFF0C;&#x4F60;&#x60F3;&#x67E5;&#x8BE2;&#x6392;&#x9664;&#x300C;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D;&#x300D;&#x3001;&#x300C;LeanCloud&#x6C5F;&#x5B8F;&#x300D;&#x3001;&#x300C;&#x6EDA;&#x6EDA;&#x827E;&#x4E70;&#x63D0;&#x300D;&#x8FD9;&#x4E09;&#x4E2A;&#x8D26;&#x53F7;&#x7684;&#x5176;&#x4ED6;&#x4EBA;&#x7684;&#x5FAE;&#x535A;&#xFF08;&#x7C7B;&#x4F3C; SQL &#x4E2D;&#x7684; <code>not in</code> &#x67E5;&#x8BE2;&#xFF09;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; 
+<code>whereNotContainedIn</code> &#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<pre version="e6167c61511a80526a5ceb264b47a41d"><code class="lang-java">String[] names = {&quot;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D;&quot;, &quot;LeanCloud&#x6C5F;&#x5B8F;&quot;, &quot;&#x6EDA;&#x6EDA;&#x827E;&#x4E70;&#x63D0;&quot;};
+query.whereNotContainedIn(&quot;pubUser&quot;, Arrays.asList(names));
+</code></pre>
+<h3 id="-">&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#x503C;</h3>
+<p version="6b265e6387b4100cf32489cc7cc37cb9">&#x4F7F;&#x7528; <code>whereStartsWith</code> &#x65B9;&#x6CD5;&#x6765;&#x9650;&#x5236;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x503C;&#x4EE5;&#x53E6;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5F00;&#x5934;&#x3002;&#x975E;&#x5E38;&#x7C7B;&#x4F3C; MySQL &#x7684; <code>LIKE</code> &#x67E5;&#x8BE2;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x67E5;&#x8BE2;&#x4F1A;&#x8D70;&#x7D22;&#x5F15;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x4E8E;&#x5927;&#x6570;&#x636E;&#x96C6;&#x4E5F;&#x4E00;&#x6837;&#x9AD8;&#x6548;&#xFF1A;</p>
+<pre version="3904a459faf599141f2ddb00413c7ba5"><code class="lang-java">//&#x67E5;&#x627E;&#x51FA;&#x6240;&#x6709; username &#x4EE5; LeanCloud &#x5F00;&#x5934;&#x7684;&#x7528;&#x6237;
+AVQuery&lt;AVObject&gt; query = AVQuery.getQuery(&quot;_User&quot;);
+query.whereStartsWith(&quot;username&quot;, &quot;LeanCloud&quot;);
+</code></pre>
+<p version="4226448fb73e98b57f665646f98f67e9"><code>whereMatches</code> &#x65B9;&#x6CD5;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6765;&#x68C0;&#x7D22;&#x76F8;&#x5339;&#x914D;&#x7684;&#x503C;&#xFF1A;</p>
+<pre version="394c2dfcf0852fe10ab6e8074937068f"><code class="lang-java">// &#x6BD4;&#x8F83;&#x7528;&#x6237;&#x540D;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x662F;&#x4EE5;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x548C;&#x6570;&#x5B57;&#x5F00;&#x5934;
+AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(&quot;Post&quot;);
+query.whereMatches(&quot;pubUser&quot;, &quot;^[A-Z]\\d&quot;);
+
+query.findInBackground(new FindCallback&lt;AVObject&gt;() {
+    public void done(List&lt;AVObject&gt; postList, AVException e) {
+
+    }
+});
+</code></pre>
+<p version="ef4e70c56b07f5f6bdd4ba0184074bfe">&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x5305;&#x542B;&#x201C;XX&#x201C;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="e3682ead654ecb0c84e966ce618b8c2e"><code class="lang-java">// &#x67E5;&#x8BE2; pubUser &#x5B57;&#x6BB5;&#x7684;&#x503C;&#x4E2D;&#x5305;&#x542B;&#x201C;LeanCloud&#x201C;&#x5B57;&#x7684;&#x6570;&#x636E;
+AVQuery query = new AVQuery(&quot;Post&quot;);
+query.whereContains(&quot;pubUser&quot;, &quot;LeanCloud&quot;);
+
+// &#x67E5;&#x8BE2; pubUser &#x5B57;&#x6BB5;&#x7684;&#x503C;&#x662F;&#x4EE5;&#x201C;LeanCloud&#x201C;&#x5B57;&#x5F00;&#x5934;&#x7684;&#x6570;&#x636E;
+AVQuery query = new AVQuery(&quot;Post&quot;);
+query.whereStartsWith(&quot;pubUser&quot;, &quot;LeanCloud&quot;);
+
+// &#x67E5;&#x8BE2; pubUser &#x5B57;&#x6BB5;&#x7684;&#x503C;&#x662F;&#x4EE5;&#x201C;LeanCloud&#x201C;&#x5B57;&#x7ED3;&#x5C3E;&#x7684;&#x6570;&#x636E;
+AVQuery query = new AVQuery(&quot;Post&quot;);
+query.whereEndsWith(&quot;pubUser&quot;, &quot;LeanCloud&quot;);
+</code></pre>
+<h3 id="-">&#x67E5;&#x8BE2;&#x6570;&#x7EC4;&#x503C;</h3>
+<p version="3ddebd3e34071834b3407dc9d5ab9733">&#x5982;&#x679C;&#x4E00;&#x4E2A; Key &#x5BF9;&#x5E94;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2; Key &#x7684;&#x6570;&#x7EC4;&#x5305;&#x542B;&#x4E86;&#x6570;&#x5B57; 208 &#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#xFF0C;&#x901A;&#x8FC7;&#xFF1A;</p>
+<pre version="592036e5c007d7337e393e14e6f239ec"><code class="lang-java">// &#x67E5;&#x627E;&#x51FA;&#x6240;&#x6709; arrayKey &#x5BF9;&#x5E94;&#x7684;&#x6570;&#x7EC4;&#x540C;&#x65F6;&#x5305;&#x542B;&#x4E86;&#x6570;&#x5B57;208&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;
+query.whereEqualTo(&quot;arrayKey&quot;, 208);
+</code></pre>
+<p version="47cbbba897a6f64a008075191a06228a">&#x540C;&#x6837;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x51FA; Key &#x7684;&#x6570;&#x7EC4;&#x540C;&#x65F6;&#x5305;&#x542B;&#x4E86; 2&#xFF0C;3 &#x548C; 4 &#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre version="5ccd7caab241afb32f713d399dfdc073"><code class="lang-java">//&#x67E5;&#x627E;&#x51FA;&#x6240;&#x6709; arrayKey &#x5BF9;&#x5E94;&#x7684;&#x6570;&#x7EC4;&#x540C;&#x65F6;&#x5305;&#x542B;&#x4E86;&#x6570;&#x5B57; 2,3,4 &#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x3002;
+ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
+numbers.add(2);
+numbers.add(3);
+numbers.add(4);
+query.whereContainsAll(&quot;arrayKey&quot;, numbers);
+</code></pre>
+<h3 id="-">&#x67E5;&#x8BE2;&#x5BF9;&#x8C61;&#x4E2A;&#x6570;</h3>
+<p version="7dadb70e8db0853fbf32bcaf0f6c5238">&#x5982;&#x679C;&#x4F60;&#x53EA;&#x662F;&#x60F3;&#x7EDF;&#x8BA1;&#x6709;&#x591A;&#x5C11;&#x4E2A;&#x5BF9;&#x8C61;&#x6EE1;&#x8DB3;&#x67E5;&#x8BE2;&#xFF0C;&#x4F60;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x5339;&#x914D;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528; <code>count</code> &#x66FF;&#x4EE3; <code>find</code>&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x67E5;&#x8BE2;&#x4E00;&#x4E2A;&#x8D26;&#x6237;&#x53D1;&#x4E86;&#x591A;&#x5C11;&#x5FAE;&#x535A;&#xFF1A;</p>
+<pre version="4bf38f274cae0c4a24275187cd6abaf7"><code class="lang-java">AVQuery&lt;AVObject&gt; query = AVQuery.getQuery(&quot;Post&quot;);
+query.whereEqualTo(&quot;pubUser&quot;, &quot;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D;&quot;);
+query.countInBackground(new CountCallback() {
+  public void done(int count, AVException e) {
+    if (e == null) {
+      // The count request succeeded. Log the count
+      Log.d(&quot;succeeded&quot;, &quot;LeanCloud&#x5B98;&#x65B9;&#x5BA2;&#x670D; &#x53D1;&#x5E03;&#x4E86; &quot; + count + &quot; &#x6761;&#x5FAE;&#x535A;&quot;);
+    } else {
+      // The request failed
+    }
+  }
+});
+</code></pre>
+<p version="3ac95322451143daef53894417fb8338">&#x5982;&#x679C;&#x4F60;&#x60F3;&#x963B;&#x585E;&#x5F53;&#x524D;&#x7684;&#x8C03;&#x7528;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x540C;&#x6B65;&#x7248;&#x672C;&#x7684; <code>count()</code> &#x65B9;&#x6CD5;&#x3002;</p>
+<p version="17fff6376b1649ed4f36b15e7623ada2">&#x5BF9;&#x4E8E;&#x8D85;&#x8FC7; 1000 &#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x67E5;&#x8BE2;&#xFF0C;&#x8FD9;&#x79CD;&#x8BA1;&#x6570;&#x8BF7;&#x6C42;&#x53EF;&#x80FD;&#x88AB;&#x8D85;&#x65F6;&#x9650;&#x5236;&#x3002;&#x4ED6;&#x4EEC;&#x53EF;&#x80FD;&#x9047;&#x5230;&#x8D85;&#x65F6;&#x9519;&#x8BEF;&#x6216;&#x8005;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8FD1;&#x4F3C;&#x7684;&#x503C;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x8BF7;&#x4ED4;&#x7EC6;&#x8BBE;&#x8BA1;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x67B6;&#x6784;&#x6765;&#x907F;&#x514D;&#x4F9D;&#x8D56;&#x8FD9;&#x79CD;&#x8BA1;&#x6570;&#x67E5;&#x8BE2;&#x3002;</p>
+<h3 id="-">&#x5173;&#x7CFB;&#x67E5;&#x8BE2;</h3>
+<p version="0079cdc4d7ea4eb7d4e2ab9e71890615">&#x6709;&#x597D;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x53D1;&#x8D77;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x7684;&#x67E5;&#x8BE2;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x5339;&#x914D;&#x7279;&#x5B9A; <code>AVObject</code> &#x7684;&#x5B9E;&#x4F8B;&#x5217;&#x8868;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x50CF;&#x67E5;&#x8BE2;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x90A3;&#x6837;&#x4F7F;&#x7528; <code>whereEqualTo</code> &#x6765;&#x67E5;&#x8BE2;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x6BCF;&#x4E2A; <code>Comment</code> &#x5BF9;&#x8C61;&#x90FD;&#x5305;&#x542B;&#x4E00;&#x4E2A; <code>Post</code> &#x5BF9;&#x8C61;&#xFF08;&#x5728; <code>post</code> &#x5B57;&#x6BB5;&#x4E0A;&#xFF09;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x7279;&#x5B9A; <code>Post</code> &#x7684;&#x6240;&#x6709; <code>Comment</code> &#x5217;&#x8868;&#xFF1A;</p>
+<pre version="7f90bef66716ac62662a1e6f67d6177a"><code class="lang-java">// &#x5047;&#x8BBE; AVObject myPost &#x5DF2;&#x7ECF;&#x5728;&#x524D;&#x9762;&#x521B;&#x5EFA;
+AVQuery&lt;AVObject&gt; query = AVQuery.getQuery(&quot;Comment&quot;);
+query.whereEqualTo(&quot;post&quot;, myPost);
+query.findInBackground(new FindCallback&lt;AVObject&gt;() {
+  public void done(List&lt;AVObject&gt; commentList, AVException e) {
+    // myPost &#x5173;&#x8054;&#x7684;&#x6240;&#x6709;&#x8BC4;&#x8BBA;&#x90FD;&#x5728; commentList &#x91CC;&#x4E86;&#x3002;
+  }
+});
+</code></pre>
+<p version="39d44e49c827023e83a6a749c9380372">&#x5982;&#x679C;&#x4F60;&#x60F3;&#x67E5;&#x8BE2;&#x5BF9;&#x8C61;&#x5217;&#x8868;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E2A; <code>AVObject</code>&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x4E2A; <code>AVObject</code> &#x5339;&#x914D;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x67E5;&#x8BE2;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>whereMatchesQuery</code> &#x5D4C;&#x5957;&#x67E5;&#x8BE2;&#x65B9;&#x6CD5;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684; limit &#x9650;&#x5236; 100 &#x4E5F;&#x540C;&#x6837;&#x4F5C;&#x7528;&#x5728;&#x5185;&#x90E8;&#x67E5;&#x8BE2;&#x4E0A;&#x3002;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x662F;&#x5927;&#x89C4;&#x6A21;&#x7684;&#x6570;&#x636E;&#x67E5;&#x8BE2;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4ED4;&#x7EC6;&#x6784;&#x9020;&#x4F60;&#x7684;&#x67E5;&#x8BE2;&#x5BF9;&#x8C61;&#x6765;&#x83B7;&#x53D6;&#x60F3;&#x8981;&#x7684;&#x884C;&#x4E3A;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E3A;&#x4E86;&#x67E5;&#x8BE2;&#x6709;&#x56FE;&#x7247;&#x9644;&#x4EF6;&#x7684; Post &#x7684;&#x8BC4;&#x8BBA;&#x5217;&#x8868;&#xFF1A;</p>
+<pre version="a0981122a055ff3ab5b99088f7d2c490"><code class="lang-java">AVQuery&lt;AVObject&gt; innerQuery = AVQuery.getQuery(&quot;Post&quot;);
+innerQuery.whereExists(&quot;image&quot;);
+AVQuery&lt;AVObject&gt; query = AVQuery.getQuery(&quot;Comment&quot;);
+query.whereMatchesQuery(&quot;post&quot;, innerQuery);
+query.findInBackground(new FindCallback&lt;AVObject&gt;() {
+  public void done(List&lt;AVObject&gt; commentList, AVException e) {
+    // &#x6240;&#x6709;&#x542B;&#x6709;&#x56FE;&#x7247;&#x7684;&#x5FAE;&#x535A;&#x7684;&#x8BC4;&#x8BBA;&#x90FD;&#x5728; commentList &#x91CC;&#x4E86;.
+  }
+});
+</code></pre>
+<p version="dff43d6a4aa87439f080fe27745097e2">&#x53CD;&#x4E4B;&#xFF0C;&#x4E0D;&#x60F3;&#x5339;&#x914D;&#x67D0;&#x4E2A;&#x5B50;&#x67E5;&#x8BE2;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>whereDoesNotMatchQuery</code> &#x65B9;&#x6CD5;&#x3002; &#x6BD4;&#x5982;&#x4E3A;&#x4E86;&#x67E5;&#x8BE2;&#x6CA1;&#x6709;&#x56FE;&#x7247;&#x7684; Post &#x7684;&#x8BC4;&#x8BBA;&#x5217;&#x8868;&#xFF1A;</p>
+<pre version="c346eb14c863295b64ff0752d6d46923"><code class="lang-java">AVQuery&lt;AVObject&gt; innerQuery = AVQuery.getQuery(&quot;Post&quot;);
+innerQuery.whereExists(&quot;image&quot;);
+AVQuery&lt;AVObject&gt; query = AVQuery.getQuery(&quot;Comment&quot;);
+query.whereDoesNotMatchQuery(&quot;post&quot;, innerQuery);
+query.findInBackground(new FindCallback&lt;AVObject&gt;() {
+  public void done(List&lt;AVObject&gt; commentList, AVException e) {
+    // &#x6240;&#x6709;&#x4E0D;&#x542B;&#x6709;&#x56FE;&#x7247;&#x7684;&#x5FAE;&#x535A;&#x7684;&#x8BC4;&#x8BBA;&#x90FD;&#x5728; commentList &#x91CC;&#x4E86;.
+  }
+});
+</code></pre>
+<p version="df93bdb6ed6bb76faf6304e1b5142086">&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x60F3;&#x5728;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x5185;&#x8FD4;&#x56DE;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>include</code> &#x65B9;&#x6CD5;&#x3002;&#x4F8B;&#x5982;&#x3002;&#x4F60;&#x60F3;&#x83B7;&#x53D6;&#x6700;&#x8FD1;&#x7684; 10 &#x6761;&#x8BC4;&#x8BBA;&#xFF0C;&#x540C;&#x65F6;&#x5305;&#x62EC;&#x5B83;&#x4EEC;&#x5173;&#x8054;&#x7684; post&#xFF1A;</p>
+<pre version="5b680a86c00b6060eda30d378e308acd"><code class="lang-java">AVQuery&lt;AVObject&gt; query = AVQuery.getQuery(&quot;Comment&quot;);
+// &#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7684;&#x8BC4;&#x8BBA;
+query.orderByDescending(&quot;createdAt&quot;);
+// &#x9650;&#x5236;&#x5728;10&#x6761;&#x3002;
+query.setLimit(10);
+// &#x540C;&#x65F6;&#x83B7;&#x53D6;&#x5305;&#x542B;&#x7684;post
+query.include(&quot;post&quot;);
+
+query.findInBackground(new FindCallback&lt;AVObject&gt;() {
+  public void done(List&lt;AVObject&gt; commentList, AVException e) {
+    for (AVObject comment : commentList) {
+      //&#x8FD9;&#x91CC;&#x5C06;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x6765;&#x4E00;&#x6B21;&#x7F51;&#x7EDC;&#x8BBF;&#x95EE;&#x5C31;&#x53EF;&#x4EE5;&#x53D6;&#x5230; post &#x7684;&#x503C;
+      AVObject post = comment.getAVObject(&quot;post&quot;);
+      Log.d(&quot;succeeded&quot;, &quot;&#x5DF2;&#x53D6;&#x56DE;&#x4E00;&#x6761;&#x76F8;&#x5173;&#x5FAE;&#x535A;&quot;);
+    }
+  }
+});
+</code></pre>
+<p version="d962bd73c1c07d70e3cdf96d188d2cc1">&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x70B9;&#x64CD;&#x4F5C;&#x7B26;&#xFF08;&#x534A;&#x89D2;&#x53E5;&#x53F7;&#xFF09;&#x6765;&#x591A;&#x5C42; include &#x5185;&#x5D4C;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x4F60;&#x540C;&#x65F6;&#x60F3; include &#x4E00;&#x4E2A; <code>Comment</code> &#x7684; <code>post</code> &#x91CC;&#x7684; <code>pubUser</code>&#xFF08;&#x4F5C;&#x8005;&#xFF09;&#x5BF9;&#x8C61;&#xFF08;&#x5047;&#x8BBE; pubUser &#x5BF9;&#x5E94;&#x7684;&#x503C;&#x662F; AVUser &#x5B9E;&#x4F8B;&#xFF09;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x505A;&#xFF1A;</p>
+<pre version="401b74a3589a0f53e426849bb328d895"><code class="lang-java">query.include(&quot;post.pubUser&quot;);
+</code></pre>
+<p version="a6e0d95a6742b67d05df54da02974eac"><code>AVQuery</code> &#x7684; <code>include</code> &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x88AB;&#x591A;&#x6B21;&#x8C03;&#x7528;&#xFF0C;&#x6BCF;&#x6B21;&#x8C03;&#x7528;&#x7684;&#x5B57;&#x6BB5;&#x53EF;&#x4EE5;&#x4E0D;&#x4E00;&#x6837;&#x3002;&#x540C;&#x6837;&#xFF0C;&#x4E0A;&#x9762;&#x6240;&#x8FF0;&#x7684;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x7528;&#x5728;<code>AVQuery</code> &#x7684;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;&#xFF0C;&#x4F8B;&#x5982; <code>getFirst</code> &#x548C; <code>getInBackground</code> &#x4E0A;&#x3002;</p>
+<h3 id="-">&#x7F13;&#x5B58;&#x67E5;&#x8BE2;</h3>
+<p version="41d25d50ac6b50db936a599d2dfc682b">&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x7F13;&#x5B58;&#x4E00;&#x4E9B;&#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;&#x5230;&#x78C1;&#x76D8;&#x4E0A;&#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x5728;&#x79BB;&#x7EBF;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6216;&#x8005;&#x5E94;&#x7528;&#x521A;&#x542F;&#x52A8;&#xFF0C;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x8FD8;&#x6CA1;&#x6709;&#x8DB3;&#x591F;&#x65F6;&#x95F4;&#x5B8C;&#x6210;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x5C55;&#x73B0;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x7ED9;&#x7528;&#x6237;&#x3002;LeanCloud &#x4F1A;&#x81EA;&#x52A8;&#x6E05;&#x7A7A;&#x7F13;&#x5B58;&#xFF0C;&#x5F53;&#x7F13;&#x5B58;&#x5360;&#x7528;&#x4E86;&#x592A;&#x591A;&#x7A7A;&#x95F4;&#x7684;&#x65F6;&#x5019;&#x3002;</p>
+<p version="0942a197b04beb9a94bc9bcf9636a88d">&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x67E5;&#x8BE2;&#x4E0D;&#x4F1A;&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#xFF0C;&#x9664;&#x975E;&#x4F60;&#x4F7F;&#x7528; <code>setCachePolicy</code> &#x65B9;&#x6CD5;&#x660E;&#x786E;&#x8BBE;&#x7F6E;&#x542F;&#x7528;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5C1D;&#x8BD5;&#x4ECE;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#xFF0C;&#x5982;&#x679C;&#x7F51;&#x7EDC;&#x4E0D;&#x53EF;&#x7528;&#x5219;&#x4ECE;&#x7F13;&#x5B58;&#x6570;&#x636E;&#x4E2D;&#x83B7;&#x53D6;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x8BBE;&#x7F6E;&#xFF1A;</p>
+<pre version="e34f865f91cf3a9babb1d3a8f66ec053"><code class="lang-java">query.setCachePolicy(AVQuery.CachePolicy.NETWORK_ELSE_CACHE);
+query.findInBackground(new FindCallback&lt;AVObject&gt;() {
+public void done(List&lt;AVObject&gt; objList, AVException e) {
+  if (e == null) {
+    // &#x6210;&#x529F;&#x62FF;&#x5230;&#x7ED3;&#x679C;&#xFF0C;&#x5185;&#x90E8;&#x4F1A;&#x5148;&#x4ECE;&#x7F51;&#x7EDC;&#x83B7;&#x53D6;&#xFF0C;&#x7F51;&#x7EDC;&#x4E0D;&#x53EF;&#x7528;&#x5219;&#x4ECE;&#x672C;&#x5730;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x3002;
+  } else {
+    // &#x7F51;&#x7EDC;&#x4E0D;&#x53EF;&#x7528;&#xFF0C;&#x672C;&#x5730;&#x4E5F;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x7F13;&#x5B58;&#x6570;&#x636E;&#x3002;
+  }
+});
+</code></pre>
+<p version="2b8e01ca905a66444b9fce3db7fd9f8e">LeanCloud &#x63D0;&#x4F9B;&#x4E86;&#x51E0;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x7F13;&#x5B58;&#x7B56;&#x7565;&#xFF1A;</p>
+<ul>
+<li>IGNORE_CACHE &#xFF1A; &#x9ED8;&#x8BA4;&#x7684;&#x7F13;&#x5B58;&#x7B56;&#x7565;&#xFF0C;&#x67E5;&#x8BE2;&#x4E0D;&#x8D70;&#x7F13;&#x5B58;&#xFF0C;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x4E5F;&#x4E0D;&#x5B58;&#x50A8;&#x5728;&#x7F13;&#x5B58;&#x3002;</li>
+<li>CACHE_ONLY &#xFF1A; &#x67E5;&#x8BE2;&#x53EA;&#x4ECE;&#x7F13;&#x5B58;&#x83B7;&#x53D6;&#xFF0C;&#x4E0D;&#x8D70;&#x7F51;&#x7EDC;&#x3002;&#x5982;&#x679C;&#x7F13;&#x5B58;&#x4E2D;&#x6CA1;&#x6709;&#x7ED3;&#x679C;&#xFF0C;&#x5F15;&#x53D1;&#x4E00;&#x4E2A; <code>AVException</code>&#x3002;</li>
+<li>NETWORK_ONLY &#xFF1A; &#x67E5;&#x8BE2;&#x4E0D;&#x8D70;&#x7F13;&#x5B58;&#xFF0C;&#x4ECE;&#x7F51;&#x8DEF;&#x4E2D;&#x83B7;&#x53D6;&#xFF0C;&#x4F46;&#x662F;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x4F1A;&#x5199;&#x5165;&#x7F13;&#x5B58;&#x3002;</li>
+<li>CACHE_ELSE_NETWORK &#xFF1A; &#x67E5;&#x8BE2;&#x9996;&#x5148;&#x5C1D;&#x8BD5;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x83B7;&#x53D6;&#xFF0C;&#x5982;&#x679C;&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x4ECE;&#x7F51;&#x7EDC;&#x83B7;&#x53D6;&#xFF0C;&#x5982;&#x679C;&#x4E24;&#x8005;&#x90FD;&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x5F15;&#x53D1;&#x4E00;&#x4E2A; <code>AVException</code>&#x3002;</li>
+<li>NETWORK_ELSE_CACHE &#xFF1A; &#x67E5;&#x8BE2;&#x9996;&#x5148;&#x5C1D;&#x8BD5;&#x4ECE;&#x7F51;&#x7EDC;&#x83B7;&#x53D6;&#xFF0C;&#x5982;&#x679C;&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x67E5;&#x627E;&#xFF1B;&#x5982;&#x679C;&#x4E24;&#x8005;&#x90FD;&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x5E94;&#x53D1;&#x4E00;&#x4E2A; <code>AVException</code>&#x3002;</li>
+<li>CACHE_THEN_NETWORK &#xFF1A; &#x67E5;&#x8BE2;&#x9996;&#x5148;&#x5C1D;&#x8BD5;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x83B7;&#x53D6;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x4ECE;&#x7F51;&#x7EDC;&#x83B7;&#x53D6;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>FindCallback</code> &#x4F1A;&#x88AB;&#x5B9E;&#x9645;&#x8C03;&#x7528;&#x4E24;&#x6B21; -- &#x9996;&#x5148;&#x662F;&#x7F13;&#x5B58;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5176;&#x6B21;&#x662F;&#x7F51;&#x7EDC;&#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x8FD9;&#x4E2A;&#x7F13;&#x5B58;&#x7B56;&#x7565;&#x53EA;&#x80FD;&#x7528;&#x5728;&#x5F02;&#x6B65;&#x7684; <code>findInBackground</code> &#x65B9;&#x6CD5;&#x4E2D;&#x3002;</li>
+</ul>
+<p version="5cc4094daac36f5eff500b98ba7dea3d">&#x5982;&#x679C;&#x4F60;&#x60F3;&#x63A7;&#x5236;&#x7F13;&#x5B58;&#x7684;&#x884C;&#x4E3A;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>AVQuery</code> &#x63D0;&#x4F9B;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x64CD;&#x4F5C;&#x7F13;&#x5B58;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x7F13;&#x5B58;&#x4E0A;&#x505A;&#x5982;&#x4E0B;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ul>
+<li>&#x68C0;&#x67E5;&#x67E5;&#x8BE2;&#x662F;&#x5426;&#x6709;&#x7F13;&#x5B58;&#x7ED3;&#x679C;&#xFF1A;</li>
+</ul>
+<pre version="4dbe2b310069bb6a67f8fdabcd28c4b5"><code class="lang-java">boolean isInCache = query.hasCachedResult();
+</code></pre>
+<ul>
+<li>&#x5220;&#x9664;&#x67E5;&#x8BE2;&#x7684;&#x4EFB;&#x4F55;&#x7F13;&#x5B58;&#x7ED3;&#x679C;&#xFF1A;</li>
+</ul>
+<pre version="f34c32d6637c1bae4f91b09833fff145"><code class="lang-java">query.clearCachedResult();
+</code></pre>
+<ul>
+<li>&#x6E05;&#x7A7A;&#x6240;&#x6709;&#x67E5;&#x8BE2;&#x7684;&#x7F13;&#x5B58;&#x7ED3;&#x679C;&#xFF1A;</li>
+</ul>
+<pre version="acaa53f932cd7e9e1bc60477dc5e713c"><code class="lang-java">AVQuery.clearAllCachedResults();
+</code></pre>
+<ul>
+<li>&#x63A7;&#x5236;&#x7F13;&#x5B58;&#x7ED3;&#x679C;&#x7684;&#x6700;&#x5927;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;&#xFF08;&#x6BEB;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#xFF09;&#xFF1A;</li>
+</ul>
+<pre version="27cc38695653448633406ca5fa77de43"><code class="lang-java">query.setMaxCacheAge(TimeUnit.DAYS.toMillis(1));
+</code></pre>
+<p version="7046858ee8ebb56aedb2f7801bcd0595">&#x67E5;&#x8BE2;&#x7F13;&#x5B58;&#x4E5F;&#x540C;&#x65F6;&#x53EF;&#x4EE5;&#x7528;&#x5728; <code>AVQuery</code> &#x7684; <code>getFirst()</code>&#x548C; <code>getInBackground()</code>&#x65B9;&#x6CD5;&#x4E0A;&#x3002;</p>
+<h4 id="last-modified-">Last-Modified &#x9009;&#x9879;</h4>
+<p version="abd886b7506764aee1b0082abd5aaf07">&#x5728;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x4E2D;&#x95F4; <code>Last-Modified</code> &#x4E00;&#x822C;&#x662F;&#x6807;&#x6CE8;&#x5728; http &#x54CD;&#x5E94;&#x4E2D;&#xFF0C;&#x7528;&#x6765;&#x8868;&#x793A;&#x8BE5;&#x8D44;&#x6E90;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x3002;&#x5728; LeanCloud &#x4E2D;&#x95F4;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x6765;&#x63D0;&#x5347;&#x7F13;&#x5B58;&#x7684;&#x51C6;&#x786E;&#x6027;&#x3001;&#x63D0;&#x9AD8;&#x7F51;&#x7EDC;&#x6548;&#x7387;&#x3002;
+&#x5F53;&#x4F60;&#x901A;&#x8FC7; <code>AVOSCloud.setLastModifyEnabled(boolean enable)</code>&#x6765;&#x6FC0;&#x6D3B;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#x548C;&#x5B83;&#x4EEC;&#x6240;&#x5BF9;&#x5E94;&#x7684; <code>Last-Modified</code> &#x65F6;&#x95F4;&#x90FD;&#x4F1A;&#x88AB;&#x7F13;&#x5B58;&#x8D77;&#x6765;&#x3002;
+&#x5F53;&#x67D0;&#x4E2A; <code>AVObject</code> &#x5BF9;&#x8C61;&#x518D;&#x6B21;&#x88AB;&#x53D1;&#x8D77;&#x4E00;&#x4E2A; get &#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x8BF7;&#x6C42;&#x4E2D;&#x5C31;&#x4F1A;&#x5E26;&#x7740; <code>Last-Modified</code> &#x4FE1;&#x606F;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5219;&#x4F1A;&#x6821;&#x9A8C;&#x53CC;&#x65B9;&#x7684; <code>Last-Modified</code> &#x4FE1;&#x606F;&#x3002;&#x5982;&#x679C;&#x53CC;&#x65B9;&#x7684; <code>Last-Modified</code> &#x65F6;&#x95F4;&#x4E00;&#x81F4;&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x81EA;&#x4E0A;&#x6B21; get &#x8BF7;&#x6C42;&#x4E4B;&#x540E;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x5E76;&#x6CA1;&#x6709;&#x88AB;&#x4FEE;&#x6539;&#xFF0C;&#x6240;&#x4EE5;&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x5C06;&#x5BF9;&#x8C61;&#x91CD;&#x65B0;&#x8FD4;&#x56DE;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x76F4;&#x63A5;&#x53D6;&#x7F13;&#x5B58;&#x5185;&#x5BF9;&#x8C61;&#x8FD4;&#x56DE;&#x5373;&#x53EF;&#xFF0C;&#x4ECE;&#x800C;&#x8282;&#x7701;&#x4E86;&#x7F51;&#x7EDC;&#x8D44;&#x6E90;&#x3002;&#x53CD;&#x4E4B;&#xFF0C;&#x5219;&#x4E0E;&#x5E73;&#x65F6;&#x4E00;&#x6837;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x8BE5;&#x5BF9;&#x8C61;&#x6570;&#x636E;&#x548C;&#x5BF9;&#x5E94;&#x7684; <code>Last-Modified</code> &#x4FE1;&#x606F;&#xFF0C;&#x7531;&#x5BA2;&#x6237;&#x7AEF;&#x66F4;&#x65B0;&#x7F13;&#x5B58;&#x5185;&#x5BB9;&#x5E76;&#x8FD4;&#x56DE;&#xFF0C;&#x4ECE;&#x800C;&#x4FDD;&#x8BC1;&#x4E86;&#x7F13;&#x5B58;&#x7684;&#x6B63;&#x786E;&#x6027;&#x3002;
+<strong> &#x6CE8;&#xFF1A;&#x8BE5;&#x529F;&#x80FD;&#x73B0;&#x5728;&#x6B63;&#x5904;&#x4E8E; beta &#x9636;&#x6BB5;&#xFF0C;&#x8BF7;&#x8C28;&#x614E;&#x4F7F;&#x7528;</strong>&#x3002;</p>
+<h3 id="-">&#x590D;&#x5408;&#x67E5;&#x8BE2;</h3>
+<p version="bd10f0e87294c5825fd946bb3d0ef339">&#x5982;&#x679C;&#x4F60;&#x60F3;&#x67E5;&#x627E;&#x5BF9;&#x8C61;&#x5339;&#x914D;&#x6240;&#x6709;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>AVQuery.or</code> &#x65B9;&#x6CD5;&#x6765;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x590D;&#x5408;&#x7684;&quot;&#x6216;&quot;&#x67E5;&#x8BE2;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4F60;&#x60F3;&#x67E5;&#x8BE2;&#x51FA;&#x4F01;&#x4E1A;&#x5B98;&#x65B9;&#x8D26;&#x53F7;&#x548C;&#x4E2A;&#x4EBA;&#x8D26;&#x53F7;&#x7684;&#x5FAE;&#x535A;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;:</p>
+<pre version="39447a28fa57e174277ddd5f710e37b4"><code class="lang-java">AVQuery&lt;AVObject&gt; officialPosts = AVQuery.getQuery(&quot;Post&quot;);
+officialPosts.whereGreaterThan(&quot;pubUserCertificate&quot;, 2);
+
+AVQuery&lt;AVObject&gt; individualPosts = AVQuery.getQuery(&quot;Post&quot;);
+individualPosts.whereLessThan(&quot;pubUserCertificate&quot;, 3);
+
+List&lt;AVQuery&lt;AVObject&gt;&gt; queries = new ArrayList&lt;AVQuery&lt;AVObject&gt;&gt;();
+queries.add(officialPosts);
+queries.add(individualPosts);
+
+AVQuery&lt;AVObject&gt; mainQuery = AVQuery.or(queries);
+mainQuery.findInBackground(new FindCallback&lt;AVObject&gt;() {
+  public void done(List&lt;AVObject&gt; results, AVException e) {
+    // results &#x5305;&#x62EC;&#x4E24;&#x4E2A;&#x67E5;&#x8BE2;&#x80FD;&#x547D;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x7ED3;&#x679C;.
+  }
+});
+</code></pre>
+<p version="4c5513548a51823cd5a9ae2338c37b08">&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x66F4;&#x591A;&#x7684;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#x5230;&#x65B0;&#x521B;&#x5EFA;&#x7684; <code>AVQuery</code> &#x5B9E;&#x4F8B;&#x4E0A;&#xFF0C;&#x8868;&#x793A;&#x4E00;&#x4E2A; <code>and</code> &#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x3002;</p>
+<p version="0b297c86f90cfe42d9e91967d2fa4f2a">&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x590D;&#x5408;&#x67E5;&#x8BE2;&#x7684;&#x5B50;&#x67E5;&#x8BE2;&#x91CC;&#x4E0D;&#x652F;&#x6301;&#x975E;&#x8FC7;&#x6EE4;&#x6027;&#x7684;&#x67E5;&#x8BE2;&#xFF0C;&#x4F8B;&#x5982; <code>setLimit</code>&#x3001;<code>skip</code>&#x3001;<code>orderBy</code>&#x3001;<code>include</code> &#x7B49;&#x3002;</p>
+<h3 id="-">&#x5220;&#x9664;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;</h3>
+<p version="2149a1bc8eb8384c242182b8990aa9fc">&#x5982;&#x679C;&#x4F60;&#x60F3;&#x6839;&#x636E;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x6765;&#x5220;&#x9664;&#x5BF9;&#x8C61;&#xFF0C;&#x6216;&#x8005;&#x5220;&#x9664;&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x8C03;&#x7528; <code>AVQuery.deleteAll()</code> &#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="43a799b78df54cc9d7fe4a5514a5bce9"><code class="lang-java">query.deleteAll();
+</code></pre>
+<h3 id="cql-">CQL &#x67E5;&#x8BE2;</h3>
+<p version="125e20d2f49116f2744c034e5cfda42d">Cloud Query Language&#xFF08;&#x7B80;&#x79F0; CQL&#xFF09; &#x662F; LeanCloud &#x4E3A;&#x67E5;&#x8BE2; API &#x5B9A;&#x5236;&#x7684;&#x4E00;&#x5957;&#x7C7B;&#x4F3C; SQL &#x67E5;&#x8BE2;&#x8BED;&#x6CD5;&#x7684;&#x5B50;&#x96C6;&#x548C;&#x53D8;&#x79CD;&#xFF0C;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x662F;&#x964D;&#x4F4E;&#x5927;&#x5BB6;&#x5B66;&#x4E60; LeanCloud &#x67E5;&#x8BE2;&#x7684; API &#x7684;&#x6210;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4F20;&#x7EDF;&#x7684; SQL &#x8BED;&#x6CD5;&#x6765;&#x67E5;&#x8BE2; LeanCloud &#x5E94;&#x7528;&#x5185;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p version="be08da625e316e010fa0ff4b682273a6">&#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x793A;&#x8303;&#x5728; Android &#x4E2D;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x5177;&#x4F53;&#x7684; CQL &#x8BED;&#x6CD5;&#xFF0C;&#x8BF7;&#x53C2;&#x8003; <a href="./cql_guide.html">Cloud Query Language &#x8BE6;&#x7EC6;&#x6307;&#x5357;</a>&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre version="375915f9768369464c4e54ca97b1f98f"><code class="lang-java">AVQuery.doCloudQueryInBackground(&quot;select * from ObjectTest&quot;, new CloudQueryCallback&lt;AVCloudQueryResult&gt;(){
+          @Override
+          public void done(AVCloudQueryResult result, AVException cqlException) {
+             if(cqlException==null){
+                 result.getResults();//&#x8FD9;&#x91CC;&#x662F;&#x4F60;&#x67E5;&#x8BE2;&#x5230;&#x7684;&#x7ED3;&#x679C;
+             }
+          }
+});
+
+AVQuery.doCloudQueryInBackground(&quot;select count(*) from ObjectTest&quot;, new CloudQueryCallback&lt;AVCloudQueryResult&gt;(){
+          @Override
+          public void done(AVCloudQueryResult result, AVException cqlException) {
+                 if(cqlException==null){
+                     result.getCount();//&#x8FD9;&#x91CC;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;count
+                 }
+          }
+});
+</code></pre>
+<p version="e6a22a04644e25bb72b62aa399a70668">&#x5728;&#x66F4;&#x591A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x4E2D;&#x95F4;&#x4F1A;&#x6709;&#x5F88;&#x591A;&#x7684;&#x503C;&#x662F;&#x53EF;&#x53D8;&#x503C;&#xFF0C;&#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x7C7B;&#x4F3C; Java JDBC &#x91CC;&#x7684; <code>PreparedStatement</code> &#x4F7F;&#x7528;&#x5360;&#x4F4D;&#x7B26;&#x67E5;&#x8BE2;&#x7684;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#x3002;</p>
+<pre version="d66f5eb1027b881da10071ece29e2584"><code class="lang-java">
+    AVQuery.doCloudQueryInBackground(&quot;select * from ObjectUnitTest where durability = ? and name = ?&quot;,
+        new CloudQueryCallback&lt;AVCloudQueryResult&gt;() {
+
+          @Override
+          public void done(AVCloudQueryResult result, AVException cqlException) {
+
+          }
+        }, TestObject.class, 100, &quot;&#x7948;&#x798F;&quot;);
+</code></pre>
+<p version="abdaba3ffcabc9a51c1b91dec782f3d7">&#x6700;&#x540E;&#x7684;&#x53EF;&#x53D8;&#x53C2;&#x6570; <code>100</code> &#x548C; <code>&quot;&#x7948;&#x798F;&quot;</code> &#x4F1A;&#x81EA;&#x52A8;&#x66FF;&#x6362;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x4E2D;&#x7684;&#x95EE;&#x53F7;&#x4F4D;&#x7F6E;&#xFF08;&#x6309;&#x7167;&#x95EE;&#x53F7;&#x7684;&#x5148;&#x540E;&#x51FA;&#x73B0;&#x987A;&#x5E8F;&#xFF09;&#x3002;&#x6211;&#x4EEC;&#x66F4;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x5360;&#x4F4D;&#x7B26;&#x8BED;&#x6CD5;&#xFF0C;&#x7406;&#x8BBA;&#x4E0A;&#x4F1A;&#x964D;&#x4F4E; CQL &#x8F6C;&#x6362;&#x7684;&#x6027;&#x80FD;&#x5F00;&#x9500;&#x3002;</p>
+<h2 id="-">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;</h2>
+<p version="512c7fb9fcbdfb43a3198e2fbaa574b5">&#x6211;&#x4EEC;&#x867D;&#x7136;&#x63D0;&#x4F9B;&#x4E86;&#x57FA;&#x4E8E;&#x6B63;&#x5219;&#x7684;&#x6A21;&#x7CCA;&#x67E5;&#x8BE2;&#xFF0C;&#x4F46;&#x662F;&#x6B63;&#x5219;&#x67E5;&#x8BE2;&#x6709;&#x4E24;&#x4E2A;&#x7F3A;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x5F53;&#x6570;&#x636E;&#x91CF;&#x9010;&#x6B65;&#x589E;&#x5927;&#x540E;&#xFF0C;&#x67E5;&#x8BE2;&#x6548;&#x7387;&#x5C06;&#x8D8A;&#x6765;&#x8D8A;&#x4F4E;</li>
+<li>&#x6CA1;&#x6709;&#x6587;&#x672C;&#x76F8;&#x5173;&#x6027;&#x6392;&#x5E8F;</li>
+</ul>
+<p version="034fdbee30a3a67bf8c57d32cceb9458">&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;<a href="./app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x529F;&#x80FD;</a>&#xFF0C;&#x57FA;&#x4E8E;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x6784;&#x5EFA;&#xFF0C;&#x63D0;&#x4F9B;&#x66F4;&#x5F3A;&#x5927;&#x7684;&#x641C;&#x7D22;&#x529F;&#x80FD;&#x3002;</p>
+<h2 id="-">&#x5B50;&#x7C7B;&#x5316;</h2>
+<p version="6245b5d1fe4e2a4ec033e09dd0252134">LeanCloud &#x5E0C;&#x671B;&#x8BBE;&#x8BA1;&#x6210;&#x80FD;&#x8BA9;&#x4EBA;&#x5C3D;&#x5FEB;&#x4E0A;&#x624B;&#x5E76;&#x4F7F;&#x7528;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>AVObject.get</code> &#x65B9;&#x6CD5;&#x8BBF;&#x95EE;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x3002;&#x4F46;&#x662F;&#x5728;&#x5F88;&#x591A;&#x73B0;&#x6709;&#x6210;&#x719F;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x5B50;&#x7C7B;&#x5316;&#x80FD;&#x5E26;&#x6765;&#x66F4;&#x591A;&#x4F18;&#x70B9;&#xFF0C;&#x8BF8;&#x5982;&#x7B80;&#x6D01;&#x3001;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x4EE5;&#x53CA; IDE &#x63D0;&#x4F9B;&#x7684;&#x4EE3;&#x7801;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x7684;&#x652F;&#x6301;&#x7B49;&#x7B49;&#x3002;&#x5B50;&#x7C7B;&#x5316;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x4E0B;&#x5217;&#x4EE3;&#x7801;&#x8F6C;&#x5316;&#xFF1A;</p>
+<pre version="d64e59f67e8f12b5a953ae69357f1da2"><code class="lang-java">AVObject shield = new AVObject(&quot;Post&quot;);
+shield.put(&quot;content&quot;, &quot;Java&#x4E2D;HashMap&#x548C;TreeMap&#x7684;&#x533A;&#x522B;&#x6DF1;&#x5165;&#x7406;&#x89E3;&quot;);
+shield.put(&quot;pubUser&quot;, &quot;&#x7A0B;&#x5E8F;&#x5458;&#x4FF1;&#x4E50;&#x90E8;&quot;);
+shield.put(&quot;pubUserCertificate&quot;, 3);
+</code></pre>
+<p version="8d2ac56a46afa47b5a333b0218261cb5">&#x6210;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre version="49ec5ee2e963d474eb62107e60f5ef1c"><code class="lang-java">Post post = new Post();
+post.setContent(&quot;Java&#x4E2D;HashMap&#x548C;TreeMap&#x7684;&#x533A;&#x522B;&#x6DF1;&#x5165;&#x7406;&#x89E3;&quot;);
+post.setPubUser(&quot;&#x7A0B;&#x5E8F;&#x5458;&#x4FF1;&#x4E50;&#x90E8;&quot;);
+post.setPubUserCertificate(3);
+</code></pre>
+<h3 id="-avobject">&#x5B50;&#x7C7B;&#x5316; AVObject</h3>
+<p version="469ec8148feda15632f1db2d26e23e36">&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>AVObject</code> &#x7684;&#x5B50;&#x7C7B;&#x5F88;&#x7B80;&#x5355;&#xFF1A;</p>
+<ul>
+<li>&#x9996;&#x5148;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x5B50;&#x7C7B;&#x7EE7;&#x627F;&#x81EA; <code>AVobject</code>&#x3002;</li>
+<li>&#x6DFB;&#x52A0; <code>@AVClassName</code> &#x6CE8;&#x89E3;&#x3002;&#x5B83;&#x7684;&#x503C;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4F60;&#x8FC7;&#x53BB;&#x4F20;&#x5165; <code>AVObject</code> &#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x7C7B;&#x540D;&#x3002;&#x8FD9;&#x6837;&#x4EE5;&#x6765;&#xFF0C;&#x540E;&#x7EED;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x51FA;&#x73B0;&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x540D;&#x3002;</li>
+<li>&#x786E;&#x4FDD;&#x4F60;&#x7684;&#x5B50;&#x7C7B;&#x6709;&#x4E00;&#x4E2A; public &#x7684;&#x9ED8;&#x8BA4;&#xFF08;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x4E3A; 0&#xFF09;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x5207;&#x8BB0;&#x4E0D;&#x8981;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x91CC;&#x4FEE;&#x6539;&#x4EFB;&#x4F55; <code>AVObject</code> &#x7684;&#x5B57;&#x6BB5;&#x3002;</li>
+<li>&#x5728;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5728;&#x8C03;&#x7528; <code>AVOSCloud.initialize()</code> &#x4E4B;&#x524D;&#x6CE8;&#x518C;&#x5B50;&#x7C7B; <code>AVObject.registerSubclass(YourClass.class)</code>&#x3002;</li>
+</ul>
+<p version="75aa6ebacc64a0e6bb5714540b9cd2bd">&#x4E0B;&#x5217;&#x4EE3;&#x7801;&#x6210;&#x529F;&#x5B9E;&#x73B0;&#x5E76;&#x6CE8;&#x518C;&#x4E86; <code>AVObject</code> &#x7684;&#x5B50;&#x7C7B; <code>Post</code>:</p>
+<pre version="2430644694d38471a65cb41755133b24"><code class="lang-java">// Post.java
+import com.avos.avoscloud.AVClassName;
+import com.avos.avoscloud.AVObject;
+
+@AVClassName(&quot;Post&quot;)
+public class Post extends AVObject {
+}
+
+// App.java
+import com.avos.avoscloud.AVOSCloud;
+import android.app.Application;
+
+public class App extends Application {
+  @Override
+  public void onCreate() {
+    super.onCreate();
+
+    AVObject.registerSubclass(Post.class);
+    AVOSCloud.initialize(this, &quot;{{appid}}&quot;, &quot;{{appkey}}&quot;);
+  }
+}
+</code></pre>
+<h3 id="-">&#x8BBF;&#x95EE;&#x5668;&#x3001;&#x4FEE;&#x6539;&#x5668;&#x548C;&#x65B9;&#x6CD5;</h3>
+<p version="4af10eef07a5e9197020d48f3a0eeb97">&#x6DFB;&#x52A0;&#x65B9;&#x6CD5;&#x5230; <code>AVObject</code> &#x7684;&#x5B50;&#x7C7B;&#x6709;&#x52A9;&#x4E8E;&#x5C01;&#x88C5;&#x7C7B;&#x7684;&#x903B;&#x8F91;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x6240;&#x6709;&#x8DDF;&#x5B50;&#x7C7B;&#x6709;&#x5173;&#x7684;&#x903B;&#x8F91;&#x653E;&#x5230;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5206;&#x6210;&#x591A;&#x4E2A;&#x7C7B;&#x6765;&#x5206;&#x522B;&#x5904;&#x7406;&#x5546;&#x4E1A;&#x903B;&#x8F91;&#x548C;&#x5B58;&#x50A8;/&#x8F6C;&#x6362;&#x903B;&#x8F91;&#x3002;</p>
+<p version="2004a848916c87f87d1ec74376dc2218">&#x4F60;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x5730;&#x6DFB;&#x52A0;&#x8BBF;&#x95EE;&#x5668;&#x548C;&#x4FEE;&#x6539;&#x5668;&#x5230;&#x4F60;&#x7684; <code>AVObject</code> &#x5B50;&#x7C7B;&#x3002;&#x50CF;&#x5E73;&#x5E38;&#x90A3;&#x6837;&#x58F0;&#x660E;&#x5B57;&#x6BB5;&#x7684; <code>getter</code> &#x548C; <code>setter</code> &#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x662F;&#x901A;&#x8FC7; <code>AVobject</code> &#x7684; <code>get</code> &#x548C; <code>put</code> &#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x5B83;&#x4EEC;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E3A; <code>Post</code> &#x7C7B;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A; <code>content</code> &#x7684;&#x5B57;&#x6BB5;&#xFF1A;</p>
+<pre version="1817051f08dd44f03580f845d44569b5"><code class="lang-java">// Post.java
+@AVClassName(&quot;Post&quot;)
+public class Post extends AVObject {
+  public String getContent() {
+    return getString(&quot;content&quot;);
+  }
+  public void setContent(String value) {
+    put(&quot;content&quot;, value);
+  }
+}
+</code></pre>
+<p version="5f9012dfcb0cab3680b5fbaf87df8665">&#x73B0;&#x5728;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>post.getContent()</code>&#x65B9;&#x6CD5;&#x6765;&#x8BBF;&#x95EE; <code>content</code> &#x5B57;&#x6BB5;&#xFF0C;&#x5E76;&#x901A;&#x8FC7; <code>post.setContent(&quot;blah blah blah&quot;)</code> &#x6765;&#x4FEE;&#x6539;&#x5B83;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x5141;&#x8BB8;&#x4F60;&#x7684; IDE &#x63D0;&#x4F9B;&#x4EE3;&#x7801;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x529F;&#x80FD;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x53D1;&#x73B0;&#x5230;&#x7C7B;&#x578B;&#x9519;&#x8BEF;&#x3002;</p>
+<p version="46f7bb56e4a2b1dc6f05742fed1233b2">&#x5404;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x8BBF;&#x95EE;&#x5668;&#x548C;&#x4FEE;&#x6539;&#x5668;&#x90FD;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x88AB;&#x5B9A;&#x4E49;&#xFF0C;&#x4F7F;&#x7528;&#x5404;&#x79CD; <code>get()</code>&#x65B9;&#x6CD5;&#x7684;&#x53D8;&#x79CD;&#xFF0C;&#x4F8B;&#x5982; <code>getInt()</code>&#xFF0C;<code>getAVFile()</code>&#x6216;&#x8005; <code>getMap()</code>&#x3002;</p>
+<p version="9ed1b0cdf4a873df7d9373ef88e3c9b1">&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x4EC5;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x8BBF;&#x95EE;&#x5668;&#xFF0C;&#x800C;&#x662F;&#x6709;&#x66F4;&#x590D;&#x6742;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre version="476c2f003de2b51f00c4b0d39955c89d"><code class="lang-java">public void takeAccusation() {
+  // &#x5904;&#x7406;&#x7528;&#x6237;&#x4E3E;&#x62A5;&#xFF0C;&#x5F53;&#x8FBE;&#x5230;&#x67D0;&#x4E2A;&#x6761;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x81EA;&#x52A8;&#x6253;&#x4E0A;&#x5C4F;&#x853D;&#x6807;&#x5FD7;
+  increment(&quot;accusation&quot;, 1);
+  if (getAccusation() &gt; 50) {
+    setSpam(true);
+  }
+}
+</code></pre>
+<h3 id="-">&#x521D;&#x59CB;&#x5316;&#x5B50;&#x7C7B;</h3>
+<p version="e9dc950228ac6dcb06400c9c966fdeda">&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4F60;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6765;&#x521B;&#x5EFA;&#x4F60;&#x7684;&#x5B50;&#x7C7B;&#x5BF9;&#x8C61;&#x3002;&#x4F60;&#x7684;&#x5B50;&#x7C7B;&#x5FC5;&#x987B;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x516C;&#x5F00;&#x7684;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x4FEE;&#x6539;&#x4EFB;&#x4F55;&#x7236;&#x7C7B; <code>AVObject</code> &#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x8FD9;&#x4E2A;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5C06;&#x4F1A;&#x88AB; SDK &#x4F7F;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x5B50;&#x7C7B;&#x7684;&#x5F3A;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p version="76d9cc664d185e0347db74e810ff25d8">&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5230;&#x73B0;&#x6709;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>AVObject.createWithoutData()</code>:</p>
+<pre version="88da52e23805ca2a906ba0008585630d"><code class="lang-java">Post postReference = AVObject.createWithoutData(Post.class, post.getObjectId());
+</code></pre>
+<h3 id="-">&#x5B50;&#x7C7B;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x4E0E;&#x53CD;&#x5E8F;&#x5217;&#x5316;</h3>
+<p version="7bfbfc8cb749a4fbb2616537cd1a718d">&#x5728; v3.4 &#x7248;&#x672C;&#x4EE5;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x5E0C;&#x671B; AVObject &#x5B50;&#x7C7B;&#x4E5F;&#x652F;&#x6301; Parcelable&#xFF0C;&#x5219;&#x9700;&#x8981;&#x81F3;&#x5C11;&#x6EE1;&#x8DB3;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x8981;&#x6C42;&#xFF1A;</p>
+<ul>
+<li>&#x786E;&#x4FDD;&#x5B50;&#x7C7B;&#x6709;&#x4E00;&#x4E2A; public &#x5E76;&#x4E14;&#x53C2;&#x6570;&#x4E3A; Parcel &#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x5185;&#x90E8;&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x7684;&#x8BE5;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;</li>
+<li>&#x5185;&#x90E8;&#x9700;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x53D8;&#x91CF; CREATOR &#x5B9E;&#x73B0; <code>Parcelable.Creator</code>&#x3002;</li>
+</ul>
+<pre version="8cf85c7984a85f9448d76f3a361de996"><code class="lang-java">// Post.java
+@AVClassName(&quot;Post&quot;)
+public class Post extends AVObject {
+  public Post(){
+  }
+
+  public Post(Parcel in){
+    super(in);
+  }
+  //&#x6B64;&#x5904;&#x4E3A;&#x6211;&#x4EEC;&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#xFF0C;&#x5F53;&#x7136;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x5B9E;&#x73B0;
+  public static final Creator CREATOR = AVObjectCreator.instance;
+}
+</code></pre>
+<h3 id="-">&#x67E5;&#x8BE2;&#x5B50;&#x7C7B;</h3>
+<p version="dc59c93b692f147267ce5c098974a1d5">&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>AVObject.getQuery()</code> &#x6216;&#x8005; <code>AVQuery.getQuery</code> &#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x7279;&#x5B9A;&#x7684;&#x5B50;&#x7C7B;&#x7684;&#x67E5;&#x8BE2;&#x5BF9;&#x8C61;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x5C31;&#x67E5;&#x8BE2;&#x4E86;&#x7528;&#x6237;&#x53D1;&#x8868;&#x7684;&#x6240;&#x6709;&#x5FAE;&#x535A;&#x5217;&#x8868;&#xFF1A;</p>
+<pre version="d6e127a9cdeff60e88823d5bc3a4b7d7"><code class="lang-java">AVQuery&lt;Post&gt; query = AVObject.getQuery(Post.class);
+query.whereEqualTo(&quot;pubUser&quot;, AVUser.getCurrentUser().getUsername());
+query.findInBackground(new FindCallback&lt;Post&gt;() {
+  @Override
+  public void done(List&lt;Post&gt; results, AVException e) {
+    for (Post a : results) {
+      // ...
+    }
+  }
+});
+</code></pre>
+<h3 id="avuser-">AVUser &#x7684;&#x5B50;&#x7C7B;&#x5316;</h3>
+<p version="69896d4aea7ca78d4c7d156181272173"><code>AVUser</code> &#x4F5C;&#x4E3A; <code>AVObject</code> &#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x540C;&#x6837;&#x5141;&#x8BB8;&#x5B50;&#x7C7B;&#x5316;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684; User &#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x8FC7;&#x6BD4;&#x8D77; <code>AVObject</code> &#x5B50;&#x7C7B;&#x5316;&#x4F1A;&#x66F4;&#x7B80;&#x5355;&#x4E00;&#x4E9B;&#xFF0C;&#x53EA;&#x8981;&#x7EE7;&#x627F; <code>AVUser</code> &#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF1A;</p>
+<pre version="6390670c293a17f47827e49f19788095"><code class="lang-java">import com.avos.avoscloud.AVObject;
+import com.avos.avoscloud.AVUser;
+
+public class MyUser extends AVUser {
+    public void setNickName(String name) {
+  this.put(&quot;nickName&quot;, name);
+    }
+
+    public String getNickName() {
+  return this.getString(&quot;nickName&quot;);
+    }
+}
+</code></pre>
+<p version="ed3fcd428c73b5b17bd1ee454e46bc66">&#x4E0D;&#x9700;&#x8981;&#x6DFB;&#x52A0; <code>@AVClassname</code> &#x6CE8;&#x89E3;&#xFF0C;&#x6240;&#x6709; <code>AVUser</code> &#x7684;&#x5B50;&#x7C7B;&#x7684;&#x7C7B;&#x540D;&#x90FD;&#x662F;&#x5185;&#x5EFA;&#x7684; <code>_User</code>&#x3002;&#x540C;&#x6837;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x6CE8;&#x518C; <code>MyUser</code>&#x3002;</p>
+<p version="9127a09af48ea67e2e0d5ec8761807ac">&#x5F53;&#x7528;&#x6237;&#x5B50;&#x7C7B;&#x5316; AVUser &#x540E;&#xFF0C;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x4EE5;&#x540E;&#x67E5;&#x8BE2; AVUser &#x6240;&#x5F97;&#x5230;&#x7684;&#x5BF9;&#x8C61;&#x4F1A;&#x81EA;&#x52A8;&#x8F6C;&#x5316;&#x4E3A;&#x7528;&#x6237;&#x5B50;&#x7C7B;&#x5316;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5728;&#x8C03;&#x7528; <code>AVOSCloud.initialize()</code> &#x4E4B;&#x524D;&#x6DFB;&#x52A0;&#xFF1A;</p>
+<pre version="274197bb32d6a23041e2ff7f1f4aa075"><code>AVUser.alwaysUseSubUserClass(subUser.class);
+</code></pre><p version="8c4459617085bb7976d80aed924e7a6d">&#x6CE8;&#x518C;&#x8DDF;&#x666E;&#x901A;&#x7684; <code>AVUser</code> &#x5BF9;&#x8C61;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x4E0D;&#x540C;&#xFF0C;&#x4F46;&#x662F;&#x767B;&#x5F55;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x8FD4;&#x56DE;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x5FC5;&#x987B;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre version="6b68e9b9b272a7ec974ec66d8579d3a9"><code class="lang-java">MyUser cloudUser = AVUser.logIn(username, password,
+        MyUser.class);
+</code></pre>
+<p version="ed5c07c7c3346ad02fc9dd18f8272177"><strong>&#x6CE8;&#xFF1A;&#x7531;&#x4E8E; fastjson &#x5185;&#x90E8;&#x7684; bug&#xFF0C;&#x8BF7;&#x5728;&#x5B9A;&#x4E49; AVUser &#x65F6;&#x4E0D;&#x8981;&#x5B9A;&#x4E49;&#x8DDF; AVRelation &#x76F8;&#x5173;&#x7684; get &#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x5B9A;&#x8981;&#x5B9A;&#x4E49;&#x7684;&#x8BDD;&#xFF0C;&#x8BF7;&#x901A;&#x8FC7;&#x5728; Class &#x4E0A;&#x6DFB;&#x52A0;<code>@JSONType(ignores = {&quot;&#x5C5E;&#x6027;&#x540D;&quot;})</code>&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5C06;&#x5176;&#x6CE8;&#x91CA;&#x4E3A;&#x975E;&#x5E8F;&#x5217;&#x5316;&#x5B57;&#x6BB5;&#x3002;</strong></p>
+<h2 id="acl-">ACL &#x6743;&#x9650;&#x63A7;&#x5236;</h2>
+<p version="2dd97d7b2516855731f4ff7729c06570">ACL(Access Control List)&#x662F;&#x6700;&#x7075;&#x6D3B;&#x548C;&#x7B80;&#x5355;&#x7684;&#x5E94;&#x7528;&#x6570;&#x636E;&#x5B89;&#x5168;&#x7BA1;&#x7406;&#x65B9;&#x6CD5;&#x3002;&#x901A;&#x4FD7;&#x7684;&#x89E3;&#x91CA;&#x5C31;&#x662F;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8BBF;&#x95EE;&#x7684;&#x767D;&#x540D;&#x5355;&#x5217;&#x8868;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x540D;&#x5355;&#x4E0A;&#x7684;&#x7528;&#x6237;(AVUser)&#x6216;&#x8005;&#x5177;&#x6709;&#x67D0;&#x79CD;&#x89D2;&#x8272;(AVRole)&#x7684;&#x7528;&#x6237;&#x624D;&#x80FD;&#x88AB;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;&#x3002;&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x5730;&#x4FDD;&#x8BC1;&#x7528;&#x6237;&#x6570;&#x636E;&#x5B89;&#x5168;&#x6027;&#xFF0C; LeanCloud &#x8868;&#x4E2D;&#x6BCF;&#x4E00;&#x5F20;&#x90FD;&#x6709;&#x4E00;&#x4E2A; ACL &#x5217;&#x3002;&#x5F53;&#x7136;&#xFF0C;LeanCloud &#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x8BFB;&#x5199;&#x6743;&#x9650;&#x63A7;&#x5236;&#x3002;&#x4E00;&#x4E2A; User &#x5FC5;&#x987B;&#x62E5;&#x6709;&#x8BFB;&#x6743;&#x9650;&#xFF08;&#x6216;&#x8005;&#x5C5E;&#x4E8E;&#x4E00;&#x4E2A;&#x62E5;&#x6709;&#x8BFB;&#x6743;&#x9650;&#x7684; Role&#xFF09;&#x624D;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x540C;&#x65F6;&#xFF0C;&#x4E00;&#x4E2A; User &#x9700;&#x8981;&#x5199;&#x6743;&#x9650;&#xFF08;&#x6216;&#x8005;&#x5C5E;&#x4E8E;&#x4E00;&#x4E2A;&#x62E5;&#x6709;&#x5199;&#x6743;&#x9650;&#x7684; Role&#xFF09;&#x624D;&#x53EF;&#x4EE5;&#x66F4;&#x6539;&#x6216;&#x8005;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;
+&#x4EE5;&#x4E0B;&#x5217;&#x4E3E;&#x4E86;&#x51E0;&#x79CD;&#x5728; LeanCloud &#x5E38;&#x89C1;&#x7684; ACL &#x4F7F;&#x7528;&#x8303;&#x4F8B;&#xFF1A;</p>
+<h3 id="-">&#x9ED8;&#x8BA4;&#x8BBF;&#x95EE;&#x6743;&#x9650;</h3>
+<p version="d4f388aba2d4bb02081e938c7d689079">&#x5728;&#x6CA1;&#x6709;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;LeanCloud &#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684; ACL &#x503C;&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x4EE3;&#x8868;&#x4E86;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x5BF9;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x53EF;&#x8BFB;&#x53EF;&#x5199;&#x7684;&#x3002;&#x6B64;&#x65F6;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x7684;&#x8868;&#x4E2D; ACL &#x5C5E;&#x6027;&#x4E2D;&#x770B;&#x5230;&#x8FD9;&#x6837;&#x7684;&#x503C;:</p>
+<pre version="d5465c64a00db82659372fba82adb51c"><code class="lang-java">        {&quot;*&quot;:{&quot;read&quot;:true,&quot;write&quot;:true}}
+</code></pre>
+<p version="8fde37993adeea20274d36456c4cb77d">&#x800C;&#x5728;&#x5B89;&#x5353;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x503C;&#x5BF9;&#x5E94;&#x7684;&#x4EE3;&#x7801;&#x662F;&#xFF1A;</p>
+<pre version="275722dbf79cd8be511fbb4eee2d0df2"><code class="lang-java">        AVACL  acl = new AVACL();
+        acl.setPublicReadAccess(true);
+        acl.setPublicWriteAccess(true);
+</code></pre>
+<p version="4e1966b835fd0c6c63a63f86bc78d7c9">&#x5F53;&#x7136;&#x6B63;&#x5982;&#x4E0A;&#x6587;&#x63D0;&#x5230;&#x7684;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684; ACL &#x5E76;&#x4E0D;&#x9700;&#x8981;&#x663E;&#x5F0F;&#x7684;&#x6307;&#x5B9A;&#x3002;</p>
+<h3 id="-">&#x6307;&#x5B9A;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x6743;&#x9650;</h3>
+<p version="763caf8c7c39d82502a98dc4488ea6c6">&#x5F53;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x5728;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7F51;&#x76D8;&#x7C7B;&#x5E94;&#x7528;&#x65F6;&#xFF0C;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x6587;&#x4EF6;&#x7684;&#x79C1;&#x5BC6;&#x6027;&#xFF0C;&#x7528;&#x6237;&#x5C31;&#x9700;&#x8981;&#x4E0D;&#x540C;&#x7684;&#x6587;&#x4EF6;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x3002;
+&#x8B6C;&#x5982;&#x516C;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x5176;&#x4ED6;&#x7528;&#x6237;&#x90FD;&#x6709;&#x8BFB;&#x7684;&#x6743;&#x9650;&#xFF0C;&#x7136;&#x540E;&#x4EC5;&#x4EC5;&#x53EA;&#x6709;&#x521B;&#x5EFA;&#x8005;&#x624D;&#x62E5;&#x6709;&#x66F4;&#x6539;&#x548C;&#x5220;&#x9664;&#x7684;&#x6743;&#x9650;&#x3002;</p>
+<pre version="91c464aec72a9c834c90eeeb597cdfa2"><code class="lang-java">      AVObject record = new AVObject(&quot;&#x970D;&#x4E71;&#x65F6;&#x671F;&#x7684;&#x7231;&#x60C5;&quot;);
+      record.put(&quot;file&quot;, thisIsAnAVFile);
+
+      AVACL acl = new AVACL();
+      acl.setPublicReadAccess(true);   //&#x6B64;&#x5904;&#x8BBE;&#x7F6E;&#x7684;&#x662F;&#x6240;&#x6709;&#x4EBA;&#x7684;&#x53EF;&#x8BFB;&#x6743;&#x9650;
+      acl.setWriteAccess(AVUser.getCurrentUser(), true);   //&#x800C;&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x4E86;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x8005;&#x7684;&#x5199;&#x6743;&#x9650;
+
+      record.setACL(acl);
+      record.save();
+</code></pre>
+<p version="60749249bc1655eb01591c4cec263b22">&#x5F53;&#x7136;&#x7528;&#x6237;&#x4E5F;&#x4F1A;&#x4E0A;&#x4F20;&#x4E00;&#x4E9B;&#x9690;&#x79C1;&#x6587;&#x4EF6;,&#x53EA;&#x6709;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x7684;&#x521B;&#x5EFA;&#x8005;&#x624D;&#x5BF9;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x62E5;&#x6709;&#x8BFB;&#x5199;&#x6743;&#x9650;</p>
+<pre version="b81f10fd34706f9c824a24693c84655e"><code class="lang-java">      AVObject record = new AVObject(&quot;&#x521B;&#x4E1A;&#x7EF4;&#x8270;&quot;);
+      record.put(&quot;file&quot;, thisIsAnotherAVFile);
+
+      AVACL acl = new AVACL();
+      acl.setReadAccess(AVUser.getCurrentUser(),true);
+      acl.setWriteAccess(AVUser.getCurrentUser(), true);
+
+      record.setACL(acl);
+      record.save();
+</code></pre>
+<p version="5510e5f71f19ab2f24482cdbcdda5601"><strong>&#x6CE8;&#xFF1A;&#x4E00;&#x65E6;&#x663E;&#x5F0F;&#x8BBE;&#x7F6E; ACL&#xFF0C;&#x9ED8;&#x8BA4;&#x7684; ACL &#x5C31;&#x4F1A;&#x88AB;&#x8986;&#x76D6;</strong></p>
+<h3 id="-">&#x6307;&#x5B9A;&#x89D2;&#x8272;&#x8BBF;&#x95EE;&#x6743;&#x9650;</h3>
+<h4 id="avuser-avrole-">AVUser &#x4E0E; AVRole &#x7684;&#x4ECE;&#x5C5E;&#x5173;&#x7CFB;</h4>
+<p version="97f43f0ba61525805e1f9c02aa6abc40">&#x6307;&#x5B9A;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x867D;&#x7136;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x662F;&#x4F9D;&#x7136;&#x4F1A;&#x6709;&#x5C40;&#x9650;&#x6027;&#x3002;
+&#x4EE5;&#x5DE5;&#x8D44;&#x7CFB;&#x7EDF;&#x4E3A;&#x4F8B;&#xFF0C;&#x4E00;&#x5BB6;&#x516C;&#x53F8;&#x7684;&#x5DE5;&#x8D44;&#x7CFB;&#x7EDF;&#xFF0C;&#x5DE5;&#x8D44;&#x6700;&#x7EC8;&#x7684;&#x5F52;&#x5C5E;&#x8005;&#x548C;&#x516C;&#x53F8;&#x7684;&#x51FA;&#x7EB3;&#x4EEC;&#x53EA;&#x62E5;&#x6709;&#x5DE5;&#x8D44;&#x7684;&#x8BFB;&#x6743;&#x9650;&#xFF0C;&#x800C;&#x516C;&#x53F8;&#x7684;&#x4EBA;&#x4E8B;&#x548C;&#x8001;&#x677F;&#x624D;&#x62E5;&#x6709;&#x5168;&#x90E8;&#x7684;&#x8BFB;&#x5199;&#x6743;&#x9650;&#x3002;&#x5F53;&#x7136;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x591A;&#x6B21;&#x8BBE;&#x7F6E;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x529F;&#x80FD;&#xFF08;&#x591A;&#x4E2A;&#x7528;&#x6237;&#x7684; ACL &#x8BBE;&#x7F6E;&#x662F;&#x8FFD;&#x52A0;&#x7684;&#x800C;&#x975E;&#x8986;&#x76D6;&#xFF09;&#x3002;</p>
+<pre version="7fcfcf4a21322cbd6e4654d713fcca8b"><code class="lang-java">        AVObect salary = new AVObject(&quot;&#x5DE5;&#x8D44;&quot;);
+        salary.put(&quot;value&quot;,200000000000);
+
+        AVUser boss;//&#x5047;&#x8BBE;&#x6B64;&#x5904;&#x4E3A;&#x8001;&#x677F;
+        AVUser hrWang;  //&#x4EBA;&#x4E8B;&#x5C0F;&#x738B;
+        AVUser me; //&#x6211;&#x4EEC;&#x5C31;&#x5728;&#x6587;&#x6863;&#x91CC;&#x723D;&#x4E00;&#x723D;&#x5427;
+        AVUser cashierZhou; //&#x51FA;&#x7EB3;&#x8001;&#x5468;
+
+        AVACL acl = new AVACL();
+        acl.setReadAccess(boos,true);
+        acl.setReadAccess(hrWang,true);
+        acl.setReadAccess(me,true);
+        acl.setReadAccess(cashierZhou,true);
+
+        acl.setWriteAccess(boss,true);
+        acl.setWriteAccess(hrWang,true);
+
+        salary.setACL(acl);
+        salary.save();
+</code></pre>
+<p version="3c1d14359e4eeb3e19d5bd1aeeec4d5d">&#x4F46;&#x662F;&#x8FD9;&#x4E9B;&#x6D89;&#x53CA;&#x5176;&#x4E2D;&#x7684;&#x4EBA;&#x53EF;&#x80FD;&#x4E0D;&#x6B62;&#x4E00;&#x4E2A;&#xFF0C;&#x4E5F;&#x6709;&#x79BB;&#x804C;&#x6362;&#x5C97;&#x65B0;&#x5458;&#x5DE5;&#x7684;&#x95EE;&#x9898;&#x5B58;&#x5728;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x65E2;&#x4E0D;&#x4F18;&#x96C5;&#xFF0C;&#x4E5F;&#x592A;&#x5570;&#x55E6;,&#x540C;&#x6837;&#x4F1A;&#x5F88;&#x96BE;&#x7EF4;&#x62A4;&#x3002;
+&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5C31;&#x5F15;&#x5165;&#x4E86; <code>AVRole</code> &#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;
+&#x516C;&#x53F8;&#x7684;&#x5458;&#x5DE5;&#x53EF;&#x4EE5;&#x6210;&#x767E;&#x4E0A;&#x5343;&#xFF0C;&#x7136;&#x800C;&#x4E00;&#x4E2A;&#x516C;&#x53F8;&#x7EC4;&#x7EC7;&#x91CC;&#x7684;&#x89D2;&#x8272;&#x5374;&#x80FD;&#x591F;&#x5728;&#x5F88;&#x957F;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x65F6;&#x95F4;&#x5185;&#x76F8;&#x5BF9;&#x7A33;&#x5B9A;&#x3002;</p>
+<pre version="5a8e96efd73aaa28a1fd225722ca0483"><code class="lang-java">        AVObect salary = new AVObject(&quot;&#x5DE5;&#x8D44;&quot;);
+        salary.put(&quot;value&quot;,200000000000);
+
+        AVUser boss;   //&#x5047;&#x8BBE;&#x6B64;&#x5904;&#x4E3A;&#x8001;&#x677F;
+        AVUser hrWang;   //&#x4EBA;&#x4E8B;&#x5C0F;&#x738B;
+        AVUser me;
+        AVUser cashierZhou;   //&#x51FA;&#x7EB3;&#x8001;&#x5468;
+        AVUser cashierGe;   //&#x51FA;&#x7EB3;&#x5C0F;&#x845B;
+
+        //&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x53EF;&#x80FD;&#x653E;&#x5728;&#x5458;&#x5DE5;&#x7BA1;&#x7406;&#x754C;&#x9762;&#x66F4;&#x6070;&#x5F53;&#xFF0C;&#x4F46;&#x662F;&#x4E3A;&#x4E86;&#x793A;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x653E;&#x5728;&#x8FD9;&#x91CC;
+        AVRole hr = new AVRole(&quot;hr&quot;);
+        AVRole cashier = new AVRole(&quot;cashier&quot;);
+
+        hr.getUsers().add(hrWang);
+        hr.save();
+        cashier.getUsers().add(cashierZhou);   //&#x6B64;&#x5904;&#x5BF9;&#x5E94;&#x7684;&#x662F;AVRole&#x91CC;&#x9762;&#x6709;&#x4E00;&#x4E2A;&#x53EB;&#x505A;users&#x7684;Relation&#x5B57;&#x6BB5;
+        cashier.getUsers().add(cashierGe);
+        cashier.save();
+
+        AVACL acl = new AVACL();
+        acl.setReadAccess(boos,true);   //&#x8001;&#x677F;&#x5047;&#x8BBE;&#x53EA;&#x6709;&#x4E00;&#x4E2A;
+        acl.setReadAccess(me,true);
+        acl.setRoleReadAccess(hr,true);
+        acl.setRoleReadAccess(cashier,true);
+
+        acl.setWriteAccess(boss,true);
+        acl.setRoleWriteAccess(hr,true);
+
+        salary.setACL(acl);
+        salary.save();
+</code></pre>
+<p version="48c717b91ed6f150762eb8ad3e53717a">&#x5F53;&#x7136;&#x5982;&#x679C;&#x8003;&#x8651;&#x5230;&#x4E00;&#x4E2A;&#x89D2;&#x8272;(<code>AVRole</code>)&#x91CC;&#x9762;&#x6709;&#x591A;&#x5C11;&#x5458;&#x5DE5;(<code>AVUser</code>)&#xFF0C;&#x7F16;&#x8F91;&#x8FD9;&#x4E9B;&#x5458;&#x5DE5;&#x53EF;&#x9700;&#x8981;&#x505A;&#x6743;&#x9650;&#x63A7;&#x5236;&#xFF0C;<code>AVRole</code> &#x540C;&#x6837;&#x4E5F;&#x6709; <code>setACL</code> &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x3002;</p>
+<h4 id="avrole-">AVRole &#x4E4B;&#x95F4;&#x7684;&#x4ECE;&#x5C5E;&#x5173;&#x7CFB;</h4>
+<p version="8f1061f16c7fecf9dca0d4ba8e1c6278">&#x5728;&#x8BB2;&#x6E05;&#x695A;&#x4E86;&#x7528;&#x6237;&#x4E0E;&#x89D2;&#x8272;&#x7684;&#x5173;&#x7CFB;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x6709;&#x4E00;&#x5C42;&#x89D2;&#x8272;&#x4E0E;&#x89D2;&#x8272;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x3002;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x7406;&#x89E3;&#x53EF;&#x80FD;&#x4F1A;&#x5BF9;&#x6211;&#x4EEC;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#xFF1A;</p>
+<p version="378edac11e55c8c986fb6cfbbd1e3c23">&#x4E00;&#x5BB6;&#x521B;&#x4E1A;&#x516C;&#x53F8;&#x6709;&#x79FB;&#x52A8;&#x90E8;&#x95E8;&#xFF0C;&#x90E8;&#x95E8;&#x4E0B;&#x9762;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x5C0F;&#x7EC4;&#xFF0C;Android &#x548C; iOS&#x3002;&#x800C;&#x6BCF;&#x4E2A;&#x5C0F;&#x7EC4;&#x53EA;&#x62E5;&#x6709;&#x81EA;&#x5DF1;&#x7EC4;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x8BFB;&#x5199;&#x6743;&#x9650;&#x3002;&#x4F46;&#x662F;&#x4ED6;&#x4EEC;&#x540C;&#x65F6;&#x62E5;&#x6709;&#x6838;&#x5FC3;&#x5E93;&#x4EE3;&#x7801;&#x7684;&#x8BFB;&#x53D6;&#x6743;&#x9650;&#x3002;</p>
+<pre version="61f19a91b2e95f263ca2eb3f2914ea57"><code class="lang-java">        AVRole androidTeam = new AVRole(&quot;androidTeam&quot;);
+        AVRole iOSTeam = new AVRole(&quot;iOSTeam&quot;);
+        AVRole mobileDevs = new AVRole(&quot;mobileDevs&quot;);
+
+        androidTeam.save();
+        iOSTeam.save();
+
+        mobileDevs.getRoles().add(androidTeam);
+        mobileDevs.getRoles().add(iOSTeam);
+        mobileDevs.save();
+
+        AVObject androidCode = new AVObject(&quot;code&quot;);
+        AVObject iOSCode = new AVObject(&quot;code&quot;);
+        AVObject coreCode = new AVObject(&quot;code&quot;);
+        //.....&#x6B64;&#x5904;&#x7701;&#x7565;&#x4E00;&#x4E9B;&#x5177;&#x4F53;&#x7684;&#x503C;&#x8BBE;&#x5B9A;
+        androidCode.save();
+        iOSCode.save();
+        coreCode.save();
+
+        androidCode.setRoleReadAccess(androidTeam,true);
+        androidCode.setRoleWriteAccess(androidTeam,true);
+
+        iOSCode.setRoleReadAccess(iOSTeam,true);
+        iOSCode.setRoleWriteAccess(iOSTeam,true);
+
+        coreCode.setRoleReadAccess(mobileDevs);
+</code></pre>
+<h2 id="-">&#x6587;&#x4EF6;</h2>
+<h3 id="-">&#x6587;&#x4EF6;&#x5BF9;&#x8C61;</h3>
+<p version="eed99d09740362d4700c70358dc5f097"><code>AVFile</code> &#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5C06;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x5230;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#xFF0C;&#x6BD4;&#x5982;&#x5E38;&#x89C1;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x56FE;&#x50CF;&#x6587;&#x4EF6;&#x3001;&#x5F71;&#x50CF;&#x6587;&#x4EF6;&#x3001;&#x97F3;&#x4E50;&#x6587;&#x4EF6;&#x548C;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x3002;
+&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4E00;&#x6BB5;&#x6587;&#x672C;&#x4FDD;&#x5B58;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF1A;</p>
+<pre version="fcd5c1b801497f83b6c717e7de5ad363"><code class="lang-java">AVFile avFile = new AVFile(&quot;walking in Dubai&quot;, &quot;hello Dubai&quot;.getBytes());  
+avFile.saveInBackground();                                                 
+AVObject avObject = new AVObject(&quot;Post&quot;);                                  
+avObject.put(&quot;content&quot;, &quot;#&#x82B1;&#x513F;&#x4E0E;&#x5C11;&#x5E74;# &#x8FEA;&#x62DC;&#x75AF;&#x72C2;&#x4E4B;&#x65C5;&quot;);                             
+avObject.put(&quot;attached&quot;, avFile);                                          
+avObject.saveInBackground();
+</code></pre>
+<p version="9caa3e267f70539a784862b0841a1a03"><code>AVFile</code> &#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x63A5;&#x6536;&#x4E00;&#x4E2A; byte &#x6570;&#x7EC4;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5C06;&#x8981;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x3002;</p>
+<p version="e433e381a3df3dfe92051c5a5e4cbac8">&#x53EF;&#x4EE5;&#x5C06; <code>AVFile</code> &#x76F4;&#x63A5;&#x5B58;&#x50A8;&#x5230;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7684;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#x91CC;&#xFF0C;&#x540E;&#x7EED;&#x53EF;&#x4EE5;&#x53D6;&#x51FA;&#x6765;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x3002;</p>
+<p version="0c82a982e398304bb66fd3c989b19ac7"><strong>&#x5982;&#x679C;&#x5C06;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x5230;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;&#x5185;&#xFF0C;&#x90A3;&#x4E48;&#x5FC5;&#x987B;&#x5728;&#x67E5;&#x8BE2;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#x52A0;&#x4E0A; include &#x8BE5;&#x5C5E;&#x6027;&#xFF0C;&#x5426;&#x5219;&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x7684;&#x6570;&#x7EC4;&#x5C06;&#x662F; AVObject &#x6570;&#x7EC4;&#x3002;</strong></p>
+<h3 id="-">&#x4E0A;&#x4F20;&#x6587;&#x4EF6;</h3>
+<p version="7bf1a9feebd58c030bfbb15e7877f88c">&#x9664;&#x4E86;&#x53EF;&#x4EE5;&#x4E0A;&#x4F20;&#x4E00;&#x6BB5;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4E0A;&#x4F20;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x78C1;&#x76D8;&#x4E0A;&#xFF08;SD &#x5361;&#x7B49;&#xFF09;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre version="248a3dfba88bc7caba441066041500df"><code class="lang-java">AVFile file = AVFile.withAbsoluteLocalPath(&quot;dubai.jpg&quot;, Environment.getExternalStorageDirectory() + &quot;/dubai.jpg&quot;);
+file.saveInBackground();
+</code></pre>
+<p version="a4650b5f1b27784a56bf29d308a773ea">&#x6B64;&#x5916;&#x8FD8;&#x6709; <code>withFile</code> &#x65B9;&#x6CD5;&#x53EF;&#x63A5;&#x6536;&#x4E00;&#x4E2A; <code>java.io.File</code> &#x5BF9;&#x8C61;&#x7528;&#x4E8E;&#x4E0A;&#x4F20;&#x3002;</p>
+<h3 id="-">&#x4E0A;&#x4F20;&#x8FDB;&#x5EA6;</h3>
+<p version="f12df62663bb50a9fb46c228ae1243c0">AVFile&#x7684; <code>saveInBackground</code> &#x65B9;&#x6CD5;&#x9664;&#x4E86;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x4E00;&#x4E2A; <code>SaveCallback</code> &#x56DE;&#x8C03;&#x6765;&#x901A;&#x77E5;&#x4E0A;&#x4F20;&#x6210;&#x529F;&#x6216;&#x8005;&#x5931;&#x8D25;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570; <code>ProgressCallback</code> &#x56DE;&#x8C03;&#x5BF9;&#x8C61;&#xFF0C;&#x901A;&#x77E5;&#x4E0A;&#x4F20;&#x8FDB;&#x5EA6;&#xFF1A;</p>
+<pre version="6aa3d5521f39ae029fcffb247cac6984"><code class="lang-java">file.saveInBackground(new SaveCallback() {
+      @Override
+      public void done(AVException e) {
+        if(e!=null){
+            //&#x4E0A;&#x4F20;&#x5931;&#x8D25;
+        }else{
+            //&#x4E0A;&#x4F20;&#x6210;&#x529F;
+        }
+      }
+  }, new ProgressCallback() {
+      @Override
+      public void done(Integer percentDone) {
+          //&#x6253;&#x5370;&#x8FDB;&#x5EA6;
+          System.out.println(&quot;uploading: &quot; + percentDone);
+      }
+       });
+</code></pre>
+<h3 id="-">&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;</h3>
+<p version="d5c431a818b89cda50276a5e0a4f6b05">&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;&#x8C03;&#x7528; <code>AVFile.getDataInBackground</code> &#x65B9;&#x6CD5;&#x5C31;&#x53EF;&#x4EE5;&#xFF1A;</p>
+<pre version="c36ca0d9c20b4507db99474335206c14"><code class="lang-java">AVFile avFile = avObject.getAVFile(&quot;attached&quot;);
+avFile.getDataInBackground(new GetDataCallback(){
+  public void done(byte[] data, AVException e){
+    //process data or exception.
+  }
+});
+</code></pre>
+<p version="56e9fd88f822f70a7a387c6aa91b3507">&#x6216;&#x8005;&#x5F97;&#x5230;&#x6587;&#x4EF6;&#x7684; url &#x81EA;&#x884C;&#x5904;&#x7406;&#x4E0B;&#x8F7D;&#xFF1A;</p>
+<pre version="ffee734a3a80e6febe57cffaf38d2999"><code class="lang-java">  String url = avFile.getUrl();
+</code></pre>
+<h3 id="-">&#x6587;&#x4EF6;&#x5143;&#x4FE1;&#x606F;</h3>
+<p version="0670e1fe0614ecf0051745953f95d52e"><code>AVFile</code> &#x9ED8;&#x8BA4;&#x4F1A;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x548C;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x8005; <code>objectId</code> &#x4F5C;&#x4E3A;&#x5143;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre version="e6b4f22b6c55eea8ac46dc9d664776b8"><code class="lang-java">int size = avFile.getSize();
+String ownerObjectId = avFile.getOwnerObjectId();
+</code></pre>
+<p version="828458ae20ed11726296c12069c5d0d9">&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x4E0A;&#x4F20;&#x524D;&#x81EA;&#x52A8;&#x4E00;&#x4E9B;&#x5143;&#x4FE1;&#x606F;&#x4FDD;&#x5B58;&#x8D77;&#x6765;&#xFF0C;&#x4EE5;&#x4FBF;&#x540E;&#x7EED;&#x83B7;&#x53D6;&#xFF0C;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x8FD8;&#x4FDD;&#x5B58;&#x56FE;&#x7247;&#x7684;&#x9AD8;&#x5EA6;&#x548C;&#x5BBD;&#x5EA6;&#xFF1A;</p>
+<pre version="dc2ec42c5a144e653a8103f1a2ea7ba6"><code class="lang-java">avFile.addMetaData(&quot;width&quot;, 100);
+avFile.addMetaData(&quot;height&quot;, 200);
+</code></pre>
+<p version="b43cbbe0e9d50bf05cba718d47d5e2d5">&#x4EE5;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>getMetaData</code> &#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x5143;&#x4FE1;&#x606F;&#x3002;</p>
+<h3 id="-">&#x5220;&#x9664;&#x6587;&#x4EF6;</h3>
+<p version="fcc03181a12a9da4cd6ace9fe8be5184">&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6587;&#x4EF6;&#x7684;&#x5220;&#x9664;&#x6743;&#x9650;&#x662F;&#x4E0D;&#x5F00;&#x653E;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5728;&#x5BA2;&#x6237;&#x7AEF; SDK &#x4E2D;&#x5220;&#x9664;&#x6587;&#x4EF6;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x627E;&#x5230; _File &#x8868;&#xFF0C;&#x8FDB;&#x5165; &#x5176;&#x4ED6; -&gt; &#x6743;&#x9650;&#x8BBE;&#x7F6E; &#x83DC;&#x5355;&#xFF0C;&#x52FE;&#x9009; delete &#x4E3A;&#x6240;&#x6709;&#x7528;&#x6237;&#x90FD;&#x6709;&#x6B64;&#x6743;&#x9650;&#x3002;</p>
+<p version="f7e41739b685a49aac9c6bad214710a7">&#x5220;&#x9664;&#x6587;&#x4EF6;&#x901A;&#x8FC7;&#x4E00;&#x7CFB;&#x5217; <code>delete</code> &#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x8DDF; <code>AVObject</code> &#x7684;&#x5220;&#x9664;&#x7C7B;&#x4F3C;&#xFF1A;</p>
+<pre version="b9ac81ead4e7845389c6e938c2df2c61"><code class="lang-java">avFile.deleteInBackground();
+</code></pre>
+<h3 id="-">&#x56FE;&#x7247;&#x7F29;&#x7565;&#x56FE;</h3>
+<p version="bf501b953c75ae0901aa2002ffe1808f">&#x5982;&#x679C;&#x4F60;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#x662F;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>AVFile</code> &#x7684; <code>getThumbnailUrl</code> &#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x4E00;&#x5F20;&#x7F29;&#x7565;&#x56FE;&#x7684; url&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x7F29;&#x7387;&#x56FE;&#x7684;&#x9AD8;&#x5EA6;&#x3001;&#x5BBD;&#x5EA6;&#x3001;&#x8D28;&#x91CF;&#x7B49;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre version="42309d8f0adc295c862aa54c7dd5a2fd"><code class="lang-java">//&#x5BBD;&#x5EA6;200&#xFF0C;&#x9AD8;&#x5EA6;100&#x7684;&#x7F29;&#x7565;&#x56FE;
+String url = file.getThumbnailUrl(false, 200, 100);
+</code></pre>
+<p version="263ea555b84c582f4a0b93fee7601ec0"><code>getThumbnailUrl</code> &#x65B9;&#x6CD5;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x91CD;&#x8F7D;&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x66F4;&#x591A;&#x9009;&#x9879;&#xFF0C;&#x5305;&#x62EC;&#x8D28;&#x91CF;&#x3001;&#x683C;&#x5F0F;&#x3001;&#x4FDD;&#x771F;&#x7B49;&#x7B49;&#xFF0C;&#x5177;&#x4F53;&#x89C1; javadoc&#x3002;</p>
+<h3 id="-">&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x540D;</h3>
+<p version="41d707a8e2ad02002ddc7a124cfc52b7">&#x6709;&#x7528;&#x6237;&#x53CD;&#x6620;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x62FF;&#x5230;&#x7684; <code>AVFile</code> &#x5728;&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x540D;&#x65F6;&#x8C03;&#x7528; <code>getName()</code>&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x8DDF; <code>getObjectId()</code>&#x4E00;&#x81F4;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5B9E;&#x9645;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#x8FD9;&#x4E2A;&#x662F;&#x6211;&#x4EEC;&#x65E9;&#x671F;&#x7248;&#x672C;&#x4E3A;&#x4E86;&#x517C;&#x5BB9; <code>Parse</code> &#x6709;&#x610F;&#x4E3A;&#x4E4B;&#x7684;&#x3002;&#x4E3A;&#x4E86;&#x4FDD;&#x6301;&#x517C;&#x5BB9;&#x6027;&#x8003;&#x8651;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x51C6;&#x5907;&#x6539;&#x53D8;&#x8FD9;&#x4E2A; API &#x7684;&#x884C;&#x4E3A;&#x3002;
+&#x5982;&#x679C;&#x4F60;&#x6709;&#x53D6;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>AVFile.getOriginalName()</code>;</p>
+<h3 id="-">&#x6587;&#x4EF6;&#x5217;&#x8868;</h3>
+<p version="9571ca49f82b2cee0fa5e434c50d18b1">&#x4E0D;&#x5C11;&#x7528;&#x6237;&#x5728;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x4E2D;&#x53EF;&#x80FD;&#x4F1A;&#x7528;&#x5230;&#x6587;&#x4EF6;&#x5217;&#x8868;&#xFF0C;&#x6765;&#x5C55;&#x793A;&#x7528;&#x6237;&#x53D1;&#x9001;&#x7684;&#x4E00;&#x7EC4;&#x56FE;&#x7247;&#x6216;&#x8005;&#x6587;&#x4EF6;&#x7B49;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x6765;&#x5B8C;&#x6210;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#xFF1A;</p>
+<pre version="96eec774d2650f47c012491f8e20a63e"><code class="lang-java">    List&lt;AVFile&gt; fileList = new LinkedList&lt;AVFile&gt;();
+    fileList.add(file1);
+    fileList.add(file2);
+
+    AVObject testObject = new AVObject(&quot;FileUnitTest&quot;);
+    testObject.addAll(&quot;file_array&quot;, fileList);   //&#x8BF7;&#x4E0D;&#x8981;&#x76F4;&#x63A5;&#x4F7F;&#x7528;put&#x65B9;&#x6CD5;
+    testObject.save();
+</code></pre>
+<h2 id="-">&#x7528;&#x6237;</h2>
+<p version="42584fe93769ab8e8f568ce4be535adc">&#x7528;&#x6237;&#x662F;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6838;&#x5FC3;&#x3002;&#x5BF9;&#x4E8E;&#x4E2A;&#x4EBA;&#x5F00;&#x53D1;&#x8005;&#x6765;&#x8BF4;&#xFF0C;&#x80FD;&#x591F;&#x8BA9;&#x81EA;&#x5DF1;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x79EF;&#x7D2F;&#x5230;&#x591A;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x5C31;&#x80FD;&#x7ED9;&#x81EA;&#x5DF1;&#x5E26;&#x6765;&#x66F4;&#x591A;&#x7684;&#x521B;&#x4F5C;&#x52A8;&#x529B;&#x3002;&#x56E0;&#x6B64; LeanCloud &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x4E13;&#x95E8;&#x7684;&#x7528;&#x6237;&#x7C7B;&#xFF0C;<code>AVUser</code> &#x6765;&#x81EA;&#x52A8;&#x5904;&#x7406;&#x7528;&#x6237;&#x8D26;&#x6237;&#x7BA1;&#x7406;&#x6240;&#x9700;&#x7684;&#x529F;&#x80FD;&#x3002;
+&#x6709;&#x4E86;&#x8FD9;&#x4E2A;&#x7C7B;&#xFF0C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x6DFB;&#x52A0;&#x7528;&#x6237;&#x5E10;&#x6237;&#x529F;&#x80FD;&#x3002;</p>
+<p version="aeaf7327571888a03b64e1bfb0c7545c"><code>AVUser</code> &#x662F;&#x4E00;&#x4E2A; <code>AVObject</code> &#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x5B83;&#x7EE7;&#x627F;&#x4E86; <code>AVObject</code> &#x6240;&#x6709;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5177;&#x6709; <code>AVObject</code> &#x76F8;&#x540C;&#x7684;&#x529F;&#x80FD;&#x3002;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;<code>AVUser</code> &#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E9B;&#x7279;&#x5B9A;&#x7684;&#x5173;&#x4E8E;&#x7528;&#x6237;&#x8D26;&#x6237;&#x76F8;&#x5173;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<h3 id="-">&#x5C5E;&#x6027;</h3>
+<p version="4298020db5a840ff99d408afa77d6412"><code>AVUser</code> &#x9664;&#x4E86;&#x4ECE; <code>AVObject</code> &#x7EE7;&#x627F;&#x7684;&#x5C5E;&#x6027;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x51E0;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li>username: &#x7528;&#x6237;&#x7684;&#x7528;&#x6237;&#x540D;&#xFF08;&#x5FC5;&#x9700;&#xFF09;&#x3002;</li>
+<li>password: &#x7528;&#x6237;&#x7684;&#x5BC6;&#x7801;&#xFF08;&#x5FC5;&#x9700;&#xFF09;&#x3002;</li>
+<li>email: &#x7528;&#x6237;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x5730;&#x5740;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x3002;</li>
+</ul>
+<p version="14f253ef4ed2c0a7ae3efb2504626363">&#x548C;&#x5176;&#x4ED6; <code>AVObject</code> &#x5BF9;&#x8C61;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x8BBE;&#x7F6E; <code>AVUser</code> &#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x662F;&#x4F7F;&#x7528;&#x7684; <code>put</code> &#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x662F;&#x4E13;&#x95E8;&#x7684; <code>setXXX</code> &#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="-">&#x6CE8;&#x518C;</h3>
+<p version="d530bc5d7234d5d20f7b3accdc738779">&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4F1A;&#x505A;&#x7684;&#x7B2C;&#x4E00;&#x4EF6;&#x4E8B;&#x53EF;&#x80FD;&#x662F;&#x8981;&#x6C42;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x7684;&#x6CE8;&#x518C;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<pre version="a2bb36d04912a4b60a82ec3be1f13199"><code class="lang-java">AVUser user = new AVUser();
+user.setUsername(&quot;hjiang&quot;);
+user.setPassword(&quot;f32@ds*@&amp;dsa&quot;);
+user.setEmail(&quot;hang@leancloud.rocks&quot;);
+
+// &#x5176;&#x4ED6;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x50CF;&#x5176;&#x4ED6;AVObject&#x5BF9;&#x8C61;&#x4E00;&#x6837;&#x4F7F;&#x7528;put&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;
+user.put(&quot;phone&quot;, &quot;186-1234-0000&quot;);
+
+user.signUpInBackground(new SignUpCallback() {
+    public void done(AVException e) {
+        if (e == null) {
+            // successfully
+        } else {
+            // failed
+        }
+    }
+});
+</code></pre>
+<p version="02028cca82fe5a0bbc120ed1050c2232">&#x5728;&#x6CE8;&#x518C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x4F1A;&#x8FDB;&#x884C;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x7684;&#x68C0;&#x67E5;&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x6CE8;&#x518C;&#x7684;&#x7528;&#x6237;&#x540D;&#x548C;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x5730;&#x5740;&#x662F;&#x72EC;&#x4E00;&#x65E0;&#x4E8C;&#x7684;&#x3002;&#x6B64;&#x5916;&#xFF0C;<strong>&#x670D;&#x52A1;&#x7AEF;&#x8FD8;&#x4F1A;&#x5BF9;&#x7528;&#x6237;&#x5BC6;&#x7801;&#x8FDB;&#x884C;&#x4E0D;&#x53EF;&#x9006;&#x7684;&#x52A0;&#x5BC6;&#x5904;&#x7406;&#xFF0C;&#x4E0D;&#x4F1A;&#x660E;&#x6587;&#x4FDD;&#x5B58;&#x4EFB;&#x4F55;&#x5BC6;&#x7801;&#xFF0C;&#x5E94;&#x7528;&#x5207;&#x52FF;&#x518D;&#x6B21;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x52A0;&#x5BC6;&#x5BC6;&#x7801;&#xFF0C;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x7B49;&#x529F;&#x80FD;&#x4E0D;&#x53EF;&#x7528;</strong>&#x3002;</p>
+<p version="2dbe21b489110f913d3cf762b654d958">&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x662F; <code>signUpInBackground</code> &#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x4E0D;&#x662F; <code>saveInBackground</code> &#x65B9;&#x6CD5;&#x3002;&#x53E6;&#x5916;&#x8FD8;&#x6709;&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x7684; <code>signUp</code> &#x65B9;&#x6CD5;&#x3002;&#x50CF;&#x5F80;&#x5E38;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x5728;&#x53EF;&#x80FD;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x5F02;&#x6B65;&#x7248;&#x672C;&#x7684; <code>signUp</code> &#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E3B; UI &#x7EBF;&#x7A0B;&#x7684;&#x54CD;&#x5E94;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x9605;&#x8BFB; API &#x4E2D;&#x66F4;&#x591A;&#x7684;&#x6709;&#x5173;&#x8FD9;&#x4E9B;&#x5177;&#x4F53;&#x65B9;&#x6CD5;&#x7684;&#x4F7F;&#x7528;&#x3002;</p>
+<p version="4406473cf2199386b7bcb6a3396c694b">&#x5982;&#x679C;&#x6CE8;&#x518C;&#x4E0D;&#x6210;&#x529F;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x8FD4;&#x56DE;&#x7684;&#x9519;&#x8BEF;&#x5BF9;&#x8C61;&#x3002;&#x6700;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x60C5;&#x51B5;&#x662F;&#xFF0C;&#x7528;&#x6237;&#x540D;&#x6216;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x5DF2;&#x7ECF;&#x88AB;&#x53E6;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4F60;&#x53EF;&#x4EE5;&#x63D0;&#x793A;&#x7528;&#x6237;&#xFF0C;&#x8981;&#x6C42;&#x4ED6;&#x4EEC;&#x5C1D;&#x8BD5;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x7528;&#x6237;&#x540D;&#x8FDB;&#x884C;&#x6CE8;&#x518C;&#x3002;</p>
+<p version="719450db0efd8d45c8dc8ea5b3f354ea">&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x8981;&#x6C42;&#x7528;&#x6237;&#x4F7F;&#x7528; Email &#x505A;&#x4E3A;&#x7528;&#x6237;&#x540D;&#x6CE8;&#x518C;&#xFF0C;&#x8FD9;&#x6837;&#x505A;&#x7684;&#x597D;&#x5904;&#x662F;&#xFF0C;&#x4F60;&#x5728;&#x63D0;&#x4EA4;&#x4FE1;&#x606F;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x5C06;&#x8F93;&#x5165;&#x7684;&#x201C;&#x7528;&#x6237;&#x540D;&#x201C;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x4E3A;&#x7528;&#x6237;&#x7684; Email &#x5730;&#x5740;&#xFF0C;&#x4EE5;&#x540E;&#x5728;&#x7528;&#x6237;&#x5FD8;&#x8BB0;&#x5BC6;&#x7801;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; LeanCloud &#x63D0;&#x4F9B;&#x7684;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x529F;&#x80FD;&#x3002;</p>
+<p version="23765bdf5a40b9f5248f743a47dcbb5f">&#x5173;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x90AE;&#x4EF6;&#x6A21;&#x677F;&#x548C;&#x9A8C;&#x8BC1;&#x94FE;&#x63A5;&#x8BF7;&#x770B;&#x8FD9;&#x7BC7;<a href="http://blog.leancloud.cn/blog/2014/01/09/zi-ding-yi-ying-yong-nei-yong-hu-zhong-she-mi-ma-he-you-xiang-yan-zheng-ye-mian/">&#x535A;&#x5BA2;</a>&#x3002;</p>
+<p version="9747fd9f8a97bae6eadb03ed295494cc">&#x7528;&#x6237;&#x90AE;&#x7BB1;&#x9A8C;&#x8BC1;&#x540E;&#xFF0C;&#x4F1A;&#x8C03;&#x7528; <code>AV.Cloud.onVerified(&apos;email&apos;,function)</code> &#x7684;&#x4E91;&#x4EE3;&#x7801;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x65B9;&#x4FBF;&#x4F60;&#x505A;&#x4E00;&#x4E9B;&#x540E;&#x5904;&#x7406;&#x3002;</p>
+<h3 id="-">&#x767B;&#x5F55;</h3>
+<p version="c81f24877509036bd6661be8a968018d">&#x5F53;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x8BA9;&#x4ED6;&#x4EEC;&#x4EE5;&#x540E;&#x80FD;&#x591F;&#x767B;&#x5F55;&#x5230;&#x4ED6;&#x4EEC;&#x7684;&#x8D26;&#x6237;&#x540E;&#x4F7F;&#x7528;&#x5E94;&#x7528;&#x3002;&#x8981;&#x505A;&#x5230;&#x8FD9;&#x6837;&#x4E00;&#x70B9;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;
+<code>AVUser</code> &#x7C7B;&#x7684; <code>loginInBackground</code> &#x65B9;&#x6CD5;&#x3002;</p>
+<pre version="7fce984c91eedb2400a9e2be0385a71f"><code class="lang-java">AVUser.logInInBackground(&quot;username&quot;, &quot;password&quot;, new LogInCallback() {
+    public void done(AVUser user, AVException e) {
+        if (user != null) {
+            // &#x767B;&#x5F55;&#x6210;&#x529F;
+        } else {
+            // &#x767B;&#x5F55;&#x5931;&#x8D25;
+        }
+    }
+});
+</code></pre>
+<h3 id="-">&#x5F53;&#x524D;&#x7528;&#x6237;</h3>
+<p version="03cc9acffc6b2d8691140b8003803b0a">&#x5982;&#x679C;&#x7528;&#x6237;&#x5728;&#x6BCF;&#x6B21;&#x6253;&#x5F00;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x65F6;&#x90FD;&#x8981;&#x767B;&#x5F55;&#xFF0C;&#x8FD9;&#x5C06;&#x4F1A;&#x76F4;&#x63A5;&#x5F71;&#x54CD;&#x5230;&#x4F60;&#x5E94;&#x7528;&#x7684;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x3002;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#x7684; <code>currentUser</code> &#x5BF9;&#x8C61;&#x3002;</p>
+<p version="906a24d588476bd0b30adf1b0cb57f3f">&#x6BCF;&#x5F53;&#x4F60;&#x6CE8;&#x518C;&#x6210;&#x529F;&#x6216;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x767B;&#x5F55;&#x6210;&#x529F;&#xFF0C;&#x90FD;&#x4F1A;&#x5728;&#x672C;&#x5730;&#x78C1;&#x76D8;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x7684;&#x7528;&#x6237;&#x5BF9;&#x8C61;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x6765;&#x83B7;&#x53D6;&#x8FD9;&#x4E2A;&#x7F13;&#x5B58;&#x7684;&#x7528;&#x6237;&#x5BF9;&#x8C61;&#x6765;&#x8FDB;&#x884C;&#x767B;&#x5F55;&#xFF1A;</p>
+<pre version="f85fe61d3264a07751d3604595b35dd1"><code class="lang-java">AVUser currentUser = AVUser.getCurrentUser();
+if (currentUser != null) {
+    // &#x5141;&#x8BB8;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x5E94;&#x7528;
+} else {
+    //&#x7F13;&#x5B58;&#x7528;&#x6237;&#x5BF9;&#x8C61;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C; &#x53EF;&#x6253;&#x5F00;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x754C;&#x9762;&#x2026;
+}
+</code></pre>
+<p version="36feb12c0343e417b2d7b6c4a741f691">&#x5F53;&#x7136;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#x6E05;&#x9664;&#x7F13;&#x5B58;&#x7528;&#x6237;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre version="1d6fd09d11d0efd4f355c49a9f8473ac"><code class="lang-java">AVUser.logOut();             //&#x6E05;&#x9664;&#x7F13;&#x5B58;&#x7528;&#x6237;&#x5BF9;&#x8C61;
+AVUser currentUser = AVUser.getCurrentUser(); // &#x73B0;&#x5728;&#x7684;currentUser&#x662F;null&#x4E86;
+</code></pre>
+<h3 id="-">&#x91CD;&#x7F6E;&#x5BC6;&#x7801;</h3>
+<p version="8f7d4cea79ecefe163c458e7250520c8">&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x4E8B;&#x5B9E;&#xFF0C;&#x4E00;&#x65E6;&#x4F60;&#x5F15;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x5BC6;&#x7801;&#x7CFB;&#x7EDF;&#xFF0C;&#x90A3;&#x4E48;&#x80AF;&#x5B9A;&#x4F1A;&#x6709;&#x7528;&#x6237;&#x5FD8;&#x8BB0;&#x5BC6;&#x7801;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x5BF9;&#x4E8E;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x8BA9;&#x7528;&#x6237;&#x5B89;&#x5168;&#x5730;&#x91CD;&#x7F6E;&#x8D77;&#x5BC6;&#x7801;&#x3002;
+&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x7684;&#x6D41;&#x7A0B;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EA;&#x8981;&#x6C42;&#x7528;&#x6237;&#x8F93;&#x5165;&#x6CE8;&#x518C;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x5730;&#x5740;&#x5373;&#x53EF;&#xFF1A;</p>
+<pre version="610ecc330c59db60dc95e9321703f674"><code class="lang-java">AVUser.requestPasswordResetInBackground(&quot;myemail@example.com&quot;, new RequestPasswordResetCallback() {
+    public void done(AVException e) {
+        if (e == null) {
+            // &#x5DF2;&#x53D1;&#x9001;&#x4E00;&#x4EFD;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x7684;&#x6307;&#x4EE4;&#x5230;&#x7528;&#x6237;&#x7684;&#x90AE;&#x7BB1;
+        } else {
+            // &#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x51FA;&#x9519;&#x3002;
+        }
+    }
+});
+</code></pre>
+<p version="9f8b21e738721ab0259c93f9c4acb9d7">&#x5BC6;&#x7801;&#x91CD;&#x7F6E;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x7528;&#x6237;&#x8F93;&#x5165;&#x4ED6;&#x4EEC;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#xFF0C;&#x8BF7;&#x6C42;&#x91CD;&#x7F6E;&#x81EA;&#x5DF1;&#x7684;&#x5BC6;&#x7801;&#x3002;</li>
+<li>LeanCloud &#x5411;&#x4ED6;&#x4EEC;&#x7684;&#x90AE;&#x7BB1;&#x53D1;&#x9001;&#x4E00;&#x5C01;&#x5305;&#x542B;&#x7279;&#x6B8A;&#x7684;&#x5BC6;&#x7801;&#x91CD;&#x7F6E;&#x8FDE;&#x63A5;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x3002;</li>
+<li>&#x7528;&#x6237;&#x6839;&#x636E;&#x5411;&#x5BFC;&#x70B9;&#x51FB;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x8FDE;&#x63A5;&#xFF0C;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x8BA9;&#x4ED6;&#x4EEC;&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BC6;&#x7801;&#x3002;</li>
+<li>&#x7528;&#x6237;&#x7684;&#x5BC6;&#x7801;&#x5DF2;&#x88AB;&#x91CD;&#x7F6E;&#x4E3A;&#x65B0;&#x8F93;&#x5165;&#x7684;&#x5BC6;&#x7801;&#x3002;</li>
+</ul>
+<p version="dd60e1ded43eb2ef76780ecddcd40712">&#x5173;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x90AE;&#x4EF6;&#x6A21;&#x677F;&#x548C;&#x9A8C;&#x8BC1;&#x94FE;&#x63A5;&#x8BF7;&#x770B;&#x535A;&#x5BA2;&#x6587;&#x7AE0; <a href="http://blog.leancloud.cn/blog/2014/01/09/zi-ding-yi-ying-yong-nei-yong-hu-zhong-she-mi-ma-he-you-xiang-yan-zheng-ye-mian/">&#x300A;&#x81EA;&#x5B9A;&#x4E49;&#x5E94;&#x7528;&#x5185;&#x7528;&#x6237;&#x91CD;&#x8BBE;&#x5BC6;&#x7801;&#x548C;&#x90AE;&#x7BB1;&#x9A8C;&#x8BC1;&#x9875;&#x9762;&#x300B;</a>&#x3002;</p>
+<p version="9747fd9f8a97bae6eadb03ed295494cc">&#x7528;&#x6237;&#x90AE;&#x7BB1;&#x9A8C;&#x8BC1;&#x540E;&#xFF0C;&#x4F1A;&#x8C03;&#x7528; <code>AV.Cloud.onVerified(&apos;email&apos;,function)</code> &#x7684;&#x4E91;&#x4EE3;&#x7801;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x65B9;&#x4FBF;&#x4F60;&#x505A;&#x4E00;&#x4E9B;&#x540E;&#x5904;&#x7406;&#x3002;</p>
+<h3 id="-">&#x4FEE;&#x6539;&#x5BC6;&#x7801;</h3>
+<p version="a7536369a9d136b453b148138b1e54fc">&#x5F53;&#x7528;&#x6237;&#x7CFB;&#x7EDF;&#x4E2D;&#x5B58;&#x5728;&#x5BC6;&#x7801;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x5B58;&#x5728;&#x7528;&#x6237;&#x66F4;&#x6539;&#x5BC6;&#x7801;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x5BF9;&#x4E8E;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x80FD;&#x591F;&#x540C;&#x65F6;&#x9A8C;&#x8BC1;&#x8001;&#x5BC6;&#x7801;&#x548C;&#x4FEE;&#x6539;&#x65B0;&#x5BC6;&#x7801;:</p>
+<pre version="aca2e7b972ad310ff23ffc059e199c53"><code class="lang-java">    AVUser userA = AVUser.logIn(&quot;yourusername&quot;, &quot;yourpassword&quot;);//&#x8BF7;&#x786E;&#x4FDD;&#x7528;&#x6237;&#x5F53;&#x524D;&#x7684;&#x6709;&#x6548;&#x767B;&#x5F55;&#x72B6;&#x6001;
+    userA.updatePasswordInBackground(&quot;old_password&quot;, &quot;new_password&quot;,new UpdatePasswordCallback() {
+
+      @Override
+      public void done(AVException e) {
+        Log.d(&quot;TAG&quot;,&quot;something wrong&quot;);
+      }
+    });
+</code></pre>
+<p version="fb2380a98fb6064c2f9b7ac3b0467939">&#x5982;&#x679C;&#x8981;&#x6C42;&#x66F4;&#x6539;&#x5BC6;&#x7801;&#x7684;&#x7528;&#x6237;&#x4E0D;&#x518D;&#x767B;&#x5F55;&#x72B6;&#x6001;&#x3001;&#x539F;&#x5BC6;&#x7801;&#x9519;&#x8BEF;&#x548C;&#x7528;&#x6237;&#x4E0D;&#x5B58;&#x5728;&#x7B49;&#x60C5;&#x51B5;&#x90FD;&#x4F1A;&#x901A;&#x8FC7; callback &#x8FD4;&#x56DE;&#x3002;</p>
+<h3 id="-">&#x53D1;&#x9001;&#x9A8C;&#x8BC1;&#x90AE;&#x4EF6;</h3>
+<p version="c3d672575dc19a97990ed0d802b1d413">&#x9A8C;&#x8BC1;&#x90AE;&#x4EF6;&#x5BF9;&#x4E8E;&#x5F88;&#x591A;&#x5E94;&#x7528;&#x6765;&#x8BF4;&#x5E76;&#x975E;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x7136;&#x800C;&#x4E00;&#x65E6;&#x906D;&#x9047;&#x5230;&#x6076;&#x52A3;&#x7684;&#x5F3A;&#x6CE8;&#x4E8B;&#x4EF6;&#x65F6;&#xFF0C;&#x901A;&#x8FC7;&#x9A8C;&#x8BC1;&#x90AE;&#x4EF6;&#x6765;&#x963B;&#x62E6; spam &#x7528;&#x6237;&#x7684;&#x653B;&#x51FB;&#x5C31;&#x6210;&#x4E3A;&#x6700;&#x76F4;&#x63A5;&#x548C;&#x7B80;&#x4FBF;&#x7684;&#x65B9;&#x6CD5;&#x3002;LeanCloud &#x540C;&#x6837;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8BA9;&#x7528;&#x6237;&#x514D;&#x53BB;&#x8FD9;&#x65B9;&#x9762;&#x7684;&#x62C5;&#x5FE7;&#x3002;
+&#x53D1;&#x9001;&#x9A8C;&#x8BC1;&#x90AE;&#x4EF6;&#x7684;&#x6D41;&#x7A0B;&#x4E5F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5728;&#x5F00;&#x53D1;&#x8005;&#x83B7;&#x5F97;&#x7528;&#x6237;&#x7684;&#x90AE;&#x7BB1;&#x4E4B;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x9A8C;&#x8BC1;&#x90AE;&#x4EF6;&#xFF1A;</p>
+<pre version="8129557231010e5da669e887de1abdb8"><code class="lang-java">        AVUser.requestEmailVerfiyInBackground(email, new RequestEmailVerifyCallback() {
+
+          @Override
+          public void done(AVException e) {
+
+          }
+        });
+</code></pre>
+<p version="23765bdf5a40b9f5248f743a47dcbb5f">&#x5173;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x90AE;&#x4EF6;&#x6A21;&#x677F;&#x548C;&#x9A8C;&#x8BC1;&#x94FE;&#x63A5;&#x8BF7;&#x770B;&#x8FD9;&#x7BC7;<a href="http://blog.leancloud.cn/blog/2014/01/09/zi-ding-yi-ying-yong-nei-yong-hu-zhong-she-mi-ma-he-you-xiang-yan-zheng-ye-mian/">&#x535A;&#x5BA2;</a>&#x3002;</p>
+<h3 id="-">&#x624B;&#x673A;&#x53F7;&#x7801;&#x9A8C;&#x8BC1;</h3>
+<p version="78dd2b3ece4002ef602ecbb31ee4612a">&#x5728;&#x5E94;&#x7528;&#x8BBE;&#x7F6E;&#x4E2D;&#x6253;&#x5F00;<code>&#x6CE8;&#x518C;&#x624B;&#x673A;&#x53F7;&#x7801;&#x9A8C;&#x8BC1;</code>&#x9009;&#x9879;&#x540E;&#xFF0C;&#x5F53;&#x4F60;&#x5728;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x65F6;&#xFF0C;&#x586B;&#x5199;&#x7528;&#x6237;&#x624B;&#x673A;&#x5B57;&#x6BB5;&#x540E;&#xFF0C;LeanCloud &#x4F1A;&#x81EA;&#x52A8;&#x5411;&#x8BE5;&#x624B;&#x673A;&#x53F7;&#x7801;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x9A8C;&#x8BC1;&#x77ED;&#x4FE1;&#xFF0C;&#x7528;&#x6237;&#x5728;&#x8F93;&#x5165;&#x9A8C;&#x8BC1;&#x7801;&#x4EE5;&#x540E;&#xFF0C;&#x8BE5;&#x7528;&#x6237;&#x5C31;&#x88AB;&#x8868;&#x793A;&#x4E3A;&#x5DF2;&#x7ECF;&#x9A8C;&#x8BC1;&#x8FC7;&#x624B;&#x673A;&#x3002;</p>
+<p version="0186c0bc78819e6f8b536df4a323c8ef">&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5C31;&#x53EF;&#x53D1;&#x9001;&#x6CE8;&#x518C;&#x9A8C;&#x8BC1;&#x7801;&#x5230;&#x7528;&#x6237;&#x624B;&#x673A;:</p>
+<pre version="3f7b2b755153204349b46c3e81ac9cf3"><code class="lang-java">    AVUser user = new AVUser();
+    user.setUsername(&quot;hang@leancloud.rocks&quot;);
+    user.setPassword(&quot;whateverpassword&quot;);
+    user.setMobilePhoneNumber(&quot;13613613613&quot;);   //&#x672C;&#x53F7;&#x7801;&#x968F;&#x673A;&#x751F;&#x6210;&#x5982;&#x6709;&#x96F7;&#x540C;&#x7EAF;&#x5C5E;&#x5DE7;&#x5408;
+    user.signUp();
+
+    //&#x5982;&#x679C;&#x4F60;&#x7684;&#x8D26;&#x53F7;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x53D1;&#x9001;&#x77ED;&#x4FE1;&#x8BF7;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;
+    AVUser.requestMobilePhoneVerifyInBackground(&quot;13613613613&quot;,new RequestMobileCodeCallback() {
+
+      @Override
+      public void done(AVException e) {
+          //&#x53D1;&#x9001;&#x4E86;&#x9A8C;&#x8BC1;&#x7801;&#x4EE5;&#x540E;&#x505A;&#x70B9;&#x4EC0;&#x4E48;&#x5462;
+      }
+    })
+</code></pre>
+<p version="65b364a9d6dc367270b621fcc2b51234">&#x8C03;&#x7528;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5373;&#x53EF;&#x9A8C;&#x8BC1;&#x9A8C;&#x8BC1;&#x7801;:</p>
+<pre version="bd2a09a063bff4b235cee092c5adea8c"><code class="lang-java">      AVUser.verifyMobilePhoneInBackground(smsCode, new AVMobilePhoneVerifyCallback() {
+
+      @Override
+      public void done(AVException e) {
+        // TODO Auto-generated method stub
+
+      }
+    });
+</code></pre>
+<p version="f16210b2b23ca6b193303d6fb047cf1f">&#x9A8C;&#x8BC1;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x7684; <code>mobilePhoneVerified</code> &#x5C5E;&#x6027;&#x53D8;&#x4E3A; true&#xFF0C;&#x5E76;&#x4E14;&#x8C03;&#x7528;&#x4E91;&#x4EE3;&#x7801;&#x7684; <code>AV.Cloud.onVerifed(&apos;sms&apos;, function)</code>&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="-">&#x624B;&#x673A;&#x53F7;&#x7801;&#x767B;&#x5F55;</h3>
+<p version="2a9626074058dcb8e6bbd1db2835cff3">&#x5728;&#x624B;&#x673A;&#x53F7;&#x7801;&#x88AB;&#x9A8C;&#x8BC1;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x624B;&#x673A;&#x53F7;&#x7801;&#x8FDB;&#x884C;&#x767B;&#x5F55;&#x3002;&#x624B;&#x673A;&#x53F7;&#x7801;&#x5305;&#x62EC;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;&#x624B;&#x673A;&#x53F7;&#x7801;&#xFF0B;&#x5BC6;&#x7801;&#x65B9;&#x5F0F;&#xFF0C;&#x624B;&#x673A;&#x53F7;&#x7801;&#xFF0B;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x65B9;&#x5F0F;&#x3002;</p>
+<p version="810e3521606945372cd799c627925ebf">&#x4EE5;&#x4E0B;&#x4E3A;&#x624B;&#x673A;&#x53F7;&#x7801;&#xFF0B;&#x5BC6;&#x7801;&#x6765;&#x767B;&#x5F55;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre version="080cd636d29d8231d711beed2782f1da"><code class="lang-java">    AVUser.loginByMobilePhoneNumber(&quot;13613613613&quot;,&quot;whateverpassword&quot;);//&#x672C;&#x53F7;&#x7801;&#x968F;&#x673A;&#x751F;&#x6210;&#x5982;&#x6709;&#x96F7;&#x540C;&#x7EAF;&#x5C5E;&#x5DE7;&#x5408;
+</code></pre>
+<p version="9f9d24442f0952d5a0834b0b79d69b32">&#x4EE5;&#x4E0B;&#x4E3A;&#x53D1;&#x9001;&#x767B;&#x5F55;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#xFF1A;</p>
+<pre version="e00a6336f343e316bafd19932e2ba96c"><code class="lang-java">    AVUser.requestLoginSmsCodeInBackground(&quot;13613613613&quot;, new RequestMobileCodeCallback() {
+
+      @Override
+      public void done(AVException e) {
+        // &#x767B;&#x5F55;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x53D1;&#x9001;&#x4EE5;&#x540E;&#x4F60;&#x8981;&#x505A;&#x70B9;&#x4EC0;&#x4E48;&#x5462;
+
+      }
+    });
+</code></pre>
+<p version="6066fe4c29c2d92dfe2532f5089546a2">&#x6700;&#x540E;&#x4F7F;&#x7528;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#xFF0B;&#x624B;&#x673A;&#x53F7;&#x7801;&#x8FDB;&#x884C;&#x767B;&#x5F55;:</p>
+<pre version="cd4ba74f7ff4528cb9925e3c6f1df86f"><code class="lang-java">    AVUser.loginBySMSCodeInBackground(&quot;13613613613&quot;, smsCode, new LogInCallback&lt;AVUser&gt;() {
+
+      @Override
+      public void done(AVUser user, AVException e) {
+
+      }
+    });
+</code></pre>
+<h3 id="-">&#x624B;&#x673A;&#x53F7;&#x7801;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;</h3>
+<p version="9c77e34e4c21852f83c4c5ba7c4e8e39">&#x5982;&#x679C;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x624B;&#x673A;&#x53F7;&#x7801;&#x6CE8;&#x518C;&#x6216;&#x8005;&#x9A8C;&#x8BC1;&#x8FC7;&#x624B;&#x673A;&#x53F7;&#x7801;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x624B;&#x673A;&#x77ED;&#x4FE1;&#x6765;&#x5B9E;&#x73B0;<code>&#x5FD8;&#x8BB0;&#x5BC6;&#x7801;</code>&#x529F;&#x80FD;&#xFF1A;</p>
+<pre version="5817c643714ed820be4122cfc50e26c6"><code class="lang-java">   AVUser.requestPasswordResetBySmsCodeInBackground(&quot;12312312312&quot;, new RequestMobileCodeCallback() {
+          @Override
+          public void done(AVException e) {
+           if(e==null){
+             //&#x53D1;&#x9001;&#x6210;&#x529F;&#x4E86;
+           }
+          }
+        });
+</code></pre>
+<p version="d66deafadfa87fac6c3072874e9ecaa4">&#x4E4B;&#x540E;&#x5728;&#x7528;&#x6237;&#x6536;&#x5230;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x4E4B;&#x540E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x5BC6;&#x7801;&#x91CD;&#x7F6E;:</p>
+<pre version="8ed5f4a11c2707fd73bd2473beea283e"><code class="lang-java">  AVUser.resetPasswordBySmsCodeInBackground(smsCode, newPassword, new UpdatePasswordCallback() {
+      @Override
+      public void done(AVException e) {
+        if(e == null){
+        //&#x5BC6;&#x7801;&#x66F4;&#x6539;&#x6210;&#x529F;&#x4E86;&#xFF01;
+        }
+      }
+    });
+</code></pre>
+<p version="a5fdf47bbcd75ec5bfa42975339ea36f">&#x4FEE;&#x6539;&#x6210;&#x529F;&#x4EE5;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x65B0;&#x5BC6;&#x7801;&#x767B;&#x5F55;&#x4E86;&#x3002;</p>
+<h3 id="-">&#x67E5;&#x8BE2;</h3>
+<p version="872f45193507ae0ac778f8f4c2c91f9b"><strong>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x65B0;&#x521B;&#x5EFA;&#x5E94;&#x7528;&#x7684; <code>_User</code> &#x8868;&#x7684;&#x67E5;&#x8BE2;&#x6743;&#x9650;&#x9ED8;&#x8BA4;&#x662F;&#x5173;&#x95ED;&#x7684;&#xFF0C;&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x63A8;&#x8350;&#x4F60;&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x91CC;&#x5C01;&#x88C5;&#x7528;&#x6237;&#x67E5;&#x8BE2;&#xFF0C;&#x53EA;&#x67E5;&#x8BE2;&#x7279;&#x5B9A;&#x6761;&#x4EF6;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x907F;&#x514D;&#x5F00;&#x653E;&#x7528;&#x6237;&#x8868;&#x7684;&#x5168;&#x90E8;&#x67E5;&#x8BE2;&#x6743;&#x9650;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; class &#x6743;&#x9650;&#x8BBE;&#x7F6E;&#x6253;&#x5F00;&#x67E5;&#x8BE2;&#x6743;&#x9650;&#xFF0C;&#x8BF7;&#x53C2;&#x8003; <a href="data_security.html#Class_&#x7EA7;&#x522B;&#x7684;&#x6743;&#x9650;">&#x6570;&#x636E;&#x4E0E;&#x5B89;&#x5168; - Class &#x7EA7;&#x522B;&#x7684;&#x6743;&#x9650;</a>&#x3002;</strong></p>
+<p version="e296fd1bc3e47639d9bd3e3f8950de6e">&#x67E5;&#x8BE2;&#x7528;&#x6237;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x7684;&#x7528;&#x6237;&#x67E5;&#x8BE2;&#x5BF9;&#x8C61;&#x6765;&#x5B8C;&#x6210;&#xFF1A;</p>
+<pre version="b65a75db1c02221ac85b6f882422a636"><code class="lang-java">AVQuery&lt;AVUser&gt; query = AVUser.getQuery();
+query.whereEqualTo(&quot;gender&quot;, &quot;female&quot;);
+query.findInBackground(new FindCallback&lt;AVUser&gt;() {
+    public void done(List&lt;AVUser&gt; objects, AVException e) {
+        if (e == null) {
+            // &#x67E5;&#x8BE2;&#x6210;&#x529F;
+        } else {
+            // &#x67E5;&#x8BE2;&#x51FA;&#x9519;
+        }
+    }
+})
+</code></pre>
+<h3 id="-">&#x533F;&#x540D;&#x7528;&#x6237;</h3>
+<p version="b2c8a7e4c8886eb5e243b2a3b30b8052">&#x5982;&#x679C;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x5F31;&#x5316;&#x7684;&#x7528;&#x6237;&#x7CFB;&#x7EDF;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8003;&#x8651; LeanCloud &#x63D0;&#x4F9B;&#x7684;&#x533F;&#x540D;&#x7528;&#x6237;&#x7CFB;&#x7EDF;&#x6765;&#x5B9E;&#x73B0;&#x4F60;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<p version="8ecbbf9fce30fed6d8907af16d41e7d5">&#x4F60;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x4EE5;&#x540E;&#x4E00;&#x4E2A;&#x533F;&#x540D;&#x7684;&#x7528;&#x6237;&#x8D26;&#x53F7;&#xFF1A;</p>
+<pre version="cd738c8eceed3663146b106ed06d488f"><code class="lang-java">    AVAnonymousUtils.logIn(new LogInCallback&lt;AVUser&gt;() {
+      @Override
+      public void done(AVUser user, AVException e) {
+          ...
+      }
+    });
+</code></pre>
+<p version="315613d527d53105f6f12a72fbc479bf">&#x5F53;&#x4F60;&#x7684;&#x7528;&#x6237;&#x7CFB;&#x7EDF;&#x517C;&#x6709;&#x533F;&#x540D;&#x548C;&#x201C;&#x5B9E;&#x540D;&#x201D;&#x7684;&#x8D26;&#x53F7;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>AVUser.isAnonymous()</code>&#x6765;&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x4E00;&#x4E2A;&#x533F;&#x540D;&#x7528;&#x6237;&#x3002;</p>
+<h3 id="-">&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x67E5;&#x770B;&#x7528;&#x6237;&#x8868;</h3>
+<p version="b16297bbe4b8e6490aa63a3df0319f4a">User &#x8868;&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x8868;&#xFF0C;&#x4E13;&#x95E8;&#x5B58;&#x50A8; <code>AVUser</code> &#x5BF9;&#x8C61;&#x3002;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x7AEF;&#xFF0C;&#x4F60;&#x4F1A;&#x770B;&#x5230;&#x4E00;&#x4E2A; _User &#x8868;&#x3002;</p>
+<h2 id="-">&#x5730;&#x7406;&#x4F4D;&#x7F6E;</h2>
+<p version="89ce9b58b512c2bf0108c3d48b9b76fb">LeanCloud &#x5141;&#x8BB8;&#x7528;&#x6237;&#x6839;&#x636E;&#x5730;&#x7403;&#x7684;&#x7ECF;&#x5EA6;&#x548C;&#x7EAC;&#x5EA6;&#x5750;&#x6807;&#x8FDB;&#x884C;&#x57FA;&#x4E8E;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x7684;&#x4FE1;&#x606F;&#x67E5;&#x8BE2;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728; <code>AVObject</code> &#x7684;&#x67E5;&#x8BE2;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A; <code>AVGeoPoint</code> &#x7684;&#x5BF9;&#x8C61;&#x67E5;&#x8BE2;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8F7B;&#x677E;&#x67E5;&#x627E;&#x51FA;&#x79BB;&#x5F53;&#x524D;&#x7528;&#x6237;&#x6700;&#x63A5;&#x8FD1;&#x7684;&#x4FE1;&#x606F;&#x6216;&#x5730;&#x70B9;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<h3 id="-">&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x5BF9;&#x8C61;</h3>
+<p version="4e3721f34601aee02e7115cc9da0bfd6">&#x9996;&#x5148;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>AVGeoPoint</code> &#x5BF9;&#x8C61;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5317;&#x7EAC; 39.9 &#x5EA6;&#x3001;&#x4E1C;&#x7ECF; 116.4 &#x5EA6;&#x7684; <code>AVGeoPoint</code> &#x5BF9;&#x8C61;&#xFF08;LeanCloud &#x5317;&#x4EAC;&#x529E;&#x516C;&#x5BA4;&#x6240;&#x5728;&#x5730;&#xFF09;&#xFF1A;</p>
+<pre version="6a02835b17a8ea6e543ab23ade2a78b5"><code class="lang-java">AVGeoPoint point = new AVGeoPoint(39.9, 116.4);
+</code></pre>
+<p version="48da2a0a948d97e8f85de42dcfed9b49">&#x6DFB;&#x52A0;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;</p>
+<pre version="d97fc161b8b2a7e4218aa4bcdea3577f"><code class="lang-java">postObject.put(&quot;location&quot;, point);
+</code></pre>
+<h3 id="-">&#x5730;&#x7406;&#x67E5;&#x8BE2;</h3>
+<p version="d0995768c89443869f2e59ccef16c855">&#x73B0;&#x5728;&#xFF0C;&#x4F60;&#x7684;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x6709;&#x4E86;&#x4E00;&#x5B9A;&#x7684;&#x5730;&#x7406;&#x5750;&#x6807;&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x6D4B;&#x8BD5;&#x627E;&#x51FA;&#x6700;&#x63A5;&#x8FD1;&#x67D0;&#x4E2A;&#x70B9;&#x7684;&#x4FE1;&#x606F;&#x4E86;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>AVQuery</code> &#x5BF9;&#x8C61;&#x7684; <code>whereNear</code> &#x65B9;&#x6CD5;&#x6765;&#x8FD9;&#x6837;&#x505A;&#xFF1A;</p>
+<pre version="c848da6150783a3339bfe838538c6e04"><code class="lang-java">AVGeoPoint userLocation = (AVGeoPoint) userObject.get(&quot;location&quot;);
+AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(&quot;Post&quot;);
+query.whereNear(&quot;location&quot;, userLocation);
+query.setLimit(10);            //&#x83B7;&#x53D6;&#x6700;&#x63A5;&#x8FD1;&#x7528;&#x6237;&#x5730;&#x70B9;&#x7684;10&#x6761;&#x5FAE;&#x535A;
+ArrayList&lt;AVObject&gt; nearPosts = query.find();
+</code></pre>
+<p version="7354e75fa7d0e09ddf63084658b866e7">&#x5728;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;nearPosts &#x662F;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x7684;&#x8DDD;&#x79BB; userLocation &#x70B9;&#xFF08;&#x6700;&#x8FD1;&#x5230;&#x6700;&#x8FDC;&#xFF09;&#x7684;&#x5BF9;&#x8C61;&#x6570;&#x7EC4;&#x3002;&#x6CE8;&#x610F;&#xFF1A;<strong>&#x5982;&#x679C;&#x5728;&#x6B64;&#x4E4B;&#x540E;&#x53C8;&#x4F7F;&#x7528;&#x4E86; <code>orderByAscending()</code> &#x6216; <code>orderByDescending()</code> &#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x6309;&#x8DDD;&#x79BB;&#x6392;&#x5E8F;&#x4F1A;&#x88AB;&#x65B0;&#x6392;&#x5E8F;&#x8986;&#x76D6;&#x3002;</strong></p>
+<p version="2253e8a1c7b103d8ee12b2f0eb40a018">&#x8981;&#x9650;&#x5236;&#x67E5;&#x8BE2;&#x6307;&#x5B9A;&#x8DDD;&#x79BB;&#x8303;&#x56F4;&#x7684;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>whereWithinKilometers</code>&#x3001;<code>whereWithinMiles</code> &#x6216; <code>whereWithinRadians</code> &#x65B9;&#x6CD5;&#x3002;</p>
+<p version="2b6dd203b7a0ac52c4ce9d1a3dbda6c1">&#x8981;&#x67E5;&#x8BE2;&#x4E00;&#x4E2A;&#x77E9;&#x5F62;&#x8303;&#x56F4;&#x5185;&#x7684;&#x4FE1;&#x606F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>whereWithinGeoBox</code> &#x6765;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre version="dd3e7c0a873bdd523dc9f3316b4d31fd"><code class="lang-java">AVGeoPoint point1 = new AVGeoPoint(39.97, 116.33);
+AVGeoPoint point2 = new AVGeoPoint(39.99, 116.37);
+AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(&quot;Post&quot;);
+query.whereWithinGeoBox(&quot;location&quot;, point1, point2);
+ArrayList&lt;AVObject&gt; posts = query.find();
+</code></pre>
+<h3 id="-">&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h3>
+<p version="eb88e89cc888a72e7a6b5c39bfb3f458">&#x76EE;&#x524D;&#x6709;&#x51E0;&#x4E2A;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;&#xFF1A;</p>
+<ul>
+<li>&#x6BCF;&#x4E2A; <code>AVObject</code> &#x6570;&#x636E;&#x5BF9;&#x8C61;&#x4E2D;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A; <code>AVGeoPoint</code> &#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x7684;&#x70B9;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7;&#x89C4;&#x5B9A;&#x7684;&#x8303;&#x56F4;&#x3002;&#x7EAC;&#x5EA6;&#x7684;&#x8303;&#x56F4;&#x5E94;&#x8BE5;&#x662F;&#x5728; -90.0 &#x5230; 90.0 &#x4E4B;&#x95F4;&#x3002;&#x7ECF;&#x5EA6;&#x7684;&#x8303;&#x56F4;&#x5E94;&#x8BE5;&#x662F;&#x5728; -180.0 &#x5230; 180.0 &#x4E4B;&#x95F4;&#x3002;&#x5982;&#x679C;&#x4F60;&#x6DFB;&#x52A0;&#x7684;&#x7ECF;&#x7EAC;&#x5EA6;&#x8D85;&#x51FA;&#x4E86;&#x4EE5;&#x4E0A;&#x8303;&#x56F4;&#xFF0C;&#x5C06;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x9519;&#x8BEF;&#x3002;</li>
+</ul>
+<!--
+## 短信验证API
+除了上文提到的短信登录与短信密码重置的功能外，我们也同时提供了与账号无关的短信服务。
+
+```java
+AVOSCloud.requestSMSCodeInBackground("12312312312", null, "短信验证", 10,
+                    new RequestMobileCodeCallback(){
+                      @Override
+                      public void done(AVException e){
+                          if(e==null){
+                      //发送成功
+                    }
+                      }
+                    })
+```
+
+除了这种最简单的调用方法以外，我们也支持短信模板的调用。
+
+```java
+  Map<String,Object> env = new HashMap<String,Object>();
+  env.put("name","LeanCloud Test");   //这里放的都是你在短信模板中间定义的变量名和对应想要替换的值
+
+  AVOSCloud.requestSMSCodeInBackground("12312312312", "模板名称", env, new RequestMobileCodeCallback(){
+                      @Override
+                      public void done(AVException e){
+                          if(e==null){
+                      //发送成功
+                    }
+                      }
+                    });
+```
+
+### 语音验证码
+语音验证码，是通过电话直接呼叫用户的电话号码来播报验证码。它可以作为一种备选方案，来解决因各种原因导致短信无法及时到达的问题
+
+```java
+  AVOSCloud.requestVoiceCodeInBackground("12312312312",
+                   new RequestMobileCodeCallback(){
+                        @Override
+                      public void done(AVException e){
+                          if(e==null){
+                      //发送成功
+                    }
+                      }});
+```
+
+### 验证码校验
+
+不管是短信验证码还是语音验证码，用户收到验证码以后都可以通过统一的方法来进行验证：
+
+```java
+  AVOSCloud.verifyCodeInBackground("123456", "12312312312",
+                  new AVMobilePhoneVerifyCallback(){
+                            @Override
+                    public void done(AVException e){
+                    if(e==null){
+                      //发送成功
+                     }
+                    }
+  })
+```
+-->
+<h2 id="-">&#x8C03;&#x7528;&#x4E91;&#x4EE3;&#x7801;</h2>
+<h3 id="-">&#x8C03;&#x7528;&#x51FD;&#x6570;</h3>
+<p version="54cbe96199f9743e1a2295c2b8c4c6bf">&#x4F7F;&#x7528; <code>AVCloud</code> &#x7C7B;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x6765;&#x8C03;&#x7528;&#x4E91;&#x4EE3;&#x7801;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre version="6bd209e15a55c2b7dbc6f57f1eef20e6"><code class="lang-java"> Map&lt;String,Object&gt; parameters = ......
+ AVCloud.callFunctionInBackground(&quot;publishPost&quot;, parameters, new FunctionCallback() {
+      public void done(Object object, AVException e) {
+          if (e == null) {
+              processResponse(object);
+          } else {
+              handleError();
+          }
+      }
+  }
+</code></pre>
+<p version="39e27ce7dfb7df9b347e50820c2f7618"><code>publishPost</code> &#x662F;&#x51FD;&#x6570;&#x7684;&#x540D;&#x79F0;&#xFF0C;<code>parameters</code> &#x662F;&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x53C2;&#x6570;&#xFF0C;<code>FunctionCallback</code> &#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x8C03;&#x7528;&#x7ED3;&#x679C;&#x7684;&#x56DE;&#x8C03;&#x4F20;&#x5165;&#x3002;</p>
+<h3 id="-">&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x548C;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;</h3>
+<p version="1c9d16937fe34f9e0a88d1c2e2003f9a">&#x4E91;&#x4EE3;&#x7801;&#x533A;&#x5206;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x548C;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#xFF0C;&#x5728;SDK&#x91CC;&#x6307;&#x5B9A;&#x8C03;&#x7528;&#x7684;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>setProductionMode</code> &#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="851fff05282111f19115eb985b084447"><code class="lang-java">AVCloud.setProductionMode(false); //&#x8C03;&#x7528;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x4E91;&#x4EE3;&#x7801;
+</code></pre>
+<p version="ffbeff3fc7c69b4d300ebf072aaf139e">&#x9ED8;&#x8BA4;&#x4E3A; true&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8C03;&#x7528;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E91;&#x4EE3;&#x7801;&#x51FD;&#x6570;&#x3002;</p>
+<h2 id="-">&#x4EE3;&#x7801;&#x6DF7;&#x6DC6;</h2>
+<p version="5bea32c3c6f50c291261da489cf44de2">&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1; SDK &#x5728;&#x4EE3;&#x7801;&#x6DF7;&#x6DC6;&#x540E;&#x80FD;&#x6B63;&#x5E38;&#x8FD0;&#x4F5C;&#xFF0C;&#x9700;&#x8981;&#x4FDD;&#x8BC1;&#x90E8;&#x5206;&#x7C7B;&#x548C;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x4E0D;&#x88AB;&#x6DF7;&#x6DC6;&#xFF0C;&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#x8BF7;&#x53C2;&#x8003; <a href="android_faq.html#&#x4EE3;&#x7801;&#x6DF7;&#x6DC6;&#x600E;&#x4E48;&#x505A;">&#x5E38;&#x89C1;&#x95EE;&#x9898; - &#x4EE3;&#x7801;&#x6DF7;&#x6DC6;</a>&#x3002;</p>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

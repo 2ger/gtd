@@ -1,0 +1,706 @@
+<!doctype html>
+
+<html version="e8ca62ef8b0a5a6d987c3b42e6d88982">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="-">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x4F7F;&#x7528;&#x8BE6;&#x89E3;</h1>
+<h2 id="-">&#x4ECB;&#x7ECD;</h2>
+<p version="1dd7919980bad83eae911c8f48cebe28">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x662F;&#x7528;&#x6765;&#x7BA1;&#x7406;&#x3001;&#x90E8;&#x7F72;&#x4E91;&#x5F15;&#x64CE;&#x9879;&#x76EE;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x79F0;&#x4E4B;&#x4E3A; avoscloud-code &#x9879;&#x76EE;&#x3002;&#x901A;&#x8FC7;&#x5B83;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x90E8;&#x7F72;&#x3001;&#x53D1;&#x5E03;&#x3001;&#x56DE;&#x6EDA;&#x4E91;&#x5F15;&#x64CE;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x5BF9;&#x540C;&#x4E00;&#x4E2A;&#x4E91;&#x5F15;&#x64CE;&#x9879;&#x76EE;&#x505A;&#x591A;&#x5E94;&#x7528;&#x7BA1;&#x7406;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E91;&#x5F15;&#x64CE;&#x65E5;&#x5FD7;&#xFF0C;&#x6279;&#x91CF;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x5230; LeanCloud &#x5E73;&#x53F0;&#x4E0A;&#x7B49;&#x3002;</p>
+<h2 id="-">&#x5B89;&#x88C5;</h2>
+<h3 id="linux-mac-osx">Linux &#x548C; Mac OSX</h3>
+<p version="3e6f691b8768a470d44f79bda6bf5e72">&#x9996;&#x5148;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5B89;&#x88C5; <a href="http://nodejs.org/">Node.js</a> &#x73AF;&#x5883;&#x4EE5;&#x53CA; <a href="https://npmjs.org/">npm</a> &#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x5728; ubuntu &#x4E0A;&#x7684; terminal&#xFF08;&#x7EC8;&#x7AEF;&#xFF09;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5730;&#x6267;&#x884C;</p>
+<pre version="f5e82821306c137c583f25e3ef477dc0"><code class="lang-sh">apt-get install nodejs
+</code></pre>
+<p version="2fe62f858a95badcade56eb5e18be9d2">&#x5728;&#x4E00;&#x4E9B;&#x7CFB;&#x7EDF;&#x4E0A;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981; <code>sudo</code> &#x6743;&#x9650;&#xFF1A;<code>sudo apt-get install nodejs</code>&#x3002;</p>
+<p version="d141066b98c29828cbfe0d4fcd03b341">&#x63D0;&#x793A;&#xFF1A;apt &#x63D0;&#x4F9B;&#x7684; Node.js &#x7248;&#x672C;&#x53EF;&#x80FD;&#x6BD4;&#x8F83;&#x6EDE;&#x540E;&#xFF0C;&#x63A8;&#x8350;&#x4ECE;<a href="http://nodejs.org/">&#x5B98;&#x65B9;&#x7F51;&#x7AD9;</a>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x3002;</p>
+<p version="a01ef762f19ea890cda4965116e2c8f3">&#x5728; Mac OSX &#x4E0A;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <a href="http://www.macports.org/">MacPort</a> &#x6216;&#x8005; <a href="http://brew.sh/">Homebrew</a> &#x5B89;&#x88C5;&#xFF0C;terminal&#xFF08;&#x7EC8;&#x7AEF;&#xFF09;&#x6267;&#x884C;&#x4E0B;&#x5217;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre version="3edd3c31c5fcd3d49554322b16d3deeb"><code class="lang-sh">sudo port install nodejs
+</code></pre>
+<p version="72c88911e5c2e94d31d52c597af4da80">&#x6216;&#x8005;</p>
+<pre version="a7e663132506d588a07b43e7893b1ec4"><code class="lang-sh">brew install nodejs
+</code></pre>
+<p version="b5e41314883134102b7f1ff87eed2038">&#x5728;&#x5176;&#x4ED6;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0A;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4ECE; nodejs &#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#x4E0B;&#x8F7D;&#x6E90;&#x7801;&#x6216;&#x8005;&#x4E8C;&#x8FDB;&#x5236;&#x5B89;&#x88C5;&#xFF0C;&#x81EA;&#x5DF1;&#x5B89;&#x88C5;&#x3002;</p>
+<p version="43c4db0c2a4516f7ee68b8bd0abba811">&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x901A;&#x8FC7;&#x6267;&#x884C;&#x4E0B;&#x5217;&#x547D;&#x4EE4;&#x5B89;&#x88C5; avoscloud &#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF1A;</p>
+<pre version="d82b6cf6328be4e1ee438520aa503653"><code class="lang-sh">npm install -g avoscloud-code
+</code></pre>
+<p version="3daed59cceae136b747eaaf7d8db70b1"><strong>&#x5728;&#x4E00;&#x4E9B;&#x7CFB;&#x7EDF;&#x4E0A;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981; <code>sudo</code> &#x6743;&#x9650;</strong>&#xFF1A;<code>sudo npm install -g avoscloud-code</code>&#x3002;</p>
+<p version="3f1717670c5d879ffde9ad6f1e8ac724">&#x52A0;&#x4E0A; <code>-g</code> &#x8868;&#x793A;&#x5168;&#x5C40;&#x5B89;&#x88C5;&#x3002;<strong>&#x4EE5;&#x540E;&#x5347;&#x7EA7;&#x4E5F;&#x8BF7;&#x6267;&#x884C;&#x6B64;&#x547D;&#x4EE4;</strong>&#x3002;</p>
+<p version="567d19aa0228af6e7ed41c82364b42a0">&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x53EF;&#x80FD;&#x6709;&#x4E9B;&#x6162;&#xFF0C;&#x8BF7;&#x8010;&#x5FC3;&#x7B49;&#x5F85;&#x3002;&#x6211;&#x4EEC;&#x66F4;&#x63A8;&#x8350;&#x4ECE; <a href="http://cnpmjs.org/">cnpm</a> &#x4ED3;&#x5E93;&#x5B89;&#x88C5;&#xFF0C;&#x901F;&#x5EA6;&#x7406;&#x8BBA;&#x4E0A;&#x66F4;&#x5FEB;&#xFF0C;&#x8BF7;&#x6267;&#x884C;&#x4E0B;&#x5217;&#x4E24;&#x4E2A;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre version="3278786e87114aa776fe81be9813a10b"><code class="lang-sh">npm install -g cnpm --registry=http://r.cnpmjs.org
+cnpm install -g avoscloud-code
+</code></pre>
+<p version="0f06d6f4ed0dfd6cad9008e9d3a30608">&#x5982;&#x679C;&#x4ECE; npm &#x5B89;&#x88C5;&#x5931;&#x8D25;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4ECE; Github &#x6E90;&#x7801;&#x5B89;&#x88C5;&#xFF1A;</p>
+<pre version="b9a4093b0285aae20ddcb22294307e80"><code class="lang-sh">npm install -g  git+https://github.com/leancloud/avoscloud-code-command
+</code></pre>
+<h3 id="windows-">Windows &#x7CFB;&#x7EDF;</h3>
+<p version="f19dce95197a06b15803e562c1065579">&#x9996;&#x5148;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5B89;&#x88C5; <a href="http://nodejs.org/">Node.js</a>&#xFF0C;&#x5230;&#x7F51;&#x7AD9;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;&#x5B89;&#x88C5;&#x5373;&#x53EF;&#x3002;</p>
+<p version="fb2a0747ec53812400c2161ab4dd8d55"><strong>&#x6CE8;&#x610F;&#xFF1A;</strong>Windows &#x7CFB;&#x7EDF;&#x7528;&#x6237;&#x8BF7;&#x786E;&#x4FDD;&#x5728;&#x7CFB;&#x7EDF;&#x76D8; C &#x76D8;&#x9ED8;&#x8BA4;&#x76EE;&#x5F55;&#x5B89;&#x88C5; Node.js&#xFF0C;&#x5426;&#x5219;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#x3002;</p>
+<p version="e34f08073b5db7308033cac0bd423eb7">&#x7136;&#x540E;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x6267;&#x884C;&#x4E0B;&#x5217;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre version="d82b6cf6328be4e1ee438520aa503653"><code>npm install -g avoscloud-code
+</code></pre><p version="3f1717670c5d879ffde9ad6f1e8ac724">&#x52A0;&#x4E0A; <code>-g</code> &#x8868;&#x793A;&#x5168;&#x5C40;&#x5B89;&#x88C5;&#x3002;<strong>&#x4EE5;&#x540E;&#x5347;&#x7EA7;&#x4E5F;&#x8BF7;&#x6267;&#x884C;&#x6B64;&#x547D;&#x4EE4;</strong>&#x3002;</p>
+<p version="eaf8fe76be9ac41c3a597736e11a6d23">&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x53EF;&#x80FD;&#x6709;&#x4E9B;&#x6162;&#xFF0C;&#x8BF7;&#x8010;&#x5FC3;&#x7B49;&#x5F85;&#x3002;</p>
+<h5 id="-cnpm-">&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; cnpm &#x5B89;&#x88C5;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</h5>
+<p version="ab9713770a55cf1c806c851fa2abb54f">&#x4F7F;&#x7528; <code>cnpm</code> &#x5B89;&#x88C5;&#x5168;&#x5C40;&#x6A21;&#x5757;&#xFF08;-g &#x53C2;&#x6570;&#xFF09;&#x65F6;&#x4F1A;&#x5C06;&#x6A21;&#x5757;&#x4FDD;&#x5B58;&#x5728; <code>c:\Program Files\nodejs\node_modules\</code> &#x76EE;&#x5F55;&#xFF0C;&#x8BE5;&#x76EE;&#x5F55;&#x6CA1;&#x6709; admin &#x6743;&#x9650;&#x662F;&#x65E0;&#x6CD5;&#x5199;&#x5165;&#x7684;&#x3002;&#x800C;&#x539F;&#x751F;&#x7684; <code>npm</code> &#x4F1A;&#x5C06;&#x5168;&#x5C40;&#x6A21;&#x5757;&#x5B89;&#x88C5;&#x5728; <code>%USERPROFILE%\AppData\Roaming\npm\node_modules\</code> &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x8BE5;&#x76EE;&#x5F55;&#x5199;&#x5165;&#x4E0D;&#x9700;&#x8981; admin &#x6743;&#x9650;&#x3002;</p>
+<p version="1e788a1825f41445757a5e3d03253062">&#x4F7F;&#x7528; <code>cnpm</code> &#x5B89;&#x88C5;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x8FD0;&#x884C;&#x65F6;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x4E0B;&#x5217;&#x63D0;&#x793A;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre version="9ad95d4661e2c743ae1fe25c84f02672"><code>C:\Users\wchen\workspace\cloud-code-unit-test_v2.0&gt;avoscloud
+&#x63D0;&#x793A;&#xFF1A;&#x4F60;&#x53EF;&#x4EE5;&#x6572;&#x5165; rs &#x547D;&#x4EE4;&#x5E76;&#x56DE;&#x8F66;&#x6765;&#x91CD;&#x542F;&#x672C;&#x8FDB;&#x7A0B;
+module.js:338
+    throw err;
+          ^
+Error: Cannot find module &apos;C:\Users\wchen\workspace\cloud-code-unit-test_v2.0\&quot;C:\Program&apos;
+    at Function.Module._resolveFilename (module.js:336:15)
+    at Function.Module._load (module.js:278:25)
+    at Function.Module.runMain (module.js:501:10)
+    at startup (node.js:129:16)
+    at node.js:814:3
+</code></pre><p version="2cc23c7ee29d8b0464f9b22162493aa8">&#x4E3A;&#x4E86;&#x63D0;&#x9AD8;&#x5B89;&#x88C5;&#x901F;&#x5EA6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>cnpm</code> &#x7684;&#x4ED3;&#x5E93;&#x8FDB;&#x884C;&#x5B89;&#x88C5;&#xFF1A;</p>
+<pre version="91e839e23111808978fd1a535ee8bb09"><code>npm install -g avoscloud-code --registry=https://r.cnpmjs.org
+</code></pre><h4 id="-">&#x4ECD;&#x6709;&#x95EE;&#x9898;</h4>
+<p version="14a29f1c4e531ce63333a00833cdc971">&#x5982;&#x679C;&#x5B89;&#x88C5;&#x5B8C;&#x6267;&#x884C;&#x4ECD;&#x7136;&#x51FA;&#x73B0;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#xFF0C;&#x8BF7;&#x5C1D;&#x8BD5;&#x4E0B;&#x5217;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ul>
+<li><p version="07404f23e59c4dc9ee4ba6696267b2ba">&#x79FB;&#x9664;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</p>
+<pre version="4dca147d88316ad52863f56697d9d0c6"><code>npm uninstall -g avoscloud-code
+</code></pre><p version="e00fc280066e202859fed8c45ca80b6b">&#x79FB;&#x9664;&#x4E4B;&#x540E;&#xFF0C;&#x786E;&#x8BA4;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x4E0D;&#x53EF;&#x8FD0;&#x884C;&#xFF0C;&#x5373;&#x6267;&#x884C; avoscloud &#x547D;&#x4EE4;&#x65F6;&#x4F1A;&#x6709;&#x5982;&#x4E0B;&#x63D0;&#x793A;&#xFF1A;</p>
+<pre version="c399758623434ee9d6257f95565e5165"><code>C:\Users\wchen\workspace\cloud-code-unit-test_v2.0&gt;avoscloud
+&apos;avoscloud&apos; &#x4E0D;&#x662F;&#x5185;&#x90E8;&#x6216;&#x5916;&#x90E8;&#x547D;&#x4EE4;&#xFF0C;&#x4E5F;&#x4E0D;&#x662F;&#x53EF;&#x8FD0;&#x884C;&#x7684;&#x7A0B;&#x5E8F;&#x6216;&#x6279;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x3002;
+</code></pre></li>
+<li><p version="c03beaae2e36a07afd90a272ee3db173">&#x6E05;&#x9664;&#x7F13;&#x5B58;&#xFF1A;</p>
+<pre version="469dff6d52e2921fac3fc4bb47b771e0"><code>npm cache clean
+</code></pre><p version="267a71f1ef3104b930ceee3bcc862a75">&#x5982;&#x679C;&#x6709;&#x5B89;&#x88C5; <code>cnpm</code>&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x6E05;&#x9664; <code>cnpm</code> &#x7684;&#x7F13;&#x5B58;&#xFF1A;</p>
+<pre version="887ca703a70e23a9333a2bf92031e33a"><code>cnpm cache clean
+</code></pre></li>
+<li>&#x7136;&#x540E;&#x4F7F;&#x7528; <code>npm</code> &#x91CD;&#x65B0;&#x5B89;&#x88C5; avoscloud &#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</li>
+</ul>
+<h2 id="-">&#x4F7F;&#x7528;</h2>
+<p version="4e0f54e0127c22f06c6bf4b4c08c80b1">&#x5B89;&#x88C5;&#x6210;&#x529F;&#x4E4B;&#x540E;&#xFF0C;&#x76F4;&#x63A5;&#x5728; terminal&#xFF08;&#x7EC8;&#x7AEF;&#xFF09;&#x8FD0;&#x884C; <code>avoscloud -h</code>&#xFF0C;&#x8F93;&#x51FA;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre version="09ea5cf568c3764414dd6ce34f8ac5c6"><code class="lang-sh">$ avoscloud -h
+Usage: avoscloud [&#x9009;&#x9879;] &lt;&#x547D;&#x4EE4;&gt;
+
+  &#x6709;&#x6548;&#x7684;&#x547D;&#x4EE4;&#x5217;&#x8868;&#x5305;&#x62EC;:
+    deploy: &#x90E8;&#x7F72;&#x4E91;&#x5F15;&#x64CE;&#x4EE3;&#x7801;&#x5230; LeanCloud &#x5E73;&#x53F0;&#x5F00;&#x53D1;&#x73AF;&#x5883;
+    undeploy: &#x4ECE; LeanCloud &#x5E73;&#x53F0;&#x6E05;&#x9664;&#x4E91;&#x5F15;&#x64CE;&#x90E8;&#x7F72;&#xFF0C;&#x5305;&#x62EC;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x548C;&#x5F00;&#x53D1;&#x73AF;&#x5883;
+    status: &#x67E5;&#x8BE2;&#x5F53;&#x524D;&#x90E8;&#x7F72;&#x72B6;&#x6001;
+    search &lt;keyword&gt;: &#x6839;&#x636E;&#x5173;&#x952E;&#x5B57;&#x67E5;&#x8BE2;&#x5F00;&#x53D1;&#x6587;&#x6863;
+    publish: &#x53D1;&#x5E03;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x4EE3;&#x7801;&#x5230;&#x751F;&#x4EA7;&#x73AF;&#x5883;
+    new: &#x521B;&#x5EFA;&#x4E91;&#x5F15;&#x64CE;&#x9879;&#x76EE;
+    logs: &#x67E5;&#x770B;&#x4E91;&#x5F15;&#x64CE;&#x65E5;&#x5FD7;
+    clear: &#x6E05;&#x9664;&#x672C;&#x5730;&#x72B6;&#x6001;&#xFF0C;&#x5728;&#x8F93;&#x5165; app id &#x6216;&#x8005; master key &#x9519;&#x8BEF;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4F7F;&#x7528;
+    upload &lt;file-or-directory&gt;: &#x5BFC;&#x5165;&#x6587;&#x4EF6;&#x5230; LeanCloud &#x5E73;&#x53F0;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x76EE;&#x5F55;&#xFF0C;&#x5219;&#x4F1A;&#x5C06;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x9012;&#x5F52;&#x5BFC;&#x5165;&#x3002;
+    app [list]:  &#x663E;&#x793A;&#x5F53;&#x524D;&#x5E94;&#x7528;&#xFF0C;deploy&#x3001;status &#x7B49;&#x547D;&#x4EE4;&#x8FD0;&#x884C;&#x5728;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x4E0A;&#xFF0C;&#x5982;&#x679C;&#x52A0;&#x4E0A; list &#xFF0C;&#x5219;&#x663E;&#x793A;&#x6240;&#x6709;&#x7684;&#x5E94;&#x7528;&#x4FE1;&#x606F;&#x3002;
+    checkout &lt;app&gt;: &#x5207;&#x6362;&#x5230;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#xFF0C;deploy&#x3001;status &#x7B49;&#x547D;&#x4EE4;&#x5C06;&#x8FD0;&#x884C;&#x5728;&#x8BE5;&#x5E94;&#x7528;&#x4E0A;&#x3002;
+    add &lt;app&gt;: &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x3002;
+    rm &lt;app&gt;: &#x79FB;&#x9664;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x3002;
+    cql: &#x8FDB;&#x5165; CQL &#x67E5;&#x8BE2;&#x4EA4;&#x4E92;&#x3002;
+
+  Options:
+
+    -h, --help                 output usage information
+    -V, --version              output the version number
+    -f, --filepath &lt;path&gt;      &#x672C;&#x5730;&#x4E91;&#x5F15;&#x64CE;&#x9879;&#x76EE;&#x6839;&#x8DEF;&#x5F84;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x3002;
+    -g, --git                  &#x4F7F;&#x7528;&#x5B9A;&#x4E49;&#x5728;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x7684; git &#x4ED3;&#x5E93;&#x6216;&#x8005; -u &#x6307;&#x5B9A;&#x7684; git &#x4ED3;&#x5E93;&#x90E8;&#x7F72;&#x4E91;&#x5F15;&#x64CE;&#x4EE3;&#x7801;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x672C;&#x5730;&#x4EE3;&#x7801;&#x90E8;&#x7F72;&#x3002;
+    -p, --project &lt;app&gt;        &#x547D;&#x4EE4;&#x8FD0;&#x884C;&#x5728;&#x6307;&#x5B9A;&#x5E94;&#x7528;&#x4E0A;&#xFF0C;&#x9ED8;&#x8BA4;&#x8FD0;&#x884C;&#x5728;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x6216;&#x8005; origin &#x5E94;&#x7528;&#x4E0A;&#x3002;
+    -l, --local                &#x4F7F;&#x7528;&#x672C;&#x5730;&#x4EE3;&#x7801;&#x90E8;&#x7F72;&#x4E91;&#x5F15;&#x64CE;&#x4EE3;&#x7801;&#xFF0C;&#x8BE5;&#x9009;&#x9879;&#x662F;&#x9ED8;&#x8BA4;&#x9009;&#x4E2D;&#x3002;
+    -o, --log &lt;log&gt;            &#x672C;&#x6B21;&#x90E8;&#x7F72;&#x7684;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;&#xFF0C;&#x4EC5;&#x5BF9;&#x4ECE;&#x672C;&#x5730;&#x90E8;&#x7F72;&#x6709;&#x6548;&#x3002;
+    -n, --lines &lt;lines&gt;        &#x67E5;&#x770B;&#x591A;&#x5C11;&#x884C;&#x6700;&#x65B0;&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x65E5;&#x5FD7;&#xFF0C;&#x9ED8;&#x8BA4; 10 &#x884C;&#x3002;
+    -t, --tailf                &#x81EA;&#x52A8;&#x5237;&#x65B0;&#x4E91;&#x5F15;&#x64CE;&#x65E5;&#x5FD7;&#xFF0C;&#x7ED3;&#x5408; logs &#x547D;&#x4EE4;&#x4F7F;&#x7528;&#x3002;
+    -r, --revision &lt;revision&gt;  git &#x7684;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x4EC5;&#x5BF9;&#x4ECE; git &#x4ED3;&#x5E93;&#x90E8;&#x7F72;&#x6709;&#x6548;&#x3002;
+    -P, --port &lt;port&gt;          &#x6307;&#x5B9A;&#x672C;&#x5730;&#x8C03;&#x8BD5;&#x7684;&#x7AEF;&#x53E3;&#xFF0C;&#x9ED8;&#x8BA4; 3000&#x3002;
+</code></pre>
+<p version="ddf631220e8643412b29cd1fb1b2a985">&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>-V</code> &#x9009;&#x9879;&#x67E5;&#x770B;&#x7248;&#x672C;&#xFF1A;</p>
+<pre version="ca461eb27bc130a89e12430c61852d22"><code class="lang-sh">$ avoscloud -V
+0.6.1
+</code></pre>
+<p version="54cf51fbaa98263d531ee2c6ebbc2e79">&#x540E;&#x9762;&#x6211;&#x4EEC;&#x90FD;&#x5047;&#x5B9A; <code>$ avoscloud</code> &#x5F00;&#x59CB;&#x7684;&#x90FD;&#x8868;&#x793A;&#x5728;&#x7EC8;&#x7AEF;&#x91CC;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x3002;</p>
+<h2 id="bash-completion">Bash Completion</h2>
+<p version="45bb2d8e3f9a4dadfe4d93c03ae1bc24">&#x4E0B;&#x8F7D; <a href="https://raw.githubusercontent.com/leancloud/avoscloud-code-command/master/avoscloud_completion.sh">avoscloud_completion.sh</a> &#x4FDD;&#x5B58;&#x5230;&#x67D0;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x4F8B;&#x5982;&#x901A;&#x5E38;&#x4FDD;&#x5B58;&#x4E3A; <code>~/.leancloud_completion.sh</code>&#xFF0C;&#x7136;&#x540E;&#x5728; <code>~/.bashrc</code> &#x6216;&#x8005; <code>~/.bash_profile</code> &#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;&#xFF1A;</p>
+<pre version="e72ad31867477c6dd16ab8f46aae55dc"><code class="lang-sh">source ~/.leancloud_completion.sh
+</code></pre>
+<p version="9b611c2d264f4351328c24cd7b60f091">&#x91CD;&#x542F;&#x7EC8;&#x7AEF; bash&#xFF0C;&#x6216;&#x8005;&#x91CD;&#x65B0;&#x52A0;&#x8F7D; profile &#x6587;&#x4EF6;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8BA9; avoscloud &#x547D;&#x4EE4;&#x62E5;&#x6709;&#x81EA;&#x52A8;&#x63D0;&#x793A;&#x548C;&#x5B8C;&#x6210;&#x529F;&#x80FD;(tab &#x6309;&#x952E;&#x63D0;&#x793A;)&#x3002;</p>
+<p version="074557aed8f77fb98bcfced1c4336fba"><strong>Mac &#x4E0A;&#x5EFA;&#x8BAE;&#x901A;&#x8FC7; homebrew &#x5B89;&#x88C5; bash-completion&#x3002;</strong></p>
+<h2 id="-">&#x521B;&#x5EFA;&#x9879;&#x76EE;</h2>
+<p version="a6e852adc6491e8ad5904058e67e7a74">&#x5728;&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x540E;&#xFF0C;&#x9664;&#x4E86;&#x4ECE;&#x7F51;&#x7AD9;&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x83DC;&#x5355;&#x4E0B;&#x8F7D;&#x65B0;&#x5E94;&#x7528;&#x9879;&#x76EE;&#x6846;&#x67B6;&#x4E4B;&#x5916;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>new</code> &#x547D;&#x4EE4;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x9879;&#x76EE;&#xFF1A;</p>
+<pre version="42acb7af98b2aa0f540eab96428f9b41"><code class="lang-sh">$ avoscloud new
+</code></pre>
+<p version="c21a1bee67bef4aadcabaf0966024fb9">&#x5B83;&#x4F1A;&#x8981;&#x6C42;&#x4F60;&#x8F93;&#x5165;&#x5E94;&#x7528;&#x7684; Id &#x548C; Master Key&#xFF08;&#x90FD;&#x53EF;&#x4EE5;&#x4ECE;&#x5F00;&#x53D1;&#x8005;&#x5E73;&#x53F0;&#x7684;&#x5E94;&#x7528;&#x8BBE;&#x7F6E;&#x91CC;&#x7684;&#x5E94;&#x7528; key &#x83DC;&#x5355;&#x91CC;&#x627E;&#x5230;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#xFF09;&#xFF0C;</p>
+<p version="b9df3951142a9c316d5f512ddc0a5cfa">&#x7B2C;&#x4E09;&#x6B65;&#x9009;&#x62E9;&#x5E94;&#x7528;&#x7C7B;&#x578B;&#x5305;&#x62EC;&#x4E24;&#x7C7B;&#xFF1A;</p>
+<ul>
+<li>Standard &#x6807;&#x51C6;&#x7248;&#xFF1A;&#x8F93;&#x5165;&#x5B57;&#x7B26; &apos;s&apos; &#x6216;&#x8005;&#x5B57;&#x7B26;&#x4E32; &quot;standard&quot; &#x5373;&#x53EF;&#x521B;&#x5EFA;&#xFF0C;&#x6807;&#x51C6;&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x9879;&#x76EE;&#xFF0C;&#x4E0D;&#x5305;&#x62EC; web &#x4E3B;&#x673A;&#x529F;&#x80FD;&#xFF08;&#x7F51;&#x7AD9;&#x6258;&#x7BA1;&#xFF09;&#x3002;</li>
+<li>Web Hosting &#x7248;&#xFF1A;&#x8F93;&#x5165;&#x5B57;&#x7B26; &apos;w&apos; &#x6216;&#x8005;&#x5B57;&#x7B26;&#x4E32; &apos;web&apos; &#x5373;&#x53EF;&#x521B;&#x5EFA;&#xFF0C;&#x5305;&#x542B; web &#x4E3B;&#x673A;&#x529F;&#x80FD;&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x9879;&#x76EE;&#x3002;</li>
+</ul>
+<p version="c0f46d7cbec724257b1204b09521877a">&#x8F93;&#x5165;&#x6B63;&#x786E;&#x540E;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x9879;&#x76EE;&#x6846;&#x67B6;&#xFF1A;</p>
+<pre version="b8868a1ed91cb0e3b953c32c8b551ccf"><code class="lang-sh">Creating project...
+  new_app/
+  new_app/README.md
+  new_app/config/
+  new_app/config/global.json
+  new_app/public/
+  new_app/public/index.html
+  new_app/cloud/
+  new_app/cloud/main.js
+Project created!
+</code></pre>
+<p version="bb86534d39042e5b5bf8d8367c241136">&#x8FDB;&#x5165; <code>new_app</code> &#x76EE;&#x5F55;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x65B0;&#x5EFA;&#x7ACB;&#x7684;&#x9879;&#x76EE;&#x3002;</p>
+<h2 id="-">&#x672C;&#x5730;&#x8C03;&#x8BD5;</h2>
+<p version="1950bf0bde2f0381eee3e208d181a6fd"><code>cd new_app</code> &#x8FDB;&#x5165;&#x8BE5;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x6267;&#x884C; <code>avoscloud</code> &#x547D;&#x4EE4;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x672C;&#x673A;&#x8C03;&#x8BD5;&#x4E91;&#x5F15;&#x64CE;&#x3002;</p>
+<ul>
+<li>&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x6253;&#x5F00; <a href="http://localhost:3000/avos">http://localhost:3000/avos</a>&#xFF0C;&#x8FDB;&#x5165;&#x4E91;&#x5F15;&#x64CE;&#x51FD;&#x6570;&#x548C; Class Hook &#x51FD;&#x6570;&#x8C03;&#x8BD5;&#x754C;&#x9762;&#x3002;</li>
+<li>&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x6253;&#x5F00; <a href="http://localhost:3000">http://localhost:3000</a>&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230; public &#x76EE;&#x5F55;&#x7684; index.html &#x9875;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x3002;</li>
+</ul>
+<p version="0c4de463c24022be07f0e5b3285c5ef0">avoscloud &#x547D;&#x4EE4;&#x5305;&#x88C5;&#x4E86; <a href="https://github.com/remy/nodemon">nodemon</a>&#xFF0C;&#x5B83;&#x4F1A;&#x76D1;&#x89C6;&#x6587;&#x4EF6;&#x53D8;&#x66F4;&#xFF0C;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x540E;&#x4F1A;&#x81EA;&#x52A8;&#x91CD;&#x542F;&#x8FDB;&#x7A0B;&#xFF0C;&#x65E0;&#x9700;&#x624B;&#x5DE5;&#x91CD;&#x542F;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4EE3;&#x7801;&#x7684;&#x6700;&#x65B0;&#x6548;&#x679C;&#x3002;</p>
+<p version="7bf2269b6020df3a4b918a08e1ff5cfd">&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x4E91;&#x5F15;&#x64CE;&#x5F00;&#x53D1;&#xFF0C;&#x8BF7;&#x53C2;&#x8003; <a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#x5F00;&#x53D1;&#x6307;&#x5357;</a> &#x3002;</p>
+<h2 id="-">&#x90E8;&#x7F72;</h2>
+<h3 id="-">&#x672C;&#x5730;&#x63A8;&#x9001;&#x90E8;&#x7F72;</h3>
+<p version="0d78e6358c48417bd1cc617602e71f11">&#x5728;&#x4F60;&#x5F00;&#x53D1;&#x548C;&#x672C;&#x5730;&#x6D4B;&#x8BD5;&#x4E91;&#x5F15;&#x64CE;&#x9879;&#x76EE;&#x901A;&#x8FC7;&#x540E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5C06;&#x672C;&#x5730;&#x6E90;&#x7801;&#x63A8;&#x9001;&#x5230; LeanCloud &#x4E91;&#x5F15;&#x64CE;&#x5E73;&#x53F0;&#x8FD0;&#x884C;&#xFF0C;&#x53EA;&#x8981;&#x6267;&#x884C; <code>deploy</code> &#x547D;&#x4EE4;&#xFF1A;</p>
+<pre version="40571eabd6a052eb25c044289bcc4c5e"><code class="lang-sh">$ avoscloud deploy
+</code></pre>
+<p version="9c66591056c112f713fdab9e60785bde">&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x5C06;&#x90E8;&#x7F72;&#x672C;&#x5730;&#x6E90;&#x7801;&#x5230;&#x8FDC;&#x7A0B;&#x5E73;&#x53F0;&#x7684;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF0C;&#x65E0;&#x6761;&#x4EF6;&#x8986;&#x76D6;&#x539F;&#x6765;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x7684;&#x7248;&#x672C;&#xFF08;&#x65E0;&#x8BBA;&#x662F;&#x4ECE; Git &#x4ED3;&#x5E93;&#x90E8;&#x7F72;&#x6216;&#x8005;&#x8FD8;&#x662F;&#x672C;&#x5730;&#x90E8;&#x7F72;&#xFF09;&#x3002;</p>
+<p version="f6ea773a2de82d8665a139f33f0663eb">&#x5982;&#x679C;&#x90E8;&#x7F72;&#x6210;&#x529F;&#xFF0C;&#x4F1A;&#x6253;&#x5370;&#x90E8;&#x7F72;&#x540E;&#x7684;&#x72B6;&#x6001;&#xFF1A;</p>
+<pre version="23c9d58807752c09859210c52d6e706b"><code class="lang-sh">[INFO]: Cloud Code Project Home Directory: /Users/dennis/programming/avos/new_app/
+Compress cloud code files...
+Wrote compressed file /var/folders/90/xwqqy61d6lg6v8ztpbfhwb5c0000gp/T/1412920453227.tar.gz ...
+Begin to upload cloud code files...
+Upload cloud code files successfully. Begin to deploy...
+Congrats! Deploy cloud code successfully.
+Cloud code status is:
+
+Development version    : &apos;local:adcce5dfb740a0e80c261dea038798b5&apos;
+Development commit log : &apos;Uploaded at 2014-10-10 13:54:26&apos;
+Production version     : &apos;local:3684975ddc5dc7abbfb06ed72ebcb371&apos;
+Production commit log  : &apos;Uploaded at 2014-10-09 16:56:06&apos;
+</code></pre>
+<p version="a3377a3cdacb94421e7f30707974782c">&#x9ED8;&#x8BA4;&#x90E8;&#x7F72;&#x65E5;&#x5FD7;&#x662F; <code>Updated at YYYY-MM-DD HH:mm:ss</code> &#x7684;&#x65F6;&#x95F4;&#x6233;&#x65E5;&#x5FD7;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>-o</code> &#x9009;&#x9879;&#x6765;&#x63D0;&#x4F9B;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x90E8;&#x7F72;&#x65E5;&#x5FD7;&#xFF1A;</p>
+<pre version="a78d49beb23d6edbbfb92b9ed75d203f"><code class="lang-sh">$ avoscloud deploy -o &apos;&#x6D4B;&#x8BD5;&#x672C;&#x5730;&#x63A8;&#x9001;&#x90E8;&#x7F72;&apos;
+</code></pre>
+<p version="feff4413613ff046b69f6333d823a3f3">&#x90E8;&#x7F72;&#x4E4B;&#x540E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; curl &#x547D;&#x4EE4;&#xFF0C;&#x6216;&#x8005;&#x8BBF;&#x95EE;&#x4F60;&#x8BBE;&#x7F6E;&#x7684; <code>xxxx.avosapps.com</code> &#x7684;&#x4E8C;&#x7EA7;&#x57DF;&#x540D;&#x5BF9;&#x5E94;&#x7684;&#x4E13;&#x7528;&#x6D4B;&#x8BD5;&#x57DF;&#x540D; <code>dev.xxx.avosapps.com</code> &#x6D4B;&#x8BD5;&#x4F60;&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x4EE3;&#x7801;&#x3002;</p>
+<h3 id="git-">Git &#x4ED3;&#x5E93;&#x90E8;&#x7F72;</h3>
+<p version="a145f0c0be28186b24c191c781cc35f0">&#x5982;&#x679C;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x4FDD;&#x5B58;&#x5728;&#x67D0;&#x4E2A; Git &#x4ED3;&#x5E93;&#xFF0C;&#x4F8B;&#x5982; <a href="https://github.com">Github</a> &#x4E0A;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x8BF7;&#x6C42; LeanCloud &#x5E73;&#x53F0;&#x4ECE; Git &#x4ED3;&#x5E93;&#x83B7;&#x53D6;&#x6E90;&#x7801;&#x5E76;&#x81EA;&#x52A8;&#x90E8;&#x7F72;&#xFF0C;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x7684;&#x90E8;&#x7F72;&#x83DC;&#x5355;&#x91CC;&#x5B8C;&#x6210;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x672C;&#x5730;&#x6267;&#x884C; <code>deploy</code> &#x547D;&#x4EE4;&#x548C; <code>-g</code> &#x9009;&#x9879;&#x914D;&#x5408;&#x5B8C;&#x6210;&#xFF1A;</p>
+<pre version="7ee67ea6e4e429efc01c6ffa7c174386"><code class="lang-sh">$ avoscloud -g deploy
+</code></pre>
+<ul>
+<li><code>-g</code> &#x9009;&#x9879;&#x6307;&#x5B9A;&#x8981;&#x6C42;&#x4ECE; Git &#x4ED3;&#x5E93;&#x90E8;&#x7F72;&#xFF0C;Git &#x4ED3;&#x5E93;&#x5730;&#x5740;&#x5FC5;&#x987B;&#x5DF2;&#x7ECF;&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x83DC;&#x5355;&#x91CC;&#x4FDD;&#x5B58;&#x3002;</li>
+</ul>
+<p version="f21377173b2183dbdf5a720e5f4edeeb">&#x9ED8;&#x8BA4;&#x90E8;&#x7F72;&#x90FD;&#x5C06;&#x662F; master &#x5206;&#x652F;&#x7684;&#x6700;&#x65B0;&#x4EE3;&#x7801;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>-r &lt;revision&gt;</code> &#x6765;&#x6307;&#x5B9A;&#x90E8;&#x7F72;&#x7279;&#x5B9A;&#x7684; commit &#x6216;&#x8005; branch&#x3002;</p>
+<h2 id="-">&#x53D1;&#x5E03;</h2>
+<p version="556f5f9517968b86b248d683faf012c4">&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x5982;&#x679C;&#x6D4B;&#x8BD5;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x4F60;&#x5E0C;&#x671B;&#x5C06;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x4EE3;&#x7801;&#x5207;&#x6362;&#x5230;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5F00;&#x53D1;&#x8005;&#x5E73;&#x53F0;&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x90E8;&#x7F72;&#x83DC;&#x5355;&#x505A;&#x53D1;&#x5E03;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FD0;&#x884C; <code>publish</code> &#x547D;&#x4EE4;&#xFF1A;</p>
+<pre version="089d755b4f1e9ddacaabfa2ceb8e79b2"><code class="lang-sh">$ avoscloud publish
+</code></pre>
+<p version="c71fc7df9d875de759e3e86f5829d48b">&#x5C31;&#x4F1A;&#x5C06;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x4EE3;&#x7801;&#x53D1;&#x5E03;&#x5230;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x3002;</p>
+<pre version="01af9587b0f598c710d513973ff47b70"><code class="lang-sh">[INFO]: Cloud Code Project Home Directory: /Users/dennis/programming/avos/new_app/
+[INFO]: Current App: origin &lt;app id&gt;
+Publishing cloud code to production...
+Published cloud code successfully. Current status is:
+
+Development version    : &apos;local:adcce5dfb740a0e80c261dea038798b5&apos;
+Development commit log : &apos;Uploaded at 2014-10-10 13:54:26&apos;
+Production version     : &apos;local:adcce5dfb740a0e80c261dea038798b5&apos;
+Production commit log  : &apos;Uploaded at 2014-10-10 13:54:26&apos;
+</code></pre>
+<h2 id="-">&#x67E5;&#x770B;&#x90E8;&#x7F72;&#x72B6;&#x6001;</h2>
+<p version="790185dd68251c52cb59aff59cd28da3">&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>status</code> &#x547D;&#x4EE4;&#x67E5;&#x8BE2;&#x5F53;&#x524D;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x548C;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x7684;&#x90E8;&#x7F72;&#x72B6;&#x6001;&#xFF1A;</p>
+<pre version="658fe77613cc192a3a9f0559e6739fdd"><code class="lang-sh">$ avoscloud status
+[INFO]: Cloud Code Project Home Directory: /Users/dennis/programming/avos/new_app/
+[INFO]: Current App: origin &lt;app id&gt;
+Cloud code status is:
+
+Development version    : &apos;local:adcce5dfb740a0e80c261dea038798b5&apos;
+Development commit log : &apos;Uploaded at 2014-10-10 13:54:26&apos;
+Production version     : &apos;local:adcce5dfb740a0e80c261dea038798b5&apos;
+Production commit log  : &apos;Uploaded at 2014-10-10 13:54:26&apos;
+</code></pre>
+<p version="e34bb0740e7c7eae9509315311056e4c">&#x901A;&#x8FC7; <code>undeploy</code> &#x547D;&#x4EE4;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x4E91;&#x5F15;&#x64CE;&#x4EE3;&#x7801;&#x5F7B;&#x5E95;&#x4ECE; LeanCloud &#x5E73;&#x53F0;&#x79FB;&#x9664;&#xFF08;&#x5305;&#x62EC;&#x4EE3;&#x7801;&#x3001;&#x7248;&#x672C;&#x4FE1;&#x606F;&#x3001;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;&#x7B49;&#xFF09;&#xFF1A;</p>
+<pre version="0206006b136a9a3b8f5c3ddf3c9d8b6b"><code class="lang-sh">$ avoscloud undeploy
+</code></pre>
+<p version="829ccfd0b1f6fc3b4f1fb61ed3130603"><strong>&#x8BF7;&#x614E;&#x91CD;&#x6267;&#x884C;&#x6B64;&#x64CD;&#x4F5C;</strong>&#x3002;</p>
+<h2 id="-">&#x67E5;&#x770B;&#x65E5;&#x5FD7;</h2>
+<p version="036ddf01ee2d7f14e608ba414425eeef">&#x4F7F;&#x7528; <code>logs</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x4E91;&#x5F15;&#x64CE;&#x6700;&#x65B0;&#x65E5;&#x5FD7;&#xFF1A;</p>
+<pre version="8b39d2ac295211fbf2b990d11858b02f"><code class="lang-sh">$ avoscloud logs
+[INFO]: Cloud Code Project Home Directory: /Users/dennis/programming/avos/new_app/
+[INFO]: Current App: origin 7104en0u071tcb5d1tr2juxa499ouvdn1gm5szq47nqzt06q
+[2014-10-09T16:56:32.279Z] [production] -- info:  undefined
+
+[2014-10-09T17:03:33.672Z] [development] -- info:  Deploying cloud code to development environment, the commit is &apos;local:3684975ddc5dc7abbfb06ed72ebcb371&apos;, and log is &apos;Uploaded at 2014-10-09 17:03:33&apos;.
+
+[2014-10-10T13:54:26.450Z] [development] -- info:  Deploying cloud code to development environment, the commit is &apos;local:adcce5dfb740a0e80c261dea038798b5&apos;, and log is &apos;Uploaded at 2014-10-10 13:54:26&apos;.
+
+[2014-10-10T14:09:11.744Z] [production] -- info:  Deploying cloud code to production environment, the commit is &apos;local:adcce5dfb740a0e80c261dea038798b5&apos;, and log is &apos;Uploaded at 2014-10-10 13:54:26&apos;.
+</code></pre>
+<p version="2ecc4907289f238cccd6a6f10519815a">&#x9ED8;&#x8BA4;&#x8FD4;&#x56DE;&#x6700;&#x65B0;&#x7684; 10 &#x6761;&#xFF0C;&#x6700;&#x65B0;&#x7684;&#x5728;&#x6700;&#x4E0B;&#x9762;&#x3002;</p>
+<p version="e73f2a5dff0ae5609d6fc9dc9daaa9df">&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>-n</code> &#x9009;&#x9879;&#x8BBE;&#x5B9A;&#x8FD4;&#x56DE;&#x7684;&#x65E5;&#x5FD7;&#x6570;&#x76EE;&#xFF0C;&#x4F8B;&#x5982;&#x8FD4;&#x56DE;&#x6700;&#x8FD1;&#x7684; 100 &#x6761;</p>
+<pre version="f56c5c38859ebd09b7becb33a0fbf6c1"><code class="lang-sh">$ avoscloud -n 100 logs
+</code></pre>
+<p version="80270dbced555c9f6cae1a8c95939216">&#x4E5F;&#x53EF;&#x4EE5;&#x52A0;&#x4E0A; <code>-t</code> &#x9009;&#x9879;&#x6765;&#x81EA;&#x52A8;&#x6EDA;&#x52A8;&#x66F4;&#x65B0;&#x65E5;&#x5FD7;&#xFF0C;&#x7C7B;&#x4F3C;<code>tailf</code>&#x547D;&#x4EE4;&#x7684;&#x6548;&#x679C;&#xFF1A;</p>
+<pre version="fae5a96dd8d1fc1c382ccce776af1047"><code class="lang-sh">$ avoscloud -t logs
+</code></pre>
+<p version="de5c2caa91336d69dcc744a6a68ebb07">&#x5F53;&#x6709;&#x65B0;&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x65E5;&#x5FD7;&#x4EA7;&#x751F;&#xFF0C;&#x90FD;&#x4F1A;&#x81EA;&#x52A8;&#x586B;&#x5145;&#x5230;&#x5C4F;&#x5E55;&#x4E0B;&#x65B9;&#x3002;</p>
+<h2 id="-">&#x591A;&#x5E94;&#x7528;&#x7BA1;&#x7406;</h2>
+<p version="6548e9212b6e906fa0a24f3392cece48">&#x4ECE; 0.5.0 &#x7248;&#x672C;&#x5F00;&#x59CB;&#xFF0C;&#x6211;&#x4EEC;&#x4E3A; avoscloud &#x6DFB;&#x52A0;&#x4E86;&#x591A;&#x5E94;&#x7528;&#x7BA1;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x7C7B;&#x4F3C; git &#x7684;&#x591A;&#x5206;&#x652F;&#x529F;&#x80FD;&#x3002;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x5141;&#x8BB8;&#x4F60;&#x5C06;&#x540C;&#x4E00;&#x4E2A;&#x4E91;&#x5F15;&#x64CE;&#x9879;&#x76EE;&#x90E8;&#x7F72;&#x5230;&#x591A;&#x4E2A; LeanCloud &#x5E94;&#x7528;&#x4E0A;&#xFF0C;<strong>&#x4F46;&#x662F;&#x4EC5;&#x9650;&#x4E8E;&#x4E91;&#x5F15;&#x64CE; 2.0 &#x9879;&#x76EE;&#x4F7F;&#x7528;</strong>&#x3002;</p>
+<h3 id="-">&#x67E5;&#x770B;&#x5E94;&#x7528;&#x72B6;&#x6001;</h3>
+<p version="34fcf65f0c48f9deebf94b0dfbdfefb4">&#x4F7F;&#x7528; <code>avoscloud app list</code> &#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x5217;&#x8868;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x5E94;&#x8BE5;&#x663E;&#x793A; <code>config/global.json</code> &#x91CC;&#x8BBE;&#x5B9A;&#x7684;&#x5E94;&#x7528;&#xFF1A;</p>
+<pre version="8b375d1d59d3fa67ba6158686dec3aef"><code class="lang-sh">$ avoscloud app list
+  origin &lt;config/global.json &#x91CC;&#x7684; applicationId&gt;
+</code></pre>
+<p version="2deb7b01f9c597c0779f884baf88f5de">&#x6267;&#x884C; <code>avoscloud app</code> &#x67E5;&#x770B;&#x5F53;&#x524D;&#x5E94;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x76EE;&#x524D;&#x6CA1;&#x6709;&#x660E;&#x786E;&#x6307;&#x5B9A;&#xFF0C;&#x4F1A;&#x544A;&#x8BC9;&#x4F60;&#xFF1A;</p>
+<pre version="611401475735bfb3b2749e49d94ff7f9"><code class="lang-sh">$ avoscloud app
+You are not in a app.Please checkout &lt;app&gt;
+</code></pre>
+<p version="f3cc0656eb49feb74a743d2996c6f63a">&#x6211;&#x4EEC;&#x660E;&#x786E;&#x5207;&#x6362;&#x5230; <code>origin</code> &#x5E94;&#x7528;&#x8BD5;&#x8BD5;&#xFF1A;</p>
+<pre version="96a58f31fbbdf81e337a78c7ddb70a9d"><code class="lang-sh">$ avoscloud checkout origin
+Switced to app origin
+$ avoscloud app
+* origin &lt;config/global.json &#x91CC;&#x7684; applicationId&gt;
+</code></pre>
+<p version="a53b92ebad86c5ecb51e5646ca689315">&#x73B0;&#x5728;&#x786E;&#x8BA4;&#x6211;&#x4EEC;&#x5904;&#x4E8E;&#x9ED8;&#x8BA4;&#x7684;&#x521D;&#x59CB;&#x5E94;&#x7528;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x6267;&#x884C; <code>deploy</code>&#x3001;<code>publish</code>&#x3001;<code>status</code>&#x3001;<code>logs</code>&#x7B49;&#x547D;&#x4EE4;&#x90FD;&#x5C06;&#x662F;&#x9488;&#x5BF9;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x3002;</p>
+<h3 id="-">&#x6DFB;&#x52A0;&#x5E94;&#x7528;</h3>
+<p version="2f2e0efa8be98fa3ce013f73a960eb0d">&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5C06; new_app &#x53D1;&#x5E03;&#x5230;&#x5176;&#x4ED6; LeanCloud &#x5E94;&#x7528;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>add</code> &#x547D;&#x4EE4;&#x6765;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#xFF1A;</p>
+<pre version="671f9e4d36eb12205dbf368b5f9779b9"><code class="lang-sh">$ avoscloud add other_app &lt;other app &#x7684;&#x5E94;&#x7528; id&gt;
+</code></pre>
+<p version="5cbf914bd34f7a687d1e4b744255ba37"><code>add</code> &#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x662F;&#x5E94;&#x7528;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x7528;&#x4E8E;&#x540E;&#x7EED;&#x7684;&#x663E;&#x793A;&#x548C;&#x5207;&#x6362;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x662F;&#x65B0;&#x5E94;&#x7528;&#x7684; id&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x8BBE;&#x7F6E;&#x7684;&#x5E94;&#x7528; Key &#x4FE1;&#x606F;&#x91CC;&#x627E;&#x5230;&#x3002;</p>
+<p version="326e72e394c2155ef3a88fae4cccd21b">&#x6DFB;&#x52A0;&#x6210;&#x529F;&#x5C06;&#x6253;&#x5370;&#xFF1A;</p>
+<pre version="f1c81b0adf0f5a0f411d17a07f82bf21"><code class="lang-sh">Added a new app: other_app -- &lt;&#x5E94;&#x7528; id&gt;
+</code></pre>
+<p version="ef6a2ee8a9c496ee37db2961f54317cd">&#x901A;&#x8FC7; <code>app list</code> &#x547D;&#x4EE4;&#x5C06;&#x770B;&#x5230;&#x4E24;&#x4E2A;&#x5E94;&#x7528;&#xFF1A;</p>
+<pre version="6e47496ec1700bfe6798198efa8d7fee"><code class="lang-sh">$ avoscloud app list
+* origin    7104en0u071tcb5d1tr2juxa499ouvdn1gm5szq47nqzt06q
+  other_app 1qdney6b5qg2i69t79yq941krrwdu3glt0ot69re6w7xv6lf
+</code></pre>
+<p version="01c4bc66c776b0a601cbb170ae1981d7">&#x524D;&#x9762;&#x6709;&#x661F;&#x53F7;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x8868;&#x793A;&#x662F;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x3002;&#x5207;&#x6362;&#x5E94;&#x7528;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528; <code>checkout</code> &#x547D;&#x4EE4;&#x3002;</p>
+<h3 id="-">&#x5207;&#x6362;&#x5E94;&#x7528;</h3>
+<p version="94e2f93d54edc8680640fc6fe39d2049">&#x4ECE;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x5207;&#x6362;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>checkout &lt;&#x5E94;&#x7528;&#x540D;&#x79F0;&gt;</code>:</p>
+<pre version="33a1103d80acf0a1067216c48ad1fc08"><code class="lang-sh">$ avoscloud checkout other_app
+Switced to app other_app
+</code></pre>
+<p version="7d594199992a64a4168984431052e0e7">&#x5207;&#x6362;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x6267;&#x884C; <code>deploy</code>&#x3001;<code>publish</code>&#x3001;<code>status</code>&#x3001;<code>logs</code>&#x7B49;&#x547D;&#x4EE4;&#x90FD;&#x5C06;&#x8FD0;&#x884C;&#x5728; <code>other_app</code> &#x4E0A;&#x3002;&#x5982;&#x679C;&#x4F60;&#x8FC7;&#x53BB;&#x6CA1;&#x6709;&#x90E8;&#x7F72;&#x8FC7;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x90E8;&#x7F72;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x8981;&#x6C42;&#x4F60;&#x8F93;&#x5165;&#x65B0;&#x5E94;&#x7528;&#x7684; master key&#x3002;</p>
+<p version="fab9de2f0d78e7e6c043c753a883d544">&#x901A;&#x8FC7; <code>app</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x5DF2;&#x7ECF;&#x662F; <code>other_app</code>:</p>
+<pre version="b545841508b8a33dec9ea40ab8ab625d"><code class="lang-sh">$ avoscloud app
+* other_app &lt;&#x5E94;&#x7528; id&gt;
+</code></pre>
+<p version="4961577da52288106811ddb0931f751a">&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5728;&#x4E0D;&#x5207;&#x6362;&#x5E94;&#x7528;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x53BB;&#x90E8;&#x7F72;&#x4E91;&#x5F15;&#x64CE;&#x5230;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>-p</code> &#x9009;&#x9879;&#x6765;&#x6307;&#x5B9A;&#xFF0C;&#x4F8B;&#x5982;:</p>
+<pre version="5246a589aa00151e7d6c7e012f4baad2"><code class="lang-sh">$ avoscloud deploy -p other_app
+</code></pre>
+<p version="07b9184702084a43806cf2b57f980845">&#x8FD9;&#x6837;&#x5C31;&#x65E0;&#x9700;&#x901A;&#x8FC7; checkout &#x5207;&#x6362;&#x5E94;&#x7528;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x90E8;&#x7F72;&#x9879;&#x76EE;&#x5230;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#x3002;<code>status</code>&#x3001;<code>publish</code> &#x7B49;&#x5E94;&#x7528;&#x76F8;&#x5173;&#x7684;&#x547D;&#x4EE4;&#x4E5F;&#x540C;&#x6837;&#x652F;&#x6301; <code>-p</code> &#x9009;&#x9879;&#x3002;</p>
+<h3 id="-">&#x79FB;&#x9664;&#x5E94;&#x7528;</h3>
+<p version="b222b09e164a2bf242d782611b974bab">&#x540C;&#x6837;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#xFF0C;&#x4F7F;&#x7528;  <code>rm</code> &#x547D;&#x4EE4;&#xFF1A;</p>
+<pre version="bf0e920cf5f45e417a237c7471763115"><code class="lang-sh">$ avoscloud rm other_app
+Removed app: other_app
+</code></pre>
+<p version="d1d85ba6d82bb4bde271c2175b288be7">&#x901A;&#x8FC7; <code>app list</code> &#x786E;&#x8BA4;&#x5DF2;&#x7ECF;&#x5220;&#x9664;&#xFF1A;</p>
+<pre version="725c3ba73651e286d753374dde9e6e49"><code class="lang-sh">$ avoscloud app list
+  origin 7104en0u071tcb5d1tr2juxa499ouvdn1gm5szq47nqzt06q
+</code></pre>
+<h2 id="-">&#x6279;&#x91CF;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;</h2>
+<p version="4e1ae602625da219510ab63ba17d25d2">&#x5982;&#x679C;&#x4F60;&#x6709;&#x4E00;&#x4E9B;&#x6587;&#x4EF6;&#x5E0C;&#x671B;&#x4E0A;&#x4F20;&#x5230; LeanCloud &#x5E73;&#x53F0;&#x4E0A;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>upload</code> &#x547D;&#x4EE4;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x4E0A;&#x4F20;&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6279;&#x91CF;&#x4E0A;&#x4F20;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#xFF08;&#x5305;&#x62EC;&#x5B50;&#x76EE;&#x5F55;&#xFF09;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x3002;</p>
+<pre version="ade7c5482f2947b322b0cdcc8d420e94"><code class="lang-sh">$ avoscloud upload public/index.html
+Uploads /Users/dennis/programming/avos/new_app/public/index.html successfully at: http://ac-7104en0u.qiniudn.com/f9e13e69-10a2-1742-5e5a-8e71de75b9fc.html
+</code></pre>
+<p version="4d8b6e860f83ed11c86fb3f915c49268">&#x4E0A;&#x4F20;&#x6210;&#x529F;&#x540E;&#x4F1A;&#x663E;&#x793A;&#x6587;&#x4EF6;&#x5728; LeanCloud &#x5E73;&#x53F0;&#x4E0A;&#x7684; URL&#x3002;</p>
+<p version="b74672abebc440b066ef299b55743419">&#x4E0A;&#x4F20; images &#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre version="f5fdf655edded43d19a8068fd27486a9"><code class="lang-sh">avoscloud upload images/
+</code></pre>
+<h2 id="cql-">CQL &#x4EA4;&#x4E92;&#x67E5;&#x8BE2;</h2>
+<p version="38b287e90b2cf8db80031f5441096767">0.6.1 &#x7248;&#x672C;&#x5F00;&#x59CB;&#xFF0C;&#x6211;&#x4EEC;&#x652F;&#x6301; cql &#x547D;&#x4EE4;&#x6765;&#x8FDB;&#x5165;&#x4EA4;&#x4E92;&#x67E5;&#x8BE2;&#x754C;&#x9762;&#xFF1A;</p>
+<pre version="e3f14cf074a47e128abca991ca1345f3"><code class="lang-sh">avoscloud cql
+</code></pre>
+<p version="7198fc2aaa1d84ecc90de5495d38cbfd">&#x4F7F;&#x7528; <a href="./cql_guide.html">CQL</a> &#x8BED;&#x8A00;&#x505A;&#x67E5;&#x8BE2;&#xFF0C;&#x7ED3;&#x679C;&#x5982;&#x56FE;&#xFF1A;</p>
+<p><img src="images/cql_command.png" alt="image"></p>
+<h2 id="-">&#x5176;&#x4ED6;&#x547D;&#x4EE4;</h2>
+<p version="179030f9d1914331f45b8cde5aa52883">&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#x9636;&#x6BB5;&#x67E5;&#x8BE2;&#x8D44;&#x6599;&#x6216;&#x8005;&#x6587;&#x6863;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>search</code> &#x547D;&#x4EE4;&#xFF1A;</p>
+<pre version="3f2891ec8ae4ec7573c4d275efb250af"><code class="lang-sh">$ avoscloud search AVObject
+</code></pre>
+<p version="3b18756c0dfa4e9a0a9bd4502d00f8f3">&#x8FD9;&#x5C06;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x663E;&#x793A;<a href="/search.html?q=AVObject">&#x641C;&#x7D22;&#x7ED3;&#x679C;</a>&#x3002;</p>
+<p version="342a48f791ddfda1111165e54d33afc1">&#x4E5F;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x591A;&#x4E2A;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x7A7A;&#x683C;&#x9694;&#x5F00;&#x5373;&#x53EF;&#xFF1A;</p>
+<pre version="a19f26d620a1e4e6375dca76707e0935"><code class="lang-sh">$ avoscloud search &#x4E91;&#x5F15;&#x64CE; &#x547D;&#x4EE4;&#x884C;
+</code></pre>
+<h2 id="-">&#x8D21;&#x732E;</h2>
+<p version="0a72b6bc892488be7c7fe4dd5aac7c25"><code>avoscloud-code</code> &#x672C;&#x8EAB;&#x662F;&#x5F00;&#x6E90;&#xFF0C;&#x57FA;&#x4E8E; <a href="https://www.gnu.org/licenses/lgpl.html">GNU LGPL</a> &#x534F;&#x8BAE;&#xFF0C;&#x6E90;&#x7801;&#x6258;&#x7BA1;&#x5728; Github: <a href="https://github.com/leancloud/avoscloud-code-command">https://github.com/leancloud/avoscloud-code-command</a></p>
+<p version="3b3b987f347ea830c4e408f92cacb34a">&#x6B22;&#x8FCE;&#x5927;&#x5BB6;&#x8D21;&#x732E;&#x3002;</p>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

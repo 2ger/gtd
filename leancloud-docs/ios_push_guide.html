@@ -1,0 +1,770 @@
+<!doctype html>
+
+<html version="7af19b935965e8311ded1c655a0db782">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="ios-">iOS &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</h1>
+<blockquote>
+<p version="9c4ef16e866c6f755d4f07fe6671e39b">&#x5F00;&#x59CB;&#x4E4B;&#x524D;
+&#x5728;&#x770B;&#x4E0B;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5047;&#x8BBE;&#x4F60;&#x5DF2;&#x7ECF;&#x770B;&#x8FC7;&#x6211;&#x4EEC;&#x7684;<a href="./push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x603B;&#x89C8;</a>&#xFF0C;&#x4E86;&#x89E3;&#x4E86;&#x57FA;&#x672C;&#x7684;&#x6982;&#x5FF5;&#x548C;&#x6A21;&#x578B;&#x3002;</p>
+</blockquote>
+<p version="30f2deedc61ddfa8b54000e04dd6abe4">&#x672C;&#x8282;&#x5C06;&#x5411;&#x4F60;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5728; iOS &#x8BBE;&#x5907;&#x4E2D;&#x4F7F;&#x7528; LeanCloud &#x7684;&#x63A8;&#x9001;&#x529F;&#x80FD;&#xFF08;&#x5982;&#x679C;&#x4F60;&#x5BF9; iOS &#x6D88;&#x606F;&#x63A8;&#x9001;&#x8FD8;&#x4E0D;&#x592A;&#x4E86;&#x89E3;&#xFF0C;&#x63A8;&#x8350;&#x5148;&#x770B;&#x6211;&#x4EEC;&#x7684;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#xFF1A;<a href="https://blog.leancloud.cn/1163/">&#x7EC6;&#x8BF4; iOS &#x6D88;&#x606F;&#x63A8;&#x9001;</a>&#xFF09;&#x3002;</p>
+<h2 id="-">&#x6587;&#x6863;&#x8D21;&#x732E;</h2>
+<p version="56396f3d4516ffdc3b83976f7cb5812a">&#x5982;&#x679C;&#x89C9;&#x5F97;&#x8FD9;&#x4E2A;&#x6587;&#x6863;&#x5199;&#x7684;&#x4E0D;&#x591F;&#x597D;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x6765;&#x4E0D;&#x65AD;&#x5B8C;&#x5584;&#x3002;</p>
+<p version="9019417a01fcfa4271af1edefecb6bfd">Github &#x4ED3;&#x5E93;&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/leancloud/docs">https://github.com/leancloud/docs</a></p>
+<h2 id="-ios-">&#x914D;&#x7F6E; iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;</h2>
+<p version="7750f1658710751f7d037e8abfb5ab28">&#x914D;&#x7F6E; iOS &#x8BC1;&#x4E66;&#x76F8;&#x5BF9;&#x9EBB;&#x70E6;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x662F;&#x5FC5;&#x987B;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;&#x8BF7;&#x4ED4;&#x7EC6;&#x770B;<a href="./ios_push_cert.html">iOS&#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a>&#x3002;</p>
+<h2 id="-">&#x591A;&#x8BC1;&#x4E66;&#x573A;&#x666F;</h2>
+<p version="1edc7c2e641c065c6404b67c4e1f5aea">&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x5E94;&#x7528;&#xFF0C;&#x4ED6;&#x4EEC;&#x5728;&#x53D1;&#x5E03;&#x548C;&#x4E0A;&#x67B6;&#x65F6;&#x5206;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x7248;&#x672C;&#xFF08;&#x53F8;&#x673A;&#x7248;&#x3001;&#x4E58;&#x5BA2;&#x7248;&#xFF09;&#xFF0C;&#x4F46;&#x6570;&#x636E;&#x548C;&#x6D88;&#x606F;&#x662F;&#x4E92;&#x901A;&#x7684;&#xFF0C;&#x8FD9;&#x79CD;&#x573A;&#x666F;&#x4E0B;&#x6211;&#x4EEC;&#x5141;&#x8BB8;&#x5E94;&#x7528;&#x4E0A;&#x4F20;&#x591A;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x8BC1;&#x4E66;&#x5E76;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x5907;&#x8BBE;&#x7F6E; <code>deviceProfile</code>&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x4EE5;&#x7528;&#x5408;&#x9002;&#x7684;&#x8BC1;&#x4E66;&#x7ED9;&#x4E0D;&#x540C;&#x7248;&#x672C;&#x7684;&#x5E94;&#x7528;&#x63A8;&#x9001;&#x3002;</p>
+<p version="a053dd0a6f2a02fa89e64c8101f55f39">&#x5F53;&#x4F60;&#x4E0A;&#x4F20;&#x81EA;&#x5B9A;&#x4E49;&#x8BC1;&#x4E66;&#x65F6;&#x4F1A;&#x88AB;&#x8981;&#x6C42;&#x8F93;&#x5165;&#x201C;&#x8BC1;&#x4E66;&#x7C7B;&#x578B;&#x201D;&#xFF0C;&#x5373; deviceProfile &#x7684;&#x540D;&#x5B57;&#x3002;&#x5F53; installation &#x4E0A;&#x4FDD;&#x5B58;&#x4E86; deviceProfile &#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5FFD;&#x7565;&#x539F;&#x5148;&#x7684;&#x5F00;&#x53D1;&#x3001;&#x751F;&#x4EA7;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#xFF0C;&#x800C;&#x76F4;&#x63A5;&#x6309;&#x7167; deviceProfile &#x63A8;&#x9001;&#x3002;</p>
+<h2 id="-installation">&#x4FDD;&#x5B58; Installation</h2>
+<p version="4b69f4e43491cbc08095c6ab5579a341">&#x5728;&#x4FDD;&#x5B58; installation &#x524D;&#xFF0C;&#x8981;&#x5148;&#x901A;&#x8FC7;&#x4E0B;&#x5217;&#x4EE3;&#x7801;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x63A8;&#x9001;&#x6743;&#x9650;&#xFF1A;</p>
+<pre version="04c133767af19ab0d1c4b7c64712e2fb"><code class="lang-objc">// Before iOS 8:
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    ...
+    // Register for push notifications
+    [application registerForRemoteNotificationTypes:
+                                UIRemoteNotificationTypeBadge |
+                                UIRemoteNotificationTypeAlert |
+                                UIRemoteNotificationTypeSound];
+    ...
+}
+</code></pre>
+<pre version="b6eb84420df4564c841686d929151054"><code class="lang-objc">//For iOS 8:
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    ...
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert
+                                            | UIUserNotificationTypeBadge
+                                            | UIUserNotificationTypeSound
+                                                                             categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
+    ...
+}
+</code></pre>
+<p version="c2ab22501f760b04cd63518b46e11416">&#x5728; iOS &#x8BBE;&#x5907;&#x4E2D;&#xFF0C;Installation &#x7684;&#x7C7B;&#x662F; AVInstallation&#xFF0C;&#x5E76;&#x4E14;&#x662F; AVObject &#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x4F7F;&#x7528;&#x540C;&#x6837;&#x7684; API &#x5B58;&#x50A8;&#x548C;&#x67E5;&#x8BE2;&#x3002;&#x5982;&#x679C;&#x8981;&#x8BBF;&#x95EE;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x7684; Installation &#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>[AVInstallation currentInstallation]</code>&#x65B9;&#x6CD5;&#x3002;&#x5F53;&#x4F60;&#x7B2C;&#x4E00;&#x6B21;&#x4FDD;&#x5B58; AVInstallation &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B83;&#x4F1A;&#x63D2;&#x5165;<code>_Installation</code>&#x8868;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;<a href="/data.html?appid={{appid}}">&#x6570;&#x636E;&#x7BA1;&#x7406;</a>&#x5E73;&#x53F0;&#x770B;&#x5230;&#x548C;&#x67E5;&#x8BE2;&#x3002;&#x5F53; deviceToken &#x4E00;&#x88AB;&#x4FDD;&#x5B58;&#xFF0C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x5411;&#x8FD9;&#x53F0;&#x8BBE;&#x5907;&#x63A8;&#x9001;&#x6D88;&#x606F;&#x4E86;&#x3002;</p>
+<pre version="87883b0bdcc1b5059a5555706e5d5adc"><code class="lang-objc">- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    AVInstallation *currentInstallation = [AVInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+</code></pre>
+<p version="0328bbd07cda1956f095457f95c88f14">&#x53EF;&#x4EE5;&#x50CF;&#x4FEE;&#x6539; AVObject &#x90A3;&#x6837;&#x53BB;&#x4FEE;&#x6539; AVInstallation&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x5B57;&#x6BB5;&#x53EF;&#x4EE5;&#x5E2E;&#x4F60;&#x7BA1;&#x7406;&#x76EE;&#x6807;&#x8BBE;&#x5907;&#xFF1A;</p>
+<ul>
+<li>badge &#x5E94;&#x7528; icon &#x65C1;&#x8FB9;&#x7684;&#x7EA2;&#x8272;&#x6570;&#x5B57;&#xFF0C;&#x4FEE;&#x6539; AVInstallation &#x7684;&#x8FD9;&#x4E2A;&#x503C;&#x5C06;&#x4FEE;&#x6539;&#x5E94;&#x7528;&#x7684; badge&#x3002;&#x4FEE;&#x6539;&#x5E94;&#x8BE5;&#x4FDD;&#x5B58;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E3A;&#x4EE5;&#x540E;&#x505A; badge &#x589E;&#x91CF;&#x5F0F;&#x7684;&#x63A8;&#x9001;&#x505A;&#x51C6;&#x5907;&#x3002;</li>
+<li>channels &#x5F53;&#x524D;&#x8BBE;&#x5907;&#x8BA2;&#x9605;&#x7684;&#x9891;&#x9053;&#x6570;&#x7EC4;&#x3002;</li>
+<li>appName &#x5E94;&#x7528;&#x540D;&#x79F0;&#xFF0C;&#x53EA;&#x8BFB;</li>
+<li>appVersion &#x5E94;&#x7528;&#x7248;&#x672C;&#xFF0C;&#x53EA;&#x8BFB;</li>
+<li>deviceProfile &#x8BBE;&#x5907;&#x5BF9;&#x5E94;&#x7684;&#x540E;&#x53F0;&#x81EA;&#x5B9A;&#x4E49;&#x8BC1;&#x4E66;&#x540D;&#x79F0;&#xFF0C;&#x7528;&#x4E8E;&#x591A;&#x8BC1;&#x4E66;&#x63A8;&#x9001;</li>
+</ul>
+<h2 id="-">&#x53D1;&#x9001;&#x63A8;&#x9001;&#x6D88;&#x606F;</h2>
+<p version="029be1901037fdea1386f3458213f8cb">&#x53D1;&#x9001; iOS &#x63A8;&#x9001;&#x6D88;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; REST API&#xFF0C;&#x6216;&#x8005;&#x6211;&#x4EEC;&#x7684;&#x6D88;&#x606F;&#x63A8;&#x9001; web &#x5E73;&#x53F0;&#xFF0C;&#x8BF7;&#x8FDB;&#x5165;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7BA1;&#x7406;&#x754C;&#x9762;&#x67E5;&#x770B;&#x3002;</p>
+<h2 id="-">&#x4F7F;&#x7528;&#x9891;&#x9053;</h2>
+<p version="1b38f6b4db9262c6d6d61bbc578a0a03">&#x4F7F;&#x7528;&#x9891;&#x9053;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x53D1;&#x5E03;&#x2014;&#x2014;&#x8BA2;&#x9605;&#x7684;&#x6A21;&#x578B;&#x3002;&#x8BBE;&#x5907;&#x8BA2;&#x9605;&#x67D0;&#x4E2A;&#x9891;&#x9053;&#xFF0C;&#x7136;&#x540E;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x7684;&#x65F6;&#x5019;&#x6307;&#x5B9A;&#x8981;&#x53D1;&#x9001;&#x7684;&#x9891;&#x9053;&#x5373;&#x53EF;&#x3002;</p>
+<h3 id="-">&#x8BA2;&#x9605;&#x548C;&#x9000;&#x8BA2;</h3>
+<p version="77b5a84dae9f453ae4b2f98815b70bd1">&#x8BA2;&#x9605;&quot;Giants&quot;&#x9891;&#x9053;&#xFF1A;</p>
+<pre version="bde23ac9eabb56efac12c931c2163ef7"><code class="lang-objc">// When users indicate they are Giants fans, we subscribe them to that channel.
+AVInstallation *currentInstallation = [AVInstallation currentInstallation];
+[currentInstallation addUniqueObject:@&quot;Giants&quot; forKey:@&quot;channels&quot;];
+[currentInstallation saveInBackground];
+</code></pre>
+<p version="671bbcf17916e6c15fdfe96eb606620b">&#x8BA2;&#x9605;&#x540E;&#x8981;&#x8BB0;&#x5F97;&#x4FDD;&#x5B58;&#xFF0C;&#x5373;&#x53EF;&#x5728;<a href="/data.html?appid={{appid}}">&#x6570;&#x636E;&#x7BA1;&#x7406;</a>&#x5E73;&#x53F0;&#x770B;&#x5230;&#x8BE5;installation&#x7684;channels&#x5B57;&#x6BB5;&#x591A;&#x4E86;&quot;Giants&quot;&#x3002;</p>
+<p version="c9598cc8f35dfb97955e916b3b701ea9">&#x9000;&#x8BA2;&#xFF1A;</p>
+<pre version="bfa81dd4ec975af4763256f9610c25a0"><code class="lang-objc">// When users indicate they are no longer Giants fans, we unsubscribe them.
+AVInstallation *currentInstallation = [AVInstallation currentInstallation];
+[currentInstallation removeObject:@&quot;Giants&quot; forKey:@&quot;channels&quot;];
+[currentInstallation saveInBackground];
+</code></pre>
+<p version="5e48a780533937b973cee0d597bf408d">&#x83B7;&#x53D6;&#x6240;&#x6709;&#x8BA2;&#x9605;&#x7684;&#x9891;&#x9053;&#xFF1A;</p>
+<pre version="cd4b395f4127f0f7d18ab1d3ebf2170c"><code class="lang-objc">NSArray *subscribedChannels = [AVInstallation currentInstallation].channels;
+</code></pre>
+<h3 id="-">&#x53D1;&#x9001;&#x6D88;&#x606F;&#x5230;&#x9891;&#x9053;</h3>
+<p version="7698b3b4b5d7221754d06a358ea4b5a5">&#x4F8B;&#x5982;&#xFF0C;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x5230;&#x521A;&#x624D;&#x8BA2;&#x9605;&#x7684;&quot;Giants&quot;&#x9891;&#x9053;&#xFF1A;</p>
+<pre version="7a7182ca477501c8cd69518f4c17fb7c"><code class="lang-objc">// Send a notification to all devices subscribed to the &quot;Giants&quot; channel.
+AVPush *push = [[AVPush alloc] init];
+[push setChannel:@&quot;Giants&quot;];
+[push setMessage:@&quot;The Giants just scored!&quot;];
+[push sendPushInBackground];
+</code></pre>
+<p version="0b93c7841aafd1834f63a87283da55fa">&#x5982;&#x679C;&#x4F60;&#x60F3;&#x53D1;&#x9001;&#x5230;&#x591A;&#x4E2A;&#x9891;&#x9053;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A; channels &#x6570;&#x7EC4;:</p>
+<pre version="33ae5ea5cfe6685b370639a76c3552fe"><code class="lang-objc">NSArray *channels = [NSArray arrayWithObjects:@&quot;Giants&quot;, @&quot;Mets&quot;, nil];
+AVPush *push = [[AVPush alloc] init];
+
+// Be sure to use the plural &apos;setChannels&apos;.
+[push setChannels:channels];
+[push setMessage:@&quot;The Giants won against the Mets 2-3.&quot;];
+[push sendPushInBackground];
+</code></pre>
+<h3 id="-">&#x9009;&#x62E9;&#x8BC1;&#x4E66;</h3>
+<p version="435fa8cd151a15772b3dccec76c2ab17">&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4ECE;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x8D77;&#x7684;&#x63A8;&#x9001;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x4F60;&#x5728;&#x6D88;&#x606F;&#x83DC;&#x5355;&#x4E0A;&#x4F20;&#x7684;&#x751F;&#x4EA7;&#x8BC1;&#x4E66;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x4F7F;&#x7528;&#x5F00;&#x53D1;&#x8BC1;&#x4E66;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>setProductionMode</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="efd41b7f8fcfe7fc60058d54ca9c992e"><code>[AVPush setProductionMode:NO];
+......
+</code></pre><h2 id="-">&#x9AD8;&#x7EA7;&#x5B9A;&#x5411;&#x53D1;&#x9001;</h2>
+<p version="44d6030b9cca92d914ccac5b03ace2d6">&#x9891;&#x9053;&#x5BF9;&#x4E8E;&#x5927;&#x591A;&#x6570;&#x5E94;&#x7528;&#x6765;&#x8BF4;&#x53EF;&#x80FD;&#x5C31;&#x8DB3;&#x591F;&#x4E86;&#x3002;&#x4F46;&#x662F;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x66F4;&#x9AD8;&#x7CBE;&#x5EA6;&#x7684;&#x5B9A;&#x5411;&#x63A8;&#x9001;&#x3002;LeanCloud &#x5141;&#x8BB8;&#x4F60;&#x901A;&#x8FC7; AVQuery API &#x67E5;&#x8BE2; Installation &#x5217;&#x8868;&#xFF0C;&#x5E76;&#x5411;&#x6307;&#x5B9A;&#x6761;&#x4EF6;&#x7684; query &#x63A8;&#x9001;&#x6D88;&#x606F;&#x3002;</p>
+<p version="095fc3f304acfcd78456eee184e563dd">&#x56E0;&#x4E3A; AVInstallation &#x540C;&#x65F6;&#x662F; AVObject &#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x56E0;&#x6B64;&#x4F60;&#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#x4EFB;&#x4F55;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5230; AVInstallation&#xFF0C;&#x5E76;&#x5C06;&#x5B83;&#x548C;&#x4F60;&#x7684;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x8D77;&#x6765;&#xFF0C;&#x8FD9;&#x6837;&#x4EE5;&#x6765;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x975E;&#x5E38;&#x7075;&#x6D3B;&#x5730;&#x5411;&#x4F60;&#x7528;&#x6237;&#x7FA4;&#x505A;&#x5B9A;&#x5236;&#x5316;&#x3001;&#x52A8;&#x6001;&#x7684;&#x63A8;&#x9001;&#x3002;</p>
+<h3 id="-installation-">&#x4FDD;&#x5B58; Installation &#x6570;&#x636E;</h3>
+<p version="da6cce548c12f32660e1d60ed6f06a88">&#x4E3A; AVInstallation &#x6DFB;&#x52A0;&#x4E09;&#x4E2A;&#x65B0;&#x5B57;&#x6BB5;&#xFF1A;</p>
+<pre version="a2d531474c33b3d33dcf21f36de59c07"><code class="lang-objc">// Store app language and version
+AVInstallation *installation = [AVInstallation currentInstallation];
+[installation setObject:@(YES) forKey:@&quot;scores&quot;];
+[installation setObject:@(YES) forKey:@&quot;gameResults&quot;];
+[installation setObject:@(YES) forKey:@&quot;injuryReports&quot;];
+[installation saveInBackground];
+</code></pre>
+<p version="3599f37cfca2c66a1dd9e26f712ffbcb">&#x8868;&#x793A;&#x6BD4;&#x8D5B;&#x7684;&#x5206;&#x6570;&#xFF0C;&#x6BD4;&#x8D5B;&#x7ED3;&#x679C;&#x548C;&#x53D7;&#x4F24;&#x62A5;&#x544A;&#x3002;</p>
+<p version="bae8b43f2f48db9479c9caab297ef9ef">&#x8BBE;&#x7F6E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7ED9; Installation &#x6DFB;&#x52A0; owner &#x5C5E;&#x6027;&#xFF0C;&#x6BD4;&#x5982;&#x5F53;&#x524D;&#x7684;&#x767B;&#x5F55;&#x7528;&#x6237;&#xFF1A;</p>
+<pre version="8b3f6440417e4c87f2e248dad9f9be67"><code class="lang-objc">// Saving the device&apos;s owner
+AVInstallation *installation = [AVInstallation currentInstallation];
+[installation setObject:[AVUser currentUser] forKey:@&quot;owner&quot;];
+[installation saveInBackground];
+</code></pre>
+<h3 id="-">&#x6839;&#x636E;&#x67E5;&#x8BE2;&#x6765;&#x63A8;&#x9001;&#x6D88;&#x606F;</h3>
+<p version="052d56ec9c12e4fc916f8631b4a1c35d">&#x4E00;&#x65E6; Installation&#x4FDD;&#x5B58;&#x4E86;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x6570;&#x636E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>AVQuery</code>&#x6765;&#x67E5;&#x8BE2;&#x51FA;&#x8BBE;&#x5907;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#x505A;&#x63A8;&#x9001;&#x3002;Installation &#x7684;&#x67E5;&#x8BE2;&#x8DDF;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7684;&#x67E5;&#x8BE2;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x4E0D;&#x540C;&#xFF0C;&#x53EA;&#x662F;&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;
+<code>[AVInstallation query]</code>&#x521B;&#x5EFA;&#x67E5;&#x8BE2;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre version="a8e03e3ddb109166c26f52c1fa4e81b2"><code class="lang-objc">// Create our Installation query
+AVQuery *pushQuery = [AVInstallation query];
+[pushQuery whereKey:@&quot;injuryReports&quot; equalTo:@(YES)];
+
+// Send push notification to query
+AVPush *push = [[AVPush alloc] init];
+[push setQuery:pushQuery]; // Set our Installation query
+[push setMessage:@&quot;Willie Hayes injured by own pop fly.&quot;];
+[push sendPushInBackground];
+</code></pre>
+<p version="f75822e998e2169907ace108673768a1">&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x67E5;&#x8BE2;&#x4E2D;&#x6DFB;&#x52A0; channels &#x7684;&#x6761;&#x4EF6;&#xFF1A;</p>
+<pre version="94e76a46494b4b1af897c076715b7f8f"><code class="lang-objc">// Create our Installation query
+AVQuery *pushQuery = [AVInstallation query];
+[pushQuery whereKey:@&quot;channels&quot; equalTo:@&quot;Giants&quot;]; // Set channel
+[pushQuery whereKey:@&quot;scores&quot; equalTo:@(YES)];
+
+// Send push notification to query
+AVPush *push = [[AVPush alloc] init];
+[push setQuery:pushQuery];
+[push setMessage:@&quot;Giants scored against the A&apos;s! It&apos;s now 2-2.&quot;];
+[push sendPushInBackground];
+</code></pre>
+<p version="09b9a53ddad64dfc4694d90601b4c0ed">&#x5982;&#x679C;&#x4F60;&#x5728; Installation &#x8FD8;&#x4FDD;&#x5B58;&#x4E86;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x6211;&#x4EEC;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x5728;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x5411;&#x9760;&#x8FD1;&#x5317;&#x4EAC;&#x5927;&#x5B66;&#x7684;&#x8BBE;&#x5907;&#x63A8;&#x9001;&#x6D88;&#x606F;&#xFF1A;</p>
+<pre version="d7c5cf29fadfb1051582de405811449d"><code class="lang-objc">// Find users near a given location
+AVQuery *userQuery = [AVUser query];
+[userQuery whereKey:@&quot;location&quot;
+        nearGeoPoint:beijingUniversityLocation,
+         withinMiles:[NSNumber numberWithInt:1]]
+
+// Find devices associated with these users
+AVQuery *pushQuery = [AVInstallation query];
+[pushQuery whereKey:@&quot;user&quot; matchesQuery:userQuery];
+
+// Send push notification to query
+AVPush *push = [[AVPush alloc] init];
+[push setQuery:pushQuery]; // Set our Installation query
+[push setMessage:@&quot;Free hotdogs at the AVOSCloud concession stand!&quot;];
+[push sendPushInBackground];
+</code></pre>
+<h2 id="-">&#x53D1;&#x9001;&#x9009;&#x9879;</h2>
+<p version="74e79e2178c7879f45401b40c7cbab0f">&#x9664;&#x4E86;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x4FE1;&#x606F;&#x4E4B;&#x5916;&#xFF0C;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x64AD;&#x653E;&#x4E00;&#x4E2A;&#x58F0;&#x97F3;&#xFF0C;&#x8BBE;&#x7F6E; badge &#x6570;&#x5B57;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x60F3;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x3002;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x7684;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x6D88;&#x606F;&#x7684;&#x65F6;&#x6548;&#x6027;&#x7279;&#x522B;&#x654F;&#x611F;&#x7684;&#x8BDD;&#x3002;</p>
+<h3 id="-">&#x5B9A;&#x5236;&#x901A;&#x77E5;</h3>
+<p version="fd0cdb36ce81179abfa4378bb6ec928b">&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x4EC5;&#x60F3;&#x53D1;&#x9001;&#x4E00;&#x6761;&#x6587;&#x672C;&#x6D88;&#x606F;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x4E00;&#x4E2A; NSDictionary &#x6765;&#x6253;&#x5305;&#x60F3;&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x3002;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E9B;&#x4FDD;&#x7559;&#x5B57;&#x6BB5;&#x6709;&#x7279;&#x6B8A;&#x542B;&#x4E49;&#x9700;&#x8981;&#x8BF4;&#x660E;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>alert: &#x63A8;&#x9001;&#x6D88;&#x606F;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;</li>
+<li>badge: (iOS only) app icon &#x53F3;&#x4E0A;&#x89D2;&#x7684;&#x6570;&#x5B57;&#x3002;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x503C;&#x6216;&#x8005;&#x9012;&#x589E;&#x5F53;&#x524D;&#x503C;&#x3002;</li>
+<li>sound: (iOS only) &#x5E94;&#x7528; bundle &#x91CC;&#x7684;&#x58F0;&#x97F3;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#x3002;</li>
+<li>content-available: (iOS only) &#x5982;&#x679C;&#x4F60;&#x5728;&#x4F7F;&#x7528; Newsstand, &#x8BBE;&#x7F6E;&#x4E3A; 1 &#x6765;&#x5F00;&#x59CB;&#x4E00;&#x6B21;&#x540E;&#x53F0;&#x4E0B;&#x8F7D;&#x3002;</li>
+<li>action: (Android only) &#x5F53;&#x6D88;&#x606F;&#x6536;&#x5230;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x89E6;&#x53D1;&#x7684; Intent &#x540D;&#x79F0;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E; title &#x6216;&#x8005; alert&#xFF0C;Intent &#x5C06;&#x89E6;&#x53D1;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x4F1A;&#x663E;&#x793A;&#x901A;&#x77E5;&#x7ED9;&#x7528;&#x6237;&#x3002;</li>
+<li>title: (Android only) &#x663E;&#x793A;&#x5728;&#x7CFB;&#x7EDF;&#x901A;&#x77E5;&#x680F;&#x7684;&#x6807;&#x9898;&#x3002;</li>
+</ul>
+<p version="e92d548c82d7f9eb6b703e0007b918ce">&#x4F8B;&#x5982;&#xFF0C;&#x9012;&#x589E; badge &#x6570;&#x5B57;&#xFF0C;&#x5E76;&#x64AD;&#x653E;&#x58F0;&#x97F3;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x505A;:</p>
+<pre version="6020c248f3297947ccaf79419dcf55d1"><code class="lang-objc">NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
+    @&quot;The Mets scored! The game is now tied 1-1!&quot;, @&quot;alert&quot;,
+    @&quot;Increment&quot;, @&quot;badge&quot;,
+    @&quot;cheering.caf&quot;, @&quot;sound&quot;,
+    nil];
+AVPush *push = [[AVPush alloc] init];
+[push setChannels:[NSArray arrayWithObjects:@&quot;Mets&quot;, nil]];
+[push setData:data];
+[push sendPushInBackground];
+</code></pre>
+<p version="6a51a46d3f124020debef1f0e33b638c">&#x5F53;&#x7136;&#xFF0C;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x5176;&#x4ED6;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x3002;&#x4F60;&#x4F1A;&#x5728;&#x63A5;&#x6536;&#x63A8;&#x9001;&#x4E00;&#x8282;&#x770B;&#x5230;&#xFF0C;&#x5F53;&#x5E94;&#x7528;&#x901A;&#x8FC7;&#x63A8;&#x9001;&#x6253;&#x5F00;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x3002;&#x5F53;&#x4F60;&#x8981;&#x5728;&#x7528;&#x6237;&#x6253;&#x5F00;&#x901A;&#x77E5;&#x7684;&#x65F6;&#x5019;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684; view controller &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x7279;&#x522B;&#x6709;&#x7528;&#x3002;</p>
+<pre version="5e88f9954e75df63d653a30c35a17c87"><code class="lang-objc">NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
+    @&quot;Ricky Vaughn was injured in last night&apos;s game!&quot;, @&quot;alert&quot;,
+    @&quot;Vaughn&quot;, @&quot;name&quot;,
+    @&quot;Man bites dog&quot;, @&quot;newsItem&quot;,
+    nil];
+AVPush *push = [[AVPush alloc] init];
+[push setQuery:injuryReportsQuery];
+[push setChannel:@&quot;Indians&quot;];
+[push setData:data];
+[push sendPushInBackground];
+</code></pre>
+<h3 id="-">&#x8BBE;&#x7F6E;&#x8FC7;&#x671F;&#x65E5;&#x671F;</h3>
+<p version="1cf854b53c907ab8c053b725098b139e">&#x5F53;&#x8BBE;&#x5907;&#x5173;&#x95ED;&#x6216;&#x8005;&#x65E0;&#x6CD5;&#x8FDE;&#x63A5;&#x5230;&#x7F51;&#x7EDC;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x63A8;&#x9001;&#x901A;&#x77E5;&#x5C31;&#x65E0;&#x6CD5;&#x88AB;&#x9001;&#x8FBE;&#x3002;&#x5982;&#x679C;&#x4F60;&#x6709;&#x4E00;&#x6761;&#x65F6;&#x95F4;&#x654F;&#x611F;&#x7684;&#x63A8;&#x9001;&#x901A;&#x77E5;&#xFF0C;&#x4E0D;&#x5E0C;&#x671B;&#x5728;&#x592A;&#x957F;&#x65F6;&#x95F4;&#x540E;&#x88AB;&#x7528;&#x6237;&#x8BFB;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x6765;&#x907F;&#x514D;&#x6253;&#x6270;&#x7528;&#x6237;&#x3002;</p>
+<p version="5f5fc3ce11546995c6d96ee8fb95dde4">AVPush &#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x8BBE;&#x7F6E;&#x901A;&#x77E5;&#x7684;&#x8FC7;&#x671F;&#x65E5;&#x671F;&#xFF0C;&#x9996;&#x5148;&#x662F; expireAtDate&#xFF1A;&#x63A5;&#x6536; NSDate &#x6765;&#x544A;&#x8BC9; LeanCloud &#x4E0D;&#x8981;&#x518D;&#x53BB;&#x53D1;&#x9001;&#x901A;&#x77E5;&#x3002;</p>
+<pre version="2685ccbd3626eff1b1e9876c40060734"><code class="lang-objc">NSDateComponents *comps = [[NSDateComponents alloc] init];
+[comps setYear:2013];
+[comps setMonth:10];
+[comps setDay:12];
+NSCalendar *gregorian =
+  [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+NSDate *date = [gregorian dateFromComponents:comps];
+
+// Send push notification with expiration date
+AVPush *push = [[AVPush alloc] init];
+[push expireAtDate:date];
+[push setQuery:everyoneQuery];
+[push setMessage:@&quot;Season tickets on sale until October 12th&quot;];
+[push sendPushInBackground];
+</code></pre>
+<p version="fa528f9e32773da36f81f31f33bcd9c8">&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6709;&#x4E2A;&#x9690;&#x60A3;&#xFF0C;&#x56E0;&#x4E3A;&#x8BBE;&#x5907;&#x7684;&#x65F6;&#x949F;&#x662F;&#x65E0;&#x6CD5;&#x4FDD;&#x8BC1;&#x7CBE;&#x786E;&#x7684;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x5F97;&#x5230;&#x9519;&#x8BEF;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x56E0;&#x6B64;&#xFF0C;AVPush &#x8FD8;&#x63D0;&#x4F9B;&#x4E86; expireAfterTimeInterval &#x65B9;&#x6CD5;&#xFF0C;&#x63A5;&#x6536; NSTimeInterval &#x5BF9;&#x8C61;&#x3002;&#x901A;&#x77E5;&#x5C06;&#x5728;&#x6307;&#x5B9A;&#x95F4;&#x9694;&#x65F6;&#x95F4;&#x540E;&#x5931;&#x6548;&#xFF1A;</p>
+<pre version="0916f6a15ecab1b78f3770182469267f"><code class="lang-objc">// Create time interval
+NSTimeInterval interval = 60*60*24*7; // 1 week
+
+// Send push notification with expiration interval
+AVPush *push = [[AVPush alloc] init];
+[push expireAfterTimeInterval:interval];
+[push setQuery:everyoneQuery];
+[push setMessage:@&quot;Season tickets on sale until October 18th&quot;];
+[push sendPushInBackground];
+</code></pre>
+<p version="5ff084a09ef07a036606669ff57e40a3"><strong>&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x7ED9; iOS &#x8BBE;&#x5907;&#x7684;&#x63A8;&#x9001;&#x90FD;&#x8BBE;&#x7F6E;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#xFF0C;&#x624D;&#x80FD;&#x4FDD;&#x8BC1;&#x63A8;&#x9001;&#x7684;&#x5F53;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x7528;&#x6237;&#x8BBE;&#x7F6E;&#x4E86;&#x98DE;&#x884C;&#x6A21;&#x5F0F;&#xFF0C;&#x5728;&#x5173;&#x95ED;&#x98DE;&#x884C;&#x6A21;&#x5F0F;&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x6536;&#x5230;&#x63A8;&#x9001;&#x6D88;&#x606F;&#xFF0C;&#x53C2;&#x8003;&#x8FD9;&#x4E2A;<a href="http://stackoverflow.com/questions/24026544/push-notification-is-not-being-delivered-when-iphone-comes-back-online">&#x5E16;&#x5B50;</a></strong></p>
+<h3 id="-">&#x6307;&#x5B9A;&#x8BBE;&#x5907;&#x5E73;&#x53F0;</h3>
+<p version="d9c2c3d8033aa8b7f7c9138e739de936">&#x8DE8;&#x5E73;&#x53F0;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x53EF;&#x80FD;&#x60F3;&#x6307;&#x5B9A;&#x53D1;&#x9001;&#x7684;&#x5E73;&#x53F0;&#xFF0C;&#x6BD4;&#x5982; iOS &#x6216;&#x8005; Android:</p>
+<pre version="57d2e47036ec8d8b1e70fe2e2366b394"><code class="lang-objc">AVQuery *query = [AVInstallation query];
+[query whereKey:@&quot;channels&quot; equalTo:@&quot;suitcaseOwners&quot;];
+
+// Notification for Android users
+[query whereKey:@&quot;deviceType&quot; equalTo:@&quot;android&quot;];
+AVPush *androidPush = [[AVPush alloc] init];
+[androidPush setMessage:@&quot;Your suitcase has been filled with tiny robots!&quot;];
+[androidPush setQuery:query];
+[androidPush sendPushInBackground];
+
+// Notification for iOS users
+[query whereKey:@&quot;deviceType&quot; equalTo:@&quot;ios&quot;];
+AVPush *iOSPush = [[AVPush alloc] init];
+[iOSPush setMessage:@&quot;Your suitcase has been filled with tiny apples!&quot;];
+[iOSPush setChannel:@&quot;suitcaseOwners&quot;];
+[iOSPush setQuery:query];
+[iOSPush sendPushInBackground];
+</code></pre>
+<h2 id="-">&#x5B9A;&#x65F6;&#x63A8;&#x9001;</h2>
+<p version="023852fe41d6571488666c951e76f034">&#x8BF7;&#x8FDB;&#x5165;&#x6D88;&#x606F;&#x63A8;&#x9001;&#x7684; web &#x7BA1;&#x7406;&#x5E73;&#x53F0;&#xFF0C;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x5B9A;&#x65F6;&#x63A8;&#x9001;&#xFF08;&#x5EF6;&#x8FDF;&#x6216;&#x8005;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#xFF09;&#x3002;</p>
+<h2 id="-">&#x63A5;&#x6536;&#x63A8;&#x9001;&#x901A;&#x77E5;</h2>
+<p version="6af8aecfd2f6f8e77a67d1778741c0aa">&#x6B63;&#x5982;&#x524D;&#x9762;&#x5B9A;&#x5236;&#x901A;&#x77E5;&#x4E00;&#x8282;&#x63D0;&#x5230;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x968F;&#x901A;&#x77E5;&#x53D1;&#x9001;&#x4EFB;&#x610F;&#x7684;&#x6570;&#x636E;&#x3002;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x4FEE;&#x6539;&#x5E94;&#x7528;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x5F53;&#x5E94;&#x7528;&#x662F;&#x901A;&#x8FC7;&#x901A;&#x77E5;&#x6253;&#x5F00;&#x7684;&#x65F6;&#x5019;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5F53;&#x6253;&#x5F00;&#x4E00;&#x6761;&#x901A;&#x77E5;&#x544A;&#x8BC9;&#x4F60;&#x6709;&#x4E00;&#x4E2A;&#x65B0;&#x670B;&#x53CB;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5982;&#x679C;&#x663E;&#x793A;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x4F1A;&#x975E;&#x5E38;&#x597D;&#x3002;</p>
+<p version="6ceb1608a73fdc033311edd60ff15656">&#x7531;&#x4E8E; Apple &#x7684;&#x5BF9;&#x6D88;&#x606F;&#x5927;&#x5C0F;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x8BF7;&#x5C3D;&#x91CF;&#x7F29;&#x5C0F;&#x8981;&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x5927;&#x5C0F;&#xFF0C;&#x5426;&#x5219;&#x53EF;&#x80FD;&#x88AB;&#x622A;&#x65AD;&#xFF1A;</p>
+<pre version="3051c018521377fd944d42fcd5d371bb"><code class="lang-objc">NSDictionary *data = @{
+  @&quot;alert&quot;: @&quot;James commented on your photo!&quot;,
+  @&quot;p&quot;: @&quot;vmRZXZ1Dvo&quot; // Photo&apos;s object id
+};
+AVPush *push = [[AVPush alloc] init];
+[push setQuery:photoOwnerQuery];
+[push setData:data];
+[push sendPushInBackground];
+</code></pre>
+<h2 id="-">&#x54CD;&#x5E94;&#x901A;&#x77E5;&#x6570;&#x636E;</h2>
+<p version="92b27c55c73ffd6e3f34641cf549368f">&#x5F53;&#x5E94;&#x7528;&#x662F;&#x88AB;&#x901A;&#x77E5;&#x6253;&#x5F00;&#x7684;&#x65F6;&#x5019;&#xFF0C;, &#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>application:didFinishLaunchingWithOptions:</code>&#x65B9;&#x6CD5;&#x7684; launchOptions dictionary &#x8BBF;&#x95EE;&#x5230;&#x6570;&#x636E;&#xFF1A;</p>
+<pre version="a9aa33d86f285afc402da19d1f358ef8"><code class="lang-objc">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  . . .
+  // Extract the notification data
+  NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+
+  // Create a pointer to the Photo object
+  NSString *photoId = [notificationPayload objectForKey:@&quot;p&quot;];
+  AVObject *targetPhoto = [AVObject objectWithoutDataWithClassName:@&quot;Photo&quot;
+                                                          objectId:photoId];
+
+  // Fetch photo object
+  [targetPhoto fetchIfNeededInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+    // Show photo view controller
+    if (!error &amp;&amp; [AVUser currentUser]) {
+      PhotoVC *viewController = [[PhotoVC alloc] initWithPhoto:object];
+      [self.navController pushViewController:viewController animated:YES];
+    }
+  }];
+}
+</code></pre>
+<p version="5026ace915ed93b46290868ee644980a">&#x5982;&#x679C;&#x5F53;&#x901A;&#x77E5;&#x5230;&#x8FBE;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x5DF2;&#x7ECF;&#x5728;&#x8FD0;&#x884C;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>application:didReceiveRemoteNotification:fetchCompletionHandler:</code>&#x65B9;&#x6CD5;&#x7684; userInfo dictionary &#x8BBF;&#x95EE;&#x5230;&#x6570;&#x636E;&#xFF1A;</p>
+<pre version="5de8c52509be6596e61eda0d2901cc42"><code class="lang-objc">- (void)application:(UIApplication *)application
+      didReceiveRemoteNotification:(NSDictionary *)userInfo
+            fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
+  // Create empty photo object
+  NSString *photoId = [userInfo objectForKey:@&quot;p&quot;];
+  AVObject *targetPhoto = [AVObject objectWithoutDataWithClassName:@&quot;Photo&quot;
+                                                          objectId:photoId];
+
+  // Fetch photo object
+  [targetPhoto fetchIfNeededInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+    // Show photo view controller
+    if (error) {
+      handler(UIBackgroundFetchResultFailed);
+    } else if ([AVUser currentUser]) {
+      PhotoVC *viewController = [[PhotoVC alloc] initWithPhoto:object];
+      [self.navController pushViewController:viewController animated:YES];
+    } else {
+      handler(UIBackgroundFetchResultNoData);
+    }
+  }];
+}
+</code></pre>
+<p version="3cc63f10a5ef31ab9de70595a666f0e9">&#x4F60;&#x53EF;&#x4EE5;&#x9605;&#x8BFB;<a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1">Apple&#x672C;&#x5730;&#x5316;&#x548C;&#x63A8;&#x9001;&#x7684;&#x6587;&#x6863;</a>&#x6765;&#x66F4;&#x591A;&#x5730;&#x4E86;&#x89E3;&#x63A8;&#x9001;&#x901A;&#x77E5;&#x3002;</p>
+<h2 id="-">&#x8DDF;&#x8E2A;&#x63A8;&#x9001;&#x548C;&#x5E94;&#x7528;&#x7684;&#x6253;&#x5F00;&#x60C5;&#x51B5;</h2>
+<p version="8b4b08e4cc8910334e84c7cea64966a4">&#x901A;&#x8FC7; AVAnalytics &#x4F60;&#x53EF;&#x4EE5;&#x8DDF;&#x8E2A;&#x901A;&#x77E5;&#x548C;&#x5E94;&#x7528;&#x7684;&#x6253;&#x5F00;&#x60C5;&#x51B5;&#x3002;&#x6DFB;&#x52A0;&#x4E0B;&#x5217;&#x4EE3;&#x7801;&#x5230;&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x4E2D;&#x7684;<code>application:didFinishLaunchingWithOptions:</code>&#x65B9;&#x6CD5;&#x6765;&#x6536;&#x96C6;&#x6253;&#x5F00;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre version="1ec54402326f3704acdd8eb93fdfda7a"><code class="lang-objc">if (application.applicationState != UIApplicationStateBackground) {
+  // Track an app open here if we launch with a push, unless
+  // &quot;content_available&quot; was used to trigger a background push (introduced
+  // in iOS 7). In that case, we skip tracking here to avoid double
+  // counting the app-open.
+  BOOL preBackgroundPush = ![application respondsToSelector:@selector(backgroundRefreshStatus)];
+  BOOL oldPushHandlerOnly = ![self respondsToSelector:@selector(application:didReceiveRemoteNotification:fetchCompletionHandler:)];
+  BOOL noPushPayload = ![launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+  if (preBackgroundPush || oldPushHandlerOnly || noPushPayload) {
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+  }
+}
+</code></pre>
+<p version="5eee983823aa8ae0579e9c3615300a65">&#x4F20;&#x9012; nil &#x6216;&#x8005;&#x7A7A;&#x767D;&#x7684;&#x53C2;&#x6570;&#x7ED9;<code>trackAppOpenedWithLaunchOptions:</code>&#x65B9;&#x6CD5;&#x53EA;&#x662F;&#x7EDF;&#x8BA1;&#x4E00;&#x6B21;&#x6807;&#x51C6;&#x7684;&#x5E94;&#x7528;&#x6253;&#x5F00;&#x4E8B;&#x4EF6; (&#x6BD4;&#x5982;&#x4E0D;&#x662F;&#x901A;&#x8FC7;&#x901A;&#x77E5;&#x6253;&#x5F00;&#x7684;&#x5E94;&#x7528;&#xFF09;&#x3002;</p>
+<p version="50c7f69146ff5e04847e76431e612ee7">&#x4F60;&#x53EF;&#x4EE5;&#x5728; <a href="/stat.html?appid={{appid}}#/stat/appuse"><strong>&#x63A7;&#x5236;&#x53F0;</strong> &gt; <strong>&#x5206;&#x6790;</strong> &gt; <strong>&#x884C;&#x4E3A;&#x5206;&#x6790;</strong> &gt; <strong>&#x5E94;&#x7528;&#x4F7F;&#x7528;</strong></a> &#x91CC;&#x770B;&#x5230;&#x901A;&#x77E5;&#x548C;&#x5E94;&#x7528;&#x6253;&#x5F00;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<p version="fd5c1a8208b8df699555e47a9535d07f">&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x6216;&#x8005;&#x5728;&#x540E;&#x53F0;&#xFF0C;<code>application:didReceiveRemoteNotification:</code>&#x65B9;&#x6CD5;&#x5C06;&#x4F1A;&#x5904;&#x7406;&#x6536;&#x5230;&#x7684;&#x63A8;&#x9001;&#x901A;&#x77E5;&#x3002;</p>
+<p version="6679d334f3653ad4796cd72f9e39e028"><strong>&#x5982;&#x679C;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x5904;&#x4E8E;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF0C;iOS &#x7CFB;&#x7EDF;&#x5C06;&#x4E0D;&#x4F1A;&#x5728;&#x7CFB;&#x7EDF;&#x7684;&#x901A;&#x77E5;&#x4E2D;&#x5FC3;&#x663E;&#x793A;&#x63A8;&#x9001;&#x6D88;&#x606F;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>UILocalNotification</code> &#x5C55;&#x793A;&#x4E00;&#x4E2A;&#x901A;&#x77E5;&#x7ED9;&#x7528;&#x6237;&#x3002;</strong></p>
+<p version="b68a3c107ada41353b3990af53e7a1a1">&#x5982;&#x679C;&#x5E94;&#x7528;&#x5728;&#x540E;&#x53F0;&#xFF0C;&#x5E76;&#x4E14;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x4E86;&#x901A;&#x77E5;&#xFF0C;&#x90A3;&#x4E48;&#x5E94;&#x7528;&#x5C06;&#x88AB;&#x5E26;&#x5230;&#x524D;&#x53F0;&#x53EF;&#x89C6;&#xFF0C;&#x4E3A;&#x4E86;&#x8DDF;&#x8E2A;&#x8FD9;&#x79CD;&#x901A;&#x8FC7;&#x901A;&#x77E5;&#x6253;&#x5F00;&#x5E94;&#x7528;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728;&#x8DDF;&#x8E2A;&#x4EE3;&#x7801;&#x91CC;&#x591A;&#x4F5C;&#x4E00;&#x4E2A;&#x68C0;&#x67E5;&#xFF1A;</p>
+<pre version="fd6b83824943320f016ebe6e27ee8fed"><code class="lang-objc">- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+  if (application.applicationState == UIApplicationStateActive) {
+    // &#x6B64;&#x5904;&#x53EF;&#x4EE5;&#x5199;&#x4E0A;&#x5E94;&#x7528;&#x6FC0;&#x6D3B;&#x72B6;&#x6001;&#x4E0B;&#x63A5;&#x6536;&#x5230;&#x901A;&#x77E5;&#x7684;&#x5904;&#x7406;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x65E0;&#x9700;&#x5904;&#x7406;&#x53EF;&#x5FFD;&#x7565;
+  } else {
+    // The application was just brought from the background to the foreground,
+    // so we consider the app as having been &quot;opened by a push notification.&quot;
+    [AVAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
+  }
+}
+</code></pre>
+<p version="7775201978347f0528415613702f74bf">&#x5982;&#x679C;&#x4F7F;&#x7528; iOS 7 push &#x7684;&#x65B0;&#x7279;&#x6027;&#xFF08;&#x5305;&#x62EC;&#x65B0;&#x7684; &quot;content-available&quot; &#x529F;&#x80FD;&#xFF09;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5B9E;&#x73B0; iOS 7 
+&#x65B0;&#x52A0;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="a97374be24d68b96ff6bf1655ac18684"><code class="lang-objc">- (void)application:(UIApplication *)application
+        didReceiveRemoteNotification:(NSDictionary *)userInfo
+        fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+  if (application.applicationState == UIApplicationStateActive) {
+    // &#x6B64;&#x5904;&#x53EF;&#x4EE5;&#x5199;&#x4E0A;&#x5E94;&#x7528;&#x6FC0;&#x6D3B;&#x72B6;&#x6001;&#x4E0B;&#x63A5;&#x6536;&#x5230;&#x901A;&#x77E5;&#x7684;&#x5904;&#x7406;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x65E0;&#x9700;&#x5904;&#x7406;&#x53EF;&#x5FFD;&#x7565;
+  } else {
+    [AVAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
+  }
+}
+</code></pre>
+<h3 id="-ios-only-">&#x8DDF;&#x8E2A;&#x672C;&#x5730;&#x901A;&#x77E5; (iOS only)</h3>
+<p version="5f80ab2a3c5569b6be5a3538411551e3">&#x4E3A;&#x4E86;&#x7EDF;&#x8BA1;&#x8DDF;&#x8E2A;&#x672C;&#x5730;&#x901A;&#x77E5;&#x6D88;&#x606F;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x90FD;&#x4F1A;&#x8C03;&#x7528;&#x5230;&#xFF1A;</p>
+<ul>
+<li><code>application:didFinishLaunchingWithOptions:</code></li>
+<li><code>-application:didReceiveLocalNotification:</code></li>
+</ul>
+<p version="a3f419af69a4830d28153c6bbc62af77">&#x5982;&#x679C;&#x4F60;&#x5B9E;&#x73B0;&#x4E86; <code>application:didReceiveLocalNotification:</code> &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x8981;&#x6CE8;&#x610F;&#x907F;&#x514D;&#x91CD;&#x590D;&#x7EDF;&#x8BA1;&#x3002;</p>
+<h4 id="-badge">&#x6E05;&#x9664; Badge</h4>
+<p version="90a68c03b2645618feeebf7504a6d2f4">&#x6E05;&#x9664; Badge &#x6570;&#x5B57;&#x7684;&#x6700;&#x597D;&#x65F6;&#x673A;&#x662F;&#x6253;&#x5F00; app &#x7684;&#x65F6;&#x5019;&#x3002; &#x8BBE;&#x7F6E;&#x5F53;&#x524D; installation &#x7684; badge &#x5C5E;&#x6027;&#x5E76;&#x4FDD;&#x5B58;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF1A;</p>
+<pre version="a4e92631371060fa32570872b276f59b"><code class="lang-objc">- (void)applicationDidBecomeActive:(UIApplication *)application {
+    int num=application.applicationIconBadgeNumber;
+    if(num!=0){
+        AVInstallation *currentInstallation = [AVInstallation currentInstallation];
+        [currentInstallation setBadge:0];
+        [currentInstallation saveEventually];
+        application.applicationIconBadgeNumber=0;
+    }
+    [application cancelAllLocalNotifications];
+    //...
+}
+</code></pre>
+<p version="6f119ce3584d0b74c47239a6e9a6aa21">&#x6E05;&#x9664; Badge &#x6570;&#x5B57;&#x6700;&#x76F8;&#x5173;&#x7684;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#xFF1A;</p>
+<ul>
+<li><code>applicationDidBecomeActive:</code></li>
+<li><code>application:didFinishLaunchingWithOptions:</code></li>
+<li><code>application:didReceiveRemoteNotification:</code></li>
+</ul>
+<p version="2cdd0c473c20607cc5ffb795105125b0">&#x8BF7;&#x9605;&#x8BFB; <a href="http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UIApplicationDelegate_Protocol/Reference/Reference.html">UIApplicationDelegate &#x6587;&#x6863;</a>&#x3002;</p>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

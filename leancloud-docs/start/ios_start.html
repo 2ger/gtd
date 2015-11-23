@@ -1,0 +1,127 @@
+<h4 id="-">自动安装</h4>
+<p><a href="http://www.cocoapods.org">CocoaPods</a> 是一个很好的依赖管理工具，我们推荐您使用这个方法来安装 SDK，最大化的简化安装过程。</p>
+<p>LeanCloud SDK for iOS 同时支持动态库和静态库，使用 CocoaPods 进行集成时要进行区分。</p>
+<p>如果使用 <strong>静态库</strong> 方式进行集成，则在 Podfile 中添加：</p>
+<pre><code class="lang-ruby">pod &#39;AVOSCloud&#39;
+
+# 如果使用实时通信功能，可以添加：
+pod &#39;AVOSCloudIM&#39;
+
+# 如果使用崩溃收集功能，可以添加：
+pod &#39;AVOSCloudCrashReporting&#39;
+</code></pre>
+<p>如果使用 <strong>动态库</strong> 方式进行集成，则在 Podfile 中添加：</p>
+<pre><code class="lang-ruby">use_frameworks!
+
+pod &#39;AVOSCloudDynamic&#39;
+
+# 如果使用实时通信功能，可以添加：
+pod &#39;AVOSCloudIMDynamic&#39;
+
+# 如果使用崩溃收集功能，可以添加：
+pod &#39;AVOSCloudCrashReportingDynamic&#39;
+</code></pre>
+<p>然后在项目根目录执行 <code>pod install</code> 命令，就能将 LeanCloud SDK for iOS 集成到你的项目中。</p>
+<h4 id="-">手动安装</h4>
+<p>你也可以手动将 LeanCloud SDK for iOS 集成到项目中。</p>
+<p>iOS 从 8.0 开始支持动态库，如果你的项目只支持 iOS 8 及以上，使用动态库是个不错的选择。</p>
+<h5 id="-">目录结构</h5>
+<p>首先，从下面的地址下载最新版本的 iOS SDK：</p>
+<p><a class="btn btn-default" href="sdk_down.html">下载 iOS SDK</a></p>
+
+<p>下载完成后，解压缩下载的文件，可以看到每个模块有如下的目录结构：</p>
+<p><img src="images/quick_start/ios/dir_tree.png" alt="img"></p>
+<p>就像目录名描述的那样，Dynamic 目录下存放着动态库，Static 目录下存放着静态库。</p>
+<h5 id="-">安装动态库</h5>
+<p>首先，准备好待集成的模块。将它们放入同一个目录中：</p>
+<p><img src="images/quick_start/ios/all_frameworks.png" alt="img"></p>
+<p>请注意，所有 frameworks 都是 Dynamic 目录下面的，确保它们都是动态库。</p>
+<p>然后，将这个目录拖入你的项目中：</p>
+<p><img src="images/quick_start/ios/1.png" alt="img"></p>
+<p>确保 <strong>Copy items if needed</strong> 选择框处于选中状态：</p>
+<p><img src="images/quick_start/ios/2.png" alt="img"></p>
+<p>做完上面这些步骤后，项目看起来是这样：</p>
+<p><img src="images/quick_start/ios/3.png" alt="img"></p>
+<p>然后切换到 Targets 的 General 选项卡，点击 <strong>Embedded Binaries</strong> 左下角的加号按钮，添加 frameworks：</p>
+<p><img src="images/quick_start/ios/embedded_binaries.png" alt="img"></p>
+<p>最后，由于 Xcode 对动态库的处理不当，导致提交审核时，iTunes Connect 校验失败。需要一个额外的步骤来纠正。</p>
+<p>在 Build Phases 选项卡中，添加一个 Run Script：</p>
+<p><img src="images/quick_start/ios/create_run_script.png" alt="img"></p>
+<p>确保 Shell 是默认的 <code>/bin/sh</code>，然后将以下脚本粘贴进去：</p>
+<pre><code class="lang-sh">APP_PATH=&quot;${TARGET_BUILD_DIR}/${WRAPPER_NAME}&quot;
+
+find &quot;$APP_PATH&quot; -name &#39;*.framework&#39; -type d | while read -r FRAMEWORK; do
+    EXTRACTED_ARCHS=()
+
+    FRAMEWORK_EXECUTABLE_NAME=$(defaults read &quot;$FRAMEWORK/Info.plist&quot; CFBundleExecutable)
+    FRAMEWORK_EXECUTABLE_PATH=&quot;$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME&quot;
+
+    for ARCH in $ARCHS; do
+        lipo -extract &quot;$ARCH&quot; &quot;$FRAMEWORK_EXECUTABLE_PATH&quot; -o &quot;$FRAMEWORK_EXECUTABLE_PATH-$ARCH&quot;
+        EXTRACTED_ARCHS+=(&quot;$FRAMEWORK_EXECUTABLE_PATH-$ARCH&quot;)
+    done
+
+    lipo -o &quot;$FRAMEWORK_EXECUTABLE_PATH-merged&quot; -create &quot;${EXTRACTED_ARCHS[@]}&quot;
+
+    mv &quot;$FRAMEWORK_EXECUTABLE_PATH-merged&quot; &quot;$FRAMEWORK_EXECUTABLE_PATH&quot;
+    rm &quot;${EXTRACTED_ARCHS[@]}&quot;
+done
+</code></pre>
+<p>这样就集成完毕了。</p>
+<h5 id="-">安装静态库</h5>
+<div class="callout callout-info">确保你正在使用最新版本的 Xcode（4.6+），并且面向 iOS 4.3 或者更高版本。我们推荐 Xcode 5 和 iOS 5 或以上系统。</div>
+
+<p>首先，跟安装动态库一样，准备好待集成的模块。将它们放入同一个目录中：</p>
+<p><img src="images/quick_start/ios/all_frameworks.png" alt="img"></p>
+<p>请注意，所有 frameworks 都是 Static 目录下面的，确保它们都是静态库。</p>
+<p>然后，将这个目录拖入你的项目中：</p>
+<p><img src="images/quick_start/ios/1.png" alt="img"></p>
+<p>确保 <strong>Copy items if needed</strong> 选择框处于选中状态：</p>
+<p><img src="images/quick_start/ios/2.png" alt="img"></p>
+<p>做完上面这些步骤后，项目看起来是这样：</p>
+<p><img src="images/quick_start/ios/3.png" alt="img"></p>
+<p>切换到 Targets 的 <strong>Build Phases</strong> 选项卡，展开 <strong>Link Binary With Libraries</strong> 可以看到：</p>
+<p><img src="images/quick_start/ios/4.png" alt="img"></p>
+<p>点击 <strong>Link Binary With Libraries</strong> 部分左下角的加号按钮：</p>
+<p><img src="images/quick_start/ios/6.png" alt="img"></p>
+<p>添加下列 framework 以及连接选项：</p>
+<ul>
+<li>手动添加下列依赖库：<ul>
+<li>SystemConfiguration.framework</li>
+<li>MobileCoreServices.framework</li>
+<li>CoreTelephony.framework</li>
+<li>CoreLocation.framework</li>
+</ul>
+</li>
+<li>在 Target 的 <em>Build Settings</em> 中，为 <em>Other Linker Flags</em> 增加：<ul>
+<li><code>-lz</code></li>
+<li><code>-licucore</code></li>
+<li><code>-ObjC</code></li>
+<li><code>-lc++</code> （Crash Reporting 模块需要）</li>
+<li><code>-lsqlite3</code> （IM 模块需要）</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/quick_start/ios/all_load.png" alt="img"></p>
+<h4 id="-sdk">初始化 SDK</h4>
+<p>打开 AppDelegate.m 文件，添加下列导入语句到头部：</p>
+<pre><code>#import &lt;AVOSCloud/AVOSCloud.h&gt;
+</code></pre><p>然后粘贴下列代码到 <code>application:didFinishLaunchingWithOptions</code> 函数内：</p>
+<pre><code>//如果使用美国站点，请加上这行代码 [AVOSCloud useAVCloudUS];
+[AVOSCloud setApplicationId:@&quot;{{appid}}&quot;
+              clientKey:@&quot;{{appkey}}&quot;];
+</code></pre><p>如果想跟踪统计应用的打开情况，后面还可以添加下列代码：</p>
+<pre><code>[AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+</code></pre><p>创建应用后，可以在 <a href="/app.html?appid={{appid}}#/key">控制台 &gt; 应用设置</a> 里面找到应用对应的 id 和 key。</p>
+<p>修改编译选项 <strong>Architectures</strong> 值为 <strong>Standard architectures(armv7,arm64)</strong>：</p>
+<p><img src="images/quick_start/ios/arm64.png" alt="img"></p>
+<p>保证在你的 <strong>.h</strong> 头文件里包含了 SDK 库文件：</p>
+<pre><code>#import &lt;AVOSCloud/AVOSCloud.h&gt;
+</code></pre><p>将下面的代码拷贝到你的 app 里，比如在 <code>viewDidLoad</code> 方法（或者其他在运行 app 时会调用到的方法）：</p>
+<pre><code>AVObject *testObject = [AVObject objectWithClassName:@&quot;TestObject&quot;];
+[testObject setObject:@&quot;bar&quot; forKey:@&quot;foo&quot;];
+[testObject save];
+</code></pre><p>运行 app，一个类名为 <code>TestObject</code> 的新对象会被发送到 LeanCloud 并保存下来。当做完这一切，访问 <a href="/data.html?appid={{appid}}#/TestObject">控制台 &gt; 数据管理</a> 可以看到上面创建的 TestObject 的相关数据。</p>
+<h4 id="-">社交组件</h4>
+<p>最后，如果希望使用社交组件功能，可以使用我们的开源组件：<a href="https://github.com/leancloud/leancloud-social-ios">leancloud-social-ios</a>。</p>
+

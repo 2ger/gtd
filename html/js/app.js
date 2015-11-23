@@ -425,6 +425,16 @@ Date.now = Date.now || function() { return +new Date; };
       };
     });
 
+    $('body').on('click', '.jp-play-me',  function(){
+      var me = $(this);
+      me.find('.text').toggle();
+      me.find('.text-active').toggle();
+      me.closest('li').toggleClass('done');
+    })
+    //$(".text-ellipsis").click(function(){
+      //alert($(this).text());
+    
+    //})
     // end diy
   });
 }(jQuery);

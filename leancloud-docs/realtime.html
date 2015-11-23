@@ -1,0 +1,773 @@
+<!doctype html>
+
+<html version="9ba57b94e10ec2654fcd2d8d954c084b">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="-v1-">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x5F00;&#x53D1;&#x6307;&#x5357;&#xFF08;V1&#xFF09;</h1>
+<blockquote>
+<p version="ce0b4c917914b96d94634fab7d6f9371">&#x672C;&#x6587;&#x6863;&#x4EC5;&#x9002;&#x7528;&#x4E8E;&#x4F7F;&#x7528;&#x8001;&#x7248;&#x672C; SDK &#x7684;&#x7528;&#x6237;&#xFF0C;&#x65B0;&#x7528;&#x6237;&#x8BF7;&#x53C2;&#x8003; <a href="realtime_v2.html">&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684;&#x6587;&#x6863;</a>&#x3002;</p>
+</blockquote>
+<p version="6e3481b04f36aa54d1aab72c9ba91760">&#x9664;&#x4E86;&#x5B9E;&#x65F6;&#x7684;&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x5916;&#xFF0C;LeanCloud &#x4ECE; 2.5.9 &#x7248;&#x672C;&#x5F00;&#x59CB;&#x63D0;&#x4F9B;&#x5B9E;&#x65F6;&#x7684;&#x70B9;&#x5BF9;&#x70B9;&#x6D88;&#x606F;&#x670D;&#x52A1;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x4F60;&#x5C06;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6211;&#x4EEC;&#x7684;&#x670D;&#x52A1;&#x5F00;&#x53D1;&#x5B9E;&#x65F6;&#x7684;&#x7528;&#x6237;&#x95F4;&#x804A;&#x5929;&#x3001;&#x6E38;&#x620F;&#x5BF9;&#x6218;&#x7B49;&#x4E92;&#x52A8;&#x529F;&#x80FD;&#x3002;&#x622A;&#x81F3;&#x76EE;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x4F9B; Android&#x3001;JavaScript&#x3001;iOS&#x3001;Windows Phone &#x56DB;&#x4E2A;&#x4E3B;&#x8981;&#x5E73;&#x53F0;&#x7684;&#x5BA2;&#x6237;&#x7AEF; SDK&#x3002;</p>
+<p version="01755d6ca91553588e576c226d240844">&#x6211;&#x4EEC;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B; Demo &#x5E2E;&#x52A9;&#x60A8;&#x5FEB;&#x901F;&#x5165;&#x95E8;&#xFF0C;</p>
+<ul>
+<li>&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x793E;&#x4EA4;&#x5E94;&#x7528; <code>LeanChat</code>&#xFF0C;&#x7C7B;&#x4F3C;&#x5FAE;&#x4FE1;&#xFF0C;<a href="https://github.com/leancloud/leanchat-android">LeanChat-Android</a>&#xFF0C;<a href="https://github.com/leancloud/leanchat-ios">LeanChat-iOS</a></li>
+<li><a href="https://github.com/leancloud/leanmessage-javascript-sdk/tree/master/demo">JavaScript Demo</a></li>
+<li>&#x4FBF;&#x4E8E;&#x8C03;&#x8BD5;&#x7684; <a href="http://chat.avosapps.com/">&#x5728;&#x7EBF;&#x6D4B;&#x8BD5;&#x5DE5;&#x5177;</a>&#x3002;</li>
+</ul>
+<h2 id="-">&#x529F;&#x80FD;&#x548C;&#x7279;&#x6027;</h2>
+<p version="4f7de4204db159d2cc63c2e58b440baf">&#x5728;&#x8FDB;&#x5165;&#x5F00;&#x53D1;&#x4E4B;&#x524D;&#xFF0C;&#x8BF7;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x5148;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x7684;&#x529F;&#x80FD;&#x548C;&#x7279;&#x6027;&#xFF0C;&#x52A0;&#x7C97;&#x7684;&#x6761;&#x76EE;&#x662F;&#x6700;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#xFF1A;</p>
+<ul>
+<li>&#x767B;&#x5F55;&#xFF0C;&#x901A;&#x8FC7;&#x7B7E;&#x540D;&#x4E0E;&#x4F60;&#x7684;&#x7528;&#x6237;&#x7CFB;&#x7EDF;&#x96C6;&#x6210;</li>
+<li>&#x5355;&#x4E2A;&#x8BBE;&#x5907;&#x591A;&#x4E2A;&#x8D26;&#x53F7;&#xFF0C;&#x5355;&#x4E2A;&#x8D26;&#x53F7;&#x591A;&#x4E2A;&#x8BBE;&#x5907;&#xFF0C;&#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x540C;&#x6B65;&#x5230;&#x6240;&#x6709;&#x8BBE;&#x5907;</li>
+<li>&#x5355;&#x804A;&#xFF08;&#x53D1;&#x7ED9;&#x4E00;&#x4E2A;&#x4EBA;&#xFF09;&#xFF0C;&#x7FA4;&#x53D1;&#xFF08;&#x53D1;&#x7ED9;&#x591A;&#x4E2A;&#x4EBA;&#xFF09;&#xFF0C;&#x7FA4;&#x804A;&#xFF08;&#x53D1;&#x7ED9;&#x4E00;&#x4E2A;&#x7FA4;&#xFF09;</li>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x6D88;&#x606F;&#x89E3;&#x6790;&#xFF1B;&#x57FA;&#x4E8E; AVFile &#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x56FE;&#x7247;&#x3001;&#x97F3;&#x9891;&#x548C;&#x89C6;&#x9891;&#x7B49;&#x4E30;&#x5BCC;&#x683C;&#x5F0F;</li>
+<li>&#x901A;&#x8FC7;&#x7B7E;&#x540D;&#x63A7;&#x5236;&#x5173;&#x6CE8;&#x6743;&#x9650;&#x548C;&#x53C2;&#x4E0E;&#x5BF9;&#x8BDD;&#x6743;&#x9650;</li>
+<li>&#x4E0A;&#x4E0B;&#x7EBF;&#x901A;&#x77E5;</li>
+<li>&#x7FA4;&#x7EC4;&#x7BA1;&#x7406;&#xFF0C;&#x521B;&#x5EFA;&#x3001;&#x52A0;&#x5165;&#x3001;&#x79BB;&#x5F00;&#x3001;&#x9080;&#x8BF7;&#x3001;&#x8E22;&#x51FA;&#x3001;&#x67E5;&#x8BE2;&#x3001;&#x6210;&#x5458;&#x53D8;&#x52A8;&#x901A;&#x77E5;&#x3002;</li>
+<li>&#x6D88;&#x606F;&#x65F6;&#x95F4;&#x6233;</li>
+<li>&#x79BB;&#x7EBF;&#x6D88;&#x606F;</li>
+<li>&#x79BB;&#x7EBF;&#x63A8;&#x9001;&#x901A;&#x77E5;&#xFF1A;iOS, Windows Phone</li>
+<li>&#x652F;&#x6301;&#x5E73;&#x53F0;&#xFF08;&#x6392;&#x540D;&#x4E0D;&#x5206;&#x5148;&#x540E;&#xFF09;&#xFF1A;<ul>
+<li>iOS</li>
+<li>Android</li>
+<li>Browser JavaScript</li>
+<li>Windows Phone</li>
+<li>Server-side Nodejs</li>
+</ul>
+</li>
+<li>&#x6D88;&#x606F;&#x8BB0;&#x5F55; REST API</li>
+<li>&#x672A;&#x8BFB;&#x6D88;&#x606F;&#x6570; REST API</li>
+<li>&#x654F;&#x611F;&#x8BCD;&#x8FC7;&#x6EE4;</li>
+<li>&#x5F02;&#x5E38;&#x6570;&#x636E;&#x62A5;&#x8B66;</li>
+<li>&#x6D88;&#x606F;&#x5230;&#x8FBE;&#x56DE;&#x6267;</li>
+<li>&#x53D1;&#x9001;&#x6D88;&#x606F; REST API</li>
+<li>&#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x4E91;&#x5F15;&#x64CE; Hook<ul>
+<li>&#x6D88;&#x606F;&#x5230;&#x8FBE;&#x670D;&#x52A1;&#x5668;</li>
+<li>&#x6536;&#x4EF6;&#x4EBA;&#x79BB;&#x7EBF;</li>
+</ul>
+</li>
+<li><strong>&#x4E0D;&#x9650;&#x6210;&#x5458;&#x7684;&#x5F00;&#x653E;&#x7FA4;&#x7EC4;</strong></li>
+</ul>
+<h2 id="-">&#x6838;&#x5FC3;&#x6982;&#x5FF5;</h2>
+<h3 id="peer">Peer</h3>
+<p version="f037834f961dacedd860d937d36056dd">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x7EC8;&#x7AEF;&#x79F0;&#x4E3A; Peer&#x3002;Peer &#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x5728;&#x5E94;&#x7528;&#x5185;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x81EA;&#x5DF1;
+&#x7684;ID&#x3002;&#x8FD9;&#x4E2A; ID &#x7531;&#x5E94;&#x7528;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#xFF0C;&#x53EA;&#x8981;&#x6C42;&#x662F;&#x5C11;&#x4E8E; 50 &#x4E2A;&#x5B57;&#x7B26;&#x957F;&#x5EA6;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x90FD;&#x6765;&#x81EA;&#x4E8E;&#x4E00;&#x4E2A; Peer&#xFF0C;&#x53D1;&#x9001;&#x5230;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A; Peer&#x3002;</p>
+<p version="fd9e14634423dcf40a46ef008ba46dea">&#x7B80;&#x5355;&#x6765;&#x8BB2;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5C06; Peer &#x8BA4;&#x4E3A;&#x662F;&#x53C2;&#x4E0E;&#x901A;&#x4FE1;&#x7684;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x901A;&#x5E38;&#x5C31;&#x662F;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x4E0A;&#x7684;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x3002;</p>
+<p version="c5ec01cf67055edd275907e86f7651dd">LeanCloud &#x7684;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x5141;&#x8BB8;&#x4E00;&#x4E2A; Peer ID &#x5728;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x5907;&#x4E0A;&#x767B;&#x5F55;&#xFF0C;&#x4E5F;&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x8BBE;&#x5907;&#x4E0A;&#x6709;&#x591A;&#x4E2A; Peer ID &#x540C;&#x65F6;&#x767B;&#x5F55;&#x3002;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x9009;&#x62E9;ID&#x3002;</p>
+<p version="a782b15d77c45cb9154b0bc1f18488e7">&#x4E3A;&#x4E86;&#x505A;&#x5230;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x6743;&#x9650;&#x63A7;&#x5236;&#xFF0C;&#x5728;&#x5F00;&#x542F;<a href="#&#x6743;&#x9650;&#x548C;&#x8BA4;&#x8BC1;">&#x7B7E;&#x540D;&#x8BA4;&#x8BC1;</a>&#x7684;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;Peer &#x9700;&#x8981;&#x5148; watch &#x5BF9;&#x65B9;&#x65B9;&#x53EF;&#x7ED9;&#x5BF9;&#x65B9;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728; watch &#x52A8;&#x4F5C;&#x4E0A;&#x589E;&#x52A0;&#x7B7E;&#x540D;&#x8BA4;&#x8BC1;&#x6765;&#x63A7;&#x5236;&#x6743;&#x9650;&#xFF0C;&#x9632;&#x6B62;&#x9A9A;&#x6270;&#x3002;</p>
+<p version="a7ec017ae0de26492dec401071105381">Super Peer&#xFF08;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#xFF09;&#x53EF;&#x4EE5;&#x5728;&#x4E0D; watch &#x7684;&#x72B6;&#x6001;&#x4E0B;&#x7ED9;&#x4EFB;&#x610F; Peer &#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF0C;&#x4E0D;&#x8FC7; Super Peer &#x7684;&#x767B;&#x5F55;&#x9700;&#x8981;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7B7E;&#x540D;&#x63A7;&#x5236;&#xFF0C;&#x76EE;&#x524D;&#x4EC5;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684; NodeJS SDK &#x652F;&#x6301; Super Peer&#x3002;&#x901A;&#x5E38;&#x4F5C;&#x4E3A;&#x7BA1;&#x7406;&#x5458;&#x89D2;&#x8272;&#x6765;&#x4F7F;&#x7528;&#x3002;</p>
+<h3 id="session">Session</h3>
+<p version="5aede70f6a9df85420c226921c90a32a">Peer &#x901A;&#x8FC7;&#x5F00;&#x542F;(open)&#x4E00;&#x4E2A; Session &#x52A0;&#x5165;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#xFF0C;Peer &#x53EF;&#x4EE5;&#x5728; Session &#x4E2D;&#x5173;&#x6CE8;(watch)&#x4E00;&#x7EC4; Peer ID&#xFF0C;&#x5F53;&#x88AB;&#x5173;&#x6CE8;&#x8005;&#x4E0A;&#x4E0B;&#x7EBF;&#x65F6;&#xFF0C;&#x4F1A;&#x6536;&#x5230;&#x901A;&#x77E5;&#x3002;Peer &#x5728;&#x5F00;&#x542F; Session &#x540E;&#x4F1A;&#x6536;&#x5230;&#x5176;&#x4ED6; Peer &#x7684;&#x6D88;&#x606F;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5411;&#x5176;&#x4ED6; Peer &#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF08;&#x5F53;&#x5E94;&#x7528;&#x542F;&#x7528;<a href="#&#x6743;&#x9650;&#x548C;&#x8BA4;&#x8BC1;">&#x7B7E;&#x540D;&#x8BA4;&#x8BC1;</a>&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x9700;&#x8981;&#x9996;&#x5148;&#x5173;&#x6CE8;(watch)&#x5176;&#x4ED6; Peer &#x540E;&#x624D;&#x53EF;&#x4EE5;&#x5411;&#x5176;&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF0C;&#x5173;&#x6CE8;(watch)&#x6B65;&#x9AA4;&#x8981;&#x6C42;&#x7B7E;&#x540D;&#x8BA4;&#x8BC1;&#xFF09;&#x3002;</p>
+<p version="a8e548d4809045429c57d475d55aee77">Session &#x7684;&#x51E0;&#x79CD;&#x72B6;&#x6001;&#xFF1A;</p>
+<ul>
+<li><strong>opened</strong> Session &#x88AB;&#x6253;&#x5F00;</li>
+<li><strong>pause</strong> &#x7F51;&#x7EDC;&#x5F02;&#x5E38;&#xFF0C;Session &#x8FDB;&#x5165;&#x6682;&#x505C;&#x72B6;&#x6001;&#xFF0C;&#x5F53;&#x7F51;&#x7EDC;&#x6062;&#x590D;&#x65F6; Session &#x4F1A;&#x81EA;&#x52A8;&#x91CD;&#x65B0;&#x6253;&#x5F00;</li>
+<li><strong>closed</strong> Session &#x7ED3;&#x675F;&#xFF0C;&#x4EC5;&#x5728;&#x663E;&#x793A;&#x8C03;&#x7528; <code>Session.close</code> &#x65B9;&#x6CD5;&#x65F6;&#x53D1;&#x751F;&#xFF0C;&#x7528;&#x6237;&#x6CE8;&#x9500;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#xFF0C;&#x4E0D;&#x518D;&#x80FD;&#x591F;&#x63A5;&#x6536;&#x5230;&#x6D88;&#x606F;&#x6216;&#x63A8;&#x9001;&#x901A;&#x77E5;</li>
+</ul>
+<p version="db1210addd056794a84e4ff9a5604c11">Session &#x4E2D;&#x7684;&#x51E0;&#x4E2A;&#x52A8;&#x8BCD;&#xFF1A;</p>
+<ul>
+<li><strong>open</strong> &#x4EE5;&#x4E00;&#x4E2A; Peer ID &#x6253;&#x5F00; Session</li>
+<li><strong>watch</strong> &#x5173;&#x6CE8;&#x4E00;&#x7EC4; Peer ID&#xFF0C;&#x5173;&#x6CE8;&#x540E;&#x53EF;&#x4EE5;&#x6536;&#x5230;&#x8FD9;&#x4E2A; Peer &#x7684;&#x4E0A;&#x4E0B;&#x7EBF;&#x901A;&#x77E5;</li>
+<li><strong>unwatch</strong> &#x53D6;&#x6D88;&#x5BF9;&#x4E00;&#x7EC4; Peer ID &#x7684;&#x5173;&#x6CE8;</li>
+<li><strong>sendMessage</strong> &#x7ED9;&#x4E00;&#x7EC4; Peer ID &#x53D1;&#x9001;&#x6D88;&#x606F;</li>
+<li><strong>close</strong> &#x6CE8;&#x9500;&#x670D;&#x52A1;&#xFF0C;&#x5173;&#x95ED; Session</li>
+</ul>
+<p version="eaeb5e33fbb7a0c810fdcf1e2318446d">&#x5728;&#x73B0;&#x4EE3;&#x79FB;&#x52A8;&#x5E94;&#x7528;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x4EC5;&#x5728;&#x7528;&#x6237;&#x8FDB;&#x5165;&#x4E92;&#x52A8;&#x73AF;&#x8282;&#xFF08;&#x4F8B;&#x5982;&#x6253;&#x5F00;&#x804A;&#x5929;&#x5BF9;&#x8BDD;&#x754C;&#x9762;&#xFF0C;&#x6E38;&#x620F;&#x5BF9;&#x6218;&#x754C;&#x9762;&#xFF09;&#x65F6;<code>watch</code>&#x76EE;&#x6807;&#x7528;&#x6237;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x6709;&#x6548;&#x51CF;&#x5C11;&#x5BF9;&#x65B9;&#x7531;&#x4E8E;&#x7F51;&#x7EDC;&#x4E0D;&#x7A33;&#x5B9A;&#x9891;&#x7E41;&#x4E0A;&#x4E0B;&#x7EBF;&#x53D1;&#x9001;&#x7684;&#x901A;&#x77E5;&#xFF0C;&#x8282;&#x7EA6;&#x6D41;&#x91CF;&#x3002;</p>
+<h3 id="message">Message</h3>
+<p version="cba9c0ef166b66b803acd991179ad77f">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x7684;&#x6D88;&#x606F;&#x3002;&#x6211;&#x4EEC;&#x7684;&#x6D88;&#x606F;&#x4F53;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x4E00;&#x6B21;&#x4F20;&#x8F93;&#x4E0D;&#x8D85;&#x8FC7; <strong>5 KB</strong>&#x7684;&#x6587;&#x672C;&#x6570;&#x636E;&#x3002;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5728;&#x6587;&#x672C;&#x534F;&#x8BAE;&#x57FA;&#x7840;&#x4E0A;&#x81EA;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x5E94;&#x7528;&#x5C42;&#x534F;&#x8BAE;&#x3002;</p>
+<p version="186911c8cf34a09c0d96b98c1ff19972">&#x6D88;&#x606F;&#x5206;&#x4E3A;&#x6682;&#x6001;(transient)&#x548C;&#x6301;&#x4E45;&#x6D88;&#x606F;&#x3002;LeanCloud &#x4E3A;&#x540E;&#x8005;&#x63D0;&#x4F9B; 7 &#x5929;&#x5185;&#x6700;&#x591A; 50 &#x6761;&#x7684;&#x79BB;&#x7EBF;&#x6D88;&#x606F;&#x3002;&#x6682;&#x6001;&#x6D88;&#x606F;&#x5E76;&#x4E0D;&#x4FDD;&#x5B58;&#x79BB;&#x7EBF;&#xFF0C;&#x9002;&#x5408;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x63A7;&#x5236;&#x534F;&#x8BAE;&#x3002;</p>
+<p version="edfb70d80a5501f2ecafdf3c6bae717b">&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x8FD8;&#x4E3A;&#x901A;&#x4FE1;&#x6D88;&#x606F;&#x63D0;&#x4F9B;&#x5B58;&#x50A8;&#x3001;&#x83B7;&#x53D6;&#x548C;&#x5220;&#x9664;&#x529F;&#x80FD;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <a href="rest_api.html#&#x5B9E;&#x65F6;&#x901A;&#x4FE1;-api">REST API</a> &#x6216; SDK &#x83B7;&#x53D6;&#x6574;&#x4E2A;&#x5E94;&#x7528;&#x6216;&#x7279;&#x5B9A;&#x5BF9;&#x8BDD;&#x7684;&#x6D88;&#x606F;&#x8BB0;&#x5F55;&#x3002;</p>
+<h3 id="group">Group</h3>
+<p version="15808119648e76362e15b0129a551976">&#x804A;&#x5929;&#x7FA4;&#x7EC4;&#xFF0C;&#x7528;&#x6237;&#x52A0;&#x5165;&#x7FA4;&#x540E;&#x5411;&#x7FA4;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;&#x53EF;&#x4EE5;&#x88AB;&#x6240;&#x6709;&#x7FA4;&#x6210;&#x5458;&#x6536;&#x5230;&#x3002;&#x5F53;&#x6709;&#x7FA4;&#x6210;&#x5458;&#x9000;&#x51FA;&#xFF0C;&#x6216;&#x6709;&#x65B0;&#x7684;&#x7FA4;&#x6210;&#x5458;&#x52A0;&#x5165;&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x7FA4;&#x6210;&#x5458;&#x4F1A;&#x6536;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x901A;&#x77E5;&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5BF9;&#x7FA4;&#x505A;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x52A8;&#x4F5C;&#xFF1A;</p>
+<ul>
+<li>&#x521B;&#x5EFA;&#x5E76;&#x52A0;&#x5165;</li>
+<li>&#x52A0;&#x5165;&#x5DF2;&#x6709;&#x7FA4;</li>
+<li>&#x79BB;&#x5F00;&#x5DF2;&#x6709;&#x7FA4;</li>
+<li>&#x5C06;&#x5176;&#x4ED6; peer &#x52A0;&#x5165;&#x5DF2;&#x6709;&#x7684;&#x7FA4;</li>
+<li>&#x5C06;&#x5176;&#x4ED6; peer &#x4ECE;&#x5DF2;&#x6709;&#x7684;&#x7FA4;&#x8E22;&#x51FA;</li>
+</ul>
+<p version="722705a46eafba0b77b5a8c66a38e5b3">&#x5982;&#x679C;&#x4F60;&#x5BF9;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x542F;&#x7528;&#x7B7E;&#x540D;&#x8BA4;&#x8BC1;&#xFF08;&#x4ECE;&#x5B89;&#x5168;&#x89D2;&#x5EA6;&#x63A8;&#x8350;&#x4F60;&#x8FD9;&#x4E48;&#x505A;&#xFF09;&#xFF0C;&#x9664;&#x4E86;&#x9000;&#x51FA;&#x7FA4;&#x4EE5;&#x5916;&#x7684;&#x5176;&#x4ED6;&#x64CD;&#x4F5C;&#x90FD;&#x9700;&#x8981;&#x7B7E;&#x540D;&#xFF0C;&#x7B7E;&#x540D;&#x89C1;&#x4E0B;&#x6587;&#x3002;</p>
+<p version="55e409fef91c56b6dec669dc457ccf2a">&#x5E94;&#x7528;&#x6240;&#x6709;&#x7684;&#x7FA4;&#x7EC4;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5728;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x4E2D;&#x7684; <code>AVOSRealtimeGroups</code> &#x8868;&#x4E2D;&#xFF0C;&#x6210;&#x5458;&#x6570;&#x636E;&#x4EE5;&#x6570;&#x7EC4;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;&#x5728; <code>m</code> &#x5217;&#xFF0C;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; API &#x8C03;&#x7528;&#x83B7;&#x5F97;&#x67D0;&#x4E2A;&#x7FA4;&#x7EC4;&#x7684;&#x6240;&#x6709;&#x6210;&#x5458;&#xFF0C;&#x548C;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x52A0;&#x5165;&#x7684;&#x6240;&#x6709;&#x7FA4;&#x7EC4;&#x3002;</p>
+<p version="083d41a708ac9cce18ba10ec751e0830">2015 &#x5E74; 2 &#x6708;&#x5F00;&#x59CB;&#xFF0C;&#x6211;&#x4EEC;&#x65B0;&#x589E;&#x4E86;<strong>&#x5F00;&#x653E;&#x7FA4;&#x7EC4;</strong>&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x7528;&#x4E8E;&#x652F;&#x6301;&#x5F00;&#x653E;&#x804A;&#x5929;&#x5BA4;&#x3001;&#x5F39;&#x5E55;&#x3001;&#x7F51;&#x9875;&#x76F4;&#x64AD;&#x7B49;&#x7B49;&#x4E0D;&#x9650;&#x53C2;&#x4E0E;&#x4EBA;&#x6570;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x3002;&#x5F00;&#x653E;&#x7FA4;&#x7EC4;&#x5728; <code>AVOSRealtimeGroups</code> &#x8868;&#x91CC;&#x4EE5; <code>tr</code> &#x5217;&#x4E3A; <code>true</code> &#x8868;&#x793A;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x4F7F;&#x7528; REST API &#x521B;&#x5EFA;&#x5F00;&#x653E;&#x7FA4;&#x7EC4;&#x7684;&#x65F6;&#x5019;&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x5373;&#x53EF;&#xFF0C;SDK &#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x521B;&#x5EFA;&#x7FA4;&#x7EC4;&#x65F6;&#x8BBE;&#x7F6E;&#x76F8;&#x5E94;&#x5C5E;&#x6027;&#x3002;</p>
+<p version="86017f0c91b406e0bb297326ee9fbc7b">&#x5F00;&#x653E;&#x7FA4;&#x7EC4;&#x652F;&#x6301;&#x666E;&#x901A;&#x7FA4;&#x7EC4;&#x7684;&#x521B;&#x5EFA;&#x3001;&#x52A0;&#x5165;&#x3001;&#x79BB;&#x5F00;&#x7B49;&#x64CD;&#x4F5C;&#xFF0C;&#x6D88;&#x606F;&#x8BB0;&#x5F55;&#x4F1A;&#x88AB;&#x4FDD;&#x5B58;&#x5E76;&#x53EF;&#x4F9B;&#x83B7;&#x53D6;&#x3002;</p>
+<p version="84860f48391d68a36c100c319183fe6f">&#x6839;&#x636E;&#x5E94;&#x7528;&#x573A;&#x666F;&#xFF0C;&#x5F00;&#x653E;&#x7FA4;&#x7EC4;&#x4E0E;&#x666E;&#x901A;&#x7FA4;&#x7EC4;&#x76F8;&#x6BD4;&#x5728;&#x529F;&#x80FD;&#x4E0A;&#x5B58;&#x5728;&#x4E00;&#x5B9A;&#x7684;&#x53D6;&#x820D;&#xFF0C;&#x5177;&#x4F53;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li>&#x5F00;&#x653E;&#x7FA4;&#x7EC4;&#x4E0D;&#x652F;&#x6301;&#x67E5;&#x8BE2;&#x7FA4;&#x7EC4;&#x6210;&#x5458;&#x5217;&#x8868;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<a href="rest_api.html#%E5%AE%9E%E6%97%B6%E9%80%9A%E4%BF%A1_API">&#x76F8;&#x5173; API</a> &#x67E5;&#x8BE2;&#x7FA4;&#x7EC4;&#x5728;&#x7EBF;&#x4EBA;&#x6570;&#xFF1B;</li>
+<li>&#x5F00;&#x653E;&#x7FA4;&#x7EC4;&#x4E0D;&#x652F;&#x6301;&#x79BB;&#x7EBF;&#x6D88;&#x606F;&#xFF0C;&#x79BB;&#x7EBF;&#x63A8;&#x9001;&#x901A;&#x77E5;&#x7B49;&#xFF1A;&#x5F00;&#x653E;&#x7FA4;&#x7EC4;&#x53EA;&#x5BF9;&#x5F53;&#x524D;&#x5728;&#x7EBF;&#x7528;&#x6237;&#x6709;&#x6548;&#xFF0C;&#x56E0;&#x6B64;&#x5F00;&#x653E;&#x7FA4;&#x7EC4;&#x7684;&#x6D88;&#x606F;&#x5747;&#x4E3A;<strong>&#x6682;&#x6001;</strong>&#x6D88;&#x606F;&#xFF1B;</li>
+<li>&#x4E00;&#x4E2A; Session &#x540C;&#x65F6;&#x53EA;&#x80FD;&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x5F00;&#x653E;&#x7FA4;&#x7EC4;&#xFF0C;&#x52A0;&#x5165;&#x65B0;&#x7684;&#x5F00;&#x653E;&#x7FA4;&#x7EC4;&#x540E;&#x4F1A;&#x81EA;&#x52A8;&#x79BB;&#x5F00;&#x65E7;&#x7684;&#x7FA4;&#x7EC4;&#xFF1B;</li>
+<li>&#x52A0;&#x5165;&#x5F00;&#x653E;&#x7FA4;&#x7EC4;&#x540E;&#x534A;&#x5C0F;&#x65F6;&#x5185;&#x65AD;&#x7F51;&#x91CD;&#x8FDE;&#x4F1A;&#x81EA;&#x52A8;&#x52A0;&#x5165;&#x7FA4;&#x7EC4;&#xFF0C;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x52A0;&#x5165;&#xFF1B;</li>
+<li>&#x5F00;&#x653E;&#x7FA4;&#x7EC4;&#x6CA1;&#x6709;&#x6210;&#x5458;&#x52A0;&#x5165;&#x3001;&#x79BB;&#x5F00;&#x7684;&#x901A;&#x77E5;&#x3002;</li>
+</ul>
+<h2 id="-">&#x6743;&#x9650;&#x548C;&#x8BA4;&#x8BC1;</h2>
+<p version="38fcfdf3ed118578d5dd6b7b48a52e45">&#x4E3A;&#x4E86;&#x6EE1;&#x8DB3;&#x5F00;&#x53D1;&#x8005;&#x5BF9;&#x6743;&#x9650;&#x548C;&#x8BA4;&#x8BC1;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x6211;&#x4EEC;&#x8BBE;&#x8BA1;&#x4E86;&#x7B7E;&#x540D;&#x7684;&#x6982;&#x5FF5;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728;
+LeanCloud &#x5E94;&#x7528;&#x63A7;&#x5236;&#x53F0; -&gt; &#x8BBE;&#x7F6E; -&gt; &#x5E94;&#x7528;&#x9009;&#x9879;&#x4E2D;&#x5F3A;&#x5236;&#x542F;&#x7528;&#x7B7E;&#x540D;&#x3002;&#x542F;&#x7528;&#x540E;&#xFF0C;&#x6240;&#x6709;&#x7684;
+Session open &#x548C; watch &#x884C;&#x4E3A;&#x90FD;&#x9700;&#x8981;&#x5305;&#x542B;&#x7B7E;&#x540D;&#xFF0C;&#x8FD9;&#x6837;&#x4F60;&#x53EF;&#x4EE5;&#x5BF9;&#x7528;&#x6237;&#x7684;&#x767B;&#x5F55;&#x4EE5;&#x53CA;&#x4ED6;
+&#x53EF;&#x4EE5;&#x5173;&#x6CE8;&#x54EA;&#x4E9B;&#x7528;&#x6237;&#xFF0C;&#x8FDB;&#x800C;&#x53EF;&#x4EE5;&#x7ED9;&#x54EA;&#x4E9B;&#x7528;&#x6237;&#x53D1;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x5145;&#x5206;&#x7684;&#x63A7;&#x5236;&#x3002;</p>
+<p><img src="images/signature.png" alt="image"></p>
+<ol>
+<li>&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x8D77; session open &#x6216; watch &#x7B49;&#x64CD;&#x4F5C;&#xFF0C;SDK &#x4F1A;&#x8C03;&#x7528;
+SignatureFactory &#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5E76;&#x643A;&#x5E26;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x548C;&#x7528;&#x6237;&#x884C;&#x4E3A;&#xFF08;&#x767B;&#x5F55;&#x3001;&#x5173;&#x6CE8;&#x6216;&#x7FA4;&#x7EC4;&#x64CD;
+&#x4F5C;&#xFF09;&#x8BF7;&#x6C42;&#x7B7E;&#x540D;&#xFF1B;</li>
+<li>&#x5E94;&#x7528;&#x81EA;&#x6709;&#x7684;&#x6743;&#x9650;&#x7CFB;&#x7EDF;&#xFF0C;&#x6216;&#x5E94;&#x7528;&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E0A;&#x7684;&#x7B7E;&#x540D;&#x7A0B;&#x5E8F;&#x6536;&#x5230;&#x8BF7;&#x6C42;&#xFF0C;&#x8FDB;&#x884C;&#x6743;&#x9650;&#x9A8C;
+&#x8BC1;&#xFF0C;&#x5982;&#x679C;&#x901A;&#x8FC7;&#x5219;&#x5229;&#x7528;<strong>&#x4E0B;&#x6587;&#x6240;&#x8FF0;&#x7684;&#x7B7E;&#x540D;&#x7B97;&#x6CD5;</strong>&#x751F;&#x6210;&#x65F6;&#x95F4;&#x6233;&#x3001;&#x968F;&#x673A;&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x7B7E;&#x540D;&#x8FD4;&#x56DE;&#x7ED9;
+&#x5BA2;&#x6237;&#x7AEF;&#xFF1B;</li>
+<li>&#x5BA2;&#x6237;&#x7AEF;&#x83B7;&#x5F97;&#x7B7E;&#x540D;&#x540E;&#xFF0C;&#x7F16;&#x7801;&#x5230;&#x8BF7;&#x6C42;&#x4E2D;&#xFF0C;&#x53D1;&#x7ED9;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x5668;&#xFF1B;</li>
+<li>&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x5668;&#x901A;&#x8FC7;&#x8BF7;&#x6C42;&#x7684;&#x5185;&#x5BB9;&#x548C;&#x7B7E;&#x540D;&#x505A;&#x4E00;&#x904D;&#x9A8C;&#x8BC1;&#xFF0C;&#x786E;&#x8BA4;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x662F;&#x7ECF;&#x7531;&#x670D;
+&#x52A1;&#x5668;&#x5141;&#x8BB8;&#x7684;&#xFF0C;&#x8FDB;&#x800C;&#x6267;&#x884C;&#x540E;&#x7EED;&#x7684;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x3002;</li>
+</ol>
+<h3 id="-">&#x4E91;&#x5F15;&#x64CE;&#x7B7E;&#x540D;&#x8303;&#x4F8B;</h3>
+<p version="ba35b102327edec411f7a0b582c70e5e">&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x8FD0;&#x884C;&#x5728; LeanCloud <a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;</a>&#x4E0A;&#x7684;
+<a href="https://github.com/leancloud/realtime-messaging-signature-cloudcode">&#x7B7E;&#x540D;&#x8303;&#x4F8B;&#x7A0B;&#x5E8F;</a>
+&#xFF0C;&#x4ED6;&#x63D0;&#x4F9B;&#x4E86;&#x57FA;&#x4E8E; Web Hosting &#x548C; Cloud Function &#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x7684;&#x7B7E;&#x540D;&#x5B9E;&#x73B0;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x9009;
+&#x62E9;&#x81EA;&#x5DF1;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<h3 id="-">&#x7B7E;&#x540D;&#x65B9;&#x6CD5;</h3>
+<p version="d494da74ec046757dcfd0b211be874af">&#x7B7E;&#x540D;&#x91C7;&#x7528;<strong>Hmac-sha1</strong>&#x7B97;&#x6CD5;&#xFF0C;&#x8F93;&#x51FA;&#x5B57;&#x8282;&#x6D41;&#x7684;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x5B57;&#x7B26;&#x4E32;(hex dump)&#xFF0C;&#x7B7E;&#x540D;&#x7684;&#x6D88;&#x606F;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="ec19828142dc1c40b79ca37fe0c60804"><code>app_id:peer_id:watch_peer_ids:timestamp:nonce
+</code></pre><p version="0e7c8779f8f37e58d37cdbace7b0c9dc">&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li><code>app_id</code> &#x662F;&#x4F60;&#x7684;&#x5E94;&#x7528; ID</li>
+<li><code>peer_id</code> &#x662F;&#x6253;&#x5F00;&#x6B64; Session &#x7684; Peer ID</li>
+<li><code>watch_peer_ids</code> &#x662F; open &#x6216; watch &#x8BF7;&#x6C42;&#x4E2D;&#x5173;&#x6CE8;&#x7684;peer ids&#xFF0C;<strong>&#x5347;&#x5E8F;&#x6392;&#x5E8F;</strong>&#x540E;&#x4EE5;<code>:</code>&#x5206;&#x9694;</li>
+<li><code>timestamp</code> &#x662F;&#x5F53;&#x524D;&#x7684;UTC&#x65F6;&#x95F4;&#x8DDD;&#x79BB;unix epoch&#x7684;<strong>&#x79D2;&#x6570;</strong></li>
+<li><code>nonce</code> &#x4E3A;&#x968F;&#x673A;&#x5B57;&#x7B26;&#x4E32;</li>
+</ul>
+<p version="114261a34b025d2c5977ff3865602dad">&#x7B7E;&#x540D;&#x7684; key &#x5FC5;&#x987B;&#x662F;&#x5E94;&#x7528;&#x7684; <strong>master key</strong>&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x8BBE;&#x7F6E;&#x7684;&#x5E94;&#x7528; Key &#x91CC;&#x627E;&#x5230;&#xFF0C;&#x8BF7;&#x4FDD;&#x62A4;&#x597D; Master Key &#xFF0C;&#x4E0D;&#x8981;&#x6CC4;&#x9732;&#x7ED9;&#x4EFB;&#x4F55;&#x65E0;&#x5173;&#x4EBA;&#x5458;&#x3002;</p>
+<p version="056680a3bc8100671e41a5d52d6df423">&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684; SignatureFactory&#xFF0C;&#x8C03;&#x7528;&#x8FDC;&#x7A0B;&#x7684;&#x670D;&#x52A1;&#x5668;&#x7684;&#x7B7E;&#x540D;&#x63A5;&#x53E3;&#x83B7;&#x5F97;&#x7B7E;&#x540D;&#x3002;&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x4E0A;&#x901A;&#x8FC7; Web Hosting &#x52A8;&#x6001;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684;&#x7B7E;&#x540D;&#x63A5;&#x53E3;&#x3002;&#x5728;&#x79FB;&#x52A8;&#x5E94;&#x7528;&#x4E2D;&#x76F4;&#x63A5;&#x505A;&#x7B7E;&#x540D;&#x662F;<strong>&#x975E;&#x5E38;&#x5371;&#x9669;</strong>&#x7684;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x4F60;&#x7684;<strong>master key</strong>&#x6CC4;&#x6F0F;&#x3002;</p>
+<p version="5e756ce3cf2854c1aa080a24bbc7e8bd">&#x4F7F;&#x7528;&#x87D2;&#x86C7;(Python)&#x5927;&#x6CD5;&#x7684;&#x7B7E;&#x540D;&#x8303;&#x4F8B;&#xFF1A;</p>
+<pre version="a254a828b49a300c32f40059f8355f52"><code class="lang-python">import hmac, hashlib
+
+### &#x7B7E;&#x540D;&#x51FD;&#x6570; hmac-sha1 hex dump
+def sign(msg, k):
+    return hmac.new(k, msg, hashlib.sha1).digest().encode(&apos;hex&apos;)
+
+### &#x7B7E;&#x540D;&#x7684;&#x6D88;&#x606F;&#x548C; key
+sign(&quot;app_id:peer_id:watch_peer_ids:timestamp:nonce&quot;, &quot;master key&quot;)
+</code></pre>
+<h3 id="-">&#x7FA4;&#x7EC4;&#x529F;&#x80FD;&#x7684;&#x7B7E;&#x540D;</h3>
+<p version="2379b755f3f912aeb804cbd365ccc340">&#x5728;&#x7FA4;&#x7EC4;&#x529F;&#x80FD;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;<strong>&#x52A0;&#x7FA4;</strong>&#xFF0C;<strong>&#x9080;&#x8BF7;</strong>&#x548C;<strong>&#x8E22;&#x51FA;&#x7FA4;</strong>&#x8FD9;&#x4E09;&#x4E2A;&#x52A8;&#x4F5C;&#x4E5F;&#x5141;&#x8BB8;&#x52A0;&#x5165;&#x7B7E;&#x540D;&#xFF0C;&#x4ED6;&#x7684;&#x7B7E;&#x540D;&#x683C;&#x5F0F;&#x662F;&#xFF1A;</p>
+<pre version="92916469b6f47b1b46251a734294a383"><code>app_id:peer_id:group_id:group_peer_ids:timestamp:nonce:action
+</code></pre><p version="0e7c8779f8f37e58d37cdbace7b0c9dc">&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li><code>app_id</code>, <code>peer_id</code>, <code>timestamp</code> &#x548C; <code>nonce</code> &#x7684;&#x542B;&#x4E49;&#x540C;&#x4E0A;</li>
+<li><code>group_id</code> &#x662F;&#x6B64;&#x6B21;&#x884C;&#x4E3A;&#x5173;&#x8054;&#x7684;&#x7FA4;&#x7EC4; ID&#xFF0C;&#x5BF9;&#x4E8E;&#x521B;&#x5EFA;&#x7FA4;&#x5C1A;&#x6CA1;&#x6709;id&#x7684;&#x60C5;&#x51B5;&#xFF0C;<code>group_id</code>&#x662F;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</li>
+<li><code>group_peer_ids</code> &#x662F;<code>:</code>&#x5206;&#x9694;&#x7684;<strong>&#x5347;&#x5E8F;&#x6392;&#x5E8F;</strong>&#x7684; peer id&#xFF0C;&#x5373;&#x9080;&#x8BF7;&#x548C;&#x8E22;&#x51FA;&#x7684; peer_id&#xFF0C;&#x5BF9;&#x52A0;&#x5165;&#x7FA4;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x8FD9;&#x91CC;&#x662F;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</li>
+<li><code>action</code> &#x662F;&#x6B64;&#x6B21;&#x884C;&#x4E3A;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x4E09;&#x79CD;&#x884C;&#x4E3A;&#x5206;&#x522B;&#x5BF9;&#x5E94;&#x5E38;&#x91CF; <code>join</code>, <code>invite</code> &#x548C; <code>kick</code></li>
+</ul>
+<h3 id="super-peer">Super Peer</h3>
+<p version="3641b01b953eefffde370fface01e688">&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x7528;&#x6237;&#x7684;&#x7279;&#x6B8A;&#x573A;&#x666F;&#xFF0C;&#x6211;&#x4EEC;&#x8BBE;&#x8BA1;&#x4E86;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#xFF08;Super Peer&#xFF09;&#x7684;&#x6982;&#x5FF5;&#x3002;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x65E0;&#x9700; watch &#x67D0;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x5C31;&#x7ED9;&#x5BF9;&#x65B9;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x3002;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x7684;&#x4F7F;&#x7528;&#x9700;&#x8981;&#x5F3A;&#x5236;&#x7B7E;&#x540D;&#x8BA4;&#x8BC1;&#x3002;</p>
+<p version="5379ac0140593d41c3c06db1df8ef26a">&#x7B7E;&#x540D;&#x683C;&#x5F0F;&#x662F;&#x5728;&#x666E;&#x901A;&#x7528;&#x6237;&#x7684;&#x7B7E;&#x540D;&#x6D88;&#x606F;&#x540E;&#x52A0;&#x5E38;&#x91CF; <code>su</code>&#x3002;</p>
+<pre version="29d8bcdb55507968178507982063f47e"><code>app_id:peer_id:watch_peer_ids:timestamp:nonce:su
+</code></pre><h2 id="android-">Android &#x5F00;&#x53D1;&#x6307;&#x5357;</h2>
+<p version="0c71d8c1289ab876466104c87a5d690f">&#x53C2;&#x8003; <a href="./android_realtime.html">Android &#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></p>
+<h2 id="ios-">iOS &#x5F00;&#x53D1;&#x6307;&#x5357;</h2>
+<p version="891577f93d11add061cb9b58758f3a47">&#x53C2;&#x8003; <a href="./ios_realtime.html">iOS &#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></p>
+<h2 id="windows-phone-8-0-">Windows Phone 8.0 &#x5F00;&#x53D1;&#x6307;&#x5357;</h2>
+<p version="b9eaa0d38804feede3005e875cd025ee">&#x53C2;&#x8003; <a href="dotnet_realtime.html">Windows Phone 8.0 &#x5F00;&#x53D1;&#x6307;&#x5357;</a></p>
+<h2 id="javascript-">JavaScript &#x5F00;&#x53D1;&#x6307;&#x5357;</h2>
+<p version="06012a94f51a18c5b1d3caece5fdc628">&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5F00;&#x6E90; JS Messaging SDK &#x4E86;&#xFF0C; &#x89C1; <a href="https://github.com/leancloud/realtime-messaging-jssdk">leancloud/realtime-messaging-jssdk</a> &#x3002;</p>
+<h2 id="leanchat-demo">LeanChat Demo</h2>
+<p version="0ad59d8367c3f5132601a72073d91384">&#x4E3A;&#x4E86;&#x5E2E;&#x52A9;&#x5927;&#x5BB6;&#x66F4;&#x5BB9;&#x6613;&#x4E0A;&#x624B;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x7EC4;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x5F00;&#x53D1;&#x4E86;&#x591A;&#x5E73;&#x53F0;&#x5E94;&#x7528; LeanChat&#xFF0C;&#x50CF;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;&#x7684;&#x5FAE;&#x4FE1;&#xFF0C;&#x53EF;&#x70B9;&#x51FB;<a href="http://fir.im/Lean">&#x8FD9;&#x91CC;</a>&#x4E0B;&#x8F7D;&#x3002;&#x9879;&#x76EE;&#x4EE3;&#x7801;&#x653E;&#x5728;&#x4E86; Github&#x4E0A;&#xFF0C;<a href="https://github.com/leancloud/leanchat-android">LeanChat-Android</a> &#x548C; <a href="https://github.com/leancloud/leanchat-ios">LeanChat-iOS</a>&#x3002;&#x5148;&#x4E0A;&#x56FE;&#xFF0C;</p>
+<p><img src="images/leanchat.png" alt="image"></p>
+<p version="880585d17972c0410b7c0dd38127309d">LeanChat &#x7528;&#x5230;&#x4E86;&#x5927;&#x591A;&#x6570;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x7EC4;&#x4EF6;&#x7684;&#x63D0;&#x4F9B;&#x7684;&#x63A5;&#x53E3;&#x4E0E;&#x529F;&#x80FD;&#xFF0C;&#x901A;&#x8FC7;&#x9605;&#x8BFB;&#x5B83;&#x7684;&#x6E90;&#x7801;&#xFF0C;&#x76F8;&#x4FE1;&#x60A8;&#x53EF;&#x4EE5;&#x5F88;&#x5FEB;&#x5B66;&#x4F1A;&#x4F7F;&#x7528;&#x901A;&#x4FE1;&#x7EC4;&#x4EF6;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x9996;&#x8981;&#x7684;&#x662F;&#x80FD;&#x7F16;&#x8BD1;&#x8FD0;&#x884C; LeanChat&#xFF0C;&#x9879;&#x76EE;Readme &#x4E0A;&#x90FD;&#x6709;&#x8BF4;&#x660E;&#xFF0C;&#x4ECD;&#x7136;&#x9047;&#x5230;&#x95EE;&#x9898;&#x7684;&#x8BDD;&#x8BF7;<a href="https://ticket.leancloud.cn">&#x8054;&#x7CFB;&#x6211;&#x4EEC;</a>&#x3002;</p>
+<p version="7892cb05a247b607062dda5547d7dd77">&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E0A;&#x6709;&#x4E09;&#x70B9;&#x6BD4;&#x8F83;&#x91CD;&#x8981;&#xFF0C;</p>
+<ul>
+<li><code>Msg</code> &#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x6D88;&#x606F;&#x5BF9;&#x8C61;&#xFF0C;<code>Msg</code>&#x5BF9;&#x8C61;&#x53EF;&#x8F6C;&#x6362;&#x6210; <code>Json</code>&#x6587;&#x672C;&#xFF0C;&#x53D1;&#x9001;&#x7ED9;&#x5BF9;&#x65B9;&#xFF0C;&#x5BF9;&#x65B9;&#x63A5;&#x6536;&#x5230;&#x540E;&#x53EF;&#x8F6C;&#x6362;&#x6210; <code>Msg</code> &#x5BF9;&#x8C61;&#x3002;&#x53EF;&#x53C2;&#x8003; <a href="https://github.com/leancloud/leanchat-android/blob/master/src/com/avoscloud/chat/entity/Msg.java">Msg.java</a>&#x3002;</li>
+<li><code>messages</code> &#x8868;&#xFF0C;&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x6D88;&#x606F;&#xFF0C;&#x5B57;&#x6BB5;&#x57FA;&#x672C;&#x548C; <code>Msg</code>&#x5BF9;&#x8C61;&#x7684;&#x6210;&#x5458;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x3002;&#x53EF;&#x53C2;&#x8003; <a href="https://github.com/leancloud/leanchat-android/blob/master/src/com/avoscloud/chat/db/DBMsg.java">DBMsg.java</a>&#x3002;</li>
+<li>&#x97F3;&#x9891;&#x3001;&#x56FE;&#x7247;&#x6D88;&#x606F;&#x7684;&#x53D1;&#x9001;&#xFF0C;&#x7528;&#x5230;&#x4E86;<a href="./android_guide.html#&#x6587;&#x4EF6;">AVFile</a>&#xFF0C;&#x901A;&#x8FC7;&#x76F8;&#x5E94;&#x7684;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x3001;&#x4E0A;&#x4F20;<code>AVFile</code>&#xFF0C;&#x5F97;&#x5230; <code>url</code>&#x4E4B;&#x540E;&#x4F5C;&#x4E3A; <code>Msg</code> &#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x53D1;&#x9001;&#x7ED9;&#x5BF9;&#x65B9;&#x3002;</li>
+</ul>
+<p version="67b376f969e3c36b7075db14dfaf3de3">&#x9664;&#x4E86;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#xFF0C;Android &#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x63A8;&#x8350;&#x9605;&#x8BFB; <a href="https://github.com/leancloud/leanchat-android/blob/master/src/com/avoscloud/chat/service/receiver/MsgReceiver.java">MsgReceiver.java</a>&#x4E0E; <a href="https://github.com/leancloud/leanchat-android/blob/master/src/com/avoscloud/chat/service/ChatService.java">ChatService.java</a>&#x3002;iOS &#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x63A8;&#x8350;&#x9605;&#x8BFB; <a href="https://github.com/leancloud/leanchat-ios/blob/master/AVOSChatDemo/service/CDSessionManager.m">CDSessionManager.m</a>&#x4E0E; <a href="https://github.com/leancloud/leanchat-ios/blob/master/AVOSChatDemo/service/CDDatabaseService.m">CDDatabaseService.m</a>&#x3002;</p>
+<p version="4fb0cd2f8775d92f7e20c9ada11d9ed1">&#x81F3;&#x4E8E;&#x5176;&#x5B83;&#x6280;&#x672F;&#x7EC6;&#x8282;&#xFF0C;&#x8BF7;&#x53C2;&#x8003; <a href="https://github.com/leancloud/leanchat-android/wiki">&#x9879;&#x76EE;wiki</a> &#x3002;</p>
+<h2 id="-hook">&#x4E91;&#x5F15;&#x64CE; Hook</h2>
+<p version="30c0f2ab3f53269d5102c1f601b7c463">&#x4E91;&#x5F15;&#x64CE; hook &#x5141;&#x8BB8;&#x4F60;&#x901A;&#x8FC7;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x51FD;&#x6570;&#x5904;&#x7406;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x4E2D;&#x7684;&#x67D0;&#x4E9B;&#x4E8B;&#x4EF6;&#xFF0C;&#x4FEE;&#x6539;
+&#x9ED8;&#x8BA4;&#x7684;&#x6D41;&#x7A0B;&#x7B49;&#x7B49;&#x3002;&#x76EE;&#x524D;&#x6211;&#x4EEC;&#x5F00;&#x653E;&#x4E86;&#x4E24;&#x4E2A;&#x9700;&#x6C42;&#x6BD4;&#x8F83;&#x5F3A;&#x70C8;&#x7684; hook &#x4E91;&#x51FD;&#x6570;&#xFF1A;</p>
+<ul>
+<li>_messageReceived &#x6D88;&#x606F;&#x8FBE;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7FA4;&#x7EC4;&#x6210;&#x5458;&#x5DF2;&#x89E3;&#x6790;&#x5B8C;&#x6210;&#x4E4B;&#x540E;</li>
+<li>_receiversOffline &#x6D88;&#x606F;&#x53D1;&#x9001;&#x5B8C;&#x6210;&#xFF0C;&#x5B58;&#x5728;&#x79BB;&#x7EBF;&#x7684;&#x6536;&#x4EF6;&#x4EBA;</li>
+</ul>
+<p version="c3a047f5570dd00787a06adb78d90707">&#x5173;&#x4E8E;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x4E91;&#x51FD;&#x6570;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x53C2;&#x8003; <a href="leanengine_guide-cloudcode.html#&#x4E91;&#x51FD;&#x6570;">&#x4E91;&#x5F15;&#x64CE; -&#x4E91;&#x51FD;&#x6570;</a> &#x90E8;&#x5206;&#x7684;&#x8BF4;&#x660E;&#x3002;&#x6240;&#x6709;&#x4E91;&#x5F15;&#x64CE;&#x8C03;&#x7528;&#x90FD;&#x6709;&#x9ED8;&#x8BA4;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x548C;&#x5BB9;&#x9519;&#x673A;&#x5236;&#xFF0C;&#x5728;&#x51FA;&#x9519;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5C06;&#x6309;&#x7167;&#x9ED8;&#x8BA4;&#x7684;&#x6D41;&#x7A0B;&#x6267;&#x884C;&#x540E;&#x7EED;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<h3 id="_messagereceived">_messageReceived</h3>
+<p version="3e45460a430b8fd6e0a92f1b7bf3ca57">&#x8FD9;&#x4E2A; hook &#x53D1;&#x751F;&#x5728;&#x6D88;&#x606F;&#x5230;&#x8FBE;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x7FA4;&#x7EC4;&#x6D88;&#x606F;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x89E3;&#x6790;&#x51FA;&#x6240;&#x6709;&#x6D88;&#x606F;&#x6536;&#x4EF6;&#x4EBA;&#x3002;</p>
+<p version="881a6262d755aed4a7f2d68cf687eb37">&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#x63A7;&#x5236;&#x6D88;&#x606F;&#x662F;&#x5426;&#x9700;&#x8981;&#x88AB;&#x4E22;&#x5F03;&#xFF0C;&#x5220;&#x9664;&#x4E2A;&#x522B;&#x6536;&#x4EF6;&#x4EBA;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x6D88;
+&#x606F;&#x5185;&#x5BB9;&#x3002;&#x8FD4;&#x56DE;&#x7A7A;&#x5BF9;&#x8C61;&#x5219;&#x4F1A;&#x6267;&#x884C;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x7684;&#x6D41;&#x7A0B;&#x3002;</p>
+<h4 id="-">&#x53C2;&#x6570;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fromPeer</td>
+<td>&#x6D88;&#x606F;&#x53D1;&#x9001;&#x8005;&#x7684; Peer ID</td>
+</tr>
+<tr>
+<td>toPeers</td>
+<td>&#x6D88;&#x606F;&#x7684;&#x76EE;&#x6807;&#x7528;&#x6237; ID &#x6570;&#x7EC4;&#xFF0C;&#x5305;&#x542B;&#x89E3;&#x6790;&#x51FA;&#x7684;&#x7528;&#x6237; ID</td>
+</tr>
+<tr>
+<td>groupId</td>
+<td>&#x7FA4;&#x7EC4;&#x6D88;&#x606F;&#x7684; Group ID&#xFF0C;&#x6CA1;&#x6709;&#x5173;&#x8054;&#x5219;&#x4E3A;&#x7A7A;</td>
+</tr>
+<tr>
+<td>transient</td>
+<td>&#x662F;&#x5426;&#x662F; transient &#x6D88;&#x606F;</td>
+</tr>
+<tr>
+<td>content</td>
+<td>&#x6D88;&#x606F;&#x4F53;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td>receipt</td>
+<td>&#x662F;&#x5426;&#x8981;&#x6C42;&#x56DE;&#x6267;</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>&#x670D;&#x52A1;&#x5668;&#x6536;&#x5230;&#x6D88;&#x606F;&#x7684;&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x6BEB;&#x79D2;</td>
+</tr>
+<tr>
+<td>sourceIP</td>
+<td>&#x6D88;&#x606F;&#x53D1;&#x9001;&#x8005;&#x7684; IP</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>drop</td>
+<td>&#x53EF;&#x9009;&#xFF0C;&#x5982;&#x679C;&#x8FD4;&#x56DE; truthy &#x503C;&#x6D88;&#x606F;&#x5C06;&#x88AB;&#x4E22;&#x5F03;</td>
+</tr>
+<tr>
+<td>content</td>
+<td>&#x53EF;&#x9009;&#xFF0C;&#x4FEE;&#x6539;&#x540E;&#x7684; content&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x63D0;&#x4F9B;&#x5219;&#x4FDD;&#x7559;&#x539F;&#x6D88;&#x606F;</td>
+</tr>
+<tr>
+<td>toPeers</td>
+<td>&#x53EF;&#x9009;&#xFF0C;&#x6570;&#x7EC4;&#xFF0C;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x6536;&#x4EF6;&#x4EBA;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x63D0;&#x4F9B;&#x5219;&#x4FDD;&#x7559;&#x539F;&#x6536;&#x4EF6;&#x4EBA;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_receiversoffline">_receiversOffline</h3>
+<p version="41880078fbfea200a1fd5af0a9b6e613">&#x8FD9;&#x4E2A; hook &#x53D1;&#x751F;&#x5728;&#x6709;&#x6536;&#x4EF6;&#x4EBA;&#x79BB;&#x7EBF;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A; hook &#x81EA;&#x5B9A;&#x4E49;&#x79BB;&#x7EBF;&#x63A8;
+&#x9001;&#x884C;&#x4E3A;&#xFF0C;&#x5305;&#x62EC;&#x63A8;&#x9001;&#x5185;&#x5BB9;&#x3001;&#x88AB;&#x63A8;&#x9001;&#x7528;&#x6237;&#x6216;&#x7565;&#x8FC7;&#x63A8;&#x9001;&#x3002;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728; hook &#x4E2D;&#x89E6;&#x53D1;
+&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x63A8;&#x9001;&#x3002;&#x5F00;&#x653E;&#x7FA4;&#x7EC4;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x8FD9;&#x4E2A; hook&#x3002;</p>
+<h4 id="-">&#x53C2;&#x6570;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fromPeer</td>
+<td>&#x6D88;&#x606F;&#x53D1;&#x9001;&#x8005; Peer ID</td>
+</tr>
+<tr>
+<td>groupId</td>
+<td>&#x7FA4;&#x7EC4;&#x6D88;&#x606F;&#x7684; Group ID&#xFF0C;&#x6CA1;&#x6709;&#x5173;&#x8054;&#x5219;&#x4E3A;&#x7A7A;</td>
+</tr>
+<tr>
+<td>offlinePeers</td>
+<td>&#x6570;&#x7EC4;&#xFF0C;&#x79BB;&#x7EBF;&#x7684;&#x6536;&#x4EF6;&#x4EBA;&#x5217;&#x8868;</td>
+</tr>
+<tr>
+<td>content</td>
+<td>&#x6D88;&#x606F;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>&#x670D;&#x52A1;&#x5668;&#x6536;&#x5230;&#x6D88;&#x606F;&#x7684;&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x6BEB;&#x79D2;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>skip</td>
+<td>&#x53EF;&#x9009;&#xFF0C;&#x5982;&#x679C;&#x662F; truthy &#x503C;&#x5C06;&#x8DF3;&#x8FC7;&#x63A8;&#x9001;&#xFF08;&#x6BD4;&#x5982;&#x5DF2;&#x7ECF;&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x91CC;&#x89E6;&#x53D1;&#x4E86;&#x63A8;&#x9001;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x901A;&#x77E5;&#xFF09;</td>
+</tr>
+<tr>
+<td>offlinePeers</td>
+<td>&#x53EF;&#x9009;&#xFF0C;&#x6570;&#x7EC4;&#xFF0C;&#x7B5B;&#x9009;&#x8FC7;&#x7684;&#x63A8;&#x9001;&#x6536;&#x4EF6;&#x4EBA;</td>
+</tr>
+<tr>
+<td>pushMessage</td>
+<td>&#x53EF;&#x9009;&#xFF0C;&#x63A8;&#x9001;&#x5185;&#x5BB9;&#xFF0C;&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49; JSON &#x7ED3;&#x6784;</td>
+</tr>
+</tbody>
+</table>
+<p version="20ccb02e1dae25313b96499de7e796a6">&#x793A;&#x4F8B;&#x5E94;&#x7528; <a href="https://github.com/leancloud/leanchat-android">LeanChat</a> &#x4E5F;&#x7528;&#x4E86;&#x4E91;&#x5F15;&#x64CE; Hook &#x529F;&#x80FD;&#x6765;&#x81EA;&#x5B9A;&#x4E49;&#x6D88;&#x606F;&#x63A8;&#x9001;&#xFF0C;&#x901A;&#x8FC7;&#x89E3;&#x6790;&#x4E0A;&#x5C42;&#x6D88;&#x606F;&#x534F;&#x8BAE;&#x83B7;&#x53D6;&#x6D88;&#x606F;&#x7C7B;&#x578B;&#x548C;&#x5185;&#x5BB9;&#xFF0C;&#x901A;&#x8FC7;<code>fromPeer</code>&#x5F97;&#x5230;&#x53D1;&#x9001;&#x8005;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x7EC4;&#x88C5;&#x6210; <code>pushMessage</code>&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x80FD;&#x4F7F;&#x63A8;&#x9001;&#x901A;&#x77E5;&#x7684;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x66F4;&#x597D;&#x3002;&#x53EF;&#x53C2;&#x8003;<a href="https://github.com/leancloud/leanchat-cloudcode/blob/master/cloud/mchat.js">&#x76F8;&#x5E94;&#x7684;&#x4EE3;&#x7801;</a>&#x3002;</p>
+<h2 id="-">&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x9519;&#x8BEF;&#x7801;&#x8BF4;&#x660E;</h2>
+<p version="d0df369bfc36a0266d316da7976208c7">&#x8FD9;&#x91CC;&#x7684;&#x9519;&#x8BEF;&#x7801;&#x4E3B;&#x8981;&#x662F; websocket &#x5173;&#x95ED;&#x8FDE;&#x63A5;&#x65F6;&#x8FD4;&#x56DE;&#x7684;&#x72B6;&#x6001;&#x7801;&#xFF0C;&#x5F53;&#x51FA;&#x73B0;&#x5F02;&#x5E38;&#x60C5;&#x51B5;&#x65F6;&#xFF0C;SDK&#x4F1A;&#x8F93;&#x51FA;&#x72B6;&#x6001;&#x7801;&#x5230;&#x65E5;&#x5FD7;&#x91CC;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x5BF9;&#x90E8;&#x5206;&#x72B6;&#x6001;&#x7801;&#x7684;&#x7B80;&#x5355;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li><code>0</code> websocket &#x6B63;&#x5E38;&#x5173;&#x95ED;&#xFF0C;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x5728;&#x670D;&#x52A1;&#x5668;&#x91CD;&#x542F;&#xFF0C;&#x6216;&#x672C;&#x5730;&#x7F51;&#x7EDC;&#x5F02;&#x5E38;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x901A;&#x5E38;&#x91CD;&#x8BD5;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x3002;</li>
+<li><code>4103</code> Peer Id &#x683C;&#x5F0F;&#x9519;&#x8BEF;&#xFF0C;&#x8D85;&#x8FC7;50&#x4E2A;&#x5B57;&#x7B26;&#x3002;</li>
+<li><code>4105</code> Session &#x6CA1;&#x6709;&#x6253;&#x5F00;&#x5C31;&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF0C;&#x6216;&#x6267;&#x884C;&#x5176;&#x4ED6;&#x64CD;&#x4F5C;&#x3002;&#x5E38;&#x89C1;&#x7684;&#x9519;&#x8BEF;&#x573A;&#x666F;&#x662F;&#x8C03;&#x7528; open session &#x540E;&#x76F4;&#x63A5;&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF0C;&#x6B63;&#x786E;&#x7684;&#x7528;&#x6CD5;&#x662F;&#x5728; Session &#x6253;&#x5F00;&#x7684;&#x56DE;&#x8C03;&#x91CC;&#x6267;&#x884C;&#x3002;</li>
+<li><code>4107</code> &#x8BFB;&#x8D85;&#x65F6;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x957F;&#x65F6;&#x95F4;&#x6CA1;&#x6709;&#x6536;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5207;&#x65AD;&#x8FDE;&#x63A5;&#x3002;SDK &#x5305;&#x88C5;&#x4E86;&#x5FC3;&#x8DF3;&#x5305;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x3002;&#x5982;&#x679C;&#x9047;&#x5230;&#x8BF7;&#x68C0;&#x67E5;&#x7F51;&#x7EDC;&#x5E76;&#x91CD;&#x8BD5;&#x3002;</li>
+<li><code>4108</code> &#x767B;&#x5F55;&#x8D85;&#x65F6;&#xFF0C;&#x8FDE;&#x63A5;&#x540E;&#x957F;&#x65F6;&#x95F4;&#x6CA1;&#x6709;&#x5B8C;&#x6210; session open&#x3002;&#x5982;&#x679C;&#x5F00;&#x542F;&#x4E86;&#x7B7E;&#x540D;&#x8BA4;&#x8BC1;&#xFF0C;&#x53EF;&#x80FD;&#x7531;&#x4E8E;&#x7B7E;&#x540D;&#x9519;&#x8BEF;&#x51FA;&#x73B0;&#x8FD9;&#x4E2A;&#x60C5;&#x51B5;&#xFF0C;&#x8BF7;&#x67E5;&#x770B;&#x3002;</li>
+<li><code>4109</code> &#x5305;&#x8FC7;&#x957F;&#x3002;&#x6D88;&#x606F;&#x5927;&#x5C0F;&#x8D85;&#x8FC7; 5KB&#xFF0C;&#x8BF7;&#x7F29;&#x77ED;&#x6D88;&#x606F;&#x6216;&#x8005;&#x62C6;&#x5206;&#x6D88;&#x606F;&#x3002;</li>
+<li><code>4200</code> &#x670D;&#x52A1;&#x5668;&#x5185;&#x90E8;&#x9519;&#x8BEF;&#xFF0C;&#x5982;&#x679C;&#x53CD;&#x590D;&#x51FA;&#x73B0;&#x8BF7;&#x6536;&#x96C6;&#x76F8;&#x5173;&#x7EBF;&#x7D22;&#x5E76;<a href="http://ticket.leancloud.cn/">&#x521B;&#x5EFA;&#x5DE5;&#x5355;</a>&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5C3D;&#x5FEB;&#x89E3;&#x51B3;&#x3002;</li>
+</ul>
+<h2 id="faq">FAQ</h2>
+<h3 id="-">&#x6211;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x7528;&#x6237;&#x7CFB;&#x7EDF;</h3>
+<p version="eaf8cb961c7c51865912acdac67bbff1">&#x6211;&#x4EEC;&#x5E76;&#x4E0D;&#x5F3A;&#x5236;&#x63A5;&#x5165;&#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x670D;&#x52A1;&#x7684;&#x5E94;&#x7528;&#x4F7F;&#x7528; LeanCloud &#x7684;&#x7528;&#x6237;&#x7CFB;&#x7EDF;&#x3002;&#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x670D;&#x52A1;&#x4E2D;&#x7684; PeerId &#x53EF;&#x4EE5;&#x7531;&#x7528;&#x6237;&#x4EFB;&#x610F;&#x6307;&#x5B9A;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x7528;&#x6237;&#x7CFB;&#x7EDF;&#x4E2D;&#x4FDD;&#x8BC1;&#x4E00;&#x81F4;&#x5373;&#x53EF;&#xFF08;&#x5728;&#x533F;&#x540D;&#x804A;&#x5929; Demo KeepAlive &#x91CC;&#x6211;&#x4EEC;&#x7528;&#x7684;&#x662F; installationId&#xFF09;&#x3002;&#x5BF9;&#x5DF2;&#x6709;&#x7528;&#x6237;&#x7CFB;&#x7EDF;&#x7684;&#x5E94;&#x7528;&#x6765;&#x8BF4;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x81EA;&#x5DF1;&#x7684;&#x7528;&#x6237; ID &#x4F5C;&#x4E3A; PeerId&#xFF0C;&#x5E76;&#x901A;&#x8FC7;<a href="realtime.html#&#x6743;&#x9650;&#x548C;&#x8BA4;&#x8BC1;">&#x7B7E;&#x540D;</a>&#x505A;&#x6743;&#x9650;&#x8BA4;&#x8BC1;&#x3002;</p>
+<h3 id="-">&#x804A;&#x5929;&#x652F;&#x6301;&#x56FE;&#x7247;&#x3001;&#x8BED;&#x97F3;&#x5417;&#xFF1F;</h3>
+<p version="14a12879fa6aa5251f6b7515b187151d">&#x5F53;&#x7136;&#x652F;&#x6301;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x56FE;&#x7247;&#x3001;&#x8BED;&#x8A00;&#x7B49; blob &#x4E0A;&#x4F20;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#xFF0C;&#x518D;&#x4F20;&#x8F93; URL&#xFF0C;&#x5E76;&#x5728; UI &#x4E0A;&#x8FDB;&#x884C;&#x9002;&#x5F53;&#x5730;&#x5C55;&#x793A;&#x3002;&#x8FD9;&#x4E48;&#x505A;&#x7684;&#x597D;&#x5904;&#xFF1A;</p>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x4F20;&#x8F93;&#x5927;&#x6587;&#x4EF6;&#xFF0C;&#x907F;&#x514D;&#x8D85;&#x8FC7; 5K &#x7684;&#x6D88;&#x606F;&#x5927;&#x5C0F;&#x9650;&#x5236;</li>
+<li>&#x8282;&#x7701;&#x6D41;&#x91CF;&#xFF1A;&#x804A;&#x5929;&#x7684;&#x5BF9;&#x65B9;&#x53EA;&#x8981;&#x63A5;&#x6536;&#x4E00;&#x4E2A; URL &#x6587;&#x672C;&#x5373;&#x53EF;&#xFF0C;&#x56FE;&#x7247;&#x548C;&#x8BED;&#x97F3;&#x662F;&#x53EF;&#x9009;&#x4E0B;&#x8F7D;</li>
+<li>&#x52A0;&#x901F;&#xFF1A;&#x6211;&#x4EEC;&#x7684; CDN &#x63D0;&#x4F9B;&#x66F4;&#x5FEB;&#x7684;&#x4E0B;&#x8F7D;&#x901F;&#x5EA6;&#xFF0C;&#x5BF9;&#x56FE;&#x7247;&#x8FD8;&#x652F;&#x6301;&#x81EA;&#x52A8;&#x7F29;&#x7565;&#x56FE;</li>
+</ul>
+<h3 id="-">&#x804A;&#x5929;&#x79BB;&#x7EBF;&#x65F6;&#x53EF;&#x4EE5;&#x63A8;&#x9001;&#x5417;&#xFF1F;</h3>
+<p version="1a2285f40b316d47e51c07890ef1547b">&#x5F53;&#x7136;&#x53EF;&#x4EE5;&#x3002;&#x6211;&#x4EEC;&#x7684;Android&#x804A;&#x5929;&#x670D;&#x52A1;&#x662F;&#x548C;&#x540E;&#x53F0;&#x7684;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x5171;&#x4EAB;&#x8FDE;&#x63A5;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x8981;&#x6709;&#x7F51;&#x7EDC;&#x5C31;&#x6C38;&#x8FDC;&#x5728;&#x7EBF;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4E13;&#x95E8;&#x505A;&#x63A8;&#x9001;&#x3002;&#x6D88;&#x606F;&#x8FBE;&#x5230;&#x540E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x7528;&#x6237;&#x7684;&#x8BBE;&#x7F6E;&#x6765; &#x5224;&#x65AD;&#x662F;&#x5426;&#x9700;&#x8981;&#x5F39;&#x51FA;&#x901A;&#x77E5;&#x3002;&#x7F51;&#x7EDC;&#x65AD;&#x5F00;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4E3A;&#x7528;&#x6237;&#x4FDD;&#x5B58;50&#x6761;&#x7684;&#x79BB;&#x7EBF;&#x6D88;&#x606F;&#x3002;</p>
+<p version="fb18d8d33e53078a9b83599f93c3c891">iOS&#x5728;&#x5E94;&#x7528;&#x9000;&#x51FA;&#x524D;&#x53F0;&#x540E;&#x5373;&#x79BB;&#x7EBF;&#xFF0C;&#x8FD9;&#x65F6;&#x6536;&#x5230;&#x6D88;&#x606F;&#x4F1A;&#x89E6;&#x53D1;&#x4E00;&#x4E2A;APNS&#x7684;&#x63A8;&#x9001;&#x3002;&#x56E0;&#x4E3A;APNS
+&#x6709;&#x6D88;&#x606F;&#x957F;&#x5EA6;&#x9650;&#x5236;&#xFF0C;&#x4E14;&#x4F60;&#x4EEC;&#x7684;&#x6D88;&#x606F;&#x6B63;&#x6587;&#x53EF;&#x80FD;&#x8FD8;&#x5305;&#x542B;&#x4E0A;&#x5C42;&#x534F;&#x8BAE;&#xFF0C;&#x6240;&#x4EE5; &#x6211;&#x4EEC;&#x73B0;&#x5728;APNS
+&#x7684;&#x63A8;&#x9001;&#x5185;&#x5BB9;&#x662F;&#x8BA9;&#x5E94;&#x7528;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x7684;APNS json&#xFF0C;&#x5982;&#x201C;&#x60A8;&#x6709;&#x65B0;&#x7684;&#x6D88;&#x606F;&#x201D; &#x3002;</p>
+<p><img src="images/realtime_ios_push.png" alt="image"></p>
+<p><img src="images/rtm-push.png" alt="image"></p>
+<p version="58634cc7cabf51eadb40cd89351ab89d">&#x684C;&#x9762;&#x56FE;&#x6807;&#x4E5F;&#x4F1A;&#x6709;&#x76F8;&#x5E94;&#x7684;&#x7EA2;&#x70B9;<code>badge</code>&#xFF0C;&#x6E05;&#x9664; <code>badge</code> &#x7684;&#x64CD;&#x4F5C;&#x8BF7;&#x53C2;&#x8003; <a href="push_guide.html#&#x6E05;&#x9664;-badge">iOS&#x63A8;&#x9001;&#x6307;&#x5357;</a>&#x3002;</p>
+<p version="8b35efc0dba7e0dff5c3854b743e9cc9">&#x4E91;&#x5F15;&#x64CE; Hook &#x5DF2;&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49;&#x6D88;&#x606F;&#x63A8;&#x9001;&#xFF0C;&#x53EF;&#x63A8;&#x9001;&#x5177;&#x4F53;&#x7684;&#x6D88;&#x606F;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x53C2;&#x8003;<a href="realtime.html#&#x4E91;&#x5F15;&#x64CE;-hook">&#x4E91;&#x5F15;&#x64CE;-Hook</a> &#x7AE0;&#x8282;&#x3002;</p>
+<h3 id="-iphone-">&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x7684; iPhone &#x6536;&#x4E0D;&#x5230;&#x79BB;&#x7EBF;&#x6D88;&#x606F;&#x63A8;&#x9001;&#xFF1F;</h3>
+<p version="8907601baa3ac98e33147ace4807d912">&#x8BF7;&#x5148;&#x770B;&#x4E0A;&#x4E00;&#x4E2A; FAQ&#x3002;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x7684;&#x8BBE;&#x7F6E;&#x9875;&#x9762;&#xFF0C;&#x586B;&#x5199;&#x201C;&#x60A8;&#x6709;&#x65B0;&#x7684;&#x672A;&#x8BFB;&#x6D88;&#x606F;&#x201D;&#x540E;&#xFF0C;&#x5F53;&#x5BF9;&#x65B9;&#x4E0D;&#x5728;&#x7EBF;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4FBF;&#x4F1A;&#x89E6;&#x53D1;&#x4E00;&#x4E2A; APNS &#x7684;&#x63A8;&#x9001;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x63A7;&#x5236;&#x53F0;&#x80FD;&#x5411; iOS &#x63A8;&#x9001;&#x6D88;&#x606F;&#xFF0C;&#x4E5F;&#x5373;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x7684;&#x63A8;&#x9001;&#x80FD;&#x987A;&#x5229;&#x5230;&#x8FBE; iOS &#x7CFB;&#x7EDF;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;<a href="push_guide.html#ios&#x6D88;&#x606F;&#x63A8;&#x9001;">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x6307;&#x5357;</a>&#x3002;</p>
+<p><img src="images/realtime_faq_push.png" alt="image"></p>
+<p version="23f1803c2d093b4b6fd03291fb628806">&#x4E4B;&#x540E;&#xFF0C;&#x8FD8;&#x8981;&#x786E;&#x4FDD;&#x5BF9;&#x65B9;&#x786E;&#x5B9E;&#x662F;&#x79BB;&#x7EBF;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x65B9;&#x7A0B;&#x5E8F;&#x5728;&#x524D;&#x53F0;&#x5E76;&#x4E14;&#x7F51;&#x7EDC;&#x826F;&#x597D;&#xFF0C;&#x5219;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x63A8;&#x9001;&#x3002;&#x5982;&#x679C;&#x5BF9;&#x65B9;&#x7F51;&#x7EDC;&#x672A;&#x8FDE;&#x63A5;&#xFF0C;&#x5219;&#x4E0B;&#x6B21;&#x8054;&#x7F51;&#x7684;&#x65F6;&#x5019;&#x6536;&#x5230;&#x56DE;&#x8C03;&#xFF0C;&#x4E5F;&#x4E0D;&#x89E6;&#x53D1;&#x63A8;&#x9001;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x63A7;&#x5236;&#x53F0;&#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x9875;&#x7684;&#x7528;&#x6237;&#x72B6;&#x6001;&#x67E5;&#x8BE2;&#x6765;&#x786E;&#x4FDD;&#x5BF9;&#x65B9;&#x662F;&#x5728;&#x79BB;&#x7EBF;&#x72B6;&#x6001;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x3002;</p>
+<p><img src="images/realtime_faq_console.png" alt="image"></p>
+<p version="c98d2161396b287a7889b177c6f3b3e7">&#x79BB;&#x7EBF;&#x6D88;&#x606F;&#x63A8;&#x9001;&#x7528;&#x7684;&#x662F;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x7F16;&#x8F91;&#x6846;&#x91CC;&#x4E0A;&#x4F20;&#x7684;&#x8BC1;&#x4E66;&#xFF0C;&#x5373;&#x65E0;&#x8BBA;&#x4E0B;&#x56FE;&#x4E2D;&#x4E0A;&#x4F20;&#x7684;&#x662F;&#x60A8;&#x5E94;&#x7528;&#x7684;&#x5F00;&#x53D1;&#x8BC1;&#x4E66;&#x8FD8;&#x662F;&#x751F;&#x4EA7;&#x8BC1;&#x4E66;&#xFF0C;&#x90FD;&#x5C06;&#x7528;&#x6765;&#x4F5C;&#x4E3A; iOS &#x79BB;&#x7EBF;&#x6D88;&#x606F;&#x63A8;&#x9001;&#x4F7F;&#x7528;&#x7684;&#x8BC1;&#x4E66;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x8C03;&#x8BD5;&#x65F6;&#x53EF;&#x80FD;&#x8981;&#x4E0A;&#x4F20;&#x5F00;&#x53D1;&#x8BC1;&#x4E66;&#xFF0C;&#x5982;&#x679C;&#x5E94;&#x7528;&#x5DF2;&#x53D1;&#x5E03;&#x4E0D;&#x65B9;&#x4FBF;&#x66F4;&#x6539;&#x8FD9;&#x91CC;&#x7684;&#x8BC1;&#x4E66;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x6765;&#x8C03;&#x8BD5;&#x3002; <a href="https://github.com/leancloud/leanchat-ios">LeanChat</a> &#x5E94;&#x7528;&#x5728;&#x8C03;&#x8BD5;&#x671F;&#x95F4;&#x6240;&#x7528;&#x7684;&#x8BC1;&#x4E66;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x3002;</p>
+<p><img src="images/realtime_faq_cert.png" alt="image"></p>
+<p version="91378e6ecf8c7b8380b1ba2d12c8eca6">&#x68C0;&#x67E5;&#x65B9;&#x6CD5;&#x603B;&#x7ED3;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x68C0;&#x67E5;&#x666E;&#x901A;&#x7684; iOS &#x63A8;&#x9001;&#x662F;&#x5426;&#x5230;&#x8FBE;</li>
+<li>&#x5728;&#x63A7;&#x5236;&#x53F0;&#x68C0;&#x67E5;&#x63A5;&#x6536;&#x65B9;&#x662F;&#x5426;&#x5728;&#x79BB;&#x7EBF;&#x72B6;&#x6001;</li>
+</ul>
+<h3 id="-">&#x804A;&#x5929;&#x8BB0;&#x5F55;</h3>
+<p version="35738a8e0065abb38ce10a21c9cf2604">&#x804A;&#x5929;&#x8BB0;&#x5F55;&#x7684;&#x67E5;&#x8BE2;&#x6211;&#x4EEC;&#x652F;&#x6301; 4 &#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li>&#x6309;&#x5BF9;&#x8BDD;&#x67E5;&#x8BE2;&#xFF0C;&#x5BF9;&#x8BDD; id &#x5373;&#x6240;&#x6709;&#x5BF9;&#x8BDD;&#x53C2;&#x4E0E;&#x8005;&#x7684; peerId &#x6392;&#x5E8F;&#x540E;&#x4EE5;<code>:</code>&#x5206;&#x9694;<code>md5</code>&#x6240;&#x5F97;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF1B;</li>
+<li>&#x6309;&#x7FA4;&#x7EC4;&#x67E5;&#x8BE2;&#xFF0C;&#x5BF9;&#x8BDD; id &#x5373;&#x7FA4;&#x7EC4; id&#xFF1B;</li>
+<li>&#x6309;&#x7528;&#x6237;&#x67E5;&#x8BE2;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x67E5;&#x5230;&#x67D0;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x6240;&#x6709;&#x6D88;&#x606F;&#xFF0C;&#x4EE5;&#x65F6;&#x95F4;&#x6392;&#x5E8F;&#xFF1B;</li>
+<li>&#x6309;&#x5E94;&#x7528;&#x67E5;&#x8BE2;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x67E5;&#x5230;&#x81EA;&#x5DF1;&#x5E94;&#x7528;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x4EE5;&#x65F6;&#x95F4;&#x6392;&#x5E8F;&#x3002;</li>
+</ul>
+<p version="3119648d22e472907737c901c1cb0882">&#x53C2;&#x8003;&#x6D88;&#x606F;&#x8BB0;&#x5F55;&#x7684; <a href="rest_api.html#&#x5B9E;&#x65F6;&#x901A;&#x4FE1;-api">REST API</a>&#x3002;</p>
+<h3 id="-">&#x672A;&#x8BFB;&#x6D88;&#x606F;&#x6570;</h3>
+<p version="9d5f97aa4050568dd9bf1bf5d394abb7">&#x4F60;&#x53EF;&#x4EE5;&#x8C03;&#x7528; <a href="rest_api.html#&#x5B9E;&#x65F6;&#x901A;&#x4FE1;-api">REST API</a> &#x83B7;&#x5F97;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x672A;&#x8BFB;&#x6D88;&#x606F;&#x6570;&#x3002;</p>
+<h3 id="-">&#x9ED1;&#x540D;&#x5355;</h3>
+<p version="929fdddb637c44daf381fafb44eecea6">&#x6211;&#x4EEC;&#x76EE;&#x524D;&#x7684;&#x8BBE;&#x8BA1;&#x91CC;&#xFF0C;&#x9ED1;&#x540D;&#x5355;&#x7B49;&#x6743;&#x9650;&#x63A7;&#x5236;&#x662F;&#x901A;&#x8FC7;&#x7B7E;&#x540D;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x5982;&#x679C;&#x4F60;&#x662F;&#x81EA;&#x5DF1;&#x6BD4;&#x8F83;&#x6210;&#x719F;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#x4E00;&#x5B9A;&#x7684;&#x7528;&#x6237;&#x5173;&#x7CFB;&#x3001;&#x5C4F;&#x853D;&#x5173;&#x7CFB;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x4E2A;&#x6B65;&#x9AA4;&#x901A;&#x8FC7;&#x7B7E;&#x540D;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x907F;&#x514D;&#x4F60;&#x628A;&#x6240;&#x6709;&#x7684;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x90FD;&#x540C;&#x6B65;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<p version="2697802d973670312dcf7fae3edf51d1">&#x5982;&#x679C;&#x4F60;&#x542F;&#x7528;&#x4E86;&#x7B7E;&#x540D;&#xFF0C;&#x7528;&#x6237;&#x95F4;&#x53D1;&#x8D77;&#x5BF9;&#x8BDD;&#x3001;&#x7528;&#x6237;&#x8FDB;&#x5165;&#x804A;&#x5929;&#x7FA4;&#x7EC4;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x670D;&#x52A1;&#x5668;&#x7B7E;&#x540D;&#x8BA4;&#x8BC1;&#xFF0C;&#x5728;&#x8FD9;&#x4E00;&#x6B65;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x5B9E;&#x65BD;&#x81EA;&#x5DF1;&#x7684;&#x9ED1;&#x540D;&#x5355;&#x529F;&#x80FD;&#x3002;</p>
+<h3 id="-">&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x56DE;&#x590D;&#x7684;&#x5BA2;&#x670D;</h3>
+<p version="e64f425569ca5ca526bd717f6718209e">&#x4F60;&#x53EF;&#x4EE5;&#x5229;&#x7528; nodejs &#x5BA2;&#x6237;&#x7AEF;&#x7F16;&#x5199;&#x4E00;&#x4E9B;&#x673A;&#x5668;&#x4EBA;&#xFF0C;&#x6216;&#x662F;&#x548C;&#x81EA;&#x6709;&#x7684;&#x7CFB;&#x7EDF;&#x96C6;&#x6210;&#x3002;</p>
+<h3 id="-">&#x6211;&#x5E0C;&#x671B;&#x7ED9;&#x7FA4;&#x7EC4;&#x589E;&#x52A0;&#x4E00;&#x4E9B;&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x540D;&#x5B57;</h3>
+<p version="f99dce5d4ac720c98c2399740942b2e6">&#x6211;&#x4EEC;&#x7684;&#x7FA4;&#x7EC4;&#x4FE1;&#x606F;&#x5B9E;&#x9645;&#x4E0A;&#x662F; LeanCloud &#x7684;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x7684;&#x6570;&#x636E;&#x8868; <code>AVOSRealtimeGroups</code>&#x3002;&#x5BF9;&#x4E8E;&#x7FA4;&#x7EC4;&#x7684;&#x5143;&#x4FE1;&#x606F;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x5173;&#x8054;&#x7684;&#x8868;&#x91CC;&#x8BBE;&#x7F6E;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x4E2A;&#x8868;&#x91CC;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x5217;&#x3002;&#x8BF7;&#x5BF9;&#x8FD9;&#x4E2A;&#x8868;&#x8BBE;&#x7F6E;&#x5408;&#x7406;&#x7684; ACL &#x6765;&#x4FDD;&#x8BC1;&#x5185;&#x5BB9;&#x4E0D;&#x4F1A;&#x88AB;&#x6076;&#x610F;&#x7BE1;&#x6539;&#x3002;</p>
+<p version="5e17dedeff3f237b5b93b7f26b99e2fd"><strong>&#x6CE8;&#x610F;&#x8BF7;&#x4E0D;&#x8981;&#x901A;&#x8FC7;&#x4FEE;&#x6539; <code>m</code> &#x5217;&#x6765;&#x6539;&#x53D8;&#x7FA4;&#x7EC4;&#x6210;&#x5458;</strong>&#xFF0C;&#x8FD9;&#x6837;&#x76EE;&#x6807;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x7ACB;&#x523B;&#x6536;&#x5230;&#x901A;&#x77E5;&#xFF0C;&#x4F1A;&#x9020;&#x6210;&#x6570;&#x636E;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<h3 id="-">&#x654F;&#x611F;&#x8BCD;&#x8FC7;&#x6EE4;&#x600E;&#x4E48;&#x505A;</h3>
+<p version="c44c3a43ce1d6f7f32bc885890a572a4">&#x6211;&#x4EEC;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5DF2;&#x7ECF;&#x901A;&#x8FC7;&#x4E00;&#x4EFD;&#x654F;&#x611F;&#x8BCD;&#x7684;&#x5217;&#x8868;&#x5BF9;&#x76EE;&#x524D;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x8FC7;&#x6EE4;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;&#x529F;&#x80FD;&#x65E0;
+&#x9700;&#x7528;&#x6237;&#x53C2;&#x4E0E;&#xFF0C;&#x662F;&#x5185;&#x7F6E;&#x9ED8;&#x8BA4;&#x652F;&#x6301;&#x7684;&#x3002;</p>
+<h3 id="-api-">&#x80FD;&#x5426;&#x901A;&#x8FC7; API &#x7ED9;&#x7528;&#x6237;&#x53D1;&#x6D88;&#x606F;</h3>
+<p version="116f9f30b5952c202ad079fa3543f538">&#x5BF9;&#x4E8E;&#x4E0D;&#x65B9;&#x4FBF;&#x4F7F;&#x7528; Node.js &#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x6211;&#x4EEC;&#x6700;&#x8FD1;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A; <a href="./rest_api.html#%E9%80%9A%E8%BF%87-rest-api-%E5%90%91%E7%94%A8%E6%88%B7%E5%8F%91%E6%B6%88%E6%81%AF">REST API</a> &#x7528;&#x4E8E;&#x7ED9;&#x7279;&#x5B9A;&#x7528;&#x6237;&#x53D1;&#x6D88;&#x606F;&#x3002;</p>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

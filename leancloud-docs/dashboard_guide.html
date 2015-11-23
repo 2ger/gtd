@@ -1,0 +1,572 @@
+<!doctype html>
+
+<html version="566ff84e1cdc1eb294bbb2c7895c4467">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="-">&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</h1>
+<h2 id="-">&#x8D26;&#x53F7;&#x4FE1;&#x606F;</h2>
+<h3 id="-">&#x5F00;&#x53D1;&#x8005;&#x4FE1;&#x606F;</h3>
+<p version="03e64ec6997a438f9b6fbccfb9570a8e">&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x670D;&#x52A1;&#x5F00;&#x53D1;&#x8005;&#xFF0C;&#x5EFA;&#x8BAE;&#x60A8;&#x5B8C;&#x5584;&#x5F00;&#x53D1;&#x8005;&#x4FE1;&#x606F;&#xFF0C;&#x586B;&#x5199;&#x771F;&#x5B9E;&#x59D3;&#x540D;&#x3001;&#x7535;&#x8BDD;&#x53F7;&#x7801;&#x3002;&#x6BD4;&#x5982;&#xFF1A;</p>
+<ul>
+<li>&#x5728;&#x5173;&#x952E;&#x65F6;&#x523B;&#xFF08;&#x670D;&#x52A1;&#x5B95;&#x673A;&#x7B49;&#x610F;&#x5916;&#x60C5;&#x51B5;&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x53CA;&#x65F6;&#x4E0E;&#x60A8;&#x53D6;&#x5F97;&#x8054;&#x7CFB;&#xFF0C;&#x83B7;&#x5F97;&#x66F4;&#x597D;&#x7684;&#x670D;&#x52A1;</li>
+<li>&#x300C;&#x6280;&#x672F;&#x652F;&#x6301; Ticket&#x300D;&#x91CC;&#x4F1A;&#x7528;&#x5230;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;</li>
+<li>&#x53D1;&#x7968;&#x76F8;&#x5173;&#x7684;&#x4FE1;&#x606F;&#x4E5F;&#x6765;&#x81EA;&#x8FD9;&#x91CC;</li>
+</ul>
+<h3 id="-">&#x90AE;&#x7BB1;</h3>
+<ul>
+<li>&#x767B;&#x5F55;&#x65F6;&#x9700;&#x8981;&#x90AE;&#x7BB1;</li>
+<li>&#x6570;&#x636E;&#x5BFC;&#x5165;&#xFF0C;&#x6570;&#x636E;&#x5BFC;&#x51FA;&#x7B49;&#x4E00;&#x4E9B;&#x670D;&#x52A1;&#x4F1A;&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x901A;&#x77E5;</li>
+<li>&#x5728;&#x300C;&#x504F;&#x597D;&#x8BBE;&#x7F6E;&#x300D;&#x91CC;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x9000;&#x8BA2;&#x90AE;&#x4EF6;&#xFF08;&#x8D22;&#x52A1;&#x548C;&#x544A;&#x8B66;&#x7C7B;&#x90AE;&#x4EF6;&#x65E0;&#x6CD5;&#x9000;&#x8BA2;&#xFF09;&#x3002;</li>
+</ul>
+<h3 id="-">&#x56E2;&#x961F;&#x7BA1;&#x7406;</h3>
+<p version="f29bcc5e113e1c490cd776ab6ccbdc43">&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x591A;&#x4EBA;&#x534F;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x56E2;&#x961F;&#x3002;&#x5728;&#x5355;&#x4E2A;&#x5E94;&#x7528;&#x300C;&#x8BBE;&#x7F6E;&#x300D;&#x300C;&#x534F;&#x4F5C;&#x8005;&#x300D;&#x83DC;&#x5355;&#x91CC;&#xFF0C;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x8BE5;&#x56E2;&#x961F;&#x505A;&#x4E3A;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x7684;&#x534F;&#x4F5C;&#x8005;&#xFF0C;&#x8FD9;&#x6837;&#x6574;&#x4E2A;&#x56E2;&#x961F;&#x7684;&#x6210;&#x5458;&#x90FD;&#x4F1A;&#x62E5;&#x6709;&#x76F8;&#x5173;&#x7684;&#x6743;&#x9650;&#x3002;</p>
+<h2 id="-">&#x8D22;&#x52A1;</h2>
+<h3 id="-">&#x8D22;&#x52A1;&#x6982;&#x51B5;</h3>
+<ul>
+<li><strong>&#x5145;&#x503C;&#x4F59;&#x989D;</strong>&#xFF1A;&#x901A;&#x8FC7;&#x8FC7;&#x652F;&#x4ED8;&#x5B9D;&#x6216;&#x8005;&#x94F6;&#x884C;&#x6C47;&#x6B3E;&#x7684;&#x8D26;&#x6237;&#x4F59;&#x989D;&#x3002;</li>
+<li><strong>&#x5269;&#x4F59;&#x77ED;&#x4FE1;</strong>&#xFF1A;&#x77ED;&#x4FE1;&#x9700;&#x8981;&#x5355;&#x72EC;&#x8D2D;&#x4E70;&#xFF0C;&#x4EE5;&#x8D2D;&#x4E70;&#x6761;&#x6570;&#x8BA1;&#x4EF7;&#x3002;</li>
+<li><strong>&#x8D60;&#x9001;&#x91D1;&#x989D;</strong>&#xFF1A;&#x901A;&#x8FC7;&#x4F18;&#x60E0;&#x7801;&#xFF0C;&#x4EE3;&#x91D1;&#x5238;&#x7B49;&#x975E;&#x8D2D;&#x4E70;&#x65B9;&#x5F0F;&#x5F97;&#x5230;&#x7684;&#xFF0C;&#x4E0D;&#x80FD;&#x7528;&#x6765;&#x8D2D;&#x4E70;&#x77ED;&#x4FE1;&#x3002;</li>
+</ul>
+<h3 id="-">&#x8D26;&#x5355;</h3>
+<p version="47a583e81e5d0bba2c0ca9ec716d6712">&#x6BCF;&#x4E2A;&#x6708;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4EFD;&#x8D26;&#x5355;&#xFF0C;&#x5305;&#x62EC;&#x5F53;&#x524D;&#x8D26;&#x6237;&#x4E0B;&#x6240;&#x6709;&#x5E94;&#x7528;&#x3002;&#x4F1A;&#x8BE6;&#x7EC6;&#x5C55;&#x793A;&#x6BCF;&#x4E2A;&#x5E94;&#x7528;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x7684;&#x8D39;&#x7528;&#x660E;&#x7EC6;&#x3002;</p>
+<h3 id="-">&#x7533;&#x8BF7;&#x53D1;&#x7968;</h3>
+<p version="b048331343fb66cdd08df009d511cf52">&#x8BF7;&#x53C2;&#x8003; <a href="faq.html#&#x5982;&#x4F55;&#x7533;&#x8BF7;&#x5F00;&#x5177;&#x53D1;&#x7968;">&#x5982;&#x4F55;&#x7533;&#x8BF7;&#x53D1;&#x7968;</a>&#x3002;</p>
+<h3 id="-">&#x5145;&#x503C;</h3>
+<p version="65cb16f5d99f9df999bee183de74a4aa">&#x8D26;&#x6237;&#x5145;&#x503C;&#xFF1A;&#x652F;&#x6301;&#x652F;&#x4ED8;&#x5B9D;&#xFF0C;&#x548C;&#x94F6;&#x884C;&#x8F6C;&#x8D26;&#x6C47;&#x6B3E;&#xFF0C;&#x8BF7;&#x53C2;&#x8003; <a href="faq.html#&#x5982;&#x4F55;&#x4ED8;&#x8D39;">&#x5982;&#x4F55;&#x4ED8;&#x8D39;</a>&#x3002;&#x8D26;&#x6237;&#x91CC;&#x9762;&#x7684;&#x4F59;&#x989D;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x652F;&#x4ED8;&#x6BCF;&#x6708;&#x8D26;&#x5355;&#xFF08;&#x6BCF;&#x4E2A;&#x6708;&#x7ED3;&#x675F;&#x540E;&#x81EA;&#x52A8;&#x6263;&#x8D39;&#xFF09;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8D2D;&#x4E70;&#x77ED;&#x4FE1;&#xFF0C;&#x8FD9;&#x4E2A;&#x9700;&#x8981;&#x4E3B;&#x52A8;&#x8D2D;&#x4E70;&#xFF0C;&#x6307;&#x5B9A;&#x77ED;&#x4FE1;&#x6761;&#x6570;&#x3002;
+&#x8D2D;&#x4E70;&#x77ED;&#x4FE1;&#xFF1A;&#x77ED;&#x4FE1;&#x9700;&#x8981;&#x5355;&#x72EC;&#x8D2D;&#x4E70;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x5B9E;&#x65F6;&#x6263;&#x9664;&#x7684;&#xFF0C;&#x5F53;&#x77ED;&#x4FE1;&#x5269;&#x4F59;&#x6761;&#x6570;&#x504F;&#x4F4E;&#x65F6;&#xFF0C;&#x4F1A;&#x901A;&#x8FC7;&#x90AE;&#x4EF6;&#x548C;&#x77ED;&#x4FE1;&#x65B9;&#x5F0F;&#x544A;&#x77E5;&#x5F00;&#x53D1;&#x8005;&#x3002;</p>
+<h3 id="-">&#x4EE3;&#x91D1;&#x5238;</h3>
+<p version="0115ea4dbf3801cd4947c03455393ade">&#x4EE3;&#x91D1;&#x5238;&#x662F;&#x4E00;&#x4E32;&#x4EE3;&#x7801;&#xFF0C;&#x8F93;&#x5165;&#x4EE3;&#x7801;&#x540E;&#x5F53;&#x524D;&#x5E10;&#x53F7;&#x4F1A;&#x83B7;&#x5F97;&#x76F8;&#x5E94;&#x7684;&#x91D1;&#x989D;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x6E20;&#x9053;&#x83B7;&#x5F97;&#x4EE3;&#x91D1;&#x5238;&#xFF1A;</p>
+<ul>
+<li>&#x53C2;&#x52A0;&#x6211;&#x4EEC;&#x7684;&#x9ED1;&#x5BA2;&#x9A6C;&#x62C9;&#x677E;&#xFF08;Hackathon&#xFF09;</li>
+<li>&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x6293; bug</li>
+<li>&#x5404;&#x79CD;&#x5176;&#x4ED6;&#x6D3B;&#x52A8;</li>
+</ul>
+<h2 id="-">&#x5E94;&#x7528;&#x5217;&#x8868;</h2>
+<p version="1a3f7c58aaff175ee38ef6a8d742266a">&#x5305;&#x542B;&#x5F53;&#x524D;&#x8D26;&#x6237;&#x521B;&#x5EFA;&#x7684;&#x6240;&#x6709;&#x5E94;&#x7528;&#xFF0C;&#x4EE5;&#x53CA;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;&#x300C;&#x534F;&#x4F5C;&#x8005;&#x300D;&#x62E5;&#x6709;&#x7279;&#x5B9A;&#x6743;&#x9650;&#x7684;&#x5E94;&#x7528;&#x3002;</p>
+<h2 id="-">&#x5B58;&#x50A8;</h2>
+<p version="7b415fed975e50079e01f44cf44d5557">&#x5305;&#x62EC;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x3001;&#x4E91;&#x5F15;&#x64CE;&#x3001;API &#x7EDF;&#x8BA1;&#x3001;&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x3002;</p>
+<h3 id="-">&#x6570;&#x636E;</h3>
+<p version="656358693097e9145f121c986a95c5bc">&#x53EF;&#x4EE5;&#x6D4F;&#x89C8;&#x548C;&#x7BA1;&#x7406;&#x6570;&#x636E;&#xFF0C;&#x5305;&#x62EC; Class &#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x5220;&#x9664;&#xFF0C;&#x6570;&#x636E;&#x7684;&#x589E;&#x5220;&#x6539;&#x67E5;&#xFF0C;&#x652F;&#x6301;&#x6570;&#x636E;&#x5BFC;&#x5165;&#xFF0C;<a href="app_data_share.html">Class &#x7ED1;&#x5B9A;</a>&#xFF0C;<a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;</a>&#x3002;</p>
+<p version="a6206f6e17820b5b9afe6668849e45a7">&#x9009;&#x62E9;&#x67D0;&#x4E2A; Class &#x540E;&#x5373;&#x5C55;&#x793A;&#x5F53;&#x524D; Class &#x76F8;&#x5173;&#x6570;&#x636E;&#xFF0C;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x529F;&#x80FD;&#x7684;&#x64CD;&#x4F5C;&#x83DC;&#x5355;&#x3002;</p>
+<h4 id="-">&#x6570;&#x636E;&#x6D4F;&#x89C8;</h4>
+<p version="48bc5414947b8317798f9d5c288e515c">&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x66F4;&#x65B9;&#x4FBF;&#x7684;&#x6D4F;&#x89C8;&#x6570;&#x636E;</p>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x300C;&#x5217;&#x8BBE;&#x7F6E;&#x300D;&#x9690;&#x85CF;&#x4E0D;&#x9700;&#x8981;&#x770B;&#x5230;&#x7684;&#x5217;</li>
+<li>&#x70B9;&#x51FB; ObjectId &#x5FEB;&#x901F;&#x67E5;&#x770B;&#x67D0;&#x4E00;&#x884C;&#x6570;&#x636E;</li>
+<li>&#x53EF;&#x4EE5;&#x9690;&#x85CF; Class &#x5217;&#x8868;&#xFF0C;&#x53EA;&#x663E;&#x793A;&#x6570;&#x636E;&#x90E8;&#x5206;</li>
+</ul>
+<h4 id="-">&#x6570;&#x636E;&#x6D4F;&#x89C8;&#x5FEB;&#x6377;&#x952E;</h4>
+<ul>
+<li>&#x65B9;&#x5411;&#x952E;(&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;)/Tab &#x652F;&#x6301;&#x5355;&#x5143;&#x683C;&#x5FEB;&#x901F;&#x5207;&#x6362;&#x9009;&#x4E2D;</li>
+<li>Enter &#x952E;<ul>
+<li>&#x5F53;&#x524D;&#x5355;&#x5143;&#x683C;&#x540D;&#x79F0;&#x4E3A; ObjectId &#x65F6;&#xFF0C;&#x6253;&#x5F00;&#x89C6;&#x56FE;&#x7A97;&#x53E3;</li>
+<li>&#x5F53;&#x524D;&#x5355;&#x5143;&#x683C;&#x7C7B;&#x578B;&#x4E3A; File &#x65F6;&#xFF0C;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x7A97;&#x53E3;</li>
+</ul>
+</li>
+</ul>
+<h4 id="-">&#x6570;&#x636E;&#x7F16;&#x8F91;</h4>
+<p version="c009d60ed42aca18390bb42cf0342af6">&#x652F;&#x6301;&#x6240;&#x6709;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x7F16;&#x8F91;</p>
+<ul>
+<li>&#x5F53;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6CA1;&#x6709;&#x9A8C;&#x8BC1;&#x901A;&#x8FC7;&#xFF0C;&#x8F93;&#x5165;&#x5B8C;&#x6210;&#x540E;&#x4E0D;&#x4F1A;&#x5931;&#x53BB;&#x7126;&#x70B9;</li>
+<li>Pointer &#x7C7B;&#x578B;&#xFF1A;<ul>
+<li>&#x65B0;&#x589E;&#xFF1A;&#x8F93;&#x5165;&#x5173;&#x8054;&#x7684; ObjectId &#x5373;&#x53EF;&#x3002;&#x4FDD;&#x5B58;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x53EF;&#x70B9;&#x51FB;&#x5230;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x7684;&#x94FE;&#x63A5;</li>
+<li>&#x5220;&#x9664;&#xFF1A;&#x6E05;&#x7A7A;&#x540E;&#x4FDD;&#x5B58;&#x5373;&#x5220;&#x9664; Pointer &#x5217;&#x6570;&#x636E;</li>
+</ul>
+</li>
+<li>Relation &#x7C7B;&#x578B;&#xFF1A;<ul>
+<li>&#x70B9;&#x51FB;&#x67D0;&#x4E00;&#x884C;&#x6570;&#x636E; Relation &#x5217;&#xFF0C;&#x8DF3;&#x8F6C;&#x5230; Relation &#x76F8;&#x5173;&#x7684; Class&#x3002;&#x8FD9;&#x65F6;&#x5019;&#x53EA;&#x663E;&#x793A;&#x4E0E;&#x4E4B;&#x76F8;&#x5173;&#x8054;&#x7684;&#x6570;&#x636E;</li>
+<li>&#x65B0;&#x589E;&#xFF1A;&#x901A;&#x8FC7; Relation &#x70B9;&#x51FB;&#x8FC7;&#x6765;&#xFF0C;&#x65B0;&#x589E;&#x7684;&#x6570;&#x636E;&#x5373;&#x5173;&#x8054;&#x5230;&#x8BE5; Relation</li>
+<li>&#x5173;&#x8054;&#x5DF2;&#x6709;&#x6570;&#x636E;&#xFF1A;&#x300C;&#x5173;&#x8054;&#x300D;&#x83DC;&#x5355;&#x4E0B;&#x70B9;&#x51FB; &#x300C;&#x5173;&#x8054;&#x5DF2;&#x6709;&#x5BF9;&#x8C61;&#x300D;&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x9009;&#x62E9;&#x5173;&#x8054;</li>
+<li>&#x89E3;&#x9664;&#x5173;&#x8054;&#x5173;&#x7CFB;&#xFF1A; &#x5148;&#x9009;&#x4E2D;&#x6570;&#x636E;&#xFF0C;&#x518D;&#x9009;&#x62E9;&#x6570;&#x636E;&#x5173;&#x8054;</li>
+</ul>
+</li>
+</ul>
+<h4 id="-">&#x6570;&#x636E;&#x7F16;&#x8F91;&#x5FEB;&#x6377;&#x952E;</h4>
+<ul>
+<li>&#x53CC;&#x51FB; Enter&#xFF0C;&#x6FC0;&#x6D3B;&#x5F53;&#x524D;&#x5355;&#x5143;&#x683C;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;&#x3002;</li>
+<li>&#x5728;&#x5355;&#x5143;&#x683C;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;Tab &#x4FDD;&#x5B58;&#x66F4;&#x6539;&#xFF0C;&#x5E76;&#x5207;&#x6362;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x683C;&#xFF0C;Enter &#x4FDD;&#x5B58;&#x4FEE;&#x6539;&#x3002;</li>
+</ul>
+<h4 id="-">&#x5217;&#x5C5E;&#x6027;</h4>
+<p version="8c12cd195a6cdbce26340a88b7174dca">&#x5305;&#x62EC;&#x5BF9;&#x5217;&#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#xFF0C;&#x5305;&#x62EC;&#x6392;&#x5E8F;&#xFF0C;&#x91CD;&#x547D;&#x540D;&#xFF0C;&#x7F16;&#x8F91;&#x5C5E;&#x6027;&#x7B49;&#x3002;&#x70B9;&#x51FB;&#x6BCF;&#x4E2A;&#x5217;&#x53F3;&#x4FA7;&#x5411;&#x4E0B;&#x7BAD;&#x5934;&#x89E6;&#x53D1;&#x76F8;&#x5173;&#x83DC;&#x5355;&#x3002;</p>
+<h4 id="-">&#x6570;&#x636E;&#x5BFC;&#x5165;</h4>
+<p version="93d681b13359728a3794d38d0ac617fc">&#x5728;&#x9875;&#x9762;&#x5DE6;&#x4FA7;&#x300C;&#x6570;&#x636E;&#x300D;&#x94FE;&#x63A5;&#x53F3;&#x4FA7;&#x65C1;&#x8FB9;&#xFF0C;&#x70B9;&#x51FB;&#x5C0F;&#x9F7F;&#x8F6E;&#x56FE;&#x6807;&#x5373;&#x53EF;&#x770B;&#x5230;&#x300C;&#x6570;&#x636E;&#x5BFC;&#x5165;&#x300D;&#x83DC;&#x5355;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;&#x6587;&#x6863; <a href="data_security.html#&#x5BFC;&#x5165;&#x6570;&#x636E;">&#x5BFC;&#x5165;&#x6570;&#x636E;</a>&#x3002;</p>
+<h3 id="-">&#x4E91;&#x5F15;&#x64CE;</h3>
+<p version="361c1cabbe5b76573e0986398c29b251">&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x4E91;&#x5F15;&#x64CE;&#x7684;&#x7F16;&#x8F91;&#xFF0C;&#x90E8;&#x7F72;&#xFF0C;&#x5236;&#x5B9A;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#xFF0C;&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x4EE5;&#x53CA;&#x4E91;&#x5F15;&#x64CE;&#x7EDF;&#x8BA1;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;</p>
+<p version="fec7638fc3f3a4e1c509f2494ad4c375">&#x8FD9;&#x91CC;&#x7684;&#x300C;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x300D;&#x548C;&#x300C;Git &#x90E8;&#x7F72;&#x300D;&#x662F;&#x5B9E;&#x73B0;&#x4E91;&#x5F15;&#x64CE;&#x90E8;&#x7F72;&#x76F8;&#x5173;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x3002;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x3002;&#x5982;&#x679C;&#x8981;&#x6DF7;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x4F1A;&#x76F4;&#x63A5;&#x90E8;&#x7F72;&#x5931;&#x8D25;&#xFF0C;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF1A;&#x300C;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x300D;&#x548C;&#x300C;Git &#x90E8;&#x7F72;&#x300D;&#x529F;&#x80FD;&#x4E92;&#x65A5;&#x3002;&#x5982;&#x679C;&#x8981;&#x7EE7;&#x7EED;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x6E05;&#x9664;&#x90E8;&#x7F72;&#x3002;</p>
+<h4 id="-">&#x5B9A;&#x4E49;&#x51FD;&#x6570;</h4>
+<p version="47ee7252ee15fce038c9f3cb07170a37">&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x4E2A;&#x9875;&#x9762;&#x7F16;&#x8F91;&#x4E91;&#x5F15;&#x64CE;&#x76F8;&#x5173;&#x51FD;&#x6570;&#xFF0C;&#x8BF7;&#x53C2;&#x8003; <a href="leanengine_guide-node.html#&#x5728;&#x7EBF;&#x5B9A;&#x4E49;&#x51FD;&#x6570;">&#x4E91;&#x5F15;&#x64CE;&#x6307;&#x5357; - &#x5728;&#x7EBF;&#x5B9A;&#x4E49;&#x51FD;&#x6570; Node.js</a> / <a href="leanengine_guide-python.html#&#x5728;&#x7EBF;&#x5B9A;&#x4E49;&#x51FD;&#x6570;">Python</a>&#x3002;</p>
+<h4 id="git-">Git &#x90E8;&#x7F72;</h4>
+<ul>
+<li>&#x70B9;&#x51FB; <strong>&#x90E8;&#x7F72;</strong>&#xFF0C;&#x4F1A;&#x53D1;&#x5E03;&#x76F8;&#x5E94;&#x7684; <strong>&#x5206;&#x652F;</strong> &#x6216; <strong>&#x7248;&#x672C;&#x53F7;</strong> &#x5230;&#x6D4B;&#x8BD5;&#x6216;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x6839;&#x636E; <strong>&#x5206;&#x652F;</strong> &#x6216; <strong>&#x7248;&#x672C;&#x53F7;</strong> &#x53D1;&#x5E03;&#x7279;&#x5B9A;&#x7248;&#x672C;&#x5230;&#x6D4B;&#x8BD5;&#x6216;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#x3002;</li>
+</ul>
+<h4 id="-">&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;</h4>
+<p version="caa828658b84e76e3c2672af6a381a1b">&#x5BF9;&#x901A;&#x8FC7;&#x524D;&#x9762;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x5B9A;&#x4E49;&#x7684;&#x4E91;&#x5F15;&#x64CE;&#x51FD;&#x6570;&#xFF0C;&#x5236;&#x5B9A;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x3002;&#x8BF7;&#x53C2;&#x8003; <a href="leanengine_guide-node.html#&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;">&#x4E91;&#x5F15;&#x64CE;&#x6307;&#x5357; - &#x5B9A;&#x65F6;&#x4EFB;&#x52A1; Node.js</a> / <a href="leanengine_guide-python.html#&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;">Python</a>&#x3002;</p>
+<h4 id="-">&#x65E5;&#x5FD7;</h4>
+<p version="8013974d816db7d3a11f20a13c40c93a">&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E91;&#x5F15;&#x64CE;&#x7684;&#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#xFF0C;&#x533A;&#x5206;&#x751F;&#x4EA7;&#x548C;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x3002;</p>
+<h4 id="-">&#x7EDF;&#x8BA1;</h4>
+<p version="ecf158ee8488a74956eb193d84693ed8">&#x4E91;&#x5F15;&#x64CE;&#x76F8;&#x5173;&#x7EDF;&#x8BA1;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x51FD;&#x6570;&#xFF0C;&#x9875;&#x9762;&#x76F8;&#x5173;&#x7684;&#x8C03;&#x7528;&#x60C5;&#x51B5;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E91;&#x5F15;&#x64CE;&#x73AF;&#x5883;&#x76F8;&#x5173;&#x8FD0;&#x884C;&#x53C2;&#x6570;&#x3002;</p>
+<h3 id="api-">API &#x7EDF;&#x8BA1;</h3>
+<p version="bd397d33b1ddf7bf0a5c101cc9fcd6bf">API &#x7EDF;&#x8BA1;&#xFF1A;&#x63D0;&#x4F9B;&#x7EBF;&#x5F62;&#x56FE;&#x548C;&#x997C;&#x72B6;&#x56FE;&#x4E24;&#x79CD;&#x7EDF;&#x8BA1;&#x65B9;&#x5F0F;</p>
+<ul>
+<li>&#x7EBF;&#x5F62;&#x56FE;&#x5E2E;&#x52A9;&#x67E5;&#x770B;&#x6307;&#x5B9A;&#x65E5;&#x671F;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x6BCF;&#x5929;&#x7684; API &#x8C03;&#x7528;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5E73;&#x53F0;&#x548C; Class &#x8FDB;&#x884C;&#x7B5B;&#x9009;&#x3002;</li>
+<li>&#x997C;&#x72B6;&#x56FE;&#x65B9;&#x4FBF;&#x67E5;&#x770B;&#x6307;&#x5B9A;&#x65E5;&#x5185;&#x8303;&#x56F4;&#x5185;&#x7D2F;&#x8BA1; API &#x8C03;&#x7528;&#x91CF;&#x3002;&#x53EF;&#x4EE5;&#x6309;&#x5E73;&#x53F0;&#xFF0C;Class &#x7B49;&#x5BF9;&#x6BD4;&#x5C55;&#x793A;&#x3002;</li>
+</ul>
+<p version="8a50d0875f6254ea1dfb7ac44378e814">&#x6587;&#x4EF6;&#x76F8;&#x5173; API&#xFF1A;
+&#x7531;&#x4E8E;&#x5B58;&#x50A8;&#x63D0;&#x4F9B;&#x5546;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x6587;&#x4EF6;&#x76F8;&#x5173;&#x7EDF;&#x8BA1;&#x53EF;&#x80FD;&#x4F1A;&#x4E00;&#x81F3;&#x4E09;&#x5929;&#x7684;&#x5EF6;&#x8FDF;&#x3002;</p>
+<h3 id="-">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;</h3>
+<p version="62ef5b2cbdedd423133c1c8ee1e77d7a">&#x901A;&#x8FC7; SQL &#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x3002;&#x9700;&#x8981;&#x5148;&#x5F00;&#x542F;&#x300C;&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x300D; &#x9009;&#x9879;&#x3002;&#x5206;&#x6790;&#x5B8C;&#x6210;&#x540E;&#x53EF;&#x4EE5;&#x5C06;&#x5206;&#x6790;&#x7ED3;&#x679C;&#x4FDD;&#x5B58;&#x4E3A; Class &#x6216;&#x5BFC;&#x51FA;&#xFF0C;&#x5BFC;&#x51FA;&#x7ED3;&#x679C;&#x9650;&#x5236;&#x5728; 1000 &#x6761;&#x3002;</p>
+<p version="648180dddec8333576e00d77fe6047c0">&#x8BF7;&#x53C2;&#x8003; <a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a>&#x3002;</p>
+<h2 id="-">&#x6D88;&#x606F;</h2>
+<h3 id="-">&#x5B9E;&#x65F6;&#x6D88;&#x606F;</h3>
+<h4 id="-">&#x7EDF;&#x8BA1;</h4>
+<ul>
+<li>&#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x7684;&#x5B9E;&#x65F6;&#x7EDF;&#x8BA1;</li>
+<li>&#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x7684;&#x5386;&#x53F2;&#x7EDF;&#x8BA1;&#xFF0C;&#x4EE5;&#x5929;&#x4E3A;&#x6700;&#x5C0F;&#x5355;&#x4F4D;</li>
+</ul>
+<h4 id="-">&#x5E2E;&#x52A9;</h4>
+<p version="5faf4f3a6ed4c6871ae988e278e6a420">&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x76F8;&#x5173; API&#xFF0C;&#x67E5;&#x770B;&#x7528;&#x6237;&#x7684;&#x5728;&#x7EBF;&#x60C5;&#x51B5;&#xFF0C;&#x79BB;&#x7EBF;&#x6D88;&#x606F;&#x6570;&#x91CF;&#xFF0C;&#x5E2E;&#x52A9;&#x8C03;&#x8BD5;&#x3002;</p>
+<h4 id="-">&#x8BBE;&#x7F6E;</h4>
+<p version="205c88b2c89e19538b8eecd6904d7f10">&#x5305;&#x62EC;&#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x76F8;&#x5173;&#x6743;&#x9650;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x8BBE;&#x7F6E;&#x3002;</p>
+<h3 id="-">&#x63A8;&#x9001;</h3>
+<ul>
+<li>&#x5728;&#x7EBF;&#x53D1;&#x9001;&#xFF1A;&#x901A;&#x8FC7; web &#x63A7;&#x5236;&#x754C;&#x9762;&#x53D1;&#x9001;&#x63A8;&#x9001;&#xFF0C;&#x53EF;&#x4EE5;&#x914D;&#x9001;&#x5404;&#x79CD;&#x6761;&#x4EF6;&#x548C;&#x63A8;&#x9001;&#x5185;&#x5BB9;&#x3002;</li>
+<li>&#x5E2E;&#x52A9;&#xFF1A;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x754C;&#x9762;&#x67E5;&#x770B;&#x67D0;&#x4E2A; Android &#x63A8;&#x9001;&#x8BBE;&#x5907;&#x662F;&#x5426;&#x5728;&#x7EBF;&#xFF0C;&#x662F;&#x5426;&#x6709;&#x79BB;&#x7EBF;&#x6D88;&#x606F;&#x3002;</li>
+<li>&#x63A8;&#x9001;&#x5386;&#x53F2;&#xFF1A;_Notification &#x8868;&#x7684;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;</li>
+<li>&#x8BBE;&#x7F6E;&#xFF1A;&#x4E0A;&#x4F20; iOS &#x8BC1;&#x4E66;&#xFF0C;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x63A8;&#x9001;&#x76F8;&#x5173;&#x7684;&#x6743;&#x9650;&#x8BBE;&#x7F6E;</li>
+</ul>
+<h2 id="-">&#x5206;&#x6790;</h2>
+<ul>
+<li>&#x652F;&#x6301;&#x5404;&#x79CD;&#x5E38;&#x89C1;&#x7EDF;&#x8BA1;&#x6307;&#x6807;</li>
+<li>&#x652F;&#x6301;&#x6309;&#x7167;&#x7CFB;&#x7EDF;&#x7C7B;&#x578B;&#xFF0C;&#x7CFB;&#x7EDF;&#x7248;&#x672C;&#xFF0C;&#x53D1;&#x5E03;&#x6E20;&#x9053;&#xFF0C;&#x5E94;&#x7528;&#x7248;&#x672C;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x7FA4;&#xFF0C;&#x65F6;&#x95F4;&#x6BB5;&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;&#xFF0C;&#x652F;&#x6301;&#x6309;&#x65F6;&#x95F4;&#x6BB5;&#x5BF9;&#x6BD4;&#x5206;&#x6790;&#xFF08;&#x4EC5;&#x9650;&#x5BF9;&#x6709;&#x5BF9;&#x6BD4;&#x610F;&#x4E49;&#x7684;&#x7EDF;&#x8BA1;&#x9879;&#xFF09;</li>
+<li>&#x652F;&#x6301;&#x5B9E;&#x65F6;&#x7EDF;&#x8BA1;&#x4E00;&#x4E9B;&#x5173;&#x952E;&#x6570;&#x636E;</li>
+<li>&#x652F;&#x6301;&#x5168;&#x90E8;&#x7CFB;&#x7EDF;&#x7684;&#x6C47;&#x603B;&#x7EDF;&#x8BA1;&#xFF08;&#x4EC5;&#x9650;&#x5BF9;&#x4E8E;&#x5168;&#x90E8;&#x7CFB;&#x7EDF;&#x90FD;&#x6709;&#x610F;&#x4E49;&#x7684;&#x7EDF;&#x8BA1;&#x9879;&#xFF09;</li>
+<li>&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#x7EDF;&#x8BA1;</li>
+<li>&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x7FA4;&#xFF0C;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5176;&#x4ED6;&#x7EDF;&#x8BA1;&#x9879;&#x7684;&#x7B5B;&#x9009;&#x6761;&#x4EF6;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7ED3;&#x5408;&#x300C;&#x63A8;&#x9001;&#x300D;&#x4F7F;&#x7528;&#xFF0C;&#x5728;&#x300C;&#x7528;&#x6237;&#x7FA4;&#x300D;&#x91CC;&#xFF0C;&#x901A;&#x8FC7;&#x7B5B;&#x9009;&#x7528;&#x6237;&#xFF0C;&#x7136;&#x540E;&#x5BF9;&#x7B5B;&#x9009;&#x540E;&#x7684;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x63A8;&#x9001;</li>
+<li>&#x6BCF;&#x4E2A;&#x7EDF;&#x8BA1;&#x5C55;&#x793A;&#x9875;&#x90FD;&#x6709;&#x8BE6;&#x7EC6;&#x7684;&#x7EDF;&#x8BA1;&#x9879;&#x8BF4;&#x660E;&#x3002;&#x5BF9;&#x4E8E;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x8BBE;&#x7F6E;&#x624D;&#x8D77;&#x4F5C;&#x7528;&#x7684;&#x7EDF;&#x8BA1;&#x9879;&#xFF0C;&#x5728;&#x6CA1;&#x6536;&#x5230;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x7ED9;&#x51FA;&#x5177;&#x4F53;&#x7684;&#x76F8;&#x5173;&#x6587;&#x6863;&#x94FE;&#x63A5;</li>
+</ul>
+<h2 id="-">&#x7EC4;&#x4EF6;</h2>
+<h3 id="-">&#x7528;&#x6237;&#x53CD;&#x9988;</h3>
+<p version="e8e08d4e2fed1f900a2c0b01a56259d5">&#x901A;&#x8FC7;&#x7ED3;&#x5408;&#x4F7F;&#x7528;&#x5BA2;&#x6237;&#x7AEF; sdk&#xFF0C;&#x548C; Web &#x7BA1;&#x7406;&#x9875;&#x9762;&#xFF0C;&#x5B9E;&#x73B0;&#x7528;&#x6237;&#x53CD;&#x9988;&#x7BA1;&#x7406;&#x529F;&#x80FD;&#x3002;&#x4E3B;&#x8981;&#x662F;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x8FC7; SDK &#x63D0;&#x4EA4;&#x53CD;&#x9988;&#xFF0C;&#x83B7;&#x53D6;&#x53CD;&#x9988;&#xFF0C;&#x5728; Web &#x9875;&#x9762;&#x91CC;&#x8FDB;&#x884C;&#x56DE;&#x590D;&#x4EE5;&#x53CA;&#x7528;&#x6237;&#x53CD;&#x9988;&#x7684;&#x7BA1;&#x7406;&#x3002;</p>
+<h3 id="-">&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;</h3>
+<p version="df09f123d3e32f7004428a81541bd395">&#x901A;&#x8FC7; Web &#x7BA1;&#x7406;&#x9875;&#x9762;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#x540D;&#xFF0C;&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x8FC7; SDK &#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x7684;&#x53C2;&#x6570;&#x503C;&#x3002;</p>
+<h3 id="-">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;</h3>
+<p version="a0b515f7c5dec660f9f8a0dfaca57a3f">&#x7C7B;&#x4F3C;&#x5168;&#x6587;&#x641C;&#x7D22;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#xFF0C;<a href="app_search_guide.html">&#x76F8;&#x5173;&#x6587;&#x6863;</a>&#x3002;</p>
+<h3 id="-">&#x793E;&#x4EA4;</h3>
+<p version="f5f08dac016fff6a355d549b46a17928">&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x7B2C;&#x4E09;&#x65B9;&#x5E73;&#x53F0;&#x7684;&#x8BA4;&#x8BC1;&#x4FE1;&#x606F;&#xFF0C;&#x4EE5;&#x5B8C;&#x6210;&#x793E;&#x4EA4;&#x300C;&#x767B;&#x5F55;&#x300D;&#x529F;&#x80FD;&#x3002;</p>
+<h2 id="-">&#x8BBE;&#x7F6E;</h2>
+<h3 id="-">&#x57FA;&#x672C;&#x4FE1;&#x606F;</h3>
+<p version="8bc05538b1f9e04003704c2a8d77a9fc">&#x5E94;&#x7528;&#x540D;&#x79F0;&#xFF1A;&#x4E0D;&#x5BF9;&#x5916;&#x516C;&#x5F00;&#xFF0C;&#x5728;&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x3002;</p>
+<p version="a5a8084b738a9a894314b68447da6f0c">&#x5E94;&#x7528;&#x5899;&#x53D1;&#x5E03;&#x8BBE;&#x7F6E;&#xFF1A;&#x5BA1;&#x6838;&#x901A;&#x8FC7;&#x540E;&#xFF0C;&#x5BA1;&#x6838;&#x7ED3;&#x679C;&#x5C06;&#x4EE5;&#x90AE;&#x4EF6;&#x7684;&#x5F62;&#x5F0F;&#x901A;&#x77E5;&#x5230;&#x7528;&#x6237;&#xFF0C;&#x5E76;&#x53D1;&#x5E03;&#x5230; <a href="/customers.html">&#x6211;&#x4EEC;&#x7684;&#x7528;&#x6237;&#x9875;&#x9762;</a>&#x3002;</p>
+<h3 id="-key">&#x5E94;&#x7528; Key</h3>
+<p version="f7db6e3d6e40daf269f8acba88ba36a1">&#x7528;&#x4E8E;&#x6807;&#x8BC6; App &#x8EAB;&#x4EFD;&#x4FE1;&#x606F;&#x3002;</p>
+<ul>
+<li>App ID&#xFF1A;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x7684;&#x5E94;&#x7528; ID</li>
+<li>App Key&#xFF1A;&#x7528;&#x4E8E; App &#x57FA;&#x672C;&#x5B89;&#x5168;&#x8BA4;&#x8BC1;</li>
+<li>Master Key&#xFF1A;&#x7528;&#x4E8E; App &#x8D85;&#x7EA7;&#x6743;&#x9650;&#x8BA4;&#x8BC1;</li>
+</ul>
+<p version="0c32de298a0f2dd2f36bfeaf2b54c655">&#x4E0D;&#x8981;&#x6CC4;&#x9732; App Key &#xFF0C;&#x7279;&#x522B;&#x662F; Master Key&#x3002;Master Key &#x4F1A;&#x7ED5;&#x8FC7;&#x6240;&#x6709; ACL &#x548C; Class &#x6743;&#x9650;&#x7B49;&#x6388;&#x6743;&#x6821;&#x9A8C;&#x3002;</p>
+<h3 id="-">&#x5E94;&#x7528;&#x9009;&#x9879;</h3>
+<p version="597cdbc0b4b9a91382ef4ccbdee603eb">&#x96C6;&#x6210;&#x4E86;&#x5404;&#x79CD;&#x670D;&#x52A1;&#x6743;&#x9650;&#x76F8;&#x5173;&#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x3002;</p>
+<h3 id="-">&#x90AE;&#x4EF6;&#x6A21;&#x677F;</h3>
+<p version="0f34d6544d7e95041385a58cb2e59b70">&#x5305;&#x62EC;&#x7528;&#x4E8E;&#x90AE;&#x7BB1;&#x9A8C;&#x8BC1;&#xFF0C;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x7684;&#x90AE;&#x4EF6;&#x6A21;&#x677F;&#x8BBE;&#x7F6E;&#x3002;</p>
+<h3 id="-">&#x77ED;&#x4FE1;&#x6A21;&#x677F;</h3>
+<ul>
+<li>&#x6A21;&#x677F;&#x5BA1;&#x6838;&#x901A;&#x8FC7;&#x540E;&#x7ACB;&#x5373;&#x751F;&#x6548;</li>
+<li>&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x540C;&#x540D;&#x6A21;&#x677F;&#xFF0C;&#x5728;&#x5BA1;&#x6838;&#x901A;&#x8FC7;&#x540E;&#x5C06;&#x8986;&#x76D6;&#x8001;&#x7684;&#x6A21;&#x677F;&#xFF0C;&#x5BA1;&#x6838;&#x671F;&#x95F4;&#xFF0C;&#x5DF2;&#x7ECF;&#x5BA1;&#x6838;&#x901A;&#x8FC7;&#x7684;&#x8001;&#x6A21;&#x677F;&#x7EE7;&#x7EED;&#x53EF;&#x7528;&#xFF0C;&#x5BA1;&#x6838;&#x901A;&#x8FC7;&#x5373;&#x523B;&#x66FF;&#x6362;</li>
+</ul>
+<h3 id="-">&#x534F;&#x4F5C;&#x8005;</h3>
+<p version="db9925542cb15a53174b1dfaccd62694">&#x7528;&#x4E8E;&#x9879;&#x76EE;&#x534F;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x7ED9;&#x76F8;&#x5173;&#x4E2A;&#x4EBA;&#x8D26;&#x6237;&#x548C;&#x56E2;&#x961F;&#x8BBE;&#x7F6E;&#x6388;&#x4E88;&#x7279;&#x5B9A;&#x6743;&#x9650;&#xFF0C;&#x8BBF;&#x95EE;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x3002;</p>
+<h3 id="-">&#x6570;&#x636E;&#x5BFC;&#x51FA;</h3>
+<p version="386b006c5ce960b5fc9486299114a4e2">&#x5BFC;&#x51FA;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x6570;&#x636E;&#x5C06;&#x53D1;&#x9001;&#x5230;&#x5F53;&#x524D;&#x7528;&#x6237;&#x7684;&#x90AE;&#x7BB1;&#x3002;&#x5F53;&#x6570;&#x636E;&#x91CF;&#x8F83;&#x5927;&#x65F6;&#xFF0C;&#x8F83;&#x4E3A;&#x8017;&#x65F6;&#xFF0C;&#x6240;&#x4EE5;&#x5EFA;&#x8BAE;&#x52A0;&#x4E0A;&#x5F00;&#x59CB;&#x7ED3;&#x675F;&#x65E5;&#x671F;&#x9650;&#x5236;&#xFF08;&#x6309; updatedAt &#x8BA1;&#x7B97;&#xFF09;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x9650;&#x5B9A;&#x7279;&#x5B9A; Class &#x5BFC;&#x51FA;&#x3002;</p>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>
