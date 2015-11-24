@@ -1,0 +1,865 @@
+<!doctype html>
+
+<html version="50974a11f4d0bd934de8ba632798324a">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="-deeplink-">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</h1>
+<h2 id="-">&#x7B80;&#x4ECB;</h2>
+<p version="59db3b01e28b737214d5814edb69f33d">&#x5728;&#x5E94;&#x7528;&#x5185;&#x4F7F;&#x7528;&#x5168;&#x6587;&#x641C;&#x7D22;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x5E38;&#x89C1;&#x7684;&#x9700;&#x6C42;&#x3002;&#x4F8B;&#x5982;&#x6211;&#x5F00;&#x53D1;&#x4E86;&#x4E00;&#x4E2A;&#x9605;&#x8BFB;&#x7C7B;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x91CC;&#x9762;&#x6709;&#x5F88;&#x591A;&#x6709;&#x4EF7;&#x503C;&#x7684;&#x6587;&#x7AE0;&#xFF0C;&#x6211;&#x5F53;&#x7136;&#x5E0C;&#x671B;&#x80FD;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x641C;&#x7D22;&#x6846;&#x7ED9;&#x7528;&#x6237;&#xFF0C;&#x7528;&#x6237;&#x952E;&#x5165;&#x4EFB;&#x4F55;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x67E5;&#x627E;&#x5230;&#x5E94;&#x7528;&#x5185;&#x76F8;&#x5173;&#x7684;&#x6587;&#x7AE0;&#xFF0C;&#x5E76;&#x6309;&#x7167;&#x8BC4;&#x5206;&#x6392;&#x5E8F;&#x3002;&#x7C7B;&#x4F3C;&#x6211;&#x76F4;&#x63A5;&#x5728; Chrome &#x6D4F;&#x89C8;&#x5668;&#x952E;&#x5165;&#x5173;&#x952E;&#x5B57;&#x6253;&#x5F00; Google &#x641C;&#x7D22;&#x4E00;&#x6837;&#x3002;</p>
+<p version="27f17de07ad0d7de2d57fcf7d43585a0">&#x4F46;&#x662F;&#x5E94;&#x7528;&#x5185;&#x7684;&#x641C;&#x7D22;&#xFF0C;&#x8DDF;&#x6D4F;&#x89C8;&#x5668;&#x7AEF;&#x7684;&#x641C;&#x7D22;&#x8FD8;&#x4E0D;&#x5927;&#x4E00;&#x6837;&#xFF0C;&#x5E94;&#x7528;&#x5185;&#x7684;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#xFF0C;&#x6211;&#x5E0C;&#x671B;&#x6253;&#x5F00;&#x7684;&#x4E0D;&#x662F;&#x4E00;&#x4E2A; Web &#x9875;&#x9762;&#xFF0C;&#x66F4;&#x5E0C;&#x671B;&#x662F;&#x5E94;&#x7528;&#x5185;&#x7684;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#xFF0C;&#x6BD4;&#x5982;&#x5728;&#x6211;&#x7684;&#x9605;&#x8BFB; Android &#x5E94;&#x7528;&#x91CC;&#xFF0C;&#x6211;&#x5E0C;&#x671B;&#x7528; <code>ReadActivity</code> &#x6765;&#x6253;&#x5F00;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x7684;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#xFF0C;&#x5C31;&#x8DDF;&#x76F4;&#x63A5;&#x6253;&#x5F00;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x4E00;&#x6837;&#x3002;&#x66F4;&#x8FDB;&#x4E00;&#x6B65;&#xFF0C;&#x6211;&#x5E0C;&#x671B;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x5728;&#x7F51;&#x9875;&#x6216;&#x8005;&#x5E94;&#x7528;&#x91CC;&#x641C;&#x7D22;&#x5173;&#x952E;&#x5B57;&#x7684;&#x65F6;&#x5019;&#xFF1A;</p>
+<ul>
+<li>&#x5982;&#x679C;&#x7528;&#x6237;&#x5B89;&#x88C5;&#x4E86;&#x5E94;&#x7528;&#xFF0C;&#x5C31;&#x76F4;&#x63A5;&#x6253;&#x5F00;&#x5E94;&#x7528;&#x5E76;&#x8DF3;&#x8F6C;&#x5230;&#x6B63;&#x786E;&#x7684;&#x9875;&#x9762;</li>
+<li>&#x5982;&#x679C;&#x7528;&#x6237;&#x6CA1;&#x6709;&#x5B89;&#x88C5;&#x5E94;&#x7528;&#xFF0C;&#x6211;&#x5E0C;&#x671B;&#x80FD;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7684;&#x4E0B;&#x8F7D;&#x9875;&#x9762;&#x7ED9;&#x7528;&#x6237;&#xFF0C;&#x8BA9;&#x7528;&#x6237;&#x6765;&#x5B89;&#x88C5;&#x6211;&#x7684;&#x5E94;&#x7528;&#xFF1B;</li>
+<li>&#x5982;&#x679C;&#x7528;&#x6237;&#x4E0D;&#x613F;&#x610F;&#x5B89;&#x88C5;&#xFF0C;&#x90A3;&#x4E48;&#x7528;&#x6237;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;&#x7F51;&#x9875;&#x67E5;&#x770B;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x7684;&#x5185;&#x5BB9;</li>
+</ul>
+<p version="90f222d77d0b3ba8b08c87a431e0b84e">&#x4E3A;&#x4E86;&#x8FBE;&#x5230;&#x4E0A;&#x8FF0;&#x76EE;&#x6807;&#xFF0C;&#x5E76;&#x4E14;&#x7B80;&#x5316;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x5F00;&#x53D1;&#x6B65;&#x9AA4;&#xFF0C;&#x964D;&#x4F4E;&#x5F00;&#x53D1;&#x6210;&#x672C;&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x7EC4;&#x4EF6;&#x548C; App URL&#x7684; deeplink &#x529F;&#x80FD;&#xFF08;&#x8BA9;&#x5E94;&#x7528;&#x54CD;&#x5E94;&#x5916;&#x90E8;&#x8C03;&#x7528;&#x94FE;&#x63A5;&#xFF09;&#x3002;</p>
+<p version="e5b1433dae2efd3d07ca825adf19432b">&#x5728;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x5185;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x8981;&#x4E09;&#x6B65;&#xFF0C;&#x8BF7;&#x7D27;&#x8DDF;&#x6211;&#x4EEC;&#x7684;&#x811A;&#x6B65;&#xFF01; Let&apos;s do it.</p>
+<p version="b9e625db53c5cde4527b3458be490304"><strong>&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x662F;&#x4EE5;<a href="https://github.com/leancloud/Android-SDK-demos/tree/master/AVOSCloud-Todo">TodoDemo</a>&#x4E3A;&#x4F8B;&#x5B50;&#x3002;</strong></p>
+<p version="b1ba1ff2f16ba63dcb5436c79b07d475">&#x5173;&#x4E8E;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x7684;&#x90E8;&#x5206;&#x53EF;&#x89C1;<a href="https://github.com/leancloud/Android-SDK-demos/blob/master/AVOSCloud-Todo/src/com/avos/demo/AVService.java">searchQuery&#x51FD;&#x6570;</a>&#x3001;<a href="https://github.com/leancloud/Android-SDK-demos/blob/master/AVOSCloud-Todo/src/com/avos/demo/CreateTodo.java">CreateTodo.java</a>&#x3001;<a href="https://github.com/leancloud/Android-SDK-demos/blob/master/AVOSCloud-Todo/AndroidManifest.xml">AndroidManifest.xml</a></p>
+<p version="762e2f1b8b0d7e7d606892a327a30540">&#x6548;&#x679C;&#x56FE;&#xFF0C;&#x70B9;&#x51FB;<code>&#x6253;&#x5F00;&#x5E94;&#x7528;</code>&#x5373;&#x53EF;&#x8DF3;&#x8F6C;&#x5230;&#x5177;&#x4F53;&#x754C;&#x9762;</p>
+<p><img src="images/deeplink_tododemo.png" alt="image"></p>
+<h2 id="-">&#x5F00;&#x53D1;&#x6B65;&#x9AA4;</h2>
+<h3 id="-">&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x8BBE;&#x7F6E;&#xFF08;&#x53EF;&#x9009;&#xFF0C;&#x5EFA;&#x8BAE;&#x8BBE;&#x7F6E;&#xFF09;</h3>
+<p version="974a2a7d7e61c641ba4f64231bf13c58">&#x5728;&#x8FD9;&#x4E00;&#x6B65;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x4E00;&#x4E9B;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x7684;&#x9009;&#x9879;&#xFF0C;&#x9996;&#x5148;&#x4E3A;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5408;&#x9002;&#x7684; URL Scheme&#xFF0C;&#x7136;&#x540E;&#x8BBE;&#x7F6E;&#x4E00;&#x4E0B;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7684;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x7B49;&#x4FE1;&#x606F;&#x3002;</p>
+<h4 id="-">&#x8BBE;&#x7F6E;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x9009;&#x9879;</h4>
+<p version="d181ed04a344d99650476bb50743b06c">&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x6237;&#x76F4;&#x63A5;&#x4ECE;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x6253;&#x5F00;&#x60A8;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x9700;&#x8981;&#x4F7F;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x652F;&#x6301;&#x5916;&#x90E8;&#x8C03;&#x7528;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528; AppURL &#x6765;&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x91CC;&#x5C55;&#x73B0;&#x7684; Class &#x6570;&#x636E;&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="fc336b692853871dd0d9065fa1babded"><code>{URL Scheme}://{ URL Host}/{ Resource Path}
+</code></pre><p version="a7f2aaed0b4e97677f2d68749f89cf82">&#x5728;&#x7EC4;&#x4EF6;&#x83DC;&#x5355;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x83DC;&#x5355;&#x2014;&#x2014;<code>&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;</code>&#xFF0C;&#x622A;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="images/deeplink_setting.png" alt="image"></p>
+<p version="d1ff1f1d52beaaddfd0d20f26753d20d">&#x5176;&#x4E2D;&#x6700;&#x5173;&#x952E;&#x7684;&#x662F;&#x8FD9;&#x51E0;&#x4E2A;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li>&#x5E94;&#x7528;&#x540D;&#x79F0; -- &#x60A8;&#x7684;&#x5E94;&#x7528;&#x540D;&#x79F0;&#xFF0C;&#x5FC5;&#x987B;&#x3002;</li>
+<li>&#x5E94;&#x7528; URL Scheme -- &#x652F;&#x6301;&#x5916;&#x90E8;&#x8C03;&#x7528;&#x7684; URL scheme&#xFF0C;&#x6211;&#x4EEC;&#x5F3A;&#x5236;&#x8981;&#x6C42;&#x91C7;&#x7528;<strong>&#x57DF;&#x540D;&#x53CD;&#x8F6C;</strong>&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x7C7B;&#x4F3C; Java &#x8BED;&#x8A00;&#x7684; package &#x547D;&#x540D;&#x673A;&#x5236;&#x3002;&#x5047;&#x8BBE;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7684;&#x57DF;&#x540D;&#x4E3A;<code>myapp.company.com</code>&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x8981;&#x6C42;&#x7684; scheme &#x5C31;&#x662F;&#x5F62;&#x5982;<code>com.company.myapp</code>&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x7684; Todo Demo &#x8BBE;&#x7F6E;&#x7684;scheme&#x4E3A;<code>com.avoscloud.todo</code>&#x3002;&#x5982;&#x679C;&#x60A8;&#x6CA1;&#x6709;&#x57DF;&#x540D;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x63A8;&#x8350;&#x60A8;&#x4F7F;&#x7528;<code>com.avoscloud.{appId&#x7684;&#x524D;8&#x4F4D;}</code>&#x6765;&#x4F5C;&#x4E3A; Scheme&#x3002;&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x4FDD;&#x5B58;&#x7684;&#x65F6;&#x5019;&#x68C0;&#x6D4B;scheme&#x662F;&#x5426;&#x51B2;&#x7A81;&#x3002;</li>
+<li>&#x5E94;&#x7528; URL Host -- &#x652F;&#x6301;&#x5916;&#x90E8;&#x8C03;&#x7528;&#x7684; URL Host&#xFF0C;&#x53EF;&#x4E0D;&#x8BBE;&#x7F6E;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x63A8;&#x8350;&#x9ED8;&#x8BA4;&#x503C;&#x4F7F;&#x7528;<code>avoscloud</code>&#xFF0C;&#x9632;&#x6B62;&#x8DDF;&#x5176;&#x4ED6; AppURL &#x63D0;&#x4F9B;&#x5546;&#x51B2;&#x7A81;&#x3002;</li>
+</ul>
+<p version="b6ffde628853af62698fa5a869bb1cd9">&#x5176;&#x4ED6;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#xFF0C;&#x90FD;&#x662F;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7684;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF0C;&#x4F8B;&#x5982;:</p>
+<ul>
+<li>iPhone &#x5E94;&#x7528;&#x4E0B;&#x8F7D;&#x5730;&#x5740; -- &#x60A8;&#x7684;&#x5E94;&#x7528;&#x7684; iPhone &#x7248;&#x672C;&#x7684; App Store &#x4E0B;&#x8F7D;&#x94FE;&#x63A5;&#xFF0C;&#x6216;&#x8005;&#x60A8;&#x7684;&#x7F51;&#x7AD9;&#x94FE;&#x63A5;&#x3002;</li>
+<li>iPad &#x5E94;&#x7528;&#x4E0B;&#x8F7D;&#x5730;&#x5740; -- &#x60A8;&#x7684;&#x5E94;&#x7528;&#x7684; iPad &#x7248;&#x672C;&#x7684; App Store &#x4E0B;&#x8F7D;&#x94FE;&#x63A5;&#xFF0C;&#x6216;&#x8005;&#x60A8;&#x7684;&#x7F51;&#x7AD9;&#x94FE;&#x63A5;&#x3002;</li>
+<li>&#x2026;&#x2026;</li>
+</ul>
+<p version="1994885d185a3fcb45b9bbbf8236485c">&#x8FD9;&#x4E9B;&#x94FE;&#x63A5;&#x90FD;&#x662F;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x5F53;&#x7528;&#x6237;&#x6CA1;&#x6709;&#x5B89;&#x88C5;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x4ECE;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x6253;&#x5F00;&#x5E94;&#x7528;&#xFF0C;&#x5C06;&#x5C55;&#x793A;&#x8FD9;&#x4E9B;&#x4E0B;&#x8F7D;&#x94FE;&#x63A5;&#x7ED9;&#x7528;&#x6237;&#x4E0B;&#x8F7D;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x3002;</p>
+<p version="2ae84c715cba66dbb85298420b12f8c0">&#x8BBE;&#x7F6E;&#x4FDD;&#x5B58;&#x4E4B;&#x540E;&#xFF0C;&#x60A8;&#x5E94;&#x8BE5;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x5217;&#x94FE;&#x63A5;&#x8BBF;&#x95EE;&#x5230;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre version="e65be4fcff774899c2eec4d55294cd3c"><code>https://leancloud.cn/1.1/go/{your uri scheme}/
+</code></pre><p version="01cfb7e7bbfebb5eee98a505706275e8">&#x67E5;&#x770B;&#x5230;&#x60A8;&#x7684; App URL &#x5E94;&#x7528;&#x8BBE;&#x7F6E;&#x4FE1;&#x606F;&#x3002;</p>
+<p version="b28fe0c010f8bdc74899f871471d6a6e">&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x7684;todo&#x5E94;&#x7528;&#x5C31;&#x662F;:</p>
+<pre version="331720149389d020187317d1a3b723ae"><code>https://leancloud.cn/1.1/go/com.avoscloud.todo
+</code></pre><h4 id="-class-">&#x4E3A; Class &#x542F;&#x7528;&#x641C;&#x7D22;</h4>
+<p version="99d822bd5b8d77b8cbd50235d96b6b02">&#x5728;&#x8BBE;&#x7F6E;&#x4E86;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#xFF0C;&#x9009;&#x62E9;&#x4E86;&#x9002;&#x5F53;&#x7684; URL Scheme &#x4E4B;&#x540E;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x9009;&#x62E9;&#x81F3;&#x5C11;&#x4E00;&#x4E2A; Class &#x4E3A;&#x5B83;&#x5F00;&#x542F;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x3002;&#x5F00;&#x542F;&#x540E;&#xFF0C;&#x8BE5; Class &#x7684;&#x6570;&#x636E;&#x5C06;&#x88AB; LeanCloud &#x81EA;&#x52A8;&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x6211;&#x4EEC;&#x7684;&#x641C;&#x7D22;&#x7EC4;&#x4EF6;&#x6216;&#x8005; API &#x641C;&#x7D22;&#x5230;&#x5185;&#x5BB9;&#x3002;</p>
+<p version="73ba69fbc0d3c1add7fef5f9740ba8a1"><strong> &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x542F;&#x7528;&#x4E86;&#x641C;&#x7D22;&#x7684; Class &#x6570;&#x636E;&#xFF0C;&#x4ECD;&#x7136;&#x53EA;&#x80FD;&#x88AB;&#x8BE5;&#x5E94;&#x7528;&#x7684;&#x8BA4;&#x8BC1;&#x8FC7;&#x7684; API &#x641C;&#x7D22;&#x5230;&#xFF0C;&#x5176;&#x6B21;&#xFF0C;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x4ECD;&#x7136;&#x9075;&#x5FAA;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x7684; ACL &#x673A;&#x5236;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x4E3A; Class &#x91CC;&#x7684;Object&#x8BBE;&#x5B9A;&#x4E86;&#x5408;&#x7406;&#x7684;ACL&#xFF0C;&#x90A3;&#x4E48;&#x641C;&#x641C;&#x7ED3;&#x679C;&#x4E5F;&#x5C06;&#x9075;&#x5FAA;&#x8FD9;&#x4E9B; ACL &#x503C;&#xFF0C;&#x4FDD;&#x62A4;&#x60A8;&#x7684;&#x6570;&#x636E;&#x5B89;&#x5168;&#x3002;</strong></p>
+<p version="686b23dd4157d83e30569b5ae12a4a8c">&#x5728; Class &#x7684;<code>&#x5176;&#x4ED6;</code>&#x83DC;&#x5355;&#x91CC;&#x65B0;&#x589E;&#x4E86;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x83DC;&#x5355;&#xFF0C;&#x6253;&#x5F00;&#x7684;&#x622A;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="images/app_search_setting.png" alt="image"></p>
+<p version="dbd5018c370bdcd43671dd3bee7638ad">&#x5176;&#x4E2D;&#x5305;&#x62EC;&#x4E09;&#x4E2A;&#x8BBE;&#x5B9A;&#x9879;&#x76EE;&#xFF1A;</p>
+<ul>
+<li>&#x901A;&#x8FC7;&#x6253;&#x5F00;&#x6216;&#x8005;&#x5173;&#x95ED;<code>&#x542F;&#x7528;</code>&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x542F;&#x7528;&#x6216;&#x8005;&#x5173;&#x95ED;&#x8FD9;&#x4E2A; Class &#x7684;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x529F;&#x80FD;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x5173;&#x95ED;&#x7684;&#x3002;</li>
+<li>&#x9009;&#x62E9;&#x5F00;&#x653E;&#x7684;&#x5217; -- &#x60A8;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x54EA;&#x4E9B;&#x5B57;&#x6BB5;&#x5C06;&#x52A0;&#x5165;&#x7D22;&#x5F15;&#x5F15;&#x64CE;&#xFF0C;&#x8FD9;&#x4E9B;&#x5B57;&#x6BB5;&#x5C06;&#x53EF;&#x4EE5;&#x88AB;&#x5916;&#x90E8;&#x7528;&#x6237;&#x770B;&#x5230;&#xFF08;&#x524D;&#x63D0;&#x662F; ACL &#x5141;&#x8BB8;&#xFF09;&#x3002;&#x8BF7;&#x614E;&#x91CD;&#x9009;&#x62E9;&#x5F00;&#x653E;&#x7684;&#x5B57;&#x6BB5;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>objectId,createdAt,updatedAt</code>&#x4E09;&#x4E2A;&#x5B57;&#x6BB5;&#x5C06;&#x65E0;&#x6761;&#x4EF6;&#x52A0;&#x5165;&#x5F00;&#x653E;&#x5B57;&#x6BB5;&#x5217;&#x8868;&#x3002;</li>
+<li>&#x6570;&#x636E;&#x6A21;&#x677F; -- &#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A; Class &#x7684;&#x6570;&#x636E;&#x5C55;&#x73B0;&#x6A21;&#x677F;&#xFF0C;&#x5F53;&#x5916;&#x90E8;&#x8C03;&#x7528;&#x65E0;&#x6CD5;&#x6253;&#x5F00;&#x5E94;&#x7528;&#xFF08;&#x901A;&#x5E38;&#x662F;&#x7528;&#x6237;&#x6CA1;&#x6709;&#x5B89;&#x88C5;&#x5E94;&#x7528;&#xFF09;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C06;&#x6E32;&#x67D3;&#x8FD9;&#x4E2A;&#x6A21;&#x677F;&#x5E76;&#x5C55;&#x73B0;&#x7ED9;&#x7528;&#x6237;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x6A21;&#x677F;&#x7684;&#x53EA;&#x662F;&#x6E32;&#x67D3;&#x4E00;&#x4E9B;&#x4E0B;&#x8F7D;&#x94FE;&#x63A5;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x8FD9;&#x4E2A;&#x6A21;&#x677F;&#x7684;&#x6837;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#x52A0;&#x5165;&#x60A8;&#x7684;&#x5E94;&#x7528; Logo&#xFF0C; &#x6DFB;&#x52A0; CSS &#x7B49;&#x3002;</li>
+</ul>
+<p version="92fe12b6a66f150aec35b6598c8d2d77">&#x6570;&#x636E;&#x6A21;&#x677F;&#x7684;&#x8BED;&#x6CD5;&#x652F;&#x6301;<a href="http://handlebarsjs.com/"> handlebars &#x6A21;&#x677F;</a>&#x8BED;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x7684;&#x53D8;&#x91CF;&#xFF08;&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x5927;&#x62EC;&#x53F7;&#x5305;&#x8D77;&#x6765; <code ng-non-bindable="">{{{var}}}</code>&#xFF09;&#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li>app_uri &#x5B57;&#x7B26;&#x4E32; --  &#x6253;&#x5F00;&#x5E94;&#x7528;&#x7684;URL&#xFF0C;&#x5C31;&#x662F;&#x524D;&#x9762;&#x63D0;&#x5230;&#x7684;<code>{URL Scheme} : // { URL Host} / { Resource Path}</code>&#x3002;</li>
+<li>applinks &#x5BF9;&#x8C61; -- &#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x914D;&#x7F6E;&#x5BF9;&#x8C61;&#xFF0C;&#x5305;&#x62EC;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#xFF1A;<code>app_name,android_phone_link,android_pad_link,iphone_link,ipad_link</code>&#x7B49;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5E94;&#x7528;&#x540D;&#x79F0;&#xFF0C;&#x548C;&#x5404;&#x79CD;&#x5E73;&#x53F0;&#x5E94;&#x7528;&#x7684;&#x4E0B;&#x8F7D;&#x94FE;&#x63A5;&#x3002;</li>
+<li>qrcode_uri &#x5B57;&#x7B26;&#x4E32; -- &#x672C;&#x9875;&#x9762;&#x7684;&#x4E8C;&#x7EF4;&#x7801;&#x56FE;&#x7247;&#x94FE;&#x63A5;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x7528;&#x626B;&#x63CF;&#x5668;&#x626B;&#x63CF;&#x6253;&#x5F00;&#x8BE5;&#x9875;&#x9762;&#x3002;</li>
+<li>object -- &#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x7684; object &#x5BF9;&#x8C61;&#xFF0C;&#x9ED8;&#x8BA4;&#x81F3;&#x5C11;&#x5305;&#x62EC;<code>objectId,createdAt,updatedAt</code>&#x4E09;&#x4E2A;&#x5C5E;&#x6027;&#x3002;&#x5176;&#x4ED6;&#x662F;&#x60A8;&#x5728;&#x9009;&#x62E9;&#x5F00;&#x653E;&#x7684;&#x5217;&#x3002;</li>
+</ul>
+<p version="20a9b88713c8741a77f85acdcf3a626d">&#x4EE5;&#x6211;&#x4EEC;&#x7684; Todo Demo &#x4E3A;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x542F;&#x7528;&#x4E86; Todo &#x7684;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x529F;&#x80FD;&#xFF0C;&#x9009;&#x62E9;&#x4E86;&#x5F00;&#x653E;&#x5B57;&#x6BB5;<code>content</code>&#xFF0C;&#x8BBE;&#x5B9A;&#x6570;&#x636E;&#x6A21;&#x677F;&#xFF08;&#x6D88;&#x9664;&#x4E86;css&#xFF09;&#x4E3A;&#xFF1A;</p>
+<div ng-non-bindable="">
+
+<code>html
+&lt;div class=&quot;wrap&quot;&gt;
+  &lt;div class=&quot;section section-open&quot;&gt;
+    &lt;div class=&quot;section-inner&quot;&gt;
+      &lt;p&gt;Todo Content:  {{object.content}} &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;section section-open&quot;&gt;
+    &lt;div class=&quot;section-inner&quot;&gt;
+      &lt;p&gt;&#x5DF2;&#x5B89;&#x88C5; {{applinks.app_name}}&#xFF1F;&#x60A8;&#x53EF;&#x4EE5;:&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&apos;{{app_uri}}&apos; class=&quot;btn&quot;&gt;&#x76F4;&#x63A5;&#x6253;&#x5F00;&#x5E94;&#x7528;&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;section section-download&quot;&gt;
+    &lt;div class=&quot;section-inner&quot;&gt;
+      &lt;p&gt;&#x6216;&#x8005;&#x4E0B;&#x8F7D;&#x5E94;&#x7528;:&lt;/p&gt;
+      &lt;div &gt;
+      {{#if applinks.iphone_link}}
+        &lt;p&gt;&lt;a href=&apos;{{applinks.iphone_link}}&apos;&gt;iPhone &#x5E94;&#x7528;&lt;/a&gt;&lt;/p&gt;
+      {{/if}}
+
+      {{#if applinks.ipad_link}}
+        &lt;p&gt;&lt;a href=&apos;{{applinks.ipad_link}}&apos;&gt;iPad &#x5E94;&#x7528;&lt;/a&gt;&lt;/p&gt;
+      {{/if}}
+
+      {{#if applinks.android_phone_link}}
+        &lt;p&gt;&lt;a href=&apos;{{applinks.android_phone_link}}&apos;&gt;Android &#x624B;&#x673A;&#x5E94;&#x7528;&lt;/a&gt;&lt;/p&gt;
+      {{/if}}
+
+      {{#if applinks.android_pad_link}}
+        &lt;p&gt;&lt;a href=&apos;{{applinks.android_pad_link}}&apos;&gt;Android &#x5E73;&#x677F;&#x5E94;&#x7528;&lt;/a&gt;&lt;/p&gt;
+      {{/if}}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code>
+
+</div>
+
+<p version="bcc4b240c0b87d25c7e5fffae2436fd9">&#x5728; LeanCloud &#x7D22;&#x5F15;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x60A8;&#x5E94;&#x5F53;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x5217;URL&#x8BBF;&#x95EE;&#x5230;&#x4E00;&#x6761;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x5B89;&#x88C5;&#x4E86; Todo Demo &#x5E94;&#x7528;&#x7684;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;&#x8BBF;&#x95EE;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;URL&#xFF0C;&#x5E94;&#x8BE5;&#x4F1A;&#x6253;&#x5F00;&#x5E94;&#x7528;&#x5C55;&#x73B0;&#x8FD9;&#x6761; Todo &#x7684;&#x5185;&#x5BB9;:</p>
+<pre version="568da63cfb896e7d8d1a8abc105b4fff"><code>https://leancloud.cn/1.1/go/com.avoscloud.todo/classes/Todo/5371f3a9e4b02f7aee2c9a18
+</code></pre><p version="721286d1817711945c5e7b794b6ed836">&#x5982;&#x679C;&#x76F4;&#x63A5;&#x5728; PC &#x6D4F;&#x89C8;&#x5668;<a href="https://leancloud.cn/1.1/go/com.avoscloud.todo/classes/Todo/5371f3a9e4b02f7aee2c9a18?render=true">&#x6253;&#x5F00;</a>&#xFF0C;&#x770B;&#x5230;&#x7684;&#x5E94;&#x8BE5;&#x662F;&#x6570;&#x636E;&#x6E32;&#x67D3;&#x9875;&#x9762;&#xFF0C;&#x5982;&#x56FE;&#xFF1A;</p>
+<p><img src="images/todo_render.png" alt="image"></p>
+<h3 id="-app-">&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x4F7F; App &#x652F;&#x6301;&#x5916;&#x90E8;&#x8C03;&#x7528;</h3>
+<p version="7a574f40db7f21bab2efce3d8b1401f7">&#x5728;&#x8BBE;&#x7F6E;&#x4E86;&#x548C;&#x542F;&#x7528;&#x4E86; Class &#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x4E4B;&#x540E;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x8BA9;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x54CD;&#x5E94;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x7684; URL &#x8C03;&#x7528;&#x3002;</p>
+<h4 id="android-">Android &#x5E94;&#x7528;&#x652F;&#x6301;&#x5916;&#x90E8;&#x8C03;&#x7528;</h4>
+<p version="44e271871662dc1950170ac66ba96adc">&#x5728; Android &#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E3A; Activity &#x6CE8;&#x518C; <code>intent-filter</code> &#x6765;&#x5B9E;&#x73B0;&#x3002;&#x4EE5;&#x6211;&#x4EEC;&#x7684; Todo Demo &#x4E3A;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x5728; <code>CreateTodo</code> &#x8FD9;&#x4E2A; Activity &#x91CC;&#x9762;&#x5C55;&#x73B0;&#x641C;&#x7D22;&#x51FA;&#x6765;&#x7684;&#x67D0;&#x4E00;&#x6761; Todo &#x5185;&#x5BB9;&#xFF0C;&#x5728;<code>AndroidManifest.xml</code>&#x6CE8;&#x518C;<code>intent-filter</code>&#x914D;&#x7F6E;&#x5982;&#x4E0B;</p>
+<pre version="a3eb0e649890eaad6747d060660a6919"><code class="lang-xml">&lt;activity android:name=&quot;com.avos.demo.CreateTodo&quot; &gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name=&quot;android.intent.action.VIEW&quot; /&gt;
+        &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;
+        &lt;category android:name=&quot;android.intent.category.BROWSABLE&quot; /&gt;
+        &lt;!-- &#x5904;&#x7406;&#x4EE5;&quot;com.avoscloud.todo://avoscloud/classes/Todo/&quot;&#x5F00;&#x5934;&#x7684; URI --&gt;
+        &lt;data android:scheme=&quot;com.avoscloud.todo&quot; /&gt;
+        &lt;data android:host=&quot;avoscloud&quot; /&gt;
+        &lt;data android:pathPrefix=&quot;/classes/Todo/&quot; /&gt;
+    &lt;/intent-filter&gt;
+&lt;/activity&gt;
+</code></pre>
+<p version="c215f7b90d3c50ea5d71a0645c365776">&#x5176;&#x4E2D;:</p>
+<ul>
+<li>android:scheme &#x8BBE;&#x7F6E;&#x4E3A;&#x60A8;&#x4E3A;&#x5E94;&#x7528;&#x9009;&#x62E9;&#x7684; URL Scheme&#xFF0C;&#x8FD9;&#x91CC;&#x662F;<code>com.avoscloud.todo</code></li>
+<li>android:host &#x8BBE;&#x7F6E;&#x4E3A;&#x60A8;&#x4E3A;&#x5E94;&#x7528;&#x9009;&#x62E9;&#x7684; URL Host&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;<code>avoscloud</code>&#x3002;</li>
+<li>android:pathPrefix  &#x5177;&#x4F53;&#x7684;&#x8D44;&#x6E90;&#x8DEF;&#x5F84;&#x524D;&#x7F00;&#xFF0C;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x7684;URL&#x5177;&#x4F53;&#x8DEF;&#x5F84;&#x90FD;&#x5C06;&#x5C55;&#x73B0;&#x4E3A;<code>/classes/{className}/{objectId}</code>&#xFF0C;&#x8FD9;&#x91CC;&#x7684; className &#x5C31;&#x662F; <code>Todo</code>&#xFF0C;&#x56E0;&#x6B64;&#x8DEF;&#x5F84;&#x524D;&#x7F00;&#x4E3A;<code>classes/Todo/</code>&#x3002;</li>
+<li>action&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;&#x4E3A;<code>android.intent.action.VIEW</code>&#xFF0C;&#x5E76;&#x4E14;&#x52A0;&#x5165;<code>DEFAULT</code>&#x548C;<code>BROWSABLE</code>&#x7684;Category&#x3002;</li>
+</ul>
+<p version="d1d43d8a5829156a1d209b776b278ddb">&#x63A5;&#x4E0B;&#x6765;&#x5728; <code>CreateTodo</code> Activity&#x7684;<code>onCreate</code>&#x65B9;&#x6CD5;&#x91CC;&#x6211;&#x4EEC;&#x63A5;&#x6536;&#x8FD9;&#x4E2A; action &#x5E76;&#x83B7;&#x53D6; URL &#x5C55;&#x73B0;&#x6570;&#x636E;&#xFF1A;</p>
+<pre version="ce78a030199fd0130e1b240897e1d3c2"><code class="lang-java">   Intent intent = getIntent();
+    // &#x901A;&#x8FC7;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x6253;&#x5F00;
+    if (intent.getAction() == Intent.ACTION_VIEW) {
+      // &#x5982;&#x679C;&#x662F;VIEW action&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;getData&#x83B7;&#x53D6;URI
+      Uri uri = intent.getData();
+      String path = uri.getPath();
+      int index = path.lastIndexOf(&quot;/&quot;);
+      if (index &gt; 0) {
+        // &#x83B7;&#x53D6;objectId
+        objectId = path.substring(index + 1);
+        Todo todo = new Todo();
+        todo.setObjectId(objectId);
+        // &#x901A;&#x8FC7;Fetch&#x83B7;&#x53D6;content&#x5185;&#x5BB9;
+        todo.fetchInBackground(new GetCallback&lt;AVObject&gt;() {
+          @Override
+          public void done(AVObject todo, AVException arg1) {
+            if (todo != null) {
+              String content = todo.getString(&quot;content&quot;);
+              if (content != null) {
+                contentText.setText(content);
+              }
+            }
+          }
+        });
+      }
+    }
+</code></pre>
+<p version="82791bf5b5c39e40c4510012cd977ea8">&#x6211;&#x4EEC;&#x901A;&#x8FC7; adb &#x7684; am &#x547D;&#x4EE4;&#x6765;&#x6D4B;&#x8BD5;&#x914D;&#x7F6E;&#x662F;&#x5426;&#x6709;&#x6548;&#xFF0C;&#x5982;&#x679C;&#x80FD;&#x591F;&#x6B63;&#x5E38;&#x5730;&#x8C03;&#x7528;<code>CreateTodo</code>&#x9875;&#x9762;&#xFF0C;&#x90A3;&#x8BC1;&#x660E;&#x914D;&#x7F6E;&#x6B63;&#x786E;&#xFF1A;</p>
+<pre version="cc1764ba4ddaa53e7b6a5606c7aa60a0"><code class="lang-sh">adb shell am start -W -a &quot;android.intent.action.VIEW&quot; -d &quot;yourUri&quot; yourPackageName
+</code></pre>
+<p version="4bbb112bb95b69284e6cd458189476f8">&#x5728; Todo &#x4F8B;&#x5B50;&#x91CC;&#x5C31;&#x662F;&#xFF1A;</p>
+<pre version="5bae0884d882aaadbd587440035dc5cd"><code class="lang-sh">adb shell am start -W -a &quot;android.intent.action.VIEW&quot;  \
+  -d &quot;com.avoscloud.todo://avoscloud/classes/Todo/5371f3a9e4b02f7aee2c9a18&quot; \
+  com.avos.demo
+</code></pre>
+<p version="7c2db99f08ba579fe5b02e735b76412c">&#x5982;&#x679C;&#x4E00;&#x5207;&#x6B63;&#x5E38;&#x7684;&#x8BDD;&#xFF0C;&#x8FD9;&#x5C06;&#x76F4;&#x63A5;&#x6253;&#x5F00;&#x5E94;&#x7528;&#x5E76;&#x5728;<code>CreateTodo</code>&#x91CC;&#x5C55;&#x73B0; objectId &#x4E3A;<code>536cf746e4b0d914a19ec9b3</code>&#x7684; Todo &#x5BF9;&#x8C61;&#x6570;&#x636E;&#x6570;&#x636E;&#x3002;</p>
+<h4 id="ios-">iOS &#x5E94;&#x7528;&#x652F;&#x6301;&#x5916;&#x90E8;&#x8C03;&#x7528;</h4>
+<p version="406e64d36957621a8ae7afd03f9a03b7">&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7F16;&#x8F91;&#x5E94;&#x7528; <a href="http://developer.apple.com/library/ios/#documentation/general/Reference/InfoPlistKeyReference/Introduction/Introduction.html">information property list</a>&#xFF0C;&#x4F7F;&#x5F97;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x5904;&#x7406; URL Scheme. &#x4E0B;&#x56FE;&#x5C55;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x4E3A;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x6CE8;&#x518C; URL Scheme.</p>
+<p><img src="images/ios_register_url_scheme.png" alt="image"></p>
+<p version="0a06cb06e16cef6de24f20c588d724a7">&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x4F60;&#x8FD9;&#x91CC;&#x7684; URL Scheme &#x5E94;&#x8BE5;&#x548C;&#x4F60;&#x5728;&#x6211;&#x4EEC;&#x7F51;&#x7AD9;&#x4E0A;&#x9762;&#x8BBE;&#x7F6E;&#x7684; URL Scheme&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;</p>
+<p version="eb3c156e9f4e1025d4a8927daaa64f49">&#x6CE8;&#x518C;&#x5B8C;&#x4E86; URL Scheme&#xFF0C;&#x4F60;&#x8FD8;&#x9700;&#x8981;&#x5B9E;&#x73B0; <a href="http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UIApplication_Class/Reference/Reference.html#jumpTo_37">application method openURL</a> &#x3002;&#x5BF9;&#x4E8E; TodoDemo&#xFF0C;&#x5E94;&#x8BE5;&#x6309;&#x7167;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x3002;</p>
+<pre version="53398d873e0a0df82e4e93ce71cc650b"><code class="lang-objc">/*
+ * &#x4E0E; Android &#x7C7B;&#x4F3C;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;url.path &#x5E94;&#x8BE5;&#x662F; &#x201C;com.avoscloud.todo://avoscloud/classes/Todo/5371f3a9e4b02f7aee2c9a18&#x201D;
+ */
+(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    NSString *objectId = [url.path lastPathComponent];
+
+    AVObject *todo = [AVObject objectWithClassName:@&quot;Todo&quot;];
+    todo.objectId = objectId;
+    [todo fetchInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+        // &#x8C03;&#x7528;&#x5C55;&#x793A;&#x6570;&#x636E;&#x7684;&#x65B9;&#x6CD5;
+        // code is here
+    }];
+    return YES;
+}
+</code></pre>
+<h3 id="-">&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x5728;&#x5E94;&#x7528;&#x5185;&#x96C6;&#x6210;&#x641C;&#x7D22;&#x7EC4;&#x4EF6;</h3>
+<h4 id="android-">Android &#x96C6;&#x6210;</h4>
+<h5 id="-sdk">&#x5BFC;&#x5165;SDK</h5>
+<p version="b914f5fd7ad14641599a0cfdccff1b7b">&#x60A8;&#x53EF;&#x4EE5;&#x4ECE; sdk_down.html &#x9875;&#x9762;&#x4E0B;&#x8F7D;<code>&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;</code>&#x6A21;&#x5757;,&#x89E3;&#x538B;&#x7F29;avossearch.zip&#x538B;&#x7F29;&#x5305;&#xFF0C;&#x5C06;libs&#x4E0B;&#x7684;<code>avossearch-v{version}.jar</code>&#x5305;&#x52A0;&#x5165;&#x60A8;&#x7684;libs&#x4E0B;&#x9762;&#x3002;</p>
+<p version="e8a16cd0c3ee295391a026d37fd05bac">&#x4E4B;&#x540E;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x5C06;res&#x4E0B;&#x7684;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x5939;&#x62F7;&#x8D1D;&#x5E76;&#x4E14;&#x5408;&#x5E76;&#x5230;&#x60A8;&#x5DE5;&#x7A0B;&#x7684;res&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x66F4;&#x6539;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x5E76;&#x4E0D;&#x5F71;&#x54CD;SDK&#x5DE5;&#x4F5C;&#xFF0C;&#x4F46;&#x662F;&#x8BF7;&#x4E0D;&#x8981;&#x6539;&#x52A8;&#x8D44;&#x6E90;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x548C;&#x6587;&#x4EF6;&#x5185;&#x8D44;&#x6E90;ID&#x3002;</p>
+<ul>
+<li>&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x7EC4;&#x4EF6;&#x7684;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x90FD;&#x4EE5;avoscloud_search&#x6253;&#x5934;&#x3002;*</li>
+</ul>
+<h5 id="-">&#x6DFB;&#x52A0;&#x4EE3;&#x7801;&#xFF0C;&#x5B9E;&#x73B0;&#x57FA;&#x7840;&#x529F;&#x80FD;</h5>
+<h6 id="-androidmanifest-xml">&#x914D;&#x7F6E; AndroidManifest.xml</h6>
+<p version="da2cb6e5c9f5588254a0eb77d6f281ac">&#x6253;&#x5F00;AndroidManifest.xml&#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x91CC;&#x9762;&#x6DFB;&#x52A0;&#x9700;&#x8981;&#x7528;&#x5230;&#x7684;activity&#x548C;&#x9700;&#x8981;&#x7684;&#x6743;&#x9650;:</p>
+<pre version="dc94a49420f69cd4308e956c16b5371b"><code class="lang-xml">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;
+    &lt;application...&gt;
+       &lt;activity
+          android:name=&quot;com.avos.avoscloud.search.SearchActivity&quot;&gt;
+       &lt;/activity&gt;
+    &lt;/application&gt;
+</code></pre>
+<p version="2f6972381a8a2457dc87d06b08222a28"><em>&#x6CE8;&#xFF1A;&#x7531;&#x4E8E;&#x4E00;&#x4E9B;UI&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x7684;&#x6700;&#x4F4E;API level&#x8981;&#x6C42;&#x662F;12&#xFF0C;&#x5982;&#x60A8;&#x9700;&#x8981;&#x66F4;&#x4F4E;&#x7684;&#x7248;&#x672C;&#x652F;&#x6301;&#xFF0C;&#x8BF7;&#x53C2;&#x7167;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x9AD8;&#x7EA7;&#x5B9A;&#x5236;&#x90E8;&#x5206;&#x8FDB;&#x884C;&#x5F00;&#x53D1;&#x3002;</em></p>
+<h6 id="-">&#x6DFB;&#x52A0;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x57FA;&#x7840;&#x7684;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x529F;&#x80FD;</h6>
+<pre version="aa906eb08b2c8515ff628492eefec87f"><code class="lang-java">AVSearchQuery searchQuery = new AVSearchQuery(&quot;keyword&quot;);
+SearchActivity.setHighLightStyle(&quot;&lt;font color=&apos;#E68A00&apos;&gt;&quot;);//&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x50CF;&#x6307;&#x5B9A;html tag&#x4E00;&#x6837;&#x8BBE;&#x5B9A;&#x641C;&#x7D22;&#x5339;&#x914D;&#x5B57;&#x7B26;&#x7684;&#x9AD8;&#x4EAE;&#x98CE;&#x683C;
+searchQuery.search();//&#x5373;&#x53EF;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x663E;&#x5F0F;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x7684;Activity
+</code></pre>
+<h6 id="-">&#x7ED3;&#x679C;&#x6392;&#x5E8F;</h6>
+<p version="e4d0ec53106655defacdc24bfc1ea12d"><code>AVSearchQuery</code>&#x652F;&#x6301;&#x6392;&#x5E8F;&#xFF0C;&#x901A;&#x8FC7;<code>orderByAscending</code>&#x548C;<code>orderByDescending</code>&#x4F20;&#x5165;&#x8981;&#x6392;&#x5E8F;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x6309;&#x7167;&#x5347;&#x5E8F;&#x6216;&#x8005;&#x964D;&#x5E8F;&#x6392;&#x5E8F;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x3002;&#x591A;&#x5B57;&#x6BB5;&#x6392;&#x5E8F;&#xFF0C;&#x901A;&#x8FC7;<code>addAscendingOrder</code>&#x548C;<code>addDescendingOrder</code>&#x6765;&#x6DFB;&#x52A0;&#x591A;&#x4E2A;&#x6392;&#x5E8F;&#x5B57;&#x6BB5;&#x3002;&#x5927;&#x4F53;&#x4E0A;&#xFF0C;&#x8FD9;&#x5757; API &#x8C03;&#x7528;&#x8DDF; <code>AVQuery</code>&#x662F;&#x7C7B;&#x4F3C;&#x7684;&#xFF1A;</p>
+<pre version="f0437a6c98f70955130559041e0f7448"><code class="lang-java">AVSearchQuery searchQuery = new AVSearchQuery(&quot;keyword&quot;);
+searchQuery.orderByAscending(&quot;score&quot;); //&#x6839;&#x636E;score&#x5B57;&#x6BB5;&#x5347;&#x5E8F;&#x6392;&#x5E8F;&#x3002;
+</code></pre>
+<p version="66ac43d52830609be54f58254aa3cdc5">&#x66F4;&#x590D;&#x6742;&#x7684;&#x6392;&#x5E8F;&#x529F;&#x80FD;&#xFF0C;&#x4F8B;&#x5982;&#x6839;&#x636E;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;&#x8FDC;&#x8FD1;&#x6765;&#x6392;&#x5E8F;&#xFF0C;&#x6216;&#x8005;&#x6392;&#x5E8F;&#x7684;&#x5B57;&#x6BB5;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x4F60;&#x60F3;&#x4F7F;&#x7528;&#x6570;&#x7EC4;&#x5185;&#x7684;&#x6700;&#x9AD8;&#x503C;&#x6765;&#x6392;&#x5E8F;&#x7B49;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x901A;&#x8FC7;<code>AVSearchSortBuilder</code>&#x6765;&#x5B9A;&#x5236;&#x3002;</p>
+<p version="48744d3fe52366a895e98a88d658bd98">&#x6839;&#x636E;&#x5730;&#x7406;&#x4FE1;&#x606F;&#x4F4D;&#x7F6E;&#x6392;&#x5E8F;&#xFF1A;</p>
+<pre version="99fbdde2523eaa35bdf6ca9d7c35c65a"><code class="lang-java">AVSearchSortBuilder builder = AVSearchSortBuilder.newBuilder();
+builder.whereNear(&quot;location&quot;,new AVGeoPoint(30,30));
+searchQuery.setSortBuilder(builder);
+</code></pre>
+<p version="2a55487885a4d9bcee91e91dad9dcdec">&#x6839;&#x636E;&#x6570;&#x7EC4;&#x5185;&#x7684;&#x6700;&#x9AD8;&#x503C;&#x6765;&#x6392;&#x5E8F;&#xFF0C;&#x5E76;&#x4E14;&#x5982;&#x679C;&#x6587;&#x6863;&#x91CC;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x503C;&#x5C31;&#x653E;&#x5230;&#x6700;&#x540E;&#xFF1A;</p>
+<pre version="0f2c9e89e93998cff150b0946a213292"><code class="lang-java">builder.orderByDescending(&quot;scores&quot;,&quot;max&quot;,&quot;last&quot;);
+searchQuery.setSortBuilder(builder);
+</code></pre>
+<p version="64a03003ad83200212c336db61fab010">&#x66F4;&#x591A;&#x65B9;&#x6CD5;&#x8BF7;&#x53C2;&#x8003; API doc&#x3002;</p>
+<h5 id="-">&#x3000;&#x9AD8;&#x7EA7;&#x6307;&#x5B9A;&#x6307;&#x5357;</h5>
+<p version="56a173fbb0075f20208ba64b13643c0e">&#x7531;&#x4E8E;&#x6BCF;&#x4E2A;&#x5E94;&#x7528;&#x7684;&#x6570;&#x636E;&#x3001;UI&#x5C55;&#x73B0;&#x8981;&#x6C42;&#x90FD;&#x6709;&#x5F88;&#x5927;&#x7684;&#x5DEE;&#x522B;&#xFF0C;&#x6240;&#x4EE5;&#x5355;&#x4E00;&#x7684;&#x641C;&#x7D22;&#x7EC4;&#x4EF6;&#x754C;&#x9762;&#x4EC5;&#x4EC5;&#x80FD;&#x591F;&#x6EE1;&#x8DB3;&#x8F83;&#x4E3A;&#x7B80;&#x5355;&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5C06;&#x6570;&#x636E;&#x63A5;&#x53E3;&#x5F00;&#x653E;&#x51FA;&#x6765;&#x4EE5;&#x4FBF;&#x60A8;&#x80FD;&#x591F;&#x65B9;&#x4FBF;&#x7684;&#x5B9A;&#x5236;&#x5C5E;&#x4E8E;&#x60A8;&#x81EA;&#x5DF1;&#x7684;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x9875;&#x9762;&#x3002;</p>
+<pre version="bf7c9486df47dc57d846d48195d0e192"><code class="lang-java">      AVSearchQuery search = new AVSearchQuery(&quot;test-query&quot;);
+      search.setLimit(100);
+      search.findInBackgroud(new FindCallback&lt;AVObject&gt;() {
+
+        @Override
+        public void done(List&lt;AVObject&gt; objects, AVException exception) {
+          if (exception == null) {
+             //&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; objects&#x6765;&#x5C55;&#x73B0;&#x81EA;&#x5DF1;&#x7684;UI
+             for(AVObject o : objects){
+                //&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x548C;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x6240;&#x5BF9;&#x5E94;&#x7684;AppUrl
+                String appUrl = o.getString(AVConstants.AVSEARCH_APP_URL);
+                //&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x5BF9;&#x5E94;&#x7684;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;
+                Map&lt;String,List&lt;String&gt;&gt; resultHighLights = ((Map&lt;String, List&lt;String&gt;&gt;)) o.get(AVConstants.AVSEARCH_HIGHTLIGHT);
+             }
+            } else {
+             //Exception happened
+            }
+          }
+        }
+      });
+</code></pre>
+<p version="b789e009095cb19929f95df9b71e1ee2">&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x6211;&#x4EEC;&#x7684;SearchActivity&#x6765;&#x66F4;&#x597D;&#x7684;&#x6307;&#x5B9A;&#x60A8;&#x81EA;&#x5DF1;&#x7684;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x9875;&#x9762;&#x3002;<code>https://github.com/leancloud/avoscloud-sdk/blob/master/android/avossearch/src/com/avos/avoscloud/search/SearchActivity.java</code></p>
+<h5 id="-">&#x5206;&#x9875;&#x67E5;&#x8BE2;</h5>
+<p version="0e741400e5f097fcf2a016ecda74ac46">&#x901A;&#x8FC7;<code>findInBackgroud</code>&#x65B9;&#x6CD5;&#x505A;&#x5B9A;&#x5236;&#x67E5;&#x8BE2;&#x7684;&#x8BDD;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x5206;&#x9875;&#xFF0C;&#x60A8;&#x4EC5;&#x4EC5;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x591A;&#x6B21;&#x8C03;&#x7528;&#x540C;&#x4E00;&#x4E2A;<code>AVSearchQuery</code>&#x7684;<code>findInBackgroud</code>&#x5373;&#x53EF;&#x5B9E;&#x73B0;&#x7FFB;&#x9875;&#x6548;&#x679C;&#xFF0C;&#x5B83;&#x5C06;&#x8FD4;&#x56DE;&#x4E0B;&#x4E00;&#x9875;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#xFF0C;&#x76F4;&#x5230;&#x672B;&#x5C3E;&#x3002;</p>
+<p version="e7a9089604e1c84f0f485228b1141dcf">&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x7684;&#x6587;&#x6863;&#x603B;&#x6570;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>AVSearchQuery</code>&#x7684;<code>getHits</code>&#x65B9;&#x6CD5;&#x5F97;&#x5230;&#x3002;</p>
+<h5 id="-">&#x67E5;&#x8BE2;&#x8BED;&#x6CD5;&#x7B80;&#x4ECB;</h5>
+<p version="cd9f4d84f36b70335137b1dd3d3f461f">&#x5728;AVSearchQuery&#x4E2D;&#x95F4;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;query&#x8BED;&#x53E5;&#x6765;&#x6307;&#x5B9A;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF1A;<code>AVSearchQuery.setQuery(String query)</code>&#x3002;</p>
+<h6 id="-">&#x57FA;&#x7840;&#x641C;&#x7D22;</h6>
+<p version="8672f910b250e9d4089d2ced01f389a1">&#x4F20;&#x5165;&#x6700;&#x7B80;&#x5355;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x67E5;&#x8BE2;</p>
+<pre version="35aff87835b0afd611a5c50208b15d0a"><code class="lang-java">AVSearchQuery query = new AVSearchQuery(&quot;basic-query&quot;);//&#x641C;&#x7D22;&#x5305;&#x542B;basic-query&#x7684;&#x503C;
+</code></pre>
+<h6 id="-">&#x5B57;&#x6BB5;&#x641C;&#x7D22;</h6>
+<p version="5815dd23cb7a4173418b39e5ece1c4bf">&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x6216;&#x8005;&#x503C;&#x57DF;&#x533A;&#x95F4;</p>
+<pre version="d54ebea3dfb295896a8861757da5840b"><code class="lang-java">query.setQuery(&quot;status:active&quot;);//&#x641C;&#x7D22;status&#x5B57;&#x6BB5;&#x5305;&#x542B;active
+query.setQuery(&quot;title:(quick brown)&quot;);//&#x641C;&#x7D22;status&#x5305;&#x542B;quick&#x6216;&#x8005;brown
+query.setQuery(&quot;age:&gt;=10&quot;);//&#x641C;&#x7D22;&#x5E74;&#x9F84;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;10&#x7684;&#x6570;&#x636E;
+query.setQuery(&quot;age:(&gt;=10 AND &lt; 20)&quot;);//&#x641C;&#x7D22;&#x5E74;&#x9F84;&#x5728;[10,20)&#x533A;&#x95F4;&#x5185;&#x7684;&#x6570;&#x636E;
+</code></pre>
+<h6 id="-">&#x6A21;&#x7CCA;&#x641C;&#x7D22;</h6>
+<pre version="5673f448fd4ad01240b9480893333bb2"><code class="lang-java">  query.setQuery(&quot;qu?c*k&quot;);//&#x6B64;&#x5904;?&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;*&#x4EE3;&#x8868;0&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x5B57;&#x7B26;&#x3002;&#x7C7B;&#x4F3C;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x901A;&#x914D;&#x7B26;
+</code></pre>
+<p version="f49e4dc3af280ca34b88e2a7c4eb8061">&#x66F4;&#x591A;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x8BED;&#x6CD5;&#x8D44;&#x6599;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x53C2;&#x8003; Elasticsearch &#x6587;&#x6863;&#x4E2D; <a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax">Query-String-Syntax</a>&#x4E00;&#x8282;&#x3002;</p>
+<h4 id="ios-">iOS &#x96C6;&#x6210;</h4>
+<h5 id="-">&#x6DFB;&#x52A0;&#x4EE3;&#x7801;&#x83B7;&#x53D6;&#x641C;&#x7D22;&#x7ED3;&#x679C;</h5>
+<p version="0536db0706ba0dff8b6dd9cdf87cfdb0">&#x4F60;&#x53EF;&#x4EE5;&#x53C2;&#x7167;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x6784;&#x9020; AVSearchQuery &#x5E76;&#x83B7;&#x53D6;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x3002;</p>
+<pre version="d1bdd35f9bb6507636a04e30e9da4ba2"><code class="lang-objc">AVSearchQuery *searchQuery = [AVSearchQuery searchWithQueryString:@&quot;test-query&quot;];
+searchQuery.className = @&quot;className&quot;;
+searchQuery.highlights = @&quot;field1,field2&quot;;
+searchQuery.limit = 10;
+searchQuery.cachePolicy = kAVCachePolicyCacheElseNetwork;
+searchQuery.maxCacheAge = 60;
+searchQuery.fields = @[@&quot;field1&quot;, @&quot;field2&quot;];
+[searchQuery findInBackground:^(NSArray *objects, NSError *error) {
+    for (AVObject *object in objects) {
+        NSString *appUrl = [object objectForKey:@&quot;_app_url&quot;];
+        NSString *deeplink = [object objectForKey:@&quot;_deeplink&quot;];
+        NSString *hightlight = [object objectForKey:@&quot;_highlight&quot;];
+        // other fields
+        // code is here
+    }
+}];
+</code></pre>
+<p version="679f86be619a6825a40957bab11df84a">&#x6709;&#x5173;&#x67E5;&#x8BE2;&#x8BED;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x4E0A;&#x6587; Android &#x90E8;&#x5206;&#x7684;&#x4ECB;&#x7ECD;&#x3002;</p>
+<p version="d2619fc966245ceafb46684be6b0cb34">&#x5BF9;&#x4E8E;&#x5206;&#x9875;&#xFF0C;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x7279;&#x522B;&#x505A;&#x51FA;&#x8BF4;&#x660E;&#x3002;&#x56E0;&#x4E3A;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x90FD;&#x6709; limit &#x9650;&#x5236;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x53EF;&#x80FD;&#x5E76;&#x4E0D;&#x80FD;&#x83B7;&#x53D6;&#x5230;&#x6240;&#x6709;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x8BB0;&#x5F55;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x591A;&#x6B21;&#x8C03;&#x7528;&#x540C;&#x4E00;&#x4E2A;<code>AVSearchQuery</code> &#x7684; <code>findObjects</code> &#x6216;&#x8005; <code>findInBackground</code> &#x83B7;&#x53D6;&#x4F59;&#x4E0B;&#x7684;&#x8BB0;&#x5F55;&#x3002;&#x53E6;&#x5916;&#xFF0C;<code>hits</code> &#x5C5E;&#x6027;&#x7528;&#x4E8E;&#x6807;&#x793A;&#x6240;&#x6709;&#x6EE1;&#x8DB3;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x3002;</p>
+<pre version="afe3df989863bdb031fe505fce3912c3"><code class="lang-objc">/*!
+ *  &#x7B26;&#x5408;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x7684;&#x8BB0;&#x5F55;&#x6761;&#x6570;&#xFF0C;&#x7531; SDK &#x81EA;&#x52A8;&#x4FEE;&#x6539;&#x3002;
+ */
+@property (nonatomic, assign) NSInteger hits;
+
+/*!
+ *  &#x5F53;&#x524D;&#x9875;&#x9762;&#x7684;scroll id&#xFF0C;&#x7528;&#x4E8E;&#x5206;&#x9875;&#xFF0C;&#x53EF;&#x9009;&#x3002;
+ #  @warning &#x5982;&#x975E;&#x7279;&#x6B8A;&#x9700;&#x6C42;&#xFF0C;&#x8BF7;&#x4E0D;&#x8981;&#x624B;&#x52A8;&#x8BBE;&#x7F6E; sid&#x3002;&#x6BCF;&#x6B21; findObjects &#x4E4B;&#x540E;&#xFF0C;SDK &#x4F1A;&#x81EA;&#x52A8;&#x66F4;&#x65B0; sid&#x3002;&#x5982;&#x679C;&#x624B;&#x52A8;&#x8BBE;&#x7F6E;&#x4E86;&#x9519;&#x8BEF;&#x7684;sid&#xFF0C;&#x5C06;&#x65E0;&#x6CD5;&#x83B7;&#x53D6;&#x5230;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x3002;
+ *  &#x6709;&#x5173;scroll id&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003; http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/scan-scroll.html
+ */
+@property (nonatomic, retain) NSString *sid;
+</code></pre>
+<h4 id="javascript-">JavaScript &#x6307;&#x5357;</h4>
+<p version="53aa10cac4af548f7d642551b411c772">JavaScript SDK v0.5.1 &#x7248;&#x672C;&#x5F00;&#x59CB;&#x652F;&#x6301;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22; API:</p>
+<pre version="82766b90e3522ffcb70af168cdf2fa09"><code class="lang-javascript">     var query = new AV.SearchQuery(&apos;GameScore&apos;);
+     query.queryString(&apos;*&apos;);
+     query.find().then(function(results) {
+       console.log(&quot;Find &quot; + query.hits() + &quot; docs.&quot;);
+       //&#x5904;&#x7406; results &#x7ED3;&#x679C;
+     }).catch(function(err){
+       //&#x5904;&#x7406; err
+     });
+</code></pre>
+<p version="798ed0a9059f8d87ff4c015db569e53f">&#x5F53; <code>query.hasMore()</code> &#x8FD4;&#x56DE; <code>true</code> &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4E0D;&#x505C;&#x5730;&#x8C03;&#x7528; <code>query.find()</code> &#x6765;&#x5411;&#x4E0B;&#x7FFB;&#x9875;&#x3002;</p>
+<p version="a2345bf54465350b80fd630ed4d24558">&#x5982;&#x679C;&#x5728;&#x4E0D;&#x540C;&#x8BF7;&#x6C42;&#x4E4B;&#x95F4;&#x65E0;&#x6CD5;&#x4FDD;&#x5B58;&#x67E5;&#x8BE2;&#x7684; query &#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x5229;&#x7528; sid &#x505A;&#x5230;&#x7FFB;&#x9875;&#xFF0C;&#x4E00;&#x6B21;&#x67E5;&#x8BE2;&#x662F;&#x901A;&#x8FC7; <code>query._sid</code> &#x6765;&#x6807;&#x793A;&#x7684;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>query.sid(&quot;&#x4E0A;&#x6B21;&#x67E5;&#x8BE2;&#x7684;query._sid&quot;)</code> &#x6765;&#x91CD;&#x5EFA;&#x67E5;&#x8BE2; query &#x5BF9;&#x8C61;&#xFF0C;&#x7EE7;&#x7EED;&#x7FFB;&#x9875;&#x67E5;&#x8BE2;&#x3002;sid &#x5728; 5 &#x5206;&#x949F;&#x5185;&#x6709;&#x6548;&#x3002;</p>
+<p version="6067a93de1f0cd3ba032dca24b011af9">&#x590D;&#x6742;&#x6392;&#x5E8F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>AV.SearchSortBuilder</code>&#xFF1A;</p>
+<pre version="dd6ab50e09827ba1ca814642c90968f2"><code class="lang-javascript">  var query = new AV.SearchQuery(&apos;GameScore&apos;);
+  //&#x5047;&#x8BBE; scores &#x662F;&#x5206;&#x6570;&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x6839;&#x636E;&#x5206;&#x6570;&#x91CC;&#x7684;&#x5E73;&#x5747;&#x5206;&#x5012;&#x5E8F;&#x6392;&#x5E8F;&#xFF0C;&#x5E76;&#x4E14;&#x6CA1;&#x6709;&#x5206;&#x6570;&#x7684;&#x6392;&#x5728;&#x6700;&#x540E;&#x3002;
+  query.sortBy(new AV.SearchSortBuilder().descending(&apos;scores&apos;,&apos;avg&apos;, &apos;last&apos;));
+  query.queryString(&apos;*&apos;);
+  query.find().then(function(results) {
+       //&#x5904;&#x7406;&#x7ED3;&#x679C;
+  });
+</code></pre>
+<p version="c510aa146dcd4550d9c99f8ca687dbea">&#x66F4;&#x591A; API &#x8BF7;&#x53C2;&#x8003; <a href="/api-docs/javascript/symbols/AV.SearchQuery.html">AV.SearchQuery</a> &#x548C; <a href="/api-docs/javascript/symbols/AV.SearchSortBuilder.html">AV.SearchSortBuilder</a> &#x7684;&#x6587;&#x6863;&#x3002;</p>
+<h2 id="-api">&#x641C;&#x7D22; API</h2>
+<p version="1d406c302666e401056ace043cca7c67">&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A; <code>/1.1/search/select</code> &#x6765;&#x505A;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#xFF0C;&#x524D;&#x63D0;&#x662F;&#x60A8;&#x53C2;&#x8003;&#x524D;&#x9762;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x542F;&#x7528;&#x4E86;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x3002;</p>
+<p version="f39c72ef289505c1e492fea360ab4ce7">&#x5047;&#x8BBE;&#x4F60;&#x5BF9; GameScore &#x7C7B;&#x542F;&#x7528;&#x4E86;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#xFF0C;&#x60A8;&#x5C31;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x4F20;&#x5165;&#x5173;&#x952E;&#x5B57;&#x6765;&#x641C;&#x7D22;&#xFF0C;&#x6BD4;&#x5982;&#x67E5;&#x8BE2;&#x5173;&#x952E;&#x5B57;<code>dennis</code>&#xFF0C;&#x9650;&#x5B9A;&#x8FD4;&#x56DE;&#x7ED3;&#x679C; 200 &#x4E2A;&#xFF0C;&#x5E76;&#x4E14;&#x6309;&#x7167;<code>score</code>&#x964D;&#x5E8F;&#x6392;&#x5E8F;&#xFF1A;</p>
+<pre version="83358503ea5592a0d44b9424214ad6e9"><code class="lang-sh">curl -X GET \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  &quot;https://leancloud.cn/1.1/search/select?q=dennis&amp;limit=200&amp;clazz=GameScore&amp;order=-score&quot;
+</code></pre>
+<p version="12a3ce5632367bc2a92e4dbb1987b44c">&#x8FD4;&#x56DE;&#x7C7B;&#x4F3C;&#xFF1A;</p>
+<pre version="da6d498010367b623ca60073035f4773"><code class="lang-json">{
+results: [
+  {
+    _app_url: &quot;http://stg.pass.com//1/go/com.avoscloud/classes/GameScore/51e3a334e4b0b3eb44adbe1a&quot;,
+    _deeplink: &quot;com.avoscloud.appSearchTest://avoscloud/classes/GameScore/51e3a334e4b0b3eb44adbe1a&quot;
+    updatedAt: &quot;2011-08-20T02:06:57.931Z&quot;,
+    playerName: &quot;Sean Plott&quot;,
+    objectId: &quot;51e3a334e4b0b3eb44adbe1a&quot;,
+    createdAt: &quot;2011-08-20T02:06:57.931Z&quot;,
+    cheatMode: false,
+    score: 1337
+  },
+  &#x2026;&#x2026;
+],
+sid: &quot;cXVlcnlUaGVuRmV0Y2g7Mzs0NDpWX0NFUmFjY1JtMnpaRDFrNUlBcTNnOzQzOlZfQ0VSYWNjUm0yelpEMWs1SUFxM2c7NDU6Vl9DRVJhY2NSbTJ6WkQxazVJQXEzZzswOw==&quot;
+}
+</code></pre>
+<p version="1e960e8e5c8dce12b05a027bcb467fac">&#x67E5;&#x8BE2;&#x7684;&#x53C2;&#x6570;&#x652F;&#x6301;&#xFF1A;</p>
+<ul>
+<li>limit &#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x5927;&#x5C0F;&#xFF0C;&#x9ED8;&#x8BA4;100&#xFF0C;&#x6700;&#x5927;1000</li>
+<li>sid: &#x7B2C;&#x4E00;&#x6B21;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x4E2D;&#x8FD4;&#x56DE;&#x7684; sid &#x503C;&#xFF0C;&#x7528;&#x4E8E;&#x5206;&#x9875;&#xFF0C;&#x5BF9;&#x5E94;&#x4E8E;elasticsearch&#x4E2D;&#x7684;scoll id&#xFF0C;&#x53EF;&#x9009;</li>
+<li>q: &#x67E5;&#x8BE2;&#x6587;&#x672C;&#xFF0C;&#x652F;&#x6301;&#x7C7B;&#x4F3C;google&#x7684;&#x641C;&#x7D22;&#x8BED;&#x6CD5;&#xFF0C;&#x5FC5;&#x987B;</li>
+<li>fields: &#x9017;&#x53F7;&#x9694;&#x5F00;&#x7684;&#x5B57;&#x6BB5;&#x5217;&#x8868;&#xFF0C;&#x53EF;&#x9009;&#xFF0C;&#x67E5;&#x8BE2;&#x7684;&#x5B57;&#x6BB5;&#x5217;&#x8868;</li>
+<li>highlights: &#x9AD8;&#x4EAE;&#x5B57;&#x6BB5;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x901A;&#x914D;&#x7B26; <code>*</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x5B57;&#x6BB5;&#x5217;&#x8868;&#x9017;&#x53F7;&#x9694;&#x5F00;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x53EF;&#x9009;&#x3002;&#x5982;&#x679C;&#x52A0;&#x5165;&#xFF0C;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4F1A;&#x591A;&#x51FA;_highlight&#x5C5E;&#x6027;&#xFF0C;&#x8868;&#x793A;&#x9AD8;&#x4EAE;&#x7684;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x5185;&#x5BB9;&#xFF0C;&#x5173;&#x952E;&#x5B57;&#x7528;<code>em</code>&#x6807;&#x7B7E;&#x62EC;&#x8D77;&#x6765;&#x3002;</li>
+<li>clazz: &#x7C7B;&#x540D;&#xFF0C;&#x53EF;&#x9009;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#xFF0C;&#x5219;&#x641C;&#x7D22;&#x6240;&#x6709;&#x542F;&#x7528;&#x4E86;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x7684; class</li>
+<li>order: &#x6392;&#x5E8F;&#x5B57;&#x6BB5;&#xFF0C;&#x5F62;&#x5982;<code>-score,createdAt</code>&#x9017;&#x53F7;&#x9694;&#x5F00;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x8D1F;&#x53F7;&#x8868;&#x793A;&#x5012;&#x5E8F;&#xFF0C;&#x53EF;&#x4EE5;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#x7EC4;&#x5408;&#x6392;&#x5E8F;&#xFF0C;&#x53EF;&#x9009;&#x3002;</li>
+<li>include: &#x5173;&#x8054;&#x67E5;&#x8BE2;&#x5185;&#x8054;&#x7684; Pointer &#x5B57;&#x6BB5;&#x5217;&#x8868;&#xFF0C;&#x9017;&#x53F7;&#x9694;&#x5F00;&#xFF0C;&#x5F62;&#x5982; <code>user,comment</code> &#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;<strong>&#x4EC5;&#x652F;&#x6301; include Pointer &#x7C7B;&#x578B;</strong></li>
+<li>sort: &#x590D;&#x6742;&#x6392;&#x5E8F;&#x5B57;&#x6BB5;&#xFF0C;&#x4F8B;&#x5982;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;&#x6392;&#x5E8F;&#xFF0C;&#x89C1;&#x4E0B;&#x6587;&#x63CF;&#x8FF0;&#x3002;</li>
+</ul>
+<p version="51b96671edfd68b4a30a650f2d67f8e4">&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x5C5E;&#x6027;&#x4ECB;&#x7ECD;&#xFF1A;</p>
+<ul>
+<li>results &#x7B26;&#x5408;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x7684;&#x7ED3;&#x679C;&#x6587;&#x6863;&#x3002;</li>
+<li>hits  &#x7B26;&#x5408;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x7684;&#x6587;&#x6863;&#x603B;&#x6570;</li>
+<li>sid &#x6807;&#x8BB0;&#x672C;&#x6B21;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#xFF0C;&#x4E0B;&#x6B21;&#x67E5;&#x8BE2;&#x7EE7;&#x7EED;&#x4F20;&#x5165;&#x8FD9;&#x4E2A; sid &#x7528;&#x4E8E;&#x67E5;&#x627E;&#x540E;&#x7EED;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x7528;&#x6765;&#x652F;&#x6301;&#x7FFB;&#x9875;&#x67E5;&#x8BE2;&#x3002;</li>
+</ul>
+<p version="225f0bfc50d11701ce2f0249cd6f57c3">&#x8FD4;&#x56DE;&#x7ED3;&#x679C; results &#x5217;&#x8868;&#x91CC;&#x662F;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5B57;&#x6BB5;&#x662F;&#x4F60;&#x5728;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x8BBE;&#x7F6E;&#x91CC;&#x542F;&#x7528;&#x7684;&#x5B57;&#x6BB5;&#x5217;&#x8868;&#xFF0C;&#x5E76;&#x4E14;&#x6709;&#x4E24;&#x4E2A;&#x7279;&#x6B8A;&#x5B57;&#x6BB5;&#xFF1A;</p>
+<ul>
+<li><code>_app_url</code>: &#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x5728;&#x7F51;&#x7AD9;&#x4E0A;&#x7684;&#x94FE;&#x63A5;&#x3002;</li>
+<li><code>_deeplink</code>: &#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x7684;&#x7A0B;&#x5E8F;&#x8C03;&#x7528; URL&#xFF0C;&#x4E5F;&#x5C31;&#x662F; deeplink&#x3002;</li>
+</ul>
+<p version="2239322a0e02fc9c1acabe1e550f9435">&#x6700;&#x5916;&#x5C42;&#x7684;<code>sid</code>&#x7528;&#x6765;&#x6807;&#x8BB0;&#x672C;&#x6B21;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#xFF0C;&#x4E0B;&#x6B21;&#x67E5;&#x8BE2;&#x7EE7;&#x7EED;&#x4F20;&#x5165;&#x8FD9;&#x4E2A; sid &#x5C06;&#x7FFB;&#x9875;&#x67E5;&#x627E;&#x540E; 200 &#x6761;&#x6570;&#x636E;&#xFF1A;</p>
+<pre version="e2ca5aaa9bb6e43b7c11a1b78c4fb5a5"><code class="lang-sh">curl -X GET \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  &quot;https://leancloud.cn/1.1/search/select?q=dennis&amp;limit=200&amp;clazz=GameScore&amp;order=-score&amp;sid=cXVlcnlUaGVuRmV0Y2g7Mzs0NDpWX0NFUmFjY1JtMnpaRDFrNUlBcTNnOzQzOlZfQ0VSYWNjUm0yelpEMWs1SUFxM2c7NDU6Vl9DRVJhY2NSbTJ6WkQxazVJQXEzZzswOw&quot;
+</code></pre>
+<p version="f947e828d4f09e2c4ba9a6fb7d98b455">&#x76F4;&#x5230;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4E3A;&#x7A7A;&#x3002;</p>
+<h3 id="q-">q &#x67E5;&#x8BE2;&#x8BED;&#x6CD5;&#x4E3E;&#x4F8B;</h3>
+<p version="34bd6ae9a8820d25d557d21d87508ff2">q &#x7684;&#x67E5;&#x8BE2;&#x8D70;&#x7684;&#x662F; elasticsearch &#x7684; <a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax">query string &#x8BED;&#x6CD5;</a>&#x3002;&#x5EFA;&#x8BAE;&#x8BE6;&#x7EC6;&#x9605;&#x8BFB;&#x8FD9;&#x4E2A;&#x6587;&#x6863;&#x3002;&#x8FD9;&#x91CC;&#x7B80;&#x5355;&#x505A;&#x4E2A;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;&#x3002;</p>
+<p version="46bf1e8ddb0f2b38cc673bce0912ce44">&#x67E5;&#x8BE2;&#x7684;&#x5173;&#x952E;&#x5B57;&#x4FDD;&#x7559;&#x5B57;&#x7B26;&#x5305;&#x62EC;&#xFF1A; <code>+ - = &amp;&amp; || &gt; &lt; ! ( ) { } [ ] ^ &quot; ~ * ? : \ /</code>&#xFF0C;&#x5F53;&#x51FA;&#x73B0;&#x8FD9;&#x4E9B;&#x5B57;&#x7B26;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BF7;&#x5BF9;&#x8FD9;&#x4E9B;&#x4FDD;&#x7559;&#x5B57;&#x7B26;&#x505A; URL Escape &#x8F6C;&#x4E49;&#x3002;</p>
+<h5 id="-">&#x57FA;&#x7840;&#x67E5;&#x8BE2;&#x8BED;&#x6CD5;</h5>
+<ul>
+<li>&#x67E5;&#x8BE2;&#x67D0;&#x4E2A;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x4F8B;&#x5982;<code>&#x53EF;&#x4E50;</code>&#x3002;</li>
+<li>&#x67E5;&#x8BE2;&#x591A;&#x4E2A;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x4F8B;&#x5982;<code>&#x53EF;&#x53E3; &#x53EF;&#x4E50;</code>&#xFF0C;&#x7A7A;&#x683C;&#x9694;&#x5F00;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x9ED8;&#x8BA4;&#x6309;&#x7167;&#x6587;&#x672C;&#x76F8;&#x5173;&#x6027;&#x6392;&#x5E8F;&#xFF0C;&#x5176;&#x4ED6;&#x6392;&#x5E8F;&#x65B9;&#x6CD5;&#x8BF7;&#x53C2;&#x8003;&#x4E0A;&#x6587;&#x4E2D;&#x7684; <a href="#&#x641C;&#x7D22;_API">order</a> &#x548C;&#x4E0B;&#x6587;&#x4E2D;&#x7684; <a href="#&#x590D;&#x6742;&#x6392;&#x5E8F;">sort</a>&#x3002;</li>
+<li>&#x67E5;&#x8BE2;&#x67D0;&#x4E2A;&#x77ED;&#x8BED;&#xFF0C;&#x4F8B;&#x5982; <code>&quot;lady gaga&quot;</code>&#xFF0C;&#x6CE8;&#x610F;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#xFF0C;&#x8FD9;&#x6837;&#x624D;&#x80FD;&#x4FDD;&#x8BC1;&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x7684;&#x76F8;&#x5173;&#x5BF9;&#x8C61;&#x91CC;&#x7684;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#x7684;&#x5173;&#x952E;&#x5B57;&#x4E5F;&#x662F;&#x6309;&#x7167; <code>lady gaga</code> &#x7684;&#x987A;&#x5E8F;&#x51FA;&#x73B0;&#x3002;</li>
+<li>&#x6839;&#x636E;&#x5B57;&#x6BB5;&#x67E5;&#x8BE2;&#xFF0C;&#x4F8B;&#x5982;&#x6839;&#x636E; nickname &#x5B57;&#x6BB5;&#x67E5;&#x8BE2;&#xFF1A;<code>nickename:&#x9003;&#x8DD1;&#x8BA1;&#x5212;</code></li>
+<li>&#x590D;&#x5408;&#x67E5;&#x8BE2;&#xFF0C;AND &#x6216;&#x8005; OR&#xFF0C;&#x4F8B;&#x5982; <code>nickname:(&#x9003;&#x8DD1;&#x8BA1;&#x5212; OR &#x591C;&#x7A7A;&#x4E2D;&#x6700;&#x4EAE;&#x7684;&#x661F;)</code></li>
+<li>&#x6839;&#x636E;&#x5B57;&#x6BB5;&#x67E5;&#x8BE2;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x77ED;&#x8BED;&#xFF0C;&#x8BB0;&#x5F97;&#x52A0;&#x53CC;&#x5F15;&#x53F7;&#x5728;&#x77ED;&#x8BED;&#x4E24;&#x4FA7;&#xFF1A; <code>nickename:&quot;lady gaga&quot;</code></li>
+<li>&#x5047;&#x8BBE; book &#x5B57;&#x6BB5;&#x662F; object &#x7C7B;&#x578B;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5185;&#x5D4C;&#x5B57;&#x6BB5;&#x6765;&#x67E5;&#x8BE2;&#xFF0C;&#x4F8B;&#x5982; <code>book.name:clojure OR book.content:clojure</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x901A;&#x914D;&#x7B26;&#x7B80;&#x5199;&#x4E3A; <code>book.\*:clojure</code>&#x3002;</li>
+<li>&#x67E5;&#x8BE2;&#x6CA1;&#x6709; title &#x7684;&#x5BF9;&#x8C61;&#xFF1A; <code>_missing_:title</code>&#x3002;</li>
+<li>&#x67E5;&#x8BE2;&#x6709; title &#x5B57;&#x6BB5;&#x5E76;&#x4E14;&#x4E0D;&#x662F; null &#x7684;&#x5BF9;&#x8C61;&#xFF1A; <code>_exists_:title</code>&#x3002;</li>
+</ul>
+<p version="8d568a7b0319ea44ca84c05602d7475b"><strong>&#x4E0A;&#x9762;&#x4E3E;&#x4F8B;&#x6839;&#x636E;&#x5B57;&#x6BB5;&#x67E5;&#x8BE2;&#xFF0C;&#x524D;&#x63D0;&#x662F;&#x8FD9;&#x4E9B;&#x5B57;&#x6BB5;&#x5728; class &#x7684;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x8BBE;&#x7F6E;&#x91CC;&#x542F;&#x7528;&#x4E86;&#x7D22;&#x5F15;&#x3002;</strong></p>
+<h5 id="-">&#x901A;&#x914D;&#x7B26;&#x548C;&#x6B63;&#x5219;&#x67E5;&#x8BE2;</h5>
+<p version="564f22b080961eb7afaf6b8de7317e09"><code>qu?ck bro*</code> &#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x901A;&#x914D;&#x7B26;&#x67E5;&#x8BE2;&#xFF0C;<code>?</code> &#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x800C; <code>*</code> &#x8868;&#x793A; 0 &#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x5B57;&#x7B26;&#x3002;</p>
+<p version="baafd69dd5db723836571970aeff3545">&#x901A;&#x914D;&#x7B26;&#x5176;&#x5B9E;&#x662F;&#x6B63;&#x5219;&#x7684;&#x7B80;&#x5316;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x67E5;&#x8BE2;&#xFF1A;</p>
+<pre version="656c27b563625f0701a52dd1fcc5c5ca"><code>name:/joh?n(ath[oa]n)/
+</code></pre><p version="4e29a193a5defa055ccc464876eca076">&#x6B63;&#x5219;&#x7684;&#x8BED;&#x6CD5;&#x53C2;&#x8003; <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-regexp-query.html#regexp-syntax">&#x6B63;&#x5219;&#x8BED;&#x6CD5;</a>&#x3002;</p>
+<h5 id="-fuzziness-">&#x6A21;&#x7CCA;&#x67E5;&#x8BE2;(Fuzziness)</h5>
+<p version="6359d35a35859f85ed01541df9fa6dbd">&#x6839;&#x636E;&#x6587;&#x672C;&#x8DDD;&#x79BB;&#x76F8;&#x4F3C;&#x5EA6;&#x6765;&#x67E5;&#x8BE2;&#xFF0C;&#x4F8B;&#x5982; <code>quikc~</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x6839;&#x636E; <a href="http://en.wikipedia.org/wiki/Damerau-Levenshtein_distance">Damerau-Levenshtein &#x6587;&#x672C;&#x8DDD;&#x79BB;&#x7B97;&#x6CD5;</a>&#x6765;&#x67E5;&#x627E;&#x6700;&#x591A;&#x4E24;&#x6B21;&#x53D8;&#x6362;&#x7684;&#x5339;&#x914D;&#x9879;&#x3002;</p>
+<p version="bfbc855af2cefab434e99c06b1d74186">&#x4F8B;&#x5982;&#x8FD9;&#x4E2A;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x5339;&#x914D; <code>quick</code>&#x3001;<code>qukic</code>&#x3001;<code>qukci</code> &#x7B49;&#x3002;</p>
+<h5 id="-">&#x8303;&#x56F4;&#x67E5;&#x8BE2;</h5>
+<ul>
+<li><p version="d868b2210f8c15be956c79d4152cb27e">&#x6570;&#x5B57; 1 &#x5230; 5&#xFF1A; <code>count:[1 TO 5]</code></p>
+</li>
+<li><p version="bf8203336f73f7770073c19bca70f809">2012&#x5E74;&#x5185;&#xFF1A; <code>date:[2012-01-01 TO 2012-12-31]</code></p>
+</li>
+<li><p version="7c9f53a49b058f979d7c76b7ebb13143">2012 &#x5E74;&#x4E4B;&#x524D; &#xFF1A; <code>{* TO 2012-01-01}</code></p>
+<p>&#x200B;</p>
+</li>
+</ul>
+<p version="09db8a41fbd17a5cdef23b53004ddeee"><code>[]</code> &#x8868;&#x793A;&#x95ED;&#x533A;&#x95F4;&#xFF0C;<code>{}</code> &#x8868;&#x793A;&#x5F00;&#x533A;&#x95F4;&#x3002;</p>
+<p version="75af977ecd545c42b9fad46186dbdc87">&#x8FD8;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;</p>
+<pre version="d3ecefefe71ee8962f0ce89802e57cd3"><code>age:&gt;10
+age:&gt;=10
+age:&lt;10
+age:&lt;=10
+</code></pre><h5 id="-">&#x67E5;&#x8BE2;&#x5206;&#x7EC4;</h5>
+<p version="17b841d5dbf6ad97d11fe13512938939">&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x62EC;&#x53F7;&#x5206;&#x7EC4;&#xFF1A;</p>
+<pre version="f6958af04ed9487f671003a2c09e6e47"><code>(quick OR brown) AND fox
+</code></pre><h5 id="-">&#x7279;&#x6B8A;&#x7C7B;&#x578B;&#x5B57;&#x6BB5;&#x8BF4;&#x660E;</h5>
+<ul>
+<li>objectId &#x5728;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x7684;&#x7C7B;&#x578B;&#x4E3A; string&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x5B57;&#x7B26;&#x4E32;&#x67E5;&#x8BE2;&#xFF1A; <code>objectId: 558e20cbe4b060308e3eb36c</code>&#xFF0C;&#x4E0D;&#x8FC7;&#x8FD9;&#x4E2A;&#x6CA1;&#x6709;&#x7279;&#x522B;&#x5FC5;&#x8981;&#x4E86;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8D70; SDK &#x67E5;&#x8BE2;&#xFF0C;&#x6548;&#x7387;&#x66F4;&#x597D;&#x3002;</li>
+<li>createdAt &#x548C; updatedAt &#x6620;&#x5C04;&#x4E3A; date &#x7C7B;&#x578B;&#xFF0C;&#x4F8B;&#x5982; <code>createdAt:[&quot;2015-07-30T00:00:00.000Z&quot; TO &quot;2015-08-15T00:00:00.000Z&quot;]</code> &#x6216;&#x8005; <code>updatedAt: [2012-01-01 TO 2012-12-31]</code></li>
+<li>&#x9664;&#x4E86;createdAt &#x548C; updatedAt&#x4E4B;&#x5916;&#x7684; Date &#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#xFF0C;&#x9700;&#x8981;&#x52A0;&#x4E0A; <code>.iso</code> &#x540E;&#x7F00;&#x505A;&#x67E5;&#x8BE2;&#xFF1A; <code>birthday.iso: [2012-01-01 TO 2012-12-31]</code></li>
+<li>Pointer &#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x91C7;&#x7528; <code>&#x5B57;&#x6BB5;&#x540D;.objectId</code> &#x7684;&#x65B9;&#x5F0F;&#x6765;&#x67E5;&#x8BE2;&#xFF1A; <code>player.objectId: 558e20cbe4b060308e3eb36c and player.className: Player</code>&#xFF0C;pointer &#x53EA;&#x6709;&#x8FD9;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x4E0D;&#x4F1A; include &#x5176;&#x4ED6;&#x5C5E;&#x6027;&#x3002;</li>
+<li>Relation &#x5B57;&#x6BB5;&#x7684;&#x67E5;&#x8BE2;&#x4E0D;&#x652F;&#x6301;&#x3002;</li>
+<li>File &#x5B57;&#x6BB5;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E; url &#x6216;&#x8005; id &#x6765;&#x67E5;&#x8BE2;&#xFF1A; <code>avartar.url: &quot;https://leancloud.cn/docs/app_search_guide.html#&#x641C;&#x7D22;_API&quot;</code>&#xFF0C;&#x65E0;&#x6CD5;&#x6839;&#x636E;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x505A;&#x5168;&#x6587;&#x641C;&#x7D22;&#x3002;</li>
+</ul>
+<h3 id="-">&#x590D;&#x6742;&#x6392;&#x5E8F;</h3>
+<p version="9c7eee8a6701894a7731e691bbc665c9">&#x5047;&#x8BBE;&#x4F60;&#x8981;&#x6392;&#x5E8F;&#x7684;&#x5B57;&#x6BB5;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6BD4;&#x5982;&#x5206;&#x6570;&#x6570;&#x7EC4;<code>scores</code>&#xFF0C;&#x4F60;&#x60F3;&#x6839;&#x636E;&#x5E73;&#x5747;&#x5206;&#x6765;&#x5012;&#x5E8F;&#x6392;&#x5E8F;&#xFF0C;&#x5E76;&#x4E14;&#x6CA1;&#x6709;&#x5206;&#x6570;&#x7684;&#x6392;&#x6700;&#x540E;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#xFF1A;</p>
+<pre version="7760612853c586367b88fc0e647265e2"><code class="lang-sh"> --data-urlencode &apos;sort=[{&quot;scores&quot;:{&quot;order&quot;:&quot;desc&quot;,&quot;mode&quot;:&quot;avg&quot;,&quot;missing&quot;:&quot;_last&quot;}}]&apos;
+</code></pre>
+<p version="11861a5c0c71cb19d2e63642db1c1fd8">&#x4E5F;&#x5C31;&#x662F; <code>sort</code> &#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A; JSON &#x6570;&#x7EC4;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E2A;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;  JSON &#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre version="da106baca25470c587d60136cac96b24"><code class="lang-json">{&quot;scores&quot;:{&quot;order&quot;:&quot;desc&quot;,&quot;mode&quot;:&quot;avg&quot;,&quot;missing&quot;:&quot;_last&quot;}}
+</code></pre>
+<p version="6fd86c25df27d8de12649c2e7c7f3f6d">&#x6392;&#x5E8F;&#x7684;&#x5B57;&#x6BB5;&#x4F5C;&#x4E3A;key&#xFF0C;&#x5B57;&#x6BB5;&#x53EF;&#x4EE5;&#x8BBE;&#x5B9A;&#x4E0B;&#x5217;&#x9009;&#x9879;&#xFF1A;</p>
+<ul>
+<li>order  <code>asc</code>&#x8868;&#x793A;&#x5347;&#x5E8F;&#xFF0C;<code>desc</code>&#x8868;&#x793A;&#x964D;&#x5E8F;</li>
+<li>mode &#x5982;&#x679C;&#x8BE5;&#x5B57;&#x6BB5;&#x662F;&#x591A;&#x503C;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x6570;&#x7EC4;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x6309;&#x7167;&#x6700;&#x5C0F;&#x503C;(<code>min</code>)&#x3001;&#x6700;&#x5927;&#x503C;(<code>max</code>)&#x3001;&#x603B;&#x548C;(<code>sum</code>)&#x6216;&#x8005;&#x5E73;&#x5747;&#x503C;(<code>sum</code>)&#x6765;&#x6392;&#x5E8F;&#x3002;</li>
+<li>missing &#x51B3;&#x5B9A;&#x7F3A;&#x5931;&#x8BE5;&#x5B57;&#x6BB5;&#x7684;&#x6587;&#x6863;&#x6392;&#x5E8F;&#x5728;&#x5F00;&#x59CB;&#x8FD8;&#x662F;&#x6700;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;<code>_last</code>&#x6216;&#x8005;<code>_first</code>&#xFF0C;&#x6216;&#x8005;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</li>
+</ul>
+<p version="f4d8e566358e93db948009759e01f918">&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#x6392;&#x5E8F;&#x5C31;&#x7C7B;&#x4F3C;&#xFF1A;</p>
+<pre version="702be026395f55fd10396d0f21dd4212"><code class="lang-json">[
+  {
+    &quot;scores&quot;:{&quot;order&quot;:&quot;desc&quot;,&quot;mode&quot;:&quot;avg&quot;,&quot;missing&quot;:&quot;_last&quot;}
+  },
+  {
+    &quot;updatedAt&quot;: {&quot;order&quot;:&quot;asc&quot;}
+  }
+]
+</code></pre>
+<h3 id="-">&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;&#x67E5;&#x8BE2;</h3>
+<p version="4f6d17dde73d01c606fab21524bbfd0b">&#x5982;&#x679C; class &#x91CC;&#x67D0;&#x4E2A;&#x5217;&#x662F; <code>GeoPoint</code>&#x7C7B;&#x578B;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x8FDC;&#x8FD1;&#x6765;&#x6392;&#x5E8F;&#xFF0C;&#x4F8B;&#x5982;&#x5047;&#x8BBE;&#x5B57;&#x6BB5; <code>location</code> &#x4FDD;&#x5B58;&#x7684;&#x662F; <code>GeoPoint</code>&#x7C7B;&#x578B;&#xFF0C;&#x90A3;&#x4E48;&#x67E5;&#x8BE2; <code>[39.9, 116.4]</code> &#x9644;&#x8FD1;&#x7684;&#x73A9;&#x5BB6;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x5B9A; sort &#x4E3A;&#xFF1A;</p>
+<pre version="42304f164d6514a511932b6062f4a7fe"><code class="lang-json">{
+  &quot;_geo_distance&quot; : {
+                &quot;location&quot; : [39.9, 116.4],
+                &quot;order&quot; : &quot;asc&quot;,
+                &quot;unit&quot; : &quot;km&quot;,
+                &quot;mode&quot; : &quot;min&quot;,
+   }
+}
+</code></pre>
+<p version="169b1fc52ef10603a5a0e9646a377aeb"><code>order</code> &#x548C;  <code>mode</code> &#x542B;&#x4E49;&#x8DDF;&#x4E0A;&#x8FF0;&#x590D;&#x6742;&#x6392;&#x5E8F;&#x91CC;&#x7684;&#x4E00;&#x81F4;&#xFF0C;<code>unit</code>&#x7528;&#x6765;&#x6307;&#x5B9A;&#x8DDD;&#x79BB;&#x5355;&#x4F4D;&#xFF0C;&#x4F8B;&#x5982;<code>km</code>&#x8868;&#x793A;&#x5343;&#x7C73;&#xFF0C;<code>m</code>&#x8868;&#x793A;&#x7C73;&#xFF0C;<code>cm</code>&#x8868;&#x793A;&#x5398;&#x7C73;&#x7B49;&#x3002;</p>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

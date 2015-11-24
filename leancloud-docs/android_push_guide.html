@@ -1,0 +1,606 @@
+<!doctype html>
+
+<html version="cad9eed43f5cf912c71bd46a5d45f7a4">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="android-">Android &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</h1>
+<blockquote>
+<p version="9c4ef16e866c6f755d4f07fe6671e39b">&#x5F00;&#x59CB;&#x4E4B;&#x524D;
+&#x5728;&#x770B;&#x4E0B;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5047;&#x8BBE;&#x4F60;&#x5DF2;&#x7ECF;&#x770B;&#x8FC7;&#x6211;&#x4EEC;&#x7684;<a href="./push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x603B;&#x89C8;</a>&#xFF0C;&#x4E86;&#x89E3;&#x4E86;&#x57FA;&#x672C;&#x7684;&#x6982;&#x5FF5;&#x548C;&#x6A21;&#x578B;&#x3002;</p>
+</blockquote>
+<p version="2e61fc0ccbe47d80b17f2a730ad89792">Android &#x63A8;&#x9001;&#x529F;&#x80FD;&#x9664;&#x4E86;&#x9700;&#x8981;&#x5FC5;&#x987B;&#x7684; avoscloud.jar &#x4EE5;&#x5916;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684; avospush.jar&#x3002;</p>
+<p version="f20c4215f171512dc2a9208942f3cdb3">Android &#x6D88;&#x606F;&#x63A8;&#x9001;&#x6709;&#x4E13;&#x95E8;&#x7684; Demo&#xFF0C;&#x8BF7;&#x89C1;<a href="https://github.com/leancloud/android-push-demo">Android-Push-Demo</a>&#x9879;&#x76EE;&#x3002;</p>
+<h2 id="-">&#x6587;&#x6863;&#x8D21;&#x732E;</h2>
+<p version="56396f3d4516ffdc3b83976f7cb5812a">&#x5982;&#x679C;&#x89C9;&#x5F97;&#x8FD9;&#x4E2A;&#x6587;&#x6863;&#x5199;&#x7684;&#x4E0D;&#x591F;&#x597D;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x6765;&#x4E0D;&#x65AD;&#x5B8C;&#x5584;&#x3002;</p>
+<p version="9019417a01fcfa4271af1edefecb6bfd">Github &#x4ED3;&#x5E93;&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/leancloud/docs">https://github.com/leancloud/docs</a></p>
+<h2 id="installation">Installation</h2>
+<p version="b8f4faff79c51d33f71a172b17bf7400">&#x5F53;&#x5E94;&#x7528;&#x5728;&#x7528;&#x6237;&#x8BBE;&#x5907;&#x4E0A;&#x5B89;&#x88C5;&#x597D;&#x4EE5;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x4F7F;&#x7528;&#x6D88;&#x606F;&#x63A8;&#x9001;&#x529F;&#x80FD;&#xFF0C;LeanCloud SDK &#x4F1A;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4E00;&#x4E2A; Installation &#x5BF9;&#x8C61;&#x3002;&#x8BE5;&#x5BF9;&#x8C61;&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x5E94;&#x7528;&#x5728;&#x8BBE;&#x5907;&#x4E0A;&#x751F;&#x6210;&#x7684;&#x5B89;&#x88C5;&#x4FE1;&#x606F;&#xFF0C;&#x4E5F;&#x5305;&#x542B;&#x4E86;&#x63A8;&#x9001;&#x6240;&#x9700;&#x8981;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x8981;&#x4F7F;&#x7528;&#x5B83;&#x6765;&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x63A8;&#x9001;&#x3002;</p>
+<h3 id="-installation">&#x4FDD;&#x5B58; Installation</h3>
+<p version="f8f4e381a6c6500fe8bea6356331e7a5">&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x4FDD;&#x5B58;&#x4F60;&#x7684; Installation id&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x7CFB;&#x7EDF;&#x4E4B;&#x524D;&#x8FD8;&#x6CA1;&#x6709; Installation id, &#x7CFB;&#x7EDF;&#x4F1A;&#x4E3A;&#x4F60;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x5378;&#x8F7D;&#x540E;&#xFF0C;Installation id&#x4E5F;&#x5C06;&#x4F1A;&#x88AB;&#x5220;&#x9664;&#x3002;</p>
+<pre version="4acd367c2309b66f5241ade25cb06b56"><code class="lang-java">AVInstallation.getCurrentInstallation().saveInBackground();
+</code></pre>
+<p version="1e4ca87208d909a3af94615456072d1c"><strong>&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5E94;&#x8BE5;&#x5728;&#x5E94;&#x7528;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#xFF0C;&#x4FDD;&#x8BC1;&#x8BBE;&#x5907;&#x6CE8;&#x518C;&#x5230; LeanCloud &#x5E73;&#x53F0;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#x8C03;&#x7528;&#x56DE;&#x8C03;&#xFF0C;&#x83B7;&#x53D6; installationId &#x505A;&#x6570;&#x636E;&#x5173;&#x8054;</strong></p>
+<pre version="c9daa20b80ab629f2de37440cced00ac"><code>AVInstallation.getCurrentInstallation().saveInBackground(new SaveCallback() {
+    public void done(AVException e) {
+        if (e == null) {
+            // &#x4FDD;&#x5B58;&#x6210;&#x529F;
+            String installationId = AVInstallation.getCurrentInstallation().getInstallationId();
+            // &#x5173;&#x8054;  installationId &#x5230;&#x7528;&#x6237;&#x8868;&#x7B49;&#x64CD;&#x4F5C;&#x2026;&#x2026;
+        } else {
+            // &#x4FDD;&#x5B58;&#x5931;&#x8D25;&#xFF0C;&#x8F93;&#x51FA;&#x9519;&#x8BEF;&#x4FE1;&#x606F;
+        }
+    }
+});
+</code></pre><h2 id="-">&#x542F;&#x52A8;&#x63A8;&#x9001;&#x670D;&#x52A1;</h2>
+<p version="0bbc878ac228a6b029d6cb7b84b2b774">&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x542F;&#x52A8;&#x63A8;&#x9001;&#x670D;&#x52A1;&#xFF0C;&#x540C;&#x65F6;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x6253;&#x5F00;&#x7684; Activity&#x3002;</p>
+<pre version="4e1ac46c926a2f360122bea13c60eb18"><code>// &#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x6253;&#x5F00;&#x7684; Activity
+PushService.setDefaultPushCallback(this, PushDemo.class);
+</code></pre><h2 id="-">&#x8BA2;&#x9605;&#x9891;&#x9053;</h2>
+<p version="95404096a95c50662627f7d308193e91">&#x4F60;&#x7684;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x8BA2;&#x9605;&#x67D0;&#x4E2A;&#x9891;&#x9053;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x4FDD;&#x5B58; Installation &#x4E4B;&#x524D;&#x8C03;&#x7528;<code>PushService.subscribe</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="dcda33e0e30ecedd1deeef7783ce9750"><code class="lang-java">// &#x8BA2;&#x9605;&#x9891;&#x9053;&#xFF0C;&#x5F53;&#x8BE5;&#x9891;&#x9053;&#x6D88;&#x606F;&#x5230;&#x6765;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6253;&#x5F00;&#x5BF9;&#x5E94;&#x7684; Activity
+PushService.subscribe(this, &quot;public&quot;, PushDemo.class);
+PushService.subscribe(this, &quot;private&quot;, Callback1.class);
+PushService.subscribe(this, &quot;protected&quot;, Callback2.class);
+</code></pre>
+<p version="edd5d48f326c14577d545247eb5dbecc">&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5F53;&#x524D;&#x7684; context&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x9891;&#x9053;&#x540D;&#x79F0;&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x56DE;&#x8C03;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#xFF0C;&#x56DE;&#x8C03;&#x5BF9;&#x8C61;&#x662F;&#x6307;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x901A;&#x77E5;&#x680F;&#x7684;&#x901A;&#x77E5;&#x8FDB;&#x5165;&#x7684; Activity &#x9875;&#x9762;&#x3002;</p>
+<p version="a868099394c2ff5cdde35e33ed850b0e">&#x9000;&#x8BA2;&#x9891;&#x9053;&#x4E5F;&#x5F88;&#x7B80;&#x5355;&#xFF1A;</p>
+<pre version="fc82bae25459a0b0dca4d1a43f1c89c1"><code class="lang-java">PushService.unsubscribe(context, &quot;protected&quot;);
+//&#x9000;&#x8BA2;&#x4E4B;&#x540E;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x4FDD;&#x5B58; Installation
+AVInstallation.getCurrentInstallation().saveInBackground();
+</code></pre>
+<h2 id="-">&#x63A8;&#x9001;&#x6D88;&#x606F;</h2>
+<h3 id="-">&#x914D;&#x7F6E;</h3>
+<p version="58be16bbc21b802f21fef36404d953f6">&#x8BF7;&#x786E;&#x4FDD;&#x4F60;&#x7684; AndroidManifest.xml &#x7684;<code>&lt;application&gt;</code>&#x4E2D;&#x5305;&#x542B;&#x5982;&#x4E0B;&#x5185;&#x5BB9;</p>
+<pre version="3b754dffd44eed7a6270e2e6efec77ea"><code class="lang-xml">&lt;service android:name=&quot;com.avos.avoscloud.PushService&quot;
+  android:exported=&quot;true&quot;/&gt;
+</code></pre>
+<p version="96af6e5792c7ce76a7f38e463349a031">&#x540C;&#x65F6;&#x8BBE;&#x7F6E;&#x4E86;&#x5FC5;&#x8981;&#x7684;&#x6743;&#x9650;</p>
+<pre version="0dae29a9b84ef7b2dfb8a55ce9fb69c8"><code class="lang-xml">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+</code></pre>
+<p version="95c0ee490b5593a77edb70ad0484ffab">&#x4E3A;&#x4E86;&#x8BA9;&#x5E94;&#x7528;&#x80FD;&#x5728;&#x5173;&#x95ED;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E5F;&#x53EF;&#x4EE5;&#x6536;&#x5230;&#x63A8;&#x9001;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728;<code>&lt;application&gt;</code>&#x4E2D;&#x52A0;&#x5165;&#xFF1A;</p>
+<pre version="a4b80dbc8b3aef74c2acab5b4b224a1d"><code class="lang-xml">&lt;receiver android:name=&quot;com.avos.avoscloud.AVBroadcastReceiver&quot;&gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot; /&gt;
+        &lt;action android:name=&quot;android.intent.action.USER_PRESENT&quot; /&gt;
+        &lt;action android:name=&quot;android.net.conn.CONNECTIVITY_CHANGE&quot; /&gt;
+    &lt;/intent-filter&gt;
+&lt;/receiver&gt;
+</code></pre>
+<h3 id="-">&#x63A8;&#x9001;&#x7ED9;&#x6240;&#x6709;&#x7684;&#x8BBE;&#x5907;</h3>
+<pre version="6111bbee1a8c9adab2e0eca4a341413f"><code class="lang-java">AVPush push = new AVPush();
+JSONObject object = new JSONObject();
+object.put(&quot;alert&quot;, &quot;push message to android device directly&quot;);
+push.setPushToAndroid(true);
+push.setData(object);
+push.sendInBackground(new SendCallback() {
+    @Override
+    public void done(AVException e) {
+        if (e == null) {
+            // push successfully.
+        } else {
+            // something wrong.
+        }
+    });
+</code></pre>
+<h3 id="-">&#x53D1;&#x9001;&#x7ED9;&#x7279;&#x5B9A;&#x7684;&#x7528;&#x6237;</h3>
+<ul>
+<li>&#x53D1;&#x9001;&#x7ED9; public &#x9891;&#x9053;&#x7684;&#x7528;&#x6237;</li>
+</ul>
+<pre version="35c56b5136729c39f21305ac75f7ed2f"><code class="lang-java">AVQuery pushQuery = AVInstallation.getQuery();
+pushQuery.whereEqualTo(&quot;channels&quot;, &quot;public&quot;);
+AVPush push = new AVPush();
+push.setQuery(pushQuery);
+push.setMessage(&quot;Push to channel.&quot;);
+push.setPushToAndroid(true);
+push.sendInBackground(new SendCallback() {
+    @Override
+    public void done(AVException e) {
+        if (e == null) {
+
+        }   else {
+
+        }
+    }
+});
+</code></pre>
+<ul>
+<li>&#x53D1;&#x9001;&#x7ED9;&#x67D0;&#x4E2A; Installation id&#x7684;&#x7528;&#x6237;&#xFF0C;&#x901A;&#x5E38;&#x6765;&#x8BF4;&#xFF0C;&#x4F60;&#x4F1A;&#x5C06; AVInstallation &#x5173;&#x8054;&#x5230;&#x8BBE;&#x5907;&#x7684;&#x767B;&#x5F55;&#x7528;&#x6237; AVUser &#x4E0A;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x5217;&#x4EE3;&#x7801;&#x67E5;&#x8BE2; InstallationId &#x7684;&#x65B9;&#x5F0F;&#x6765;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x7ED9;&#x7279;&#x5B9A;&#x7528;&#x6237;&#xFF0C;&#x5B9E;&#x73B0;&#x7C7B;&#x4F3C;&#x79C1;&#x4FE1;&#x7684;&#x529F;&#x80FD;&#xFF1A;</li>
+</ul>
+<pre version="56638c7f7294105abf12de84a0038ce4"><code class="lang-java">AVQuery pushQuery = AVInstallation.getQuery();
+// &#x5047;&#x8BBE; THE_INSTALLATION_ID &#x662F;&#x4FDD;&#x5B58;&#x5728;&#x7528;&#x6237;&#x8868;&#x91CC;&#x7684; installationId&#xFF0C;
+// &#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x83B7;&#x53D6;&#x5E76;&#x4FDD;&#x5B58;&#x5230;&#x7528;&#x6237;&#x8868;
+pushQuery.whereEqualTo(&quot;installationId&quot;, THE_INSTALLATION_ID);
+AVPush.sendMessageInBackground(&quot;message to installation&quot;,  pushQuery, new SendCallback() {
+    @Override
+    public void done(AVException e) {
+
+    }
+});
+</code></pre>
+<p version="19f3cb659aff2c058147ec53e28db21d">&#x5728; 2.6.7 &#x4EE5;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x52A0;&#x5165;&#x4E86;&#x901A;&#x8FC7; CQL &#x6765;&#x7B5B;&#x9009;&#x63A8;&#x9001;&#x76EE;&#x6807;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4E3B;&#x8981;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="8f8ae013c50bad1de8bbad9b8e7c54ad"><code class="lang-java">    AVPush push = new AVPush();
+    JSONObject data =
+        new JSONObject(
+            &quot;{\&quot;action\&quot;: \&quot;com.avos.UPDATE_STATUS\&quot;, \&quot;name\&quot;: \&quot;Vaughn\&quot;, \&quot;newsItem\&quot;: \&quot;Man bites dog\&quot;  }&quot;);
+    push.setData(data);
+    String installationId = AVInstallation.getCurrentInstallation().getInstallationId();
+    push.setCloudQuery(&quot;select * from _Installation where installationId =&apos;&quot; + installationId
+        + &quot;&apos;&quot;);
+    push.sendInBackground(new SendCallback() {
+
+      @Override
+      public void done(AVException e) {
+
+      }
+    });
+</code></pre>
+<blockquote>
+<p version="04cd85dc1b366542b15c25a78bc70e3f">&#x6CE8;&#x610F;&#xFF1A;
+CQL &#x4E0E; AVQuery &#x540C;&#x65F6;&#x53EA;&#x80FD;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#xFF0C;&#x5E76;&#x4E14; setPushTarget &#x7C7B;&#x51FD;&#x6570;&#xFF08;setPushToAndroid / setPushToIOS / setPushToWindowsPhone&#xFF09;&#x53EA;&#x80FD;&#x4E0E; AVQuery &#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;&#x5728;&#x8BBE;&#x7F6E; CQL &#x65F6;&#xFF0C;&#x53EA;&#x80FD;&#x5728; CQL &#x8BED;&#x53E5;&#x4E2D;&#x8BBE;&#x5B9A;&#x76EE;&#x6807;&#x673A;&#x5668;&#x7684;&#x7C7B;&#x578B;</p>
+</blockquote>
+<h3 id="-receiver">&#x81EA;&#x5B9A;&#x4E49; Receiver</h3>
+<p version="6a9c503b1fdeb71dbefc50b03fb1794d">&#x5982;&#x679C;&#x4F60;&#x60F3;&#x63A8;&#x9001;&#x6D88;&#x606F;&#xFF0C;&#x4F46;&#x4E0D;&#x663E;&#x793A;&#x5728; Andoid &#x7CFB;&#x7EDF;&#x7684;&#x901A;&#x77E5;&#x680F;&#x4E2D;&#xFF0C;&#x800C;&#x662F;&#x6267;&#x884C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728;&#x4F60;&#x7684; Android &#x9879;&#x76EE;&#x4E2D;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#xFF1A;</p>
+<ul>
+<li>AndroidManifest.xml &#x4E2D;&#x58F0;&#x660E;&#x4F60;&#x7684; Receiver</li>
+</ul>
+<pre version="f1d6faa88a05d1b24cfe64d226f7c2d2"><code class="lang-xml">&lt;receiver android:name=&quot;com.avos.avoscloud.PushDemo.MyCustomReceiver&quot; android:exported=&quot;false&quot;&gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot; /&gt;
+        &lt;action android:name=&quot;android.intent.action.USER_PRESENT&quot; /&gt;
+        &lt;action android:name=&quot;android.net.conn.CONNECTIVITY_CHANGE&quot; /&gt;
+        &lt;action android:name=&quot;com.avos.UPDATE_STATUS&quot; /&gt;
+    &lt;/intent-filter&gt;
+&lt;/receiver&gt;
+</code></pre>
+<p version="03a1f745fe2350ffd92021f67ef52c9e">&#x5176;&#x4E2D; com.avos.avoscloud.PushDemo.MyCustomReceiver &#x662F;&#x4F60;&#x7684; Android &#x7684; Receiver &#x7C7B;&#x3002;</p>
+<p version="6262ecb50afc0c1ef34ff260a4029cc9">&#x800C; <code>&lt;action android:name=&quot;com.avos.UPDATE_STATUS&quot; /&gt;</code> &#x9700;&#x8981;&#x4E0E; push &#x7684; data &#x4E2D;&#x6307;&#x5B9A;&#x7684; action &#x76F8;&#x5BF9;&#x5E94;&#x3002;</p>
+<ul>
+<li>&#x4F60;&#x7684; Receiver &#x53EF;&#x4EE5;&#x6309;&#x7167;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;</li>
+</ul>
+<pre version="2c60d6e664371ae8c8fe14f981ccb3e4"><code class="lang-java">public class MyCustomReceiver extends BroadcastReceiver {
+    private static final String TAG = &quot;MyCustomReceiver&quot;;
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        LogUtil.log.d(TAG, &quot;Get Broadcat&quot;);
+        try {
+            String action = intent.getAction();
+            String channel = intent.getExtras().getString(&quot;com.avos.avoscloud.Channel&quot;);
+            //&#x83B7;&#x53D6;&#x6D88;&#x606F;&#x5185;&#x5BB9;
+            JSONObject json = new JSONObject(intent.getExtras().getString(&quot;com.avos.avoscloud.Data&quot;));
+
+            Log.d(TAG, &quot;got action &quot; + action + &quot; on channel &quot; + channel + &quot; with:&quot;);
+            Iterator itr = json.keys();
+            while (itr.hasNext()) {
+                String key = (String) itr.next();
+                Log.d(TAG, &quot;...&quot; + key + &quot; =&gt; &quot; + json.getString(key));
+            }
+        } catch (JSONException e) {
+            Log.d(TAG, &quot;JSONException: &quot; + e.getMessage());
+        }
+    }
+}
+</code></pre>
+<ul>
+<li>&#x540C;&#x65F6;&#xFF0C;&#x8981;&#x6C42;&#x53D1;&#x9001;&#x63A8;&#x9001;&#x7684;&#x8BF7;&#x6C42;&#x4E5F;&#x505A;&#x76F8;&#x5E94;&#x66F4;&#x6539;&#xFF0C;&#x4F8B;&#x5982;</li>
+</ul>
+<pre version="7c102e3de0152575315ba38d86e71bfd"><code class="lang-sh">curl -X POST \
+  -H &quot;X-LC-Id: {{appid}}&quot;          \
+  -H &quot;X-LC-Key: {{appkey}}&quot;        \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &apos;{
+        &quot;channels&quot;:[ &quot;public&quot;],
+        &quot;data&quot;: {
+          &quot;action&quot;: &quot;com.avos.UPDATE_STATUS&quot;,
+          &quot;name&quot;: &quot;LeanCloud.&quot;
+        }
+      }&apos; \
+  https://leancloud.cn/1.1/push
+</code></pre>
+<p version="5f5d831b445838dd6feed6eab78b2281">&#x8BF7;&#x6CE8;&#x610F;&#xFF1A;<strong>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7684; Receiver&#xFF0C;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;&#x5FC5;&#x987B;&#x5E26; action&#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x503C;&#x5728;&#x81EA;&#x5B9A;&#x4E49;&#x7684; Receiver &#x914D;&#x7F6E;&#x7684; <intent-filter> &#x5217;&#x8868;&#x91CC;&#x5B58;&#x5728;&#xFF0C;&#x6BD4;&#x5982;&#x8FD9;&#x91CC;&#x7684;&apos;com.avos.UPDATE_STATUS&apos;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x81EA;&#x5DF1;&#x7684; action&#xFF0C;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x8DDF;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#x6DF7;&#x6DC6;&#xFF0C;&#x63A8;&#x8350;&#x91C7;&#x7528;&#x57DF;&#x540D;&#x6765;&#x5B9A;&#x4E49;</intent-filter></strong></p>
+<h3 id="-android-">&#x8DDF;&#x8E2A; Android &#x63A8;&#x9001;&#x548C;&#x5E94;&#x7528;&#x7684;&#x6253;&#x5F00;&#x60C5;&#x51B5;</h3>
+<p version="86230adc2a5ead135030b6fffb24d31f">&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x8BA2;&#x9605;&#x9891;&#x9053;&#x5BF9;&#x5E94;&#x7684; Activity &#x4E2D;&#x6DFB;&#x52A0;&#x8DDF;&#x8E2A;&#x5E94;&#x7528;&#x6253;&#x5F00;&#x60C5;&#x51B5;&#x7684;&#x7EDF;&#x8BA1;&#x4EE3;&#x7801;&#xFF0C;&#x4F60;&#x7684; Activity &#x53EF;&#x4EE5;&#x6309;&#x7167;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0; <code>onStart</code> &#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="166676907d7bbd4d4b987d8788997876"><code class="lang-java">public class MyActivity extends Activity {
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Intent intent = getIntent();
+        AVAnalytics.trackAppOpened(intent);
+    }
+}
+</code></pre>
+<p version="144c28b1e15bf4629e1bd9dbe70f4068">&#x4F60;&#x53EF;&#x4EE5;&#x5728; <a href="/apistat.html?appid={{appid}}#/_appOpenWithPush">&#x8BF7;&#x6C42;&#x5206;&#x6790;</a> &#x83DC;&#x5355;&#x91CC;&#x770B;&#x5230;&#x901A;&#x77E5;&#x548C;&#x5E94;&#x7528;&#x7684;&#x6253;&#x5F00;&#x60C5;&#x51B5;&#x3002;</p>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

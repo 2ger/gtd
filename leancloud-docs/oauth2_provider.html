@@ -1,0 +1,713 @@
+<!doctype html>
+
+<html version="fa781854694d0d6fc27eba25e9a8514f">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="leancloud-">LeanCloud &#x5F00;&#x653E;&#x5E73;&#x53F0;</h1>
+<p version="b3b2e11b8dbbc501718b33b131c6d3a5">&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x6807;&#x51C6;&#x7684; OAuth2 &#x534F;&#x8BAE;&#xFF0C;&#x5141;&#x8BB8;&#x7B2C;&#x4E09;&#x65B9;&#x63A5;&#x5165;&#x6211;&#x4EEC;&#x7684;&#x5E73;&#x53F0;&#xFF0C;&#x8C03;&#x7528;&#x5F00;&#x653E; API &#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x3001;&#x5E94;&#x7528;&#x4FE1;&#x606F;&#x3001;&#x521B;&#x5EFA;&#x5E94;&#x7528;&#x7B49;&#x3002;</p>
+<p version="fb571b641143ef2ca624ddd2030f3ea3">&#x6211;&#x4EEC;&#x7684;&#x5F00;&#x53D1;&#x8005;&#x5E73;&#x53F0;&#x4ECD;&#x7136;&#x5728;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x56E0;&#x6B64;&#x76EE;&#x524D;&#x4F60;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x5E2E;&#x52A9;&#x83DC;&#x5355;&#x7684;&#x6280;&#x672F;&#x652F;&#x6301;&#x63D0;&#x51FA;&#x63A5;&#x5165;&#x7533;&#x8BF7;&#xFF0C;&#x8981;&#x6C42;&#x63D0;&#x4F9B;&#x4E0B;&#x5217;&#x4FE1;&#x606F;&#xFF1A;</p>
+<ul>
+<li>LeanCloud &#x5E10;&#x6237;&#x90AE;&#x7BB1;</li>
+<li>&#x7533;&#x8BF7;&#x8005;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF1A;&#x540D;&#x79F0;&#xFF08;&#x4E2A;&#x4EBA;&#x6216;&#x8005;&#x516C;&#x53F8;&#xFF09;&#x3001;&#x5730;&#x5740;&#x3001;&#x8054;&#x7CFB;&#x65B9;&#x5F0F;&#xFF08;&#x624B;&#x673A;&#x6216;&#x8005;&#x7535;&#x8BDD;&#xFF09;&#x7B49;&#x3002;</li>
+<li>&#x7533;&#x8BF7;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5E73;&#x53F0;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF1A; &#x540D;&#x79F0;&#x3001;&#x4ECB;&#x7ECD;&#x63CF;&#x8FF0;&#x3001;&#x7F51;&#x7AD9;&#x5730;&#x5740;</li>
+<li>&#x671F;&#x671B;&#x7684;&#x63A5;&#x5165;&#x65B9;&#x5F0F;&#xFF1A; OAuth2 &#x63A5;&#x5165; &#x6216;&#x8005; connect &#x65B9;&#x5F0F;&#x63A5;&#x5165;&#xFF0C;&#x8BE6;&#x60C5;&#x89C1;&#x4E0B;&#x6587;&#x3002;</li>
+</ul>
+<p version="fb2f1056243f69f8a618fc38c6164cb3">&#x5728;&#x7533;&#x8BF7;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x53D1;&#x9001; client id &#x548C; client secret &#x63D0;&#x4F9B;&#x7ED9;&#x4F60;&#x63A5;&#x5165;&#x3002;</p>
+<h2 id="oauth2-">OAuth2 &#x63A5;&#x5165;</h2>
+<p version="a33decedd619c37fabe4ff7d5cb16e9c">&#x76EE;&#x524D; LeanCloud &#x652F;&#x6301;&#x7684; OAuth2 &#x6388;&#x6743;&#x65B9;&#x5F0F;&#x4EC5;&#x9650; <a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-25#section-4.1">authorization_code</a>&#x3002;&#x7B80;&#x5355;&#x6982;&#x62EC;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li>&#x7B2C;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#x5411; LeanCloud &#x8BF7;&#x6C42;&#x6388;&#x6743;</li>
+<li>LeanCloud &#x4E3A;&#x7528;&#x6237;&#x5C55;&#x73B0;&#x4E00;&#x4E2A;&#x6388;&#x6743;&#x9875;&#x9762;&#xFF08;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x767B;&#x5F55;&#xFF0C;&#x5219;&#x767B;&#x5F55;&#x540E;&#x663E;&#x793A;&#x6388;&#x6743;&#x9875;&#x9762;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5E10;&#x6237;&#xFF0C;&#x63D0;&#x4F9B;&#x6CE8;&#x518C;&#x8FDE;&#x63A5;&#x3002;&#xFF09;&#xFF0C;&#x7528;&#x6237;&#x5728;&#x6B64;&#x9875;&#x9762;&#x786E;&#x8BA4;&#x662F;&#x5426;&#x540C;&#x610F;&#x5E94;&#x7528;&#x7684;&#x8BF7;&#x6C42;</li>
+<li>&#x5982;&#x679C;&#x7528;&#x6237;&#x540C;&#x610F;&#x6388;&#x6743;&#xFF0C;&#x7B2C;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#x9996;&#x5148;&#x62FF;&#x5230;&#x4E00;&#x4E2A; <code>code</code>&#xFF0C;&#x901A;&#x8FC7; code &#x8BF7;&#x6C42; LeanCloud &#x83B7;&#x53D6;&#x7528;&#x6237;&#x7684;&#x8BBF;&#x95EE;&#x4EE4;&#x724C;<code>access_token</code>&#x3002;</li>
+<li>&#x7B2C;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#x4F7F;&#x7528; <code>access_token</code> &#x8C03;&#x7528; LeanCloud &#x7684;&#x5F00;&#x653E; API&#x3002;</li>
+</ul>
+<p version="21c78a56603a46ee11ca12de67ef0a42">LeanCloud &#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;&#x670D;&#x52A1;&#x5668;&#x7684;WEB&#x5E94;&#x7528;&#x7684;&#x6388;&#x6743;&#x6D41;&#x7A0B;&#xFF08;server-side flow&#xFF09;&#x3002;&#x5E76;&#x4E14;&#x6682;&#x4E0D;&#x652F;&#x6301; access_token &#x7684;&#x5237;&#x65B0;&#x673A;&#x5236;&#x3002;</p>
+<h3 id="-">&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x7533;&#x8BF7;&#x6388;&#x6743;</h3>
+<p version="911156539f922134e5fbced6a059b106">&#x6BCF;&#x4E2A;&#x7B2C;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#x90FD;&#x4F1A;&#x5206;&#x914D;&#x4E00;&#x4E2A; Client Key &#x548C; Client Secret&#xFF0C;&#x7528;&#x4E8E;&#x9274;&#x6743;&#x3002;</p>
+<p version="8de503201e2dd03e4c27c0a9af09c4cf">&#x7B2C;&#x4E00;&#x6B65;&#x6388;&#x6743;&#xFF0C;&#x5C06;&#x7528;&#x6237;&#x4ECE;&#x6D4F;&#x89C8;&#x5668;&#x5185;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x4E0B;&#x5217;URL&#xFF1A;</p>
+<div ng-non-bindable="">
+
+<code>GET https://leancloud.cn/1.1/authorize?client_id={{client_key}}&amp;response_type=code&amp;redirect_uri={{&#x7B2C;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#x7684;&#x56DE;&#x6389;URL}}&amp;scope={{&#x6743;&#x9650;&#x8303;&#x56F4;}}&amp;state={{uuid}}</code>
+</div>
+&#x5176;&#x4E2D;:
+
+<em> client_id      &#xFF08;&#x5FC5;&#x987B;&#xFF09;&#x5E94;&#x7528;&#x5206;&#x914D;&#x7684;<code>Client Key</code>
+</em> response_type  &#xFF08;&#x5FC5;&#x987B;&#xFF09;&#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301; <a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-25#section-4.1">authorization_code</a>&#x6388;&#x6743;&#xFF0C;&#x56E0;&#x6B64;&#x8BF7;&#x8BBE;&#x7F6E;&#x4E3A;<code>code</code>&#x3002;
+<em> scope          &#xFF08;&#x5FC5;&#x987B;&#xFF09;API&#x6388;&#x6743;&#x8303;&#x56F4;&#xFF0C;&#x7A7A;&#x683C;&#x9694;&#x5F00;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5217;&#x8868;&#xFF0C;&#x76EE;&#x524D;&#x652F;&#x6301;&#x7684; API &#x6743;&#x9650;&#x8BE6;&#x89C1;&#x4E0B;&#x6587;&#x3002;
+</em> redirect_uri   &#x7528;&#x6237;&#x6388;&#x6743;&#x6210;&#x529F;&#x6216;&#x8005;&#x5931;&#x8D25;&#x540E;&#xFF0C;&#x56DE;&#x6389;&#x7B2C;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#x7684; URL &#xFF0C;&#x5C06;&#x4F1A;&#x5E26;&#x4E0A;<code>code</code>&#x503C;&#x6216;&#x8005;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;
+* state          &#xFF08;&#x53EF;&#x9009;&#xFF09;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#xFF0C;&#x5EFA;&#x8BAE;&#x52A0;&#x4E0A;&#xFF0C;&#x5185;&#x90E8;&#x5E94;&#x5305;&#x542B;&#x968F;&#x673A;&#x5E76;&#x4E14;&#x552F;&#x4E00;&#x7684;&#x503C;&#xFF0C;&#x5F53; redirect_uri &#x56DE;&#x6389;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x5E26;&#x4E0A;&#x8FD9;&#x4E2A;state&#x8FD4;&#x56DE;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x9632;&#x6B62; CSRF &#x653B;&#x51FB;&#x3002;
+
+&#x8C03;&#x7528;&#x8FD9;&#x4E2A; API &#x540E;&#xFF0C; LeanCloud &#x4F1A;&#x4E3A;&#x7528;&#x6237;&#x5C55;&#x793A;&#x4E00;&#x4E2A;&#x6388;&#x6743;&#x9875;&#x9762;&#xFF1A;
+
+<img src="images/authorize.png" alt="image">
+
+&#x5047;&#x8BBE; redirect_uri &#x4E3A; <code>http://exmaple.com/oauth2/callback</code> &#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x7528;&#x6237;&#x786E;&#x8BA4;&#x6388;&#x6743;&#x540E;&#xFF0C;&#x4F1A;&#x52A0;&#x5165;code&#x503C;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x8FD9;&#x4E2A; URL:
+<div ng-non-bindable="">
+
+<code>GET http://exmaple.com/oauth2/callback?state={{&#x4F20;&#x5165;&#x7684;state}}&amp;code={{code&#x968F;&#x673A;&#x7801;}}</code>
+
+</div>
+
+<p version="b2a1a1f13def0f3eb65309cadc5d733a"><strong>code &#x7684;&#x6709;&#x6548;&#x65F6;&#x95F4;&#x662F;5&#x5206;&#x949F;</strong>&#x3002;</p>
+<p version="4bbe8523b6197932d63d4ec272e61ae6"><code>scope</code>&#x76EE;&#x524D;&#x652F;&#x6301;&#xFF1A;</p>
+<ul>
+<li><code>client:info</code> &#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x9ED8;&#x8BA4;&#x5FC5;&#x9009;</li>
+<li><code>client:detail</code> &#x83B7;&#x53D6;&#x7528;&#x6237;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x5305;&#x62EC;&#x8054;&#x7CFB;&#x65B9;&#x5F0F;&#x7B49; (<strong>&#x654F;&#x611F;&#x6743;&#x9650;</strong>)</li>
+<li><code>app:info</code> &#x83B7;&#x53D6;&#x5E94;&#x7528;&#x5217;&#x8868;&#x548C;&#x4FE1;&#x606F;&#xFF0C;&#x5305;&#x62EC; app id&#xFF0C;&#x4E0D;&#x5305;&#x62EC; key &#x7B49;&#x654F;&#x611F;&#x4FE1;&#x606F;&#x3002;</li>
+<li><code>app:key</code> &#x83B7;&#x53D6;&#x5E94;&#x7528;&#x7684; app id &#x548C; app key&#x3002;(<strong>&#x654F;&#x611F;&#x6743;&#x9650;</strong>)</li>
+<li><code>app:create</code> &#x521B;&#x5EFA;&#x5E94;&#x7528;&#x3002;</li>
+<li><code>app:delete</code> &#x5220;&#x9664;&#x5E94;&#x7528;&#x3002;</li>
+<li><code>app:settings</code> &#x4FEE;&#x6539;&#x5E94;&#x7528;&#x8BBE;&#x7F6E;&#x3002;</li>
+</ul>
+<h4 id="-">&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x83B7;&#x53D6;&#x4EE4;&#x724C;</h4>
+<p version="ae503b3a2abc2ab64e3de43a930ddebc">&#x7528;&#x6237;&#x6388;&#x6743;&#x540E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x56DE;&#x6389;&#x4E2D;&#x62FF;&#x5230;&#x6388;&#x6743; code &#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A; code &#x53BB; LeanCloud &#x8BF7;&#x6C42;&#x8BBF;&#x95EE;&#x4EE4;&#x724C;(access_token)&#x3002;&#x670D;&#x52A1;&#x7AEF;&#x76F4;&#x63A5;&#x901A;&#x8FC7; http client &#x8C03;&#x7528;&#x4E0B;&#x5217;URL&#xFF1A;</p>
+<div ng-non-bindable="">
+
+<pre version="9b00d489e8765fe251c577fb75b307f3"><code>GET  https://leancloud.cn/1.1/token?grant_type=authorization_code&amp;client_id={{client_key}}&amp;client_secret={{client_secret}}&amp;code={{&#x7B2C;&#x4E00;&#x6B65;&#x8FD4;&#x56DE;&#x7684;code}}&amp;redirect_uri={{&#x7B2C;&#x4E00;&#x6B65;&#x4F7F;&#x7528;&#x7684;redirect_uri}}
+</code></pre><p></p></div>
+&#x5176;&#x4E2D;<code>client_id</code>&#x548C;<code>client_key</code>&#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A; http basic &#x8BA4;&#x8BC1;&#x7684;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x4F20;&#x5165;&#x3002;<p></p>
+<p version="9ff9170301aa7e03ac9ca054fa6112e7">&#x5404;&#x53C2;&#x6570;&#x542B;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>grant_type &#x6388;&#x6743;&#x7C7B;&#x578B;&#xFF0C;&#x540C;&#x6837;&#xFF0C;&#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;<code>authorization_code</code>&#x3002;</li>
+<li>client_id  &#x4E5F;&#x5C31;&#x662F;&#x5E94;&#x7528;&#x7684; client key</li>
+<li>client_secret &#x4E5F;&#x5C31;&#x662F;&#x5E94;&#x7528;&#x7684; client secret</li>
+<li>code &#x7B2C;&#x4E00;&#x6B65; redirect_uri &#x8FD4;&#x56DE;&#x7684; <code>code</code></li>
+<li>redirect_uri &#x7B2C;&#x4E00;&#x6B65;&#x4F7F;&#x7528;&#x7684;<code>redirect_uri</code>&#xFF0C;&#x5FC5;&#x987B;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x3002;</li>
+</ul>
+<p version="f1d1b3548c02759b175dc5a3027f5c22">&#x8C03;&#x7528;&#x6210;&#x529F;&#xFF0C;LeanCloud &#x5C06;&#x8FD4;&#x56DE;JSON&#x683C;&#x5F0F;&#x6570;&#x636E;&#xFF1A;</p>
+<pre version="03f64558380dc317b46dbc531a44ffe6"><code class="lang-json">{
+  access_token: &quot;29a3x72flkb3dy8bdsinexemh7n0h7z9&quot;,
+  expires_in: 86400,
+  token_type: &quot;bearer&quot;,
+  uid: 15
+}
+</code></pre>
+<p version="bfc8e6f3861f0a2272b1164c62d46527">&#x7ED3;&#x679C;&#x542B;&#x4E49;&#xFF1A;</p>
+<ul>
+<li>token_type:  &#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;<code>bearer</code>&#x7C7B;&#x578B;&#x3002;</li>
+<li>access_token: &#x8BE5;&#x7528;&#x6237;&#x6388;&#x6743;&#x7ED9;&#x672C;&#x5E94;&#x7528;&#x7684;&#x8BBF;&#x95EE;&#x4EE4;&#x724C;</li>
+<li>expires_in: &#x8FC7;&#x671F;&#x65F6;&#x95F4;&#xFF0C;&#x6682;&#x65F6;&#x53EF;&#x5FFD;&#x7565;&#x3002;</li>
+<li>uid: &#x6388;&#x6743;&#x7528;&#x6237;&#x5728; LeanCloud &#x4E0A;&#x7684;&#x552F;&#x4E00; ID&#x3002;</li>
+</ul>
+<h2 id="connect-">Connect &#x63A5;&#x5165;</h2>
+<p version="c9b0cae9af8b7468f7b8262f42886bdd">&#x5BF9;&#x4E8E;&#x90E8;&#x5206;&#x5408;&#x4F5C;&#x4F19;&#x4F34;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86; <code>/1.1/connect</code> &#x7684; API &#x7528;&#x4E8E;&#x5FEB;&#x901F;&#x63A5;&#x5165;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A; API &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x521B;&#x5EFA;&#x6216;&#x8005;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x5E10;&#x53F7;&#x4FE1;&#x606F;&#xFF0C;&#x7528;&#x6237;&#x4E0D;&#x9700;&#x8981;&#x505A;&#x6388;&#x6743;&#xFF0C;&#x800C;&#x662F;&#x521B;&#x5EFA;&#x5728;&#x8BE5;&#x5408;&#x4F5C;&#x4F19;&#x4F34;&#x201C;namespace&#x201D;&#x4E0B;&#x7684;&#x5E10;&#x53F7;&#xFF0C;&#x8DDF; LeanCloud &#x5E73;&#x53F0;&#x4E0A;&#x7684;&#x5E10;&#x53F7;&#x9694;&#x79BB;&#x3002;<strong>&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x7528;&#x6237;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x90AE;&#x7BB1;&#x5728; LeanCloud &#x4E0A;&#x6CE8;&#x518C;&#xFF0C;&#x7B2C;&#x4E09;&#x65B9;&#x5408;&#x4F5C;&#x4F19;&#x4F34;&#x518D;&#x62FF;&#x8FD9;&#x4E2A;&#x90AE;&#x7BB1;&#x5230; LeanCloud &#x5E73;&#x53F0;&#x63A5;&#x5165;&#xFF0C;&#x4E24;&#x4E2A;&#x5E10;&#x53F7;&#x5C06;&#x662F;&#x72EC;&#x7ACB;&#x9694;&#x79BB;&#x7684;&#xFF0C;&#x524D;&#x8005;&#x5728; LeanCloud &#x540D;&#x4E0B;&#xFF0C;&#x800C;&#x540E;&#x8005;&#x5728;&#x7B2C;&#x4E09;&#x65B9;&#x5408;&#x4F5C;&#x4F19;&#x4F34;&#x540D;&#x4E0B;&#x3002;</strong></p>
+<p version="7246c6c21884576f42621c194d7bfc5b"><code>[GET | POST] /1.1/connect</code> API &#x63A5;&#x6536;&#x4E0B;&#x5217;&#x53C2;&#x6570;&#xFF1A;</p>
+<pre version="2b726c571c3571da738145e3c3336aa7"><code>[GET | POST] /1.1/connect?client_id={{client_id}}&amp;email={{email}}&amp;username={{username}}&amp;timestamp={{timestamp}}&amp;scope={{scope}}&amp;sign={{sign}}
+</code></pre><p version="e332dfbfb1fcbcc167fb62d5a41d6106">&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li>client_id&#xFF08;&#x5FC5;&#x987B;&#xFF09;&#xFF1A; &#x7B2C;&#x4E09;&#x65B9;&#x5E73;&#x53F0;&#x5206;&#x914D;&#x5230;&#x7684;&#x5E94;&#x7528; client key&#x3002;</li>
+<li>email&#xFF08;&#x5FC5;&#x987B;&#xFF09;: &#x7528;&#x6237;&#x7684;&#x5E10;&#x6237;&#x90AE;&#x7BB1;&#xFF0C;LeanCloud &#x5C06;&#x4F7F;&#x7528;&#x8BE5;&#x90AE;&#x7BB1;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7B2C;&#x4E09;&#x65B9;&#x5E73;&#x53F0;&#x540D;&#x4E0B;&#x7684;&#x5E10;&#x6237;&#xFF0C;&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x6388;&#x6743;&#x4FE1;&#x606F;&#x3002;</li>
+<li>username&#xFF08;&#x53EF;&#x9009;&#xFF09;&#xFF1A;&#x7528;&#x6237;&#x7684;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x53EF;&#x9009;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x63D0;&#x4F9B;&#xFF0C;&#x5C06;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x7528;&#x6237;&#x540D;&#x3002;&#x8BE5;&#x7528;&#x6237;&#x540D;&#x5FC5;&#x987B;&#x5728; LeanCloud &#x5E73;&#x53F0;&#x4E0A;&#x552F;&#x4E00;&#x3002;</li>
+<li>timestamp&#xFF08;&#x5FC5;&#x987B;&#xFF09;&#xFF1A; Unix&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x6BEB;&#x79D2;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x6233;&#x4E0D;&#x80FD;&#x8DDF; LeanCloud &#x670D;&#x52A1;&#x7AEF;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7;10&#x79D2;&#x3002;</li>
+<li>scope&#xFF08;&#x5FC5;&#x987B;&#xFF09;&#xFF1A; &#x6388;&#x6743;&#x8303;&#x56F4;&#xFF0C;&#x8BF7;&#x770B;<a href="#&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x7533;&#x8BF7;&#x6388;&#x6743;">OAuth2&#x63A5;&#x5165;&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x7533;&#x8BF7;&#x6388;&#x6743;</a></li>
+<li>sign&#xFF08;&#x5FC5;&#x987B;&#xFF09;&#xFF1A;&#x8BF7;&#x6C42;&#x7B7E;&#x540D;&#xFF0C;&#x7B7E;&#x540D;&#x89C4;&#x5219;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<p version="7eed0f8ac1f92f61eb9152afac7e0984">&#x5BF9;&#x9664;&#x4E86;sign&#x4E4B;&#x5916;&#x7684;&#x6240;&#x6709;&#x53C2;&#x6570;&#x6309;&#x7167;&#x540D;&#x79F0;&#x6392;&#x5E8F;&#xFF0C;&#x5E76;&#x62FC;&#x63A5;&#x5230; URL &quot;/1.1/connect?&quot; &#x4E4B;&#x540E;&#xFF0C;&#x5F62;&#x6210;&#x4E0B;&#x5217;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;</p>
+<pre version="f174a417fef35205b9d7a202d1496bd9"><code>/1.1/connect?client_id={{client_id}}&amp;email={{email}}&amp;scope={{scope}}&amp;timestamp={{timestamp}}&amp;username={{username}}
+</code></pre><p version="58c518183dda7151e3ecc54b346e31f8"><strong>&#x5207;&#x8BB0;&#xFF0C;&#x4E0D;&#x8981;&#x5BF9;&#x53C2;&#x6570;&#x540D;&#x548C;&#x503C;&#xFF0C;&#x4EE5;&#x53CA;&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x505A;&#x4EFB;&#x4F55; URL encode &#x6216;&#x8005; escape &#x64CD;&#x4F5C;</strong></p>
+<p version="73ae9ae358395096f191838737f74c05">&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x5BF9;&#x8FD9;&#x4E2A;&#x8DEF;&#x5F84;&#x5B57;&#x7B26;&#x4E32;&#x4F7F;&#x7528; <code>client secret</code> &#x548C; <a href="http://en.wikipedia.org/wiki/Hash-based_message_authentication_code">SHA256 Hmac</a>&#x7B97;&#x6CD5;&#x505A;&#x7B7E;&#x540D;&#xFF0C;&#x6700;&#x7EC8;&#x7684;&#x503C;&#x4F5C;&#x4E3A;<code>sign</code>&#x53C2;&#x6570;&#x503C;&#x3002;</p>
+<p version="f61ee3efb23ba8ebc4bb15bf2ac7e7c5">&#x6211;&#x4EEC;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5047;&#x8BBE;&#x8DEF;&#x5F84;&#x5B57;&#x7B26;&#x4E32;&#x6700;&#x7EC8;&#x4E3A;&#xFF1A;</p>
+<pre version="5f5d8136ee69dfaf095a0f6c9e0a9135"><code>/1.1/connect?client_id=jl04l2081eczultsb7drrzxfxc5a30wh&amp;email=test@example.com&amp;scope=client:info app:info&amp;timestamp=1405222829000&amp;username=dennis
+</code></pre><p version="0a80373d8f1c95c9567d21eaafc8fa2f">&#x5047;&#x8BBE; client secret &#x662F;<code>s84rvq98u8j3wnklkznguo38vsvys6vo</code>&#xFF1A;&#x90A3;&#x4E48; sign &#x7B7E;&#x540D;&#x5C31;&#x662F;&#xFF1A;</p>
+<pre version="cdfb79e1494d5dd6b1836b5dea48a330"><code>sha256_hmac(&quot;s84rvq98u8j3wnklkznguo38vsvys6vo&quot;, base_path)
+  =  16e279d3d0cfcfb9b8dbd84cdd8f6ea66ba6120c5fca1b6371c4974fe8ffeefd
+</code></pre><p version="9746b0e126982570046bef527cb74803">&#x6700;&#x7EC8;&#x8C03;&#x7528;&#x7684; URL &#x5C31;&#x662F;&#xFF1A;</p>
+<pre version="861d1ba7335fa0da10e9a91de17955cf"><code>https://leancloud.cn/1.1/connect?client_id=jl04l2081eczultsb7drrzxfxc5a30wh&amp;email=test@example.com&amp;scope=client:info app:info&amp;timestamp=1405222829000&amp;username=dennis&amp;sign=16e279d3d0cfcfb9b8dbd84cdd8f6ea66ba6120c5fca1b6371c4974fe8ffeefd
+</code></pre><p version="3f982ff426904e483adb9875a0cd52af">SHA256 Hmac &#x7B7E;&#x540D;&#x8981;&#x6C42;&#x90FD;&#x662F;&#x91C7;&#x7528; 16 &#x8FDB;&#x5236;&#x7F16;&#x7801;&#xFF0C;&#x800C;&#x975E; base64 &#x7B49;&#x65B9;&#x5F0F;&#x3002;Java &#x5E73;&#x53F0;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x8FD9;&#x7BC7;<a href="http://www.supermind.org/blog/1102/generating-hmac-md5-sha1-sha256-etc-in-java">&#x535A;&#x5BA2;
+</a> &#x6216;&#x8005;&#x4F7F;&#x7528; <a href="http://commons.apache.org/codec/">commons-codec</a> &#x5E93;&#x3002;</p>
+<p version="dd297e152a180b85e06c40c61c931b97">&#x4E0B;&#x9762;&#x7ED9;&#x4E00;&#x6BB5;&#x6D4B;&#x8BD5;&#x7B7E;&#x540D;&#x7684; Ruby &#x4EE3;&#x7801;&#xFF1A;</p>
+<pre version="b43a6420b93695f31a8ae0df52cdafab"><code class="lang-ruby">require &apos;openssl&apos;
+
+timestamp = Time.now.to_i * 1000
+scope = &quot;client:info app:info&quot;
+client_id = &quot;jl04l2081eczultsb7drrzxfxc5a30wh&quot;
+client_secret = &quot;s84rvq98u8j3wnklkznguo38vsvys6vo&quot;
+email = &quot;test@example.com&quot;
+username = &quot;dennis&quot;
+
+base_url = &quot;/1.1/connect?client_id=#{client_id}&amp;email=#{email}&amp;scope=#{scope}&amp;timestamp=#{timestamp}&amp;username=#{username}&quot;
+
+sign = OpenSSL::HMAC.hexdigest(OpenSSL::Digest::Digest.new(&apos;SHA256&apos;), client_secret, base_url)
+
+puts base_url
+puts sign
+</code></pre>
+<p version="8d4a8289a123ce7c49d3afae3733ff87"><code>/1.1/connect</code>&#x7684;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x8DDF; OAuth2 &#x7684; <code>/1.1/token</code> &#x63A5;&#x53E3;&#x76F8;&#x540C;&#xFF1A;</p>
+<pre version="03f64558380dc317b46dbc531a44ffe6"><code class="lang-json">{
+  access_token: &quot;29a3x72flkb3dy8bdsinexemh7n0h7z9&quot;,
+  expires_in: 86400,
+  token_type: &quot;bearer&quot;,
+  uid: 15
+}
+</code></pre>
+<p version="37a01bd4e0047caeeb5f1eba09f4b48b">&#x63A5;&#x4E0B;&#x6765;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x62FF;&#x83B7;&#x53D6;&#x5F97;&#x5230;&#x7684; <code>access_token</code> &#x548C; <code>uid</code> &#x53BB;&#x8C03;&#x7528;&#x5F00;&#x653E; API&#xFF08;&#x5728;&#x6388;&#x6743;&#x8303;&#x56F4;&#x5185;&#xFF09;&#x3002;</p>
+<h2 id="-api">&#x5F00;&#x653E; API</h2>
+<p version="a45ab69634b567bb3dfcf175599ba00b">&#x83B7;&#x53D6;&#x4EE4;&#x724C;&#x540E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE4;&#x724C;&#x8BBF;&#x95EE; LeanCloud &#x5E73;&#x53F0;&#x4E0A;&#x7684;&#x5F00;&#x653E; API&#x3002;</p>
+<h3 id="-">&#x7EFC;&#x8FF0;</h3>
+<p version="fea3d6f1103704acdd4424897f10fdf4">&#x8C03;&#x7528;&#x4E0B;&#x5217; API &#x90FD;&#x9700;&#x8981;&#x4F20;&#x5165;&#x6388;&#x6743;&#x5F97;&#x5230;&#x7684;&#x8BBF;&#x95EE;&#x4EE4;&#x724C; <code>access_token</code>&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;:</p>
+<ul>
+<li>&#x5728; API URL &#x4E2D;&#x9644;&#x52A0;&#x4E0A; <code>access_token=xxx</code> &#x53C2;&#x6570;</li>
+<li>&#x6216;&#x8005;&#x4F7F;&#x7528;<code>Authorization: Bearer xxx</code>&#x7684; HTTP &#x5934;&#xFF08;&#x66F4;&#x63A8;&#x8350;&#x7684;&#x65B9;&#x5F0F;&#xFF09;</li>
+</ul>
+<p version="5572ba19b1bc9cfce1c5b2a98cebfa23">&#x6765;&#x4F20;&#x5165;&#x8BBF;&#x95EE;&#x4EE4;&#x724C;&#x3002;</p>
+<p version="88706f05c0ec1c0854e8a13b178d0482">&#x6240;&#x6709;&#x5F00;&#x653E; API &#x90FD;&#x4EE5; <code>https://leancloud.cn/1.1/open</code> &#x4E3A;&#x524D;&#x7F00;&#x3002;
+&#x6240;&#x6709;&#x65E5;&#x671F;&#x683C;&#x5F0F;&#x90FD;&#x4E3A;<code>YYYY-MM-DDTHH:MM:SS.MMMMZ</code>&#x3002;</p>
+<p version="4a141e486d865d90e1810453e24f4bc4">&#x8BF7;&#x6C42;&#x548C;&#x5E94;&#x7B54;&#x90FD;&#x4EE5; JSON &#x683C;&#x5F0F;&#x4F20;&#x8F93;&#xFF0C;&#x8BF7;&#x6C42;&#x8BF7;&#x8BBE;&#x7F6E; <code>Content-Type: applicaiton/json;charset=utf-8</code> &#x7684; HTTP &#x5934;&#x3002;&#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x7801;&#x4E3A;<code>UTF-8</code>&#x3002;</p>
+<h3 id="-">&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF1A;</h3>
+<p version="c5350a35ad452c5127a938ed9c633708">&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x4E5F;&#x4EE5; JSON &#x683C;&#x5F0F;&#x8FD4;&#x56DE;&#xFF0C;&#x5F62;&#x5982;&#xFF1A;</p>
+<pre version="c7216e16a0465d424c805a1122726e51"><code class="lang-json">{
+   &quot;code&quot;: 1,
+   &quot;error&quot;: &quot;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x4EE3;&#x7801;&#x5B57;&#x7B26;&#x4E32;&quot;,
+   &quot;error_description&quot;: &quot;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x8BE6;&#x7EC6;&#x63CF;&#x8FF0;&#xFF08;&#x9644;&#x52A0;&#xFF09;&quot;
+}
+</code></pre>
+<ul>
+<li>code   &#x662F;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x7684;&#x9519;&#x8BEF;&#x4EE3;&#x7801;&#xFF0C;&#x76EE;&#x524D;&#x8FD8;&#x6CA1;&#x6709;&#x7EC6;&#x5206;&#x3002;</li>
+<li>error  &#x9519;&#x8BEF;&#x4EE3;&#x7801;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4F8B;&#x5982;<code>invalid_scope</code>&#x4E4B;&#x7C7B;&#x7684;&#x9519;&#x8BEF;&#x4EE3;&#x7801;&#x3002;</li>
+<li>error_description  &#x8BE6;&#x7EC6;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x8FD4;&#x56DE;&#x3002;</li>
+</ul>
+<h3 id="-">&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;</h3>
+<pre version="ed974ea14404f1e3609d49d3a4640200"><code>GET  /clients/:uid
+</code></pre><ul>
+<li>&#x53C2;&#x6570;&#xFF1A; <code>uid</code>&#x5C31;&#x662F;&#x7528;&#x6237; id&#xFF0C;&#x4EE4;&#x724C;&#x8FD4;&#x56DE;<code>params</code> &#x503C;&#x5305;&#x542B;&#x4E86; <code>uid</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x5B57;&#x7B26;&#x4E32; <code>self</code>&#x6307;&#x4EE3;&#x6388;&#x6743;&#x7528;&#x6237;&#x3002;</li>
+<li>&#x9700;&#x8981;&#x6743;&#x9650;&#xFF1A; <code>client:info</code></li>
+<li>&#x5E94;&#x7B54;&#x7ED3;&#x679C;&#xFF1A;</li>
+</ul>
+<pre version="fb431d2773f0698eddfe2884c580ddc0"><code class="lang-json">{
+username: &quot;beyonce&quot;,
+created: &quot;2013-10-16T21:52:31.000Z&quot;,
+email: &quot;someone@qq.com&quot;,
+id: 15
+}
+</code></pre>
+<h3 id="-">&#x83B7;&#x53D6;&#x7528;&#x6237;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;</h3>
+<pre version="b3974d59b96ef29181cd7fb4bad26aaf"><code>GET  /clients/:uid/detail
+</code></pre><ul>
+<li>&#x53C2;&#x6570;&#xFF1A; <code>uid</code>&#x5C31;&#x662F;&#x7528;&#x6237; id&#xFF0C;&#x4EE4;&#x724C;&#x8FD4;&#x56DE;<code>params</code>&#x503C;&#x5305;&#x542B;&#x4E86;<code>uid</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x5B57;&#x7B26;&#x4E32;<code>self</code>&#x6307;&#x4EE3;&#x6388;&#x6743;&#x7528;&#x6237;&#x3002;</li>
+<li>&#x9700;&#x8981;&#x6743;&#x9650;&#xFF1A; <code>client:detail</code></li>
+<li>&#x5E94;&#x7B54;&#x7ED3;&#x679C;&#xFF1A;</li>
+</ul>
+<pre version="e4716082620c7ef8304858e954c9c33f"><code class="lang-json">{
+client_name: &quot;xzhuang&quot;,
+client_type: 1,
+phone: &quot;18xxxxxxxxxxx&quot;,
+company_size: 2,
+company_site: &quot;http://leancloud.cn/&quot;,
+oicq: &quot;xxxxxx&quot;
+&#x2026;&#x2026;
+}
+</code></pre>
+<p version="0b266bbe1ce9ca360bed93cff09a734a">&#x5176;&#x4E2D;</p>
+<ul>
+<li>client_type:  0 &#x8868;&#x793A;&#x4E2A;&#x4EBA;&#x5F00;&#x53D1;&#x8005;&#xFF0C; 1&#x8868;&#x793A;&#x516C;&#x53F8;&#x3002;</li>
+<li>company_size: 0&#x8868;&#x793A;&#x4E2A;&#x4EBA;&#xFF0C;1&#x8868;&#x793A;20&#x4EBA;&#x4EE5;&#x4E0B;&#xFF0C;2&#x8868;&#x793A;200&#x4EBA;&#x4EE5;&#x4E0B;&#xFF0C;3&#x8868;&#x793A;1000&#x4EBA;&#x4EE5;&#x4E0B;&#xFF0C;4&#x8868;&#x793A;5000&#x4EBA;&#x4EE5;&#x4E0B;&#xFF0C;5&#x8868;&#x793A;5000&#x4EBA;&#x4EE5;&#x4E0A;&#x3002;</li>
+</ul>
+<h3 id="-">&#x83B7;&#x53D6;&#x5E94;&#x7528;&#x5217;&#x8868;</h3>
+<pre version="c339ef41ddb8f74bb1225a210e92a5ab"><code>GET /clients/:uid/apps
+</code></pre><ul>
+<li>&#x53C2;&#x6570;&#xFF1A; <code>uid</code>&#x5C31;&#x662F;&#x7528;&#x6237; id&#xFF0C;&#x4EE4;&#x724C;&#x8FD4;&#x56DE;<code>params</code>&#x503C;&#x5305;&#x542B;&#x4E86;<code>uid</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x5B57;&#x7B26;&#x4E32;<code>self</code>&#x6307;&#x4EE3;&#x6388;&#x6743;&#x7528;&#x6237;&#x3002;</li>
+<li>&#x9700;&#x8981;&#x6743;&#x9650;&#xFF1A; <code>app:info</code></li>
+<li>&#x5E94;&#x7B54;&#x7ED3;&#x679C;&#xFF1A;</li>
+</ul>
+<pre version="60e17ad47d657412f54da8f30d77ad34"><code class="lang-json">[
+  {
+    app_id: &quot;blxzylt2g5e8l09zt875hl82nb8clydmvdjotv7ouudltkhj&quot;,
+    client_id: 15,
+    app_relation: &quot;creator&quot;,
+    yesterday_reqs: 0,
+    app_name: &quot;test&quot;,
+    created: &quot;2013-10-16T21:53:24.000Z&quot;,
+    total_user_count: 17,
+    client_username: &quot;xzhuang&quot;,
+    month_reqs: 18,
+    app_domain: &quot;test&quot;,
+    id: 11,
+     description: &quot;&#x6D4B;&#x8BD5;&#x6D4B;&#x8BD5;&quot;
+  },
+  {
+    app_id: &quot;mxrb5nn3qz7drek0etojy5lh4yrwjnk485lqajnsgjwfxrb5&quot;,
+    client_id: 15,
+    app_relation: &quot;creator&quot;,
+    yesterday_reqs: 0,
+    app_name: &quot;JS-SDK-Test&quot;,
+    created: &quot;2014-02-11T14:06:48.000Z&quot;,
+    total_user_count: 26,
+    client_username: &quot;xzhuang&quot;,
+    month_reqs: 1927,
+    app_domain: null,
+    id: 46,
+    description: null
+  }
+]
+</code></pre>
+<h3 id="-">&#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x5E94;&#x7528;&#x4FE1;&#x606F;</h3>
+<pre version="e5270c2fb79b20eee56621779279ae9f"><code class="lang-json">GET /clients/:uid/apps/:app_id
+</code></pre>
+<ul>
+<li>&#x53C2;&#x6570;&#xFF1A; <code>uid</code>&#x5C31;&#x662F;&#x7528;&#x6237; id&#xFF0C;&#x4EE4;&#x724C;&#x8FD4;&#x56DE;<code>params</code>&#x503C;&#x5305;&#x542B;&#x4E86;<code>uid</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x5B57;&#x7B26;&#x4E32;<code>self</code>&#x6307;&#x4EE3;&#x6388;&#x6743;&#x7528;&#x6237;&#x3002;<code>app_id</code>&#x5C31;&#x662F;&#x5E94;&#x7528; id&#x3002;</li>
+<li>&#x9700;&#x8981;&#x6743;&#x9650;&#xFF1A; <code>app:info</code></li>
+<li>&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF1A;</li>
+</ul>
+<pre version="95fad5d14add784f3429f8b40bcd7445"><code class="lang-json">  {
+    app_id: &quot;mxrb5nn3qz7drek0etojy5lh4yrwjnk485lqajnsgjwfxrb5&quot;,
+    client_id: 15,
+    app_relation: &quot;creator&quot;,
+    yesterday_reqs: 0,
+    app_name: &quot;JS-SDK-Test&quot;,
+    created: &quot;2014-02-11T14:06:48.000Z&quot;,
+    total_user_count: 26,
+    client_username: &quot;xzhuang&quot;,
+    month_reqs: 1927,
+    app_domain: null,
+    id: 46,
+    description: null
+  }
+</code></pre>
+<h3 id="-key">&#x83B7;&#x53D6;&#x5E94;&#x7528; Key</h3>
+<pre version="afa5af95a737331c399276f0f341e2c6"><code>GET /clients/:uid/apps/:app_id/key
+</code></pre><ul>
+<li>&#x53C2;&#x6570;&#xFF1A; <code>uid</code>&#x5C31;&#x662F;&#x7528;&#x6237; id&#xFF0C;&#x4EE4;&#x724C;&#x8FD4;&#x56DE;<code>params</code>&#x503C;&#x5305;&#x542B;&#x4E86;<code>uid</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x5B57;&#x7B26;&#x4E32;<code>self</code>&#x6307;&#x4EE3;&#x6388;&#x6743;&#x7528;&#x6237;&#x3002;<code>app_id</code>&#x5C31;&#x662F;&#x5E94;&#x7528; id&#x3002;</li>
+<li>&#x9700;&#x8981;&#x6743;&#x9650;&#xFF1A; <code>app:key</code></li>
+<li>&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF1A;</li>
+</ul>
+<pre version="f2872b3684fab1a4b01b61de1f0fc52d"><code class="lang-json">{
+app_key: &quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;,
+app_id: &quot;blxzylt2g5e8l09zt875hl82nb8clydmvdjotv7ouudltkhj&quot;
+}
+</code></pre>
+<h3 id="-">&#x521B;&#x5EFA;&#x5E94;&#x7528;</h3>
+<pre version="a0ecf1c5cb7651fcbb4780c31cd62e2e"><code>POST /clients/:uid/apps
+</code></pre><ul>
+<li>&#x53C2;&#x6570;&#xFF1A; <code>uid</code>&#x5C31;&#x662F;&#x7528;&#x6237; id&#xFF0C;&#x4EE4;&#x724C;&#x8FD4;&#x56DE;<code>params</code>&#x503C;&#x5305;&#x542B;&#x4E86;<code>uid</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x5B57;&#x7B26;&#x4E32;<code>self</code>&#x6307;&#x4EE3;&#x6388;&#x6743;&#x7528;&#x6237;&#x3002;</li>
+<li>&#x9700;&#x8981;&#x6743;&#x9650;&#xFF1A;<code>app:create</code></li>
+<li>&#x8BF7;&#x6C42;&#x5185;&#x5BB9;&#xFF1A;</li>
+</ul>
+<pre version="fcace14edad68028be724fa2c6d7503c"><code class="lang-json">{
+ &quot;name&quot;: &quot;&#x5E94;&#x7528;&#x540D;&#x79F0;&#xFF0C;&#x5FC5;&#x987B;&#x5728;&#x6388;&#x6743;&#x7528;&#x6237;&#x5E10;&#x6237;&#x5185;&#x552F;&#x4E00;&#x3002;&quot;,
+ &quot;description&quot;: &quot;&#x53EF;&#x9009;&#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&quot;
+}
+</code></pre>
+<ul>
+<li>&#x5E94;&#x7B54;&#x5185;&#x5BB9;&#xFF1A;</li>
+</ul>
+<pre version="0b74ecd2f73c367fe2f04156cf1f83ea"><code class="lang-json">{
+  &quot;created&quot;:&quot;2014-06-27T16:46:12.000Z&quot;,
+  &quot;client_id&quot;:15,
+  &quot;app_name&quot;:&quot;test33333&quot;,
+  &quot;app_key&quot;:&quot;13pbblnbkqy0f4e9pav3n076gjzt5f3sta2ebglgwkg60n80&quot;,
+  &quot;app_id&quot;:&quot;0bf4dvu6h0yhgyk95i2vgkjf3na9tif2gbk554ofen84c726&quot;
+}
+</code></pre>
+<h3 id="-">&#x5220;&#x9664;&#x5E94;&#x7528;</h3>
+<pre version="6392f2d27ab7616f2bacf89354eb746d"><code>DELETE /clients/:uid/apps/:app_id
+</code></pre><ul>
+<li>&#x53C2;&#x6570;&#xFF1A; <code>uid</code>&#x5C31;&#x662F;&#x7528;&#x6237; id&#xFF0C;&#x4EE4;&#x724C;&#x8FD4;&#x56DE;<code>params</code>&#x503C;&#x5305;&#x542B;&#x4E86;<code>uid</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x5B57;&#x7B26;&#x4E32;<code>self</code>&#x6307;&#x4EE3;&#x6388;&#x6743;&#x7528;&#x6237;&#x3002;<code>app_id</code>&#x5C31;&#x662F;&#x5E94;&#x7528; id&#x3002;</li>
+<li>&#x9700;&#x8981;&#x6743;&#x9650;&#xFF1A; <code>app:delete</code></li>
+<li>&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF1A;</li>
+</ul>
+<pre version="481129d06df2532b0cdd10e681d8685b"><code class="lang-json">  {
+  }
+</code></pre>
+<h3 id="-ios-">&#x4E0A;&#x4F20; iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;</h3>
+<pre version="a9e5ddc9f711fc5567a8edbe955ce0de"><code>POST /clients/:uid/apps/:app_id/uploadiOSCertificate
+</code></pre><p version="664977ea35eef0c54b570061e689304f">&#x8981;&#x6C42;&#x4EE5; multipart form &#x7684;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x7684;&#x8868;&#x5355;&#x5F62;&#x5F0F;&#x63D0;&#x4EA4;&#xFF0C;&#x5E76;&#x4E14;&#xFF1A;</p>
+<ul>
+<li>URL &#x53C2;&#x6570;&#xFF1A; <code>uid</code>&#x5C31;&#x662F;&#x7528;&#x6237; id&#xFF0C;&#x4EE4;&#x724C;&#x8FD4;&#x56DE;<code>params</code>&#x503C;&#x5305;&#x542B;&#x4E86;<code>uid</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x5B57;&#x7B26;&#x4E32;<code>self</code>&#x6307;&#x4EE3;&#x6388;&#x6743;&#x7528;&#x6237;&#x3002;<code>app_id</code>&#x5C31;&#x662F;&#x5E94;&#x7528; id&#x3002;</li>
+<li>&#x8868;&#x5355;&#x53C2;&#x6570;&#xFF1A;<code>cert_file</code> &#x5B57;&#x6BB5;&#x662F;&#x8868;&#x5355;&#x91CC; iOS p12 &#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#xFF1B;<code>prod</code> &#x5C5E;&#x6027;&#xFF0C;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#x4E3A; <code>prod</code> &#x6216;&#x8005; <code>dev</code>&#xFF0C;&#x5206;&#x522B;&#x8868;&#x793A;&#x4E0A;&#x4F20;&#x7684;&#x662F; iOS &#x751F;&#x4EA7;&#x73AF;&#x5883;&#x8FD8;&#x662F;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x7684;&#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x3002;</li>
+<li>&#x9700;&#x8981;&#x6743;&#x9650;&#xFF1A; <code>app:settings</code></li>
+<li>&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF1A;</li>
+</ul>
+<pre version="481129d06df2532b0cdd10e681d8685b"><code class="lang-json">  {
+  }
+</code></pre>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

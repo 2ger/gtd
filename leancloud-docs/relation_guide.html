@@ -1,0 +1,627 @@
+<!doctype html>
+
+<html version="ca7c4a08af6ad527bd8e0386e45d676e">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="-">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</h1>
+<p version="b38941f8da23ab34ae6f6b9631f72e83">&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x5B58;&#x5728; 3 &#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5173;&#x7CFB;&#x3002;&#x4E00;&#x5BF9;&#x4E00;&#x5173;&#x7CFB;&#x53EF;&#x4EE5;&#x5C06;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0E;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x3002;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x53EF;&#x4EE5;&#x4F7F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x591A;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5927;&#x91CF;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x590D;&#x6742;&#x5173;&#x7CFB;&#x3002;</p>
+<h2 id="leancloud-">LeanCloud&#x4E2D;&#x7684;&#x5173;&#x7CFB;</h2>
+<p version="2e34306b42868a8ca3ce8d6c14915aa7">LeanCloud&#x4E2D;&#x6709; 4 &#x79CD;&#x65B9;&#x5F0F;&#x6784;&#x5EFA;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF1A;</p>
+<ol>
+<li>Pointers &#xFF08;&#x9002;&#x5408;&#x4E00;&#x5BF9;&#x4E00;&#x548C;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#xFF09;</li>
+<li>Arrays &#xFF08;&#x9002;&#x5408;&#x4E00;&#x5BF9;&#x591A;&#x548C;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#xFF09;</li>
+<li>AVRelation &#xFF08;&#x9002;&#x5408;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#xFF09;</li>
+<li>&#x5173;&#x8054;&#x8868; &#xFF08;&#x9002;&#x5408;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#xFF09;</li>
+</ol>
+<h2 id="-">&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;</h2>
+<p version="f4cc27f9bcfed7ddc9c379bd638f9278">&#x5F53;&#x4F60;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BE5;&#x4F7F;&#x7528; Pointers &#x8FD8;&#x662F; Arrays &#x5B9E;&#x73B0;&#xFF0C;&#x9700;&#x8981;&#x8003;&#x8651;&#x51E0;&#x4E2A;&#x56E0;&#x7D20;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x9700;&#x8981;&#x8003;&#x8651;&#x5173;&#x7CFB;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x5BF9;&#x8C61;&#x6570;&#x91CF;&#x3002;&#x5982;&#x679C;&#x5173;&#x7CFB;&#x300C;&#x591A;&#x300D;&#x65B9;&#x5305;&#x542B;&#x7684;&#x5BF9;&#x8C61;&#x6570;&#x91CF;&#x53EF;&#x80FD;&#x975E;&#x5E38;&#x5927;&#xFF08;&#x5927;&#x4E8E; 100 &#x5DE6;&#x53F3;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x5C31;&#x5FC5;&#x987B;&#x4F7F;&#x7528; Pointers&#x3002;&#x53CD;&#x4E4B;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x6570;&#x91CF;&#x5F88;&#x5C0F;&#xFF08;&#x4F4E;&#x4E8E; 100 &#x6216;&#x66F4;&#x5C11;&#xFF09;&#xFF0C;&#x90A3;&#x4E48; Arrays &#x53EF;&#x80FD;&#x4F1A;&#x66F4;&#x65B9;&#x4FBF;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5982;&#x679C;&#x4F60;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x7236;&#x5BF9;&#x8C61;&#x540C;&#x65F6;&#x5F97;&#x5230;&#x6240;&#x6709;&#x76F8;&#x5173;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x4E2D;&#x7684;&#x300C;&#x591A;&#x300D;&#xFF09;&#x3002;</p>
+<h3 id="-pointers-">&#x4F7F;&#x7528; Pointers &#x5B9E;&#x73B0;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;</h3>
+<p version="106fd2e51592cc049833667cb0532d52">&#x5047;&#x5982;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x6E38;&#x620F;&#x7A0B;&#x5E8F;&#xFF0C;&#x9700;&#x8981;&#x8BB0;&#x5F55;&#x73A9;&#x5BB6;&#x6BCF;&#x6B21;&#x6E38;&#x620F;&#x7684;&#x5206;&#x6570;&#x548C;&#x6210;&#x5C31;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6784;&#x9020;&#x4E00;&#x4E2A;<code>Game</code>&#x5BF9;&#x8C61;&#x6765;&#x5B58;&#x50A8;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x3002;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x6E38;&#x620F;&#x8FD0;&#x8425;&#x5F97;&#x975E;&#x5E38;&#x6210;&#x529F;&#xFF0C;&#x6BCF;&#x4E2A;&#x73A9;&#x5BB6;&#x5C06;&#x62E5;&#x6709;&#x6210;&#x5343;&#x4E0A;&#x4E07;&#x7684;<code>Game</code>&#x5BF9;&#x8C61;&#x3002;&#x7C7B;&#x4F3C;&#x8FD9;&#x6837;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5173;&#x7CFB;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x6570;&#x91CF;&#x53EF;&#x80FD;&#x65E0;&#x9650;&#x5236;&#x5730;&#x589E;&#x957F;&#xFF0C;Pointer &#x662F;&#x6700;&#x597D;&#x7684;&#x9009;&#x62E9;&#x3002;
+&#x5047;&#x8BBE;&#x5728;&#x8FD9;&#x4E2A;&#x6E38;&#x620F;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x786E;&#x5B9A;&#x6BCF;&#x4E2A;<code>Game</code>&#x5BF9;&#x8C61;&#x90FD;&#x4F1A;&#x4E0E;&#x4E00;&#x4E2A; AVUser &#x5173;&#x8054;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x50CF;&#x8FD9;&#x6837;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre version="91df25040d33eba1e2478040de03fe4a"><code class="lang-objc">AVObject *game= [AVObject objectWithClassName:@&quot;Game&quot;];
+[game setObject:[AVUser currentUser] forKey:@&quot;createdBy&quot;];
+</code></pre>
+<p version="d167e6edd06d9619ba4c83336222640c">&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6765;&#x67E5;&#x8BE2;&#x67D0;&#x4E2A; AVUser &#x521B;&#x5EFA;&#x7684;<code>Game</code>&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre version="fee6669a732fa09197cff17937d47851"><code class="lang-objc">AVQuery *gameQuery = [AVQuery queryWithClassName:@&quot;Game&quot;];
+[gameQuery whereKey:@&quot;createdBy&quot; equalTo:[AVUser currentUser]];
+</code></pre>
+<p version="4e3094b3211f198c51f5c728af9da9e1">&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x67E5;&#x8BE2;&#x67D0;&#x4E2A;<code>Game</code>&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x8005;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x83B7;&#x53D6; <code>createdBy</code> &#x5C5E;&#x6027;&#xFF1A;</p>
+<pre version="28be74ea85dbee3b804ea346d00d9f82"><code class="lang-objc">// say we have a Game object
+AVObject *game = ...
+
+// getting the user who created the Game
+AVUser *createdBy = [game objectForKey@&quot;createdBy&quot;];
+</code></pre>
+<p version="a5a3f7f640f526a74f9cba2d3a3079cd">&#x5927;&#x591A;&#x6570;&#x573A;&#x666F;&#x4E0B;&#xFF0C;Pointers &#x662F;&#x5B9E;&#x73B0;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x7684;&#x6700;&#x597D;&#x9009;&#x62E9;&#x3002;</p>
+<h3 id="-arrays-">&#x4F7F;&#x7528; Arrays &#x5B9E;&#x73B0;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;</h3>
+<p version="a66cd54523b7904ee66e4ad6dc588874">&#x5F53;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x5BF9;&#x8C61;&#x6570;&#x91CF;&#x5F88;&#x5C0F;&#x65F6;&#xFF0C;&#x4F7F;&#x7528; Arrays &#x5B9E;&#x73B0;&#x662F;&#x6BD4;&#x8F83;&#x7406;&#x60F3;&#x7684;&#x3002;Arrays &#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>includeKey</code> &#x7B80;&#x5316;&#x67E5;&#x8BE2;&#x3002;&#x4F20;&#x9012;&#x5BF9;&#x5E94;&#x7684; key &#x53EF;&#x4EE5;&#x5728;&#x83B7;&#x53D6;&#x300C;&#x4E00;&#x300D;&#x65B9;&#x5BF9;&#x8C61;&#x6570;&#x636E;&#x7684;&#x540C;&#x65F6;&#x83B7;&#x53D6;&#x5230;&#x6240;&#x6709;&#x300C;&#x591A;&#x300D;&#x65B9;&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x636E;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x5173;&#x7CFB;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x5BF9;&#x8C61;&#x6570;&#x91CF;&#x5DE8;&#x5927;&#xFF0C;&#x67E5;&#x8BE2;&#x5C06;&#x54CD;&#x5E94;&#x7F13;&#x6162;&#x3002;</p>
+<p version="a7a42dfa4627bb715690fcb75cb948fe">&#x5047;&#x8BBE;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x6E38;&#x620F;&#x4E2D;&#xFF0C;&#x73A9;&#x5BB6;&#x9700;&#x8981;&#x4FDD;&#x5B58;&#x89D2;&#x8272;&#x6E38;&#x620F;&#x8FC7;&#x7A0B;&#x4E2D;&#x79EF;&#x7D2F;&#x7684;&#x6240;&#x6709;&#x6B66;&#x5668;&#xFF0C;&#x4E14;&#x603B;&#x5171;&#x6709;&#x51E0;&#x5341;&#x79CD;&#x6B66;&#x5668;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x5B9E;&#x4F8B;&#x4E2D;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x6B66;&#x5668;&#x7684;&#x6570;&#x91CF;&#x4E0D;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x5927;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x60F3;&#x5141;&#x8BB8;&#x73A9;&#x5BB6;&#x8BBE;&#x5B9A;&#x6B66;&#x5668;&#x7684;&#x987A;&#x5E8F;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x6B63;&#x597D;&#x9002;&#x5408;&#x7528; Arrays &#x5B9E;&#x73B0;&#xFF0C;&#x56E0;&#x4E3A;&#x6570;&#x7EC4;&#x7684;&#x5927;&#x5C0F;&#x4E0D;&#x4F1A;&#x5F88;&#x5927;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x9700;&#x8981;&#x4FDD;&#x5B58;&#x73A9;&#x5BB6;&#x6BCF;&#x6B21;&#x6E38;&#x620F;&#x540E;&#x6570;&#x7EC4;&#x5185;&#x5143;&#x7D20;&#x7684;&#x987A;&#x5E8F;&#xFF1A;</p>
+<p version="23b4bc0febec5959566ec77eb66898f0">&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728; AVUser &#x4E0A;&#x521B;&#x5EFA;&#x6DFB;&#x52A0;&#x4E00;&#x5217;<code>weaponsList</code>&#x3002;</p>
+<p version="8793757a34dfad49cb6bb90300eedc02">&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5B58;&#x5165;&#x4E00;&#x4E9B;<code>Weapon</code>&#x5BF9;&#x8C61;&#x5230;<code>weaponsList</code>&#x4E2D;&#xFF1A;</p>
+<pre version="1350bcf9c408db35ee524b6ae9a847e8"><code class="lang-objc">// let&apos;s say we have four weapons
+AVObject *scimitar = ...
+AVObject *plasmaRifle = ...
+AVObject *grenade = ...
+AVObject *bunnyRabbit = ...
+
+// stick the objects in an array
+NSArray *weapons = @[scimitar, plasmaRifle, grenade, bunnyRabbit];
+
+// store the weapons for the user
+[[AVUser currentUser] setObject:weapons forKey:@&quot;weaponsList&quot;];
+</code></pre>
+<p version="6a74d552da89a47c9cf69f8aa5d78375">&#x7136;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x8FD9;&#x4E9B;<code>Weapon</code>&#x5BF9;&#x8C61;&#xFF0C;&#x4EC5;&#x4EC5;&#x9700;&#x8981;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre version="7b35d82b771507c6fe98578ad65a8e29"><code class="lang-objc">NSArray *weapons = [[AVUser currentUser] objectForKey:@&quot;weaponsList&quot;];
+</code></pre>
+<p version="2fa91ba9a11810cce2174121451f09e6">&#x6709;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x60F3;&#x83B7;&#x53D6;&#x6211;&#x4EEC;&#x4E00;&#x5BF9;&#x591A;&#x4E2D;&#x300C;&#x4E00;&#x300D;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x540C;&#x65F6;&#x83B7;&#x53D6;&#x300C;&#x591A;&#x300D;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x4F7F;&#x7528; AVQuery &#x67E5;&#x8BE2; AVUser &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F7F;&#x7528;<code>includeKey</code>&#xFF08;&#x6216; Android &#x4E2D;&#x7684;<code>include</code>&#xFF09;&#x6765;&#x540C;&#x65F6;&#x83B7;&#x53D6;<code>weaponsList</code>&#x5217;&#x4E2D;&#x5B58;&#x653E;&#x7684;<code>Weapon</code>&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre version="71d11e6f0b14216e0fc7a4751196b7d5"><code class="lang-objc">// set up our query for a User object
+AVQuery *userQuery = [AVUser query];
+
+// configure any constraints on your query...
+// for example, you may want users who are also playing with or against you
+
+// tell the query to fetch all of the Weapon objects along with the user
+// get the &quot;many&quot; at the same time that you&apos;re getting the &quot;one&quot;
+[userQuery includeKey:@&quot;weaponsList&quot;];
+
+// execute the query
+[userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    // objects contains all of the User objects, and their associated Weapon objects, too
+}];
+</code></pre>
+<p version="54db235c991b70e144ba966a21abdfb5">&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x4E2D;&#x901A;&#x8FC7;&#x300C;&#x591A;&#x300D;&#x65B9;&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x5230;&#x300C;&#x4E00;&#x300D;&#x65B9;&#x5BF9;&#x8C61;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x627E;&#x51FA;&#x6240;&#x6709;&#x62E5;&#x6709;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;<code>Weapon</code>&#x7684; AVUser&#xFF0C;&#x53EF;&#x4EE5;&#x50CF;&#x8FD9;&#x6837;&#x6765;&#x67E5;&#x8BE2;&#xFF1A;</p>
+<pre version="1fc3f68cae8e47475418e133f686a842"><code class="lang-objc">// add a constraint to query for whenever a specific Weapon is in an array
+[userQuery whereKey:@&quot;weaponsList&quot; equalTo:scimitar];
+
+// or query using an array of Weapon objects...
+[userQuery whereKey:@&quot;weaponsList&quot; containedIn:arrayOfWeapons];
+</code></pre>
+<h2 id="-">&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;</h2>
+<p version="e92ca3a4507402b98cdbcd8a342c819c">&#x73B0;&#x5728;&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x5904;&#x7406;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x3002;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x8BFB;&#x4E66;&#x5E94;&#x7528;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5BF9;<code>Book</code>&#x5BF9;&#x8C61;&#x548C;<code>Author</code>&#x5BF9;&#x8C61;&#x5EFA;&#x6A21;&#x3002;&#x5982;&#x6211;&#x4EEC;&#x6240;&#x77E5;&#xFF0C;&#x4E00;&#x4E2A;&#x4F5C;&#x8005;&#x53EF;&#x4EE5;&#x5199;&#x591A;&#x672C;&#x4E66;&#xFF0C;&#x4E00;&#x672C;&#x4E66;&#x4E5F;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x4F5C;&#x8005;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x7684;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x9009;&#x62E9;&#x4F7F;&#x7528; Arrays&#xFF0C; AVRelation &#x6216;&#x521B;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;&#x5173;&#x8054;&#x8868;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x79CD;&#x5173;&#x7CFB;&#x3002;</p>
+<p version="6ff3b892543aba1e6ee473be1e04ea00">&#x51B3;&#x7B56;&#x7684;&#x5173;&#x952E;&#x5728;&#x4E8E;&#x662F;&#x5426;&#x9700;&#x8981;&#x4E3A;&#x8FD9;&#x4E2A;&#x5173;&#x7CFB;&#x9644;&#x52A0;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x9700;&#x8981;&#xFF0C;&#x4F7F;&#x7528; AVRelation &#x6216; Arrays &#x662F;&#x6700;&#x7B80;&#x5355;&#x7684;&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F7F;&#x7528; Arrays &#x4F1A;&#x6709;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#x548C;&#x66F4;&#x5C11;&#x7684;&#x67E5;&#x8BE2;&#x3002;&#x5982;&#x679C;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x4E2D;&#x4EFB;&#x4F55;&#x4E00;&#x65B9;&#x5BF9;&#x8C61;&#x6570;&#x91CF;&#x53EF;&#x80FD;&#x8FBE;&#x5230;&#x6216;&#x8D85;&#x8FC7; 100&#xFF0C;&#x50CF;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x4E2D;&#x63CF;&#x8FF0;&#x7684;&#x539F;&#x56E0;&#x4E00;&#x6837;&#xFF0C;&#x4F7F;&#x7528; AVRelation &#x6216;&#x5173;&#x8054;&#x8868;&#x662F;&#x66F4;&#x597D;&#x7684;&#x9009;&#x62E9;&#x3002;</p>
+<p version="f224bb28404beb6e01eab8776b182093">&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x4E3A;&#x5173;&#x7CFB;&#x9644;&#x52A0;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x8868;&#xFF08;&#x5173;&#x8054;&#x8868;&#xFF09;&#x6765;&#x5B58;&#x50A8;&#x4E24;&#x7AEF;&#x7684;&#x5173;&#x7CFB;&#x3002;&#x8BB0;&#x4F4F;&#xFF0C;&#x9644;&#x52A0;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x63CF;&#x8FF0;&#x8FD9;&#x4E2A;&#x5173;&#x7CFB;&#x7684;&#xFF0C;&#x4E0D;&#x662F;&#x63CF;&#x8FF0;&#x5173;&#x7CFB;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x65B9;&#x3002;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5173;&#x8054;&#x8868;&#x9644;&#x52A0;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x7684;&#x793A;&#x4F8B;&#x6709;&#xFF1A;</p>
+<ul>
+<li>&#x5173;&#x7CFB;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x95F4;</li>
+<li>&#x5173;&#x7CFB;&#x521B;&#x5EFA;&#x8005;</li>
+<li>&#x67D0;&#x4EBA;&#x67E5;&#x770B;&#x6B64;&#x5173;&#x7CFB;&#x7684;&#x6B21;&#x6570;</li>
+</ul>
+<h3 id="-avrelation">&#x4F7F;&#x7528; AVRelation</h3>
+<p version="486a662cbb563cd9b7f457d65d6a5fdc">&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; AVRelation &#x6784;&#x5EFA;&#x4E00;&#x4E2A;<code>Book</code>&#x548C;<code>Author</code>&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x3002;&#x5728;&#x540E;&#x53F0;&#x7684;&#x6570;&#x636E;&#x67E5;&#x770B;&#x754C;&#x9762;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7ED9; Book &#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x540D;&#x79F0;&#x4E3A;<code>authors</code>&#xFF0C;&#x7C7B;&#x578B;&#x4E3A; relation &#x7684;&#x5217;&#x3002;</p>
+<p version="cf5505663ebcb3d6a925fda8adf4d458">&#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5173;&#x8054;&#x4E00;&#x4E9B;&#x4F5C;&#x8005;&#x5230;&#x8FD9;&#x672C;&#x4E66;&#xFF1A;</p>
+<pre version="a69e2a6968014aea0c2cac7031c2fccb"><code class="lang-objc">// let&#x2019;s say we have a few objects representing Author objects
+AVObject *authorOne = &#x2026;
+AVObject *authorTwo = &#x2026;
+AVObject *authorThree = &#x2026;
+
+// now we create a book object
+AVObject *book= [AVObject objectWithClassName:@&quot;Book&quot;];
+
+// now let&#x2019;s associate the authors with the book
+// remember, we created a &quot;authors&quot; relation on Book
+AVRelation *relation = [book relationforKey:@&quot;authors&quot;];
+// make sure these objects should be saved to server before adding to relation
+[relation addObject:authorOne];
+[relation addObject:authorTwo];
+[relation addObject:authorThree];
+
+// now save the book object
+[book saveInBackground];
+</code></pre>
+<p version="2e9b856b2a6021f21e9fbe2f97cc8dfb"><strong> &#x6CE8;&#x610F;&#xFF1A; </strong> &#x8FD9;&#x91CC; authorOne, authorTwo, authorThree &#x5FC5;&#x9700;&#x5DF2;&#x7ECF;&#x4FDD;&#x5B58;&#x5230;&#x4E91;&#x7AEF;&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x6DFB;&#x52A0;&#x5230; relation&#xFF0C;&#x5426;&#x5219; [book saveInBackground] &#x4F1A;&#x62A5;&#x9519;&#x3002;</p>
+<p version="f95877c698c17d99bdfc7c6d709a2688">&#x8981;&#x83B7;&#x53D6;&#x67D0;&#x672C;&#x4E66;&#x7684;&#x6240;&#x6709;&#x4F5C;&#x8005;&#xFF0C;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x67E5;&#x8BE2;&#xFF1A;</p>
+<pre version="20dbc6c6470a6aba3a3e12ca85d3b7d2"><code class="lang-objc">// suppose we have a book object
+AVObject *book = ...
+
+// create a relation based on the authors key
+AVRelation *relation = [book relationforKey:@&quot;authors&quot;];
+
+// generate a query based on that relation
+AVQuery *query = [relation query];
+
+// now execute the query
+</code></pre>
+<p version="08fc1fe560f70f50376221c78094c56e">&#x4E5F;&#x8BB8;&#x4F60;&#x66F4;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x4F5C;&#x8005;&#x7684;&#x6240;&#x6709;&#x4E66;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x7A0D;&#x5FAE;&#x4E0D;&#x540C;&#x7684;&#x67E5;&#x8BE2;&#x6765;&#x83B7;&#x53D6;&#x8FD9;&#x79CD;&#x53CD;&#x5411;&#x5173;&#x7CFB;&#x7684;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre version="3b339a5739748eaf77c629b9e7f82145"><code class="lang-objc">// suppose we have a author object, for which we want to get all books
+AVObject *author = ...
+
+// first we will create a query on the Book object
+AVQuery *query = [AVQuery queryWithClassName:@&quot;Book&quot;];
+
+// now we will query the authors relation to see if the author object 
+// we have is contained therein
+[query whereKey:@&quot;authors&quot; equalTo:author];
+</code></pre>
+<h3 id="-">&#x4F7F;&#x7528;&#x5173;&#x8054;&#x8868;</h3>
+<p version="0594c9f2ff06554e398b5a2547482efb">&#x4E5F;&#x8BB8;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x77E5;&#x9053;&#x66F4;&#x591A;&#x5173;&#x7CFB;&#x7684;&#x9644;&#x52A0;&#x4FE1;&#x606F;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x4E3A;&#x7528;&#x6237;&#x4E4B;&#x95F4;&#x5173;&#x6CE8;/&#x88AB;&#x5173;&#x6CE8;&#x7684;&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#xFF1A;&#x5C31;&#x50CF;&#x6D41;&#x884C;&#x7684;&#x793E;&#x4EA4;&#x7F51;&#x7EDC;&#x90A3;&#x6837;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5173;&#x6CE8;&#x522B;&#x7684;&#x7528;&#x6237;&#x3002;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x5E94;&#x7528;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x4EC5;&#x60F3;&#x77E5;&#x9053;&#x7528;&#x6237; A &#x662F;&#x5426;&#x5173;&#x6CE8;&#x4E86;&#x7528;&#x6237; B&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x60F3;&#x77E5;&#x9053;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x7528;&#x6237; A &#x5F00;&#x59CB;&#x5173;&#x6CE8;&#x7684;&#x7528;&#x6237; B&#x3002;&#x8FD9;&#x6837;&#x7684;&#x4FE1;&#x606F;&#x4E0D;&#x80FD;&#x4F7F;&#x7528; AVRelation &#x5B9E;&#x73B0;&#x3002;&#x4E3A;&#x4E86;&#x4FDD;&#x5B58;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x8868;&#x4FDD;&#x5B58;&#x8FD9;&#x4E9B;&#x5173;&#x7CFB;&#x3002;&#x8FD9;&#x4E2A;&#x8868;&#x6211;&#x4EEC;&#x53EB;&#x505A;<code>Follow</code>&#xFF0C;&#x5B83;&#x6709;&#x4E00;&#x4F8B;&#x53EB;<code>from</code>&#x548C;&#x4E00;&#x4F8B;&#x53EB;<code>to</code>&#xFF0C;&#x90FD;&#x662F; AVUser &#x7684;&#x6307;&#x9488;&#x7C7B;&#x578B;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x4F60;&#x8FD8;&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x5217;&#x540D;&#x79F0;&#x4E3A;<code>date</code>&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;<code>Date</code>&#x7684;&#x5217;&#x3002;</p>
+<p version="f924312d8ded40ed38b7b66a207ce3b5">&#x73B0;&#x5728;&#xFF0C;&#x5F53;&#x4F60;&#x8981;&#x4FDD;&#x5B58;&#x4E24;&#x4E2A;&#x7528;&#x6237;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x6CE8;&#x5173;&#x7CFB;&#x65F6;&#xFF0C;&#x5728;<code>Follow</code>&#x8868;&#x6DFB;&#x52A0;&#x4E00;&#x884C;&#xFF0C;&#x7ED9;<code>from</code>&#xFF0C;<code>to</code>&#x548C;<code>date</code>&#x586B;&#x5145;&#x6070;&#x5F53;&#x7684;&#x6570;&#x636E;&#xFF1A;</p>
+<pre version="8c5ae4f2c6f81bb37c4f6ba0bbb5ee12"><code class="lang-objc">// suppose we have a user we want to follow
+AVUser *otherUser = ...
+
+// create an entry in the Follow table
+AVObject *follow = [AVObject objectWithClassName:@&quot;Follow&quot;];
+[follow setObject:[AVUser currentUser]  forKey:@&quot;from&quot;];
+[follow setObject:otherUser forKey:@&quot;to&quot;];
+[follow setObject:[NSDate date] forKey:@&quot;date&quot;];
+[follow saveInBackground];
+</code></pre>
+<p version="1aa414dbf362edd8139bb27e29fe3cc3">&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5F53;&#x524D;&#x7528;&#x6237;&#x5173;&#x6CE8;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5BF9;<code>Follow</code>&#x8868;&#x4F7F;&#x7528;&#x8FD9;&#x6837;&#x7684;&#x67E5;&#x8BE2;&#xFF1A;</p>
+<pre version="1cc131c33085e4c6b9eddad7cf238959"><code class="lang-objc">// set up the query on the Follow table
+AVQuery *query = [AVQuery queryWithClassName:@&quot;Follow&quot;];
+[query whereKey:@&quot;from&quot; equalTo:[AVUser currentUser]];
+
+// execute the query
+[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+  for(AVObject *o in objects) {
+    // o is an entry in the Follow table
+    // to get the user, we get the object with the to key
+    AVUser *otherUser = [o objectForKey:@&quot;to&quot;];
+
+    // to get the time when we followed this user, get the date key
+    NSDate *when = [o objectForKey:@&quot;date&quot;];
+  }
+}];
+</code></pre>
+<p version="0acd12f2a0b29ba13cf981029816b9d4">&#x540C;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x5F88;&#x7B80;&#x5355;&#x5730;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5173;&#x6CE8;&#x5F53;&#x524D;&#x7528;&#x6237;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5BF9;<code>Follow</code>&#x8868;&#x4F7F;&#x7528;&#x8FD9;&#x6837;&#x7684;&#x67E5;&#x8BE2;&#xFF1A;</p>
+<pre version="295165d3f5fda2c881ca24f55eed022b"><code class="lang-objc">// set up the query on the Follow table
+AVQuery *query = [AVQuery queryWithClassName:@&quot;Follow&quot;];
+[query whereKey:@&quot;to&quot; equalTo:[AVUser currentUser]];
+
+// execute the query
+[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+  for(AVObject *o in objects) {
+    // o is an entry in the Follow table
+    // to get the user, we get the object with the from key
+    AVUser *otherUser = [o objectForKey:@&quot;from&quot;];
+
+    // to get the time the user was followed, get the date key
+    NSDate *when = [o objectForKey:@&quot;date&quot;];
+  }
+}];
+</code></pre>
+<h3 id="-arrays-">&#x4F7F;&#x7528; Arrays &#x5B9E;&#x73B0;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;</h3>
+<p version="1cf9e712b72ef6399667e9a31c6f9d75">&#x4F7F;&#x7528; Arrays &#x5B9E;&#x73B0;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x8DDF;&#x5B9E;&#x73B0;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x5927;&#x81F4;&#x76F8;&#x540C;&#x3002;&#x5173;&#x7CFB;&#x4E2D;&#x4E00;&#x65B9;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x5217;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x5173;&#x7CFB;&#x53E6;&#x4E00;&#x65B9;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p version="f4b3609a5aa1011157dbfe0f830d674a">&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x4E00;&#x4E2A;&#x8BFB;&#x4E66;&#x5E94;&#x7528;&#x62E5;&#x6709;<code>Book</code>&#x548C;<code>Author</code>&#x5BF9;&#x8C61;&#x3002;<code>Book</code>&#x5BF9;&#x8C61;&#x5305;&#x542B;&#x4E00;&#x4E2A;<code>Author</code>&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x7EC4;&#xFF08;&#x4F7F;&#x7528;&#x5217;&#x540D;<code>authors</code>&#xFF09;&#x3002;&#x4F7F;&#x7528; Arrays &#x5B9E;&#x73B0;&#x975E;&#x5E38;&#x9002;&#x5408;&#x8FD9;&#x6837;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x56E0;&#x4E3A;&#x4E00;&#x672C;&#x4E66;&#x51E0;&#x4E4E;&#x4E0D;&#x53EF;&#x80FD;&#x8FBE;&#x5230;&#x6216;&#x8D85;&#x8FC7; 100 &#x4E2A;&#x4F5C;&#x8005;&#x3002;&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x5728;<code>Book</code>&#x5BF9;&#x8C61;&#x4E2D;&#x4F7F;&#x7528;&#x6570;&#x7EC4;&#x7684;&#x539F;&#x56E0;&#x3002;&#x6BD5;&#x7ADF;&#xFF0C;&#x4E00;&#x4E2A;&#x4F5C;&#x8005;&#x53EF;&#x80FD;&#x5199; 100 &#x672C;&#x4EE5;&#x4E0A;&#x7684;&#x4E66;&#x3002;</p>
+<p version="1950f59f2738914da19fd6875b855a6c">&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x600E;&#x4E48;&#x4FDD;&#x5B58;<code>Book</code>&#x5BF9;&#x8C61;&#x548C;<code>Author</code>&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF1A;</p>
+<pre version="0606ef4acee09488e3fd1eed725f6a2c"><code class="lang-objc">// let&apos;s say we have an author
+AVObject *author = ...
+
+// and let&apos;s also say we have an book
+AVObject *book = ...
+
+// add the author to the authors list for the book
+[book addObject:author forKey:@&quot;authors&quot;];
+</code></pre>
+<p version="cc577dfabd7e7158a93a1420439202cc">&#x56E0;&#x4E3A;&#x4F5C;&#x8005;&#x5217;&#x8868;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x5F53;&#x4F60;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;<code>Book</code>&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#x60F3;&#x8981;&#x540C;&#x65F6;&#x5F97;&#x5230;&#x6240;&#x6709;&#x4F5C;&#x8005;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5219;&#x8981;&#x4F7F;&#x7528;<code>includeKey</code>&#xFF08;Android&#x4E0A;&#x662F;<code>include</code>&#xFF09;&#xFF1A;</p>
+<pre version="fa5701e36f0bf65929a283754935f3ff"><code class="lang-objc">// set up our query for the Book object
+AVQuery *bookQuery = [AVQuery queryWithClassName:@&quot;Book&quot;];
+
+// configure any constraints on your query...
+// tell the query to fetch all of the Author objects along with the Book
+[bookQuery includeKey:@&quot;authors&quot;];
+
+// execute the query
+[bookQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    // objects is all of the Book objects, and their associated 
+    // Author objects, too
+}];
+</code></pre>
+<p version="6cd41dd9db1beb84a82f2887f1746789">&#x8FD9;&#x6837;&#x4E4B;&#x540E;&#xFF0C;&#x83B7;&#x53D6;&#x67D0;&#x4E2A;<code>Book</code>&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;<code>Author</code>&#x5BF9;&#x8C61;&#x5F88;&#x7B80;&#x5355;&#xFF1A;</p>
+<pre version="296240d630d37613cd3dbe9d08a6eb8d"><code class="lang-objc">NSArray *authorList = [book objectForKey@&quot;authors&quot;];
+</code></pre>
+<p version="d06d5a057552a1280afd1721d49fb765">&#x6700;&#x540E;&#xFF0C;&#x5047;&#x8BBE;&#x4F60;&#x6709;&#x4E00;&#x4E2A;<code>Author</code>&#x5BF9;&#x8C61;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x627E;&#x51FA;&#x6240;&#x6709;&#x4ED6;&#x51FA;&#x73B0;&#x8FC7;&#x7684;<code>Book</code>&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E5F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#xFF1A;</p>
+<pre version="0b8420b7f6b99591e47b2c0817396d97"><code class="lang-objc">// suppose we have an Author object
+AVObject *author = ...
+
+// set up our query for the Book object
+AVQuery *bookQuery = [AVQuery queryWithClassName:@&quot;Book&quot;];
+
+// configure any constraints on your query...
+[bookQuery whereKey:@&quot;authors&quot; equalTo:author];
+
+// tell the query to fetch all of the Author objects along with the Book
+[bookQuery includeKey:@&quot;authors&quot;];
+
+// execute the query
+[bookQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    // objects is all of the Book objects, and their associated Author objects, too
+}];
+</code></pre>
+<h2 id="-">&#x4E00;&#x5BF9;&#x4E00;&#x5173;&#x7CFB;</h2>
+<p version="b654ceb98d694b9d8d73e663071dd855">&#x5F53;&#x4F60;&#x9700;&#x8981;&#x5C06;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x62C6;&#x5206;&#x6210;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x4E00;&#x5BF9;&#x4E00;&#x5173;&#x7CFB;&#x662F;&#x4E00;&#x79CD;&#x91CD;&#x8981;&#x7684;&#x9700;&#x6C42;&#x3002;&#x8FD9;&#x79CD;&#x9700;&#x6C42;&#x5E94;&#x8BE5;&#x5F88;&#x5C11;&#x89C1;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x4E2D;&#x4F53;&#x73B0;&#x4E86;&#x8FD9;&#x6837;&#x7684;&#x9700;&#x6C42;&#xFF1A;</p>
+<ul>
+<li><strong>&#x9650;&#x5236;&#x90E8;&#x5206;&#x7528;&#x6237;&#x6570;&#x636E;&#x7684;&#x6743;&#x9650;</strong> &#x5728;&#x8FD9;&#x4E2A;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x6B64;&#x5BF9;&#x8C61;&#x62C6;&#x5206;&#x6210;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x4E00;&#x90E8;&#x5206;&#x5305;&#x542B;&#x6240;&#x6709;&#x7528;&#x6237;&#x53EF;&#x89C1;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x53E6;&#x4E00;&#x90E8;&#x5206;&#x5305;&#x542B;&#x6240;&#x6709;&#x4EC5;&#x81EA;&#x5DF1;&#x53EF;&#x89C1;&#x7684;&#x6570;&#x636E;&#xFF08;&#x901A;&#x8FC7;ACL&#x63A7;&#x5236;&#xFF09;&#x3002;&#x540C;&#x6837;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E00;&#x90E8;&#x5206;&#x5305;&#x542B;&#x6240;&#x6709;&#x7528;&#x6237;&#x53EF;&#x4FEE;&#x6539;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x53E6;&#x4E00;&#x90E8;&#x5206;&#x5305;&#x542B;&#x6240;&#x6709;&#x4EC5;&#x81EA;&#x5DF1;&#x53EF;&#x4FEE;&#x6539;&#x7684;&#x6570;&#x636E;&#x3002;</li>
+<li><strong>&#x907F;&#x514D;&#x5927;&#x5BF9;&#x8C61;</strong> &#x5728;&#x8FD9;&#x4E2A;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x4F60;&#x7684;&#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x5927;&#x5C0F;&#x5927;&#x4E8E;&#x4E86;&#x5BF9;&#x8C61;&#x7684;&#x4E0A;&#x9650;&#x503C;&#xFF08;128K&#xFF09;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6765;&#x5B58;&#x50A8;&#x989D;&#x5916;&#x7684;&#x6570;&#x636E;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x901A;&#x5E38;&#x9700;&#x8981;&#x66F4;&#x597D;&#x5730;&#x8BBE;&#x8BA1;&#x4F60;&#x7684;&#x6570;&#x636E;&#x6A21;&#x578B;&#x6765;&#x907F;&#x514D;&#x51FA;&#x73B0;&#x5927;&#x5BF9;&#x8C61;&#x3002;&#x5982;&#x679C;&#x786E;&#x5B9E;&#x65E0;&#x6CD5;&#x907F;&#x514D;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4F7F;&#x7528;AVFile&#x5B58;&#x50A8;&#x5927;&#x6570;&#x636E;&#x3002;</li>
+<li><strong>&#x66F4;&#x7075;&#x6D3B;&#x7684;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;</strong> AVFile &#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x7684;&#x5B58;&#x53D6;&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#x4F5C;&#x4E3A;&#x5BF9;&#x8C61;&#x67E5;&#x8BE2;&#x4FEE;&#x6539;&#x7B49;&#x4E0D;&#x662F;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; AVObject &#x6784;&#x9020;&#x4E00;&#x4E2A;&#x81EA;&#x5DF1;&#x7684;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x5E76;&#x4E0E; AVFile &#x4E00;&#x5BF9;&#x4E00;&#x5173;&#x8054;&#xFF0C;&#x5C06;&#x6587;&#x4EF6;&#x5C5E;&#x6027;&#x5B58;&#x4E8E;AVObject &#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x65E2;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x67E5;&#x8BE2;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x5C5E;&#x6027;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5B58;&#x53D6;&#x6587;&#x4EF6;&#x3002;</li>
+</ul>
+<p version="67bf1f22eaedce7f762cd962a6d3d016">&#x611F;&#x8C22;&#x60A8;&#x9605;&#x8BFB;&#x6B64;&#x6587;&#x6863;&#x3002;&#x5BF9;&#x4E8E;&#x4F7F;&#x7528;&#x7684;&#x590D;&#x6742;&#x6027;&#x6211;&#x4EEC;&#x6DF1;&#x611F;&#x62B1;&#x6B49;&#x3002;&#x901A;&#x5E38;&#xFF0C;&#x6570;&#x636E;&#x7684;&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x662F;&#x4E00;&#x4E2A;&#x96BE;&#x9898;&#x3002;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5149;&#x660E;&#x7684;&#x4E00;&#x9762;&#xFF1A;&#x5B83;&#x4ECD;&#x7136;&#x6BD4;&#x4EBA;&#x9645;&#x5173;&#x7CFB;&#x7B80;&#x5355;&#x3002;</p>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

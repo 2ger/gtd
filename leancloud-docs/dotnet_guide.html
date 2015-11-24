@@ -1,0 +1,1074 @@
+<!doctype html>
+
+<html version="c9058bdaf4eff0939644d570081dd985">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="-net-">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</h1>
+<h2 id="-">&#x7B80;&#x4ECB;</h2>
+<p version="ef3b1c42fb2b22223f7e035193cf1485">&#x76EE;&#x524D;&#x6211;&#x4EEC;&#x7684; .NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x652F;&#x6301;&#x5982;&#x4E0B;&#x8FD0;&#x884C;&#x65F6;&#xFF1A;</p>
+<ul>
+<li>Windows Phone Silverlight &#xFF08;8.0 &amp; 8.1&#xFF09;</li>
+<li>Windows Desktop .NET Framework 4.5+</li>
+<li>Xamarin Form 1.4+</li>
+<li>Xamarin iOS 8+</li>
+<li>Xamarin Android 5+</li>
+</ul>
+<p version="9f05c25280c645f59a3d54d149cc7260">&#x5C1A;&#x672A;&#x53D1;&#x5E03;&#x4F46;&#x662F;&#x5DF2;&#x5728;&#x8BA1;&#x5212;&#x5185;&#x7684;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>Windows Runtime &#xFF08;for Windows 10&#xFF09;</li>
+</ul>
+<p version="14472183ab95b4e8ea9cb8ac604875f7">&#x6587;&#x6863;&#x4E2D;&#x6D89;&#x53CA;&#x7684;&#x8BED;&#x6CD5;&#x4EE5;&#x53CA;&#x63A5;&#x53E3;&#x5747;&#x5BF9;&#x6240;&#x6709;&#x8FD0;&#x884C;&#x65F6;&#x6709;&#x6548;&#x3002;</p>
+<h2 id="-">&#x5FEB;&#x901F;&#x5165;&#x95E8;</h2>
+<p version="c6711e90a4ae152b14ed5ab2e9b11fa5">&#x5EFA;&#x8BAE;&#x60A8;&#x5728;&#x9605;&#x8BFB;&#x672C;&#x6587;&#x6863;&#x4E4B;&#x524D;&#xFF0C;&#x9605;&#x8BFB;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x7684;<a href="/start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a>&#x6587;&#x6863;&#xFF0C;&#x83B7;&#x53D6; LeanCloud &#x4F7F;&#x7528;&#x7684;&#x914D;&#x7F6E;&#x548C;&#x7B2C;&#x4E00;&#x5370;&#x8C61;&#x3002;</p>
+<h2 id="-">&#x5B89;&#x88C5;</h2>
+<p version="dabafc9267f3c978910b88d60d397fee">&#x4E3A;&#x4E86;&#x652F;&#x6301;&#x5B9E;&#x65F6;&#x804A;&#x5929;&#xFF0C;LeanCloud SDK for .NET &#x4F9D;&#x8D56;&#x4E8E;&#x51E0;&#x4E2A;&#x5F00;&#x6E90;&#x7684;&#x5E93;&#xFF0C;&#x6240;&#x4EE5;&#x63A8;&#x8350;&#x5F00;&#x53D1;&#x8005;&#x4ECE; <a href="https://www.nuget.org/packages/LeanCloud/1.0.1.2-pre">Nuget</a> &#x4E0A;&#x4E0B;&#x8F7D;&#x6211;&#x4EEC;&#x7684; SDK&#x3002;</p>
+<h2 id="-">&#x4ECB;&#x7ECD;</h2>
+<p version="c2657e8ff9acf342c33c6040c6d3fc31">LeanCloud&#x7684; .NET SDK &#x4F9D;&#x8D56;&#x4E8E;&#x5FAE;&#x8F6F;&#x63D0;&#x4F9B;&#x7684;<a href="http://msdn.microsoft.com/zh-cn/library/hh873175.aspx">&#x57FA;&#x4E8E;&#x4EFB;&#x52A1;&#x7684;&#x5F02;&#x6B65;&#x6A21;&#x5F0F; (TAP)</a>&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#x60A8;&#x6700;&#x597D;&#x6709; .NET Framework 4.5 &#x7684;&#x7F16;&#x7A0B;&#x7ECF;&#x9A8C;&#xFF0C;&#x6216;&#x8005;&#x5BF9; .NET Framework 4.5 &#x7684;&#x65B0; API &#x6709;&#x6240;&#x4E86;&#x89E3;&#x3002;</p>
+<h2 id="-">&#x5E94;&#x7528;</h2>
+<p version="eb482b68c4eb879de321b17e88fc26ca">&#x5728; LeanCloud &#x7684;&#x6BCF;&#x4E2A;&#x5E94;&#x7528;&#x6709;&#x81EA;&#x5DF1;&#x7684; ID &#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x5BC6;&#x94A5;&#xFF0C;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x4EE3;&#x7801;&#x4E2D;&#x5E94;&#x8BE5;&#x7528;&#x4ED6;&#x4EEC;&#x6765;&#x521D;&#x59CB;&#x5316; SDK&#x3002;
+LeanCloud &#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x8D26;&#x6237;&#x90FD;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x591A;&#x4E2A;&#x5E94;&#x7528;&#x3002;&#x540C;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x5206;&#x522B;&#x5728;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x548C;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x90E8;&#x7F72;&#x4E0D;&#x540C;&#x7684;&#x7248;&#x672C;&#x3002;</p>
+<h3 id="-">&#x521D;&#x59CB;&#x5316;</h3>
+<p version="e74d2fdf7f01c2c4e9bb9120c0fbf0cb">&#x5728; LeanCloud &#x4E2D;&#xFF0C;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x5E73;&#x53F0;&#x4E0B;&#x7684;&#x63A5;&#x53E3;&#x6211;&#x4EEC;&#x90FD;&#x5C3D;&#x91CF;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#xFF0C;&#x76EE;&#x7684;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x964D;&#x4F4E;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x5F00;&#x53D1;&#x6210;&#x672C;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x51E0;&#x4E4E;&#x90FD;&#x662F;&#x9075;&#x5FAA;&#x5728; <code>AVClient</code> &#x8FD9;&#x4E2A;&#x7C7B;&#x4E0B;&#x6709;&#x4E00;&#x4E2A;&#x53EB;&#x505A; <code>Initialize</code>&#xFF08;&#x4E0D;&#x540C;&#x5E73;&#x53F0;&#x7684;&#x7F16;&#x7A0B;&#x89C4;&#x8303;&#x53EF;&#x80FD;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x662F;&#x5728; C# &#x8BED;&#x8A00;&#x98CE;&#x683C;&#x4E2D;&#x4E00;&#x822C;&#x65B9;&#x6CD5;&#x540D;&#x7684;&#x9996;&#x5B57;&#x6BCD;&#x90FD;&#x662F;&#x5927;&#x5199;&#xFF09;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x76EE;&#x524D;&#x6709; 2 &#x4E2A;&#x91CD;&#x8F7D;&#xFF1A;</p>
+<pre version="2d90e2c9edc29b7ceebaacd8bc51caad"><code>  AVClient.Initialize(string applicationId, string appKey);
+  &#x4F20;&#x5165;&#x60A8;&#x7684; `App ID` &#x4EE5;&#x53CA; `App Key`&#xFF0C;&#x9ED8;&#x8BA4;&#x8BBF;&#x95EE;&#x7684;&#x662F; LeanCloud &#x7684;&#x4E2D;&#x56FD;&#x8282;&#x70B9;&#x3002;
+</code></pre><pre version="ececcbf0e401b75f205b4dbb40d9b47a"><code>  AVClient.Initialize(string applicationId, string appKey, AVRegion region);
+  &#x9664;&#x4E86;&#x4F20;&#x5165;&#x60A8;&#x7684; `App ID` &#x4EE5;&#x53CA; `App Key`&#x4E4B;&#x5916;&#xFF0C;&#x6307;&#x5B9A; LeanCloud &#x7684;&#x670D;&#x52A1;&#x8282;&#x70B9;&#xFF0C;&#x73B0;&#x5728; AVRegion &#x4EC5;&#x652F;&#x6301; CN &#x4EE5;&#x53CA; US &#x8282;&#x70B9;&#x3002;
+</code></pre><p version="e9599ca4bb5f4791d7a917bf498c7351">&#x6CE8;&#x610F;&#xFF0C;&#x76EE;&#x524D; LeanCloud &#x7684;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x6570;&#x636E;&#x662F;&#x76F8;&#x4E92;&#x9694;&#x79BB;&#x7684;&#xFF0C;&#x6362;&#x8A00;&#x4E4B;&#xFF0C;&#x60A8;&#x5728;&#x4E2D;&#x56FD;&#x8282;&#x70B9;&#x4E0A;&#x6CE8;&#x518C;&#x7684;&#x5E94;&#x7528;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x7F8E;&#x56FD;&#x8282;&#x70B9;&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#x3002;</p>
+<h2 id="-">&#x5BF9;&#x8C61;</h2>
+<h3 id="avobject">AVObject</h3>
+<p version="d853c33ef87f1cf2dfa7439e2854377f">&#x5728; LeanCloud &#x4E0A;&#xFF0C;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x662F;&#x56F4;&#x7ED5; <code>AVObject</code> &#x8FDB;&#x884C;&#x7684;&#x3002;&#x6BCF;&#x4E2A; <code>AVObject</code> &#x90FD;&#x5305;&#x542B;&#x4E86;&#x4E0E; JSON &#x517C;&#x5BB9;&#x7684; key-value &#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x3002;&#x6570;&#x636E;&#x662F; schema-free &#x7684;&#xFF0C;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x5728;&#x6BCF;&#x4E2A; AVObject &#x4E0A;&#x63D0;&#x524D;&#x6307;&#x5B9A;&#x5B58;&#x5728;&#x54EA;&#x4E9B;&#x952E;&#xFF0C;&#x53EA;&#x8981;&#x76F4;&#x63A5;&#x8BBE;&#x5B9A;&#x5BF9;&#x5E94;&#x7684; key-value &#x5373;&#x53EF;&#x3002;
+key &#x5FC5;&#x987B;&#x662F;&#x5B57;&#x6BCD;&#x6570;&#x5B57;&#x6216;&#x4E0B;&#x5212;&#x7EBF;&#x7EC4;&#x6210;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6570;&#x5B57;&#xFF0C;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x751A;&#x81F3;&#x6570;&#x7EC4;&#x548C;&#x5B57;&#x5178;&#x3002;
+&#x6BCF;&#x4E2A; <code>AVObject</code> &#x90FD;&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;&#x7C7B;&#xFF08;Class&#xFF09;&#x540D;&#x79F0;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;&#x60A8;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x5BF9;&#x5E94;&#x7684;&#x4F53;&#x80B2;&#x8FD0;&#x52A8;&#x79F0;&#x4E3A; <code>Sport</code>&#x3002;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x7684;&#x60A8;&#x5C06;&#x7C7B;&#x548C; key &#x6309;&#x7167; <code>NameYourClassesLikeThis</code> &#x4EE5;&#x53CA; <code>nameYourKeysLikeThis</code> &#x8FD9;&#x6837;&#x7684;&#x60EF;&#x4F8B;&#x547D;&#x540D;&#x3002;</p>
+<h3 id="-">&#x4FDD;&#x5B58;&#x5BF9;&#x8C61;</h3>
+<p version="5f09137f42de90e34e82900154ba414f">&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5C06;&#x4E0A;&#x6587;&#x4E2D;&#x7684; <code>Sport</code> &#x5B58;&#x50A8;&#x5230; LeanCloud &#x7684;&#x670D;&#x52A1;&#x3002;LeanCloud &#x7684;&#x76F8;&#x5173;&#x63A5;&#x53E3;&#x548C; <code>IDictionary&lt;string, object&gt;</code> &#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x53EA;&#x6709;&#x8C03;&#x7528; <code>SaveAsync</code> &#x65B9;&#x6CD5;&#x65F6;&#x624D;&#x4F1A;&#x5B9E;&#x9645;&#x4FDD;&#x5B58;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF1A;</p>
+<pre version="86593c64eedb8c0ec21403c163c8d3ca"><code>AVObject football =new AVObject(&quot;Sport&quot;);
+football[&quot;totalTime&quot;] = 90;
+football[&quot;name&quot;] = &quot;Football&quot;;
+Task saveTask = football.SaveAsync();
+await saveTask;
+</code></pre><p version="9231086c4957959b46b414a5e0430140">&#x5728;&#x8FD0;&#x884C;&#x6B64;&#x4EE3;&#x7801;&#x540E;&#xFF0C;&#x60A8;&#x5E94;&#x5F53;&#x4E86;&#x89E3;&#x4FDD;&#x5B58;&#x52A8;&#x4F5C;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x751F;&#x6548; &#x3002;&#x4E3A;&#x4E86;&#x786E;&#x4FDD;&#x6570;&#x636E;&#x88AB;&#x4FDD;&#x5B58;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728; LeanCloud &#x4E0A;&#x7684;<a href="/data.html?appid={{appid}}">&#x6570;&#x636E;&#x7BA1;&#x7406;</a>&#x4E2D;&#x67E5;&#x770B;&#x60A8;&#x5E94;&#x7528;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p version="5744cd0ade57143ba77f58182174c8cf">&#x6B64;&#x5904;&#x6709;&#x4E24;&#x4EF6;&#x4E8B;&#x60C5;&#x9700;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x660E;&#x3002;
+&#x9996;&#x5148;&#xFF0C;&#x5728;&#x8FD0;&#x884C;&#x6B64;&#x4EE3;&#x7801;&#x4E4B;&#x524D;&#xFF0C;&#x60A8;&#x4E0D;&#x5FC5;&#x914D;&#x7F6E;&#x6216;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x79F0;&#x4E3A; &#x300C;Sport&#x300D; &#x7684;&#x65B0;&#x7C7B;&#x3002;LeanCloud &#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x7C7B;&#x3002;</p>
+<p version="cfb3a5b08d09e7baed3c62b7c49d99e3">&#x6B64;&#x5916;&#xFF0C;&#x4E3A;&#x4E86;&#x66F4;&#x65B9;&#x4FBF;&#x7684;&#x4F7F;&#x7528; LeanCloud&#xFF0C;&#x8FD8;&#x6709;&#x5176;&#x5B83;&#x51E0;&#x4E2A;&#x5B57;&#x6BB5;&#x60A8;&#x4E0D;&#x9700;&#x8981;&#x4E8B;&#x5148;&#x6307;&#x5B9A;&#x3002;<code>objectId</code> &#x662F;&#x4E3A;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#x552F;&#x4E00;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#xFF1B;<code>createdAt</code> &#x548C; <code>updatedAt</code> &#x5206;&#x522B;&#x4EE3;&#x8868;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x5728; LeanCloud &#x4E2D;&#x521B;&#x5EFA;&#x548C;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x7684;&#x65F6;&#x95F4;&#x5E76;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x586B;&#x5145;&#x3002;
+&#x5728;&#x60A8;&#x6267;&#x884C;&#x4FDD;&#x5B58;&#x64CD;&#x4F5C;&#x4E4B;&#x524D;&#xFF0C;&#x8FD9;&#x4E9B;&#x5B57;&#x6BB5;&#x4E0D;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x4FDD;&#x5B58;&#x5230; <code>AVObject</code> &#x4E2D;&#x3002;</p>
+<h3 id="-">&#x5728;&#x540E;&#x53F0;&#x5DE5;&#x4F5C;</h3>
+<p version="ef0aaee83c9aa875fd34a2548fe50ba2">&#x5173;&#x4E8E;&#x5F02;&#x6B65;&#x7F16;&#x7A0B;&#xFF0C;&#x4E00;&#x76F4;&#x662F;&#x6BCF;&#x4E00;&#x79CD;&#x8BED;&#x8A00;&#x548C;&#x5E73;&#x53F0;&#x4E0A;&#x5FC5;&#x987B;&#x76F4;&#x9762;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x7275;&#x626F;&#x5230;&#x7EBF;&#x7A0B;&#xFF0C;&#x8FDB;&#x7A0B;&#x7684;&#x95EE;&#x9898;&#x5927;&#x591A;&#x6570;&#x90FD;&#x662F;&#x7A0B;&#x5E8F;&#x5458;&#x5F88;&#x5934;&#x75BC;&#x7684;&#x4E00;&#x4E2A;&#x96BE;&#x70B9;&#xFF0C;&#x4F46;&#x662F;&#x5728; .NET Framework 4.5 &#x4E4B;&#x540E;&#x8FCE;&#x6765;&#x4E86;&#x4E00;&#x79CD;&#x65B0;&#x7684;&#x53D8;&#x9769;&#xFF0C;&#x90A3;&#x5C31;&#x662F;<a href="http://msdn.microsoft.com/zh-cn/library/hh873175.aspx">&#x57FA;&#x4E8E;&#x4EFB;&#x52A1;&#x7684;&#x5F02;&#x6B65;&#x6A21;&#x5F0F; (TAP)</a>&#x3002;&#x5F53;&#x7136;&#x672C;&#x7BC7;&#x6307;&#x5357;&#x7684;&#x91CD;&#x70B9;&#x4E0D;&#x662F;&#x8BB2;&#x89E3;TAP&#x5F02;&#x6B65;&#x6A21;&#x5F0F;&#x7684;&#x597D;&#x5904;&#xFF0C;&#x53EA;&#x662F;&#x5E0C;&#x671B;&#x5F00;&#x53D1;&#x8005;&#x80FD;&#x591F;&#x8DB3;&#x591F;&#x7684;&#x638C;&#x63E1;TAP&#x5B9E;&#x73B0;&#x5F02;&#x6B65;&#x7528;&#x6CD5;&#x3002;</p>
+<p version="134459f56389a03b14ac5aa3d2b384a4">LeanCloud .NET SDK &#x90FD;&#x91C7;&#x7528;&#x4E86; TAP &#x7684;&#x65B9;&#x5F0F;&#x53BB;&#x5B9E;&#x73B0;&#x628A;&#x6240;&#x6709;&#x8DDF; LeanCloud &#x670D;&#x52A1;&#x7AEF;&#x4EA4;&#x4E92;&#x7684;&#x90E8;&#x5206;&#x653E;&#x5728;&#x540E;&#x53F0;&#x53BB;&#x8FDB;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x8BA9;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x82B1;&#x66F4;&#x591A;&#x65F6;&#x95F4;&#x53BB;&#x505A;&#x5BA2;&#x6237;&#x7AEF;&#x5E94;&#x8BE5;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x800C;&#x628A;&#x8DDF;&#x670D;&#x52A1;&#x7AEF;&#x4EA4;&#x4E92;&#x7684;&#x5404;&#x79CD;&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;&#x653E;&#x6743;&#x7ED9; LeanCloud SDK &#x53BB;&#x505A;&#x3002;</p>
+<h3 id="-">&#x66F4;&#x65B0;&#x5BF9;&#x8C61;</h3>
+<p version="74d9e791d1159a5abee3ee9d9e18736c">&#x66F4;&#x65B0;&#x5BF9;&#x8C61;&#x548C;&#x4FDD;&#x5B58;&#x5BF9;&#x8C61;&#x6709;&#x70B9;&#x76F8;&#x4F3C;&#xFF0C;&#x53EA;&#x662F;&#x66F4;&#x65B0;&#x5BF9;&#x8C61;&#x4F1A;&#x8986;&#x76D6;&#x540C;&#x540D;&#x5C5E;&#x6027;&#x7684;&#x503C;&#xFF0C;&#x5728;&#x8C03;&#x7528; <code>SaveAsync</code> &#x4E4B;&#x540E;&#x4F1A;&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x751F;&#x6548;&#x3002;</p>
+<pre version="3b8192d4542c5c6ef528aa485c0f0c9b"><code>var peter = new AVObject(&quot;Character&quot;)
+{
+    { &quot;age&quot;, 37 },
+    { &quot;name&quot;, &quot;Peter Burke&quot; },
+    { &quot;from&quot;, &quot;White Collar&quot; },
+    { &quot;skills&quot;, new List&lt;string&gt; { &quot;FBI&quot;, &quot;Agent Leader&quot; } },
+};
+await peter.SaveAsync().ContinueWith(t =&gt;
+{
+    // &#x4FDD;&#x5B58;&#x6210;&#x529F;&#x4E4B;&#x540E;&#xFF0C;&#x4FEE;&#x6539;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x751F;&#x6548;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4FEE;&#x6539;age
+    // LeanCloud &#x53EA;&#x4F1A;&#x9488;&#x5BF9;&#x6307;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x8986;&#x76D6;&#x64CD;&#x4F5C;&#xFF0C;&#x672C;&#x4F8B;&#x4E2D;&#x7684;name&#x4E0D;&#x4F1A;&#x88AB;&#x4FEE;&#x6539;
+    peter[&quot;age&quot;] = 40;
+    peter.SaveAsync();
+});
+</code></pre><h3 id="-">&#x83B7;&#x53D6;&#x5BF9;&#x8C61;</h3>
+<p version="45e3a0584fa9e674a79219df2a7e8b64">&#x5982;&#x679C;&#x786E;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A; <code>AVObject</code> &#x7684; <code>objectId</code> &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x6784;&#x9020;&#x4E00;&#x4E2A; <code>AVObject</code> &#x7136;&#x540E;&#x901A;&#x8FC7; <code>FetchAsync</code> &#x4ECE;&#x670D;&#x52A1;&#x7AEF;&#x628A;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x5230;&#x672C;&#x5730;&#xFF1A;</p>
+<pre version="f9dbca9b5891a59e61037588f6f06b6a"><code>AVObject character = AVObject.CreateWithoutData(&quot;Character&quot;, &quot;549818e0e4b096e3561a6abd&quot;);
+await character.FetchAsync();
+</code></pre><h3 id="-">&#x5220;&#x9664;&#x5BF9;&#x8C61;</h3>
+<p version="6a795c4396f29eace96f4e2369317f0a">&#x5982;&#x679C;&#x60F3;&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8C03;&#x7528; <code>AVObject</code> &#x7684; <code>DeleteAsync</code> &#x65B9;&#x6CD5;&#x3002;</p>
+<pre version="b07fd36aed8373a5e3419d956f56ffe5"><code>await myObject.DeleteAsync();
+</code></pre><p version="4a1ed9be400e4e0af60b9a55255812f2">&#x5982;&#x679C;&#x4EC5;&#x4EC5;&#x60F3;&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x8C03;&#x7528; <code>Remove</code> &#x65B9;&#x6CD5;&#x3002;</p>
+<pre version="e82cbb0dd4d09a8cae113f4b4c369a0e"><code>//&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x8BED;&#x53E5;&#x4F1A;&#x5C06;age&#x5B57;&#x6BB5;&#x7F6E;&#x4E3A;&#x7A7A;
+myObject.Remove(&quot;age&quot;);
+// &#x5C06;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x53D1;&#x5F80;&#x670D;&#x52A1;&#x5668;&#x751F;&#x6548;&#x3002;
+await myObject.SaveAsync();
+</code></pre><h3 id="-">&#x5173;&#x7CFB;</h3>
+<p version="479c867ecb5a2720e5c22b155e0937c5">&#x8F6F;&#x4EF6;&#x7A0B;&#x5E8F;&#x5C31;&#x662F;&#x62BD;&#x8C61;&#x73B0;&#x5B9E;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x4E16;&#x754C;&#x91CC;&#x9762;&#x7684;&#x89E3;&#x91CA;&#x548C;&#x5C55;&#x73B0;&#x3002;&#x6709;&#x5BF9;&#x8C61;&#x5FC5;&#x7136;&#x5C31;&#x4F1A;&#x6709;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5728; LeanCloud &#x4E2D;&#x4E5F;&#x7ED9;&#x51FA;&#x4E86;&#x4F20;&#x7EDF;&#x5173;&#x7CFB;&#x578B;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x5E76;&#x4E14;&#x7B80;&#x5316;&#x4E86;&#x4EE3;&#x7801;&#xFF0C;&#x4F7F;&#x5F97;&#x4EE3;&#x7801;&#x7B80;&#x6D01;&#x6613;&#x7EF4;&#x62A4;&#x3002;
+&#x5047;&#x8BBE;&#x8FD9;&#x6837;&#x4E00;&#x79CD;&#x573A;&#x666F;&#xFF0C;&#x505A;&#x4E00;&#x6B3E;&#x65F6;&#x9AE6;&#x7684;&#x76F8;&#x4EB2;&#x793E;&#x4EA4;&#x8F6F;&#x4EF6;&#xFF0C;&#x7537;&#x5B69;&#x4F1A;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x8D44;&#x6599;&#x91CC;&#x9762;&#x6807;&#x660E;&#x81EA;&#x5DF1;&#x559C;&#x6B22;&#x7684;&#x5973;&#x751F;&#x7C7B;&#x578B;&#xFF0C;&#x4E8E;&#x662F;&#x6709;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre version="0cdef749ae6ecfd57473b78dd0b9f5be"><code>AVObject girlType = new AVObject (&quot;GirType&quot;);
+girlType [&quot;typeName&quot;] = &quot;Hot&quot;;
+AVObject beckham = new AVObject (&quot;Boy&quot;);
+beckham[&quot;name&quot;]=&quot;David Beckham&quot;;
+beckham [&quot;age&quot;] = 38;
+beckham [&quot;focusType&quot;] = girlType;
+await beckham.SaveAsync ();//&#x4FDD;&#x5B58;beckham&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;girlType&#x4E5F;&#x4FDD;&#x5B58;&#x5230;&#x670D;&#x52A1;&#x5668;&#x3002;
+</code></pre><p version="ffa67155400ecda84a682830899e2835">&#x5F53;&#x7136;&#x5FC5;&#x7136;&#x5B58;&#x5728;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x5C06;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x5BF9;&#x8C61;&#x901A;&#x8FC7;<code>ObjectId</code>&#x5C06;&#x5B83;&#x4E8E;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x5173;&#x8054;&#xFF1A;</p>
+<pre version="bc2ba1e91f601d7877ad3ec97f9757c5"><code>beckham[&quot;focusType&quot;] = AVObject.CreateWithoutData(&quot;GirType&quot;, &quot;5372d119e4b0d4bef5f036ae&quot;);
+</code></pre><p version="36b26680464e8e13e172448b9d8c033f">&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;&#x662F;&#xFF0C;&#x5F53;&#x9700;&#x8981;&#x4ECE; LeanCloud &#x4E0A;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684; fetch &#x65B9;&#x6CD5;&#x662F;<code>&#x4E0D;&#x4F1A;&#x52A0;&#x8F7D;&#x5173;&#x8054;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;</code>&#xFF0C;&#x76F4;&#x5230;&#x50CF;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x4E4B;&#x540E;&#xFF0C;&#x8FD9;&#x4E9B;&#x5173;&#x8054;&#x6570;&#x636E;&#x5B57;&#x6BB5;&#xFF08;&#x5982;&#x4E0A;&#x5B9E;&#x4F8B;&#x4E2D; Boy &#x7684; focusType &#x5B57;&#x6BB5;&#xFF09;&#x624D;&#x4F1A;&#x88AB;&#x5B9E;&#x4F8B;&#x5316;&#x3002;</p>
+<pre version="9b87524b1a044c1aacfd630b467a0c8c"><code>AVObject focusType = beckham.Get&lt;AVObject&gt;(&quot;focusType&quot;);
+await focusType.FetchIfNeededAsync();
+</code></pre><h2 id="-">&#x67E5;&#x8BE2;</h2>
+<h3 id="avquery-getasync">AVQuery.GetAsync</h3>
+<p version="88f185bc00e45cd3115d23a6ddfc4131">&#x6B64;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94;&#x7684;&#x7406;&#x89E3;&#x662F;&#x6839;&#x636E; <code>objectId</code> &#x67E5;&#x8BE2;&#x6307;&#x5B9A;&#x7684;&#x4E00;&#x6761;&#x6570;&#x636E;&#xFF0C;<code>GetAsync</code> &#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x4E3A;&#x4E00;&#x4E2A; <code>objectId</code>&#xFF1A;</p>
+<pre version="cd6326252c0db3648d3513c06d6a5405"><code> AVQuery&lt;AVObject&gt; query = AVObject.GetQuery(&quot;Character&quot;);
+            AVObject character = await query.GetAsync(&quot;549818e0e4b096e3561a6abd&quot;);
+</code></pre><h3 id="-avquery-">&#x6784;&#x5EFA; AVQuery &#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h3>
+<p version="fe599c13e00b37bb63a070354ccad95e">&#x6839;&#x636E; <code>objectId</code> &#x67E5;&#x8BE2;&#xFF0C;&#x663E;&#x7136;&#x65E0;&#x6CD5;&#x6EE1;&#x8DB3;&#x6B63;&#x5E38;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x6240;&#x4EE5;SDK&#x63D0;&#x4F9B;&#x4E86;&#x8BB8;&#x591A;&#x7B80;&#x5316;&#x4E86;&#x64CD;&#x4F5C;&#x7684;&#x67E5;&#x8BE2;&#x3002;
+&#x9996;&#x5148;&#x9700;&#x8981;&#x660E;&#x786E;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x4E00;&#x70B9;&#xFF0C;&#x5728;.NET SDK&#x4E2D;&#xFF0C;<code>AVQuery</code> &#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x5E26;&#x6709; <code>Where</code> &#x5F00;&#x5934;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x53CA;&#x67E5;&#x8BE2;&#x8303;&#x56F4;&#x9650;&#x5B9A;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;(<code>Skip||Limit||ThenBy||Include</code>&#x7B49;)&#x90FD;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x5E76;&#x4E0D;&#x662F;&#x5728;&#x539F;&#x59CB;&#x7684; <code>AVQuery</code> &#x5BF9;&#x8C61;&#x4E0A;&#x4FEE;&#x6539;&#x5185;&#x90E8;&#x5C5E;&#x6027;&#x3002;&#x6BD4;&#x5982;:</p>
+<pre version="27fc0d15187b788747388601696c2ebc"><code>AVQuery&lt;AVObject&gt; query=new AVQuery&lt;AVObject&gt;(&quot;Character&quot;)
+query.WhereEqualTo (&quot;age&quot;, 37);//&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x662F;&#x9519;&#x8BEF;&#x7684;&#xFF01;&#xFF01;&#xFF01;
+await query.FindAsync ();
+</code></pre><p version="0822b92b0d538d28179ec4a23d059b70"><strong> &#x4EE5;&#x4E0A;&#x8FD9;&#x4E00;&#x5C0F;&#x6BB5;&#x4EE3;&#x7801;&#x662F;&#x7528;&#x6237;&#x7ECF;&#x5E38;&#x4F1A;&#x72AF;&#x7684;&#x9519;&#x8BEF;&#x6848;&#x4F8B;&#xFF0C;&#x8BF7;&#x52FF;&#x62F7;&#x8D1D;&#x5230;&#x60A8;&#x7684;&#x9879;&#x76EE; </strong></p>
+<p version="aa5c89b5f9d0b940b04b1f61025313b8">&#x4EE5;&#x4E0A;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5C06;&#x8FD4;&#x56DE; <code>Character</code> &#x4E2D;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E0D;&#x4F1A;&#x8FD4;&#x56DE;&#x6240;&#x8BBE;&#x60F3;&#x7684;&#x90A3;&#x6837; <code>age</code> &#x7B49;&#x4E8E;37&#x6570;&#x636E;&#x3002;
+&#x6B63;&#x786E;&#x5730;&#x5199;&#x6CD5;&#x5E94;&#x8BE5;&#x662F;&#xFF1A;</p>
+<pre version="6c86bfc83560683cd0a814a34d504a6f"><code>AVQuery&lt;AVObject&gt; query=new AVQuery&lt;AVObject&gt;(&quot;Character&quot;).WhereEqualTo (&quot;age&quot;, &quot;37&quot;);
+</code></pre><p version="e7c1a6a27c191adce6e39b07419b6ff2">&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#xFF0C;&#x6240;&#x6709;&#x590D;&#x5408;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x7684;&#x6784;&#x9020;&#x90FD;&#x5E94;&#x8BE5;&#x9075;&#x5FAA;&#x7528;<code>.</code>&#x8FD9;&#x4E2A;&#x7B26;&#x53F7;&#x8FDB;&#x884C;&#x94FE;&#x5F0F;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#x7684; <code>AVQuery&lt;T&gt;</code>&#xFF0C;&#x6BD4;&#x5982;&#xFF0C;&#x67E5;&#x627E;&#x6240;&#x6709; <code>age</code> &#x7B49;&#x4E8E;37&#xFF0C;&#x5E76;&#x4E14; <code>name</code> &#x5305;&#x542B; <code>peter</code> &#x7684;<code>Character</code>&#xFF1A;</p>
+<pre version="5d8640316543da82f893ad3377267a8d"><code>AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt; (&quot;Character&quot;).WhereEqualTo (&quot;age&quot;, 37).WhereContains(&quot;name&quot;,&quot;peter&quot;);
+</code></pre><h3 id="-">&#x57FA;&#x672C;&#x67E5;&#x8BE2;</h3>
+<p version="c229f4bbabce59e31e3b4579a0ab11af"><code>AVQuery&lt;T&gt;.WhereEqualTo</code> &#x57FA;&#x672C;&#x67E5;&#x8BE2;&#x903B;&#x8F91;&#x4E0A;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x7C7B;&#x4F3C;&#x4E8E;sql&#x8BED;&#x53E5;&#x4E2D;&#x7684;</p>
+<pre version="054e1259e47532ee273803d0f9c66af7"><code>SELECT * FROM Persons WHERE FirstName=&apos;Bush&apos;
+</code></pre><p version="1e7988dafdffa65f1394e81aede5e367">&#x7684;<code>=</code>&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="baf69709c378c739037a002f0af8abc1"><code>AVQuery&lt;AVObject&gt; query=new AVQuery&lt;AVObject&gt;(&quot;Persons&quot;).WhereEqualTo (&quot;FirstName&quot;, &quot;Bush&quot;);
+await query.FindAsync ().ContinueWith (t =&gt; {
+    IEnumerable&lt;AVObject&gt; persons=t.Result;
+    int sum=persons.Count();
+});
+</code></pre><h3 id="-">&#x67E5;&#x8BE2;&#x6761;&#x4EF6;</h3>
+<p version="e190ac674ef277fb677d7fe370cb3fa5">&#x5982;&#x679C;&#x8981;&#x8FC7;&#x6EE4;&#x6389;&#x7279;&#x5B9A;&#x952E;&#x7684;&#x503C;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; whereNotEqualTo &#x65B9;&#x6CD5;&#x3002;&#x6BD4;&#x5982;&#x9700;&#x8981;&#x67E5;&#x8BE2; <code>name</code>&#x4E0D;&#x7B49;&#x4E8E; <code>Peter Burke</code> &#x7684;&#x6570;&#x636E;&#x65F6;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A;</p>
+<pre version="e7ee54d4d89d5099ab1b9942ebf121f7"><code>query = query.WhereNotEqualTo (&quot;name&quot;, &quot;Peter Burke&quot;);
+</code></pre><p version="eb1cb6befddf2ac46367f7dfa33c9c60">&#x540C;&#x65F6;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#x7684;&#x67E5;&#x8BE2;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A;</p>
+<pre version="7cd7d6ea1b737a6edda57f0fa8e227bf"><code>query = query.WhereNotEqualTo (&quot;name&quot;, &quot;Peter Burke&quot;);
+query = query.WhereGreaterThan(&quot;age&quot;, 18);//&#x8FD9;&#x6837;&#x4E66;&#x5199;&#x662F;&#x4E3A;&#x4E86;&#x6587;&#x6863;&#x9605;&#x8BFB;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x63A8;&#x8350;&#x4E0A;&#x4E00;&#x8282;&#x4ECB;&#x7ECD;&#x7684;&#x94FE;&#x5F0F;&#x8868;&#x8FBE;&#x5F0F;&#x53BB;&#x521B;&#x5EFA;AVQuery
+</code></pre><p version="dfbe71ec6d27c780b272fd51e05acf17">&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#xFF0C;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x591A;&#x4E2A;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#xFF0C;&#x4ED6;&#x4EEC;&#x5F7C;&#x6B64;&#x662F;<code>AND</code>&#x7684;&#x5173;&#x7CFB;&#x3002;
+&#x6709;&#x4E9B;&#x9700;&#x6C42;&#x4E2D;&#xFF0C;&#x4E5F;&#x8BB8;&#x53EA;&#x8981;&#x8F83;&#x5C11;&#x7684;&#x51E0;&#x6761;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x5373;&#x53EF;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x5B9A;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x7684;&#x6570;&#x91CF;&#xFF1A;</p>
+<pre version="ba6eaffdbe9601ef52401c61ffd5efe5"><code>query = query.Limit (10);
+</code></pre><p version="5d7bbd4dbb4b1c32131f6c9c9674fe7a">&#x5728;&#x6570;&#x636E;&#x8F83;&#x591A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5206;&#x9875;&#x663E;&#x793A;&#x6570;&#x636E;&#x662F;&#x6BD4;&#x8F83;&#x5408;&#x7406;&#x7684;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF0C;limit &#x9ED8;&#x8BA4; 100&#xFF0C;&#x6700;&#x5927;1000&#xFF0C;&#x5728; 0 &#x5230; 1000 &#x8303;&#x56F4;&#x4E4B;&#x5916;&#x7684;&#x90FD;&#x5F3A;&#x5236;&#x8F6C;&#x6210;&#x9ED8;&#x8BA4;&#x7684; 100&#x3002;
+Skip &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x8DF3;&#x8FC7;&#x9996;&#x6B21;&#x67E5;&#x8BE2;&#x7684;&#x591A;&#x5C11;&#x6761;&#x6570;&#x636E;&#x6765;&#x5B9E;&#x73B0;&#x5206;&#x9875;&#x7684;&#x529F;&#x80FD;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x4E00;&#x9875;&#x663E;&#x793A;10&#x6761;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x8DF3;&#x8FC7;&#x524D;10&#x4E2A;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#xFF1A;</p>
+<pre version="64df9bcfefe47a15b9c0e91ced7a27f3"><code>query = query.Skip (10);
+</code></pre><p version="c7116c37d851e987157b0a3d4a638ffb">&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x7684;&#x6392;&#x5E8F;&#xFF0C;&#x5982;&#x6570;&#x5B57;&#x6216;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5347;&#x5E8F;&#x6216;&#x964D;&#x5E8F;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x63A7;&#x5236;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x7684;&#x7ED3;&#x679C;&#x987A;&#x5E8F;&#xFF1A;</p>
+<pre version="7e86a0580ee3ecb95e18388ba1199c86"><code>// &#x6839;&#x636E; age &#x5B57;&#x6BB5;&#x5347;&#x5E8F;&#x663E;&#x793A;&#x6570;&#x636E;
+query = query.OrderBy(&quot;age&quot;);
+// &#x6839;&#x636E; age &#x5B57;&#x6BB5;&#x964D;&#x5E8F;&#x663E;&#x793A;&#x6570;&#x636E;
+query = query.OrderByDescending(&quot;age&quot;);
+//&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x6BD4;&#x8F83;&#x67E5;&#x8BE2;&#xFF1A;
+// &#x5E74;&#x9F84; &lt; 37
+query = query.WhereLessThan(&quot;age&quot;, 37);
+// &#x5E74;&#x9F84; &lt;= 37
+query = query.WhereLessThanOrEqualTo(&quot;age&quot;, 37);
+// &#x5E74;&#x9F84; &gt; 37
+query.WhereGreaterThan(&quot;age&quot;, 37);
+// &#x5E74;&#x9F84; &gt;= 37
+query = query.WhereGreaterThanOrEqualTo(&quot;age&quot;, 37);
+</code></pre><p version="5ee08f2de83849eb0df41eb979107eb9">&#x5982;&#x679C;&#x4F60;&#x60F3;&#x67E5;&#x8BE2;&#x5339;&#x914D;&#x51E0;&#x4E2A;&#x4E0D;&#x540C;&#x503C;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982;&#xFF1A;&#x8981;&#x67E5;&#x8BE2; &#x201C;peter&#x201D;&#xFF0C;&#x201C;neal&#x201D;&#xFF0C;&#x201C;alex&#x201D; &#x4E09;&#x4E2A;&#x4EBA;&#x7684;&#x8BE6;&#x7EC6;&#x6570;&#x636E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; WhereContainedIn&#xFF08;&#x7C7B;&#x4F3C; SQL &#x4E2D;&#x7684; in &#x67E5;&#x8BE2;&#xFF09;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<pre version="3a6cd42213793a298f4180bfb5cd5502"><code>var names = new[] { &quot;peter&quot;, &quot;neal&quot;, &quot;alex&quot; };
+query = query.WhereContainedIn(&quot;name&quot;, names);
+</code></pre><p version="a5d05c85d7d32ca7663119aee2684bbf">&#x76F8;&#x53CD;&#xFF0C;&#x4F60;&#x60F3;&#x67E5;&#x8BE2;&#x6392;&#x9664; &#x201C;peter&#x201D;&#xFF0C;&#x201C;neal&#x201D;&#xFF0C;&#x201C;alex&#x201D; &#x8FD9;&#x4E09;&#x4E2A;&#x4EBA;&#x7684;&#x5176;&#x4ED6;&#x540C;&#x5B66;&#x7684;&#x4FE1;&#x606F;&#xFF08;&#x7C7B;&#x4F3C; SQL &#x4E2D;&#x7684; not in &#x67E5;&#x8BE2;&#xFF09;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; WhereNotContainedIn &#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<pre version="6b85fe49a9a7a2b3af05dbc04909fc8a"><code>query = query.WhereNotContainedIn (&quot;name&quot;, names);
+</code></pre><p version="53ca0a9b20d7a60e12f78987bb34f544">&#x5BF9;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#x7684;&#x67E5;&#x8BE2; &#x67E5;&#x8BE2;&#x5305;&#x542B;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x503C;&#xFF0C;&#x6709;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x6B63;&#x786E;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6765;&#x68C0;&#x7D22;&#x76F8;&#x5339;&#x914D;&#x7684;&#x503C;&#xFF0C;&#x4F7F;&#x7528; WhereMatches &#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="30e734fdefa095447a89cd85419bbb8b"><code>query = query.WhereMatches(&quot;name&quot;, &quot;^[A-Z]\\d&quot;);
+</code></pre><p version="ef4e70c56b07f5f6bdd4ba0184074bfe">&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x5305;&#x542B;&#x201C;XX&#x201C;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="7bbfef08a914d07b42f872044bb58e74"><code>// &#x67E5;&#x8BE2; name &#x5B57;&#x6BB5;&#x7684;&#x503C;&#x4E2D;&#x5305;&#x542B; &#x201C;pet&#x201D; &#x5B57;&#x7684;&#x6570;&#x636E;
+query = query.WhereContains(&quot;name&quot;, &quot;pet&quot;);
+
+// &#x67E5;&#x8BE2; name &#x5B57;&#x6BB5;&#x7684;&#x503C;&#x662F;&#x4EE5; &#x201C;al&#x201D; &#x5B57;&#x5F00;&#x5934;&#x7684;&#x6570;&#x636E;
+query = query.WhereStartsWith(&quot;name&quot;, &quot;al&quot;);
+
+// &#x67E5;&#x8BE2; name &#x5B57;&#x6BB5;&#x7684;&#x503C;&#x662F;&#x4EE5; &#x201C;oz&#x201D; &#x5B57;&#x7ED3;&#x5C3E;&#x7684;&#x6570;&#x636E;
+query = query.WhereEndsWith(&quot;name&quot;, &quot;oz&quot;);
+</code></pre><h3 id="-">&#x6570;&#x7EC4;&#x503C;&#x7684;&#x67E5;&#x8BE2;</h3>
+<p version="d9de66b920d004a185c62f53780be0f5">&#x5982;&#x679C;&#x4E00;&#x4E2A; Key &#x5BF9;&#x5E94;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2; key &#x7684;&#x6570;&#x7EC4;&#x5305;&#x542B;&#x4E86;&#x6570;&#x5B57; 2 &#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;:</p>
+<pre version="d06b1e3b2bdab621d9b1f189a2e07950"><code>// &#x67E5;&#x627E;&#x51FA;&#x6240;&#x6709;arrayKey&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x7EC4;&#x540C;&#x65F6;&#x5305;&#x542B;&#x4E86;&#x6570;&#x5B57;2&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;
+query = query.WhereEqualTo(&quot;arrayKey&quot;, 2);
+</code></pre><p version="efc406c4a2328d0527f65bc8c1755a3f">&#x540C;&#x6837;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x51FA; Key &#x7684;&#x6570;&#x7EC4;&#x540C;&#x65F6;&#x5305;&#x542B;&#x4E86; 2,3 &#x548C; 4 &#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre version="4b5fb978df2ad125bea87bf3947637f3"><code>//&#x67E5;&#x627E;&#x51FA;&#x6240;&#x6709;arrayKey&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x7EC4;&#x540C;&#x65F6;&#x5305;&#x542B;&#x4E86;&#x6570;&#x5B57;2,3,4&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x3002;
+List&lt;int&gt; numbers = new List&lt;int&gt;();
+numbers.Add(2);
+numbers.Add(3);
+numbers.Add(4);
+query = query.WhereContainsAll(&quot;arrayKey&quot;, numbers);
+</code></pre><h3 id="-">&#x67E5;&#x8BE2;&#x5BF9;&#x8C61;&#x4E2A;&#x6570;</h3>
+<p version="496e1e2eb069e92c3153a7c8b29c3c04">&#x5982;&#x679C;&#x4F60;&#x53EA;&#x662F;&#x60F3;&#x7EDF;&#x8BA1;&#x6709;&#x591A;&#x5C11;&#x4E2A;&#x5BF9;&#x8C61;&#x6EE1;&#x8DB3;&#x67E5;&#x8BE2;&#xFF0C;&#x4F60;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x5339;&#x914D;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528; <code>CountAsync</code> &#x66FF;&#x4EE3; <code>FindAsync</code>&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x67E5;&#x8BE2;&#x4E00;&#x90E8;&#x7535;&#x89C6;&#x5267;&#x91CC;&#x9762;&#x4E00;&#x5171;&#x6709;&#x591A;&#x4E2A;&#x89D2;&#x8272;&#xFF1A;</p>
+<pre version="44c516b78006b1ac0b28e7472642f341"><code>query = query.WhereNotEqualTo (&quot;from&quot;, &quot;White Collar&quot;);
+await query.CountAsync().ContinueWith(t =&gt;
+{
+    int count = t.Result;
+});
+</code></pre><p version="17fff6376b1649ed4f36b15e7623ada2"><code>&#x5BF9;&#x4E8E;&#x8D85;&#x8FC7; 1000 &#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x67E5;&#x8BE2;&#xFF0C;&#x8FD9;&#x79CD;&#x8BA1;&#x6570;&#x8BF7;&#x6C42;&#x53EF;&#x80FD;&#x88AB;&#x8D85;&#x65F6;&#x9650;&#x5236;&#x3002;&#x4ED6;&#x4EEC;&#x53EF;&#x80FD;&#x9047;&#x5230;&#x8D85;&#x65F6;&#x9519;&#x8BEF;&#x6216;&#x8005;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8FD1;&#x4F3C;&#x7684;&#x503C;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x8BF7;&#x4ED4;&#x7EC6;&#x8BBE;&#x8BA1;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x67B6;&#x6784;&#x6765;&#x907F;&#x514D;&#x4F9D;&#x8D56;&#x8FD9;&#x79CD;&#x8BA1;&#x6570;&#x67E5;&#x8BE2;&#x3002;</code></p>
+<p version="bf96435d1eaf281d74b30974f0a9d3c7"><em>&#x67E5;&#x8BE2;&#x6570;&#x91CF;&#x9650;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&apos;Limit(int)&apos;&#x5728;CountAsync&#x4E2D;&#x4E0D;&#x4F1A;&#x751F;&#x6548;&#x3002;</em></p>
+<h3 id="-">&#x5173;&#x7CFB;&#x67E5;&#x8BE2;</h3>
+<p version="e91b64180010475785e05235417fdd76">LeanCloud &#x652F;&#x6301;&#x7528;&#x5173;&#x7CFB; <code>AVRelation</code> &#x5173;&#x8054; 2 &#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x652F;&#x6301;&#x7528;&#x5173;&#x7CFB;&#x67E5;&#x8BE2;&#x6765;&#x83B7;&#x53D6;&#x76F8;&#x5173;&#x8054;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre version="bada8ffb09a35d26a8f0512ed0fe4b7b"><code>AVObject girlType = new AVObject (&quot;GirType&quot;);
+girlType [&quot;typeName&quot;] = &quot;Hot&quot;;
+girlType [&quot;ageMax&quot;] = 27;
+girlType [&quot;ageMin&quot;] = 18;
+AVObject beckham = new AVObject (&quot;Boy&quot;);
+beckham[&quot;name&quot;]=&quot;David Beckham&quot;;
+beckham [&quot;age&quot;] = 38;
+beckham [&quot;focusType&quot;] = girlType;
+//&#x4FDD;&#x5B58;beckham&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;girlType&#x4E5F;&#x4FDD;&#x5B58;&#x5230;&#x670D;&#x52A1;&#x5668;&#x3002;
+Task saveTask = beckham.SaveAsync ().ContinueWith (t =&gt;
+    {
+        AVQuery&lt;AVObject&gt; boyQuery=new AVQuery&lt;AVObject&gt;(&quot;Boy&quot;);
+        boyQuery = boyQuery.WhereEqualTo(&quot;focusType&quot;, girlType);
+        boyQuery.FindAsync().ContinueWith(s=&gt;
+        {
+            IEnumerable&lt;AVObject&gt; boys = s.Result;
+        });
+    });
+</code></pre><p version="ee2cca0e3cdee16e7196b73aab4b34f2">&#x5173;&#x7CFB;&#x7684;&#x5185;&#x5D4C;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x5F00;&#x53D1;&#x8005;&#x7528;&#x7B80;&#x6D01;&#x7684;&#x4EE3;&#x7801;&#x5904;&#x7406;&#x590D;&#x6742;&#x7684;&#x5173;&#x7CFB;&#x5185;&#x5D4C;&#x67E5;&#x8BE2;&#xFF0C;&#x6BD4;&#x5982;&#x8981;&#x67E5;&#x8BE2;<code>&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5173;&#x6CE8;&#x4E86;&#x5E74;&#x9F84;&#x5C0F;&#x4E8E;27&#x5C81;&#x5973;&#x751F;&#x7C7B;&#x578B;&#x7684;&#x90A3;&#x4E9B;&#x7537;&#x751F;&#x4EEC;</code>&#xFF1A;</p>
+<pre version="55438cb83cafc13a833a53cc307aeec1"><code>AVQuery&lt;AVObject&gt; girlTypeQuery=new AVQuery&lt;AVObject&gt;(&quot;GirType&quot;);//
+girlTypeQuery = girlTypeQuery.WhereLessThan (&quot;ageMax&quot;, 27);//&#x5E74;&#x9F84;&#x5C0F;&#x4E8E;27&#x7684;&#x840C;&#x59B9;&#x7EB8;
+AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(&quot;Boy&quot;);
+query = query.WhereMatchesQuery (&quot;focusType&quot;, girlTypeQuery);//&#x627E;&#x51FA;&#x559C;&#x6B22;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x7684;&#x7537;&#x751F;&#x4EEC;
+</code></pre><p version="fba34040e7c8b61d2a3df59ad8937f50">&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684; limit &#x9650;&#x5236; 100 &#x4E5F;&#x540C;&#x6837;&#x4F5C;&#x7528;&#x5728;&#x5185;&#x5D4C;&#x67E5;&#x8BE2;&#x4E0A;&#x3002;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x662F;&#x5927;&#x89C4;&#x6A21;&#x7684;&#x6570;&#x636E;&#x67E5;&#x8BE2;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4ED4;&#x7EC6;&#x6784;&#x9020;&#x4F60;&#x7684;&#x67E5;&#x8BE2;&#x5BF9;&#x8C61;&#x6765;&#x83B7;&#x53D6;&#x60F3;&#x8981;&#x7684;&#x884C;&#x4E3A;&#x3002;&#x53CD;&#x4E4B;&#xFF0C;&#x4E0D;&#x60F3;&#x5339;&#x914D;&#x67D0;&#x4E2A;&#x5B50;&#x67E5;&#x8BE2;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>WhereDoesNotMatchQuery</code> &#x65B9;&#x6CD5;&#xFF0C;&#x4EE3;&#x7801;&#x4E0D;&#x518D;&#x6556;&#x8FF0;&#x3002;</p>
+<p version="7baff31a49d8673b1260c41e4e1e4f8e">&#x67E5;&#x8BE2;&#x5DF2;&#x7ECF;&#x9009;&#x62E9;&#x4E86;&#x559C;&#x6B22;&#x7684;&#x7C7B;&#x578B;&#x7684;&#x7537;&#x751F;&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x9650;&#x5B9A;&#x5728;&#x6700;&#x8FD1; 10 &#x4E2A;&#x52A0;&#x5165;&#x7CFB;&#x7EDF;&#x7684;&#x7537;&#x751F;&#xFF0C;&#x53EF;&#x4EE5;&#x5982;&#x6B64;&#x505A;&#xFF1A;</p>
+<pre version="8082d3982a75aba19596560e4365db66"><code>AVQuery&lt;AVObject&gt; query = new AVQuery&lt;AVObject&gt;(&quot;Boy&quot;);
+query = query.OrderByDescending(&quot;createdAt&quot;);
+query = query.Limit(10);
+query = query.Include(&quot;focusType&quot;);
+</code></pre><p version="7c298fe652f89baf934014e0be2476f8">&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; dot&#xFF08;&#x82F1;&#x8BED;&#x53E5;&#x53F7;:&quot;.&quot;&#xFF09;&#x64CD;&#x4F5C;&#x7B26;&#x6765;&#x591A;&#x5C42; Include &#x5185;&#x5D4C;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x4F60;&#x8FD8;&#x60F3;&#x8FDB;&#x4E00;&#x6B65;&#x83B7;&#x53D6; <code>GirType</code> &#x6240;&#x5173;&#x8054;&#x7684;&#x5973;&#x751F;&#xFF08;&#x5C31;&#x662F;&#x90A3;&#x4E9B;&#x6807;&#x660E;&#x4E86;&#x81EA;&#x5DF1;&#x96B6;&#x5C5E;&#x4E8E;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x5973;&#x751F;&#xFF09;&#xFF1A;</p>
+<pre version="ac276a187fce995721612407b67b41f2"><code>query = query.Include(&quot;focusType.girls&quot;);
+</code></pre><h3 id="cql-">CQL &#x67E5;&#x8BE2;</h3>
+<p version="125e20d2f49116f2744c034e5cfda42d">Cloud Query Language&#xFF08;&#x7B80;&#x79F0; CQL&#xFF09; &#x662F; LeanCloud &#x4E3A;&#x67E5;&#x8BE2; API &#x5B9A;&#x5236;&#x7684;&#x4E00;&#x5957;&#x7C7B;&#x4F3C; SQL &#x67E5;&#x8BE2;&#x8BED;&#x6CD5;&#x7684;&#x5B50;&#x96C6;&#x548C;&#x53D8;&#x79CD;&#xFF0C;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x662F;&#x964D;&#x4F4E;&#x5927;&#x5BB6;&#x5B66;&#x4E60; LeanCloud &#x67E5;&#x8BE2;&#x7684; API &#x7684;&#x6210;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4F20;&#x7EDF;&#x7684; SQL &#x8BED;&#x6CD5;&#x6765;&#x67E5;&#x8BE2; LeanCloud &#x5E94;&#x7528;&#x5185;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p version="f89fb75c23bb370bacb9d4dc4dcd8c87">&#x5728; .NET &#x4E2D;&#x8C03;&#x7528; CQL &#x67E5;&#x8BE2;&#x5F88;&#x4FBF;&#x6377;&#xFF0C;&#x5728; <code>AVQuery</code> &#x4E2D;&#x6709;&#x4E00;&#x4E2A; <code>DoCloudQuery</code> &#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F20;&#x5165; sql &#x8BED;&#x53E5;&#x5373;&#x53EF;&#x5B9E;&#x73B0;&#x67E5;&#x8BE2;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="98e03c1f7ac20750ca7560602cf7390d"><code>await AVQuery&lt;AVObject&gt;.DoCloudQuery(&quot;select * from Character where age=37&quot;);
+</code></pre><p version="9fe95cfca51807db3eca69a9d84be2b6">&#x5982;&#x6B64;&#x505A;&#x5373;&#x53EF;&#xFF0C;&#x5176;&#x540E;&#x7EED;&#x7684;&#x64CD;&#x4F5C;&#x4E0E;&#x4EE5;&#x524D;&#x4E60;&#x60EF;&#x7684; <code>AVQuery</code> &#x5176;&#x4ED6;&#x67E5;&#x8BE2;&#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x662F;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x4FBF;&#x4E8E;&#x957F;&#x671F;&#x7D2F;&#x79EF;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x77E5;&#x8BC6;&#x7684;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x8FC5;&#x901F;&#x8FC1;&#x79FB;&#x5230; LeanCloud &#x4E0A;&#xFF0C;CQL &#x7684;&#x8BED;&#x6CD5;&#x548C;&#x8BE6;&#x7EC6;&#x7528;&#x6CD5;&#x53EF;&#x4EE5;&#x53C2;&#x7167;&#xFF1A;<a href="./cql_guide.html">CQL &#x8BE6;&#x7EC6;&#x6307;&#x5357;</a></p>
+<h4 id="cql-">CQL &#x67E5;&#x8BE2;&#x5360;&#x4F4D;&#x7B26;</h4>
+<h2 id="-">&#x7528;&#x6237;</h2>
+<p version="4c63b17545f0a431e5de19139baf6f54">&#x79FB;&#x52A8;&#x4E92;&#x8054;&#x65F6;&#x4EE3;&#xFF0C;&#x628A;&#x63E1;&#x4F4F;&#x7528;&#x6237;&#x662F;&#x6838;&#x5FC3;&#x7684;&#x4EF7;&#x503C;&#xFF0C;&#x4EFB;&#x4F55;&#x4E00;&#x6B3E;APP&#x90FD;&#x6216;&#x591A;&#x6216;&#x5C11;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x7528;&#x6237;&#x5E76;&#x4E14;&#x53EF;&#x80FD;&#x4E3A;&#x7528;&#x6237;&#x5EFA;&#x7ACB;&#x4E00;&#x5B9A;&#x7684;&#x5173;&#x7CFB;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x793E;&#x4EA4;&#x8F6F;&#x4EF6;&#x4E2D;&#x6700;&#x57FA;&#x672C;&#x5C31;&#x662F;&#x8981;&#x6C42;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x548C;&#x767B;&#x5F55;&#xFF0C;&#x54EA;&#x6015;&#x662F;&#x5229;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#xFF08;&#x5FAE;&#x535A;&#xFF0C;QQ&#xFF09;API&#x767B;&#x5F55;&#xFF0C;&#x90FD;&#x5E94;&#x8BE5;&#x4E3A;&#x7528;&#x6237;&#x5728;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x4E2D;&#x518D;&#x6CE8;&#x518C;&#x4E00;&#x6B21;&#x3002;LeanCloud&#x5DF2;&#x7ECF;&#x5728;SDK&#x4E2D;&#x5185;&#x5D4C;&#x4E86;&#x5173;&#x4E8E;&#x7528;&#x6237;&#x8FD9;&#x4E2A;&#x8F83;&#x4E3A;&#x7279;&#x6B8A;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E9B;&#x6700;&#x57FA;&#x672C;&#x7684;&#x64CD;&#x4F5C;&#x548C;&#x6570;&#x636E;&#x670D;&#x52A1;&#x3002;</p>
+<h3 id="-">&#x6CE8;&#x518C;</h3>
+<p version="22fe7c2fd6d427bd956c00a6200c5542">&#x6CE8;&#x518C;&#x7528;&#x6237;&#x5728;LeanCloud SDK&#x4E2D;&#x6781;&#x4E3A;&#x7B80;&#x5355;&#xFF0C;&#x770B;&#x5982;&#x4E0B;&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre version="696329d66751116b68bc415da17ac5d8"><code>var userName = &quot;demoUser&quot;;
+var pwd = &quot;avoscloud&quot;;
+var email = &quot;xxx@xxx.com&quot;;
+var user = new AVUser();
+user.Username = userName;
+user.Password = pwd;
+user.Email = email;
+await user.SignUpAsync().ContinueWith(t =&gt;
+{
+   var uid = user.ObjectId;
+});
+</code></pre><p version="d10ade831393a245a7df223022cb880e">&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x5C31;&#x53EF;&#x4EE5;&#x5F88;&#x5FEB;&#x7684;&#x6CE8;&#x518C;&#x4E3A;&#x5F53;&#x524D;&#x7684;&#x5E94;&#x7528;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#x4E5F;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x552F;&#x4E00;&#x7684;<code>ObjectId</code>&#x3002;
+<strong>&#x7528;&#x6237;&#x7684;&#x5BC6;&#x7801;&#x5728;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x754C;&#x9762;&#x662F;&#x65E0;&#x6CD5;&#x663E;&#x793A;&#x7684;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x670D;&#x52A1;&#x7AEF;&#x5B58;&#x50A8;&#x7684;&#x5E76;&#x4E0D;&#x662F;&#x660E;&#x6587;&#xFF0C;&#x662F;&#x901A;&#x8FC7;&#x4E0D;&#x53EF;&#x9006;&#x7684;&#x7279;&#x6B8A;&#x7B97;&#x6CD5;&#x52A0;&#x5BC6;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x4E32;</strong></p>
+<h3 id="-">&#x624B;&#x673A;&#x53F7;&#x6CE8;&#x518C;</h3>
+<p version="34600806838e9152093b55cecc16a90e">&#x4E3A;&#x4E86;&#x9002;&#x5E94;&#x79FB;&#x52A8;&#x4E92;&#x8054;&#x65F6;&#x4EE3;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x6211;&#x4EEC;&#x7279;&#x5730;&#x589E;&#x52A0;&#x4E86;&#x624B;&#x673A;&#x53F7;&#x6CE8;&#x518C;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5F53;&#x7136;&#x524D;&#x63D0;&#x662F;&#x4F1A;&#x8FDB;&#x884C;&#x77ED;&#x4FE1;&#x8BA4;&#x8BC1;&#xFF0C;&#x5C31;&#x5982;&#x540C;&#x5FAE;&#x4FE1;&#x4E00;&#x6837;&#xFF0C;&#x6CE8;&#x518C;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x53D1;&#x9001;6&#x4F4D;&#x6570;&#x5B57;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x5230;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x624B;&#x673A;&#x4E0A;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x56DE;&#x8C03;&#x6211;&#x4EEC;&#x7684;&#x9A8C;&#x8BC1;&#x63A5;&#x53E3;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x4E00;&#x6B21;&#x624B;&#x673A;&#x53F7;&#x7684;&#x6CE8;&#x518C;&#x3002;
+&#x5728;<a href="/app.html?appid={{appid}}#/permission">&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a>&#x53EF;&#x4EE5;&#x5F00;&#x542F;&#x8FD9;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x3002;</p>
+<pre version="faa6919462a341643164ccba6b5e36c2"><code>&#x9A8C;&#x8BC1;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x624B;&#x673A;&#x53F7;&#x7801;
+&#x5141;&#x8BB8;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x624B;&#x673A;&#x77ED;&#x4FE1;&#x767B;&#x5F55;
+</code></pre><p version="6b32f76c0644c74bc139753c7bd64461">&#x5982;&#x4E0B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6848;&#x4F8B;&#xFF1A;</p>
+<pre version="2bb10afec18b929c0585def0fc9ca176"><code>//&#x7B2C;&#x4E00;&#x6B65;&#x5148;&#x6CE8;&#x518C;
+var user = new AVUser();
+user.Username = &quot;WPUser&quot;;
+user.Password = &quot;avoscloud&quot;;
+user.MobilePhoneNumber = &quot;18688888888&quot;;
+var task= user.SignUpAsync ();
+await task&#xFF1B;
+//&#x5982;&#x6B64;&#x505A;&#xFF0C;&#x77ED;&#x4FE1;&#x5C31;&#x4F1A;&#x53D1;&#x9001;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x624B;&#x673A;&#x53F7;
+</code></pre><p version="44660b5ca3fa9a1851a47739baecb6bc">&#x4EE5;&#x4E0A;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x7ED9;&#x7528;&#x6237;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x754C;&#x9762;&#xFF0C;&#x8BA9;&#x7528;&#x6237;&#x8F93;&#x5165;&#x6536;&#x5230;&#x7684;6&#x4F4D;&#x6570;&#x5B57;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8FD0;&#x884C;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre version="c8b0d9a24bd4fa9e85c38a00b6e72dde"><code>//&#x7B2C;&#x4E8C;&#x6B65;&#x56DE;&#x8C03;&#x8BA4;&#x8BC1;
+var task = AVUser.VerifyMobilePhoneAsync(code);//code&#x4EE3;&#x8868;6&#x4F4D;&#x6570;&#x5B57;&#x7684;&#x9A8C;&#x8BC1;&#x7801;
+await task.ContinueWith(t =&gt;
+{
+    var success= t.Result;
+});
+</code></pre><p version="accd4c7c01a45c215e164a1ef68c8fae">&#x4EE5;&#x4E0A;&#x4E24;&#x6B65;&#xFF0C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x624B;&#x673A;&#x53F7;&#x6CE8;&#x518C;&#x6D41;&#x7A0B;&#x3002;</p>
+<h3 id="-">&#x767B;&#x5F55;</h3>
+<p version="d5cb5aaab2305d30c86ebbd10a653d45">&#x767B;&#x5F55;&#x662F;&#x4E00;&#x4E2A;<code>AVUser</code>&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x767B;&#x5F55;&#xFF0C;&#x767B;&#x5F55;&#x4E4B;&#x540E;&#xFF0C;SDK&#x4F1A;&#x9ED8;&#x8BA4;&#x5C06;&#x6B64;&#x6B21;&#x767B;&#x5F55;&#x7684;&#x7528;&#x6237;&#x8BBE;&#x7F6E;&#x4E3A;<code>AVUser.CurrentUser</code>&#xFF1A;</p>
+<pre version="b848db9698696a256ea6e365d424b12b"><code>var userName = &quot;demoUser&quot;;
+var pwd = &quot;avoscloud&quot;;
+await AVUser.LogInAsync(userName, pwd).ContinueWith(t =&gt;
+{
+    if (t.IsFaulted || t.IsCanceled)
+    {
+       var error = t.Exception.Message; // &#x767B;&#x5F55;&#x5931;&#x8D25;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;
+    }
+    else
+    {
+       //&#x767B;&#x5F55;&#x6210;&#x529F;
+    }
+});
+</code></pre><h4 id="-">&#x624B;&#x673A;&#x53F7;&#x548C;&#x5BC6;&#x7801;&#x767B;&#x5F55;</h4>
+<p version="8752af600b7a16794751bd1dc459f9a2">&#x5728;&#x77ED;&#x4FE1;&#x670D;&#x52A1;&#x4E0A;&#x7EBF;&#x4E4B;&#x540E;&#xFF0C;&#x53EA;&#x8981;&#x662F;<code>&#x901A;&#x8FC7;&#x8BA4;&#x8BC1;</code>&#x7684;&#x624B;&#x673A;&#x53F7;&#x53EF;&#x4EE5;&#x5F53;&#x505A;&#x7528;&#x6237;&#x540D;&#x5728; LeanCloud &#x670D;&#x52A1;&#x7AEF;&#x8FDB;&#x884C;&#x767B;&#x5F55;&#xFF0C;&#x81EA;&#x7136;SDK&#x91CC;&#x9762;&#x4E5F;&#x52A0;&#x5165;&#x4E86;&#x76F8;&#x5E94;&#x7684;&#x652F;&#x6301;(WP SDK &#x81EA;V1.1.0&#x4EE5;&#x53CA;&#x4EE5;&#x540E;&#x7684;&#x7248;&#x672C;&#x90FD;&#x6709;&#x652F;&#x6301;)&#x3002;&#x5B83;&#x7684;&#x8C03;&#x7528;&#x4E0E;&#x7528;&#x6237;&#x540D;&#x767B;&#x5F55;&#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x662F;&#x65B9;&#x6CD5;&#x540D;&#x5B57;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;:</p>
+<pre version="5a4137430c208fb896a4f127c62c29d4"><code>await AVUser.LogInByMobilePhoneNumberAsync (mobilePhone, password).ContinueWith (t =&gt;
+        {
+            AVUser user=t.Result;
+            //&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x767B;&#x5F55;&#x4E4B;&#x540E;&#x7684;AVUser&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;AVUser.CurrentUser&#x5DF2;&#x7ECF;&#x662F;&#x5F53;&#x524D;&#x767B;&#x5F55;&#x7684;&#x7528;&#x6237;&#x4E86;&#x3002;
+            //&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4E3A;&#x4E86;&#x4F7F;&#x94FE;&#x5F0F;&#x8868;&#x8FBE;&#x5F0F;&#x8131;&#x79BB;&#x5BF9;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x5F53;&#x7136;&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B;AVUser.CurrentUser&#x5E94;&#x8BE5;&#x5DF2;&#x7ECF;&#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x4E00;&#x822C;&#x7684;&#x9700;&#x6C42;&#x3002;
+        });
+</code></pre><h4 id="-">&#x624B;&#x673A;&#x53F7;&#x548C;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x767B;&#x5F55;</h4>
+<p version="09a1bf2f7c8c730d73fc9d20b30faa02">&#x5728;&#x5BF9;&#x5BA2;&#x6237;&#x7AEF;&#x9A8C;&#x8BC1;&#x8981;&#x6C42;&#x6BD4;&#x8F83;&#x9AD8;&#x7684;&#x5E94;&#x7528;&#x91CC;&#x9762;&#xFF0C;&#x4E5F;&#x8BB8;&#x6709;&#x4E9B;&#x5E94;&#x7528;&#x8981;&#x6C42;&#x652F;&#x6301;&#x77ED;&#x4FE1;&#x968F;&#x673A;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x4F5C;&#x4E3A;&#x4E34;&#x65F6;&#x7684;&#x5BC6;&#x7801;&#x767B;&#x5F55;&#xFF0C;&#x8FD9;&#x4E2A;&#x5E94;&#x7528;&#x573A;&#x666F;&#x5728;&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x88AB;&#x666E;&#x904D;&#x7684;&#x91C7;&#x7528;&#x4E86;&#xFF0C;&#x8FD9;&#x79CD;&#x9A8C;&#x8BC1;&#x673A;&#x5236;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x5B89;&#x5168;&#x6027;&#x9AD8;&#x7684;&#x4E00;&#x79CD;&#x673A;&#x5236;&#xFF0C;&#x81EA;&#x7136; LeanCloud &#x4E5F;&#x7ED9;&#x4E88;&#x4E86;&#x652F;&#x6301;&#x3002;&#x5B83;&#x6BD4;&#x524D;2&#x79CD;&#x9759;&#x6001;&#x767B;&#x5F55;&#x7684;&#x65B9;&#x6CD5;&#x591A;&#x4E86;<code>&#x53D1;&#x9001;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;</code>&#x8FD9;&#x4E00;&#x6B65;&#xFF0C;&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="de864d4db51a4a9b8ebb46b33de910b8"><code>//&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x8BF7;&#x6C42;&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x9001;6&#x4E3A;&#x6570;&#x5B57;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x5230;&#x6307;&#x5B9A;mobilePhoneNumber&#x4E0A;&#x3002;
+try
+{
+await AVUser.RequestLoginSmsCodeAsync(mobilePhoneNumber).ContinueWith(t =&gt;
+       {
+            var success=t.Result;
+            //&#x5224;&#x65AD;&#x8FD4;&#x56DE;&#x503C;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x662F;&#x5426;&#x53D1;&#x9001;&#x6210;&#x529F;&#xFF0C;&#x4E0D;&#x6210;&#x529F;&#x4F1A;&#x629B;&#x51FA;&#x5E26;&#x6709;error&#x7684;AVException&#xFF0C;&#x5E76;&#x4E14;t.Result&#x4F1A;&#x88AB;&#x7F6E;&#x4E3A;false.
+            //&#x5728;&#x5904;&#x7406;&#x8FD9;&#x79CD;&#x5BB9;&#x6613;&#x56E0;&#x4E3A;&#x7528;&#x6237;&#x8F93;&#x5165;&#x4E0D;&#x5408;&#x6CD5;&#x800C;&#x4EA7;&#x751F;&#x7684;&#x5F02;&#x5E38;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x7A0B;&#x5E8F;&#x7684;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;try/catch&#x673A;&#x5236;&#x8FDB;&#x884C;&#x63D0;&#x524D;&#x7684;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x3002;
+        });
+}
+catch(AVException avException)
+{
+}
+</code></pre><pre version="dc1405206fec6aa9244d30da3b595174"><code>//&#x7B2C;&#x4E8C;&#x6B65;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x9A8C;&#x8BC1;&#x7801;&#x767B;&#x5F55;&#xFF0C;&#x5982;&#x679C;&#x9A8C;&#x8BC1;&#x7801;&#x8F93;&#x5165;&#x9519;&#x8BEF;&#x4E5F;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;
+try
+{
+await AVUser.LoginBySmsCodeAsync (mobilePhoneNumber, code).ContinueWith(t=&gt;
+        {
+            var success=t.Result;
+        });
+}
+catch(AVException avException)
+{
+}
+</code></pre><h3 id="-">&#x90AE;&#x7BB1;&#x8BA4;&#x8BC1;</h3>
+<p version="deb0d9fe3615a27c433ac027f40116b8">&#x5728;&#x79FB;&#x52A8;&#x4E92;&#x8054;&#x65F6;&#x4EE3;&#xFF0C;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x90FD;&#x662F;&#x5FC5;&#x987B;&#x5728;&#x53CC;&#x65B9;&#x7EDF;&#x4E00;&#x8BA4;&#x8BC1;&#x4E4B;&#x540E;&#x624D;&#x4F1A;&#x88AB;&#x89C6;&#x4E3A;&#x4E00;&#x79CD;&#x5B89;&#x5168;&#x673A;&#x5236;&#xFF0C;&#x6BD4;&#x5982;&#x90AE;&#x7BB1;&#x7684;&#x8BA4;&#x8BC1;&#xFF0C;&#x540C;&#x6837;&#xFF0C;&#x5728;<code>AVUser</code>&#x8FD9;&#x4E2A;&#x7279;&#x6B8A;&#x7684;<code>AVObject</code>&#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x5B57;&#x6BB5;<code>email</code>&#xFF0C;&#x53EF;&#x4EE5;&#x5728;<a href="/data.html?appid={{appid}}">&#x6570;&#x636E;&#x7BA1;&#x7406;</a>&#x7684;<code>_User</code>&#x8868;&#x770B;&#x5230;&#x8FD9;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x5728;&#x6CE8;&#x518C;&#x662F;&#x63D0;&#x4F9B;&#x7684;&#x90AE;&#x7BB1;&#xFF0C;&#x5F53;&#x5728;<a href="/app.html?appid={{appid}}#/permission">&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a>&#x4E2D;&#x52FE;&#x9009;&#x4E86;</p>
+<pre version="79070fb7ad17aa0d3d584d052cd60f60"><code>&#x542F;&#x7528;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x90AE;&#x7BB1;&#x9A8C;&#x8BC1;
+</code></pre><p version="34db1c8334da3756a200adb7f24d883d">&#x8FD9;&#x6837;&#x5728;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x7684;&#x65F6;&#x5019;&#xFF0C;LeanCloud&#x9ED8;&#x8BA4;&#x5C31;&#x4F1A;&#x53D1;&#x9001;&#x4E00;&#x5C01;&#x90AE;&#x4EF6;&#xFF0C;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x90AE;&#x4EF6;&#x7684;&#x6A21;&#x677F;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;<a href="/app.html?appid={{appid}}#/email">&#x90AE;&#x4EF6;&#x6A21;&#x677F;</a>&#x4E2D;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p version="5e4808d95500306624a4399fbd05b2b8">&#x6CE8;&#x610F;&#xFF0C;&#x9A8C;&#x8BC1;&#x8FC7;&#x7684;&#x7528;&#x6237;&#xFF0C;TA&#x7684;<code>emailVerified</code>&#x5C06;&#x4F1A;&#x7F6E;&#x6210;<code>true</code>&#xFF0C;&#x53CD;&#x4E4B;<code>false</code>&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;<strong>&#x672A;&#x542F;&#x7528;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x90AE;&#x7BB1;&#x9A8C;&#x8BC1;</strong>&#xFF0C;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x4F1A;&#x4E3A;&#x7A7A;&#x3002;</p>
+<h3 id="-">&#x624B;&#x673A;&#x53F7;&#x8BA4;&#x8BC1;</h3>
+<p version="1c108c62f816b4658085a78cc7ebbaa5">&#x76F8;&#x5BF9;&#x4E8E;&#x90AE;&#x7BB1;&#x8BA4;&#x8BC1;&#xFF0C;&#x624B;&#x673A;&#x53F7;&#x8BA4;&#x8BC1;&#x7684;&#x8FC7;&#x7A0B;&#x7A0D;&#x5FAE;&#x9700;&#x8981;&#x591A;&#x4E00;&#x70B9;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x679C;&#x5F53;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x5728;&#x6CE8;&#x518C;&#x7684;&#x65F6;&#x5019;&#x6CA1;&#x6709;&#x5F00;&#x542F;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#xFF0C;&#x4F34;&#x968F;&#x4E1A;&#x52A1;&#x53D1;&#x5C55;&#xFF0C;&#x53D1;&#x73B0;&#x9700;&#x8981;&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#x7684;&#x624B;&#x673A;&#xFF0C;LeanCloud &#x6B63;&#x597D;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x4E00;&#x63A5;&#x53E3;&#x3002;</p>
+<pre version="9dcd753775534cb9be63a9a50e2404e7"><code>//&#x8C03;&#x7528;&#x7684;&#x524D;&#x63D0;&#x662F;&#xFF0C;&#x6539;&#x624B;&#x673A;&#x53F7;&#x5DF2;&#x7ECF;&#x4E0E;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x7528;&#x6237;&#x6709;&#x5173;&#x8054;(_User&#x8868;&#x4E2D;&#x7684;mobilePhoneNumber&#x5373;&#x53EF;&#x5173;&#x8054;&#x624B;&#x673A;&#xFF0C;&#x81F3;&#x4E8E;&#x5982;&#x4F55;&#x5173;&#x8054;&#x53D6;&#x51B3;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;)
+await AVUser.RequestMobilePhoneVerifyAsync (&quot;18688888888&quot;).ContinueWith(t=&gt;
+        {
+           //&#x8FD9;&#x6837;&#x5C31;&#x6210;&#x529F;&#x7684;&#x53D1;&#x9001;&#x4E86;&#x9A8C;&#x8BC1;&#x7801;
+        });
+</code></pre><p version="a9cbe451a8da9f5074687f123485f7f9">&#x56DE;&#x8C03;&#x8BA4;&#x8BC1;&#x7684;&#x63A5;&#x53E3;&#x4E0E;<code>&#x624B;&#x673A;&#x53F7;&#x6CE8;&#x518C;</code>&#x5C0F;&#x8282;&#x7684;&#x7B2C;&#x4E8C;&#x6B65;&#x4E00;&#x6837;&#x3002;</p>
+<p version="069b8e06f53a8b31d5d48e23d4eb3914">&#x9A8C;&#x8BC1;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x7684;<code>mobilePhoneVerified</code>&#x5C5E;&#x6027;&#x53D8;&#x4E3A;true&#xFF0C;&#x5E76;&#x4E14;&#x8C03;&#x7528;&#x4E91;&#x5F15;&#x64CE;&#x7684;<code>AV.Cloud.onVerifed(&apos;sms&apos;, function)</code>&#x65B9;&#x6CD5;&#x3002;</p>
+<p version="8959a49d1dbb818f60fcf24f1e386b6c"><strong>&#x4EE5;&#x4E0A;&#x53EA;&#x662F;&#x9488;&#x5BF9;_User&#x8868;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;mobilePhoneNumber&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x4F46;&#x662F;&#x5B58;&#x5728;&#x53E6;&#x4E00;&#x79CD;&#x9700;&#x6C42;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x652F;&#x4ED8;&#x5B9D;&#x5728;&#x8FDB;&#x884C;&#x4EA4;&#x6613;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x8981;&#x6C42;&#x8FDB;&#x884C;&#x5B9E;&#x65F6;&#x7684;&#x77ED;&#x4FE1;&#x8BA4;&#x8BC1;&#xFF0C;&#x8FD9;&#x4E00;&#x673A;&#x5236;&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x666E;&#x904D;&#x5B58;&#x5728;&#x4E8E;&#x5404;&#x79CD;&#x5E94;&#x7528;&#x4E2D;&#x8FDB;&#x884C;&#x654F;&#x611F;&#x64CD;&#x4F5C;&#x7684;&#x9996;&#x9009;&#xFF0C;&#x5E76;&#x4E0D;&#x5C40;&#x9650;&#x4E8E;&#x6CE8;&#x518C;&#x767B;&#x5F55;&#x8FD9;&#x79CD;&#x901A;&#x7528;&#x529F;&#x80FD;&#xFF0C;LeanCloud &#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x4E00;&#x673A;&#x5236;</strong></p>
+<h4 id="-">&#x624B;&#x673A;&#x77ED;&#x4FE1;&#x9488;&#x5BF9;&#x5E94;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#x7684;&#x9A8C;&#x8BC1;</h4>
+<p version="1a04dc262252d9d78ce1f945a57bbf49"><code>AVCloud</code>&#x7C7B;&#x5305;&#x542B;&#x4E86;&#x76F8;&#x5173;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="a85b9922d32c5a9b7d72c76837f15b72"><code>//&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x5148;&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#xFF0C;&#x5982;&#x679C;&#x624B;&#x673A;&#x53F7;&#x65E0;&#x6548;&#x5219;&#x4F1A;&#x53D1;&#x9001;&#x5931;&#x8D25;&#x3002;
+public void RequestSMSCode()
+{
+    var task=AVCloud.RequestSMSCode (&quot;18688888888&quot;).ContinueWith(t=&gt;
+    {
+        if(t.Result)
+        {
+            msg=&quot;sent!&quot;;
+        }
+    });
+    await task&#xFF1B;
+}
+</code></pre><p version="e59ad892ecc3f6adac7eac9ff81aa0c4">&#x5982;&#x679C;&#x5F00;&#x53D1;&#x8005;&#x60F3;&#x7B80;&#x5355;&#x5730;&#x81EA;&#x5B9A;&#x4E49;&#x77ED;&#x4FE1;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="3c0614467a10c9d9fd6c0a2577a43361"><code>public void RequestSMSCodeWithCustomParameters()
+{
+   var task=AVCloud.RequestSMSCode (&quot;18688888888&quot;,&quot;PP&#x6253;&#x8F66;&quot;,&quot;&#x53EB;&#x8F66;&#x670D;&#x52A1;&quot;,8).ContinueWith(t=&gt;
+   {
+       if(t.Result)
+        {
+          msg=&quot;sent!&quot;;
+       }
+    });
+    await task&#xFF1B;
+}
+</code></pre><p version="ebecfc2ad82c5587c3f718b971d0a73d">&#x7528;&#x6237;&#x5C31;&#x4F1A;&#x6536;&#x5230;&#x5982;&#x4E0B;&#x77ED;&#x4FE1;&#xFF1A;</p>
+<pre version="469a950d4ac6a57852f7b6c1e0224ab2"><code>&#x60A8;&#x6B63;&#x5728;&#x4F7F;&#x7528; PP&#x6253;&#x8F66; &#x670D;&#x52A1;&#x8FDB;&#x884C; &#x53EB;&#x8F66;&#x670D;&#x52A1;&#xFF0C;&#x60A8;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x662F;012345&#xFF0C;&#x8BF7;&#x5728;8&#x5206;&#x949F;&#x4E4B;&#x5185;&#x5B8C;&#x6210;&#x9A8C;&#x8BC1;&#x3002;
+</code></pre><p version="7337207206d29e2bdd633a3dc92130ca">&#x4EE5;&#x4E0A;&#x662F;&#x8C03;&#x7528;&#x53D1;&#x9001;&#xFF0C;&#x4E0B;&#x4E00;&#x6B65;&#x5C31;&#x662F;&#x9A8C;&#x8BC1;&#x3002;</p>
+<pre version="5244d77d90850f57daf85bb5867e13ef"><code>public void VerifySMSCode(string mobileNumber,string code)
+{
+    var task=AVCloud.VerifySmsCode (mobileNumber,code).ContinueWith(t=&gt;
+    {
+        if(t.Result)
+        {
+            msg=&quot;verified&quot;;
+        }
+        else
+        {
+            msg=&quot;valid code&quot;;
+        }
+    });
+    await task&#xFF1B;
+}
+</code></pre><h5 id="-">&#x8BED;&#x97F3;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;</h5>
+<p version="e3cd1c73cd7db5d07103b6d85b2b528e">&#x6587;&#x672C;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x5728;&#x5230;&#x8FBE;&#x7387;&#x4E0A;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x98CE;&#x9669;&#xFF0C;&#x5C3D;&#x7BA1;&#x7ECF;&#x8FC7;&#x6211;&#x4EEC;&#x957F;&#x671F;&#x5F97;&#x5230;&#x7684;&#x7528;&#x6237;&#x53CD;&#x9988;&#xFF0C;&#x5230;&#x8FBE;&#x7387;&#x5DF2;&#x63A5;&#x8FD1; 100%&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x4E9B;&#x5E94;&#x7528;&#x7684;&#x65F6;&#x6548;&#x6027;&#x548C;&#x5B89;&#x5168;&#x6027;&#x8981;&#x6C42;&#x6781;&#x9AD8;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x4E5F;&#x63A8;&#x51FA;&#x4E86;&#x8BED;&#x97F3;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="35bd7395521ba3dad9af9c1a67a9f079"><code>await AVCloud.RequestVoiceCode (&quot;18688888888&quot;);
+</code></pre><p version="d46bcc07a19cddc1d0f4b1d2fce044b7">&#x53D1;&#x9001;&#x6210;&#x529F;&#x4E4B;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x7684;&#x624B;&#x673A;&#x5C31;&#x4F1A;&#x6536;&#x5230;&#x4E00;&#x6BB5;&#x8BED;&#x97F3;&#x901A;&#x8BDD;&#xFF0C;&#x5B83;&#x4F1A;&#x64AD;&#x62A5; 6 &#x4F4D;&#x6570;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x5F00;&#x53D1;&#x8005;&#x9700;&#x8981;&#x518D;&#x6B21;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre version="9cb0d0599754e6fb552f09ba3a404dbf"><code>AVCloud.VerifySmsCode (&quot;18688888888&quot;,&quot;012345&quot;)
+</code></pre><p version="2ac60e71735e63a192cc0225aec874e8">&#x518D;&#x6B21;&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x662F;&#x5426;&#x6B63;&#x786E;&#x3002;</p>
+<p version="dc4371534f9225052dd311d286d73558">&#x76EE;&#x524D;&#x8BED;&#x97F3;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x4EC5;&#x652F;&#x6301;&#x5927;&#x9646;&#x7684;&#x624B;&#x673A;&#x53F7;&#xFF08;&#x79FB;&#x52A8;&#xFF0C;&#x7535;&#x4FE1;&#xFF0C;&#x8054;&#x901A;&#x5168;&#x9762;&#x8986;&#x76D6;&#xFF09;&#x3002;</p>
+<h3 id="-">&#x5F53;&#x524D;&#x7528;&#x6237;</h3>
+<p version="8369d9a2a93183c597dda3c5e39e1419">&#x8BDA;&#x5982;&#x6240;&#x6709;&#x79FB;&#x52A8;&#x5E94;&#x7528;&#x4E00;&#x6837;&#x5F53;&#x524D;&#x7528;&#x6237;&#x4E00;&#x76F4;&#x662F;&#x88AB;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x89C6;&#x4F5C;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x5904;&#x7406;&#xFF0C;&#x6BD4;&#x5982;&#x624B;&#x673A;QQ&#x7B49;&#x6D41;&#x884C;&#x7684;App&#xFF0C;LeanCloud&#x5FC5;&#x7136;&#x4E5F;&#x4F1A;&#x5982;&#x6B64;&#x4E3A;&#x5F00;&#x53D1;&#x8005;&#x89E3;&#x51B3;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x5F53;&#x524D;&#x7528;&#x6237;&#xFF0C;&#x53EA;&#x8981;&#x8C03;&#x7528;&#x4E86;<code>&#x767B;&#x5F55;</code>&#x76F8;&#x5173;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5F53;&#x524D;&#x7528;&#x6237;&#x5C31;&#x4F1A;&#x88AB;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x3002;</p>
+<pre version="a182a62edb554600ea28d33dcf6a31ba"><code>var user = AVUser.CurrentUser;
+</code></pre><p version="63c0256d0079b59d14069c855a9c57a5">&#x5982;&#x679C;&#x8C03;&#x7528;&#x4E86;&#x767B;&#x51FA;&#x501F;&#x53E3;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x524D;&#x7528;&#x6237;&#x5C31;&#x4F1A;&#x88AB;&#x6E05;&#x9664;&#xFF0C;&#x5E76;&#x7F6E;&#x4E3A;<code>null</code>&#xFF1A;</p>
+<pre version="98519a9456b668f0a3a84a2d65be8646"><code>await AVUser.LogOut();
+var user = AVUser.CurrentUser;    //&#x5982;&#x6B64;&#x505A;&#x5C31;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x56E0;&#x4E3A;&#x767B;&#x51FA;&#x4E4B;&#x540E;&#xFF0C;CurrentUser&#x5DF2;&#x7ECF;&#x4E3A;&#x7A7A;&#x3002;
+</code></pre><h3 id="-">&#x91CD;&#x7F6E;&#x5BC6;&#x7801;</h3>
+<h4 id="-">&#x90AE;&#x7BB1;&#x91CD;&#x7F6E;</h4>
+<p version="afc01444998c890a2035fb4bf3ef9548">&#x5BC6;&#x7801;&#x7BA1;&#x7406;&#x4E00;&#x76F4;&#x662F;&#x79FB;&#x52A8;&#x5E94;&#x7528;&#x7684;&#x6BD4;&#x8F83;&#x901A;&#x7528;&#x53C8;&#x6BD4;&#x8F83;&#x7E41;&#x7410;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;LeanCloud&#x4E5F;&#x4E3A;&#x5F00;&#x53D1;&#x8005;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957;&#x901A;&#x7528;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x5C06;&#x5F00;&#x53D1;&#x8005;&#x4ECE;&#x7E41;&#x7410;&#x4E2D;&#x89E3;&#x8131;&#x51FA;&#x6765;&#x3002;
+&#x5F53;&#x7528;&#x6237;&#x5FD8;&#x8BB0;&#x5BC6;&#x7801;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x505A;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6309;&#x94AE;&#xFF0C;&#x7136;&#x540E;&#x505A;&#x4E00;&#x4E9B;&#x53CB;&#x597D;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x4F46;&#x662F;&#x771F;&#x6B63;&#x5B9E;&#x73B0;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x7684;&#x529F;&#x80FD;&#x53EA;&#x9700;&#x8981;&#x5982;&#x4E0B;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre version="3553b3673575bcb1e2715e556e00da02"><code>await AVUser.RequestPasswordResetAsync(user.Email);
+</code></pre><p version="48932a51ddb174670a8f6a8c490c4f6f">&#x8FD9;&#x6837;&#x670D;&#x52A1;&#x7AEF;&#x5C31;&#x4F1A;&#x518D;&#x6B21;&#x53D1;&#x9001;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x7684;&#x90AE;&#x4EF6;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EA;&#x8981;&#x5F15;&#x5BFC;&#x7528;&#x6237;&#x767B;&#x5F55;&#x90AE;&#x7BB1;&#xFF0C;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
+<h4 id="-">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x91CD;&#x7F6E;</h4>
+<p version="fbb6a2e0803d1198cb374efbe534aac0">&#x5982;&#x679C;&#x7528;&#x6237;&#x7684;&#x624B;&#x673A;&#x662F;&#x6709;&#x6548;&#x5730;&#xFF0C;&#x5E76;&#x4E14;&#x5DF2;&#x7ECF;&#x901A;&#x8FC7;&#x4E86;&#x9A8C;&#x8BC1;&#x7801;&#x9A8C;&#x8BC1;&#x624B;&#x673A;&#x7684;&#x6709;&#x6548;&#x6027;&#xFF0C;&#x90A3;&#x4E48;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x53E6;&#x4E00;&#x79CD;&#x5728;&#x624B;&#x673A;&#x4E0A;&#x4F53;&#x9A8C;&#x8F83;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;&#x901A;&#x8FC7;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x3002;&#x5177;&#x4F53;&#x5B9E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;
+&#x9996;&#x5148;&#xFF0C;&#x9700;&#x8981;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x53BB;&#x53D1;&#x9001;6&#x4F4D;&#x6570;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#xFF1A;</p>
+<pre version="7cc8d9c517010c043c1b774834108859"><code>var smsCodeResetPasswordTask =    AVUser.RequestPasswordResetBySmsCode (&quot;138012345678&quot;);//&#x53EA;&#x9700;&#x8981;&#x624B;&#x673A;&#x53F7;&#x5373;&#x53EF;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x4F1A;&#x81EA;&#x52A8;&#x5BFB;&#x627E;&#x4E0E;&#x4E4B;&#x5339;&#x914D;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7528;&#x6237;&#x4E0E;&#x6B64;&#x624B;&#x673A;&#x53F7;&#x7ED1;&#x5B9A;&#xFF0C;&#x5C06;&#x4F1A;&#x63D0;&#x793A;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;
+await smsCodeResetPasswordTask&#xFF1B;
+</code></pre><p version="5c79c8218e8340b53cd31987dd5edeb6">&#x53D1;&#x9001;&#x4E4B;&#x540E;&#xFF0C;&#x518D;&#x7ED9;&#x4E00;&#x4E2A;&#x754C;&#x9762;&#x7ED9;&#x7528;&#x6237;&#xFF0C;&#x8BA9;&#x7528;&#x6237;&#x8F93;&#x5165;6&#x4F4D;&#x6570;&#x7684;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x5E76;&#x4E14;&#x540C;&#x65F6;&#x8F93;&#x5165;&#x65B0;&#x7684;&#x5BC6;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x5982;&#x4E0B;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre version="bd4823419c5302315a3a3a606672846b"><code>var resetTask = AVUser.ResetPasswordBySmsCode(NewPassword,SMSCode);//&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x65B0;&#x5BC6;&#x7801;&#xFF08;&#x660E;&#x6587;&#x4F20;&#x9012;&#xFF0C;&#x8BF7;&#x653E;&#x5FC3;&#x6211;&#x4EEC;&#x4F20;&#x8F93;&#x7684;&#x65F6;&#x5019;&#x505A;&#x4E86;&#x52A0;&#x5BC6;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x4E5F;&#x7EDD;&#x4E0D;&#x53EF;&#x80FD;&#x660E;&#x6587;&#x5B58;&#x50A8;&#xFF09;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E0A;&#x4E00;&#x6B65;&#x53D1;&#x9001;&#x5230;&#x7528;&#x6237;&#x624B;&#x673A;&#x7684;6&#x4F4D;&#x6570;&#x9A8C;&#x8BC1;&#x7801;&#x3002;
+await resetTask&#xFF1B;
+</code></pre><p version="b09f8deae2acd9229afe01ac929721a8">&#x8FD9;&#x6837;2&#x6B65;&#x5C31;&#x53EF;&#x4EE5;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#xFF0C;&#x8FD9;&#x9879;&#x529F;&#x80FD;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x5728;&#x4E00;&#x4E9B;&#x5E94;&#x7528;&#x5185;&#x64CD;&#x4F5C;&#x6BD4;&#x8F83;&#x9891;&#x7E41;&#x7684;&#x5E94;&#x7528;&#x4F7F;&#x7528;&#xFF0C;&#x90AE;&#x7BB1;&#x91CD;&#x7F6E;&#x7684;&#x8BDD;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x7528;&#x6237;&#x53BB;&#x5355;&#x72EC;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x90AE;&#x7BB1;&#x5E94;&#x7528;&#x6216;&#x8005;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x8DF3;&#x8F6C;&#x3002;</p>
+<h3 id="-">&#x67E5;&#x8BE2;&#x7528;&#x6237;</h3>
+<p version="872f45193507ae0ac778f8f4c2c91f9b"><strong>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x65B0;&#x521B;&#x5EFA;&#x5E94;&#x7528;&#x7684; <code>_User</code> &#x8868;&#x7684;&#x67E5;&#x8BE2;&#x6743;&#x9650;&#x9ED8;&#x8BA4;&#x662F;&#x5173;&#x95ED;&#x7684;&#xFF0C;&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x63A8;&#x8350;&#x4F60;&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x91CC;&#x5C01;&#x88C5;&#x7528;&#x6237;&#x67E5;&#x8BE2;&#xFF0C;&#x53EA;&#x67E5;&#x8BE2;&#x7279;&#x5B9A;&#x6761;&#x4EF6;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x907F;&#x514D;&#x5F00;&#x653E;&#x7528;&#x6237;&#x8868;&#x7684;&#x5168;&#x90E8;&#x67E5;&#x8BE2;&#x6743;&#x9650;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; class &#x6743;&#x9650;&#x8BBE;&#x7F6E;&#x6253;&#x5F00;&#x67E5;&#x8BE2;&#x6743;&#x9650;&#xFF0C;&#x8BF7;&#x53C2;&#x8003; <a href="data_security.html#Class_&#x7EA7;&#x522B;&#x7684;&#x6743;&#x9650;">&#x6570;&#x636E;&#x4E0E;&#x5B89;&#x5168; - Class &#x7EA7;&#x522B;&#x7684;&#x6743;&#x9650;</a>&#x3002;</strong></p>
+<p version="bcb6e5dfeb6e45485308f87e2be346dd">&#x7528;&#x6237;&#x65E2;&#x7136;&#x662F;&#x4E2A;&#x7279;&#x6B8A;&#x7684; <code>AVObject</code>&#xFF0C;&#x5B83;&#x5F53;&#x7136;&#x4E5F;&#x5177;&#x5907;&#x4E86; <code>AVObject</code> &#x7684;&#x4E00;&#x4E9B;&#x5171;&#x540C;&#x7279;&#x6027;&#xFF0C;&#x5F88;&#x591A;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x5173;&#x4E8E;&#x7528;&#x6237;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x9996;&#x5148;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#xFF0C;&#x628A;&#x7B26;&#x5408;&#x7279;&#x5B9A;&#x6761;&#x4EF6;&#x7684;&#x7528;&#x6237;&#x67E5;&#x8BE2;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x8FDB;&#x884C;&#x5C55;&#x73B0;&#x6216;&#x8005;&#x4E00;&#x4E9B;&#x4FEE;&#x6539;&#x4E4B;&#x7C7B;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<pre version="c4fdacc3d81f22496b7adbacbce40ba4"><code>await AVUser.Query.WhereEqualTo(&quot;gender&quot;, &quot;female&quot;).FindAsync().ContinueWith(t =&gt;
+{
+     IEnumerable&lt;AVUser&gt; women = t.Result;
+});
+</code></pre><p version="74dcb1cdd14e875cd48a8d544d296b25">&#x5F53;&#x7136;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>GetAsync</code>&#x65B9;&#x6CD5;&#x901A;&#x8FC7;<code>objectId</code>&#x83B7;&#x53D6;&#x7279;&#x5B9A;&#x7684;&#x4E00;&#x4E2A;<code>AVUser</code>&#x3002;</p>
+<h3 id="-">&#x7528;&#x6237;&#x5B89;&#x5168;&#x6570;&#x636E;&#x7684;&#x8BA4;&#x8BC1;&#x89C4;&#x5219;</h3>
+<p version="a92ee09ca7c967a67e1d01802a5e38b2">&#x5F88;&#x591A;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x7B97;&#x662F;&#x5F00;&#x53D1;&#x8005;&#x4E5F;&#x4E0D;&#x8981;&#x8F7B;&#x6613;&#x4FEE;&#x6539;&#x7528;&#x6237;&#x7684;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#xFF0C;&#x6BD4;&#x5982;&#x7528;&#x6237;&#x7684;&#x4E00;&#x4E9B;&#x6BD4;&#x8F83;&#x654F;&#x611F;&#x7684;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982;&#x624B;&#x673A;&#x53F7;&#xFF0C;&#x793E;&#x4EA4;&#x8D26;&#x53F7;&#x7B49;&#xFF0C;&#x8FD9;&#x4E9B;&#x90FD;&#x5E94;&#x8BE5;&#x8BA9;&#x7528;&#x6237;&#x5728;App&#x4E2D;&#x81EA;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x6240;&#x4EE5;&#x4E3A;&#x4E86;&#x7528;&#x6237;&#x6570;&#x636E;&#x7684;&#x6570;&#x636E;&#x6709;&#x4E14;&#x4EC5;&#x6709;&#x81EA;&#x5DF1;&#x5728;&#x767B;&#x5F55;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5F97;&#x4EE5;&#x4FEE;&#x6539;&#xFF0C;LeanCloud&#x670D;&#x52A1;&#x7AEF;&#x5BF9;&#x6240;&#x6709;&#x9488;&#x5BF9; <code>AVUser</code> &#x5BF9;&#x8C61;&#x7684;&#x6570;&#x636E;&#x505A;&#x4E86;&#x9A8C;&#x8BC1;&#x3002;</p>
+<pre version="eaa56501c999b8ca76a7a64a664d626b"><code>AVUser user = null;
+await AVUser.LogInAsync(&quot;demoUser&quot;, &quot;asvscloud&quot;).ContinueWith(t =&gt;
+{
+    user = t.Result;
+    user.Username = &quot;testUser&quot;; // &#x4FEE;&#x6539;&#x7528;&#x6237;&#x540D;
+    return user.SaveAsync();
+}).Unwrap().ContinueWith(t =&gt;
+{
+    if (!t.IsFaulted)
+    {
+        // &#x5728;&#x767B;&#x5F55;&#x4E4B;&#x540E;&#xFF0C;&#x63D0;&#x4EA4;&#x4FEE;&#x6539;&#x7528;&#x6237;&#x76F8;&#x5173;&#x5B57;&#x6BB5;&#xFF08;&#x5BC6;&#x7801;&#x9664;&#x5916;&#xFF09;&#xFF0C;&#x90FD;&#x4F1A;&#x6210;&#x529F;&#x3002;
+        AVUser.LogOut();
+    }
+}).ContinueWith(t =&gt;
+{
+    // &#x901A;&#x8FC7;Id&#x83B7;&#x53D6;&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#xFF0C;&#x6CE8;&#xFF1A;&#x5982;&#x6B64;&#x505A;&#x5E76;&#x672A;&#x4F7F;&#x5F53;&#x524D;&#x7528;&#x6237;&#x767B;&#x5F55;&#x3002;
+    return AVUser.Query.GetAsync(user.ObjectId);
+}).Unwrap().ContinueWith(t =&gt;
+{
+    user = t.Result;
+    user.Username = &quot;devUser&quot;;
+    return user.SaveAsync();
+}).Unwrap().ContinueWith(t =&gt;
+{
+    if (t.IsFaulted)
+    {
+        // &#x663E;&#x7136;&#xFF0C;&#x5982;&#x6B64;&#x505A;&#x5C31;&#x4F1A;&#x5931;&#x8D25;&#xFF0C;&#x56E0;&#x4E3A;&#x5355;&#x5355;&#x4ECE;Id&#x83B7;&#x53D6;&#x7528;&#x6237;&#xFF0C;&#x5F53;&#x524D;&#x7684;&#x8BF7;&#x6C42;&#x4E0D;&#x5177;&#x5907;&#x6743;&#x9650;&#x53BB;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x76F8;&#x5173;&#x5C5E;&#x6027;&#x3002;
+    }
+});
+</code></pre><h2 id="acl-">ACL &#x6743;&#x9650;&#x63A7;&#x5236;</h2>
+<p version="69eb54c02b0ecf280cb0cb0ea5d87aa8">&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x6210;&#x719F;&#x7684;&#x5E76;&#x4E14;&#x53EF;&#x63A7;&#x7684;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5FC5;&#x7136;&#x4F1A;&#x5B58;&#x5728;&#x6743;&#x9650;&#x63A7;&#x5236;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x7ECF;&#x5178;&#x7684;&#x6848;&#x4F8B;&#x5C31;&#x662F;&#x8BBA;&#x575B;&#x7684;&#x6591;&#x7AF9;&#x53EF;&#x4EE5;&#x5220;&#x5E16;&#x800C;&#x666E;&#x901A;&#x6E38;&#x5BA2;&#x53EA;&#x80FD;&#x770B;&#x5E16;&#xFF0C;&#x5982;&#x6B64;&#x4E00;&#x6765;&#xFF0C;&#x53D1;&#x5C55;&#x51FA;&#x6765;&#x7684;<a href="http://zh.wikipedia.org/wiki/%E4%BB%A5%E8%A7%92%E8%89%B2%E7%82%BA%E5%9F%BA%E7%A4%8E%E7%9A%84%E5%AD%98%E5%8F%96%E6%8E%A7%E5%88%B6">&#x57FA;&#x4E8E;&#x89D2;&#x8272;&#x7684;&#x8BBF;&#x95EE;&#x63A7;&#x5236;</a>&#x88AB;&#x666E;&#x904D;&#x5E94;&#x7528;&#x4E8E;&#x5404;&#x7C7B;&#x4F20;&#x7EDF;&#x7684;&#x8F6F;&#x4EF6;&#x4E2D;&#xFF0C;&#x5373;&#x4FBF;&#x662F;&#x4E92;&#x8054;&#x7F51;&#x65F6;&#x4EE3;&#x7684;&#x4ECA;&#x5929;&#xFF0C;&#x5B83;&#x4F9D;&#x7136;&#x662F;&#x53EF;&#x4EE5;&#x5F88;&#x7B80;&#x4FBF;&#x5730;&#x5E2E;&#x52A9;&#x5F00;&#x53D1;&#x8005;&#x4EE5;&#x53CA;&#x4F7F;&#x7528;&#x8005;&#x7406;&#x89E3;&#x548C;&#x5E94;&#x7528;&#x3002;</p>
+<p version="9123007a5001ce4aed697d6f3e099a6e">&#x57FA;&#x4E8E;&#x4EE5;&#x4E0A;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;LeanCloud&#x5728;&#x5F00;&#x53D1;&#x8005;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9ED8;&#x8BA4;&#x5730;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x4E3A;&#x8BE5;&#x5E94;&#x7528;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x5F20;<code>_Role</code>&#x7684;&#x8868;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5728;<a href="/data.html?appid={{appid}}">&#x6570;&#x636E;&#x7BA1;&#x7406;</a>&#x4E2D;&#x770B;&#x5230;&#x8FD9;&#x5F20;&#x8868;&#x3002;</p>
+<h3 id="-">&#x9ED8;&#x8BA4;&#x8BBF;&#x95EE;&#x6743;&#x9650;</h3>
+<p version="d4f388aba2d4bb02081e938c7d689079">&#x5728;&#x6CA1;&#x6709;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;LeanCloud &#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684; ACL &#x503C;&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x4EE3;&#x8868;&#x4E86;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x5BF9;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x53EF;&#x8BFB;&#x53EF;&#x5199;&#x7684;&#x3002;&#x6B64;&#x65F6;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x7684;&#x8868;&#x4E2D; ACL &#x5C5E;&#x6027;&#x4E2D;&#x770B;&#x5230;&#x8FD9;&#x6837;&#x7684;&#x503C;:</p>
+<pre version="c940c3415ed35cf8ffc114891e3a1edf"><code>  {&quot;*&quot;:{&quot;read&quot;:true,&quot;write&quot;:true}}
+</code></pre><p version="1abf64367d02a6c4dd64e546b990abd0">&#x5728;.NET SDK&#x4E2D;&#x521B;&#x5EFA;&#x7B26;&#x5408;&#x9ED8;&#x8BA4;&#x7684;&#x5F00;&#x653E;&#x8BFB;&#x5199;&#x6743;&#x9650;&#x7684;<code>AVACL</code>&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="cc12af9f8206a034347212fd926507a2"><code>var defaultACL = new AVACL();
+defaultACL.PublicWriteAccess = true;
+defaultACL.PublicReadAccess = true;
+</code></pre><h3 id="-">&#x6307;&#x5B9A;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x6743;&#x9650;</h3>
+<p version="fe37dee6da2de82ee34521fb0645356f">&#x5F53;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x5728;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7F51;&#x76D8;&#x7C7B;&#x5E94;&#x7528;&#x65F6;&#xFF0C;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x6587;&#x4EF6;&#x7684;&#x79C1;&#x5BC6;&#x6027;&#xFF0C;&#x7528;&#x6237;&#x5C31;&#x9700;&#x8981;&#x4E0D;&#x540C;&#x7684;&#x6587;&#x4EF6;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x3002; &#x8B6C;&#x5982;&#x516C;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x5176;&#x4ED6;&#x7528;&#x6237;&#x90FD;&#x6709;&#x8BFB;&#x7684;&#x6743;&#x9650;&#xFF0C;&#x7136;&#x540E;&#x4EC5;&#x4EC5;&#x53EA;&#x6709;&#x521B;&#x5EFA;&#x8005;&#x624D;&#x62E5;&#x6709;&#x66F4;&#x6539;&#x548C;&#x5220;&#x9664;&#x7684;&#x6743;&#x9650;&#x3002;</p>
+<pre version="34e7aa1b65acd1ddfc45a642feb52b42"><code>byte[] data = System.Text.Encoding.UTF8.GetBytes(&quot;AVOSCloud is a great cloud service!&quot;);
+AVFile file = new AVFile(&quot;mytxtFile.txt&quot;, data, new Dictionary&lt;string, object&gt;()
+    {
+        {&quot;author&quot;,&quot;AVOSCloud&quot;}
+    });
+AVObject book = new AVObject(&quot;book&quot;);
+book[&quot;content&quot;] = file;
+
+AVACL acl = new AVACL();
+acl.PublicReadAccess = true;
+acl.SetWriteAccess(AVUser.CurrentUser, true);
+book.ACL = acl;
+await book.SaveAsync();
+</code></pre><h3 id="-">&#x6307;&#x5B9A;&#x89D2;&#x8272;&#x8BBF;&#x95EE;&#x6743;&#x9650;</h3>
+<h4 id="-">&#x89D2;&#x8272;</h4>
+<p version="8b07bcdebc211ee989d7ae3877471ed3"><code>AVRole</code>&#x62E5;&#x6709;&#x4E00;&#x4E9B;&#x9ED8;&#x8BA4;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5F53;&#x7136;&#x5B83;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;<code>AVObject</code>&#xFF0C;&#x81EA;&#x7136;&#x5F00;&#x53D1;&#x8005;&#x4E5F;&#x53EF;&#x4EE5;&#x4E3A;&#x89D2;&#x8272;&#x6DFB;&#x52A0;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x6240;&#x9700;&#x7684;&#x5B57;&#x6BB5;&#x3002;</p>
+<ul>
+<li><code>name</code> :<code>string</code>&#x7C7B;&#x578B;&#xFF0C;&#x89D2;&#x8272;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x662F;&#x521B;&#x5EFA;&#x89D2;&#x8272;&#x7684;<code>&#x5FC5;&#x987B;&#x5B57;&#x6BB5;</code>&#xFF0C;&#x5E76;&#x4E14;<code>&#x552F;&#x4E00;</code>&#xFF0C;&#x5E76;&#x4E14;&#x53EA;&#x5728;&#x521B;&#x5EFA;&#x65F6;&#x8D4B;&#x503C;&#xFF0C;&#x4E0D;&#x80FD;&#x88AB;<code>&#x4FEE;&#x6539;</code>&#xFF0C;&#x547D;&#x540D;&#x5FC5;&#x987B;&#x7531;&#x5B57;&#x6BCD;&#xFF0C;&#x8FDE;&#x63A5;&#x7B26;&#xFF0C;&#x4E0B;&#x5212;&#x7EBF;&#x7EC4;&#x6210;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x53EF;&#x89C6;&#x4E3A;&#x4E3B;&#x952E;&#x3002;</li>
+<li><code>users</code> :<code>AVACL</code>&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x6307;&#x5411;&#x6240;&#x6709;&#x62E5;&#x6709;&#xFF08;&#x5373;<code>&#x5355;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x62E5;&#x6709;&#x591A;&#x89D2;&#x8272;</code>&#x7684;&#x7CFB;&#x7EDF;&#xFF09;&#x8FD9;&#x4E2A;<code>&#x89D2;&#x8272;</code>&#x7684;&#x7528;&#x6237;&#x3002;</li>
+<li><code>roles</code> :<code>AVACL</code>&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x6307;&#x5411;&#x6240;&#x6709;&#x8BE5;&#x89D2;&#x8272;&#x7684;&#x5B50;&#x89D2;&#x8272;&#xFF0C;<code>&#x5B50;&#x89D2;&#x8272;&#x81EA;&#x52A8;&#x7EE7;&#x627F;&#x7236;&#x89D2;&#x8272;&#x7684;&#x6240;&#x6709;&#x6743;&#x9650;</code>&#x3002;&#x5173;&#x4E8E;&#x8FD9;&#x4E00;&#x70B9;&#x4E0B;&#x4E00;&#x8282;&#x4F1A;&#x505A;&#x8BE6;&#x7EC6;&#x9610;&#x8FF0;&#x3002;</li>
+</ul>
+<h4 id="avuser-avrole-">AVUser &#x4E0E; AVRole &#x7684;&#x4ECE;&#x5C5E;&#x5173;&#x7CFB;</h4>
+<p version="5eb0f4ee3cbe81f69a3ac3217f2c2602">&#x6307;&#x5B9A;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x867D;&#x7136;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x662F;&#x4F9D;&#x7136;&#x4F1A;&#x6709;&#x5C40;&#x9650;&#x6027;&#x3002; &#x4EE5;&#x5DE5;&#x8D44;&#x7CFB;&#x7EDF;&#x4E3A;&#x4F8B;&#xFF0C;&#x4E00;&#x5BB6;&#x516C;&#x53F8;&#x7684;&#x5DE5;&#x8D44;&#x7CFB;&#x7EDF;&#xFF0C;&#x5DE5;&#x8D44;&#x6700;&#x7EC8;&#x7684;&#x5F52;&#x5C5E;&#x8005;&#x548C;&#x516C;&#x53F8;&#x7684;&#x51FA;&#x7EB3;&#x4EEC;&#x53EA;&#x62E5;&#x6709;&#x5DE5;&#x8D44;&#x7684;&#x8BFB;&#x6743;&#x9650;&#xFF0C;&#x800C;&#x516C;&#x53F8;&#x7684;&#x4EBA;&#x4E8B;&#x548C;&#x8001;&#x677F;&#x624D;&#x62E5;&#x6709;&#x5168;&#x90E8;&#x7684;&#x8BFB;&#x5199;&#x6743;&#x9650;&#x3002;&#x5F53;&#x7136;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x591A;&#x6B21;&#x8BBE;&#x7F6E;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x529F;&#x80FD;&#xFF08;&#x591A;&#x4E2A;&#x7528;&#x6237;&#x7684; ACL &#x8BBE;&#x7F6E;&#x662F;&#x8FFD;&#x52A0;&#x7684;&#x800C;&#x975E;&#x8986;&#x76D6;&#xFF09;&#x3002;</p>
+<pre version="8f21b680beedd1adba8a7db3a52e2369"><code>AVObject salary = new AVObject(&quot;salary&quot;);
+salary[&quot;value&quot;] = 2000000;
+
+AVUser boss=new AVUser();//&#x5047;&#x8BBE;&#x6B64;&#x5904;&#x4E3A;&#x8001;&#x677F;
+AVUser hrWang=new AVUser();  //&#x4EBA;&#x4E8B;&#x5C0F;&#x738B;
+AVUser me = new AVUser(); //&#x6211;&#x4EEC;&#x5C31;&#x5728;&#x6587;&#x6863;&#x91CC;&#x723D;&#x4E00;&#x723D;&#x5427;
+AVUser cashierZhou = new AVUser(); //&#x51FA;&#x7EB3;&#x8001;&#x5468;
+
+AVACL acl = new AVACL();
+acl.SetReadAccess(boss, true);
+acl.SetReadAccess(hrWang, true);
+acl.SetReadAccess(me, true);
+acl.SetReadAccess(cashierZhou, true);
+
+acl.SetWriteAccess(boss, true);
+acl.SetWriteAccess(hrWang, true);
+salary.ACL = acl;
+await salary.SaveAsync();
+</code></pre><p version="ff163ff4e1e969b318af738531933e2e">&#x4F46;&#x662F;&#x8FD9;&#x4E9B;&#x6D89;&#x53CA;&#x5176;&#x4E2D;&#x7684;&#x4EBA;&#x53EF;&#x80FD;&#x4E0D;&#x6B62;&#x4E00;&#x4E2A;&#xFF0C;&#x4E5F;&#x6709;&#x79BB;&#x804C;&#x6362;&#x5C97;&#x65B0;&#x5458;&#x5DE5;&#x7684;&#x95EE;&#x9898;&#x5B58;&#x5728;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x65E2;&#x4E0D;&#x4F18;&#x96C5;&#xFF0C;&#x4E5F;&#x592A;&#x5570;&#x55E6;, &#x540C;&#x6837;&#x4F1A;&#x5F88;&#x96BE;&#x7EF4;&#x62A4;&#x3002; &#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5C31;&#x5F15;&#x5165;&#x4E86; <code>AVRole</code> &#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002; &#x516C;&#x53F8;&#x7684;&#x5458;&#x5DE5;&#x53EF;&#x4EE5;&#x6210;&#x767E;&#x4E0A;&#x5343;&#xFF0C;&#x7136;&#x800C;&#x4E00;&#x4E2A;&#x516C;&#x53F8;&#x7EC4;&#x7EC7;&#x91CC;&#x7684;&#x89D2;&#x8272;&#x5374;&#x80FD;&#x591F;&#x5728;&#x5F88;&#x957F;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x65F6;&#x95F4;&#x5185;&#x76F8;&#x5BF9;&#x7A33;&#x5B9A;&#x3002;</p>
+<pre version="b66090320a05916330ffa8e8b03a4fc4"><code>AVObject salary = new AVObject(&quot;salary&quot;);
+salary[&quot;value&quot;] = 2000000;
+
+var roleACL = new AVACL();
+roleACL.PublicReadAccess = true;//AVRole&#x672C;&#x8EAB;&#x5728;&#x521B;&#x5EFA;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x5B83;&#x88AB;&#x4FEE;&#x6539;&#xFF0C;&#x8FD9;&#x91CC;&#x662F;&#x4E3A;&#x4E86;&#x8BBE;&#x5B9A;AVRole&#x81EA;&#x8EAB;&#x7684;ACL&#x8BBF;&#x95EE;&#x9650;&#x5236;&#x3002;
+
+//&#x4EE5;&#x4E0B;&#x8FD9;&#x4E9B;&#x89D2;&#x8272;&#x53EA;&#x4E3A;&#x793A;&#x610F;&#xFF0C;&#x5982;&#x8981;&#x6B63;&#x786E;&#x6267;&#x884C;&#x672C;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x4EE5;&#x4E0B;&#x8FD9;&#x4E9B;AVUser&#x5FC5;&#x987B;&#x662F;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x4E8E;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x3002;
+AVUser boss = new AVUser();//&#x5047;&#x8BBE;&#x6B64;&#x5904;&#x4E3A;&#x8001;&#x677F;
+AVUser hrWang = new AVUser();  //&#x4EBA;&#x4E8B;&#x5C0F;&#x738B;
+AVUser me = new AVUser(); //&#x6211;&#x4EEC;&#x5C31;&#x5728;&#x6587;&#x6863;&#x91CC;&#x723D;&#x4E00;&#x723D;&#x5427;
+AVUser cashierZhou = new AVUser(); //&#x51FA;&#x7EB3;&#x8001;&#x5468;
+AVUser cashierGe = new AVUser();//&#x51FA;&#x7EB3;&#x5C0F;&#x845B;
+
+AVRole hr = new AVRole(&quot;hr&quot;, roleACL);
+AVRole cashier = new AVRole(&quot;cashier&quot;, roleACL);
+
+hr.Users.Add(hrWang);
+
+cashier.Users.Add(cashierZhou);
+cashier.Users.Add(cashierGe);
+
+var saveUsersTask = new List&lt;Task&gt;()
+{
+    {hr.SaveAsync()},
+    {cashier.SaveAsync()}
+};
+await Task.WhenAll(saveUsersTask).ContinueWith(t =&gt;
+{
+    AVACL acl = new AVACL();
+    acl.SetReadAccess(boss, true);
+    acl.SetReadAccess(me, true);
+
+    acl.SetRoleReadAccess(hr, true);
+    acl.SetRoleReadAccess(cashier,true);
+
+    acl.SetWriteAccess(boss, true);
+    acl.SetRoleWriteAccess(hr, true);
+
+    salary.ACL = acl;
+
+    return salary.SaveAsync();
+});
+</code></pre><h4 id="avrole-">AVRole &#x4E4B;&#x95F4;&#x7684;&#x4ECE;&#x5C5E;&#x5173;&#x7CFB;</h4>
+<p version="8f1061f16c7fecf9dca0d4ba8e1c6278">&#x5728;&#x8BB2;&#x6E05;&#x695A;&#x4E86;&#x7528;&#x6237;&#x4E0E;&#x89D2;&#x8272;&#x7684;&#x5173;&#x7CFB;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x6709;&#x4E00;&#x5C42;&#x89D2;&#x8272;&#x4E0E;&#x89D2;&#x8272;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x3002;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x7406;&#x89E3;&#x53EF;&#x80FD;&#x4F1A;&#x5BF9;&#x6211;&#x4EEC;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#xFF1A;</p>
+<p version="378edac11e55c8c986fb6cfbbd1e3c23">&#x4E00;&#x5BB6;&#x521B;&#x4E1A;&#x516C;&#x53F8;&#x6709;&#x79FB;&#x52A8;&#x90E8;&#x95E8;&#xFF0C;&#x90E8;&#x95E8;&#x4E0B;&#x9762;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x5C0F;&#x7EC4;&#xFF0C;Android &#x548C; iOS&#x3002;&#x800C;&#x6BCF;&#x4E2A;&#x5C0F;&#x7EC4;&#x53EA;&#x62E5;&#x6709;&#x81EA;&#x5DF1;&#x7EC4;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x8BFB;&#x5199;&#x6743;&#x9650;&#x3002;&#x4F46;&#x662F;&#x4ED6;&#x4EEC;&#x540C;&#x65F6;&#x62E5;&#x6709;&#x6838;&#x5FC3;&#x5E93;&#x4EE3;&#x7801;&#x7684;&#x8BFB;&#x53D6;&#x6743;&#x9650;&#x3002;</p>
+<pre version="a1b2f39ed7e8c12f8e866f24b501dfa7"><code>        var roleACL = new AVACL();
+        roleACL.PublicReadAccess = true;//AVRole&#x672C;&#x8EAB;&#x5728;&#x521B;&#x5EFA;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x5B83;&#x88AB;&#x4FEE;&#x6539;&#xFF0C;&#x8FD9;&#x91CC;&#x662F;&#x4E3A;&#x4E86;&#x8BBE;&#x5B9A;AVRole&#x81EA;&#x8EAB;&#x7684;ACL&#x8BBF;&#x95EE;&#x9650;&#x5236;&#x3002;
+
+        AVRole androidTeam = new AVRole(&quot;androidTeam&quot;, roleACL);
+        AVRole iOSTeam = new AVRole(&quot;iOSTeam&quot;, roleACL);
+        AVRole mobileDep = new AVRole(&quot;mobileDep&quot;, roleACL);
+
+        AVObject androidCode = new AVObject(&quot;code&quot;);
+        androidCode[&quot;name&quot;] = &quot;android&quot;;
+
+        AVObject iOSCode = new AVObject(&quot;code&quot;);
+        iOSCode[&quot;name&quot;] = &quot;ios&quot;;
+
+        AVObject coreCode = new AVObject(&quot;code&quot;);
+        coreCode[&quot;name&quot;] = &quot;core&quot;;
+
+        var saveTeamTasks = new List&lt;Task&gt;()
+            {
+                {androidTeam.SaveAsync()},
+                {iOSTeam.SaveAsync()},
+            };
+
+        await Task.WhenAll(saveTeamTasks).ContinueWith(t =&gt;
+         {
+             mobileDep.Roles.Add(androidTeam);
+             mobileDep.Roles.Add(iOSTeam);
+             return mobileDep.SaveAsync();
+         }).Unwrap().ContinueWith(s =&gt;
+         {
+             var saveCodeTasks = new List&lt;Task&gt;()
+             {
+                 {androidCode.SaveAsync()},
+                 {iOSCode.SaveAsync()},
+                 {coreCode.SaveAsync()},
+             };
+             return Task.WhenAll(saveCodeTasks);
+
+         }).Unwrap().ContinueWith(x =&gt;
+         {
+
+             //androidCode&#x7684;&#x8BFB;&#x5199;&#x6743;&#x9650;&#x5BF9;androidTeam&#x5F00;&#x653E;
+             androidCode.ACL.SetRoleReadAccess(androidTeam, true);
+             androidCode.ACL.SetRoleWriteAccess(androidTeam, true);
+
+             //iOSCode&#x7684;&#x8BFB;&#x5199;&#x6743;&#x9650;&#x5BF9;iOSTeam&#x5F00;&#x653E;
+             iOSCode.ACL.SetRoleReadAccess(iOSTeam, true);
+             iOSCode.ACL.SetRoleWriteAccess(iOSTeam, true);
+
+             //coreCode&#x5BF9;mobileDep&#x5F00;&#x653E;&#x8BFB;&#x53D6;&#x6743;&#x9650;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;mobileDep&#x672C;&#x8EAB;&#x5C31;&#x5DF2;&#x7ECF;&#x5305;&#x542B;&#x4E86;iOSTeam&#x548C;androidTeam&#x4F5C;&#x4E3A;&#x5B83;&#x7684;&#x5B50;&#x89D2;&#x8272;
+             coreCode.ACL.SetRoleReadAccess(mobileDep, true);
+
+             var saveCodeTasks = new List&lt;Task&gt;()
+             {
+                 {androidCode.SaveAsync()},
+                 {iOSCode.SaveAsync()},
+                 {coreCode.SaveAsync()},
+             };
+             return Task.WhenAll(saveCodeTasks);
+         }).Unwrap().ContinueWith(y =&gt;
+         {
+             //&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x5168;&#x90E8;&#x5B8C;&#x6210;&#x3002;
+         });
+</code></pre><h2 id="-">&#x6587;&#x4EF6;</h2>
+<h3 id="-">&#x4E0A;&#x4F20;&#x6587;&#x4EF6;</h3>
+<p version="89f1a62fe0d2258b18bce51e8ab8a16f">AVFile&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5C06;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x5230;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#xFF0C;&#x6BD4;&#x5982;&#x5E38;&#x89C1;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x56FE;&#x50CF;&#x6587;&#x4EF6;&#x3001;&#x5F71;&#x50CF;&#x6587;&#x4EF6;&#x3001;&#x97F3;&#x4E50;&#x6587;&#x4EF6;&#x548C;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x3002;
+&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4E00;&#x6BB5;&#x6587;&#x672C;&#x4FDD;&#x5B58;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF1A;</p>
+<pre version="23d5e1f167205c7e39772a1428808bab"><code>byte[] data = System.Text.Encoding.UTF8.GetBytes(&#x201C; LeanCloud is a great cloud service!&#x201D;);
+AVFile file = new AVFile(&quot;mytxtFile.txt&quot;, data, new Dictionary&lt;string, object&gt;()
+{
+{&quot;author&quot;,&quot;AVOSCloud&quot;}
+});
+await file.SaveAsync().ContinueWith(
+    t =&gt;
+{
+    if (!t.IsFaulted)
+    {
+        MessageBox.Show(file.ObjectId);
+    }
+    else
+    {
+
+    }
+}, CancellationToken.None, TaskContinuationOptions.OnlyOnRanToCompletion, TaskScheduler.FromCurrentSynchronizationContext());
+</code></pre><p version="e7f9e9f8e11d785eb6669d95714d371b">AVFile&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x4E00;&#x4E2A;byte&#x6570;&#x7EC4;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5C06;&#x8981;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x5143;&#x6570;&#x636E;&#x7684;&#x5B57;&#x5178;&#xFF0C;&#x6BD4;&#x5982;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x6587;&#x4EF6;&#x7684;&#x4F5C;&#x8005;&#x7684;&#x540D;&#x5B57;&#x5F53;&#x505A;&#x5143;&#x6570;&#x636E;&#x5B58;&#x5165;&#x8FD9;&#x4E2A;&#x5B57;&#x5178;&#xFF0C;LeanCloud &#x7684;&#x670D;&#x52A1;&#x7AEF;&#x4F1A;&#x628A;&#x5B83;&#x4FDD;&#x7559;&#x8D77;&#x6765;&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x4EE5;&#x540E;&#x83B7;&#x53D6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x79CD;&#x7C7B;&#x4F3C;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5143;&#x6570;&#x636E;&#x90FD;&#x4F1A;&#x88AB;&#x83B7;&#x53D6;&#x3002;</p>
+<h3 id="-">&#x672C;&#x5730;&#x6587;&#x4EF6;</h3>
+<p version="b64e8689484ace1d395ab4fdc1227206">&#x5728;.NET SDK&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x5F88;&#x6E05;&#x695A;&#x5730;&#x77E5;&#x9053;&#x67D0;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x6240;&#x5B58;&#x5728;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x6BD4;&#x5982;&#x5728;&#x6E38;&#x620F;&#x4E2D;&#x4E0A;&#x4F20;&#x4E00;&#x5F20;&#x6E38;&#x620F;&#x622A;&#x56FE;&#x5230;LeanCloud&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;SDK&#x76F4;&#x63A5;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4E0A;&#x4F20;&#x5230;LeanCloud&#x4E2D;&#x3002;</p>
+<pre version="e5d157c55f288ae7ca479aa6847508f3"><code>AVFile localFile = AVFile.CreateFileWithLocalPath(&quot;screenshot.PNG&quot;, Path.Combine(&quot;&lt;Local Folder Path&gt;&quot;, &quot;screenshot.PNG&quot;));
+</code></pre><p version="2cce6d3d09f8126380d9d9b2fc21223f">&#x4E4B;&#x540E;&#x7684;&#x64CD;&#x4F5C;&#x4E0E;&#x4E0A;&#x4E00;&#x8282;&#x7C7B;&#x4F3C;&#x3002;</p>
+<h3 id="-">&#x6587;&#x4EF6;&#x5143;&#x4FE1;&#x606F;</h3>
+<p version="fbce451d91b23be73ec053e9feec4075">AVFile&#x9ED8;&#x8BA4;&#x4F1A;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x548C;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x8005;objectId&#x4F5C;&#x4E3A;&#x5143;&#x4FE1;&#x606F;&#x3002;&#x540C;&#x6837;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x5B57;&#x5178;&#x63A5;&#x53E3;&#x5E2E;&#x52A9;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x672A;&#x4EFB;&#x610F;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x4EFB;&#x610F;&#x7B26;&#x5408;&#x5B57;&#x5178;&#x547D;&#x540D;&#x89C4;&#x5219;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5143;&#x6570;&#x636E;&#x3002;&#x5728;&#x672C;&#x5C0F;&#x8282;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x4E86;&#x5DF2;&#x7ECF;&#x4E3A;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5143;&#x6570;&#x636E;&#xFF1A;</p>
+<pre version="2fd6fe8aa8b2b86078d099c2f1a77990"><code> AVFile file = new AVFile(&quot;mytxtFile.txt&quot;, data, new Dictionary&lt;string, object&gt;()
+ {
+     {&quot;author&quot;,&quot;AVOSCloud&quot;}
+ });
+</code></pre><p version="c355765a39a36836bcbb1b38ac086f9f">&#x8FD9;&#x4E2A;&#x5C31;&#x662F;&#x7B80;&#x5355;&#x7684;&#x7528;&#x6CD5;&#xFF0C;&#x5728;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E00;&#x7EC4;&#x5B57;&#x5178;&#x53BB;&#x4FDD;&#x7559;&#x6587;&#x4EF6;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5143;&#x6570;&#x636E;&#x3002;</p>
+<p version="828458ae20ed11726296c12069c5d0d9">&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x4E0A;&#x4F20;&#x524D;&#x81EA;&#x52A8;&#x4E00;&#x4E9B;&#x5143;&#x4FE1;&#x606F;&#x4FDD;&#x5B58;&#x8D77;&#x6765;&#xFF0C;&#x4EE5;&#x4FBF;&#x540E;&#x7EED;&#x83B7;&#x53D6;&#xFF0C;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x8FD8;&#x4FDD;&#x5B58;&#x56FE;&#x7247;&#x7684;&#x9AD8;&#x5EA6;&#x548C;&#x5BBD;&#x5EA6;&#xFF1A;</p>
+<pre version="2b804778efb9d65b22805b28b17a39ee"><code> file.MetaData.Add(&quot;width&quot;, 100);
+ file.MetaData.Add(&quot;height&quot;, 100);
+</code></pre><h3 id="-">&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;</h3>
+<p version="c22bf0f9de6fc8842c8b284217dc64e5">&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;&#x5176;&#x5B9E;&#x8DDF;&#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#x4E00;&#x6837;&#xFF0C;&#x9996;&#x5148;&#x5FC5;&#x987B;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;<code>objectdId</code>&#xFF0C;&#x6216;&#x8005;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x5148;&#x83B7;&#x53D6;&#x8FD9;&#x4E2A;<code>objectdId</code>&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;<code>AVFile.GetFileWithObjectIdAsync</code>&#x65B9;&#x6CD5;&#x9996;&#x5148;&#x5B9E;&#x4F8B;&#x5316;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x4E0B;&#x8F7D;&#xFF1A;</p>
+<pre version="73b9c53db32d5e1c5101f5b3f2ba9a5d"><code>await AVFile.GetFileWithObjectIdAsync(&quot;538ed669e4b0e335f6102809&quot;).ContinueWith(t =&gt;
+   {
+       var file = t.Result;
+       file.DownloadAsync().ContinueWith(s =&gt;
+       {
+           var dataByte = file.DataByte;//&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x6D41;&#x7684;byte&#x6570;&#x7EC4;&#xFF0C;&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x505A;&#x4FDD;&#x5B58;&#xFF0C;&#x53D1;&#x9001;&#x7B49;&#x64CD;&#x4F5C;&#x3002;
+       });
+   });
+</code></pre><h3 id="-">&#x5220;&#x9664;&#x6587;&#x4EF6;</h3>
+<p version="33325a8c2a9c98052f749cf651c43b0c"><strong>&#x5220;&#x9664;&#x6587;&#x4EF6;&#x5C31;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x6267;&#x884C;&#x4E4B;&#x540E;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7ACB;&#x523B;&#x5220;&#x9664;&#x8BB0;&#x5F55;&#xFF0C;&#x5E76;&#x4E14;&#x539F;&#x59CB;&#x6587;&#x4EF6;&#x4E5F;&#x4F1A;&#x4ECE;&#x5B58;&#x50A8;&#x4ED3;&#x5E93;&#x4E2D;&#x5220;&#x9664;&#xFF08;&#x6240;&#x6709;&#x6D89;&#x53CA;&#x5230;&#x7269;&#x7406;&#x7EA7;&#x522B;&#x5220;&#x9664;&#x7684;&#x64CD;&#x4F5C;&#x8BF7;&#x8C28;&#x614E;&#x4F7F;&#x7528;&#xFF09;</strong></p>
+<pre version="8be7a29d6fede9e1233a1229372c16a1"><code> await  AVFile.GetFileWithObjectIdAsync(&quot;538ed669e4b0e335f6102809&quot;).ContinueWith(t =&gt;
+   {
+      var file = t.Result;
+      file.DeleteAsync();
+   });
+</code></pre><h2 id="-">&#x8C03;&#x7528;&#x4E91;&#x5F15;&#x64CE;</h2>
+<p version="e3d76740af70e5b943e411d3f8a6bafc">&#x4E91;&#x5F15;&#x64CE;&#x662F; LeanCloud &#x63D0;&#x4F9B;&#x7ED9;&#x5F00;&#x53D1;&#x8005;&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;&#x7AEF;&#x903B;&#x8F91;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x4F8B;&#x5982;&#x60F3;&#x5728;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x7EDF;&#x4E00;&#x7ED9;&#x7528;&#x6237;&#x5206;&#x914D;&#x968F;&#x673A;&#x7684;&#x6635;&#x79F0;&#xFF0C;&#x8FD9;&#x4E00;&#x64CD;&#x4F5C;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x4E91;&#x5F15;&#x64CE;&#x5B9E;&#x73B0;&#x3002;&#x5177;&#x4F53;&#x5173;&#x4E8E;&#x4E91;&#x5F15;&#x64CE;&#x7684;&#x4E00;&#x4E9B;&#x76F8;&#x5173;&#x6982;&#x5FF5;&#x548C;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x5148;&#x67E5;&#x770B; <a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#x6307;&#x5357;</a>&#x3002;</p>
+<p version="46185c47a53181ec92ee0896da0dcce4">&#x8C03;&#x7528;&#x4E91;&#x5F15;&#x64CE;&#x5728;SDK&#x4E2D;&#x6BD4;&#x8F83;&#x65B9;&#x4FBF;&#xFF0C;&#x5B83;&#x662F; <code>AVCloud</code> &#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x5168;&#x5C40;&#x5747;&#x53EF;&#x8C03;&#x7528;&#x3002;</p>
+<pre version="1b6ac0dca98357d42ad0a28b08b02765"><code>var dic = new Dictionary&lt;string, object&gt;();
+dic.Add(&quot;name&quot;, &quot;Justin&quot;);
+//...
+//&#x589E;&#x52A0;&#x53C2;&#x6570;
+//...
+//...
+var callTask = AVCloud.CallFunctionAsync&lt;string&gt;(&quot;TestFunctionName&quot;, dic);
+await callTask;
+</code></pre><p version="dca1c9ee4c504bc15b7e1d39aae1b9c2">&#x53EA;&#x9700;&#x8981;&#x4F20;&#x5165;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x51FD;&#x6570;&#x7684;&#x540D;&#x5B57;&#x548C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x9700;&#x8981;&#x53C2;&#x6570;&#x5373;&#x53EF;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x65E0;&#x53C2;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x76F4;&#x63A5;&#x4F20;&#x5165;<code>null</code>&#x5373;&#x53EF;&#x3002;</p>
+<h2 id="-">&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;</h2>
+<p version="6da5704b25b604aaee553d0fdf466163">&#x5728;&#x63A7;&#x5236;&#x53F0;&#x7684;<a href="/devcomponent.html?appid={{appid}}#/component/custom_param">&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;</a>&#x9875;&#x9762;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E00;&#x4E9B;&#x9759;&#x6001;&#x7684;&#x5168;&#x5C40;&#x5171;&#x4EAB;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x4ED6;&#x4EEC;&#x90FD;&#x662F;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x5728; SDK &#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x83B7;&#x53D6;&#x8FD9;&#x4E9B;&#x5728;&#x7EBF;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre version="bd8e2172e009d9911f688a983817937e"><code>IDictionary&lt;string, object&gt; cp=await AVCloud.GetCustomParameters();
+</code></pre><h2 id="-">&#x6D88;&#x606F;&#x63A8;&#x9001;</h2>
+<h3 id="-">&#x63A8;&#x9001;&#x7ED9;&#x6240;&#x6709;&#x7684;&#x8BBE;&#x5907;</h3>
+<pre version="fcf97e4e78ca60103f7799d1929a279d"><code>AVPush push = new AVPush();
+push.Alert = &quot;message to all devices.&quot;;
+var task = push.SendAsync();
+await task;
+</code></pre><p version="ae261cda7e903de012253ba49a47f943">&#x4EE5;&#x4E0A;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5411;&#x6240;&#x6709;&#x5B89;&#x88C5;&#x4E86;&#x5F53;&#x524D;App&#x7684;&#x8BBE;&#x5907;&#x63A8;&#x9001;&#x6D88;&#x606F;&#x3002;</p>
+<h3 id="-">&#x53D1;&#x9001;&#x7ED9;&#x7279;&#x5B9A;&#x7684;&#x7528;&#x6237;</h3>
+<p version="ee4e1294b28c0179b1122be571f4ead8">&#x53D1;&#x9001;&#x7ED9;public&#x9891;&#x9053;&#x7684;&#x7528;&#x6237;&#xFF1A;</p>
+<pre version="f8c5e5c54f5783239f11ac785b0b7fb5"><code> AVPush push = new AVPush();
+ push.Alert = &quot;message to public channel.&quot;;
+ push.Query = new AVQuery&lt;AVInstallation&gt;().WhereEqualTo(&quot;channels&quot;, &quot;public&quot;);
+ var task = push.SendAsync();
+ await task;
+</code></pre>
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

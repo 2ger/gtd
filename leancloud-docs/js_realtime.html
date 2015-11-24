@@ -1,0 +1,2651 @@
+<!doctype html>
+
+<html version="ee845ecc62c58158b1907414afd382de">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="javascript-sdk">JavaScript &#x5B9E;&#x65F6;&#x901A;&#x4FE1; SDK</h1>
+<h2 id="-">&#x7B80;&#x4ECB;</h2>
+<p version="438de10bb971b4ed78d9a7ac741b899d">&#x611F;&#x8C22;&#x4F60;&#x4F7F;&#x7528; JavaScript &#x5B9E;&#x65F6;&#x901A;&#x4FE1; SDK&#xFF0C;LeanCloud &#x7684;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x6BCF;&#x5929;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x6570;&#x8D85;&#x8FC7;&#x767E;&#x4E07;&#x7EA7;&#xFF0C;&#x5B89;&#x5168;&#x53EF;&#x9760;&#xFF0C;&#x662F;&#x4F60;&#x7684;&#x660E;&#x667A;&#x4E4B;&#x9009;&#x3002;</p>
+<p version="7a7dba1df521524883e29bf1ec5cb670">&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x7684; SDK&#xFF0C;&#x4E00;&#x884C;&#x540E;&#x7AEF;&#x4EE3;&#x7801;&#x90FD;&#x4E0D;&#x7528;&#x5199;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x505A;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x5B8C;&#x5907;&#x7684;&#x5B9E;&#x65F6;&#x804A;&#x5929;&#x5E94;&#x7528;&#x3001;&#x4E5F;&#x53EF;&#x4EE5;&#x505A;&#x4E00;&#x4E2A;&#x5B9E;&#x65F6;&#x5BF9;&#x6218;&#x7C7B;&#x7684;&#x6E38;&#x620F;&#xFF0C;&#x603B;&#x4E4B;&#x4E00;&#x5207;&#x4E0E;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x76F8;&#x5173;&#x7684;&#x4E1A;&#x52A1;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; LeanCloud &#x63D0;&#x4F9B;&#x7684;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x3002;</p>
+<p version="ef70ba0ee29df90aa1176eec51926f1c">&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5B9E;&#x65F6;&#x901A;&#x4FE1; SDK &#x914D;&#x5408;&#x300C;<a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;</a>&#x300D;&#x7B80;&#x5355;&#x7684;&#x5B9E;&#x73B0;&#x4E4B;&#x524D;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5F88;&#x591A;&#x4EBA;&#x624D;&#x80FD;&#x5B8C;&#x6210;&#x7684;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x76F8;&#x5173;&#x9700;&#x6C42;&#x7684;&#x5F00;&#x53D1;&#xFF0C;&#x5E76;&#x4E14;&#x5982;&#x679C;&#x4F60;&#x8FBE;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x6536;&#x8D39;&#x989D;&#x5EA6;&#xFF0C;&#x4E5F;&#x4F1A;&#x4EE5;&#x6781;&#x4F4E;&#x7684;&#x6210;&#x672C;&#x652F;&#x4ED8;&#x4F60;&#x7684;&#x4F7F;&#x7528;&#x8D39;&#x7528;&#xFF0C;&#x6210;&#x672C;&#x8FDC;&#x8FDC;&#x5C0F;&#x4E8E;&#x540C;&#x7B49;&#x89C4;&#x6A21;&#x81EA;&#x5EFA;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x3002;</p>
+<p version="466ca73a3864a957f5ae9c49fdaae042">&#x672C; SDK &#x5B9E;&#x73B0;&#x8F7B;&#x91CF;&#x3001;&#x9AD8;&#x6548;&#x3001;&#x65E0;&#x4F9D;&#x8D56;&#xFF0C;&#x652F;&#x6301;&#x6D4F;&#x89C8;&#x5668;&#x4E0E; node &#x8FD0;&#x884C;&#x73AF;&#x5883;&#x3002;&#x5176;&#x4E2D;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#x6DB5;&#x76D6;&#x4E86;&#x79FB;&#x52A8;&#x7EC8;&#x7AEF;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x53CA;&#x5404;&#x79CD; WebView&#xFF0C;&#x5305;&#x62EC;&#x5FAE;&#x4FE1;&#x3001;PhoneGap&#x3001;Cordova &#x7684; WebView&#xFF0C;&#x540C;&#x65F6; SDK &#x901A;&#x8FC7;&#x63D2;&#x4EF6;&#x65B9;&#x5F0F;&#x63D0;&#x4F9B;&#x517C;&#x5BB9; IE8 &#x4E0E; IE9 &#x7684;&#x65B9;&#x6848;&#x3002;&#x5177;&#x4F53;&#x8BF7;&#x770B;&#x4E0B;&#x9762;&#x300C;<a href="#&#x517C;&#x5BB9;&#x65B9;&#x6848;">&#x517C;&#x5BB9;&#x65B9;&#x6848;</a>&#x300D;&#x90E8;&#x5206;&#x7684;&#x8BF4;&#x660E;&#x3002;</p>
+<h3 id="demo">Demo</h3>
+<ul>
+<li><a href="http://leancloud.github.io/js-realtime-sdk/demo/demo2/">&#x7B80;&#x5355;&#x804A;&#x5929; Demo</a>&#xFF0C;<a href="https://github.com/leancloud/js-realtime-sdk/tree/master/demo/demo2">&#x6E90;&#x7801;</a></li>
+<li><a href="http://leancloud.github.io/leanmessage-demo">LeanMessage Demo</a>&#xFF0C;<a href="https://github.com/leancloud/leanmessage-demo/tree/master/Web">&#x6E90;&#x7801;</a></li>
+<li>&#x70ED;&#x5FC3;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x7684; <a href="http://cutpage.sinaapp.com/">&#x5B9E;&#x65F6;&#x5BF9;&#x6218;&#x6E38;&#x620F; Demo</a></li>
+</ul>
+<h3 id="-">&#x8D21;&#x732E;</h3>
+<p version="def2c164a3b39bcf163ceafdb5c1908d">&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; GitHub &#x62A5;&#x544A; bug &#x6216;&#x8005;&#x63D0;&#x51FA;&#x5EFA;&#x8BAE;&#x3002;&#x5982;&#x679C;&#x89C9;&#x5F97;&#x8FD9;&#x4E2A;&#x6587;&#x6863;&#x5199;&#x7684;&#x4E0D;&#x591F;&#x597D;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x5B8C;&#x5584;&#x3002;</p>
+<p version="e91a222716756081408e5b045421fbcf">SDK &#x4ED3;&#x5E93;&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/leancloud/js-realtime-sdk">https://github.com/leancloud/js-realtime-sdk</a></p>
+<p version="fc02b939d01521526ef12d422f93b5c7">&#x672C;&#x6587;&#x6863;&#x4ED3;&#x5E93;&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/leancloud/docs">https://github.com/leancloud/docs</a></p>
+<h2 id="-">&#x6982;&#x5FF5;</h2>
+<p version="851db039def0d94e102066fe8ad1f1eb">&#x5728;&#x4F60;&#x5F00;&#x59CB;&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#xFF0C;&#x9996;&#x5148;&#x6765;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;&#x5B9E;&#x65F6;&#x901A;&#x4FE1; SDK &#x7684;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#x3002;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5728; SDK &#x91CC;&#x9762;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x5C42;&#x6B21;&#xFF1A;</p>
+<ul>
+<li><p version="8f6b1fd89d4f3842ffd8dd2041a74e3e">&#x4E00;&#x5C42;&#x662F;&#x5E95;&#x5C42;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x57FA;&#x7840;&#x6A21;&#x5757;&#xFF0C;&#x8D1F;&#x8D23;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x5339;&#x914D;&#x548C;&#x6388;&#x6743;&#xFF0C;&#x5EFA;&#x7ACB;&#x57FA;&#x7840;&#x7684;&#x8FDE;&#x63A5;&#x548C;&#x5E95;&#x5C42;&#x63A7;&#x5236;&#x3002;&#x8FD9;&#x4E2A;&#x5C42;&#x6B21;&#x53EA;&#x4F1A;&#x6D3E;&#x53D1;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x7684;&#x4E8B;&#x4EF6;&#x51FA;&#x6765;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; SDK &#x76D1;&#x542C;&#x8FD9;&#x4E9B;&#x4E8B;&#x4EF6;&#x3002;&#x8FD9;&#x4E2A;&#x5C42;&#x9762; SDK &#x4F1A;&#x4FDD;&#x8BC1;&#x5E95;&#x5C42;&#x8FDE;&#x63A5;&#x7684;&#x7A33;&#x5B9A;&#xFF0C;&#x5305;&#x62EC;&#x65AD;&#x5F00;&#x91CD;&#x8BD5;&#xFF0C;&#x5FC3;&#x8DF3;&#x8FDE;&#x63A5;&#x7B49;&#x7B56;&#x7565;&#xFF1B;</p>
+</li>
+<li><p version="6ab276c0b8225716ac763deb5d126481">&#x53E6;&#x4E00;&#x5C42;&#x662F;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5C42;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; SDK &#x5EFA;&#x7ACB;&#x4E0D;&#x540C;&#x7684; Conversation&#xFF08;&#x5BF9;&#x8BDD;&#xFF09;&#x3002;&#x4E00;&#x4E2A; Conversation &#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x901A;&#x4FE1;&#x5355;&#x5143;&#xFF0C;&#x4F46; Conversation &#x95F4;&#x4E00;&#x822C;&#x662F;&#x65E0;&#x6CD5;&#x901A;&#x4FE1;&#x7684;&#x3002;&#x5F53;&#x7136;&#x4F60;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x5728;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5C42;&#xFF0C;&#x901A;&#x8FC7;&#x6D3E;&#x53D1;&#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5C01;&#x88C5;&#x5176;&#x4ED6;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x903B;&#x8F91;&#x3002;&#x5F53;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0; Conversation &#x4E4B;&#x540E;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x8FD9;&#x4E2A; Conversation&#xFF0C;&#x9664;&#x975E;&#x4F60;&#x81EA;&#x884C;&#x5220;&#x9664;&#xFF0C;&#x5426;&#x5219;&#x8BE5; Conversation &#x4E00;&#x76F4;&#x5B58;&#x5728;&#x3002;&#x4F46;&#x662F;&#x7528;&#x6237;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8FDE;&#x63A5;&#xFF0C;&#x8BE5;&#x623F;&#x95F4;&#x4E0D;&#x4F1A;&#x5360;&#x7528;&#x670D;&#x52A1;&#x5668;&#x8D44;&#x6E90;&#xFF0C;&#x53EA;&#x662F;&#x5B58;&#x50A8;&#x7684;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x6761;&#x76EE;&#xFF1B;</p>
+</li>
+</ul>
+<p version="794d3ae84de279e6fb0da2d216f83bfa">&#x5982;&#x679C;&#x60F3;&#x4E86;&#x89E3;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x7684;&#x6574;&#x4F53;&#x6982;&#x5FF5;&#xFF0C;&#x8BF7;&#x9605;&#x8BFB;&#x300C;<a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a>&#x300D;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x63D0;&#x4F9B;&#x300C;<a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; REST API</a>&#x300D;&#x3002;</p>
+<h3 id="-">&#x7279;&#x522B;&#x8BF4;&#x660E;</h3>
+<p version="99b05a41bf162cc4ddee77d835d872a5">Conversation&#xFF08;&#x5BF9;&#x8BDD;&#xFF09;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x4E5F;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A; Room&#xFF08;&#x623F;&#x95F4;&#xFF09;&#x3002;&#x51E0;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x8282;&#x70B9;&#x5728;&#x901A;&#x4FE1;&#x4E4B;&#x524D;&#x8981;&#x653E;&#x5230;&#x540C;&#x4E00;&#x4E2A;&#x623F;&#x95F4;&#x4E2D;&#xFF0C;&#x5176;&#x5B9E;&#x8FD9;&#x4E24;&#x4E2A;&#x662F;&#x4E00;&#x4E2A;&#x6982;&#x5FF5;&#xFF0C;&#x53EA;&#x662F;&#x540D;&#x5B57;&#x4E0D;&#x540C;&#xFF0C;SDK &#x4E2D;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x3002;&#x5982;&#x679C;&#x4F60;&#x89C9;&#x5F97;&#x66F4;&#x559C;&#x6B22; Room &#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#xFF0C;&#x90A3;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; room &#x65B9;&#x6CD5;&#x521B;&#x5EFA; Room&#xFF0C;&#x5982;&#x679C;&#x559C;&#x6B22; Conversation&#xFF0C;&#x90A3;&#x5C31;&#x4F7F;&#x7528; conv &#x65B9;&#x6CD5;&#x521B;&#x5EFA; Conversation&#x3002;</p>
+<p version="8c6609380291a8f09f84ea487416657d">&#x4E5F;&#x8BB8;&#x8BF4;&#x5230;&#x8FD9;&#x91CC;&#x4F60;&#x5DF2;&#x7ECF;&#x8DC3;&#x8DC3;&#x6B32;&#x8BD5;&#x4E86;&#xFF0C;&#x597D;&#x7684;&#xFF0C;&#x90A3;&#x4F60;&#x53EF;&#x4EE5;&#x8BD5;&#x7528;&#x4E00;&#x4E0B;&#x770B;&#x770B;&#x4E86;&#x3002;</p>
+<p version="aeb41766a0637b6f9fbc9de5cfeabc53">&#x6CE8;&#xFF1A;&#x5982;&#x679C;&#x8FD8;&#x4E0D;&#x662F;&#x5F88;&#x4E86;&#x89E3; LeanCloud &#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#xFF0C;&#x5EFA;&#x8BAE;&#x5148;&#x4ECE;&#x300C;<a href="/start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a>&#x300D;&#x5F00;&#x59CB;&#x5C1D;&#x8BD5;&#x3002;</p>
+<h2 id="-">&#x5B89;&#x88C5;&#x4E0E;&#x914D;&#x7F6E;</h2>
+<h3 id="-">&#x6D4F;&#x89C8;&#x5668;&#x73AF;&#x5883;</h3>
+<h4 id="-bower-http-bower-io-">&#x901A;&#x8FC7; <a href="http://bower.io/">bower</a> &#x5B89;&#x88C5;</h4>
+<p version="9c5e6afd27edb9572dc792dde84d4dce">&#x5728;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#x8FD0;&#x884C;&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre version="fd36b27f91e49c8067829aed9c9000d4"><code>bower install leancloud-realtime --save
+</code></pre><p version="5d7e39a88b110eb23d1c71e1fce2e01c">&#x5B89;&#x88C5;&#x4E4B;&#x540E;&#xFF0C;&#x5728;&#x9875;&#x9762;&#x4E2D;&#x52A0;&#x8F7D; bower_components/leancloud-realtime/dist/AV.realtime.js &#x540E;&#x5373;&#x53EF;&#x4F7F;&#x7528; <code>AV.realtime</code> &#x5168;&#x5C40;&#x53D8;&#x91CF;&#x3002;</p>
+<h4 id="-npm-browserify-http-browserify-org-">&#x901A;&#x8FC7; npm &#x5B89;&#x88C5;&#xFF0C;&#x4F7F;&#x7528; <a href="http://browserify.org/">browserify</a> &#x6253;&#x5305;</h4>
+<p version="fd06132ca9efa9df0e883ef1919b8d62">leancloud-realtime &#x662F;&#x6807;&#x51C6;&#x7684; node package&#xFF0C;&#x652F;&#x6301;&#x4F7F;&#x7528; browserify &#x8FDB;&#x884C;&#x6D4F;&#x89C8;&#x5668;&#x4EE3;&#x7801;&#x7684;&#x6253;&#x5305;&#xFF0C;node &#x73AF;&#x5883;&#x4E2D;&#x7684;&#x5B89;&#x88C5;&#x65B9;&#x6CD5;&#x53C2;&#x89C1;&#x300C;<a href="#node_&#x73AF;&#x5883;">node &#x73AF;&#x5883;</a>&#x300D;&#x3002;</p>
+<h4 id="-">&#x517C;&#x5BB9;&#x65B9;&#x6848;</h4>
+<h5 id="ie8-ie9">IE8 &#x4E0E; IE9</h5>
+<p version="322f108c4bcc20efd90c6c5166f34f3e">SDK &#x63D0;&#x4F9B;&#x63D2;&#x4EF6;&#x5316;&#x7684;&#x3001;&#x65E0;&#x75DB;&#x517C;&#x5BB9; IE8 &#x4E0E; IE9 &#x8001;&#x7248;&#x672C; IE &#x6D4F;&#x89C8;&#x5668;&#x7684;&#x652F;&#x6301;&#x65B9;&#x5F0F;&#x3002;</p>
+<p version="aa81306d5aa8fb671d1856ab6365fe35">IE8 &#x4E0E; IE9 &#x6CA1;&#x6709;&#x5B9E;&#x73B0; WebSocket&#xFF0C;SDK &#x901A;&#x8FC7; Flash &#x63D2;&#x4EF6;&#x5B9E;&#x73B0;&#x5BF9; IE8 &#x4E0E; IE9 &#x7684;&#x652F;&#x6301;&#x3002;SDK &#x7684; plugin/web-socket-js &#x76EE;&#x5F55;&#x662F;&#x517C;&#x5BB9; IE8 &#x4E0E; IE9 &#x6240;&#x9700;&#x8981;&#x7528;&#x5230;&#x7684;&#x63D2;&#x4EF6;&#x3002;&#x4E3B;&#x8981;&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x5C31;&#x662F;&#x901A;&#x8FC7; Flash &#x7684; Socket &#x5B9E;&#x73B0; WebSocket &#x534F;&#x8BAE;&#x901A;&#x4FE1;&#xFF0C;&#x7136;&#x540E; JavaScript &#x5305;&#x88C5;&#x4E0B; window.WebSocket&#xFF0C;&#x518D;&#x901A;&#x8FC7; Flash &#x4E0E; JavaScript &#x901A;&#x4FE1;&#x5B8C;&#x6210;&#x5BF9; SDK &#x7684;&#x517C;&#x5BB9;&#x3002;&#x6211;&#x4EEC;&#x7684; Demo &#x662F;&#x517C;&#x5BB9; IE8 &#x4E0E; IE9 &#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x5176;&#x4EE3;&#x7801;&#x3002;</p>
+<p version="4e67db1681dfc6f7c4533f347dff3cc4">&#x53E6;&#x5916;&#xFF0C;&#x5982;&#x679C;&#x5728; IE8&#x3001;IE9 &#x4E0B;&#x542F;&#x7528;&#x4E86; HTTPS &#x534F;&#x8BAE;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x5B9E;&#x4F8B;&#x5316; AV.realtime &#x7684;&#x65F6;&#x5019;&#xFF0C;<code>secure</code> &#x8981;&#x8BBE;&#x7F6E;&#x4E3A; true&#x3002;&#x56E0;&#x4E3A; IE8&#x3001;IE9 &#x4E2D;&#xFF0C;&#x53EA;&#x652F;&#x6301; HTTP &#x534F;&#x8BAE;&#x53D1;&#x9001; HTTP &#x7684;&#x8BF7;&#x6C42;&#xFF0C;HTTPS &#x53D1;&#x9001; HTTPS &#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x6DF7;&#x7528;&#xFF0C;&#x5C31;&#x662F; HTTPS &#x7684;&#x7AD9;&#x70B9;&#x65E0;&#x6CD5;&#x53D1;&#x9001; HTTP &#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x4F46;&#x662F;&#x65B0;&#x7248; IE &#x5DF2;&#x7ECF;&#x652F;&#x6301;&#x3002;</p>
+<p version="79c181cbefd1b8ea3a2fb9acd3b1725e"><strong>&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#xFF1A;</strong></p>
+<p version="c38aa567ba25d6242701ce49f91009ce">&#x5728;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x6267;&#x884C; AV.realtime.js &#x7684;&#x4EE3;&#x7801;&#x524D;&#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF0C;&#x8DEF;&#x5F84;&#x6539;&#x4E3A;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x8DEF;&#x5F84;</p>
+<pre version="e3d8d3b7282ac239750a7e8b9ab7bedd"><code class="lang-html">&lt;!-- &#x5F15;&#x5165;&#x63D2;&#x4EF6;&#xFF0C;&#x517C;&#x5BB9;&#x4F4E; IE8 &#x4E0E; IE9&#xFF0C;&#x6CE8;&#x610F;&#x770B;&#x4E0B;&#x9762;&#x7684;&#x6CE8;&#x91CA;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x9700;&#x8981;&#x517C;&#x5BB9;&#xFF0C;&#x53EF;&#x4EE5;&#x53BB;&#x6389;&#x8FD9;&#x90E8;&#x5206;&#x3002; --&gt;
+&lt;!--[if lt IE 10]&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../../plugin/web-socket-js/swfobject.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../../plugin/web-socket-js/web_socket.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+// &#x8BBE;&#x7F6E;&#x53D8;&#x91CF;&#xFF0C;&#x914D;&#x7F6E;&#x63D2;&#x4EF6;&#x4E2D; WebSocketMain.swf &#x7684;&#x5F15;&#x7528;&#x8DEF;&#x5F84;
+WEB_SOCKET_SWF_LOCATION = &quot;../../plugin/web-socket-js/WebSocketMain.swf&quot;;
+&lt;/script&gt;
+&lt;![endif]--&gt;
+&lt;!-- &#x5F15;&#x5165;&#x63D2;&#x4EF6;&#x90E8;&#x5206;&#x7ED3;&#x675F; --&gt;
+
+&lt;!-- &#x5F15;&#x5165; LeanCloud &#x5B9E;&#x65F6;&#x901A;&#x4FE1; SDK --&gt;
+&lt;script src=&quot;../../dist/AV.realtime.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p version="2b55e8fafb7e196ca7af00f38dfaa5b9">IE8 &#x7684;&#x7528;&#x6237;&#x8BF7;&#x53C2;&#x89C1; <a href="#IE_8_&#x4E2D;&#x4F7F;&#x7528;&#x65F6;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x95EE;&#x9898;">FAQ - IE8 &#x4E2D;&#x4F7F;&#x7528;&#x65F6;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x95EE;&#x9898;</a>&#x3002;</p>
+<h5 id="android-webview">Android WebView</h5>
+<p version="f0b144a666226b77c1f1882d284f647e">&#x5982;&#x679C;&#x8981;&#x60F3;&#x5728; Android WebView &#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x8BF7;&#x52A1;&#x5FC5;&#x5F00;&#x542F; WebSocket &#x652F;&#x6301;&#x3002;&#x53E6;&#x5916;&#x6839;&#x636E;&#x7528;&#x6237;&#x53CD;&#x9988;&#xFF0C;&#x5728;&#x90E8;&#x5206; Android &#x673A;&#x578B;&#x7684; WebView &#x4E2D;&#x4E0D;&#x652F;&#x6301; WebSocket &#x7684;&#x5B89;&#x5168;&#x94FE;&#x63A5;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x4ECE; wss &#x534F;&#x8BAE;&#x8F6C;&#x4E3A; ws &#x534F;&#x8BAE;&#xFF0C;&#x5173;&#x95ED; WebSocket &#x7684; SSL&#xFF0C;RealtimeObject &#x5728;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x63D0;&#x4F9B; secure &#x9009;&#x9879;&#x53EF;&#x4EE5;&#x5173;&#x95ED;&#xFF0C;&#x8BE6;&#x7EC6;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x8BF7;&#x770B; <a href="#AV_realtime">AV.realtime</a> &#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="node-">node &#x73AF;&#x5883;</h3>
+<p version="9c5e6afd27edb9572dc792dde84d4dce">&#x5728;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#x8FD0;&#x884C;&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre version="f0b287a6fb149cb2c09f96f85a856c0f"><code>npm install leancloud-realtime --save
+</code></pre><p version="7bc0468dca1868bf388cb244a7ee58a2">&#x5B89;&#x88C5;&#x4E4B;&#x540E;&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x83B7;&#x5F97; <code>realtime</code> &#x65B9;&#x6CD5;&#x7684;&#x5F15;&#x7528;&#xFF1A;</p>
+<pre version="1f1ec3cf00674d9bfdfb7003f5aa625f"><code>var realtime = require(&apos;leancloud-realtime&apos;);
+</code></pre><p version="946047a497ecdb69db3a2ed43e375a71">SDK &#x5728; node &#x73AF;&#x5883;&#x4E0B;&#x4F7F;&#x7528; <a href="https://www.npmjs.com/package/ws">ws</a> &#x4F5C;&#x4E3A;&#x5185;&#x7F6E;&#x7684; WebSocket &#x5B9E;&#x73B0;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x4F7F;&#x7528; <code>realtime</code> &#x65B9;&#x6CD5;&#x4E4B;&#x524D;&#x901A;&#x8FC7; <code>config</code> &#x65B9;&#x6CD5;&#x914D;&#x7F6E;&#x4E00;&#x4E2A; Websocket &#x7C7B;&#xFF0C;&#x8FD9;&#x91CC;&#x4EE5; <a href="https://www.npmjs.com/package/websocket">websocket</a> package &#x4E3A;&#x4F8B;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF1A;</p>
+<pre version="b08b1cca0426f80a3190121c16e4b969"><code>// &#x9996;&#x5148;&#x5B89;&#x88C5; websocket&#xFF1A;
+// npm install websocket --save
+// &#x7136;&#x540E;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF1A;
+realtime.config({
+  WebSocket: require(&apos;websocket&apos;).w3cwebsocket
+});
+</code></pre><h2 id="-">&#x793A;&#x4F8B;&#x4EE3;&#x7801;</h2>
+<p version="0b11c0e7718b811b9c2ccf269c919ecf">&#x5982;&#x679C;&#x4F60;&#x89C9;&#x5F97;&#x4E00;&#x70B9;&#x70B9;&#x9605;&#x8BFB;&#x6587;&#x6863;&#x8F83;&#x6162;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x770B;&#x6211;&#x4EEC;&#x7684;&#x300C;<a href="https://github.com/leancloud/js-realtime-sdk/tree/master/demo">Demo &#x4EE3;&#x7801;</a>&#x300D;&#xFF0C;&#x5E76;&#x4E14;&#x4E0B;&#x8F7D;&#x81EA;&#x5DF1;&#x8FD0;&#x884C;&#x4E00;&#x4E0B;&#x8BD5;&#x8BD5;&#x770B;&#xFF0C;Demo &#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5F00;&#x4E24;&#x4E2A;&#x6D4F;&#x89C8;&#x5668;&#x6807;&#x7B7E;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x6A21;&#x62DF;&#x4E24;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x4E92;&#x76F8;&#x901A;&#x4FE1;&#xFF0C;&#x4EE3;&#x7801;&#x4E2D;&#x4E5F;&#x6709;&#x8BE6;&#x7EC6;&#x7684;&#x6CE8;&#x91CA;&#x65B9;&#x4FBF;&#x4F60;&#x6765;&#x4E86;&#x89E3;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre version="8d85e1e6263e4177708a0951ab9a0ba9"><code class="lang-javascript">// &#x6700;&#x7B80;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF0C;&#x8BF7;&#x6362;&#x6210;&#x81EA;&#x5DF1;&#x7684; appId&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x591A;&#x4E2A;&#x6807;&#x7B7E;&#x6A21;&#x62DF;&#x591A;&#x7528;&#x6237;&#x901A;&#x4FE1;
+var appId = &apos;{{appid}}&apos;;
+// clientId &#x5C31;&#x662F;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x4E2D;&#x7684;&#x552F;&#x4E00;&#x7528;&#x6237; id
+var clientId = &apos;LeanCloud01&apos;;
+var realtimeObj;
+var conversationObj;
+
+// &#x521B;&#x5EFA;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5B9E;&#x4F8B;&#xFF08;&#x652F;&#x6301;&#x5355;&#x9875;&#x591A;&#x5B9E;&#x4F8B;&#xFF09;
+realtimeObj = AV.realtime({
+    appId: appId,
+    clientId: clientId,
+    // &#x662F;&#x5426;&#x5F00;&#x542F; HTML &#x8F6C;&#x4E49;&#xFF0C;SDK &#x5C42;&#x9762;&#x5F00;&#x542F;&#x9632;&#x5FA1; XSS
+    encodeHTML: true,
+    // &#x662F;&#x5426;&#x5F00;&#x542F;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8BA4;&#x8BC1;
+    // auth: authFun,
+    // &#x662F;&#x5426;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x5730;&#x533A;&#x7684;&#x8282;&#x70B9;
+    // region: &apos;us&apos;
+});
+
+// &#x5F53;&#x524D; SDK &#x7248;&#x672C;
+console.log(&apos;&#x5F53;&#x524D; SDK &#x7248;&#x672C;&#x662F; &apos; + AV.realtime.version);
+
+// &#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x8FDE;&#x63A5;&#x6210;&#x529F;
+realtimeObj.on(&apos;open&apos;, function() {
+    console.log(&apos;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x5EFA;&#x7ACB;&#x6210;&#x529F;&#xFF01;&apos;);
+
+    // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x804A;&#x5929;&#x5BA4;&#xFF0C;conv &#x662F; conversation &#x7684;&#x7F29;&#x5199;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528; room &#x65B9;&#x6CD5;&#x66FF;&#x6362;
+    conversationObj = realtimeObj.conv({
+        // &#x4EBA;&#x5458;&#x7684; id
+        members: [
+            &apos;LeanCloud02&apos;
+        ],
+        // &#x9ED8;&#x8BA4;&#x540D;&#x5B57;
+        name: &apos;LeanCloud-Room&apos;,
+        // &#x9ED8;&#x8BA4;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x653E; Conversation &#x7684;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x503C;&#x7B49;
+        attr: {
+            test: &apos;testTitle&apos;
+        }
+    }, function(data) {
+        if (data) {
+            console.log(&apos;Conversation &#x521B;&#x5EFA;&#x6210;&#x529F;!&apos;, data);
+        }
+    });
+});
+
+// &#x5F53;&#x804A;&#x5929;&#x65AD;&#x5F00;&#x65F6;&#x89E6;&#x53D1;
+realtimeObj.on(&apos;close&apos;, function() {
+    console.log(&apos;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x88AB;&#x65AD;&#x5F00;&#xFF01;&apos;);
+});
+
+// &#x63A5;&#x6536;&#x65AD;&#x7EBF;&#x6216;&#x8005;&#x7F51;&#x7EDC;&#x72B6;&#x51B5;&#x4E0D;&#x4F73;&#x7684;&#x4E8B;&#x4EF6;&#xFF08;&#x65AD;&#x7F51;&#x53EF;&#x6D4B;&#x8BD5;&#xFF09;
+realtimeObj.on(&apos;reuse&apos;, function() {
+    console.log(&apos;&#x6B63;&#x5728;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#x3002;&#x3002;&#x3002;&apos;);
+});
+
+// &#x5F53; Conversation &#x88AB;&#x521B;&#x5EFA;&#x65F6;&#x89E6;&#x53D1;&#xFF0C;&#x5F53;&#x7136;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x6765;&#x5904;&#x7406;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x8981;&#x76D1;&#x542C;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;
+realtimeObj.on(&apos;create&apos;, function(data) {
+
+    // &#x5411;&#x8FD9;&#x4E2A; Conversation &#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x7528;&#x6237;
+    conversationObj.add([
+        &apos;LeanCloud03&apos;, &apos;LeanCloud04&apos;
+    ], function(data) {
+        console.log(&apos;&#x6210;&#x529F;&#x6DFB;&#x52A0;&#x7528;&#x6237;&#xFF1A;&apos;, data);
+    });
+
+    // &#x4ECE;&#x8FD9;&#x4E2A; Conversation &#x4E2D;&#x5220;&#x9664;&#x7528;&#x6237;
+    conversationObj.remove(&apos;LeanCloud03&apos;, function(data) {
+        console.log(&apos;&#x6210;&#x529F;&#x5220;&#x9664;&#x7528;&#x6237;&#xFF1A;&apos;, data);
+    });
+
+    // &#x5411;&#x8FD9;&#x4E2A; Conversation &#x4E2D;&#x53D1;&#x9001;&#x6D88;&#x606F;
+    conversationObj.send({
+        abc: 123
+    }, function(data) {
+        console.log(&apos;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;&#x670D;&#x52A1;&#x7AEF;&#x5DF2;&#x6536;&#x6536;&#x5230;&#xFF1A;&apos;, data);
+    });
+
+    setTimeout(function() {
+        // &#x67E5;&#x770B;&#x5386;&#x53F2;&#x6D88;&#x606F;
+        conversationObj.log(function(data) {
+            console.log(&apos;&#x67E5;&#x770B;&#x5F53;&#x524D; Conversation &#x6700;&#x8FD1;&#x7684;&#x804A;&#x5929;&#x8BB0;&#x5F55;&#xFF1A;&apos;, data);
+        });
+    }, 2000);
+
+    // &#x5F53;&#x524D; Conversation &#x63A5;&#x6536;&#x5230;&#x6D88;&#x606F;
+    conversationObj.receive(function(data) {
+        console.log(&apos;&#x5F53;&#x524D; Conversation &#x6536;&#x5230;&#x6D88;&#x606F;&#xFF1A;&apos;, data);
+    });
+
+    // &#x83B7;&#x53D6;&#x5F53;&#x524D; Conversation &#x4E2D;&#x7684;&#x6210;&#x5458;&#x4FE1;&#x606F;
+    conversationObj.list(function(data) {
+        console.log(&apos;&#x5217;&#x51FA;&#x5F53;&#x524D; Conversation &#x7684;&#x6210;&#x5458;&#x5217;&#x8868;&#xFF1A;&apos;, data);
+    });
+
+    // &#x53D6;&#x5F97;&#x5F53;&#x524D; Conversation &#x4E2D;&#x7684;&#x4EBA;&#x6570;
+    conversationObj.count(function(num) {
+        console.log(&apos;&#x53D6;&#x5F97;&#x5F53;&#x524D;&#x7684;&#x7528;&#x6237;&#x6570;&#x91CF;&#xFF1A;&apos; + num);
+    });
+});
+
+// &#x76D1;&#x542C;&#x6240;&#x6709;&#x7528;&#x6237;&#x52A0;&#x5165;&#x7684;&#x60C5;&#x51B5;
+realtimeObj.on(&apos;membersjoined&apos;, function(data) {
+    console.log(&apos;&#x6709;&#x7528;&#x6237;&#x52A0;&#x5165;&#x67D0;&#x4E2A;&#x5F53;&#x524D;&#x7528;&#x6237;&#x5728;&#x7684; Conversation&#xFF1A;&apos;, data);
+});
+
+// &#x76D1;&#x542C;&#x6240;&#x6709;&#x7528;&#x6237;&#x79BB;&#x5F00;&#x7684;&#x60C5;&#x51B5;
+realtimeObj.on(&apos;membersleft&apos;, function(data) {
+    console.log(&apos;&#x6709;&#x7528;&#x6237;&#x79BB;&#x5F00;&#x67D0;&#x4E2A;&#x5F53;&#x524D;&#x7528;&#x6237;&#x5728;&#x7684; Conversation&#xFF1A;&apos;, data);
+});
+
+// &#x76D1;&#x542C;&#x6240;&#x6709; Conversation &#x4E2D;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;
+realtimeObj.on(&apos;message&apos;, function(data) {
+    console.log(&apos;&#x67D0;&#x4E2A;&#x5F53;&#x524D;&#x7528;&#x6237;&#x5728;&#x7684; Conversation &#x63A5;&#x6536;&#x5230;&#x6D88;&#x606F;&#xFF1A;&apos;, data);
+});
+</code></pre>
+<p version="f7328b78dbdb235bbb25b23b21023cc7">&#x5982;&#x679C; A &#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x5305;&#x542B; B &#x7684; Conversation &#xFF0C;&#x5E76;&#x5411;&#x5176;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x3002;
+&#x90A3;&#x4E48;&#xFF0C;B &#x53EF;&#x4EE5;&#x901A;&#x8FC7; on &#x65B9;&#x6CD5;&#x76D1;&#x542C; message &#x4E8B;&#x4EF6;&#x83B7;&#x53D6;&#x6B64;&#x6D88;&#x606F;&#xFF08;&#x53EF;&#x4EE5;&#x662F;&#x79BB;&#x7EBF;&#x6D88;&#x606F;&#xFF09;&#xFF0C;&#x5373;&#x4F7F; B &#x5C1A;&#x672A;&#x4E3B;&#x52A8;&#x52A0;&#x5165;&#x8BE5; Conversation &#x3002;
+message &#x4E8B;&#x4EF6;&#x662F;&#x63A5;&#x6536;&#x6D88;&#x606F;&#x6700;&#x5E95;&#x5C42;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x6240;&#x4EE5;&#x5373;&#x4F7F;&#x4F60;&#x901A;&#x8FC7; <code>conversationObj.receive</code> &#x76D1;&#x542C;&#x4E86;&#x8BE5;&#x6D88;&#x606F;&#xFF0C;&#x4F9D;&#x7136;&#x4F1A;&#x89E6;&#x53D1; message &#x4E8B;&#x4EF6;&#x3002;
+message &#x4E8B;&#x4EF6;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x4E2D;&#x7684; cid &#x5B57;&#x6BB5;&#xFF0C;&#x5373;&#x662F;&#x8BE5; Conversation &#x7684; id &#x3002;
+&#x901A;&#x8FC7;&#x6B64; id &#x5373;&#x53EF;&#x521B;&#x5EFA;&#x540C;&#x6837;&#x7684; Conversation &#xFF0C;&#x7136;&#x540E;&#x5BF9;&#x5176;&#x56DE;&#x590D;&#x3002;</p>
+<h2 id="-">&#x5B89;&#x5168;</h2>
+<h3 id="web-">Web &#x5B89;&#x5168;&#x57DF;&#x540D;</h3>
+<p version="e10a50df5f8b37f8b99d820aee66d94d">&#x5982;&#x679C;&#x662F;&#x7EAF;&#x524D;&#x7AEF;&#x4F7F;&#x7528; JavaScript SDK&#xFF0C;&#x8BF7;&#x52A1;&#x5FC5;&#x914D;&#x7F6E; <strong>Web &#x5B89;&#x5168;&#x57DF;&#x540D;</strong>&#xFF0C;&#x9632;&#x6B62;&#x5176;&#x4ED6;&#x4EBA;&#x76D7;&#x7528;&#x4F60;&#x7684;&#x670D;&#x52A1;&#x5668;&#x8D44;&#x6E90;&#x3002;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x7684;&#x5B89;&#x5168;&#x57DF;&#x540D;&#x8BBE;&#x7F6E;&#x4F1A;&#x6709;&#x4E09;&#x5206;&#x949F;&#x7684;&#x5EF6;&#x8FDF;&#xFF0C;&#x6240;&#x4EE5;&#x8BBE;&#x7F6E;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x8BF7;&#x8010;&#x5FC3;&#x7B49;&#x5F85;&#x4E0B;&#x3002;&#x914D;&#x7F6E;&#x65B9;&#x5F0F;&#xFF1A;&#x8FDB;&#x5165;&#x5BF9;&#x5E94;&#x7684; App&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9; <strong>&#x8BBE;&#x7F6E;</strong> &gt; <strong>&#x5B89;&#x5168;&#x4E2D;&#x5FC3;</strong> &gt; <strong>Web &#x5B89;&#x5168;&#x57DF;&#x540D;</strong>&#x3002;</p>
+<p version="3b464b49e3eb35fd87f1243d17da21b7">&#x8BE6;&#x7EC6;&#x8BF7;&#x770B;<a href="data_security.html#Web_&#x5B89;&#x5168;&#x57DF;&#x540D;">&#x300A;&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168; - Web &#x5B89;&#x5168;&#x57DF;&#x540D;&#x300B;</a>&#x3002;</p>
+<h3 id="-">&#x6743;&#x9650;&#x548C;&#x8BA4;&#x8BC1;</h3>
+<p version="a324f105f23e574dc695597f37f1d8e0">&#x4E3A;&#x4E86;&#x6EE1;&#x8DB3;&#x5F00;&#x53D1;&#x8005;&#x5BF9;&#x6743;&#x9650;&#x548C;&#x8BA4;&#x8BC1;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x6211;&#x4EEC;&#x8BBE;&#x8BA1;&#x4E86;&#x7B7E;&#x540D;&#x7684;&#x6982;&#x5FF5;&#x3002;</p>
+<p version="31aab30691600a2d9d57724d10861316">&#x8BE6;&#x7EC6;&#x8BF7;&#x770B;&#x300A;<a href="realtime_v2.html#&#x6743;&#x9650;&#x548C;&#x8BA4;&#x8BC1;">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357; - &#x6743;&#x9650;&#x548C;&#x8BA4;&#x8BC1;</a>&#x300B;&#x3002;</p>
+<h3 id="-xss">&#x9632;&#x5FA1; XSS</h3>
+<p version="e49913b3467786d5cd423bc5b0f8fe34">Web &#x7AEF;&#x5B9E;&#x73B0;&#x4EFB;&#x4F55;&#x53EF;&#x4EE5;&#x5C06;&#x7528;&#x6237;&#x8F93;&#x5165;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x5230;&#x754C;&#x9762;&#x4E0A;&#x7684;&#x5E94;&#x7528;&#x90FD;&#x8981;&#x6CE8;&#x610F;&#x9632;&#x6B62;&#x4EA7;&#x751F; XSS&#xFF08;&#x8DE8;&#x7AD9;&#x811A;&#x672C;&#x653B;&#x51FB;&#xFF09;&#xFF0C;&#x5B9E;&#x65F6;&#x901A;&#x4FE1; SDK &#x652F;&#x6301;&#x5728; SDK &#x5C42;&#x9762;&#x5F00;&#x542F;&#x8FD9;&#x4E2A;&#x9632;&#x5FA1;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x9ED8;&#x8BA4;&#x4E0D;&#x5F00;&#x542F;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x5B9E;&#x4F8B;&#x5316; realtimeObject &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5F00;&#x542F;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x3002;</p>
+<p version="4909ff956c91cbdacda786afb21cc198">&#x6CE8;&#x610F;&#xFF1A;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x5BF9; clientId &#x505A;&#x4EFB;&#x4F55;&#x8FC7;&#x6EE4;&#xFF0C;&#x4E5F;&#x4E0D;&#x5EFA;&#x8BAE;&#x76F4;&#x63A5;&#x8F93;&#x51FA; clientId&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x8981;&#x8F93;&#x51FA; clientId &#x5230; Web &#x9875;&#x9762;&#x4E2D;&#xFF0C;&#x8BB0;&#x5F97;&#x8981;&#x81EA;&#x5DF1;&#x624B;&#x5DE5;&#x505A; HTML &#x8F6C;&#x4E49;&#xFF0C;&#x9632;&#x6B62; XSS&#x3002;</p>
+<pre version="bef0fc481c89fd95220fc949d0d0fdde"><code class="lang-javascript">// &#x521B;&#x5EFA;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5B9E;&#x4F8B;&#xFF08;&#x652F;&#x6301;&#x5355;&#x9875;&#x591A;&#x5B9E;&#x4F8B;&#xFF09;
+var appId = &apos;{{appid}}&apos;;
+realtimeObj = AV.realtime({
+    appId: appId,
+    clientId: clientId,
+    // &#x662F;&#x5426;&#x5F00;&#x542F; HTML &#x8F6C;&#x4E49;&#xFF0C;SDK &#x5C42;&#x9762;&#x5F00;&#x542F;&#x9632;&#x5FA1; XSS
+    encodeHTML: true
+    // &#x662F;&#x5426;&#x5F00;&#x542F;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8BA4;&#x8BC1;
+    // auth: authFun
+});
+</code></pre>
+<h2 id="-ios-android-">&#x4E0E; iOS&#x3001;Android &#x7B49;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x4FE1;</h2>
+<p version="33bc162a5737a323eb9d5e1d4d11bf85">JavaScript &#x5B9E;&#x65F6;&#x901A;&#x4FE1; SDK &#x53EF;&#x4EE5;&#x4E0E;&#x5176;&#x4ED6;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x4FE1;&#x3002;&#x5F53;&#x4F60;&#x4E0D;&#x4EC5;&#x4EC5;&#x53EA;&#x662F;&#x57FA;&#x4E8E; Web &#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x7A0B;&#x5E8F;&#xFF0C;&#x4E5F;&#x60F3;&#x901A;&#x8FC7;&#x4F7F;&#x7528; LeanCloud &#x63D0;&#x4F9B;&#x7684;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#xFF08;iOS&#x3001;Android&#x3001;Windows Phone&#x7B49;&#xFF09;&#x7684; SDK &#x5B9E;&#x73B0;&#x591A;&#x7AEF;&#x4E92;&#x901A;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5728;&#x53D1;&#x9001;&#x6570;&#x636E;&#x65F6;&#x4F7F;&#x7528;&#x5A92;&#x4F53;&#x7C7B;&#x578B;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x5177;&#x4F53;&#x8981;&#x5230; <a href="#RoomObject_send">roomObject.send</a> &#x65B9;&#x6CD5;&#x4E2D;&#x8BE6;&#x7EC6;&#x4E86;&#x89E3;&#x3002;</p>
+<p version="b5c029a4d95812b4b02cd5e379f71339">Web &#x7AEF;&#x672C;&#x8EAB;&#x65E0;&#x8BBA;&#x5904;&#x7406;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x90FD;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x89E3;&#x6790;&#x5E76;&#x6E32;&#x67D3;&#xFF0C;&#x6BD4;&#x5982;&#x56FE;&#x7247;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A; img &#x6807;&#x7B7E;&#x3002;&#x4F46;&#x662F;&#x5176;&#x4ED6;&#x7EC8;&#x7AEF;&#x5C31;&#x4E0D;&#x884C;&#xFF0C;&#x6BD4;&#x5982; iOS&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x9700;&#x8981;&#x544A;&#x77E5;&#x5176;&#x4ED6;&#x7EC8;&#x7AEF;&#x4F60;&#x53D1;&#x9001;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x8FD9;&#x6837;&#x5176;&#x4ED6;&#x5BA2;&#x6237;&#x7AEF;&#x63A5;&#x6536;&#x5230;&#x4E4B;&#x540E;&#x4F1A;&#x6709;&#x76F8;&#x5E94;&#x7684;&#x6E32;&#x67D3;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#xFF0C;&#x8BE6;&#x60C5;&#x8BF7;&#x770B;&#x76F8;&#x5E94; SDK &#x7684;&#x6587;&#x6863;&#x3002;&#x76EE;&#x524D;&#x652F;&#x6301;&#xFF1A;</p>
+<ul>
+<li>text&#xFF08;&#x6587;&#x672C;&#xFF09;</li>
+<li>image&#xFF08;&#x56FE;&#x7247;&#xFF09;</li>
+<li>audio&#xFF08;&#x58F0;&#x97F3;&#xFF09;</li>
+<li>video&#xFF08;&#x89C6;&#x9891;&#xFF09;</li>
+<li>location&#xFF08;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#xFF09;</li>
+<li>file&#xFF08;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x6587;&#x4EF6;&#xFF09;&#x7B49;&#x7C7B;&#x578B;&#x3002;</li>
+</ul>
+<h3 id="-">&#x793A;&#x4F8B;</h3>
+<pre version="e71ebdcd76e4d32ceb1a0f8eef798a09"><code>// &#x4E0E; iOS&#x3001;Android &#x7B49; SDK &#x901A;&#x4FE1;
+
+// &#x53D1;&#x9001;&#x6587;&#x672C;
+roomObj.send({
+    text: &apos;&#x6587;&#x672C;&#x5185;&#x5BB9;&apos;
+}, {
+    type: &apos;text&apos;
+}, function(data) {
+    // &#x53D1;&#x9001;&#x6210;&#x529F;&#x4E4B;&#x540E;&#x7684;&#x56DE;&#x8C03;
+});
+
+// &#x53D1;&#x9001;&#x56FE;&#x7247;
+roomObj.send({
+    // &#x63CF;&#x8FF0;&#x4FE1;&#x606F;
+    text: &apos;&#x56FE;&#x7247;&#x6D4B;&#x8BD5;&apos;,
+    // &#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x9009;&#x586B;&#xFF0C;&#x975E;&#x5FC5;&#x987B;&#x9879;
+    attr: {
+        aaa: 123
+    },
+    url: &apos;https://leancloud.cn/images/123.png&apos;,
+    // &#x56FE;&#x7247;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x6240;&#x6709;&#x9009;&#x9879;&#x53EF;&#x9009;&#x586B;&#xFF0C;&#x975E;&#x5FC5;&#x987B;&#x9879;
+    metaData: {
+        // &#x56FE;&#x7247;&#x540D;&#x5B57;
+        name:&apos;logo&apos;,
+        // &#x6587;&#x4EF6;&#x683C;&#x5F0F;
+        format:&apos;png&apos;,
+        // &#x9AD8;&#x5EA6;&#xFF0C;&#x5355;&#x4F4D;&#x50CF;&#x7D20; px
+        height: 123,
+        // &#x5BBD;&#x5EA6;&#xFF0C;&#x5355;&#x4F4D;&#x50CF;&#x7D20; px
+        width: 123,
+        // &#x6587;&#x4EF6;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D;&#x6BD4;&#x7279; b
+        size: 888
+    }
+}, {
+   type: &apos;image&apos;
+}, function(data) {
+    console.log(&apos;&#x56FE;&#x7247;&#x6570;&#x636E;&#x53D1;&#x9001;&#x6210;&#x529F;&#xFF01;&apos;);
+});
+</code></pre><h3 id="-">&#x81EA;&#x5B9A;&#x4E49;&#x6D88;&#x606F;&#x7C7B;&#x578B;</h3>
+<p version="66a87995d545144d92eabf8e93f5f038">&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;&#x4E5F;&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6D88;&#x606F;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x679C; iOS&#x3001;Android &#x4E0A;&#x901A;&#x8FC7; SDK &#x81EA;&#x5B9A;&#x4E49; <code>_lctype</code> &#x5B57;&#x6BB5;&#x5B9E;&#x73B0;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#xFF0C;&#x90A3;&#x4E48; Web &#x7AEF;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53D1;&#x9001;&#x548C;&#x63A5;&#x53D7;&#x540C;&#x6837;&#x683C;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<pre version="0107791ecdae2e335edba18f21e08a5f"><code>// &#x53D1;&#x9001;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x6570;&#x636E;
+roomObj.send({
+    _lctype: 123,
+    data: {
+      test: &apos;abc&apos;
+    }
+}, function(data) {
+  // &#x53D1;&#x9001;&#x6210;&#x529F;&#x4E4B;&#x540E;&#x7684;&#x56DE;&#x8C03;
+});
+</code></pre><h2 id="-">&#x6682;&#x6001;&#x5BF9;&#x8BDD;</h2>
+<p version="a76bc02b86fe08afc4873daf34f5a05e">&#x6807;&#x51C6;&#x7684; Conversation&#xFF08;&#x5BF9;&#x8BDD;&#xFF09; &#x6BCF;&#x4E2A;&#x6700;&#x591A;&#x53EA;&#x80FD;&#x652F;&#x6301; 500 &#x4E2A; client&#xFF0C;&#x5047;&#x5982;&#x60F3;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6709;&#x975E;&#x5E38;&#x5927;&#x91CF;&#x7684;&#x7528;&#x6237;&#x7684;&#x804A;&#x5929;&#x5BA4;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x300C;&#x6682;&#x6001;&#x5BF9;&#x8BDD;&#x300D;&#xFF08;&#x6216;&#x8005;&#x4E5F;&#x53EB;&#x5F00;&#x653E;&#x804A;&#x5929;&#x5BA4;&#xFF09;&#x3002;&#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x7684; Conversation &#x4E0D;&#x652F;&#x6301;&#x6D88;&#x606F;&#x56DE;&#x6267;&#x7B49;&#x65B9;&#x6CD5;&#xFF0C;&#x5177;&#x4F53;&#x8BF7;&#x5230;&#x300C;<a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x8BAF;&#x670D;&#x52A1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a>&#x300D;&#x4E2D;&#x4E86;&#x89E3;&#x3002;</p>
+<p version="b0b9176236cb779289060dfbeb0c65ce">&#x5177;&#x4F53;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#xFF0C;&#x8BF7;&#x770B;&#x4E0B;&#x9762;&#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A; Conversation &#x7684;&#x65B9;&#x6CD5; <a href="#RealtimeObject_conv">RealtimeObject.conv</a>&#x3002;</p>
+<h2 id="-">&#x65B9;&#x6CD5;&#x5217;&#x8868;</h2>
+<h3 id="-">&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;</h3>
+<p version="552bab9e82e7efe43fe64497454acecb">LeanCloud JavaScript &#x76F8;&#x5173; SDK &#x90FD;&#x4F1A;&#x4F7F;&#x7528;&#x300C;AV&#x300D;&#x4F5C;&#x4E3A;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;</p>
+<h3 id="av-realtime">AV.realtime</h3>
+<p version="298b35d838d952b52e6f8985f0980518">&#x8FD9;&#x662F;&#x521B;&#x5EFA;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F1A;&#x542F;&#x52A8;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x7684;&#x8FDE;&#x63A5;&#x3002;&#x81EA;&#x52A8;&#x8C03;&#x7528; open &#x65B9;&#x6CD5;&#xFF0C;&#x5185;&#x90E8;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x5339;&#x914D;&#xFF0C;&#x5E76;&#x5EFA;&#x7ACB; WebSocket &#x8FDE;&#x63A5;&#x3002;&#x5185;&#x90E8;&#x4F1A;&#x81EA;&#x52A8;&#x7EF4;&#x6301;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x7684;&#x94FE;&#x63A5;&#x7A33;&#x5B9A;&#xFF0C;&#x63A7;&#x5236;&#x5FC3;&#x8DF3;&#x6570;&#x636E;&#x5305;&#x7684;&#x9891;&#x7387;&#xFF0C;&#x8D85;&#x65F6;&#x68C0;&#x6D4B;&#x7B49;&#xFF0C;&#x5982;&#x679C;&#x53D1;&#x751F;&#x4E2D;&#x65AD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x76D1;&#x542C;&#x5BF9;&#x5E94;&#x7684;&#x4E8B;&#x4EF6;&#x6765;&#x7ED9;&#x7528;&#x6237;&#x754C;&#x9762;&#x4E0A;&#x7684;&#x53D8;&#x5316;&#x63D0;&#x793A;&#x3002;</p>
+<p version="8c41a77d9adc613eed2b0dcdb1052eb9">&#x53E6;&#x5916;&#xFF0C;&#x6B64;&#x65B9;&#x6CD5;&#x652F;&#x6301;&#x591A;&#x5B9E;&#x4F8B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#xFF0C;&#x521B;&#x5EFA;&#x591A;&#x4E2A; RealtimeObject &#x6765;&#x5B9E;&#x73B0;&#x804A;&#x5929;&#x3002;</p>
+<pre version="7f1a036d382d3b0d4a9a9ac6646303b1"><code class="lang-javascript">AV.realtime(options, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x9ED8;&#x8BA4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>options</strong></td>
+<td>Object</td>
+<td>&#x5FC5;&#x987B;</td>
+<td></td>
+<td>&#x914D;&#x7F6E;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x6240;&#x9700;&#x7684;&#x5FC5;&#x8981;&#x53C2;&#x6570;&#x3002;&#x5176;&#x4E2D;&#x5305;&#x62EC;&#xFF1A;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; appId</td>
+<td>String</td>
+<td>&#x5FC5;&#x987B;</td>
+<td></td>
+<td>&#x5E94;&#x7528;&#x7684; appId&#xFF0C;&#x5728; <strong>&#x63A7;&#x5236;&#x53F0;</strong> &gt; <strong>&#x8BBE;&#x7F6E;</strong> &gt; <strong>&#x57FA;&#x672C;&#x4FE1;&#x606F;</strong> &#x4E2D;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x3002;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; authFun</td>
+<td>Function</td>
+<td></td>
+<td></td>
+<td>&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x6743;&#x9650;&#x8BA4;&#x8BC1;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6BCF;&#x6B21;&#x5F53;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x53BB;&#x670D;&#x52A1;&#x5668;&#x8BF7;&#x6C42;&#x8BA4;&#x8BC1;&#xFF0C;<br>&#x6216;&#x8005;&#x8BB8;&#x53EF;&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#xFF0C;&#x8BE6;&#x7EC6;&#x9605;&#x8BFB; <a href="realtime_v2.html#&#x6743;&#x9650;&#x548C;&#x8BA4;&#x8BC1;">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x6982;&#x89C8; &#xB7; &#x6743;&#x9650;&#x548C;&#x8BA4;&#x8BC1;</a>&#xFF0C;<br>&#x4E5F;&#x53EF;&#x4EE5;&#x53C2;&#x8003; <a href="https://github.com/leancloud/js-realtime-sdk/tree/master/demo">Demo</a> &#x4E2D;&#x7684;&#x793A;&#x4F8B;&#x3002;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; clientId</td>
+<td>String</td>
+<td>&#x5FC5;&#x987B;</td>
+<td></td>
+<td>&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x552F;&#x4E00; id&#xFF0C;&#x7528;&#x6765;&#x6807;&#x793A;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x3002;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; secure</td>
+<td>Boolean</td>
+<td></td>
+<td>true</td>
+<td>&#x662F;&#x5426;&#x5173;&#x95ED; WebSocket &#x7684;&#x5B89;&#x5168;&#x94FE;&#x63A5;&#xFF0C;&#x5373;&#x7531; wss &#x534F;&#x8BAE;&#x8F6C;&#x4E3A; ws &#x534F;&#x8BAE;&#xFF0C;&#x5173;&#x95ED; SSL &#x4FDD;&#x62A4;&#x3002;<br>&#x9ED8;&#x8BA4;&#x5F00;&#x542F; true&#xFF0C;false &#x4E3A;&#x5173;&#x95ED;&#x3002;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; region</td>
+<td>String</td>
+<td></td>
+<td>cn</td>
+<td>&#x9009;&#x62E9;&#x670D;&#x52A1;&#x90E8;&#x7F72;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x7F8E;&#x56FD;&#x8282;&#x70B9;&#xFF0C;&#x5219;&#x8BBE;&#x7F6E;&#x4E3A; <code>us</code>&#xFF0C;&#x5982;&#x679C;&#x662F;&#x56FD;&#x5185;&#x8282;&#x70B9;&#xFF0C;&#x5219;&#x8BBE;&#x7F6E;&#x4E3A; <code>cn</code></td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; encodeHTML</td>
+<td>Boolean</td>
+<td></td>
+<td>false</td>
+<td>&#x662F;&#x5426;&#x5F00;&#x542F; HTML &#x8F6C;&#x4E49;&#xFF0C;&#x5728; SDK &#x5C42;&#x9762;&#x76F4;&#x63A5;&#x9632;&#x5FA1; XSS&#xFF08;&#x8DE8;&#x7AD9;&#x811A;&#x672C;&#x653B;&#x51FB;&#xFF09;&#x3002;<br>&#x8BE5;&#x9009;&#x9879;&#x9ED8;&#x8BA4;&#x4E3A;&#x5173;&#x95ED; false&#xFF0C;true &#x4E3A;&#x5F00;&#x542F;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<!-- &nbsp; 用来维护层级，请勿去掉。-->
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="0305cc49e43aea2f3c899c162b5cbe76"><code>Object</code> &#x8FD4;&#x56DE; RealtimeObject&#xFF08;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5BF9;&#x8C61;&#xFF09;&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="a5f605b996bedf8d116041b524e8c005"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId,
+   // &#x662F;&#x5426;&#x5F00;&#x542F; HTML &#x8F6C;&#x4E49;&#xFF0C;SDK &#x5C42;&#x9762;&#x5F00;&#x542F;&#x9632;&#x5FA1; XSS
+   encodeHTML: true,
+   // auth &#x662F;&#x6743;&#x9650;&#x6821;&#x9A8C;&#x7684;&#x65B9;&#x6CD5;&#x51FD;&#x6570;
+   // auth: authFun,
+   // &#x662F;&#x5426;&#x4F7F;&#x7528;&#x7F8E;&#x56FD;&#x8282;&#x70B9;
+   // region: &apos;us&apos;,
+   // &#x662F;&#x5426;&#x5173;&#x95ED; WebSocket &#x7684;&#x5B89;&#x5168;&#x94FE;&#x63A5;&#xFF0C;&#x5373;&#x7531; wss &#x534F;&#x8BAE;&#x8F6C;&#x4E3A; ws &#x534F;&#x8BAE;&#xFF0C;&#x5173;&#x95ED; SSL &#x4FDD;&#x62A4;
+   secure: true
+}, function() {
+   console.log(&apos;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#xFF01;&apos;);
+});
+
+// &#x76D1;&#x542C; open &#x4E8B;&#x4EF6;&#x4F1A;&#x5F97;&#x5230;&#x540C;&#x6837;&#x7684;&#x6548;&#x679C;
+realtimeObject.on(&apos;open&apos;, function() {
+   console.log(&apos;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#xFF01;&apos;);
+});
+// http://jsplay.avosapps.com/rot/embed?js,console
+</code></pre>
+<h3 id="av-realtime-version">AV.realtime.version</h3>
+<p version="212b3e3dec07c96b037a08cba42bf3d0">&#x83B7;&#x53D6;&#x5F53;&#x524D; SDK &#x7684;&#x7248;&#x672C;&#x4FE1;&#x606F;&#x3002;</p>
+<pre version="13b786341e1f515e56227bd1c0cd40a3"><code class="lang-javascript">AV.realtime.version
+</code></pre>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="d9a2996885b450af2dc4c043c9780522"><code>String</code> &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x7248;&#x672C;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="20f2c60a073a23ff799652044bd75dd0"><code class="lang-javascript">// &#x8FD4;&#x56DE;&#x7248;&#x672C;&#x53F7;
+console.log(&apos;&#x5F53;&#x524D;&#x7248;&#x672C;&#x662F;&#xFF1A;&apos; + AV.realtime.version);
+</code></pre>
+<h3 id="realtimeobject-open">RealtimeObject.open</h3>
+<p version="ddcb9d940370827888cdf45d8da17579">&#x8BE5;&#x65B9;&#x6CD5;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x8C03;&#x7528;&#xFF0C;SDK &#x4F1A;&#x81EA;&#x52A8;&#x542F;&#x52A8;&#x4E0E;&#x670D;&#x52A1;&#x7684;&#x8FDE;&#x63A5;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x542F;&#x52A8;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x7684;&#x8FDE;&#x63A5;&#xFF0C;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x5339;&#x914D;&#x5EFA;&#x7ACB; websocket &#x8FDE;&#x63A5;&#x3002;</p>
+<pre version="fbf6f45fc6545bb16723934a2b2474b6"><code class="lang-javascript">RealtimeObject.open(callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x521B;&#x5EFA;&#x6210;&#x529F;&#x5E76;&#x4E14;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x540E;&#x89E6;&#x53D1;&#x7684;&#x56DE;&#x8C03;&#xFF0C;&#x6B64;&#x65F6;&#x4E5F;&#x4F1A;&#x6D3E;&#x53D1;&#x4E00;&#x4E2A;&#x79C1;&#x6709;&#x7684;&#x4E8B;&#x4EF6;&#x300C;open&#x300D;&#x5230; RealtimeObject &#x5185;&#x90E8;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x76D1;&#x542C;&#x5F53;&#x524D;&#x7684; RealtimeObject &#x5B9E;&#x4F8B;&#x7684; open &#x4E8B;&#x4EF6;&#x6765;&#x5904;&#x7406;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="f3539adacb69129daa8c02280d0d4611"><code>Object</code> &#x8FD4;&#x56DE; RealtimeObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="32ef557d50292b31cf1a285a1fc46255"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x771F;&#x6B63;&#x4F7F;&#x7528;&#x65F6;&#x8FD9;&#x91CC;&#x4E5F;&#x65E0;&#x9700;&#x8C03;&#x7528;&#xFF0C;&#x5B9E;&#x4F8B;&#x5316; RealtimeObject &#x7684;&#x65F6;&#x5019; SDK &#x4F1A;&#x81EA;&#x52A8;&#x8C03;&#x7528; open &#x65B9;&#x6CD5;
+realtimeObject.open(function() {
+   // &#x4E0E;&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x6210;&#x529F;
+   console.log(&apos;open&apos;);
+});
+
+realtimeObject.on(&apos;open&apos;, function() {
+   console.log(&apos;open,too.&apos;);
+});
+</code></pre>
+<h3 id="realtimeobject-close">RealtimeObject.close</h3>
+<p version="0cb896c78f22b03efc08074f60617593">&#x5173;&#x95ED;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x7684;&#x8FDE;&#x63A5;&#xFF0C;&#x5E76;&#x4E14;&#x5185;&#x90E8;&#x4F1A;&#x5173;&#x95ED; websocket &#x8FDE;&#x63A5;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x56DE;&#x8C03;&#xFF0C;&#x56E0;&#x4E3A;&#x8C03;&#x7528;&#x4F1A;&#x7ACB;&#x523B;&#x5173;&#x95ED; WebSocket&#x3002;</p>
+<pre version="9b36678c2a024ae1cea81cc28eced896"><code class="lang-javascript">RealtimeObject.close()
+</code></pre>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="f3539adacb69129daa8c02280d0d4611"><code>Object</code> &#x8FD4;&#x56DE; RealtimeObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="6ec121a076565a25676cc274551810c9"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+realtimeObject.close();
+
+realtimeObject.on(&apos;close&apos;, function() {
+   console.log(&apos;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x5DF2;&#x7ECF;&#x65AD;&#x5F00;&#xFF01;&apos;);
+});
+</code></pre>
+<h3 id="realtimeobject-on">RealtimeObject.on</h3>
+<p version="b76f79f73888e08eaf25b56986620c29">&#x76D1;&#x542C; RealtimeObject &#x5185;&#x90E8;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x57FA;&#x4E8E;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x7684;&#x4E8B;&#x4EF6;&#x4E2D;&#x5FC3;&#xFF0C;&#x4E8B;&#x4EF6;&#x6BCF;&#x6B21;&#x6D3E;&#x53D1;&#x5C31;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;&#x4E00;&#x6B21;&#x3002;</p>
+<pre version="b4e0e5db513811efe4e60fe58edf2772"><code class="lang-javascript">RealtimeObject.on(eventName, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eventName</td>
+<td>String</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x76D1;&#x542C;&#x7684;&#x4E8B;&#x4EF6;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x5F53;&#x4E8B;&#x4EF6;&#x88AB;&#x6D3E;&#x53D1;&#x65F6;&#x4F1A;&#x8C03;&#x7528;&#x7684;&#x56DE;&#x8C03;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="f3539adacb69129daa8c02280d0d4611"><code>Object</code> &#x8FD4;&#x56DE; RealtimeObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="54a4be096e9f521121327c30802c4d79"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x5F53;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A; Room &#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x89E6;&#x53D1;
+realtimeObject.on(&apos;create&apos;, function(data) {
+   console.log(data);
+});
+
+// &#x6709;&#x4EBA;&#x52A0;&#x5165; Room &#x7684;&#x65F6;&#x5019;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;
+realtimeObject.on(&apos;membersjoined&apos;, function(data) {
+   console.log(data);
+});
+</code></pre>
+<h3 id="realtimeobject-once">RealtimeObject.once</h3>
+<p version="b7a248caf3e55d527bbd7ad5b83c5029">&#x76D1;&#x542C; RealtimeObject &#x5185;&#x90E8;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x57FA;&#x4E8E;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x7684;&#x4E8B;&#x4EF6;&#x4E2D;&#x5FC3;&#xFF0C;&#x4E8B;&#x4EF6;&#x53EA;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;&#x4E00;&#x6B21;&#x3002;</p>
+<pre version="92f5a1b2932c599e2b3b02bc79bcf304"><code class="lang-javascript">RealtimeObject.once(eventName, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eventName</td>
+<td>String</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x76D1;&#x542C;&#x7684;&#x4E8B;&#x4EF6;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x5F53;&#x4E8B;&#x4EF6;&#x88AB;&#x6D3E;&#x53D1;&#x65F6;&#x4F1A;&#x8C03;&#x7528;&#x7684;&#x56DE;&#x8C03;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="f3539adacb69129daa8c02280d0d4611"><code>Object</code> &#x8FD4;&#x56DE; RealtimeObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="1fba225c04163c654cbce722d95ae3e6"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x5F53;&#x670D;&#x52A1;&#x5EFA;&#x7ACB;&#x4E4B;&#x540E;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;
+realtimeObject.once(&apos;open&apos;, function() {
+   console.log(&apos;opened&apos;);
+});
+
+// &#x5F53;&#x670D;&#x52A1;&#x5173;&#x95ED;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;
+realtimeObject.once(&apos;close&apos;, function() {
+   console.log(&apos;closed&apos;);
+});
+</code></pre>
+<h3 id="realtimeobject-emit">RealtimeObject.emit</h3>
+<p version="0712f78f2a639b6c228e68dd921fd625">&#x6D3E;&#x53D1;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x5230; RealtimeObject &#x4E2D;&#xFF0C;&#x5C40;&#x90E8;&#x7684;&#x4E8B;&#x4EF6;&#x4E2D;&#x5FC3;&#x3002;</p>
+<pre version="4fb95a4aaa3677c148bf84d4d02e730c"><code class="lang-javascript">RealtimeObject.emit(eventName, dataObject)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eventName</td>
+<td>String</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x6D3E;&#x53D1;&#x7684;&#x4E8B;&#x4EF6;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>dataObject</td>
+<td>Obejct</td>
+<td></td>
+<td>&#x4F20;&#x9012;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x76D1;&#x542C;&#x7684;&#x56DE;&#x8C03;&#x4E2D;&#x901A;&#x8FC7;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x83B7;&#x53D6;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="f3539adacb69129daa8c02280d0d4611"><code>Object</code> &#x8FD4;&#x56DE; RealtimeObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="759cfb9704b163e4c02414f94d0a1959"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x5F53;&#x4E8B;&#x4EF6;&#x88AB;&#x6D3E;&#x53D1;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x89E6;&#x53D1;
+realtimeObject.on(&apos;LeanCloud123&apos;, function(data) {
+   // &#x4F1A;&#x8F93;&#x51FA; test
+   console.log(data.aaa);
+});
+
+// &#x6D3E;&#x53D1;&#x4E86;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x540D;&#x5B57;&#x53EB;&#x300C;LeanCloud123&#x300D;&#x3002;
+realtimeObject.emit(&apos;LeanCloud123&apos;, {
+    aaa: &apos;test&apos;
+});
+</code></pre>
+<h3 id="realtimeobject-off">RealtimeObject.off</h3>
+<p version="85ce215a0f80a0fe11c031ec9d95baea">&#x4ECE; RealtimeObject &#x4E2D;&#x7684;&#x79C1;&#x6709;&#x7684;&#x4E8B;&#x4EF6;&#x4E2D;&#x5FC3;&#xFF0C;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x5BF9;&#x5E94;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7ED1;&#x5B9A;</p>
+<pre version="465dd0dce847de8b0a3ef8510ac7546b"><code class="lang-javascript">RealtimeObject.off(eventName, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eventName</td>
+<td>String</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x4E00;&#x4E2A;&#x7ED1;&#x5B9A;&#x8FC7;&#x7684;&#x4E8B;&#x4EF6;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x8981;&#x5728;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x4E2D;&#x79FB;&#x9664;&#x7684;&#x51FD;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="f3539adacb69129daa8c02280d0d4611"><code>Object</code> &#x8FD4;&#x56DE; RealtimeObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="1307618761b52152db651c8a6a23b054"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+var eventFun = function(data) {
+   // &#x4F1A;&#x8F93;&#x51FA; test
+   console.log(data.aaa);
+};
+
+// &#x5F53;&#x4E8B;&#x4EF6;&#x88AB;&#x6D3E;&#x53D1;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x89E6;&#x53D1;
+realtimeObject.on(&apos;LeanCloud123&apos;, eventFun);
+
+// &#x4E8B;&#x4EF6;&#x65B9;&#x6CD5;&#x4ECE;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x4E2D;&#x5220;&#x9664;
+realtimeObject.off(&apos;LeanCloud123&apos;, eventFun);
+
+// &#x6D3E;&#x53D1;&#x4E86;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x540D;&#x5B57;&#x53EB;&#x300C;LeanCloud123&#x300D;&#x3002;
+realtimeObject.emit(&apos;LeanCloud123&apos;, {
+    aaa: &apos;test&apos;
+});
+</code></pre>
+<h3 id="realtimeobject-conv">RealtimeObject.conv</h3>
+<p version="43e884a35e945918f08f78bc1deb4ead">&#x521B;&#x5EFA;&#x4E00;&#x4E2A; Conversation&#xFF08;&#x5BF9;&#x8BDD;&#xFF09;&#xFF0C;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x7684;&#x6700;&#x5C0F;&#x5355;&#x5143;&#x3002;conv &#x548C; room &#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x7684;&#x662F;&#x540C;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x6301;&#x6982;&#x5FF5;&#x4E0A;&#x7684;&#x7EDF;&#x4E00;&#xFF0C;&#x8BE6;&#x89C1;&#x300C;<a href="#&#x7279;&#x522B;&#x8BF4;&#x660E;">&#x7279;&#x522B;&#x8BF4;&#x660E;</a>&#x300D;&#x3002;</p>
+<pre version="d4cdc439968501d4176a202c3086c1cb"><code class="lang-javascript">RealtimeObject.conv(options, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>options</strong></td>
+<td>Object</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x4F20;&#x5165;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; attr</td>
+<td>Object</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x4FE1;&#x606F;&#xFF0C;&#x5982; title&#x3001;image&#x3001;xxx &#x7B49;&#x3002;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; members</td>
+<td>Array</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x521B;&#x5EFA; conversation &#x65F6;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x52A0;&#x5165;&#x6210;&#x5458;&#x7684; clientId&#xFF0C;<br>&#x5982; <code>[&apos;LeanCloud1&apos;, &apos;LeanCloud2&apos;]</code>&#x3002;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; name</td>
+<td>String</td>
+<td>&#x53EF;&#x9009;</td>
+<td>Conversation &#x7684;&#x540D;&#x5B57;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; unique</td>
+<td>Boolean</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x662F;&#x5426;&#x539F;&#x5B50;&#x521B;&#x5EFA;&#x5BF9;&#x8BDD;&#xFF0C;&#x9488;&#x5BF9;&#x76F8;&#x540C;&#x6210;&#x5458;&#x591A;&#x6B21;&#x539F;&#x5B50;&#x521B;&#x5EFA;&#x5BF9;&#x8BDD;&#x4F1A;&#x8FD4;&#x56DE;&#x540C;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#x3002;&#x8BF7;&#x53C2;&#x8003; <a href="realtime_v2.html#&#x666E;&#x901A;&#x5BF9;&#x8BDD;_Normal_Conversation_">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x6982;&#x89C8;</a> &#x4E2D; <code>unique</code> &#x9009;&#x9879;&#x76F8;&#x5173;&#x8BF4;&#x660E;&#x3002;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; transient</td>
+<td>Boolean</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x662F;&#x5426;&#x4E3A;&#x6682;&#x6001;&#x7684; conversation&#xFF0C;&#x6682;&#x6001;&#x7684; conversation &#x53EF;&#x4EE5;<br>&#x652F;&#x6301;&#x5927;&#x91CF;&#x7528;&#x6237;&#xFF08;&#x8D85;&#x8FC7; 500 &#x4EBA;&#xFF09;&#x540C;&#x65F6;&#x5728;&#x6B64;&#x804A;&#x5929;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x652F;&#x6301;&#x6D88;&#x606F;&#x56DE;&#x6267;&#x3002;<br><strong>&#x666E;&#x901A;&#x804A;&#x5929;&#x6BCF;&#x4E2A; conversation &#x6700;&#x591A;&#x53EA;&#x80FD;&#x652F;&#x6301; 500 &#x4EBA;&#xFF0C;<br>&#x5982;&#x679C;&#x9884;&#x8BA1;&#x5355;&#x4E2A; conversation &#x4F1A;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x90A3;&#x8BF7;&#x5F00;&#x542F;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x3002;</strong><br>&#x5177;&#x4F53;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x6587;&#x6863;&#x300C;<a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x8BAF;&#x670D;&#x52A1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a>&#x300D;&#x3002;</td>
+</tr>
+<tr>
+<td><strong>callback</strong></td>
+<td>Function</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x521B;&#x5EFA;&#x6210;&#x529F;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x6B64;&#x65F6;&#x4E5F;&#x4F1A;&#x5728; RealtimeObject <br>&#x5185;&#x90E8;&#x6D3E;&#x53D1;&#x4E00;&#x4E2A; create &#x4E8B;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>RealtimeObject.on()</code> &#x65B9;&#x6CD5;&#x6765;&#x76D1;&#x542C;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="77f3107b7e138d356fc8e30ea5fca49f"><code>Object</code> &#x8FD4;&#x56DE; convObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="5f3ebebb4e72d30931eb86c6011ea65a"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.conv({
+    // &#x4EBA;&#x5458;&#x7684; id
+    members: [
+        &apos;LeanCloud02&apos;
+    ],
+    // &#x9ED8;&#x8BA4;&#x540D;&#x5B57;
+    name: &apos;LeanCloud-Room&apos;,
+    // &#x521B;&#x5EFA;&#x6682;&#x6001;&#x7684;&#x804A;&#x5929;&#x5BA4;
+    // transient: true,
+    // &#x9ED8;&#x8BA4;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x653E; Conversation &#x7684;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x503C;&#x7B49;
+    attr: {
+        test: &apos;testTitle&apos;
+    }
+}, function(result) {
+    console.log(&apos;Conversation created callback&apos;);
+});
+
+// &#x5F53;&#x65B0; Room &#x88AB;&#x521B;&#x5EFA;&#x65F6;&#x89E6;&#x53D1;
+realtimeObject.on(&apos;create&apos;, function(data) {
+   console.log(data);
+});
+</code></pre>
+<h3 id="realtimeobject-conv">RealtimeObject.conv</h3>
+<p version="aedb1c0b706bfd7ca9535ae74e9decd4">&#x5339;&#x914D;&#x4E00;&#x4E2A;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5DF2;&#x6709;&#x7684; Conversation&#xFF08;&#x5BF9;&#x8BDD;&#xFF09;&#xFF0C;&#x5E76;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684; convObject&#xFF0C;&#x6B64;&#x65F6;&#x4E0D;&#x6D3E;&#x53D1;&#x4EFB;&#x4F55;&#x4E8B;&#x4EF6;&#x3002;</p>
+<pre version="b7da78bccb081898070a418ecab1aa3c"><code class="lang-javascript">RealtimeObject.conv(convId, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>convId</td>
+<td>String</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x4F20;&#x5165;&#x5DF2;&#x6709; Conversation&#xFF08;&#x5BF9;&#x8BDD;&#xFF09; &#x7684; id</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x521B;&#x5EFA;&#x6210;&#x529F;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x6B64;&#x65F6;&#x4E0D;&#x4F1A;&#x6D3E;&#x53D1;&#x4EFB;&#x4F55;&#x4E8B;&#x4EF6;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="77f3107b7e138d356fc8e30ea5fca49f"><code>Object</code> &#x8FD4;&#x56DE; convObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="73d03232eef6b801c66d3a4958696a41"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+var convId = &apos;sasfalklkjdlfs123&apos;;
+var conv;
+
+// &#x83B7;&#x53D6;&#x5DF2;&#x6709;&#x7684; conversation
+realtimeObject.conv(convId, function(obj) {
+  // &#x5224;&#x65AD;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x662F;&#x5426;&#x5B58;&#x5728;&#x8FD9;&#x4E2A; conversation
+  if (obj) {
+    // &#x83B7;&#x53D6;&#x5230;&#x8FD9;&#x4E2A; conversation &#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;
+    conv = obj;
+    console.log(&apos;&#x53EF;&#x4EE5;&#x53D6;&#x5230; id&apos;, conv.id);
+    console.log(&apos;&#x53EF;&#x4EE5;&#x53D6;&#x5230; name&apos;, conv.name);
+    console.log(&apos;&#x53EF;&#x4EE5;&#x53D6;&#x5230;&#x5C5E;&#x6027;&apos;, conv.attr);
+  } else {
+    console.log(&apos;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x4E2A; conversation&#x3002;&apos;);
+  }
+});
+</code></pre>
+<h3 id="realtimeobject-room">RealtimeObject.room</h3>
+<p version="a9c5811b728a946ce86980c141219e9d">&#x521B;&#x5EFA;&#x4E00;&#x4E2A; Room&#xFF08;&#x623F;&#x95F4;&#xFF09;&#xFF0C;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x7684;&#x6700;&#x5C0F;&#x5355;&#x5143;&#x3002;room &#x65B9;&#x6CD5;&#x5C31;&#x662F; conv &#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x4E2A;&#x522B;&#x540D;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x6301;&#x6982;&#x5FF5;&#x7684;&#x7EDF;&#x4E00;&#xFF0C;&#x8BE6;&#x89C1;&#x300C;<a href="#&#x7279;&#x522B;&#x8BF4;&#x660E;">&#x7279;&#x522B;&#x8BF4;&#x660E;</a>&#x300D;&#xFF0C;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x548C; <a href="#RealtimeObject_conv">conv</a> &#x5B8C;&#x5168;&#x76F8;&#x540C;&#x3002;</p>
+<pre version="16f0e6c348d258830fc6b45c518958f5"><code class="lang-javascript">RealtimeObject.room(options, callback)
+</code></pre>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="87971d750dcb10e2154ee631800f63b9"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.room({
+    // &#x6210;&#x5458;&#x5217;&#x8868;
+    members: [
+        &apos;LeanCloud02&apos;
+    ],
+    // &#x9ED8;&#x8BA4;&#x540D;&#x5B57;
+    name: &apos;LeanCloud-Room&apos;,
+    // &#x9ED8;&#x8BA4;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x653E; Conversation &#x7684;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x503C;&#x7B49;
+    attr: {
+        test: &apos;testTitle&apos;
+    }
+}, function(result) {
+    console.log(&apos;Room created callback&apos;);
+});
+
+// &#x5F53;&#x65B0; Room &#x88AB;&#x521B;&#x5EFA;&#x65F6;&#x89E6;&#x53D1;
+realtimeObject.on(&apos;create&apos;, function(data) {
+   console.log(data);
+});
+</code></pre>
+<h3 id="realtimeobject-room">RealtimeObject.room</h3>
+<p version="81ce1ef8c8e824a2d8ca64b818627d40">&#x5339;&#x914D;&#x4E00;&#x4E2A;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5DF2;&#x6709;&#x7684; room&#xFF0C;&#x5E76;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684; RoomObject&#xFF0C;&#x6B64;&#x65F6;&#x4E0D;&#x6D3E;&#x53D1;&#x4EFB;&#x4F55;&#x4E8B;&#x4EF6;&#xFF1B;room &#x65B9;&#x6CD5;&#x5C31;&#x662F; conv &#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x4E2A;&#x522B;&#x540D;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x6301;&#x6982;&#x5FF5;&#x7684;&#x7EDF;&#x4E00;&#xFF0C;&#x8BE6;&#x89C1;&#x300C;<a href="#&#x7279;&#x522B;&#x8BF4;&#x660E;">&#x7279;&#x522B;&#x8BF4;&#x660E;</a>&#x300D;&#xFF0C;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x548C; conv &#x5B8C;&#x5168;&#x76F8;&#x540C;&#x3002;</p>
+<pre version="646a0bb553f29954f900454366c3911f"><code class="lang-javascript">RealtimeObject.room(roomId, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>roomId</td>
+<td>String</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x4F20;&#x5165;&#x5DF2;&#x6709; Room &#x7684; id</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x521B;&#x5EFA;&#x6210;&#x529F;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x6B64;&#x65F6;&#x4E0D;&#x4F1A;&#x6D3E;&#x53D1;&#x4EFB;&#x4F55;&#x4E8B;&#x4EF6;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="87ddddf1bfb0bd943915e3f899bad9a4"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+var roomId = &apos;sasfalklkjdlfs123&apos;;
+var room;
+realtimeObject.room(roomId, function(obj) {
+  if (obj) {
+    room = obj;
+    console.log(&apos;room id:&apos;, room.id);
+    console.log(&apos;room name:&apos;, room.name);
+    console.log(&apos;room data:&apos;, room.attr);
+  } else {
+    console.log(&apos;&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x4E2A; room&#x3002;&apos;);
+  }
+});
+</code></pre>
+<h3 id="realtimeobject-query">RealtimeObject.query</h3>
+<p version="9ceeeb701762b7ff10b83fa558a840c5">&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7528;&#x6237;&#x6240;&#x5728;&#x7684; Room &#x4FE1;&#x606F;&#x3002;</p>
+<pre version="5df5984b363a5fc727571c4286cd855f"><code class="lang-javascript">RealtimeObject.query(callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x521B;&#x5EFA;&#x6210;&#x529F;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x4E2D;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230; Room &#x7684;&#x5217;&#x8868;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="f3539adacb69129daa8c02280d0d4611"><code>Object</code> &#x8FD4;&#x56DE; RealtimeObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="9c03101534d2a2e69cf2043e0720fe4a"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x5F53;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5EFA;&#x7ACB;&#x6210;&#x529F;&#x4E4B;&#x540E;
+realtimeObject.on(&apos;open&apos;, function() {
+   // &#x67E5;&#x8BE2;&#x5F53;&#x524D;&#x7528;&#x6237;&#x6240;&#x5728;&#x7684;&#x7EC4;
+   realtimeObject.query(function(data) {
+      console.log(data);  // list
+   });
+});
+</code></pre>
+<h3 id="realtimeobject-query">RealtimeObject.query</h3>
+<p version="4445ff1504b56cc82461756a2f2fc6c8">&#x67E5;&#x8BE2;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<pre version="1d3fd3bf8a34c283b5b1938141b0717e"><code>RealtimeObject.query(options, callback)
+</code></pre><h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x9ED8;&#x8BA4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>options</strong></td>
+<td>Object</td>
+<td></td>
+<td></td>
+<td>&#x4E00;&#x4E9B;&#x914D;&#x7F6E;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; compact</td>
+<td>Boolean</td>
+<td></td>
+<td>false</td>
+<td>&#x662F;&#x5426;&#x8981;&#x53BB;&#x6389;&#x5185;&#x7F6E;&#x5927;&#x5B57;&#x6BB5;&#xFF08;&#x6210;&#x5458;&#x5217;&#x8868;&#x3001;&#x9759;&#x97F3;&#x5217;&#x8868;&#x3001;&#x5F53;&#x524D;&#x7528;&#x6237;&#x9759;&#x97F3;&#x7684;&#x72B6;&#x6001;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; limit</td>
+<td>Number</td>
+<td></td>
+<td>10</td>
+<td>&#x4E00;&#x6B21;&#x83B7;&#x53D6;&#x7684;&#x6761;&#x76EE;&#x6570;&#x91CF;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; skip</td>
+<td>Number</td>
+<td></td>
+<td>0</td>
+<td>&#x8DF3;&#x8FC7;&#x591A;&#x5C11;&#x4E2A;&#x7D22;&#x5F15;&#xFF0C;&#x6BD4;&#x5982; skip: 1000&#xFF0C;&#x5C31;&#x662F;&#x4ECE; 1001 &#x5F00;&#x59CB;&#x67E5;&#x8BE2;&#x3002;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; sort</td>
+<td>String</td>
+<td></td>
+<td>-lm</td>
+<td>&#x9ED8;&#x8BA4;&#x4E3A;&#x6700;&#x8FD1;&#x5BF9;&#x8BDD;&#x53CD;&#x5E8F;&#xFF0C;&#x6392;&#x5E8F;&#x5B57;&#x6BB5;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; where</td>
+<td>Object</td>
+<td></td>
+<td>{m: clientId}</td>
+<td>&#x9ED8;&#x8BA4;&#x4E3A;&#x5305;&#x542B;&#x81EA;&#x5DF1;&#x7684;&#x67E5;&#x8BE2; {m: clientId}</td>
+</tr>
+<tr>
+<td><strong>callback</strong></td>
+<td>Function</td>
+<td>&#x5FC5;&#x987B;</td>
+<td></td>
+<td>&#x521B;&#x5EFA;&#x6210;&#x529F;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x4E2D;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230; Room &#x7684;&#x5217;&#x8868;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="f3539adacb69129daa8c02280d0d4611"><code>Object</code> &#x8FD4;&#x56DE; RealtimeObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="dd76cb8f269b31c5720debe8ce5a5d0c"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x5F53;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5EFA;&#x7ACB;&#x6210;&#x529F;&#x4E4B;&#x540E;
+realtimeObject.on(&apos;open&apos;, function() {
+   // &#x5404;&#x79CD;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;
+   realtimeObject.query({
+       where   : {m: &apos;abc123&apos;},
+       sort    : &apos;-lm&apos;,  // &#x6216;&#x8005;&#x591A;&#x5B57;&#x6BB5;&#xFF1A;&apos;-createdAt,c&apos;
+       limit   : 100,
+       skip    : 200,
+       compact : false
+   },function(data) {
+      console.log(data);  // list
+   });
+});
+</code></pre>
+<h3 id="realtimeobject-ping">RealtimeObject.ping</h3>
+<p version="a527ca9cb9477db291415045721f4a9b">&#x67E5;&#x8BE2;&#x5BF9;&#x5E94;&#x7684; clientId &#x662F;&#x5426;&#x5904;&#x4E8E;&#x670D;&#x52A1;&#x5728;&#x7EBF;&#x72B6;&#x6001;&#x3002;</p>
+<pre version="e6754e4d2be3aed7e6c64cfadaef2ef9"><code class="lang-javascript">RealtimeObject.ping(clientIdList, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clientIdList</td>
+<td>Array</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x4F20;&#x5165;&#x5DF2;&#x6709;&#x7528;&#x6237;&#x7684; clientId &#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x5982; [&apos;LeanCloud1&apos;, &apos;LeanCloud2&apos;]&#x3002;<br><strong>&#x6CE8;&#x610F;&#xFF1A;&#x6BCF;&#x6B21;&#x6700;&#x591A;&#x53EA;&#x80FD;&#x5224;&#x65AD; 20 &#x4E2A; clientId&#xFF0C;&#x8D85;&#x8FC7; 20 &#x4E2A;&#x53EA;&#x67E5;&#x8BE2;&#x524D; 20 &#x4E2A;&#xFF0C;<br>&#x56E0;&#x4E3A;&#x6D88;&#x606F;&#x8FC7;&#x957F;&#x53EF;&#x80FD;&#x5BFC;&#x81F4; WebSocket &#x5305;&#x8FC7;&#x957F;&#x800C;&#x88AB;&#x670D;&#x52A1;&#x5668;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#x3002;</strong></td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x53C2;&#x6570;&#x4E2D;&#x83B7;&#x5F97;&#x5728;&#x7EBF;&#x7684; clientIdList&#xFF0C;<br>&#x6BD4;&#x5982;&#x8FD4;&#x56DE; [&apos;LeanCloud2&apos;]&#xFF0C;&#x5219;&#x8BF4;&#x660E; LeanCloud2 &#x5728;&#x7EBF;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="f3539adacb69129daa8c02280d0d4611"><code>Object</code> &#x8FD4;&#x56DE; RealtimeObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="c0a29b5185e3ba49a5189afb2c47f22a"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.room({
+    members: [
+        &apos;LeanCloud01&apos;,
+        &apos;LeanCloud02&apos;
+    ],
+    data: {
+        title: &apos;testTitle&apos;
+    }
+});
+
+realtimeObject.ping([
+    &apos;LeanCloud01&apos;,
+    &apos;LeanCloud02&apos;
+], function(data) {
+    // &#x8FD4;&#x56DE;&#x4F20;&#x5165;&#x7684; id &#x4E2D;&#xFF0C;&#x5728;&#x7EBF;&#x7684;&#x7528;&#x6237; id
+    console.log(data);
+});
+</code></pre>
+<h3 id="realtimeobject-ping">RealtimeObject.ping</h3>
+<p version="a527ca9cb9477db291415045721f4a9b">&#x67E5;&#x8BE2;&#x5BF9;&#x5E94;&#x7684; clientId &#x662F;&#x5426;&#x5904;&#x4E8E;&#x670D;&#x52A1;&#x5728;&#x7EBF;&#x72B6;&#x6001;&#x3002;</p>
+<pre version="6a9b5d76828b1894d558519d9575b654"><code class="lang-javascript">RealtimeObject.ping(clientId, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clientId</td>
+<td>String</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x4F20;&#x5165;&#x5DF2;&#x6709;&#x7528;&#x6237;&#x7684; clientId&#xFF0C;&#x5982; &apos;LeanCloud1&apos;&#x3002;</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x53C2;&#x6570;&#x4E2D;&#x83B7;&#x5F97;&#x5728;&#x7EBF;&#x7684; clientIdList&#xFF0C;<br>&#x6BD4;&#x5982;&#x8FD4;&#x56DE; [&apos;LeanCloud1&apos;]&#xFF0C;&#x5219;&#x8BF4;&#x660E; LeanCloud1 &#x5728;&#x7EBF;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="f3539adacb69129daa8c02280d0d4611"><code>Object</code> &#x8FD4;&#x56DE; RealtimeObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="f06c88cfcae73388106fd2c2ba19ed1b"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.room({
+    members: [
+        &apos;LeanCloud01&apos;,
+        &apos;LeanCloud02&apos;
+    ],
+    data: {
+        title: &apos;testTitle&apos;
+    }
+});
+
+realtimeObject.ping(&apos;LeanCloud01&apos;, function(data) {
+    if (data.length) {
+       console.log(&apos;&#x7528;&#x6237;&#x5728;&#x7EBF;&apos;);
+    } else {
+       console.log(&apos;&#x7528;&#x6237;&#x4E0D;&#x5728;&#x7EBF;&apos;);
+    }
+});
+</code></pre>
+<h3 id="roomobject-add">RoomObject.add</h3>
+<p version="d64ddcfa88786456a39bff652ebfbffb">&#x5411;&#x5F53;&#x524D; RoomObject &#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x3002;</p>
+<pre version="8d18c372cd9314e0ad0bef6cd937747f"><code class="lang-javascript">RoomObject.add(clientId, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clientId</td>
+<td>String</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x4F20;&#x5165;&#x5DF2;&#x6709;&#x7528;&#x6237;&#x7684; clientId&#x3002;</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x521B;&#x5EFA;&#x6210;&#x529F;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="51fd3aa32831ba9ecae048b1839a8373"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.room({
+    members: [
+        &apos;LeanCloud02&apos;
+    ],
+    data: {
+        title: &apos;testTitle&apos;
+    }
+});
+
+room.add(&apos;LeanCloud03&apos;, function() {
+    console.log(&apos;&#x6DFB;&#x52A0;&#x6210;&#x529F;&#x3002;&apos;);
+});
+
+// &#x5F53;&#x524D; Room &#x6709;&#x65B0;&#x7684; client &#x52A0;&#x5165;&#x65F6;&#x89E6;&#x53D1;
+realtimeObject.on(&apos;membersjoined&apos;, function(data) {
+   console.log(data);
+});
+</code></pre>
+<h3 id="roomobject-add">RoomObject.add</h3>
+<p version="ae15f2ed20ed3976442178ea4196b634">&#x5411;&#x5F53;&#x524D; RoomObject &#x4E2D;&#x6DFB;&#x52A0;&#x591A;&#x4E2A;&#x7528;&#x6237;&#x3002;</p>
+<pre version="b6501cb7dd690621f91a3106b3f97317"><code class="lang-javascript">RoomObject.add(clientIdList, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clientIdList</td>
+<td>Array</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x4F20;&#x5165;&#x5DF2;&#x6709;&#x7528;&#x6237;&#x7684; clientId &#x7684; list&#xFF0C;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x662F; client&#x3002;</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x521B;&#x5EFA;&#x6210;&#x529F;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="47d351a163a2bdbea3ff0951077c3106"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.room({
+    members: [
+        &apos;LeanCloud02&apos;
+    ],
+    data: {
+        title: &apos;testTitle&apos;
+    }
+});
+
+room.add([&apos;LeanCloud03&apos;, &apos;LeanCloud04&apos;], function() {
+    console.log(&apos;&#x6DFB;&#x52A0;&#x6210;&#x529F;&#x3002;&apos;);
+});
+
+// &#x5F53;&#x524D; Room &#x6709;&#x65B0;&#x7684; client &#x52A0;&#x5165;&#x65F6;&#x89E6;&#x53D1;
+realtimeObject.on(&apos;membersjoined&apos;, function(data) {
+   console.log(data);
+});
+</code></pre>
+<h3 id="roomobject-remove">RoomObject.remove</h3>
+<p version="43f35583b152a446f94b8423059f107e">&#x4ECE;&#x5F53;&#x524D; RoomObject &#x4E2D;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x3002;</p>
+<pre version="8271dbbc592f8100534402dd29ea584f"><code class="lang-javascript">RoomObject.remove(clientId, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clientId</td>
+<td>String</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x4F20;&#x5165;&#x5DF2;&#x6709;&#x7528;&#x6237;&#x7684; clientId&#x3002;</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x5220;&#x9664;&#x6210;&#x529F;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="aa2742bc22b2603b43bd6cfad024b491"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.room({
+    members: [
+        &apos;LeanCloud02&apos;
+    ],
+    data: {
+        title: &apos;testTitle&apos;
+    }
+});
+
+room.remove(&apos;LeanCloud02&apos;, function() {
+    console.log(&apos;&#x6210;&#x529F;&#x5220;&#x9664;&#x3002;&apos;);
+});
+
+// &#x5F53;&#x524D; Room &#x6709; client &#x9000;&#x51FA;&#x65F6;&#x89E6;&#x53D1;
+realtimeObject.on(&apos;membersleft&apos;, function(data) {
+   console.log(data);
+});
+</code></pre>
+<h3 id="roomobject-remove">RoomObject.remove</h3>
+<p version="79f82a6834af30c64f43903a7cca694c">&#x4ECE;&#x5F53;&#x524D; RoomObject &#x4E2D;&#x5220;&#x9664;&#x591A;&#x4E2A;&#x7528;&#x6237;&#x3002;</p>
+<pre version="14942193344fc7a4284c98e115bb6b91"><code class="lang-javascript">RoomObject.remove(clientIdList, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clientIdList</td>
+<td>Array</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x4F20;&#x5165;&#x5DF2;&#x6709;&#x7528;&#x6237;&#x7684; clientId &#x7684; list&#xFF0C;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x662F; client&#x3002;</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x5220;&#x9664;&#x6210;&#x529F;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="3a73f541a9ca46a869134728b99979f9"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.room({
+    members: [
+        &apos;LeanCloud02&apos;,
+        &apos;LeanCloud03&apos;
+    ],
+    data: {
+        title: &apos;testTitle&apos;
+    }
+});
+
+room.remove([&apos;LeanCloud02&apos;, &apos;LeanCloud03&apos;], function() {
+    console.log(&apos;&#x6210;&#x529F;&#x5220;&#x9664;&#x3002;&apos;);
+});
+
+// &#x5F53;&#x524D; Room &#x6709; client &#x9000;&#x51FA;&#x65F6;&#x89E6;&#x53D1;
+realtimeObject.on(&apos;membersleft&apos;, function(data) {
+   console.log(data);
+});
+</code></pre>
+<h3 id="roomobject-join">RoomObject.join</h3>
+<p version="c94feaa1fbf1d6f80e70776f401be549">&#x52A0;&#x5165;&#x5F53;&#x524D;&#x8FD9;&#x4E2A; Room&#x3002;</p>
+<pre version="7a7555e367ef98e7c1f9d4c3aaca8f7e"><code class="lang-javascript">RoomObject.join(callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x52A0;&#x5165;&#x6210;&#x529F;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="c1220dac444b4d85981f7b937efaf4de"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var roomId = &apos;safjslakjlfkjla123&apos;;
+var room;
+realtimeObject.room(roomId, function(object) {
+    // &#x5224;&#x65AD;&#x670D;&#x52A1;&#x5668;&#x662F;&#x5426;&#x5B58;&#x5728;&#x8FD9;&#x4E2A; room
+    if (object) {
+        room = object;
+        room.join(function() {
+            console.log(&apos;join&apos;);
+        });
+    }
+});
+
+realtimeObject.on(&apos;invited&apos;, function(data) {
+   console.log(data);
+});
+</code></pre>
+<h3 id="roomobject-leave">RoomObject.leave</h3>
+<p version="1372081e4aa566aa887362885ff1e13a">&#x4ECE;&#x5F53;&#x524D; RoomObject &#x4E2D;&#x79BB;&#x5F00;&#x3002;</p>
+<pre version="8306b23129ffc848bdcb6b56e4c01220"><code class="lang-javascript">RoomObject.leave(callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clientIdList</td>
+<td>Array</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x4F20;&#x5165;&#x5DF2;&#x6709;&#x7528;&#x6237;&#x7684; clientId &#x7684; list&#xFF0C;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x662F; client&#x3002;</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x6210;&#x529F;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="6fd98a10b335986f6e43abcc9f16edf8"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.room({
+    members: [
+        &apos;LeanCloud02&apos;,
+        &apos;LeanCloud03&apos;
+    ],
+    data: {
+        title: &apos;testTitle&apos;
+    }
+});
+
+room.leave();
+
+realtimeObject.on(&apos;kicked&apos;, function(data) {
+   console.log(data);
+});
+</code></pre>
+<h3 id="roomobject-list">RoomObject.list</h3>
+<p version="ba4f8807fc54c9e79177475f92bfcc2c">&#x83B7;&#x53D6;&#x5F53;&#x524D; RoomObject &#x4E2D;&#x7684;&#x6210;&#x5458;&#x5217;&#x8868;&#x3002;</p>
+<pre version="1a5270c738b1e793ac7a6fbefce3880b"><code class="lang-javascript">RoomObject.list(callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x83B7;&#x53D6;&#x6210;&#x5458;&#x5217;&#x8868;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="f174321920576a7d0704531231c67b73"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.room({
+    members: [
+        &apos;LeanCloud02&apos;,
+        &apos;LeanCloud03&apos;
+    ],
+    data: {
+        title: &apos;testTitle&apos;
+    }
+});
+
+room.list(function(data) {
+  console.log(data); // room &#x4E2D;&#x6210;&#x5458; list
+});
+</code></pre>
+<h3 id="roomobject-send">RoomObject.send</h3>
+<p version="aae39673aced496448eae43f958a813c">&#x5411;&#x5F53;&#x524D;&#x8FD9;&#x4E2A; RoomObject &#x4E2D;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x3002;</p>
+<pre version="80c9e316a17e5268e4fcd7c64a908dd2"><code class="lang-javascript">RoomObject.send(dataObject, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dataObject</td>
+<td>Object</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x5668;&#x6210;&#x529F;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x5BF9;&#x65B9;&#x5DF2;&#x7ECF;&#x63A5;&#x6536;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x670D;&#x52A1;&#x5668;&#x5DF2;&#x7ECF;&#x6536;&#x5230;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="084fd28a38319b813a178469f2c0bc3b"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.room({
+    members: [
+        &apos;LeanCloud02&apos;,
+        &apos;LeanCloud03&apos;
+    ],
+    data: {
+        title: &apos;testTitle&apos;
+    }
+});
+
+room.send({
+    testMsg: &apos;abcde&apos;
+}, function() {
+    console.log(&apos;server ack.&apos;);
+});
+
+// &#x5F53;&#x524D;&#x7528;&#x6237;&#x6240;&#x5728;&#x7684;&#x7EC4;&#xFF0C;&#x6709;&#x6D88;&#x606F;&#x65F6;&#x89E6;&#x53D1;
+realtimeObject.on(&apos;message&apos;, function(data) {
+   console.log(data);
+});
+</code></pre>
+<h3 id="roomobject-send">RoomObject.send</h3>
+<p version="aae39673aced496448eae43f958a813c">&#x5411;&#x5F53;&#x524D;&#x8FD9;&#x4E2A; RoomObject &#x4E2D;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x3002;</p>
+<pre version="016941b9298bcc3504811f4540596b08"><code class="lang-javascript">RoomObject.send(dataObject, options, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x9ED8;&#x8BA4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>dataObject</strong></td>
+<td>Object</td>
+<td>&#x5FC5;&#x987B;</td>
+<td></td>
+<td>&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td><strong>options</strong></td>
+<td>Object</td>
+<td>&#x53EF;&#x9009;</td>
+<td></td>
+<td>&#x53D1;&#x9001;&#x6D88;&#x606F;&#x65F6;&#x7684;&#x914D;&#x7F6E;&#x9879;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; receipt</td>
+<td>Boolean</td>
+<td>&#x53EF;&#x9009;</td>
+<td>false</td>
+<td>&#x662F;&#x5426;&#x9700;&#x8981;&#x63A5;&#x6536;&#x662F;&#x5426;&#x6536;&#x5230;&#x7684;&#x56DE;&#x6267;&#x4FE1;&#x606F;&#xFF0C;true &#x4E3A;&#x63A5;&#x6536;&#xFF0C;<br>&#x53EF;&#x4EE5;&#x5728; <code>RoomObject.receipt</code> &#x65B9;&#x6CD5;&#x4E2D;&#x63A5;&#x6536;&#x3002;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; transient</td>
+<td>Boolean</td>
+<td>&#x53EF;&#x9009;</td>
+<td>false</td>
+<td>&#x662F;&#x5426;&#x53D1;&#x9001;&#x7684;&#x662F;&#x300C;&#x6682;&#x6001;&#x6D88;&#x606F;&#x300D;&#xFF0C;&#x6682;&#x6001;&#x6D88;&#x606F;&#x4E0D;&#x4F1A;&#x6709;&#x56DE;&#x8C03;&#xFF0C;&#x4E0D;&#x4F1A;&#x5B58;&#x5728;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x4E2D;&#xFF0C;<br>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x53D1;&#x9001;&#x7528;&#x6237;&#x7684;&#x8F93;&#x5165;&#x72B6;&#x6001;&#xFF08;&#x5982;&#xFF1A;&#x300C;&#x6B63;&#x5728;&#x8F93;&#x5165;&#x2026;&#x2026;&#x300D;&#x7684;&#x6548;&#x679C;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; type</td>
+<td>String</td>
+<td>&#x53EF;&#x9009;</td>
+<td></td>
+<td>&#x65E0;&#x9ED8;&#x8BA4;&#x503C;&#x3002;&#x8BE5;&#x53C2;&#x6570;&#x5728;&#x591A;&#x7AEF;&#x901A;&#x4FE1;&#x4E2D;&#x4F1A;&#x7528;&#x5230;&#xFF0C;&#x5F53;&#x4F60;&#x6253;&#x7B97;&#x4E0E;&#x57FA;&#x4E8E; LeanCloud iOS&#x3001;Android <br>&#x7B49;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x4FE1;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x6B64;&#x9009;&#x9879;&#x6765;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x5A92;&#x4F53;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x6837;&#x5176;&#x4ED6;&#x5BA2;&#x6237;&#x7AEF;&#x63A5;&#x6536;&#x5230;&#x4E4B;&#x540E;<br>&#x4F1A;&#x6709;&#x76F8;&#x5E94;&#x7684;&#x6E32;&#x67D3;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#xFF0C;&#x8BE6;&#x60C5;&#x8BF7;&#x770B;&#x76F8;&#x5E94; SDK &#x7684;&#x6587;&#x6863;&#x3002;&#x76EE;&#x524D;&#x652F;&#x6301;&#xFF1A;<br>text&#xFF08;&#x6587;&#x672C;&#xFF09;&#x3001;image&#xFF08;&#x56FE;&#x7247;&#xFF09;&#x3001;audio&#xFF08;&#x58F0;&#x97F3;&#xFF09;&#x3001;video&#xFF08;&#x89C6;&#x9891;&#xFF09;&#x3001;<br>location&#xFF08;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#xFF09;&#x3001;file&#xFF08;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x6587;&#x4EF6;&#xFF09;&#xFF0C;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x8BF7;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x3002;</td>
+</tr>
+<tr>
+<td><strong>callback</strong></td>
+<td>Function</td>
+<td>&#x53EF;&#x9009;</td>
+<td></td>
+<td>&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x5668;&#x6210;&#x529F;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x5BF9;&#x65B9;&#x5DF2;&#x7ECF;&#x63A5;&#x6536;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x670D;&#x52A1;&#x5668;&#x5DF2;&#x7ECF;&#x6536;&#x5230;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="0bb38a864e3fb4cbf540c47ea8be4a1c"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.room({
+    members: [
+        &apos;LeanCloud02&apos;,
+        &apos;LeanCloud03&apos;
+    ],
+    data: {
+        title: &apos;testTitle&apos;
+    }
+});
+
+room.send({
+    abc: 123
+}, {
+    // &#x9700;&#x8981;&#x83B7;&#x53D6;&#x9605;&#x8BFB;&#x56DE;&#x6267;
+    receipt: true,
+    // &#x662F;&#x5426;&#x662F;&#x6682;&#x6001;&#x6D88;&#x606F;
+    transient: false
+}, function(data) {
+    console.log(&apos;&#x4FE1;&#x606F;&#x53D1;&#x9001;&#x6210;&#x529F;&#xFF0C;&#x8BE5;&#x4FE1;&#x606F;&#x4F1A;&#x83B7;&#x53D6;&#x9605;&#x8BFB;&#x56DE;&#x6267;&apos;);
+});
+
+// &#x5F53;&#x524D;&#x7528;&#x6237;&#x6240;&#x5728;&#x7684;&#x7EC4;&#xFF0C;&#x6709;&#x6D88;&#x606F;&#x65F6;&#x89E6;&#x53D1;
+room.receipt(function(data) {
+   // &#x5DF2;&#x7ECF;&#x6536;&#x5230;&#x7684; clientId
+   console.log(data);
+});
+
+// &#x4E0E; iOS&#x3001;Android &#x7B49; SDK &#x901A;&#x4FE1;
+
+// &#x53D1;&#x9001;&#x6587;&#x672C;
+room.send({
+    text: &apos;&#x6587;&#x672C;&#x5185;&#x5BB9;&apos;
+}, {
+    type: &apos;text&apos;
+}, function(data) {
+    // &#x53D1;&#x9001;&#x6210;&#x529F;&#x4E4B;&#x540E;&#x7684;&#x56DE;&#x8C03;
+});
+
+// &#x53D1;&#x9001;&#x56FE;&#x7247;
+room.send({
+    // &#x63CF;&#x8FF0;&#x4FE1;&#x606F;
+    text: &apos;&#x56FE;&#x7247;&#x6D4B;&#x8BD5;&apos;,
+    // &#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x9009;&#x586B;&#xFF0C;&#x975E;&#x5FC5;&#x987B;&#x9879;
+    attr: {
+        aaa: 123
+    },
+    url: &apos;https://leancloud.cn/images/123.png&apos;,
+    // &#x56FE;&#x7247;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x6240;&#x6709;&#x9009;&#x9879;&#x53EF;&#x9009;&#x586B;&#xFF0C;&#x975E;&#x5FC5;&#x987B;&#x9879;
+    metaData: {
+        // &#x56FE;&#x7247;&#x540D;&#x5B57;
+        name:&apos;logo&apos;,
+        // &#x6587;&#x4EF6;&#x683C;&#x5F0F;
+        format:&apos;png&apos;,
+        // &#x9AD8;&#x5EA6;&#xFF0C;&#x5355;&#x4F4D;&#x50CF;&#x7D20; px
+        height: 123,
+        // &#x5BBD;&#x5EA6;&#xFF0C;&#x5355;&#x4F4D;&#x50CF;&#x7D20; px
+        width: 123,
+        // &#x6587;&#x4EF6;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D;&#x6BD4;&#x7279; b
+        size: 888
+    }
+}, {
+   type: &apos;image&apos;
+}, function(data) {
+    console.log(&apos;&#x56FE;&#x7247;&#x6570;&#x636E;&#x53D1;&#x9001;&#x6210;&#x529F;&#xFF01;&apos;);
+});
+</code></pre>
+<h3 id="roomobject-receive">RoomObject.receive</h3>
+<p version="3f5a920d7332b22009a0f0b9042cc92a">&#x63A5;&#x6536;&#x5230;&#x5F53;&#x524D;&#x8FD9;&#x4E2A; RoomObject &#x4E2D;&#x7684;&#x6D88;&#x606F;&#x3002;</p>
+<pre version="53267556b2175cdf08a9c84cbe86c7d8"><code class="lang-javascript">RoomObject.receive(callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x6536;&#x5230;&#x5F53;&#x524D; Room &#x4E2D;&#x4FE1;&#x606F;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="fce37a6eaaf2dd883fafd88ea3d08cb1"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.room({
+    members: [
+        &apos;LeanCloud02&apos;,
+        &apos;LeanCloud03&apos;
+    ],
+    data: {
+        title: &apos;testTitle&apos;
+    }
+});
+
+// &#x5F53;&#x524D;&#x7528;&#x6237;&#x6240;&#x5728;&#x7684;&#x7EC4;&#xFF0C;&#x6709;&#x6D88;&#x606F;&#x65F6;&#x89E6;&#x53D1;
+room.receive(function(data) {
+   // &#x63A5;&#x6536;&#x5230;&#x7684;&#x4FE1;&#x606F;
+   console.log(data);
+});
+</code></pre>
+<h3 id="roomobject-receipt">RoomObject.receipt</h3>
+<p version="b72d946a1d4720275ea1df2bef0a39cc">&#x5982;&#x679C;&#x4F60;&#x901A;&#x8FC7; RoomObject.send &#x65B9;&#x6CD5;&#x53D1;&#x9001;&#x4E86;&#x9700;&#x8981;&#x6709;&#x56DE;&#x6267;&#x529F;&#x80FD;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x90A3;&#x4E48;&#x901A;&#x8FC7; RoomObject.receipt &#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x5F53;&#x524D;&#x8FD9;&#x4E2A;&#x623F;&#x95F4;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x8FD9;&#x7C7B;&#x56DE;&#x6267;&#x4FE1;&#x606F;&#xFF1B;&#x56DE;&#x6267;&#x8868;&#x793A;&#x4ECE;&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x672C;&#x8EAB;&#xFF0C;&#x5BF9;&#x65B9;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x5DF2;&#x7ECF;&#x6536;&#x5230;&#x8BE5;&#x4FE1;&#x606F;&#x3002;</p>
+<pre version="f7eaa491a9cb72eb476dd30dd39c7ebd"><code class="lang-javascript">RoomObject.receipt(callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x6536;&#x5230;&#x7684;&#x56DE;&#x6267;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="c3a4e2bb301a9c25f7cc99bc96f41cb1"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.room({
+    members: [
+        &apos;LeanCloud02&apos;,
+        &apos;LeanCloud03&apos;
+    ],
+    data: {
+        title: &apos;testTitle&apos;
+    }
+});
+
+room.send({
+    abc: 123
+}, {
+    // &#x9700;&#x8981;&#x83B7;&#x53D6;&#x9605;&#x8BFB;&#x56DE;&#x6267;
+    receipt: true
+}, function(data) {
+    console.log(&apos;&#x4FE1;&#x606F;&#x53D1;&#x9001;&#x6210;&#x529F;&#xFF0C;&#x8BE5;&#x4FE1;&#x606F;&#x4F1A;&#x83B7;&#x53D6;&#x9605;&#x8BFB;&#x56DE;&#x6267;&apos;);
+});
+
+// &#x5F53;&#x524D;&#x7528;&#x6237;&#x6240;&#x5728;&#x7684;&#x7EC4;&#xFF0C;&#x6709;&#x6D88;&#x606F;&#x65F6;&#x89E6;&#x53D1;
+room.receipt(function(data) {
+   // &#x5DF2;&#x7ECF;&#x6536;&#x5230;&#x7684; clientId
+   console.log(data);
+});
+</code></pre>
+<h3 id="roomobject-log">RoomObject.log</h3>
+<p version="dbb025253153a4517e7b1d34018dc1fa">&#x83B7;&#x53D6;&#x5F53;&#x524D; RoomObject &#x4E2D;&#x7684;&#x6D88;&#x606F;&#x5386;&#x53F2;&#x3002;&#x8FD9;&#x4E2A;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x6700;&#x8FD1; 20 &#x6761;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x3002;</p>
+<pre version="0c9d57a53849b03623a6cff422979139"><code class="lang-javascript">RoomObject.log(callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x4E2D;&#x53EF;&#x4EE5;&#x53D6;&#x5F97;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x6570;&#x636E;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="2ee2ac39f91aa6676a6747b66ab094f6"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var roomId = &apos;safjslakjlfkjla123&apos;;
+var room;
+realtimeObject.room(roomId, function(object) {
+    // &#x5224;&#x65AD;&#x8FD9;&#x4E2A; room &#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x662F;&#x5426;&#x5B58;&#x5728;
+    if (object) {
+        // &#x5F53;&#x524D;&#x7528;&#x6237;&#x6240;&#x5728;&#x7684;&#x7EC4;&#xFF0C;&#x6709;&#x6D88;&#x606F;&#x65F6;&#x89E6;&#x53D1;
+        room.log(function(data) {
+           console.log(data);
+        });
+    }
+};
+</code></pre>
+<h3 id="roomobject-log">RoomObject.log</h3>
+<p version="09fd4a8693e5f2e93ce6e03e7dc9d99e">&#x83B7;&#x53D6;&#x5F53;&#x524D; RoomObject &#x4E2D;&#x7684;&#x6D88;&#x606F;&#x5386;&#x53F2;&#x3002;</p>
+<pre version="e7b815dd22127c2f9c4084957d57e891"><code class="lang-javascript">RoomObject.log(options, callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x9ED8;&#x8BA4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>options</strong></td>
+<td>Object</td>
+<td>&#x53EF;&#x9009;</td>
+<td></td>
+<td>&#x67E5;&#x8BE2;&#x5386;&#x53F2;&#x6761;&#x76EE;&#x7684;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; limit</td>
+<td>Number</td>
+<td>&#x53EF;&#x9009;</td>
+<td>20</td>
+<td>&#x8FD4;&#x56DE;&#x6D88;&#x606F;&#x5386;&#x53F2;&#x7684;&#x6761;&#x76EE;&#x6570;&#x91CF;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x67E5;&#x8BE2;&#x6700;&#x8FD1; 20 &#x6761;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x3002;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; mid</td>
+<td>String</td>
+<td>&#x53EF;&#x9009;</td>
+<td></td>
+<td>message id &#x6D88;&#x606F;&#x7684; id&#xFF0C;&#x5F53;&#x63A5;&#x6536;&#x5230;&#x6D88;&#x606F;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x6709;&#x8FD9;&#x4E2A; id&#xFF0C;<br>&#x7528;&#x6765;&#x8F85;&#x52A9;&#x67E5;&#x8BE2;&#xFF0C;&#x9632;&#x6B62;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x6233;&#x4E0B;&#x6709;&#x4E24;&#x6761;&#x4E00;&#x6837;&#x7684;&#x6D88;&#x606F;&#x3002;</td>
+</tr>
+<tr>
+<td>&#xA0;&#xA0;&#xA0;&#xA0; t</td>
+<td>String/Number</td>
+<td>&#x53EF;&#x9009;</td>
+<td></td>
+<td>&#x67E5;&#x8BE2;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x7684;&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x67E5;&#x8BE2;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x4E4B;&#x524D;&#x7684;&#x6D88;&#x606F;&#x3002;</td>
+</tr>
+<tr>
+<td><strong>callback</strong></td>
+<td>Function</td>
+<td>&#x5FC5;&#x987B;</td>
+<td></td>
+<td>&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x4E2D;&#x53EF;&#x4EE5;&#x53D6;&#x5F97;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x6570;&#x636E;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="1275a36e6e128e45166eacd94800e879"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var roomId = &apos;safjslakjlfkjla123&apos;;
+var room;
+realtimeObject.room(roomId, function(object) {
+
+    // &#x5224;&#x65AD;&#x8FD9;&#x4E2A; room &#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x662F;&#x5426;&#x5B58;&#x5728;
+    if (object) {
+
+      // &#x5F53;&#x524D;&#x7528;&#x6237;&#x6240;&#x5728;&#x7684;&#x7EC4;&#xFF0C;&#x6709;&#x6D88;&#x606F;&#x65F6;&#x89E6;&#x53D1;
+      room.log({
+         // &#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x67E5;&#x8BE2;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x4E4B;&#x524D;&#x7684;&#x6D88;&#x606F;
+         t: 1429545834932,
+         // message id
+         // mid: &apos;afsadsa_ds2w&apos;,
+         // &#x8FD4;&#x56DE;&#x6761;&#x76EE;&#x6570;&#x91CF;
+         limit: 20
+      }, function(data) {
+         console.log(data);
+      });
+    }
+};
+</code></pre>
+<h3 id="roomobject-count">RoomObject.count</h3>
+<p version="53df940e0f2a104b512b5d93107c9093">&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x8FD9;&#x4E2A; Room&#xFF08;&#x6216;&#x8005; Conversation&#xFF09;&#x4E2D;&#x7684;&#x7528;&#x6237;&#x6570;&#x91CF;&#x3002;</p>
+<pre version="3d52106c68343108974c5e4e004b8c54"><code class="lang-javascript">RoomObject.count(callback)
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x4E2D;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x7528;&#x6237;&#x6570;&#x91CF;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="5e7ae62f678c17c7240a86c832b17677"><code class="lang-javascript">var appId = &apos;{{appid}}&apos;;
+var clientId = &apos;abc123&apos;;
+var realtimeObject = AV.realtime({
+   // appId &#x9700;&#x8981;&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684; appId
+   appId: appId,
+   // clientId &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x540D;&#x5B57;
+   clientId: clientId
+});
+
+// &#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; room&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; room id &#x83B7;&#x53D6;&#x4E00;&#x4E2A; room
+var room = realtimeObject.room({
+    members: [
+        &apos;LeanCloud02&apos;,
+        &apos;LeanCloud03&apos;
+    ],
+    data: {
+        title: &apos;testTitle&apos;
+    }
+});
+
+// &#x5F53;&#x524D;&#x7528;&#x6237;&#x6240;&#x5728;&#x7684;&#x7EC4;&#xFF0C;&#x6709;&#x6D88;&#x606F;&#x65F6;&#x89E6;&#x53D1;
+room.count(function(data) {
+   // &#x5F53;&#x524D;&#x7528;&#x6237;&#x6570;&#x91CF;
+   console.log(data);
+});
+</code></pre>
+<h3 id="roomobject-update">RoomObject.update</h3>
+<p version="57bf205c0531087377a936145a63b5ca">&#x66F4;&#x65B0; Room&#xFF08;&#x6216;&#x8005; Conversation&#xFF09;&#x7684;&#x540D;&#x5B57;&#x4E0E;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x3002;</p>
+<pre version="be6ebd448a3a378b9c31f38ddd0e231e"><code class="lang-javascript">RealtimeObject.update(data, callback);
+</code></pre>
+<h4 id="-">&#x8F93;&#x5165;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7EA6;&#x675F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>&#x5FC5;&#x987B;</td>
+<td>&#x8981;&#x4FEE;&#x6539;&#x7684; key-value</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>&#x53EF;&#x9009;</td>
+<td>&#x4FEE;&#x6539;&#x6210;&#x529F;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">&#x8FD4;&#x56DE;</h4>
+<p version="e94c843f41b753417c0dca0ab5b7cdfc"><code>Object</code> &#x8FD4;&#x56DE; RoomObject&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x540E;&#x7EED;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="-">&#x793A;&#x4F8B;</h4>
+<pre version="b4cf0933477bdce3272c412433eef8c0"><code class="lang-javascript">room.update({
+  // &#x65B0;&#x7684; room name
+  name: &apos;New Name&apos;,
+  // &#x65B0;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;
+  attr: {}
+}, function() {
+  console.log(&apos;update succeeded.&apos;);
+});
+</code></pre>
+<h2 id="-">&#x5168;&#x5C40;&#x4E8B;&#x4EF6;</h2>
+<p version="6a17f05aa0c85171292205fe506f760b">SDK &#x4F1A;&#x9ED8;&#x8BA4;&#x6D3E;&#x53D1;&#x4E00;&#x4E9B;&#x4E8B;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E9B;&#x4E8B;&#x4EF6;&#x4EC5;&#x4F1A;&#x5728; RealtimeObject &#x5185;&#x90E8;&#x88AB;&#x6D3E;&#x53D1;&#xFF08;&#x6CE8;&#x610F;&#xFF1A;RoomObject &#x5185;&#x90E8;&#x9ED8;&#x8BA4;&#x4E0D;&#x4F1A;&#x6D3E;&#x53D1;&#x4EFB;&#x4F55;&#x4E8B;&#x4EF6;&#xFF09;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x76D1;&#x542C;&#x8FD9;&#x4E9B;&#x4E8B;&#x4EF6;&#x6765;&#x5B8C;&#x6210;&#x4F60;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x8FD9;&#x4E9B;&#x4E8B;&#x4EF6;&#x5F80;&#x5F80;&#x90FD;&#x662F;&#x8131;&#x79BB; Room&#xFF08;&#x6216;&#x8005; Conversation&#xFF09;&#x7684;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#x5230;&#x5176;&#x4ED6; Room &#x4E2D;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;</p>
+<p version="bf92506368641c4e5c4f25c9294ae8b9">&#x4EE5;&#x4E0B;&#x662F;&#x9ED8;&#x8BA4;&#x4E8B;&#x4EF6;&#x7684;&#x8BF4;&#x660E;&#xFF1A;</p>
+<h3 id="open">open</h3>
+<p version="be3eef61f66b04c0dd5645592cc0983d">&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x5EFA;&#x7ACB;&#x597D;&#x8FDE;&#x63A5;&#x4E4B;&#x540E;&#x5C31;&#x4F1A;&#x88AB;&#x6D3E;&#x53D1;&#xFF0C;&#x5305;&#x62EC;&#x5F53;&#x670D;&#x52A1;&#x65AD;&#x5F00;&#x91CD;&#x65B0;&#x88AB;&#x8FDE;&#x63A5;&#x4E0A;&#x65F6;&#x4E5F;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;&#x3002;</p>
+<h3 id="close">close</h3>
+<p version="0f683d6b3d69204d4c12974bc5f50e29">&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x65AD;&#x5F00;&#x5C31;&#x4F1A;&#x88AB;&#x6D3E;&#x53D1;&#xFF0C;&#x5305;&#x62EC;&#x7F51;&#x7EDC;&#x4E2D;&#x65AD;&#x3002;</p>
+<h3 id="create">create</h3>
+<p version="c42f34ed1d4f8f91000e8413fb4a544e">&#x65B0;&#x5EFA;&#x4E00;&#x4E2A; Room &#x6210;&#x529F;&#x4E4B;&#x540E;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;&#x3002;</p>
+<h3 id="invited-membersjoined">invited &amp; membersjoined</h3>
+<p version="d7beb5048bc0c3968aff39dcd2f8706e">&#x5F53;&#x4E00;&#x4E2A; Room &#x4E2D;&#x6709;&#x6210;&#x5458;&#x52A0;&#x5165;&#x65F6;&#xFF0C;&#x8BE5;&#x6210;&#x5458;&#x6536;&#x5230; <code>invited</code> &#x4E8B;&#x4EF6;&#xFF0C;Room &#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x6210;&#x5458;&#x6536;&#x5230; <code>membersjoined</code> &#x4E8B;&#x4EF6;&#x3002;</p>
+<p version="3b0b81c66733f250cbef65b1708ee3e3">A &#x5C06; B &#x52A0;&#x5165;&#x5230;&#x4F1A;&#x8BDD;&#x4E2D;&#x65F6;&#xFF0C;&#x5404;&#x65B9;&#x6536;&#x5230;&#x4E8B;&#x4EF6;&#x7684;&#x65F6;&#x5E8F;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">&#x9080;&#x8BF7;&#x8005;(A)</th>
+<th style="text-align:center">&#x88AB;&#x9080;&#x8BF7;&#x8005;(B)</th>
+<th style="text-align:center">&#x5176;&#x4ED6;&#x4EBA;(C)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center">&#x53D1;&#x51FA;&#x8BF7;&#x6C42; add</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">invited</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center">membersjoined</td>
+<td style="text-align:center">membersjoined</td>
+<td style="text-align:center">membersjoined</td>
+</tr>
+</tbody>
+</table>
+<p version="b1d749cc771f9808cfe75634e8c36eef">&#x5982;&#x679C;&#x662F; A &#x4E3B;&#x52A8;&#x52A0;&#x5165;&#x4F1A;&#x8BDD;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">&#x52A0;&#x5165;&#x8005;(A)</th>
+<th style="text-align:center">&#x5176;&#x4ED6;&#x4EBA;(C)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center">&#x53D1;&#x51FA;&#x8BF7;&#x6C42; join</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center">invited</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center">membersjoined</td>
+<td style="text-align:center">membersjoined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="kicked-membersleft">kicked &amp; membersleft</h3>
+<p version="62f06c4964268298e0863332e5c1f80d">&#x5F53;&#x4E00;&#x4E2A; Room &#x4E2D;&#x6709;&#x6210;&#x5458;&#x79BB;&#x5F00;&#x65F6;&#xFF0C;&#x8BE5;&#x6210;&#x5458;&#x6536;&#x5230; <code>kicked</code> &#x4E8B;&#x4EF6;&#xFF0C;Room &#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x6210;&#x5458;&#x6536;&#x5230; <code>membersleft</code> &#x4E8B;&#x4EF6;&#x3002;</p>
+<p version="bbd7e76b1f99e77abbbc8f42731234ba">A &#x5C06; B &#x79FB;&#x51FA;&#x4F1A;&#x8BDD;&#x4E2D;&#x65F6;&#xFF0C;&#x5404;&#x65B9;&#x6536;&#x5230;&#x4E8B;&#x4EF6;&#x7684;&#x65F6;&#x5E8F;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center">&#x53D1;&#x51FA;&#x8BF7;&#x6C42; remove</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">kicked</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center">membersleft</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">membersleft</td>
+</tr>
+</tbody>
+</table>
+<p version="ca6150cfdc4ba37d03a9dc9c44b016a3">&#x5982;&#x679C;&#x662F; A &#x4E3B;&#x52A8;&#x9000;&#x51FA;&#x4F1A;&#x8BDD;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">A</th>
+<th style="text-align:center">C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center">&#x53D1;&#x51FA;&#x8BF7;&#x6C42; left</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center">kicked</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">membersleft</td>
+</tr>
+</tbody>
+</table>
+<h3 id="join">join</h3>
+<p version="b3068cf13df1e4f93843f3696110471f">&#x4E0D;&#x8D5E;&#x6210;&#x4F7F;&#x7528;&#xFF0C;&#x5DF2;&#x88AB; <code>invited</code>&#x3001;<code>membersjoined</code> &#x4E8B;&#x4EF6;&#x4EE3;&#x66FF;&#x3002;&#x8BE5;&#x4E8B;&#x4EF6;&#x4F1A;&#x5728;&#x4E0B;&#x4E2A;&#x4E3B;&#x7248;&#x672C;&#x4E2D;&#x79FB;&#x9664;&#x3002;
+&#x5F53;&#x4E00;&#x4E2A; Room &#x65B0;&#x589E;&#x4E86;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x4E4B;&#x540E;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;&#x3002;</p>
+<h3 id="left">left</h3>
+<p version="55735df74f0a756d620cbcb5f155c51b">&#x4E0D;&#x8D5E;&#x6210;&#x4F7F;&#x7528;&#xFF0C;&#x5DF2;&#x88AB; <code>kicked</code>&#x3001;<code>membersleft</code> &#x4E8B;&#x4EF6;&#x4EE3;&#x66FF;&#x3002;&#x8BE5;&#x4E8B;&#x4EF6;&#x4F1A;&#x5728;&#x4E0B;&#x4E2A;&#x4E3B;&#x7248;&#x672C;&#x4E2D;&#x79FB;&#x9664;&#x3002;
+&#x5F53;&#x4E00;&#x4E2A; Room &#x4E2D;&#x6709;&#x6210;&#x5458;&#x79BB;&#x5F00;&#x4E4B;&#x540E;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;&#x3002;</p>
+<h3 id="message">message</h3>
+<p version="12a07a4d8bbd984dc0397c45614bf5fa">&#x5F53;&#x6536;&#x5230;&#x6D88;&#x606F;&#x65F6;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;&#xFF0C;&#x6536;&#x5230;&#x7684;&#x6D88;&#x606F;&#x662F;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#xFF08;clientId&#xFF09;&#x5B58;&#x5728;&#x7684; Room &#x4E2D;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x90FD;&#x53EF;&#x4EE5;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x770B;&#x5230;&#x3002;</p>
+<h3 id="reuse">reuse</h3>
+<p version="639098cccc996528fe5ef91f1f769aca">&#x53D1;&#x751F;&#x8FDE;&#x63A5;&#x9519;&#x8BEF;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x7F51;&#x7EDC;&#x539F;&#x56E0;&#xFF0C;SDK &#x5728;&#x81EA;&#x52A8;&#x5C1D;&#x8BD5;&#x91CD;&#x8FDE;&#x3002;&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x7ED9;&#x7528;&#x6237;&#x300C;&#x670D;&#x52A1;&#x5668;&#x5DF2;&#x65AD;&#x5F00;&#xFF0C;&#x6B63;&#x5728;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#x2026;&#x2026;&#x300D;&#x4E4B;&#x7C7B;&#x7684;&#x63D0;&#x793A;&#x3002;</p>
+<h3 id="receipt">receipt</h3>
+<p version="8ceddb4fd80417a6187bfcf0c73960bf">&#x6536;&#x5230;&#x6D88;&#x606F;&#x56DE;&#x6267;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;&#x3002;</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="ie-8-">IE 8 &#x4E2D;&#x4F7F;&#x7528;&#x65F6;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x95EE;&#x9898;</h3>
+<ul>
+<li>&#x8981;&#x6CE8;&#x610F;&#x4E0D;&#x80FD;&#x6709; console.log&#xFF0C;&#x5426;&#x5219;&#x5728;&#x4E0D;&#x5F00;&#x542F;&#x8C03;&#x8BD5;&#x5668;&#x7684;&#x60C5;&#x51B5;&#x4E0B; IE8 &#x811A;&#x672C;&#x4F1A;&#x505C;&#x5728;&#x90A3;&#x4E2A;&#x4F4D;&#x7F6E;&#x5374;&#x4E0D;&#x62A5;&#x9519;</li>
+<li>IE8 &#x4E2D;&#x7684; JSON.stringify &#x4F1A;&#x628A;&#x4E2D;&#x6587;&#x8F6C;&#x4E3A; unicode &#x7F16;&#x7801;</li>
+<li>IE8 &#x4E2D;&#x652F;&#x6301; CORS &#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528; jsonp &#x6765; hack&#xFF0C;&#x800C;&#x662F;&#x7528; XDomainRequest &#x53D1; request&#xFF0C;&#x4E0D;&#x8FC7;&#x6CE8;&#x610F;&#x8FD9;&#x4E2A; request &#x6210;&#x529F;&#x56DE;&#x6765;&#x6CA1;&#x6709; response.status</li>
+</ul>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

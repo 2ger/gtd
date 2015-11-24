@@ -1,0 +1,575 @@
+<!doctype html>
+
+<html version="cfe6a0c044fa8c0bb6cae5fd33700965">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="android-sdk-">Android &#x7EDF;&#x8BA1; SDK &#x5F00;&#x53D1;&#x6307;&#x5357;</h1>
+<h2 id="-">&#x5B89;&#x88C5;&#x4E0E;&#x521D;&#x59CB;&#x5316;</h2>
+<p version="e692e3ee1d95763ef69bb91ff846c992">&#x9996;&#x5148;&#x5728; <a href="https://leancloud.cn/applist.html#/apps">&#x63A7;&#x5236;&#x53F0;</a> &#x4E0A;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x7136;&#x540E; <a href="sdk_down.html">&#x4E0B;&#x8F7D; LeanCloud Android SDK</a> &#x4EE5;&#x53CA;&#x76F8;&#x5E94;&#x7684; Demo&#x3002;</p>
+<h3 id="-sdk">&#x5BFC;&#x5165; SDK</h3>
+<p version="f2ca019b6c1345eb38bf00fb1e6ccc38">&#x9664;&#x4E86;&#x5FC5;&#x987B;&#x7684; avoscloud.jar &#x5916;&#xFF0C;&#x4F60;&#x8FD8;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x5BFC;&#x5165; avosstatistics.jar&#x3002;
+&#x8BF7;&#x5C06;&#x4E0B;&#x8F7D;&#x7684; jar &#x5305;&#x653E;&#x5230; libs &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x4EE5;&#x4FBF;&#x4F60;&#x7684; IDE&#xFF08;Eclipse &#x6216;&#x8005; Intellij IDEA &#x7B49;)&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x8BC6;&#x522B;&#x5BFC;&#x5165;&#x7684; jar &#x5305;&#x3002;&#x5982;&#x4EE5;&#x4E0B;&#x56FE;&#x7247;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="images/android_statistics_ide.png" alt="image"></p>
+<h3 id="-androidmanifest-xml-">&#x914D;&#x7F6E; AndroidManifest.xml &#x6587;&#x4EF6;</h3>
+<p version="0e9bcf68b47407fd8562199f4e507e5c">&#x8BF7;&#x52A1;&#x5FC5;&#x786E;&#x4FDD;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x62E5;&#x6709;&#x5982;&#x4E0B;&#x6743;&#x9650;&#xFF1A;</p>
+<ul>
+<li><code>android.permission.INTERNET</code><br>&#x5411; LeanCloud &#x7684;&#x7EDF;&#x8BA1;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x7528;&#x6237;&#x5206;&#x6790;&#x6570;&#x636E;&#x3002;</li>
+<li><code>android.permission.READ_PHONE_STATE</code><br><code>android.permission.ACCESS_WIFI_STATE</code><br>&#x8FD9;&#x4E24;&#x4E2A;&#x6743;&#x9650;&#x662F;&#x4E3A;&#x4E86;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x624B;&#x673A;&#x7684; IMEI &#x4EE5;&#x53CA; WiFi &#x7684; Mac &#x5730;&#x5740;&#xFF0C;&#x7528;&#x6765;&#x552F;&#x4E00;&#x7684;&#x6807;&#x8BC6;&#x7528;&#x6237;&#x3002;</li>
+<li><code>android.permission.ACCESS_NETWORK_STATE</code><br>&#x68C0;&#x6D4B;&#x7F51;&#x7EDC;&#x72B6;&#x6001;&#x3002;</li>
+<li><code>android.permission.READ_LOGS</code><br>&#x83B7;&#x53D6;&#x5BA2;&#x6237;&#x7AEF; crash log&#x3002;&#x901A;&#x8FC7;&#x5C06; crash log &#x6C47;&#x62A5;&#x5230;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4E86;&#x89E3;&#x4F60;&#x7684;&#x5E94;&#x7528; crash &#x7684;&#x539F;&#x56E0;&#x4EE5;&#x53CA;&#x6B21;&#x6570;&#x3002;</li>
+<li><code>android.permission.WRITE_EXTERNAL_STORAGE</code><br>&#x4FDD;&#x5B58;&#x79BB;&#x7EBF;&#x62A5;&#x544A;&#x7684;&#x7F13;&#x5B58;&#x6570;&#x636E;&#x3002;</li>
+</ul>
+<p version="33842b92250d3a4b441aa8af0b92846d">&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre version="54b0e907791dc64d3f625df4484d1420"><code class="lang-xml">&lt;manifest &#x2026;&#x2026;&gt;
+    &lt;application &#x2026;&#x2026;&gt;
+        &#x2026;&#x2026;
+        &lt;activity &#x2026;&#x2026;/&gt;
+    &lt;/application&gt;
+    &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+    &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;
+    &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;
+    &lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot; /&gt;
+    &lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot; /&gt;
+&lt;/manifest&gt;
+</code></pre>
+<p version="4ffd492fc6605d63bb94842db5772584">&#x5982;&#x679C;&#x4F60;&#x60F3;&#x6307;&#x5B9A;&#x4F60;&#x7684;&#x53D1;&#x5E03;&#x6E20;&#x9053;&#xFF0C;&#x8BF7;&#x5728; AndroidManifest.xml &#x4E2D;&#x52A0;&#x5165;&#x5982;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre version="f3fe28e30381682f49ca3542e8e36a45"><code class="lang-xml">&lt;application  ...&gt;
+    ...
+    &lt;meta-data android:name=&quot;Channel ID&quot; android:value=&quot;LeanCloud&quot;/&gt;
+&lt;/application&gt;
+</code></pre>
+<p version="296778a92f830b05be6d7a7e7a849363">&#x4F60;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4F60;&#x7684;&#x5B9E;&#x9645;&#x53D1;&#x5E03;&#x6E20;&#x9053;&#xFF0C;&#x4FEE;&#x6539;&#x4E0A;&#x8FF0;&#x7684; android:value &#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#xFF0C;&#x6BD4;&#x5982;&#x5C06; <code>LeanCloud</code> &#x6539;&#x4E3A; <code>Your Channel</code>&#xFF0C;&#x91CD;&#x65B0;&#x6253;&#x5305;&#x540E;&#x53D1;&#x5E03;&#x3002;<strong>&#x8BF7;&#x4E0D;&#x8981;&#x4FEE;&#x6539; <code>android:name=&quot;Channel ID&quot;</code> &#x5B57;&#x6BB5;&#xFF0C;&#x4EE5;&#x514D;&#x5F71;&#x54CD;&#x4F7F;&#x7528;&#x3002;</strong></p>
+<p version="6c720279b9329e1737cc962ea94e0fdd">&#x7531;&#x4E8E;&#x5F88;&#x591A;&#x7528;&#x6237;&#x53CD;&#x6620;&#x5728;&#x90E8;&#x5206;&#x7B2C;&#x4E09;&#x65B9;&#x53D1;&#x5E03;&#x5E73;&#x53F0;&#x4E2D;&#x95F4;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x51FA;&#x73B0; meta-data &#x4E2D;&#x95F4;&#x7684; key &#x51FA;&#x73B0;&#x7A7A;&#x683C;&#x5B57;&#x7B26;&#xFF0C;&#x6211;&#x4EEC;&#x5728; 2.6.8 &#x4EE5;&#x540E;&#xFF0C;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x7B49;&#x6548;&#x7684; key&#xFF1A;<code>leancloud</code>&#x3002;
+&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x6E20;&#x9053;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x8BF7;&#x4E0D;&#x8981;&#x53CD;&#x590D;&#x5B9A;&#x4E49;&#x3002;</p>
+<pre version="8de66402cd75ccef28a758e0a301c230"><code class="lang-xml">&lt;application  ...&gt;
+    ...
+    &lt;meta-data android:name=&quot;leancloud&quot; android:value=&quot;LeanCloud&quot;/&gt;
+&lt;/application&gt;
+</code></pre>
+<p version="0208c933305514807a0167d9c8e5cbac">&#x5F53;&#x7136;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE3;&#x7801;&#x6765;&#x6307;&#x5B9A;&#x53D1;&#x5E03;&#x6E20;&#x9053;&#x3002;&#x4F46;&#x662F;&#x4EE3;&#x7801;&#x8BBE;&#x7F6E;&#x7684;&#x6E20;&#x9053;&#x4F18;&#x5148;&#x7EA7;&#x6CA1;&#x6709; <code>AndroidManifest.xml</code> &#x4E2D;&#x7684;&#x914D;&#x7F6E;&#x9AD8;&#xFF0C;&#x540C;&#x65F6;&#x51FA;&#x73B0;&#x65F6;&#x4F18;&#x5148;&#x53D6; <code>AndroidManifest.xml</code> &#x4E2D;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
+<pre version="4ada955a461ff38c348c5cd5fd25a523"><code class="lang-java">
+AVAnalytics.setAppChannel(&quot;SomeChannel&quot;);
+// &#x53C2;&#x6570;&#x4F9D;&#x6B21;&#x4E3A; context, AppId, AppKey
+AVOSCloud.initialize(getContext(),&quot;{{appid}}&quot;,&quot;{{appKey}}&quot;);
+</code></pre>
+<h2 id="-">&#x6DFB;&#x52A0;&#x4F7F;&#x7528;&#x4EE3;&#x7801;</h2>
+<h3 id="-">&#x6DFB;&#x52A0;&#x5F15;&#x7528;</h3>
+<p version="1c6a885e9f58d29f04d26f8873d05aea">&#x7ECF;&#x8FC7;&#x6211;&#x4EEC;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x66F4;&#x65B0;&#x5347;&#x7EA7;&#xFF0C;&#x4F7F;&#x7528;&#x6700;&#x65B0;&#x7684; SDK &#x4F60;&#x4E0D;&#x9700;&#x8981;&#x4EFB;&#x4F55;&#x4EE3;&#x7801;&#x4E0A;&#x7684;&#x64CD;&#x4F5C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7EDF;&#x8BA1;&#x7684;&#x57FA;&#x672C;&#x529F;&#x80FD;&#xFF0C;&#x7EDF;&#x8BA1;&#x529F;&#x80FD;&#x4E3A;&#x9ED8;&#x8BA4;&#x6253;&#x5F00;&#x3002;</p>
+<pre version="5883b4ef7593f77cb60eeec484c4389b"><code class="lang-java">import com.avos.avoscloud.*;
+
+public class YourApp extends Application{
+
+    public void onCreate() {
+        super.onCreate();
+        AVOSCloud.initialize(this, &quot;{{appid}}&quot;, &quot;{{appkey}}&quot;);
+        //AVAnalytics.start(this);    &#x5DF2;&#x7ECF;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x8FD9;&#x884C;&#x4EE3;&#x7801;&#x4E86;
+        AVAnalytics.enableCrashReport(this, true);
+
+    }
+}
+</code></pre>
+<h2 id="-">&#x7EDF;&#x8BA1;&#x9875;&#x9762;&#x8DEF;&#x5F84;</h2>
+<p version="75cb9ea3248444cc97547a457579945c">&#x5728;&#x9700;&#x8981;&#x7684; Activity &#x4E2D;&#x8C03;&#x7528;&#x7EDF;&#x8BA1; SDK&#x3002;&#x5728;&#x6BCF;&#x4E2A; Activity &#x7684; <code>onResume</code> &#x548C; <code>onPause</code> &#x65B9;&#x6CD5;&#x4E2D;&#x8C03;&#x7528;&#x76F8;&#x5E94;&#x7684;&#x7EDF;&#x8BA1;&#x65B9;&#x6CD5;&#xFF0C;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x4E3A;&#x5F53;&#x524D; context&#xFF08;&#x6BD4;&#x5982;&#x5F53;&#x524D;&#x7684; Activity&#xFF09;&#x7684;&#x5F15;&#x7528;&#x3002; &#x8FD9;&#x91CC;&#x8BF7;&#x4E0D;&#x8981;&#x5C06;&#x5168;&#x5C40;&#x7684; Application Context &#x4F20;&#x5165;&#x3002;&#x5982;&#x793A;&#x4F8B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre version="39e7107fa5d5a29cb2e5d4eff8f3c384"><code class="lang-java">protected void onPause() {
+    super.onPause();
+    AVAnalytics.onPause(this);
+}
+
+protected void onResume() {
+    super.onResume();
+    AVAnalytics.onResume(this);
+}
+</code></pre>
+<p version="5d25e0842b2381244cca61b6fea3105d">&#x8BF7;&#x786E;&#x4FDD;&#x5728;&#x6240;&#x9700;&#x8981;&#x7684;&#x6240;&#x6709;&#x7684; Activity &#x4E2D;&#x90FD;&#x8C03;&#x7528; <code>AVAnalytics.onResume()</code> &#x548C; <code>AVAnalytics.onPause()</code> &#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x8C03;&#x7528;&#x5C06;&#x4E0D;&#x4F1A;&#x963B;&#x585E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6027;&#x80FD;&#x3002;</p>
+<p version="f88efc8d94d9a1b5503bcedaac4137b2">&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x4F60;&#x7684; Activity &#x4E4B;&#x95F4;&#x6709;&#x7EE7;&#x627F;&#x6216;&#x8005;&#x63A7;&#x5236;&#x5173;&#x7CFB;&#x8BF7;&#x4E0D;&#x8981;&#x540C;&#x65F6;&#x5728;&#x7236;&#x548C;&#x5B50; Activity &#x4E2D;&#x91CD;&#x590D;&#x6DFB;&#x52A0; onPause &#x548C; onResume &#x65B9;&#x6CD5;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x9020;&#x6210;&#x91CD;&#x590D;&#x7EDF;&#x8BA1;&#xFF0C;&#x6BD4;&#x5982;&#x5728;&#x4F7F;&#x7528; TabHost&#x3001;TabActivity&#x3001;ActivityGroup &#x65F6;&#x3002;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5728;&#x591A;&#x4E2A; Activity &#x4E4B;&#x95F4;&#x8FDE;&#x7EED;&#x5207;&#x6362;&#x65F6;&#xFF0C;&#x5C06;&#x4F1A;&#x88AB;&#x89C6;&#x4E3A;&#x540C;&#x4E00;&#x4E2A; session&#xFF08;&#x4F1A;&#x8BDD;&#x6216;&#x8005;&#x4E00;&#x6B21;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#xFF09;&#x3002;</p>
+<p version="e8529a16d81009e139e3c2244fea6c96">&#x5F53;&#x7528;&#x6237;&#x4E24;&#x6B21;&#x4F7F;&#x7528;&#x4E4B;&#x95F4;&#x95F4;&#x9694;&#x8D85;&#x8FC7; 30 &#x79D2;&#x65F6;&#xFF0C;&#x5C06;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x4E24;&#x4E2A;&#x7684;&#x72EC;&#x7ACB;&#x7684; session&#xFF0C;&#x4F8B;&#x5982;&#x7528;&#x6237;&#x56DE;&#x5230; home&#xFF0C;&#x6216;&#x8FDB;&#x5165;&#x5176;&#x4ED6;&#x7A0B;&#x5E8F;&#xFF0C;&#x7ECF;&#x8FC7;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x540E;&#x518D;&#x8FD4;&#x56DE;&#x4E4B;&#x524D;&#x7684;&#x5E94;&#x7528;&#x3002;&#x6211;&#x4EEC;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x65B0;&#x7684;&#x63A5;&#x53E3;&#x6765;&#x81EA;&#x5B9A;&#x4E49;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF0C;&#x4F60;&#x53EA;&#x8981;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre version="3e603fc1bc30e67a1486334dd3d436df"><code class="lang-java">AVAnalytics.setSessionContinueMillis(long mills);
+</code></pre>
+<p version="82c21e9d2033eb57f5dd21053467bfde">&#x4F20;&#x5165;&#x9002;&#x5F53;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x63A7;&#x5236; session &#x91CD;&#x65B0;&#x542F;&#x52A8;&#x65F6;&#x95F4;&#xFF0C;&#x6CE8;&#x610F;&#x53C2;&#x6570;&#x662F;&#x4EE5;&#x6BEB;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x7684;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x8BA4;&#x4E3A;&#x5728; 60 &#x79D2;&#x4E4B;&#x5185;&#x8FD4;&#x56DE;&#x5E94;&#x7528;&#x53EF;&#x89C6;&#x4E3A;&#x540C;&#x4E00;&#x6B21;&#x542F;&#x52A8;&#xFF0C;&#x8D85;&#x8FC7; 60 &#x79D2;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x53EF;&#x89C6;&#x4E3A;&#x4E00;&#x6B21;&#x65B0;&#x7684;&#x542F;&#x52A8;&#xFF0C;&#x90A3;&#x4E48;&#x8BF7;&#x5199;&#x6210;&#xFF1A;</p>
+<pre version="4190eadac65fd4fdfc334c6549a0f9bc"><code class="lang-java">AVAnalytics.setSessionContinueMillis(60 * 1000);
+</code></pre>
+<h2 id="-fragment-">&#x7EDF;&#x8BA1; Fragment &#x9875;&#x9762;</h2>
+<p version="558e2348b1d1e8ac2982fe250b3d28c0">Android 3.0 &#x5F15;&#x5165;&#x4E86; Fragment&#x3002;&#x4F7F;&#x7528; Fragment&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A; Activity &#x4E2D;&#x5C55;&#x793A;&#x591A;&#x4E2A;&#x7528;&#x6237;&#x754C;&#x9762;&#xFF0C;&#x4E5F;&#x53EF;&#x6839;&#x636E;&#x4F60;&#x7684;&#x9700;&#x8981;&#xFF0C;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x5907;&#x9002;&#x914D;&#x754C;&#x9762;&#x3002;LeanCloud SDK 1.4.2 &#x5F00;&#x59CB;&#x589E;&#x52A0;&#x4E86;&#x5BF9;&#x4E8E; Fragment &#x7EDF;&#x8BA1;&#x7684;&#x652F;&#x6301;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x7EDF;&#x8BA1; Fragment &#x9875;&#x9762;&#xFF1A;</p>
+<pre version="25d380cf6c3d78594766349646ef70d1"><code class="lang-java">public class MyListFragment extends ListFragment {
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+    }
+
+    public void onStart() {
+        super.onStart();
+    }
+
+    public void onPause() {
+        super.onPause();
+        AVAnalytics.onFragmentEnd(&quot;my-list-fragment&quot;);
+    }
+
+    public void onResume() {
+        super.onResume();
+        AVAnalytics.onFragmentStart(&quot;my-list-fragment&quot;);
+    }
+}
+</code></pre>
+<h2 id="-">&#x6D4B;&#x8BD5;</h2>
+<ul>
+<li>&#x786E;&#x8BA4;&#x6240;&#x9700;&#x7684;&#x6743;&#x9650;&#x90FD;&#x5DF2;&#x7ECF;&#x6DFB;&#x52A0;&#xFF1A;<ul>
+<li><code>INTERNET</code></li>
+<li><code>READ_PHONE_STATE</code></li>
+<li><code>READ_LOGS</code></li>
+<li><code>WRITE_EXTERNAL_STORAGE</code></li>
+</ul>
+</li>
+<li>&#x786E;&#x8BA4;&#x6240;&#x6709;&#x7684; Activity &#x4E2D;&#x90FD;&#x8C03;&#x7528;&#x4E86; onResume &#x548C; onPause &#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x786E;&#x8BA4;&#x6D4B;&#x8BD5;&#x624B;&#x673A;&#xFF08;&#x6216;&#x8005;&#x6A21;&#x62DF;&#x5668;&#xFF09;&#x5DF2;&#x6210;&#x529F;&#x8FDE;&#x5165;&#x7F51;&#x7EDC;&#x3002;</li>
+<li>&#x542F;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x51E0;&#x5206;&#x949F;&#x4E4B;&#x5185;&#x4F60;&#x5E94;&#x8BE5;&#x5DF2;&#x7ECF;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x62A5;&#x8868;&#x3002;</li>
+</ul>
+<h2 id="-">&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;</h2>
+<h3 id="-">&#x57FA;&#x672C;&#x7B80;&#x5355;&#x4E8B;&#x4EF6;</h3>
+<p version="40f22588f935a0f86ad84fae6a7879bc">&#x9664;&#x4E86;&#x57FA;&#x672C;&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x529F;&#x80FD;&#x5916;&#xFF0C;SDK &#x8FD8;&#x652F;&#x6301;&#x4F60;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x4E8B;&#x4EF6;&#x5206;&#x6790;&#xFF0C;&#x4F8B;&#x5982;&#x4F60;&#x53EF;&#x4EE5;&#x7EDF;&#x8BA1;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#x6709;&#x591A;&#x5C11;&#x4EBA;&#x70B9;&#x51FB;&#x4E86; like &#x6309;&#x952E;&#xFF0C;&#x67D0;&#x4E2A;&#x6587;&#x7AE0;&#x7684;&#x70B9;&#x51FB;&#x6B21;&#x6570;&#x6216;&#x8005;&#x89C6;&#x9891;&#x88AB;&#x64AD;&#x653E;&#x7684;&#x6B21;&#x6570;&#x7B49;&#x7B49;&#x3002;</p>
+<p version="cd7203d7d077efc3104ec84bc19d0825">&#x5728;&#x4F60;&#x5E0C;&#x671B;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x62A5;&#x544A;&#x7684;&#x4EE3;&#x7801;&#x6BB5;&#xFF0C;&#x8C03;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#x5C31;&#x53EF;&#x4EE5;&#x5411;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x8BB0;&#x5F55;</p>
+<pre version="56992e959549009fa7b19c12581c1943"><code class="lang-java">AVAnalytics.onEvent(Context context, String eventName);
+</code></pre>
+<p version="e146b606ac5c2ff7792583cbaa7eedae">&#x7EDF;&#x8BA1; eventName &#x5BF9;&#x5E94;&#x4E8B;&#x4EF6;&#x7684;&#x53D1;&#x751F;&#x6B21;&#x6570;&#x3001;&#x53D8;&#x5316;&#x8D8B;&#x52BF;&#xFF0C;&#x4F8B;&#x5982; like &#x70B9;&#x51FB;&#x3001;&#x6D4F;&#x89C8;&#x6570;&#x91CF;&#x7B49;&#x7B49;&#x3002;&#x53C2;&#x6570; context &#x4E3A;&#x5F53;&#x524D; context &#x7684;&#x5F15;&#x7528;&#x3002;eventName &#x4E3A;&#x5F53;&#x524D;&#x7EDF;&#x8BA1;&#x7684;&#x4E8B;&#x4EF6; name&#x3002;&#x3010;&#x6CE8;&#x610F;&#x3011;eventName &#x4E2D;&#x4E0D;&#x8981;&#x52A0;&#x7A7A;&#x683C;&#x6216;&#x5176;&#x4ED6;&#x7684;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#x3002;</p>
+<p version="56a29dc5e0a8b963c6a129274358850f">&#x6BD4;&#x5982;&#xFF0C;&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x4E00;&#x6761;&#x5FAE;&#x89C6;&#x9891;&#x88AB;&#x8F6C;&#x53D1;&#x7684;&#x4E8B;&#x4EF6;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x300C;Forward&#x300D;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x70B9;&#x51FB;&#x8F6C;&#x53D1;&#x7684;&#x51FD;&#x6570;&#x91CC;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre version="b97d5620fb940697102c7ecc497399dd"><code class="lang-java">AVAnalytics.onEvent(this, &quot;Forward&quot;)
+</code></pre>
+<p version="10e6507c10bcf544d80808e64862035f">&#x5C31;&#x4F1A;&#x5411;&#x670D;&#x52A1;&#x5668;&#x6C47;&#x62A5;&#x4E00;&#x4E2A;&#x8F6C;&#x53D1;&#x7684;&#x4E8B;&#x4EF6;&#x3002;</p>
+<h3 id="-">&#x591A;&#x6807;&#x7B7E;&#x4E8B;&#x4EF6;</h3>
+<pre version="84e50098f5d804b4f30a8778b4f95dc8"><code class="lang-java">AVAnalytics.onEvent(Context context, String eventName, String  tag);
+</code></pre>
+<p version="6b841f05a3b76f09fddb72e2cab574ad">&#x9664;&#x4E86;&#x80FD;&#x591F;&#x7EDF;&#x8BA1; eventName &#x6240;&#x5BF9;&#x5E94;&#x4E8B;&#x4EF6;&#x7684;&#x53D1;&#x751F;&#x6B21;&#x6570;&#xFF0C;&#x53D8;&#x5316;&#x8D8B;&#x52BF;&#x5916;&#xFF0C;&#x8FD8;&#x80FD;&#x7EDF;&#x8BA1;&#x4E8B;&#x4EF6;&#x4E2D;&#x5177;&#x4F53;&#x6807;&#x7B7E;&#x6240;&#x5360;&#x7684;&#x6BD4;&#x4F8B;&#x3002;tag &#x4E3A;&#x5F53;&#x524D;&#x6807;&#x7B7E;&#xFF0C;&#x540C;&#x6837;&#x8FD9;&#x91CC;&#x7684; eventName &#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x4E5F;&#x8BF7;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x7A7A;&#x683C;&#x3002;
+&#x6BD4;&#x5982;&#xFF0C;&#x5728;&#x73A9;&#x62CD;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x53D1;&#x5E03;&#x5FAE;&#x89C6;&#x9891;&#x7684;&#x591A;&#x6807;&#x7B7E;&#x4E8B;&#x4EF6; Publish&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x53D1;&#x5E03;&#x5185;&#x5BB9;&#x6709; title&#xFF08;&#x53D1;&#x5E03;&#x6807;&#x9898;&#xFF09;&#x3001;Video&#xFF08;&#x53D1;&#x89C6;&#x9891;&#xFF09;&#x3001;type&#xFF08;&#x89C6;&#x9891;&#x7C7B;&#x578B;&#xFF09;&#x6765;&#x5BF9;&#x5E94;&#x4E0D;&#x540C;&#x7684;&#x53D1;&#x5E03;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x8BB0;&#x5F55; Publish &#x4E8B;&#x4EF6;&#x7684;&#x70B9;&#x51FB;&#x6570;&#x91CF;&#x8FD8;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E0D;&#x540C;&#x5185;&#x5BB9;&#x5BF9;&#x5E94;&#x7684;&#x6BD4;&#x4F8B;&#x3002;</p>
+<h3 id="-">&#x4E8B;&#x4EF6;&#x7D2F;&#x8BA1;</h3>
+<p version="892b7e38362949ca1691357c380ad8f1">&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x67D0;&#x4E9B;&#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#x53EF;&#x80FD;&#x4F1A;&#x88AB;&#x9891;&#x7E41;&#x89E6;&#x53D1;&#xFF0C;&#x4F8B;&#x5982;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x67D0;&#x4E2A;&#x6309;&#x94AE;&#x3002;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x8FD9;&#x6837;&#x67D0;&#x4E2A;&#x4E8B;&#x4EF6;&#x88AB;&#x591A;&#x6B21;&#x89E6;&#x53D1;&#x4F46;&#x53EA;&#x9700;&#x8981;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#xFF0C;&#x8FD9;&#x4E2A;&#x6D88;&#x606F;&#x4E2D;&#x5305;&#x62EC;&#x8BE5;&#x4E8B;&#x4EF6;&#x88AB;&#x89E6;&#x53D1;&#x7684;&#x6B21;&#x6570;&#x3002;&#x4E3A;&#x4E86;&#x652F;&#x6301;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x91CD;&#x8F7D;&#x7684;&#x63A5;&#x53E3;&#xFF1A;</p>
+<pre version="e259e6c12cd7c4256549e7fe6e9b75a6"><code class="lang-java">AVAnalytics.onEvent(Context context, String eventName, int count);
+AVAnalytics.onEvent(Context context, String eventName, String label, int count)
+</code></pre>
+<p version="0cabbc429965a1ba6c8c2f630464bdd7">&#x53C2;&#x6570; count &#x662F;&#x5BF9;&#x5E94;&#x4E8B;&#x4EF6;&#xFF08;&#x548C;&#x5BF9;&#x5E94;&#x6807;&#x7B7E;&#xFF09;&#x88AB;&#x89E6;&#x53D1;&#x7684;&#x6B21;&#x6570;&#x3002;</p>
+<h2 id="-">&#x8BBE;&#x7F6E;&#x6570;&#x636E;&#x53D1;&#x9001;&#x7B56;&#x7565;</h2>
+<p version="476fc3132a6399673467d890ead79b39">&#x4F60;&#x53EF;&#x4EE5;&#x8FDB;&#x5165;&#x5E94;&#x7528;&#x7684; <a href="/stat.html?appid={{appid}}&amp;os=android#/statconfig/trans_strategoy"><strong>&#x5206;&#x6790;</strong> &gt; <strong>&#x7EDF;&#x8BA1;&#x8BBE;&#x7F6E;</strong><span style="color:#999">&#xFF08;&#x5DE6;&#x4E0B;&#x89D2;&#xFF09;</span> &gt; <strong>&#x6570;&#x636E;&#x53D1;&#x9001;&#x7B56;&#x7565;</strong></a> &#x5728;&#x7EBF;&#x66F4;&#x6539; SDK &#x7AEF;&#x7684;&#x6570;&#x636E;&#x62A5;&#x544A;&#x53D1;&#x9001;&#x7B56;&#x7565;&#x3002;&#x5728;&#x6CA1;&#x6709;&#x53D6;&#x5230;&#x5728;&#x7EBF;&#x914D;&#x7F6E;&#x7684;&#x53D1;&#x9001;&#x7B56;&#x7565;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;&#x53D1;&#x9001;&#x7B56;&#x7565;&#x3002;</p>
+<p version="249eb6f998577a61f50d4d485e9cd237">&#x4EE5;&#x4E0B;&#x5747;&#x4E3A;&#x5728;&#x7EBF;&#x914D;&#x7F6E;&#x4E2D;&#x7684;&#x53EF;&#x9009;&#x7B56;&#x7565;&#x3002;</p>
+<h3 id="-">&#x542F;&#x52A8;&#x65F6;&#x53D1;&#x9001;</h3>
+<p version="7893d4d3bdd60b163afe38b17dcdc2a4">&#x3010;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x3011;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6BCF;&#x6B21;&#x4F1A;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x4F1A;&#x5411;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x4E00;&#x6B21;&#x6D88;&#x606F;&#xFF0C;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FC7;&#x7A0B;&#x4E2D;&#x4EA7;&#x751F;&#x7684;&#x6240;&#x6709;&#x6D88;&#x606F;&#xFF08;&#x5305;&#x62EC;&#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#x548C;&#x672C;&#x6B21;&#x4F7F;&#x7528;&#x65F6;&#x957F;&#xFF09;&#x90FD;&#x4F1A;&#x5728;&#x4E0B;&#x6B21;&#x542F;&#x52A8;&#x65F6;&#x5019;&#x53D1;&#x9001;&#x3002;&#x5982;&#x679C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x65F6;&#x5904;&#x5728;&#x4E0D;&#x8054;&#x7F51;&#x72B6;&#x6001;&#xFF0C;&#x90A3;&#x4E48;&#x6D88;&#x606F;&#x5C06;&#x4F1A;&#x7F13;&#x5B58;&#x5728;&#x672C;&#x5730;&#xFF0C;&#x4E0B;&#x6B21;&#x518D;&#x5C1D;&#x8BD5;&#x53D1;&#x9001;&#x3002;</p>
+<p version="71fc355e72f34c0340083acccc70efbe">&#x53D1;&#x9001;&#x7B56;&#x7565;&#x9ED8;&#x8BA4;&#x4E3A;&#x542F;&#x52A8;&#x65F6;&#x53D1;&#x9001;&#x3002;</p>
+<h3 id="-">&#x6279;&#x91CF;&#x53D1;&#x9001;</h3>
+<p version="bcb2660d3ebaf09b960d803add00e19e">&#x6279;&#x91CF;&#x53D1;&#x9001;&#xFF0C;&#x9ED8;&#x8BA4;&#x5F53;&#x6D88;&#x606F;&#x6570;&#x91CF;&#x8FBE;&#x5230; 30 &#x6761;&#x65F6;&#x53D1;&#x9001;&#x4E00;&#x6B21;&#x3002;</p>
+<h3 id="-">&#x6309;&#x6700;&#x5C0F;&#x95F4;&#x9694;&#x53D1;&#x9001;</h3>
+<p version="c747aeeda5a523835fcdf86123a309c3">&#x95F4;&#x9694;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x53D1;&#x9001;&#xFF0C;&#x6BCF;&#x9694;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x4E00;&#x6B21;&#x6027;&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<h2 id="-">&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;</h2>
+<p version="672c94d59dce86cc0940ef4dbb2785e0">&#x4F60;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x53F0;&#x67D0;&#x4E2A;&#x5E94;&#x7528;&#x7684; <strong>&#x7EC4;&#x4EF6;</strong> &gt; <strong>&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;</strong> &#x8BBE;&#x7F6E;&#x4E2D;&#x914D;&#x7F6E;&#x4F60;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5728;&#x7EBF;&#x53C2;&#x6570;&#x3002;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x4F1A;&#x5728;&#x6211;&#x4EEC;&#x6BCF;&#x6B21;&#x66F4;&#x65B0;&#x7EDF;&#x8BA1;&#x914D;&#x7F6E;&#x65F6;&#x8FDB;&#x884C;&#x66F4;&#x65B0;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x5F97;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#xFF1A; </p>
+<pre version="899b21dd6a71d8ad8b19bc669d491290"><code class="lang-java">AVAnalytics.getConfigParams(this.getContext(), &quot;key&quot;)
+</code></pre>
+<p version="6388088f73260dfd0221593eea5d099c">&#x4F46;&#x662F;&#x8BF7;&#x6CE8;&#x610F;&#x4E09;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>key &#x5FC5;&#x987B;&#x8DDF;&#x4F60;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x914D;&#x7F6E;&#x7684;&#x53C2;&#x6570;&#x4E00;&#x81F4;&#xFF0C;&#x5927;&#x5C0F;&#x5199;&#x654F;&#x611F;&#x3002;</li>
+<li><p version="41910bbcc489a5b200cc3959c3f02958">&#x7531;&#x4E8E;&#x7EDF;&#x8BA1;&#x53C2;&#x6570;&#x66F4;&#x65B0;&#x65F6;&#x4E00;&#x4E2A;&#x540E;&#x53F0;&#x66F4;&#x65B0;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x5728;&#x76F4;&#x63A5;&#x8C03;&#x7528; <code>AVAnalytics.getConfigParams(this.getContext(), &quot;key&quot;)</code> &#x65F6;&#x9047;&#x5230;&#x8FD4;&#x56DE;&#x503C;&#x4E3A; null &#x7684;&#x60C5;&#x51B5;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E; AVOnlineConfigureListener &#x548C;&#x5F3A;&#x5236;&#x8C03;&#x7528; updateOnlineConfig &#x6765;&#x4FDD;&#x8BC1;&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x7684;&#x83B7;&#x53D6;&#x3002;</p>
+<pre version="c0086d0221214753405fa7ac6a3fca5e"><code class="lang-java">AVAnalytics.setOnlineConfigureListener(new AVOnlineConfigureListener() {
+@Override
+public void onDataReceived(JSONObject data) {
+
+     AVAnalytics.getConfigParams(getContext(), &quot;key&quot;);
+}
+});
+AVAnalytics.updateOnlineConfig(getContext());
+</code></pre>
+</li>
+<li>&#x7531;&#x4E8E;&#x7EDF;&#x8BA1;&#x53C2;&#x6570;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x6709;&#x5B9A;&#x65F6;&#x66F4;&#x65B0;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x6240;&#x4EE5; AVOnlineConfigureListener &#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x53D1;&#x751F;&#x591A;&#x6B21;&#x8C03;&#x7528;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x8BF7;&#x5728; OnDataReceived &#x65B9;&#x6CD5;&#x4E2D;&#x4E0D;&#x8981;&#x653E;&#x5165;&#x592A;&#x591A;&#x51FD;&#x6570;&#x526F;&#x4F5C;&#x7528;&#x3002;</li>
+</ul>
+<h2 id="-">&#x5F00;&#x53D1;&#x9009;&#x9879;</h2>
+<p version="916bcd6623587befea3f0cc74cde84be">&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x51C6;&#x5907;&#x533A;&#x5206;&#x5F00;&#x53D1; AppKey &#x4E0E;&#x751F;&#x4EA7;&#x73AF;&#x5883; AppKey&#xFF0C;&#x4F46;&#x662F;&#x53C8;&#x4E0D;&#x60F3;&#x5F00;&#x53D1;&#x65F6;&#x671F;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x4F1A;&#x5F71;&#x54CD;&#x4EA7;&#x54C1;&#x4E0A;&#x7EBF;&#x540E;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre version="814f0d8dc2b7210a6e4305bf58b21f7b"><code class="lang-java">AVAnalytics.setAnalyticsEnabled(false);
+// &#x53C2;&#x6570;&#x4F9D;&#x6B21;&#x4E3A; context, AppId, AppKey
+AVOSCloud.initialize(context,{{appid}},{{appkey}});
+</code></pre>
+<p version="7946b32caaf948878c4527c5ce3d5ab9">&#x5728;&#x5F00;&#x53D1;&#x9636;&#x6BB5;&#x5173;&#x95ED;&#x7EDF;&#x8BA1;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

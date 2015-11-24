@@ -1,0 +1,808 @@
+<!doctype html>
+
+<html version="17d953fa7b6c8c66d61462ccf5d92d09">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="-rest-api-">&#x77ED;&#x4FE1;&#x670D;&#x52A1; REST API &#x8BE6;&#x89E3;</h1>
+<p version="fb671e030bd224a48f6a272f61cf589d"><a href="/rest_api.html">REST API</a> &#x53EF;&#x4EE5;&#x8BA9;&#x4EFB;&#x4F55;&#x652F;&#x6301;&#x53D1;&#x9001; HTTP &#x8BF7;&#x6C42;&#x7684;&#x8BBE;&#x5907;&#x4E0E; LeanCloud &#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x7684;&#x77ED;&#x4FE1;&#x670D;&#x52A1; REST API &#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x5F88;&#x591A;&#x4E8B;&#x60C5;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<ul>
+<li>&#x7ED9;&#x6307;&#x5B9A;&#x624B;&#x673A;&#x53F7;&#x7801;&#x53D1;&#x9001;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;</li>
+<li>&#x9A8C;&#x8BC1;&#x624B;&#x673A;&#x53F7;&#x548C;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x662F;&#x5426;&#x5339;&#x914D;</li>
+<li>&#x4F7F;&#x7528;&#x624B;&#x673A;&#x53F7;&#x548C;&#x9A8C;&#x8BC1;&#x7801;&#x8FDB;&#x884C;&#x767B;&#x5F55;</li>
+<li>&#x901A;&#x8FC7;&#x5408;&#x6CD5;&#x7684;&#x624B;&#x673A;&#x53F7;&#x548C;&#x9A8C;&#x8BC1;&#x7801;&#x6765;&#x91CD;&#x7F6E;&#x8D26;&#x6237;&#x5BC6;&#x7801;</li>
+<li>&#x8FDB;&#x884C;&#x91CD;&#x8981;&#x64CD;&#x4F5C;&#xFF08;&#x4F8B;&#x5982;&#x652F;&#x4ED8;&#xFF09;&#x7684;&#x9A8C;&#x8BC1;&#x786E;&#x8BA4;&#x7B49;</li>
+</ul>
+<!-- 我们支持**国内短信**、**国际短信**，并为每个 LeanCloud 账户-->
+<p version="7e3b5c9a32086495231956c0f03b9f4e">&#x6211;&#x4EEC;&#x4E3A;&#x6BCF;&#x4E2A; LeanCloud &#x8D26;&#x6237;&#x63D0;&#x4F9B; 100 &#x6761;&#x56FD;&#x5185;&#x77ED;&#x4FE1;&#x7684;&#x514D;&#x8D39;&#x989D;&#x5EA6;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF0C;&#x8D85;&#x8FC7;&#x7684;&#x90E8;&#x5206;&#x5C06;&#x5B9E;&#x65F6;&#x4ECE;&#x77ED;&#x4FE1;&#x4F59;&#x989D;&#x4E2D;&#x6263;&#x9664;&#xFF0C;&#x6240;&#x4EE5;&#x8BF7;&#x52A1;&#x5FC5;&#x4FDD;&#x8BC1;&#x77ED;&#x4FE1;&#x8D26;&#x6237;&#x4F59;&#x989D;&#x5145;&#x8DB3;&#x3002;&#x5177;&#x4F53;&#x7684;&#x4EF7;&#x683C;&#x8BF7;&#x53C2;&#x770B; <a href="/pricing.html">&#x5B98;&#x7F51;&#x4EF7;&#x683C;</a>&#x3002;</p>
+<h2 id="-">&#x5FEB;&#x901F;&#x53C2;&#x8003;</h2>
+<p version="c963180654770c63650b1d0db9120ccb">&#x6240;&#x6709; API &#x8BBF;&#x95EE;&#x90FD;&#x9700;&#x8981;&#x4F7F;&#x7528; HTTPS &#x534F;&#x8BAE;&#xFF0C;&#x5728; <a href="https://leancloud.cn">https://leancloud.cn</a> &#x57DF;&#x540D;&#x4E0B;&#x3002;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x524D;&#x7F00; <strong>/1.1/</strong> &#x4EE3;&#x8868;&#x73B0;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x7B2C; 1.1 &#x7248;&#x7684; API&#x3002;&#x5982;&#x9700;&#x5728;&#x7EBF;&#x6D4B;&#x8BD5; API&#xFF0C;&#x8BF7;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6253;&#x5F00; <a href="https://leancloud.cn/apionline/">https://leancloud.cn/apionline/</a>&#x3002;</p>
+<p version="d8aea000d613a26e9ea81284fdfc3aa3">&#x6211;&#x4EEC;&#x7684;&#x77ED;&#x4FE1;&#x670D;&#x52A1; REST API &#x5305;&#x62EC;&#xFF1A;</p>
+<h3 id="-api">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">URL</th>
+<th style="text-align:left">HTTP</th>
+<th>&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">/1.1/requestSmsCode</td>
+<td style="text-align:left">POST</td>
+<td>&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;</td>
+</tr>
+<tr>
+<td style="text-align:left">/1.1/verifySmsCode/:code</td>
+<td style="text-align:left">POST</td>
+<td>&#x9A8C;&#x8BC1;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-">&#x7528;&#x6237;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">URL</th>
+<th style="text-align:left">HTTP</th>
+<th>&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">/1.1/usersByMobilePhone</td>
+<td style="text-align:left">POST</td>
+<td>&#x4F7F;&#x7528;&#x624B;&#x673A;&#x53F7;&#x7801;&#x6CE8;&#x518C;&#x6216;&#x767B;&#x5F55;</td>
+</tr>
+<tr>
+<td style="text-align:left">/1.1/requestMobilePhoneVerify</td>
+<td style="text-align:left">POST</td>
+<td>&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#x7528;&#x6237;&#x624B;&#x673A;&#x53F7;&#x7801;&#x9A8C;&#x8BC1;&#x77ED;&#x4FE1;</td>
+</tr>
+<tr>
+<td style="text-align:left">/1.1/verifyMobilePhone/:code</td>
+<td style="text-align:left">POST</td>
+<td>&#x4F7F;&#x7528;&#x300C;&#x9A8C;&#x8BC1;&#x7801;&#x300D;&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#x624B;&#x673A;&#x53F7;&#x7801;</td>
+</tr>
+<tr>
+<td style="text-align:left">/1.1/requestLoginSmsCode</td>
+<td style="text-align:left">POST</td>
+<td>&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#x624B;&#x673A;&#x53F7;&#x7801;&#x77ED;&#x4FE1;&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x7801;</td>
+</tr>
+<tr>
+<td style="text-align:left">/1.1/requestPasswordResetBySmsCode</td>
+<td style="text-align:left">POST</td>
+<td>&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#x624B;&#x673A;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x91CD;&#x7F6E;&#x7528;&#x6237;&#x5BC6;&#x7801;</td>
+</tr>
+<tr>
+<td style="text-align:left">/1.1/resetPasswordBySmsCode/:code</td>
+<td style="text-align:left">PUT</td>
+<td>&#x9A8C;&#x8BC1;&#x624B;&#x673A;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x5E76;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-">&#x8BF7;&#x6C42;&#x548C;&#x54CD;&#x5E94;&#x683C;&#x5F0F;</h3>
+<p version="beae020831b63fac0f1912803ebd1d82">&#x8BF7;&#x53C2;&#x8003;&#x6211;&#x4EEC;&#x7684; <a href="./rest_api.html#&#x8BF7;&#x6C42;&#x683C;&#x5F0F;">REST API &#x603B;&#x89C8;&#x6587;&#x6863;</a>&#x3002;</p>
+<h3 id="-">&#x9A8C;&#x8BC1;&#x7801;&#x53D1;&#x9001;&#x903B;&#x8F91;&#x56FE;</h3>
+<p version="0fa3cf9e14008635f42b1d694ef99c09">&#x5728;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x53D1;&#x9001;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4E00;&#x5171;&#x6709;&#x4E09;&#x65B9;&#x53C2;&#x4E0E;&#xFF1A;&#x5BA2;&#x6237;&#x7AEF;&#x3001;LeanCloud &#x548C;&#x7535;&#x4FE1;&#x8FD0;&#x8425;&#x5546;&#xFF08;&#x79FB;&#x52A8;&#x3001;&#x8054;&#x901A;&#x3001;&#x7535;&#x4FE1;&#xFF09;&#xFF0C;&#x53D1;&#x9001;&#x3001;&#x9A8C;&#x8BC1;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="images/leancloud_sms_sequence.png" alt="image"></p>
+<ol>
+<li>&#x9996;&#x5148;&#x662F;&#x5E94;&#x7528;&#x5BA2;&#x6237;&#x7AEF;&#x5411; LeanCloud &#x8BF7;&#x6C42;&#x5411;&#x7279;&#x5B9A;&#x624B;&#x673A;&#x53F7;&#x7801;&#x53D1;&#x9001;&#x9A8C;&#x8BC1;&#x7801;&#xFF1B;</li>
+<li>LeanCloud &#x4E91;&#x7AEF;&#x6536;&#x5230;&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x751F;&#x6210;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5B8C;&#x6574;&#x77ED;&#x4FE1;&#x5185;&#x5BB9;&#x53D1;&#x9001;&#x5230;&#x8FD0;&#x8425;&#x5546;&#x901A;&#x9053;&#xFF1B;</li>
+<li>&#x8FD0;&#x8425;&#x5546;&#x4E0B;&#x53D1;&#x77ED;&#x4FE1;&#xFF08;&#x6216;&#x8BED;&#x97F3;&#xFF09;&#xFF1B;</li>
+<li>&#x5E94;&#x7528;&#x5BA2;&#x6237;&#x7AEF;&#x6536;&#x5230;&#x9A8C;&#x8BC1;&#x7801;&#x77ED;&#x4FE1;&#x540E;&#xFF0C;&#x518D;&#x5411; LeanCloud &#x9A8C;&#x8BC1;&#x624B;&#x673A;&#x53F7;&#x7801;&#x548C;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x7684;&#x5408;&#x6CD5;&#x6027;&#x3002;</li>
+</ol>
+<h2 id="-api">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</h2>
+<p version="62256b5975b068263d3de1553ac4087f">&#x5728;&#x4E00;&#x4E9B;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x5E0C;&#x671B;&#x7528;&#x6237;&#x5728;&#x9A8C;&#x8BC1;&#x624B;&#x673A;&#x53F7;&#x7801;&#x540E;&#x624D;&#x80FD;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#xFF0C;&#x4F8B;&#x5982;&#x5145;&#x503C;&#x3002;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x8DDF;&#x8D26;&#x6237;&#x7CFB;&#x7EDF;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x7684;&#x7684;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API &#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<p version="46933f7f3a6243f561e07f69d7b206e1">&#x4F7F;&#x7528;&#x8FD9;&#x4E9B; API &#x9700;&#x8981;&#x5728; <a href="/applist.html#/apps">&#x5E94;&#x7528;&#x63A7;&#x5236;&#x53F0;</a> &gt; <strong>&#x8BBE;&#x7F6E;</strong> &gt; <strong>&#x5E94;&#x7528;&#x9009;&#x9879;</strong> &gt; <strong>&#x77ED;&#x4FE1;</strong> &#x4E2D;&#x5F00;&#x542F; <strong>&#x542F;&#x7528;&#x624B;&#x673A;&#x53F7;&#x7801;&#x77ED;&#x4FE1;&#x8BA4;&#x8BC1;&#xFF08;&#x9488;&#x5BF9; <code>requestSmsCode</code> &#x548C; <code>verifySmsCode</code> &#x63A5;&#x53E3;&#xFF09;</strong> &#x9009;&#x9879;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="images/leancloud_sms_setting1.png" alt="image"></p>
+<p version="453d6dd54ff63a552aa07e4aecf989d7">&#x7ED9;&#x67D0;&#x4E2A;&#x624B;&#x673A;&#x53F7;&#x7801;&#x53D1;&#x9001;&#x9A8C;&#x8BC1;&#x77ED;&#x4FE1;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x8BF7;&#x6C42;&#x5B8C;&#x6210;&#xFF1A;</p>
+<pre version="8a332247ddafd90e58ed10d7b701b82d"><code class="lang-sh">curl -X POST \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &apos;{&quot;mobilePhoneNumber&quot;: &quot;186xxxxxxxx&quot;}&apos; \
+  https://api.leancloud.cn/1.1/requestSmsCode
+</code></pre>
+<p version="1e6a2968ab02c586c918042ca968b67a">&#x8FD9;&#x91CC;&#x5FC5;&#x987B;&#x4F7F;&#x7528; POST &#x65B9;&#x5F0F;&#x6765;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#xFF0C;&#x8BF7;&#x6C42;&#x4F53;&#x91CC;&#x652F;&#x6301;&#x7684;&#x53C2;&#x6570;&#x6709;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:center">&#x7EA6;&#x675F;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">mobilePhoneNumber</td>
+<td style="text-align:center">&#x5FC5;&#x586B;</td>
+<td style="text-align:left">&#x76EE;&#x6807;&#x624B;&#x673A;&#x53F7;&#x7801;</td>
+</tr>
+<tr>
+<td style="text-align:left">ttl</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">&#x9A8C;&#x8BC1;&#x7801;&#x6709;&#x6548;&#x65F6;&#x95F4;&#x3002;&#x5355;&#x4F4D;&#x5206;&#x949F;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A; <strong>10 &#x5206;&#x949F;</strong>&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">&#x5E94;&#x7528;&#x540D;&#x5B57;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A; LeanCloud &#x63A7;&#x5236;&#x53F0;&#x586B;&#x5199;&#x7684;&#x5E94;&#x7528;&#x540D;&#x3002;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">op</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">&#x64CD;&#x4F5C;&#x7C7B;&#x578B;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-">&#x8BED;&#x97F3;&#x9A8C;&#x8BC1;&#x7801;</h3>
+<p version="872471ee2fed0341f1ff33cdadc47772">&#x8BED;&#x97F3;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x662F;&#x901A;&#x8FC7;&#x7535;&#x8BDD;&#x76F4;&#x63A5;&#x547C;&#x53EB;&#x7528;&#x6237;&#x7684;&#x7535;&#x8BDD;&#x53F7;&#x7801;&#x6765;&#x64AD;&#x62A5;&#x9A8C;&#x8BC1;&#x7801;&#x3002;&#x5B83;&#x662F;&#x4E00;&#x4E2A; 6 &#x4F4D;&#x7684;&#x6570;&#x5B57;&#x7EC4;&#x5408;&#xFF0C;&#x8BED;&#x97F3;&#x53EA;&#x64AD;&#x62A5;&#x6570;&#x5B57;&#x5185;&#x5BB9;&#xFF0C;&#x4E0D;&#x80FD;&#x6DFB;&#x52A0;&#x5176;&#x4ED6;&#x4EFB;&#x4F55;&#x5185;&#x5BB9;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x4E00;&#x79CD;&#x5907;&#x9009;&#x65B9;&#x6848;&#xFF0C;&#x6765;&#x89E3;&#x51B3;&#x56E0;&#x5404;&#x79CD;&#x539F;&#x56E0;&#x5BFC;&#x81F4;&#x77ED;&#x4FE1;&#x65E0;&#x6CD5;&#x53CA;&#x65F6;&#x5230;&#x8FBE;&#x7684;&#x95EE;&#x9898;&#x3002;&#x53D1;&#x9001;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="47e54750c8447692bc61e53e64c4b485"><code class="lang-sh">curl -X POST \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &apos;{&quot;mobilePhoneNumber&quot;: &quot;186xxxxxxxx&quot;, &quot;smsType&quot;:&quot;voice&quot;}&apos; \
+  https://api.leancloud.cn/1.1/requestSmsCode
+</code></pre>
+<p version="a5eb97235f16954baef7608d46ae9d9b">&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x666E;&#x901A;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x76F8;&#x6BD4;&#xFF0C;&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#x8BED;&#x97F3;&#x9A8C;&#x8BC1;&#x7801;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8981;&#x52A0;&#x4E0A; <code>smsType</code> &#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF0C;&#x5176;&#x503C;&#x4E3A; <code>voice</code> &#x3002;</p>
+<p version="4eb13d67f2c227bdae435c0bd1050aea"><code>smsType</code> &#x5141;&#x8BB8;&#x7684;&#x53D6;&#x503C;&#x6709;&#xFF1A;</p>
+<ul>
+<li><strong>voice</strong>&#xFF1A;&#x53D1;&#x9001;&#x8BED;&#x97F3;&#x9A8C;&#x8BC1;&#x7801;</li>
+<li><strong>sms</strong>&#xFF1A;&#x53D1;&#x9001;&#x666E;&#x901A;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;</li>
+</ul>
+<p version="b88fdb634d83bb38d97dd148ada06110">&#x6B64;&#x63A5;&#x53E3;&#x4E0E;&#x4E4B;&#x524D;&#x7684; <a href="#&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;_API">&#x9A8C;&#x8BC1;&#x77ED;&#x4FE1; API</a> &#x5B8C;&#x5168;&#x517C;&#x5BB9;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x6B64;&#x670D;&#x52A1;&#xFF0C;&#x5B8C;&#x5168;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E4B;&#x524D;&#x7684;&#x53D1;&#x9001;&#x77ED;&#x4FE1;&#x4EE3;&#x7801;&#x3002;</p>
+<h3 id="-">&#x6821;&#x9A8C;&#x9A8C;&#x8BC1;&#x7801;</h3>
+<p version="b0dfe95203b0689ebf9ddb234866f9f3">&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684; API &#x53EF;&#x4EE5;&#x9A8C;&#x8BC1;&#x6536;&#x5230;&#x7684; 6 &#x4F4D;&#x6570;&#x5B57;&#x9A8C;&#x8BC1;&#x7801;&#x662F;&#x5426;&#x6B63;&#x786E;&#xFF1A;</p>
+<pre version="b76a822958b2bcdebd9f937cac6f225a"><code class="lang-sh">curl -X POST \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  &quot;https://api.leancloud.cn/1.1/verifySmsCode/6&#x4F4D;&#x6570;&#x5B57;&#x9A8C;&#x8BC1;&#x7801;?mobilePhoneNumber=186xxxxxxxx&quot;
+</code></pre>
+<p version="716652ca03c2bf47a04d95b3d4a3f80e">&#x5176;&#x4E2D; <code>verifySmsCode</code> &#x540E;&#x9762;&#x662F;&#x624B;&#x673A;&#x6536;&#x5230;&#x7684; 6 &#x4F4D;&#x6570;&#x5B57;&#x9A8C;&#x8BC1;&#x7801;&#x3002;<code>mobilePhoneNumber</code> &#x662F;&#x6536;&#x5230;&#x77ED;&#x4FE1;&#x7684;&#x624B;&#x673A;&#x53F7;&#x7801;&#x3002;</p>
+<blockquote>
+<p version="f6578c55ba06965b1f5076fbf7dbdcb7">&#x7531;&#x4E8E;&#x8FD0;&#x8425;&#x5546;&#x548C;&#x6E20;&#x9053;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x53D1;&#x9001;&#x8981;&#x6C42;&#x95F4;&#x9694;&#x81F3;&#x5C11;&#x4E00;&#x5206;&#x949F;&#xFF0C;&#x5E76;&#x4E14;&#x6BCF;&#x5929;&#x5411;&#x540C;&#x4E00;&#x624B;&#x673A;&#x53F7;&#x7801;&#x53D1;&#x9001;&#x6B21;&#x6570;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7; 10 &#x6B21;&#xFF0C;<strong>&#x56E0;&#x6B64;&#x5EFA;&#x8BAE;&#x91C7;&#x7528;&#x56FE;&#x5F62;&#x9A8C;&#x8BC1;&#x7801;&#x3001;&#x5012;&#x6570;&#x8BA1;&#x65F6;&#x7B49;&#x63AA;&#x65BD;&#x6765;&#x63A7;&#x5236;&#x9891;&#x7387;</strong>&#xFF0C;&#x63D0;&#x793A;&#x7528;&#x6237;&#xFF0C;&#x9632;&#x6B62;&#x77ED;&#x4FE1;&#x8F70;&#x70B8;&#x7B49;&#x6076;&#x52A3;&#x60C5;&#x51B5;&#x53D1;&#x751F;&#x3002;</p>
+</blockquote>
+<!--
+### 国际短信
+
+上面发送短信验证码和语音验证码，默认都是对国内号码。我们也开通了国际短信验证码服务（语音验证码在海外还不可用）。要发送国际短信，只需在发送 `https://api.leancloud.cn/1.1/requestSmsCode` 请求的时候，额外加上 `countryCode` 这一参数即可。
+
+`countryCode` 的取值范围请参考 [countrycode.org](https://countrycode.org/) 中的 **ISO CODES** 一列，例如 US 表示美国，CN 代表中国。
+
+下面的请求将给美国的手机号码（+917646xxxxx）发送一条短信验证码：
+
+```sh
+curl -X POST \
+  -H "X-LC-Id: {{appid}}" \
+  -H "X-LC-Key: {{appkey}}" \
+  -H "Content-Type: application/json" \
+  -d '{"mobilePhoneNumber": "917646xxxxx", "countryCode":"US"}' \
+  https://api.leancloud.cn/1.1/requestSmsCode
+```
+
+除了所增加的 `countryCode` 之外，发送国际短信和国内短信的请求参数完全一样。
+-->
+<h2 id="-">&#x81EA;&#x5B9A;&#x4E49;&#x77ED;&#x4FE1;&#x6A21;&#x677F;</h2>
+<p version="8eb3a32b9c86a8667b6024d3c4bb8301">&#x6211;&#x4EEC;&#x8FD8;&#x652F;&#x6301;&#x901A;&#x8FC7; <code>requestSmsCode</code> &#x53D1;&#x9001;&#x81EA;&#x5B9A;&#x4E49;&#x6A21;&#x677F;&#x7684;&#x77ED;&#x4FE1;&#x3002;&#x77ED;&#x4FE1;&#x6A21;&#x677F;&#x53EF;&#x4EE5;&#x5728; <a href="/applist.html#/apps">&#x5E94;&#x7528;&#x63A7;&#x5236;&#x53F0;</a> &gt; <strong>&#x6D88;&#x606F;</strong> &gt; <strong>&#x77ED;&#x4FE1;</strong> &gt; <strong>&#x8BBE;&#x7F6E;</strong> &gt; <strong>&#x77ED;&#x4FE1;&#x6A21;&#x677F;</strong> &#x91CC;&#x521B;&#x5EFA;&#x3002;</p>
+<p version="c105e8e71760f62ae5ba3eac5b423854">&#x8981;&#x4F7F;&#x7528;&#x5DF2;&#x521B;&#x5EFA;&#x597D;&#x7684;&#x77ED;&#x4FE1;&#x6A21;&#x677F;&#x6765;&#x53D1;&#x9001;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>template</code> &#x53C2;&#x6570;&#x6307;&#x5B9A;&#x6A21;&#x677F;&#x540D;&#x79F0;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x53D8;&#x91CF;&#x6E32;&#x67D3;&#x6A21;&#x677F;&#xFF0C;&#x6BD4;&#x5982;&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#x4E2D;&#x7684; <code>date</code>&#xFF1A;</p>
+<pre version="72781fcbfa89d5f5b657e38f6b381e99"><code class="lang-sh">curl -X POST \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &apos;{&quot;mobilePhoneNumber&quot;: &quot;186xxxxxxxx&quot;, &quot;template&quot;:&quot;activity&quot;,&quot;date&quot;:&quot;2014 &#x5E74; 10 &#x6708; 31 &#x53F7;&quot;}&apos; \
+  https://api.leancloud.cn/1.1/requestSmsCode
+</code></pre>
+<p version="810a5b9584683bd1e3f151f4f60c63d7">&#x77ED;&#x4FE1;&#x6A21;&#x677F;&#x7684;&#x8BED;&#x6CD5;&#x9075;&#x5FAA; <a href="http://handlebarsjs.com/">Handlebars</a>&#xFF0C;&#x4E3E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre ng-non-bindable="" version="955b1eee7c5e414291122c7a7a0dc255"><code>Hi {{username}},
+&#x6B22;&#x8FCE;&#x6CE8;&#x518C;{{name}}&#x5E94;&#x7528;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9A8C;&#x8BC1;&#x7801;:{{code}}&#xFF0C;&#x8FDB;&#x884C;&#x6CE8;&#x518C;&#x3002;&#x672C;&#x6761;&#x77ED;&#x4FE1;&#x5C06;&#x5728;{{ttl}}&#x5206;&#x949F;&#x540E;&#x81EA;&#x884C;&#x9500;&#x6BC1;&#x3002;&#x8BF7;&#x5C3D;&#x5FEB;&#x4F7F;&#x7528;&#x3002;
+&#x4EE5;&#x4E0A;&#x3002;
+</code></pre>
+
+<ul>
+<li><strong>code</strong> &#x662F;&#x6211;&#x4EEC;&#x5E2E;&#x4F60;&#x751F;&#x6210;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>/1.1/verifySmsCode/:code</code> &#x6821;&#x9A8C;&#x3002;</li>
+<li><strong>ttl</strong>  &#x662F;&#x77ED;&#x4FE1;&#x6709;&#x6548;&#x671F;&#xFF0C;&#x5355;&#x4F4D;&#x5206;&#x949F;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; 10 &#x5206;&#x949F;&#x3002;</li>
+<li><strong>name</strong> &#x662F;&#x5E94;&#x7528;&#x540D;&#x79F0;&#x3002;</li>
+</ul>
+<p version="eff9d68184d62661bd60559259b1e38e">&#x8FD9;&#x4E09;&#x4E2A;&#x5185;&#x7F6E;&#x5B57;&#x6BB5;&#x4F1A;&#x81EA;&#x52A8;&#x586B;&#x5145;&#xFF0C;&#x4F60;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#xFF0C;&#x5F62;&#x5982; <span ng-non-bindable=""><code>{{var}}</code></span>&#x3002;</p>
+<p version="46a1a629573148ab9d8b7de7f92fc257">&#x77ED;&#x4FE1;&#x7B7E;&#x540D;&#x662F;&#x6307;&#x77ED;&#x4FE1;&#x5185;&#x5BB9;&#x91CC; <code>&#x3010;&#x3011;</code> &#x62EC;&#x8D77;&#x6765;&#x7684;&#x77ED;&#x4FE1;&#x53D1;&#x9001;&#x65B9;&#x540D;&#x79F0;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x660E;&#x786E;&#x5728;&#x6A21;&#x677F;&#x91CC;&#x6307;&#x5B9A;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C31;&#x662F;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x540D;&#x79F0;&#x3002;&#x77ED;&#x4FE1;&#x7B7E;&#x540D;<strong>&#x4E0D;&#x80FD;&#x8D85;&#x8FC7; 10 &#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x4E0D;&#x80FD;&#x6709;&#x4EFB;&#x4F55;&#x975E;&#x6587;&#x5B57;&#x5B57;&#x7B26;&#xFF0C;&#x4E5F;&#x4E0D;&#x53EF;&#x4EE5;&#x662F;&#x53D8;&#x91CF;</strong>&#x3002;&#x5E94;&#x7528;&#x540D;&#x79F0;&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x8BBE;&#x7F6E;&#x91CC;&#x4FEE;&#x6539;&#xFF0C;&#x5E76;&#x4E14;&#x77ED;&#x4FE1;&#x7B7E;&#x540D;<strong>&#x5FC5;&#x987B;&#x51FA;&#x73B0;&#x5728;&#x77ED;&#x4FE1;&#x5185;&#x5BB9;&#x7684;&#x5F00;&#x5934;&#x6216;&#x8005;&#x7ED3;&#x5C3E;&#x3002;</strong></p>
+<h3 id="-">&#x77ED;&#x4FE1;&#x6A21;&#x677F;&#x5BA1;&#x6838;</h3>
+<p version="6d1e055ed63722929db651ba96bb7ad9">&#x6A21;&#x677F;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x4FEE;&#x6539;&#x90FD;&#x9700;&#x8981;&#x5BA1;&#x6838;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x521B;&#x5EFA;&#x6216;&#x4FEE;&#x6539;&#x6A21;&#x677F;&#x4E4B;&#x65F6;&#xFF0C;&#x77ED;&#x4FE1;&#x8D26;&#x6237;&#x81F3;&#x5C11;&#x6709; 200 &#x5143;&#x7684;&#x975E;&#x8D60;&#x9001;&#x4F59;&#x989D;&#x3002;&#x521B;&#x5EFA;&#x540E;&#x7684;&#x6A21;&#x677F;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x63D0;&#x4EA4;&#x8FDB;&#x884C;&#x5BA1;&#x6838;&#xFF0C;&#x5BA1;&#x6838;&#x7ED3;&#x679C;&#x5C06;&#x901A;&#x8FC7;&#x90AE;&#x4EF6;&#x7684;&#x5F62;&#x5F0F;&#x53D1;&#x9001;&#x5230;&#x4F60;&#x7684;&#x8D26;&#x53F7;&#x90AE;&#x7BB1;&#x3002;</p>
+<p version="41d1a0442288b6b94c383bb602dd6eda">&#x76EE;&#x524D;&#x6211;&#x4EEC;&#x4EC5;&#x5141;&#x8BB8;&#x4E24;&#x7C7B;&#x81EA;&#x5B9A;&#x4E49;&#x77ED;&#x4FE1;&#xFF1A;</p>
+<ul>
+<li>&#x9A8C;&#x8BC1;&#x7C7B;&#x77ED;&#x4FE1;</li>
+<li>&#x901A;&#x77E5;&#x7C7B;&#x77ED;&#x4FE1;</li>
+</ul>
+<p version="5142d5d912fc9a7179b7078592534a3f"><strong>&#x5373;&#x5185;&#x5BB9;&#x4E2D;&#x4E0D;&#x5141;&#x8BB8;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x4E0B;&#x8F7D;&#x94FE;&#x63A5;&#xFF0C;&#x4EE5;&#x53CA;&#x63A8;&#x5E7F;&#x8425;&#x9500;&#x7C7B;&#x4FE1;&#x606F;</strong>&#xFF0C;&#x5426;&#x5219;&#xFF0C;&#x6A21;&#x677F;&#x5C06;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x5BA1;&#x6838;&#x3002;</p>
+<p version="d92a641082e5db0b45639ce7e2c6bf6a">&#x6BCF;&#x4E2A;&#x5E94;&#x7528;&#x9650;&#x5236;&#x521B;&#x5EFA; 10 &#x4E2A;&#x6A21;&#x677F;&#xFF0C;&#x5E76;&#x4E14;&#x6BCF;&#x4E2A;&#x6A21;&#x677F;&#x90FD;&#x9700;&#x8981;&#x7ECF;&#x8FC7;&#x5BA1;&#x6838;&#x624D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF08;&#x5BA1;&#x6838;&#x5728;&#x5DE5;&#x4F5C;&#x65F6;&#x95F4;&#x5185;&#x901A;&#x5E38;&#x5728; 1 &#x4E2A;&#x5C0F;&#x65F6;&#x5185;&#xFF09;&#x3002;&#x6A21;&#x677F;&#x4E00;&#x7ECF;&#x5BA1;&#x6838;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x9A6C;&#x4E0A;&#x4F7F;&#x7528;&#x3002;&#x540E;&#x7EED;&#x4F60;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x540C;&#x540D;&#x6A21;&#x677F;&#x6765;&#x66FF;&#x6362;&#x5F53;&#x524D;&#x4F7F;&#x7528;&#x7684;&#x6A21;&#x677F;&#xFF0C;&#x65B0;&#x6A21;&#x677F;&#x4E5F;&#x540C;&#x6837;&#x9700;&#x8981;&#x5BA1;&#x6838;&#x3002;&#x5BA1;&#x6838;&#x901A;&#x8FC7;&#xFF0C;&#x5373;&#x53EF;&#x66FF;&#x6362;&#x65E7;&#x6A21;&#x677F;&#x3002;</p>
+<h2 id="-">&#x7528;&#x6237;&#x8D26;&#x6237;&#x4E0E;&#x624B;&#x673A;&#x53F7;&#x7801;&#x9A8C;&#x8BC1;</h2>
+<p version="214b25d4b8c7da518a21315c326ee14e">LeanCloud &#x63D0;&#x4F9B;&#x4E86;&#x5185;&#x5EFA;&#x7684;&#x8D26;&#x6237;&#x7CFB;&#x7EDF;&#xFF0C;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#x8005;&#x5FEB;&#x901F;&#x63A5;&#x5165;&#x3002;&#x6211;&#x4EEC;&#x4E5F;&#x652F;&#x6301;&#x8D26;&#x6237;&#x7CFB;&#x7EDF;&#x4E0E;&#x624B;&#x673A;&#x53F7;&#x7801;&#x7ED1;&#x5B9A;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x529F;&#x80FD;&#xFF0C;&#x8B6C;&#x5982;&#xFF1A;</p>
+<h3 id="-">&#x4F7F;&#x7528;&#x624B;&#x673A;&#x53F7;&#x7801;&#x6CE8;&#x518C;&#x6216;&#x767B;&#x5F55;</h3>
+<p version="de275fb06e551db1234601a4f87b8af0">&#x73B0;&#x5728;&#x5F88;&#x591A;&#x5E94;&#x7528;&#x90FD;&#x559C;&#x6B22;&#x8BA9;&#x7528;&#x6237;&#x76F4;&#x63A5;&#x8F93;&#x5165;&#x624B;&#x673A;&#x53F7;&#x7801;&#x6CE8;&#x518C;&#xFF0C;&#x5982;&#x679C;&#x624B;&#x673A;&#x53F7;&#x7801;&#x5B58;&#x5728;&#x5219;&#x81EA;&#x52A8;&#x767B;&#x5F55;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x65B0; API&#xFF1A; <code>POST /usersByMobilePhone</code> &#x6765;&#x5904;&#x7406;:</p>
+<pre version="5f16c2c5fffb9832dc49a8abb7494d08"><code class="lang-sh">curl -X POST \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &apos;{&quot;mobilePhoneNumber&quot;:&quot;186xxxxxxxx&quot;,&quot;smsCode&quot;:&quot;6 &#x4F4D;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&quot;}&apos; \
+  https://api.leancloud.cn/1.1/usersByMobilePhone
+</code></pre>
+<p version="12da7980f58191afbce901d8ce27aac3">&#x5176;&#x4E2D; <code>mobilePhoneNumber</code> &#x5C31;&#x662F;&#x624B;&#x673A;&#x53F7;&#x7801;&#xFF0C;&#x800C; <code>smsCode</code> &#x662F;&#x4F7F;&#x7528; <a href="#&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;_API">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a> &#x53D1;&#x9001;&#x5230;&#x624B;&#x673A;&#x4E0A;&#x7684; 6 &#x4F4D;&#x9A8C;&#x8BC1;&#x7801;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x4F20;&#x5165; <code>username</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x7528;&#x6237;&#x540D;&#x5C06;&#x662F;&#x624B;&#x673A;&#x53F7;&#x7801;&#x3002;</p>
+<p version="91cba36b1e020bffa1f68e7ce50c84ee">&#x6CE8;&#x518C;&#x6216;&#x8005;&#x767B;&#x5F55;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x5E94;&#x7B54;&#x4E0E;&#x767B;&#x5F55;&#x63A5;&#x53E3;&#x76F8;&#x4F3C;&#xFF1A;</p>
+<pre version="178d42667987a257fd7cb2511745b60b"><code class="lang-json">{
+  &quot;username&quot;:     &quot;186xxxxxxxx&quot;,
+  &quot;mobilePhone&quot;:  &quot;186xxxxxxxx&quot;,
+  &quot;createdAt&quot;:    &quot;2014-11-07T20:58:34.448Z&quot;,
+  &quot;updatedAt&quot;:    &quot;2014-11-07T20:58:34.448Z&quot;,
+  &quot;objectId&quot;:     &quot;51c3ba66e4b0f0e851c1621b&quot;,
+  &quot;sessionToken&quot;: &quot;pnktnjyb996sj4p156gjtp4im&quot;,
+  ... &#x5176;&#x4ED6;&#x5C5E;&#x6027;
+}
+</code></pre>
+<p version="0cd7aafe151508aa6289b7d60d80ca88">&#x5982;&#x679C;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x6CE8;&#x518C;&#xFF0C;&#x5C06;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E; <code>mobilePhoneVerified</code> &#x5C5E;&#x6027;&#x4E3A; <code>true</code>&#x3002;</p>
+<h3 id="-">&#x624B;&#x673A;&#x53F7;&#x7801;&#x9A8C;&#x8BC1;</h3>
+<p version="bf9236e17c89278ee57716f7746c099b">&#x5728;&#x5E94;&#x7528;&#x63A7;&#x5236;&#x53F0;&#x7684;&#x8BBE;&#x7F6E;&#x91CC;&#xFF0C;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5F00;&#x542F;&#x6CE8;&#x518C;&#x624B;&#x673A;&#x7801;&#x53F7;&#x9A8C;&#x8BC1;&#x3002;&#x8FD9;&#x6837;&#x5F53;&#x7528;&#x6237;&#x5728;&#x6CE8;&#x518C;&#x65F6;&#x586B;&#x5199;&#x4E86; <code>mobilePhoneNumber</code> &#x5B57;&#x6BB5;&#xFF0C; LeanCloud  &#x4F1A;&#x5411;&#x8BE5;&#x624B;&#x673A;&#x53F7;&#x7801;&#x53D1;&#x9001;&#x4E00;&#x6761;&#x9644;&#x5E26;&#x9A8C;&#x8BC1;&#x7801;&#x7684;&#x9A8C;&#x8BC1;&#x77ED;&#x4FE1;&#xFF0C;&#x7528;&#x6237;&#x5728;&#x8F93;&#x5165;&#x9A8C;&#x8BC1;&#x7801;&#x540E;&#x88AB; LeanCloud API &#x9A8C;&#x8BC1;&#x901A;&#x8FC7;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x7684; <code>mobilePhoneNumberVerified</code> &#x5C5E;&#x6027;&#x5373;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A; <code>true</code>&#x3002;</p>
+<p version="8cd51de87e791e9fd3e7fa16041565ff">&#x5047;&#x8BBE;&#x4F60;&#x5728;&#x5F00;&#x542F;&#x6CE8;&#x518C;&#x624B;&#x673A;&#x53F7;&#x7801;&#x9A8C;&#x8BC1;&#x9009;&#x9879;&#x540E;&#xFF0C;&#x6CE8;&#x518C;&#x4E0B;&#x5217;&#x7528;&#x6237;&#xFF1A;</p>
+<pre version="c3defafd7e78959f083551247985a8db"><code class="lang-sh">curl -X POST \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &apos;{&quot;username&quot;:&quot;cooldude6&quot;,&quot;password&quot;:&quot;p_n7!-e8&quot;,&quot;mobilePhoneNumber&quot;:&quot;186xxxxxxxx&quot;}&apos; \
+  https://api.leancloud.cn/1.1/users
+</code></pre>
+<p version="cc435086f368fbff6c408dccc86cf403">&#x90A3;&#x4E48;&#x5728;&#x6CE8;&#x518C;&#x6210;&#x529F;&#x540E;&#xFF0C;LeanCloud  &#x5C06;&#x5411; 186xxxxxxxx &#x53D1;&#x9001;&#x4E00;&#x6761;&#x9A8C;&#x8BC1;&#x77ED;&#x4FE1;&#x3002;&#x5F00;&#x53D1;&#x8005;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x6846;&#x8BA9;&#x7528;&#x6237;&#x8F93;&#x5165;&#x8FD9;&#x4E2A;&#x9A8C;&#x8BC1;&#x77ED;&#x4FE1;&#x4E2D;&#x9644;&#x5E26;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x4E4B;&#x540E;&#x8C03;&#x7528;&#x4E0B;&#x5217; API &#x6765;&#x786E;&#x8BA4;&#x9A8C;&#x8BC1;&#x7801;&#x7684;&#x6709;&#x6548;&#x6027;&#xFF1A;</p>
+<pre version="6a83e07896477164a77aad6c72709e79"><code class="lang-sh">curl -X POST \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &apos;{}&apos; \
+  https://api.leancloud.cn/1.1/verifyMobilePhone/:code
+</code></pre>
+<p version="da7ca4d2c36250bcd7f72fac1b98c569">&#x5176;&#x4E2D; URL &#x4E2D;&#x6700;&#x540E;&#x7684; <code>:code</code> &#x8981;&#x66FF;&#x6362;&#x6210; 6 &#x4F4D;&#x9A8C;&#x8BC1;&#x6570;&#x5B57;&#x3002;</p>
+<p version="8623730b994216ef8042a0003dc40c37">&#x9A8C;&#x8BC1;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x7684; <code>mobilePhoneNumberVerified</code> &#x5C06;&#x53D8;&#x4E3A; <code>true</code>&#xFF0C;&#x5E76;&#x4F1A;&#x89E6;&#x53D1;&#x8C03;&#x7528;&#x4E91;&#x5F15;&#x64CE;&#x7684; <code>AV.Cloud.onVerified(type, function)</code> &#x65B9;&#x6CD5;&#xFF0C;<code>type</code> &#x88AB;&#x8BBE;&#x7F6E;&#x4E3A; <code>sms</code>&#x3002;</p>
+<h3 id="-">&#x8BF7;&#x6C42;&#x624B;&#x673A;&#x53F7;&#x7801;&#x9A8C;&#x8BC1;</h3>
+<p version="1578a43e2639a407a890ca761bdad3de">&#x7528;&#x6237;&#x9664;&#x4E86;&#x88AB;&#x52A8;&#x7B49;&#x5F85;&#x63A5;&#x6536;&#x9A8C;&#x8BC1;&#x7801;&#x77ED;&#x4FE1;&#x4E4B;&#x5916;&#xFF0C;&#x6216;&#x8005;&#x56E0;&#x4E3A;&#x5176;&#x4ED6;&#x60C5;&#x51B5;&#x7528;&#x6237;&#x6CA1;&#x6709;&#x6536;&#x5230;&#x77ED;&#x4FE1;&#xFF0C;&#x6B64;&#x65F6;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x4E3B;&#x52A8;&#x8981;&#x6C42;&#x53D1;&#x9001;&#x9A8C;&#x8BC1;&#x7801;&#x77ED;&#x4FE1;&#xFF1A;</p>
+<pre version="135569b2e4d1402ce3734d1a44ab820c"><code class="lang-sh">curl -X POST \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &apos;{&quot;mobilePhoneNumber&quot;: &quot;186xxxxxxxx&quot;}&apos; \
+  https://api.leancloud.cn/1.1/requestMobilePhoneVerify
+</code></pre>
+<h3 id="-">&#x624B;&#x673A;&#x53F7;&#x7801;&#xFF0B;&#x9A8C;&#x8BC1;&#x7801;&#x767B;&#x5F55;</h3>
+<p version="f8e0d19a970a7567f57fa2706d57aabf">&#x5728;&#x9A8C;&#x8BC1;&#x8FC7;&#x624B;&#x673A;&#x53F7;&#x7801;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x767B;&#x5F55;&#xFF0C;&#x6765;&#x907F;&#x514D;&#x7E41;&#x7410;&#x7684;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x7801;&#xFF1A;</p>
+<pre version="b64c8bdccf9a9c182c078ac7ae4d96cf"><code class="lang-sh">curl -X POST \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &apos;{&quot;mobilePhoneNumber&quot;: &quot;186xxxxxxxx&quot;}&apos; \
+  https://api.leancloud.cn/1.1/requestLoginSmsCode
+</code></pre>
+<p version="4dfb4c3254cfed888ebfd6e12204f721">&#x7528;&#x6237;&#x6536;&#x5230;&#x9A8C;&#x8BC1;&#x7801;&#x77ED;&#x4FE1;&#x540E;&#xFF0C;&#x8F93;&#x5165;&#x624B;&#x673A;&#x53F7;&#x7801;&#x548C;&#x8BE5;&#x9A8C;&#x8BC1;&#x7801;&#x6765;&#x767B;&#x5F55;&#x5E94;&#x7528;&#xFF1A;</p>
+<pre version="faac741876b340bb8f26f5baf1764287"><code class="lang-sh">curl -X GET \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -G \
+  --data-urlencode &apos;mobilePhoneNumber=186xxxxxxxx&apos; \
+  --data-urlencode &apos;smsCode=123456&apos; \
+  https://api.leancloud.cn/1.1/login
+</code></pre>
+<p version="031b8ce6bfd6b7dea553d9ff1bb0fc82">&#x4E5F;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x624B;&#x673A;&#x53F7;&#x7801;&#x548C;&#x5BC6;&#x7801;&#x7684;&#x65B9;&#x5F0F;&#x767B;&#x5F55;&#xFF1A;</p>
+<pre version="c00f2da3da9fdfed0cf0af69f02c19af"><code class="lang-sh">curl -X GET \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -G \
+  --data-urlencode &apos;mobilePhoneNumber=186xxxxxxxx&apos; \
+  --data-urlencode &apos;password=p_n7!-e8&apos; \
+  https://api.leancloud.cn/1.1/login
+</code></pre>
+<h3 id="-">&#x624B;&#x673A;&#x53F7;&#x7801;&#xFF0B;&#x9A8C;&#x8BC1;&#x7801;&#x91CD;&#x7F6E;&#x7528;&#x6237;&#x5BC6;&#x7801;</h3>
+<p version="08f5c78b9897f3584d055d16bdffdf0e">&#x5982;&#x679C;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x4E86;&#x624B;&#x673A;&#x53F7;&#x7801;&#x6765;&#x6CE8;&#x518C;&#xFF0C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x624B;&#x673A;&#x77ED;&#x4FE1;&#x6765;&#x5B9E;&#x73B0;&#x300C;&#x5FD8;&#x8BB0;&#x5BC6;&#x7801;&#x300D;&#x7684;&#x529F;&#x80FD;&#xFF1A;</p>
+<pre version="c4a70fdd37ddd37cd94d7e741355ad7f"><code class="lang-sh">curl -X POST \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &apos;{&quot;mobilePhoneNumber&quot;: &quot;186xxxxxxxx&quot;}&apos; \
+  https://api.leancloud.cn/1.1/requestPasswordResetBySmsCode
+</code></pre>
+<p version="aaaca3b884c01e826e676175d76bb264">&#x53D1;&#x9001;&#x4E00;&#x6761;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#x7684;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x5230;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x7684;&#x624B;&#x673A;&#x4E0A;&#xFF0C;&#x9700;&#x8981;&#x4F20;&#x5165;&#x6CE8;&#x518C;&#x65F6;&#x5019;&#x7684; <code>mobilePhoneNumber</code>&#x3002;</p>
+<p version="a2688b214c7523b7834f4c100e92381b">&#x7528;&#x6237;&#x6536;&#x5230;&#x9A8C;&#x8BC1;&#x7801;&#x540E;&#xFF0C;&#x8C03;&#x7528; <code>PUT /1.1/resetPasswordBySmsCode/:code</code> &#x6765;&#x8BBE;&#x7F6E;&#x65B0;&#x7684;&#x5BC6;&#x7801;&#xFF08;&#x5176;&#x4E2D; URL &#x4E2D;&#x7684; <code>:code</code> &#x5C31;&#x662F; 6 &#x4F4D;&#x9A8C;&#x8BC1;&#x6570;&#x5B57;&#xFF09;&#xFF1A;</p>
+<pre version="67dbb278ddea8f1f12696f3d7bd09760"><code class="lang-sh">curl -X PUT \
+  -H &quot;X-LC-Id: {{appid}}&quot; \
+  -H &quot;X-LC-Key: {{appkey}}&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &apos;{&quot;password&quot;: &quot;new password&quot;}&apos; \
+  https://api.leancloud.cn/1.1/resetPasswordBySmsCode/&#x6536;&#x5230;&#x7684;6&#x4F4D;&#x9A8C;&#x8BC1;&#x7801;
+</code></pre>
+<p version="d1d49fd8fbc1699d333d559866d20730">&#x4FEE;&#x6539;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x65B0;&#x5BC6;&#x7801;&#x767B;&#x5F55;&#x4E86;&#x3002;</p>
+<h2 id="-">&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x7801;&#x53CA;&#x5176;&#x91CD;&#x8981;&#x6027;</h2>
+<h3 id="-">&#x77ED;&#x4FE1;&#x8F70;&#x70B8;</h3>
+<p version="3ecbabf2cb802f8d370b533c48227264">&#x7F51;&#x7EDC;&#x4E0A;&#x5E76;&#x4E0D;&#x5168;&#x662F;&#x597D;&#x4EBA;&#x7684;&#x4E16;&#x754C;&#xFF0C;&#x5728;&#x6BCF;&#x4E2A;&#x89D2;&#x843D;&#x90FD;&#x53EF;&#x80FD;&#x5145;&#x65A5;&#x5404;&#x79CD;&#x4E0D;&#x6CD5;&#x5206;&#x5B50;&#xFF0C;&#x77ED;&#x4FE1;&#x8F70;&#x70B8;&#x5C31;&#x662F;&#x4E00;&#x4F8B;&#x3002;</p>
+<p version="42a212f16b83425758840de0d5cfc2f8">&#x7F51;&#x7EDC;&#x4E0A;&#x6709;&#x8FD9;&#x6837;&#x4E00;&#x79CD;&#x8F6F;&#x4EF6;&#x5B58;&#x5728;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x6536;&#x96C6;&#x4E00;&#x4E9B;&#x4E0D;&#x9700;&#x8981;&#x8BA4;&#x8BC1;&#xFF08;&#x5982;&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x7801;&#x8BA4;&#x8BC1;&#xFF09;&#x5C31;&#x80FD;&#x53D1;&#x9001;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x7684;&#x7F51;&#x7AD9;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x5B83;&#x4E3A;&#x300C;&#x8F70;&#x70B8;&#x8F6F;&#x4EF6;&#x300D;&#x3002;&#x4E00;&#x4E9B;&#x4E0D;&#x6CD5;&#x4E4B;&#x5F92;&#x5C31;&#x5229;&#x7528;&#x8FD9;&#x6837;&#x7684;&#x8F70;&#x70B8;&#x8F6F;&#x4EF6;&#xFF0C;&#x968F;&#x610F;&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x6216;&#x4E00;&#x7EC4;&#x624B;&#x673A;&#x53F7;&#x7801;&#xFF0C;&#x8F70;&#x70B8;&#x8F6F;&#x4EF6;&#x9996;&#x5148;&#x627E;&#x5230;&#x4E00;&#x5927;&#x5806;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x7684;&#x7F51;&#x7AD9;&#x9010;&#x4E2A;&#x8BBF;&#x95EE;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x6BCF;&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;&#x4E0A;&#x628A;&#x624B;&#x673A;&#x53F7;&#x90FD;&#x81EA;&#x52A8;&#x586B;&#x4E0A;&#xFF0C;&#x8FD9;&#x4E9B;&#x7F51;&#x7AD9;&#x5C31;&#x4F1A;&#x540C;&#x65F6;&#x5F80;&#x8FD9;&#x4E2A;&#x624B;&#x673A;&#x53F7;&#x7801;&#x53D1;&#x77ED;&#x4FE1;&#x4E86;&#x3002;&#x8F70;&#x70B8;&#x8F6F;&#x4EF6;&#x627E;&#x7684;&#x7F51;&#x7AD9;&#x8D8A;&#x591A;&#xFF0C;&#x53D1;&#x7684;&#x77ED;&#x4FE1;&#x4E5F;&#x5C31;&#x8D8A;&#x591A;&#x3002;</p>
+<p version="80fe8b2da1d69099566b6fddca2fd77e">&#x8F70;&#x70B8;&#x8F6F;&#x4EF6;&#x7684;&#x6076;&#x610F;&#x4E4B;&#x5904;&#x8FD8;&#x5728;&#x4E8E;&#xFF0C;&#x5B83;&#x5BF9;&#x5404;&#x4E2A;&#x7F51;&#x7AD9;&#x7684;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x8BF7;&#x6C42;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x4E00;&#x6B21;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x65F6;&#x95F4;&#xFF0C;&#x6BD4;&#x5982;&#x6BCF;&#x9694;&#x51E0;&#x5206;&#x949F;&#x8BF7;&#x6C42;&#x4E00;&#x6B21;&#xFF0C;24&#x5C0F;&#x65F6;&#x4E0D;&#x95F4;&#x65AD;&#x8BF7;&#x6C42;&#xFF0C;&#x8FD9;&#x6837;&#x9020;&#x6210;&#x7684;&#x540E;&#x679C;&#x5C31;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x5BF9;&#x4E8E;&#x7F51;&#x7AD9;&#x6765;&#x8BF4;&#x4F1A;&#x4E0D;&#x505C;&#x7684;&#x53D1;&#x51FA;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#xFF1B;</li>
+<li>&#x5BF9;&#x624B;&#x673A;&#x53F7;&#x7801;&#x6765;&#x8BF4;&#x4F1A;&#x5728;&#x77ED;&#x65F6;&#x95F4;&#x5185;&#x9891;&#x7E41;&#x7684;&#x63A5;&#x6536;&#x5230;&#x5404;&#x4E2A;&#x65E0;&#x5173;&#x7F51;&#x7AD9;&#x7684;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x3002;</li>
+</ul>
+<p version="52efe16a20a22973d5af956c60655d0e">&#x5982;&#x4F55;&#x9632;&#x8303;&#x8FD9;&#x79CD;&#x653B;&#x51FB;&#xFF1F;</p>
+<h3 id="-">&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x7801;</h3>
+<p version="594c49dadae2139e153a1808e8207ea0">&#x6BEB;&#x65E0;&#x7591;&#x95EE;&#xFF0C;&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x7801;&#x662F;&#x9632;&#x8303;&#x77ED;&#x4FE1;&#x8F70;&#x70B8;&#x6700;&#x6709;&#x529B;&#x7684;&#x624B;&#x6BB5;&#x3002;&#x4EC0;&#x4E48;&#x662F;&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x7801;&#xFF1F;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x8FD9;&#x5F20;&#x56FE;&#xFF1A;</p>
+<p><img src="images/captcha.png" alt="image"></p>
+<p version="6d0ea8ebe731b42abbf0f7eb692b1fdd">&#x6211;&#x4EEC;&#x5728;&#x4E00;&#x4E9B;&#x7F51;&#x7AD9;&#x6CE8;&#x518C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x586B;&#x5199;&#x4EE5;&#x4E0A;&#x56FE;&#x7247;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x8FD9;&#x79CD;&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x65B9;&#x5F0F;&#x662F;&#x6211;&#x4EEC;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x5982;&#x679C;&#x7F51;&#x7AD9;&#x5728;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x300C;&#x514D;&#x8D39;&#x83B7;&#x53D6;&#x9A8C;&#x8BC1;&#x7801;&#x300D; &#x64CD;&#x4F5C;&#x524D;&#xFF0C;&#x8981;&#x6C42;&#x7528;&#x6237;&#x8F93;&#x5165;&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x786E;&#x8BA4;&#x7528;&#x6237;&#x662F;&#x771F;&#x5B9E;&#x6709;&#x6548;&#x540E;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x518D;&#x8BF7;&#x6C42; LeanCloud &#x4E91;&#x7AEF;&#x53D1;&#x9001;&#x52A8;&#x6001;&#x77ED;&#x4FE1;&#x5230;&#x7528;&#x6237;&#x624B;&#x673A;&#x4E0A;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x6709;&#x6548;&#x9632;&#x8303;&#x6076;&#x610F;&#x653B;&#x51FB;&#x8005;&#x3002;</p>
+<p version="98b0be37e4a0314dedddd38e5cc8253e">&#x6B63;&#x786E;&#x7684;&#x52A0;&#x5165;&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x7801;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x5728;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x53D1;&#x9001;&#x524D;&#xFF0C;&#x5148;&#x8BA9;&#x7528;&#x6237;&#x586B;&#x5199;&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x518D;&#x53D1;&#x9001;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x3002;&#x770B;&#x4E00;&#x4E2A;&#x6B63;&#x786E;&#x7684;&#x4F8B;&#x5B50;&#xFF08;&#x4E0B;&#x56FE;&#xFF09;&#xFF1A;</p>
+<p><img src="images/captcha.png" alt="image"></p>
+<p version="8cc7d879da27889db2a9e5a68d87c335">&#x548C;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x7684;&#x4F8B;&#x5B50;&#xFF08;&#x4E0B;&#x56FE;&#xFF09;&#xFF1A;</p>
+<p><img src="images/captcha_wrong.png" alt="image"></p>
+<p version="cdf87428a59d2467c75a5a97b5884ae2">&#x6B63;&#x786E;&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x5728;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;&#x524D;&#xFF0C;&#x9519;&#x8BEF;&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x5728;&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x53D1;&#x9001;&#x540E;&#x3002;</p>
+<p version="73831632a079ee625328226082680907">&#x4E00;&#x4E2A;&#x5B9E;&#x9645;&#x6709;&#x6548;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x8FD8;&#x5FC5;&#x987B;&#x6EE1;&#x8DB3;&#xFF1A;</p>
+<ul>
+<li>&#x751F;&#x6210;&#x8FC7;&#x7A0B;&#x5B89;&#x5168;:&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x7801;&#x5FC5;&#x987B;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8FDB;&#x884C;&#x4EA7;&#x751F;&#x4E0E;&#x6821;&#x9A8C;;</li>
+<li>&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x5B89;&#x5168;:&#x5355;&#x6B21;&#x6709;&#x6548;,&#x4E14;&#x4EE5;&#x7528;&#x6237;&#x7684;&#x9A8C;&#x8BC1;&#x8BF7;&#x6C42;&#x4E3A;&#x51C6;;</li>
+<li>&#x9A8C;&#x8BC1;&#x7801;&#x81EA;&#x8EAB;&#x5B89;&#x5168;:&#x4E0D;&#x6613;&#x88AB;&#x8BC6;&#x522B;&#x5DE5;&#x5177;&#x8BC6;&#x522B;,&#x80FD;&#x6709;&#x6548;&#x9632;&#x6B62;&#x66B4;&#x529B;&#x7834;&#x89E3;&#x3002;</li>
+</ul>
+<p version="7371fa1e1e078753c27dc0fd1ab209f2">&#x54EA;&#x4E9B;&#x7F51;&#x7AD9;&#x4F7F;&#x7528;&#x4E86;&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x7801;&#xFF1A;</p>
+<ul>
+<li><a href="http://reg.email.163.com/unireg/call.do?cmd=register.entrance&amp;from=163mail_right">&#x7F51;&#x6613;&#x90AE;&#x7BB1;&#x6CE8;&#x518C;</a></li>
+<li><a href="https://reg.jd.com/reg/person?ReturnUrl=http%3A%2F%2Fwww.jd.com">&#x4EAC;&#x4E1C;&#x5546;&#x57CE;&#x6CE8;&#x518C;</a></li>
+</ul>
+<h3 id="-">&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x5F62;&#x5F0F;</h3>
+<p version="c979d6ccb53ce3cd75ead205d9eb510b">&#x9664;&#x4E86;&#x91C7;&#x7528;&#x8FD9;&#x79CD;&#x56FE;&#x7247;&#x8F93;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#x9A8C;&#x8BC1;&#xFF0C;&#x73B0;&#x5728;&#x5F88;&#x591A;&#x7F51;&#x7AD9;&#x7684;&#x4E5F;&#x91C7;&#x7528;&#x4E86;&#x5F88;&#x591A;&#x65B0;&#x9896;&#x7684;&#x9A8C;&#x8BC1;&#x65B9;&#x5F0F;&#xFF0C;&#x5982;&#xFF1A;&#x6709;&#x5F88;&#x591A;&#x7F51;&#x7AD9;&#x91C7;&#x7528;&#x884C;&#x4E3A;&#x9A8C;&#x8BC1;&#x65B9;&#x5F0F;&#xFF0C;&#x91C7;&#x7528;&#x62D6;&#x62FD;&#x9A8C;&#x8BC1;&#x65B9;&#x5F0F;&#xFF0C;&#x5982;&#x6DD8;&#x5B9D;&#x6CE8;&#x518C;&#xFF0C;pptv&#x6CE8;&#x518C;&#x7B49;&#x3002;&#x76EE;&#x524D;&#xFF0C;&#x4E5F;&#x6709;&#x4E00;&#x4E9B;&#x516C;&#x53F8;&#x63D0;&#x4F9B;&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x7801;&#x7C7B;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x5927;&#x5BB6;&#x90FD;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x4E00;&#x4E0B;&#x3002;</p>
+<h2 id="-faq">&#x5E38;&#x89C1;&#x95EE;&#x9898; FAQ</h2>
+<h3 id="-100-">&#x77ED;&#x4FE1; 100 &#x6761;&#x7684;&#x514D;&#x8D39;&#x989D;&#x5EA6;&#x662F;&#x9488;&#x5BF9;&#x6BCF;&#x4E2A;&#x8D26;&#x6237;&#x8FD8;&#x662F;&#x6BCF;&#x4E2A;&#x5E94;&#x7528;&#xFF1F;</h3>
+<p version="2b750751309f4cf50ea88966de76d22f">&#x6BCF;&#x4E2A; LeanCloud &#x8D26;&#x6237;&#x62E5;&#x6709; 100 &#x6761;&#x514D;&#x8D39;&#x7684;&#x77ED;&#x4FE1;&#x6D4B;&#x8BD5;&#x989D;&#x5EA6;&#xFF0C;<strong>&#x4E0D;&#x662F;&#x6BCF;&#x4E2A;&#x5E94;&#x7528;</strong>&#xFF1B;&#x4F7F;&#x7528;&#x5B8C;&#x6BD5;&#x5C31;&#x9700;&#x8981;&#x4ED8;&#x8D39;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <a href="/bill.html#/bill/charge">&#x5145;&#x503C;</a> &#x83DC;&#x5355;&#x6765;&#x8D2D;&#x4E70;&#x77ED;&#x4FE1;&#x3002;</p>
+<blockquote>
+<p version="7f450741cd2ef915a3f8c63bf0bfe7aa">&#x6CE8;&#x610F;&#xFF1A;&#x4E3A;&#x4E86;&#x4E0D;&#x5F71;&#x54CD;&#x5176;&#x4ED6;&#x670D;&#x52A1;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x77ED;&#x4FE1;&#x8D39;&#x7528;&#x548C;&#x666E;&#x901A;&#x670D;&#x52A1;&#x8D39;&#x7528;&#x5206;&#x5F00;&#x8BA1;&#x7B97;&#xFF0C;&#x6240;&#x4EE5;&#x5145;&#x503C;&#x7684;&#x65F6;&#x5019;&#x8BF7;&#x660E;&#x786E;&#x9009;&#x62E9;&#x300C;&#x8D2D;&#x4E70;&#x77ED;&#x4FE1;&#x300D;&#xFF0C;&#x4E07;&#x4E00;&#x5145;&#x9519;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x652F;&#x6301;&#x7528;&#x8D26;&#x6237;&#x4F59;&#x989D;&#x6765;&#x8D2D;&#x4E70;&#x77ED;&#x4FE1;&#x3002;</p>
+</blockquote>
+<h3 id="-">&#x77ED;&#x4FE1;&#x7684;&#x5230;&#x8FBE;&#x7387;&#x5982;&#x4F55;&#xFF1F;</h3>
+<p version="fc2ca69884b3f4c8353cee9c8319581d">&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x63A5;&#x5165;&#x591A;&#x4E2A;&#x77ED;&#x4FE1;&#x63D0;&#x4F9B;&#x5546;&#x6765;&#x63D0;&#x5347;&#x666E;&#x901A;&#x77ED;&#x4FE1;&#x7684;&#x5230;&#x8FBE;&#x7387;&#x3002;&#x4ECE;&#x6211;&#x4EEC;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x6765;&#x770B;&#xFF0C;&#x6574;&#x4F53;&#x7684;&#x5230;&#x8FBE;&#x7387;&#x5728; 97%~98% &#x4E4B;&#x95F4;&#x3002;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x91CD;&#x8981;&#x64CD;&#x4F5C;&#x7684;&#x9A8C;&#x8BC1;&#x4FE1;&#x606F;&#x53EF;&#x4EE5; 100% &#x9001;&#x8FBE;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x63A8;&#x51FA;&#x4E86; <a href="https://blog.leancloud.cn/3202/">&#x8BED;&#x97F3;&#x9A8C;&#x8BC1;&#x7801;</a> &#x670D;&#x52A1; &#x2014;&#x2014; <strong>&#x77ED;&#x4FE1;&#x5185;&#x5BB9;&#x901A;&#x8FC7;&#x8BED;&#x97F3;&#x7535;&#x8BDD;&#x76F4;&#x63A5;&#x53D1;&#x9001;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4E0D;&#x53D7;&#x6BCF;&#x5929;&#x53D1;&#x9001;&#x6761;&#x6570;&#x4E0A;&#x9650;&#x3001;&#x53D1;&#x9001;&#x9891;&#x7387;&#x4EE5;&#x53CA;&#x8FD0;&#x8425;&#x5546;&#x9ED1;&#x540D;&#x5355;&#x9650;&#x5236;</strong>&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x9664;&#x4E86;&#x666E;&#x901A;&#x7684;&#x6587;&#x672C;&#x77ED;&#x4FE1;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BED;&#x97F3;&#x77ED;&#x4FE1;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x5907;&#x4EFD;&#x624B;&#x6BB5;&#x6765;&#x5411;&#x786E;&#x4FDD;&#x5C06;&#x901A;&#x77E5;&#x9001;&#x8FBE;&#x7528;&#x6237;&#x3002;</p>
+<h3 id="-">&#x600E;&#x4E48;&#x77E5;&#x9053;&#x5355;&#x6761;&#x77ED;&#x4FE1;&#x53D1;&#x9001;&#x6210;&#x529F;&#x4E0E;&#x5426;&#xFF1F;</h3>
+<p version="6b56177e3d0ccfed028935edf329a111">LeanCloud &#x901A;&#x8FC7;&#x8FD0;&#x8425;&#x5546;&#x901A;&#x9053;&#x53D1;&#x9001;&#x7684;&#x6BCF;&#x4E00;&#x6761;&#x77ED;&#x4FE1;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x300C;&#x63A5;&#x6536;&#x56DE;&#x6267;&#x300D;&#x6765;&#x786E;&#x8BA4;&#x53D1;&#x9001;&#x7ED3;&#x679C;&#x3002;&#x4E00;&#x822C;&#x6709;&#x4E09;&#x79CD;&#x72B6;&#x6001;&#xFF1A;</p>
+<ul>
+<li><strong>&#x6210;&#x529F;</strong>&#xFF1A;&#x8FD9;&#x8868;&#x793A;&#x6536;&#x5230;&#x4E86;&#x76EE;&#x6807;&#x624B;&#x673A;&#x53D1;&#x56DE;&#x6765;&#x7684;&#x77ED;&#x4FE1;&#x63A5;&#x6536;&#x56DE;&#x6267;&#xFF0C;&#x6D88;&#x606F;&#x5DF2;&#x7ECF;&#x786E;&#x8BA4;&#x65E0;&#x8BEF;&#x9001;&#x8FBE;&#x3002;</li>
+<li><strong>&#x5931;&#x8D25;</strong>&#xFF1A;&#x8FD9;&#x8868;&#x793A;&#x51FA;&#x73B0;&#x5185;&#x90E8;&#x9519;&#x8BEF;&#xFF0C;&#x5BFC;&#x81F4;&#x53D1;&#x9001;&#x5931;&#x8D25;&#x3002;&#x5185;&#x90E8;&#x9519;&#x8BEF;&#x5219;&#x5305;&#x62EC;&#x76EE;&#x6807;&#x53F7;&#x7801;&#x56E0;&#x4E3A;&#x67D0;&#x79CD;&#x539F;&#x56E0;&#x8FDB;&#x5165;&#x53D1;&#x9001;&#x65B9;&#x9ED1;&#x540D;&#x5355;&#x3001;&#x77ED;&#x65F6;&#x95F4;&#x5185;&#x53D1;&#x9001;&#x8FC7;&#x91CF;&#x77ED;&#x4FE1;&#x3001;&#x751A;&#x81F3;&#x662F;&#x653F;&#x7B56;&#x8C03;&#x6574;&#x7B49;&#x7B49;&#x60C5;&#x51B5;&#x3002;</li>
+<li><strong>&#x7B49;&#x5F85;</strong>&#xFF1A;&#x8868;&#x793A;&#x8FD0;&#x8425;&#x5546;&#x670D;&#x52A1;&#x5668;&#x5C1A;&#x672A;&#x6536;&#x5230;&#x76EE;&#x6807;&#x624B;&#x673A;&#x7684;&#x63A5;&#x6536;&#x56DE;&#x6267;&#xFF0C;&#x53D1;&#x9001;&#x7ED3;&#x679C;&#x53EF;&#x80FD;&#x6210;&#x529F;&#x4E5F;&#x53EF;&#x80FD;&#x5931;&#x8D25;&#xFF0C;&#x5F53;&#x524D;&#x4E0D;&#x53EF;&#x77E5;&#x3002;</li>
+</ul>
+<p version="5bb639876d0120130be136e7192a0d18">&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x4ECE; <a href="/messaging.html?appid={{appid}}#/message/sms/create">&#x5E94;&#x7528;&#x63A7;&#x5236;&#x53F0; &gt; <strong>&#x6D88;&#x606F;</strong> &gt; <strong>&#x77ED;&#x4FE1;</strong> &gt; <strong>&#x53D1;&#x9001;&#x8BB0;&#x5F55;</strong></a> &#x6E05;&#x695A;&#x5730;&#x770B;&#x5230;&#x6BCF;&#x6761;&#x6D88;&#x606F;&#x548C;&#x5B83;&#x7684;&#x53D1;&#x9001;&#x72B6;&#x6001;&#x3002;</p>
+<h3 id="-">&#x6709;&#x4E9B;&#x624B;&#x673A;&#x6536;&#x4E0D;&#x5230;&#x77ED;&#x4FE1;&#x662F;&#x4EC0;&#x4E48;&#x60C5;&#x51B5;&#xFF1F;</h3>
+<p version="1bb276e8a56932d8db7fd06242ab2952">&#x9996;&#x5148;&#x8BF7;&#x68C0;&#x67E5; <a href="/messaging.html?appid={{appid}}#/message/sms/create">&#x5E94;&#x7528;&#x63A7;&#x5236;&#x53F0; &gt; <strong>&#x6D88;&#x606F;</strong> &gt; <strong>&#x77ED;&#x4FE1;</strong> &gt; <strong>&#x53D1;&#x9001;&#x8BB0;&#x5F55;</strong></a>&#xFF09;&#x6709;&#x65E0;&#x53D1;&#x9001;&#x6570;&#x636E;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5; API &#x7684;&#x62A5;&#x9519;&#xFF0C;&#x6839;&#x636E;&#x62A5;&#x9519;&#x4FEE;&#x6539;&#x5BA2;&#x6237;&#x7AEF;&#x4EE3;&#x7801;&#x6216;&#x903B;&#x8F91;&#xFF1B;&#x5982;&#x679C;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x4F9D;&#x7136;&#x6536;&#x4E0D;&#x5230;&#x77ED;&#x4FE1;&#xFF0C;&#x5219;&#x53EF;&#x80FD;&#x6709;&#x5982;&#x4E0B;&#x539F;&#x56E0;&#xFF1A;</p>
+<ul>
+<li><strong>&#x72B6;&#x6001;&#x4E3A;&#x300C;&#x7B49;&#x5F85;&#x56DE;&#x6267;&#x300D;</strong>&#xFF1A;&#x8BF4;&#x660E;&#x5728;&#x7B49;&#x5F85;&#x8FD0;&#x8425;&#x5546;&#x7ED9;&#x6211;&#x4EEC;&#x53D1;&#x56DE;&#x56DE;&#x6267;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x6536;&#x5230;&#x77ED;&#x4FE1;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x6536;&#x5230;&#xFF0C;&#x7ED3;&#x679C;&#x672A;&#x77E5;&#x3002;&#x5728;&#x9AD8;&#x5CF0;&#x65F6;&#x6BB5;&#xFF0C;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x5EF6;&#x8FDF;&#x3002;</li>
+<li><strong>&#x72B6;&#x6001;&#x4E3A;&#x300C;&#x5931;&#x8D25;&#x300D;</strong>&#xFF1A;&#x8BF4;&#x660E;&#x8FD0;&#x8425;&#x5546;&#x5411;&#x7528;&#x6237;&#x53D1;&#x9001;&#x77ED;&#x4FE1;&#x5931;&#x8D25;&#x3002;&#x53EF;&#x80FD;&#x7684;&#x539F;&#x56E0;&#x6709;&#x5F88;&#x591A;&#x79CD;&#xFF0C;&#x8B6C;&#x5982;&#xFF1A;<ul>
+<li>&#x6BCF;&#x5929;&#x5F80;&#x540C;&#x4E00;&#x7528;&#x6237;&#x53D1;&#x9001;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x77ED;&#x4FE1;&#x91CF;&#x8D85;&#x8FC7;&#x4E86; 5 &#x6761;&#x9650;&#x5236;&#xFF1B;</li>
+<li>&#x5F80;&#x540C;&#x4E00;&#x7528;&#x6237;&#x53D1;&#x9001;&#x77ED;&#x4FE1;&#x9891;&#x7387;&#x592A;&#x5FEB;&#xFF08;&#x4E00;&#x5206;&#x949F;&#x5185;&#x6700;&#x591A;&#x53EA;&#x5141;&#x8BB8;&#x53D1;&#x9001;&#x4E00;&#x6761;&#x77ED;&#x4FE1;&#xFF09;&#xFF1B;</li>
+<li>&#x7528;&#x6237;&#x4E4B;&#x524D;&#x9000;&#x8BA2;&#x6216;&#x6295;&#x8BC9;&#x8FC7;&#x8FD0;&#x8425;&#x5546;&#x5F53;&#x524D;&#x5206;&#x53D1;&#x7684;&#x77ED;&#x4FE1;&#x901A;&#x9053;&#xFF0C;&#x8BE5;&#x53F7;&#x7801;&#x5904;&#x5728;&#x8FD0;&#x8425;&#x5546;&#x9ED1;&#x540D;&#x5355;&#x4E2D;&#xFF1B;</li>
+<li>&#x7528;&#x6237;&#x624B;&#x673A;&#x53F7;&#x4E0D;&#x5B58;&#x5728;&#x6216;&#x5173;&#x673A;&#x7B49;&#x7B49;&#x3002;</li>
+</ul>
+</li>
+<li><strong>&#x72B6;&#x6001;&#x4E3A;&#x300C;&#x6210;&#x529F;&#x300D;</strong>&#xFF1A;&#x8BF4;&#x660E;&#x8FD0;&#x8425;&#x5546;&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#x7528;&#x6237;&#x5DF2;&#x7ECF;&#x6210;&#x529F;&#x6536;&#x5230;&#x4E86;&#x77ED;&#x4FE1;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x6CA1;&#x6709;&#x6536;&#x5230;&#xFF0C;&#x53EF;&#x80FD;&#x7528;&#x6237;&#x7AEF;&#x624B;&#x673A;&#x51FA;&#x4E86;&#x95EE;&#x9898;&#xFF08;&#x662F;&#x5426;&#x5B89;&#x88C5;&#x4E86;&#x67D0;&#x4E9B;&#x5B89;&#x5168;&#x8F6F;&#x4EF6;&#xFF0C;&#x5BFC;&#x81F4;&#x52AB;&#x6301;&#x6216;&#x8FC7;&#x6EE4;&#x4E86;&#x90E8;&#x5206;&#x77ED;&#x4FE1;&#xFF0C;&#x7B49;&#x7B49;&#xFF09;&#x3002;</li>
+</ul>
+<p version="25837fb6dce7c2ee9c3554ebe1bc1300">&#x77ED;&#x4FE1;&#x53D1;&#x9001;&#x53D7;&#x5BA2;&#x89C2;&#x56E0;&#x7D20;&#x6216;&#x653F;&#x7B56;&#x539F;&#x56E0;&#x5F71;&#x54CD;&#x8F83;&#x591A;&#xFF0C;&#x6CA1;&#x6709;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1; 100% &#x9001;&#x8FBE;&#x3002;LeanCloud &#x77ED;&#x4FE1;&#x670D;&#x52A1;&#x901A;&#x8FC7;&#x5BF9;&#x63A5;&#x591A;&#x6761;&#x901A;&#x9053;&#x3001;&#x52A8;&#x6001;&#x667A;&#x80FD;&#x5339;&#x914D;&#x6700;&#x4F18;&#x7EBF;&#x8DEF;&#xFF0C;&#x80FD;&#x591F;&#x4FDD;&#x8BC1; 97% &#x4EE5;&#x4E0A;&#x7684;&#x5230;&#x8FBE;&#x7387;&#x3002;</p>
+<h5 id="-">&#x89E3;&#x51B3;&#x65B9;&#x6848;</h5>
+<ul>
+<li>&#x8BF7;&#x5728;&#x4EA7;&#x54C1;&#x4EA4;&#x4E92;&#x4E0A;&#xFF0C;&#x5BF9;&#x9A8C;&#x8BC1;&#x7801;&#x8BF7;&#x6C42;&#x52A0;&#x4E0A;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x9650;&#x5236;&#xFF0C;&#x4E00;&#x5206;&#x949F;&#x4E4B;&#x5185;&#x4E0D;&#x5141;&#x8BB8;&#x591A;&#x6B21;&#x8BF7;&#x6C42;&#xFF1B;</li>
+<li>&#x8BF7;&#x6CE8;&#x610F;&#x4E00;&#x5929;&#x5185;&#x4E0D;&#x8981;&#x5F80;&#x540C;&#x4E00;&#x53F7;&#x7801;&#x53D1;&#x9001;&#x8D85;&#x8FC7; 5 &#x6761;&#x9A8C;&#x8BC1;&#x7801;&#x77ED;&#x4FE1;&#xFF1B;</li>
+<li>&#x5BF9;&#x4E8E;&#x5B9E;&#x5728;&#x65E0;&#x6CD5;&#x9001;&#x8FBE;&#x7684;&#x5C11;&#x91CF;&#x624B;&#x673A;&#x53F7;&#x7801;&#xFF0C;&#x8BF7;&#x8F6C;&#x7528; <a href="https://blog.leancloud.cn/3202/">&#x8BED;&#x97F3;&#x9A8C;&#x8BC1;&#x7801;</a> &#x2014;&#x2014; <strong>&#x77ED;&#x4FE1;&#x5185;&#x5BB9;&#x901A;&#x8FC7;&#x8BED;&#x97F3;&#x7535;&#x8BDD;&#x76F4;&#x63A5;&#x53D1;&#x9001;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4E0D;&#x53D7;&#x6BCF;&#x5929;&#x53D1;&#x9001;&#x6761;&#x6570;&#x4E0A;&#x9650;&#x3001;&#x53D1;&#x9001;&#x9891;&#x7387;&#x4EE5;&#x53CA;&#x8FD0;&#x8425;&#x5546;&#x9ED1;&#x540D;&#x5355;&#x9650;&#x5236;</strong>&#x3002;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x5927;&#x5BB6;&#x5728;&#x4EA7;&#x54C1;&#x4E0A;&#xFF0C;&#x5BF9;&#x4E8E;&#x540C;&#x4E00;&#x7528;&#x6237;&#x5C1D;&#x8BD5;&#x518D;&#x6B21;&#x83B7;&#x53D6;&#x9A8C;&#x8BC1;&#x7801;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x6362;&#x7528;&#x8BED;&#x97F3;&#x9A8C;&#x8BC1;&#x7801;&#x6765;&#x4FDD;&#x8BC1;&#x7EDD;&#x5BF9;&#x9001;&#x8FBE;&#xFF08;&#x8BED;&#x97F3;&#x9A8C;&#x8BC1;&#x7801;&#x6536;&#x8D39;&#x4E0E;&#x6587;&#x672C;&#x77ED;&#x4FE1;&#x4E00;&#x6837;&#xFF09;&#x3002;</li>
+</ul>
+<p version="ca9fa43b716318600aeb8a2008db01b6">&#x5982;&#x679C;&#x9700;&#x8981;&#x8BE6;&#x67E5;&#x539F;&#x56E0;&#xFF0C;&#x8BF7;&#x5C06; appId &#x53CA;&#x624B;&#x673A;&#x53F7;&#x53D1;&#x9001;&#x5230; <a href="mailto:support@leancloud.cn">support@leancloud.cn</a>&#xFF0C;&#x6211;&#x4EEC;&#x8054;&#x7CFB;&#x8FD0;&#x8425;&#x5546;&#x67E5;&#x8BE2;&#x8BE6;&#x60C5;&#x3002;</p>
+<h3 id="-">&#x77ED;&#x4FE1;&#x7B7E;&#x540D;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x5FC5;&#x987B;&#x7684;&#x5417;&#xFF1F;</h3>
+<p version="ea4e050040688f6fa6f1fcd54335f6e9">&#x6839;&#x636E;&#x8FD0;&#x8425;&#x5546;&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x77ED;&#x4FE1;&#x7B7E;&#x540D;&#x662F;&#x5FC5;&#x987B;&#x7684;&#x3002;&#x77ED;&#x4FE1;&#x7B7E;&#x540D;&#x662F;&#x6307;&#x77ED;&#x4FE1;&#x91CC; <code>&#x3010;&#x3011;</code> &#x62EC;&#x8D77;&#x6765;&#x7684;&#x77ED;&#x4FE1;&#x53D1;&#x9001;&#x65B9;&#x540D;&#x79F0;&#x3002;&#x6211;&#x4EEC;&#x53EA;&#x5141;&#x8BB8;&#x81EA;&#x5B9A;&#x4E49;&#x77ED;&#x4FE1;&#x6A21;&#x677F;&#x7684;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7B7E;&#x540D;&#xFF0C;&#x5176;&#x4ED6;&#x7528;&#x6237;&#x90FD;&#x4F7F;&#x7528;&#x5E94;&#x7528;&#x540D;&#x79F0;&#x3002;&#x81EA;&#x5B9A;&#x4E49;&#x7B7E;&#x540D;&#x8981;&#x6C42;&#x5728; 10 &#x4E2A;&#x5B57;&#x7B26;&#x5185;&#xFF0C;&#x4E0D;&#x80FD;&#x6709;&#x4EFB;&#x4F55;<strong>&#x975E;&#x6587;&#x5B57;&#x5B57;&#x7B26;</strong>&#xFF0C;&#x4E0D;&#x53EF;&#x4EE5;&#x662F;&#x53D8;&#x91CF;&#x3002;</p>
+<blockquote>
+<p version="8db75fc8aaf88b53a894964a60df9c2f">&#x77ED;&#x4FE1;&#x7B7E;&#x540D;&#x9650;&#x5236;&#x5728; 10 &#x4E2A;&#x5B57;&#x7B26;&#x5185;&#xFF0C;&#x5E94;&#x7528;&#x540D;&#x79F0;&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x8BBE;&#x7F6E;&#x91CC;&#x4FEE;&#x6539;&#xFF0C;&#x5E76;&#x4E14;&#x77ED;&#x4FE1;&#x7B7E;&#x540D;&#x5FC5;&#x987B;&#x51FA;&#x73B0;&#x5728;&#x77ED;&#x4FE1;&#x5185;&#x5BB9;&#x7684;&#x5F00;&#x5934;&#x6216;&#x8005;&#x7ED3;&#x5C3E;&#x3002;</p>
+</blockquote>
+<h3 id="-">&#x77ED;&#x4FE1;&#x6A21;&#x677F;&#x5BA1;&#x6838;&#x7684;&#x539F;&#x5219;&#x662F;&#x54EA;&#x4E9B;&#xFF1F;</h3>
+<ol>
+<li>&#x6A21;&#x677F;&#x7528;&#x9014;&#x660E;&#x786E;&#xFF1A;&#x901A;&#x77E5;&#x7C7B;&#x77ED;&#x4FE1;&#xFF0C;&#x6BD4;&#x5982;&#x6D3B;&#x52A8;&#x901A;&#x77E5;&#x3001;&#x6D88;&#x606F;&#x901A;&#x77E5;&#x7B49;&#x3002;&#x6216;&#x8005;&#x9A8C;&#x8BC1;&#x7C7B;&#x77ED;&#x4FE1;&#xFF0C;&#x8981;&#x6C42;&#x6709;&#x9A8C;&#x8BC1;&#x7801;&#x3002;</li>
+<li>&#x77ED;&#x4FE1;&#x7528;&#x9014;&#x4E0D;&#x5F97;&#x8FDD;&#x53CD;&#x56FD;&#x5BB6;&#x6CD5;&#x5F8B;&#x6CD5;&#x89C4;&#xFF0C;&#x4E0B;&#x5217;&#x77ED;&#x4FE1;&#x662F;&#x4E25;&#x683C;&#x7981;&#x6B62;&#x7684;&#xFF1A; &#x623F;&#x4EA7;&#x7C7B;&#x3001;&#x4E2D;&#x5956;&#x7C7B;&#x3001;&#x8FDD;&#x6CD5;&#x7C7B;&#xFF08;&#x8C23;&#x8A00;&#x3001;&#x8BC8;&#x9A97;&#x7B49;&#xFF09;&#x3001;&#x8D4C;&#x535A;&#x7C7B;&#x7B49;&#x3002;</li>
+<li>&#x6A21;&#x677F;&#x8BED;&#x6CD5;&#x6B63;&#x786E;&#xFF1A;&#x6211;&#x4EEC;&#x4EC5;&#x652F;&#x6301; handlebars &#x8BED;&#x6CD5;&#xFF0C;&#x53D8;&#x91CF;&#x662F;&#x4EE5;&#x4E24;&#x4E2A;&#x5927;&#x62EC;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#xFF0C;&#x7C7B;&#x4F3C; <span ng-non-bindable=""><code>{{var}}</code></span>&#x3002;</li>
+<li>&#x9ED8;&#x8BA4;&#x77ED;&#x4FE1;&#x7B7E;&#x540D;&#x662F;&#x5E94;&#x7528;&#x540D;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x677F;&#x91CC;&#x8BBE;&#x7F6E;&#x77ED;&#x4FE1;&#x7B7E;&#x540D;&#xFF0C;&#x7B7E;&#x540D;&#x8981;&#x6C42;&#x5728; 10 &#x4E2A;&#x5B57;&#x7B26;&#x5185;&#xFF0C;&#x4E0D;&#x80FD;&#x6709;&#x4EFB;&#x4F55;<strong>&#x975E;&#x6587;&#x5B57;&#x5B57;&#x7B26;</strong>&#xFF0C;&#x4E0D;&#x53EF;&#x4EE5;&#x662F;&#x53D8;&#x91CF;&#x3002;</li>
+</ol>
+<p version="6638281de08badc7c838a23298461019">&#x5982;&#x679C;&#x4F60;&#x521B;&#x5EFA;&#x7684;&#x77ED;&#x4FE1;&#x6A21;&#x677F;&#x88AB;&#x62D2;&#x7EDD;&#xFF0C;&#x8BF7;&#x6CE8;&#x610F;&#x67E5;&#x6536;&#x90AE;&#x4EF6;&#xFF0C;&#x67E5;&#x770B;&#x91CC;&#x9762;&#x7684;&#x62D2;&#x7EDD;&#x539F;&#x56E0;&#x7B49;&#x3002;&#x5982;&#x679C;&#x8FD8;&#x6709;&#x7591;&#x95EE;&#xFF0C;&#x8BF7;&#x53CA;&#x65F6;&#x4E0E;&#x6211;&#x4EEC;&#x8054;&#x7CFB;&#x3002;</p>
+<h3 id="-">&#x77ED;&#x4FE1;&#x6709;&#x4EC0;&#x4E48;&#x9650;&#x5236;&#x5417;&#xFF1F;</h3>
+<p version="e9b1cfa2fdfe8bd0dd74e0a9ca3ade87">&#x9488;&#x5BF9;&#x9A8C;&#x8BC1;&#x7801;&#x7C7B;&#x77ED;&#x4FE1;&#x7684;&#x9650;&#x5236;&#x6709;&#xFF1A;</p>
+<ul>
+<li>&#x9488;&#x5BF9;&#x540C;&#x4E00;&#x4E2A;&#x624B;&#x673A;&#x53F7;&#x7801;&#xFF0C;&#x4E00;&#x5206;&#x949F;&#x53EA;&#x80FD;&#x53D1;&#x9001;&#x4E00;&#x6761;&#x9A8C;&#x8BC1;&#x7801;&#x77ED;&#x4FE1;&#x3002;</li>
+<li>&#x6BCF;&#x5929;&#x53EA;&#x80FD;&#x53D1;&#x9001; 5 &#x6761;&#x9A8C;&#x8BC1;&#x77ED;&#x4FE1;&#x7ED9;&#x540C;&#x4E00;&#x4E2A;&#x624B;&#x673A;&#x53F7;&#x7801;&#x3002;</li>
+</ul>
+<p version="d9676dd0bfb7cea7069f6b62e68427a3">&#x4EE5;&#x4E0A;&#x9650;&#x5236;&#x5BF9;&#x6D4B;&#x8BD5;&#x624B;&#x673A;&#x53F7;&#x7801;&#x4E5F;&#x540C;&#x6837;&#x6709;&#x6548;&#x3002;</p>
+<p version="5c169e11989cc5f10d616d09380748a6">&#x901A;&#x77E5;&#x7C7B;&#x77ED;&#x4FE1;&#x6CA1;&#x6709;&#x6D41;&#x63A7;&#x9650;&#x5236;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x7981;&#x6B62;&#x4E0B;&#x5217;&#x77ED;&#x4FE1;&#xFF1A;</p>
+<ul>
+<li>&#x63A8;&#x5E7F;&#x8425;&#x9500;&#x7528;&#x9014;</li>
+<li>&#x5305;&#x542B;&#x4E0D;&#x660E;&#x4E0B;&#x8F7D;&#x5730;&#x5740;</li>
+<li>&#x6D89;&#x53CA;&#x8272;&#x60C5;&#x3001;&#x653F;&#x6CBB;&#x7B49;&#x6CD5;&#x5F8B;&#x7981;&#x6B62;&#x60C5;&#x51B5;</li>
+</ul>
+<p version="783bc2a7e5b5ce6ba08dccb41f80f875">&#x5982;&#x679C;&#x6D89;&#x53CA;&#x4E0A;&#x8FF0;&#x4E0D;&#x6B63;&#x5F53;&#x7528;&#x9014;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x505C;&#x6B62;&#x60A8;&#x7684;&#x77ED;&#x4FE1;&#x4F7F;&#x7528;&#x6743;&#x9650;&#x3002;</p>
+<h3 id="-">&#x77ED;&#x4FE1;&#x652F;&#x6301;&#x6E2F;&#x6FB3;&#x53F0;&#x548C;&#x56FD;&#x5916;&#x5417;&#xFF1F;</h3>
+<p version="dd144fb11bb2d03386c5ea56c2fd8288">&#x6682;&#x4E0D;&#x652F;&#x6301;&#x3002;</p>
+<h3 id="-">&#x77ED;&#x4FE1;&#x4F59;&#x989D;&#x4E0D;&#x8DB3;&#x6709;&#x9884;&#x8B66;&#x901A;&#x77E5;&#x5417;&#xFF1F;</h3>
+<p version="178bb74328f10ec3ee08006871052af7">&#x6709;&#x3002;&#x8BF7;&#x5728; <a href="/settings.html#/setting/info">&#x5F00;&#x53D1;&#x8005;&#x5E10;&#x6237;</a> &#x91CC;&#x586B;&#x5199;&#x624B;&#x673A;&#x53F7;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x63D0;&#x524D;&#x901A;&#x8FC7;&#x90AE;&#x4EF6;&#x548C;&#x77ED;&#x4FE1;&#x7684;&#x65B9;&#x5F0F;&#x5411;&#x4F60;&#x53D1;&#x9001;&#x544A;&#x8B66;&#x4FE1;&#x606F;&#x3002;</p>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

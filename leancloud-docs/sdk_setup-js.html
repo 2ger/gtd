@@ -1,0 +1,494 @@
+<!doctype html>
+
+<html version="9700799098629fac4210b27998f61658">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LeanCloud &#x6587;&#x6863;</title>
+<script src="//cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script>
+<script src="custom/js/docs-all.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="custom/css/app-docs.css?githubv1">
+
+
+</head>
+
+
+<body class="dashboard-init" data-offset="0" ng-cloak="" ng-controller="AppCtrl">
+<nav class="dashboard-subnav navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="app-options">
+            <ul class="nav navbar-nav navbar-app-select">
+                <li>
+                  <a href="/applist.html" class="nav-logo font-logo">L<span class="visible-xs-inline">eanCloud</span></a>
+                </li>
+            </ul>
+
+            <div class="navbar-app-actions-wrap">
+                <ul class="nav navbar-nav navbar-app-actions">
+                  <li class="dropdown dropdown-toggle-app-name">
+                    <a href="index.html">
+                      <i class="icon icon-dashbd-icon icon-blank-app"></i>
+                      <div class="name">&#x6587;&#x6863;&#x9996;&#x9875;</div>
+                    </a>
+                  </li>
+
+
+                  <li ng-class="{active:currentHtmlPage==&apos;help.html&apos;}">
+                      <a class="nav-key-6 dropdown-toggle" title="&#x5E2E;&#x52A9;" data-toggle="dropdown">
+                          <i class="icon icon-dashbd-icon icon-question"></i>
+                          <i class="dashboard-subnav-text">&#x5E2E;&#x52A9;</i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          
+                            <!-- <li><a href="start.html">快速入门</a></li> -->
+                          
+                          <li><a href="/docs">&#x6587;&#x6863;</a></li>
+                          <li><a href="/docs/sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+                          <li><a href="http://ticket.leancloud.cn/tickets">&#x6280;&#x672F;&#x652F;&#x6301;</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+                          <li><a href="/apps.html">&#x79FB;&#x52A8;&#x7AEF; App</a></li>
+                          <li><a href="http://forum.leancloud.cn">&#x793E;&#x533A;</a></li>
+                          <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+                          <li role="presentation" class="divider"></li>
+                          <li><a href="https://leancloud.cn/apionline/">&#x5728;&#x7EBF; API &#x5DE5;&#x5177;</a></li>
+                          <li><a href="http://drop.avosapps.com/">iOS &#x6D4B;&#x8BD5;&#x5305;&#x5206;&#x53D1;</a></li>
+                          <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+                      </ul>
+                  </li>
+
+                </ul>
+            </div>
+
+            <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak="">
+
+
+                <li class="dropdown" ng-show="user.username">
+                    <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
+                        <span class="user-gravatar">
+                            <img gravatar-src="user.email" gravatar-size="64">
+                        </span>
+                        <span class="user-name-text">{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings.html">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+                        <li><a href="/applist.html">&#x63A7;&#x5236;&#x53F0;</a></li>
+                        <li><a href="/settings.html#/setting/team">&#x56E2;&#x961F;&#x7BA1;&#x7406;</a></li>
+                        <li><a href="/bill.html#/bill/general">&#x8D22;&#x52A1;</a></li>
+                        <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
+                        <li ng-show="user.username" style=""><a ng-click="signout()">&#x767B;&#x51FA;</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signin">&#x767B;&#x5F55;</a>
+                </li>
+                <li ng-hide="user.username">
+                    <a href="/login.html#/signup">&#x6CE8;&#x518C;</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <!-- .container-fluid -->
+</nav>
+
+<header class="doc-subnav" role="banner">
+  <div class="container-fluid">
+    <nav class="" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li><a href="start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x529F;&#x80FD;&#x6982;&#x89C8;</a>
+          <ul class="dropdown-menu">
+            <li><a href="storage_overview.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="realtime_v2.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x603B;&#x89C8;</a></li>
+            <li><a href="dashboard_guide.html">&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a></li>
+            <li><a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+            <li><a href="tool_tips.html">&#x5E38;&#x89C1;&#x529F;&#x80FD;&#x63D0;&#x793A;</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">iOS / OS X</a>
+          <ul class="dropdown-menu">
+            <li><a href="ios_os_x_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_push_cert.html">iOS &#x63A8;&#x9001;&#x8BC1;&#x4E66;&#x8BBE;&#x7F6E;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-ios.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="relation_guide.html">&#x5173;&#x7CFB;&#x5EFA;&#x6A21;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-ios.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-ios.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_crashreporting_guide.html">&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="ios_os_x_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/iOS/index.html" target="_blank">iOS SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="android_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="android_push_guide.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-android.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-android.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_statistics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-android.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="android_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/android/doc/index.html" target="_blank">Android SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">JavaScript</a>
+          <ul class="dropdown-menu">
+            <li><a href="js_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_push.html">&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_realtime.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="acl_guide-js.html">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sms_guide-js.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="js_analytics.html">&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="js_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/javascript/index.html" target="_blank">JavaScript SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">.NET / Unity3D</a>
+          <ul class="dropdown-menu">
+            <li><a href="dotnet_guide.html">.NET &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_guide.html">Unity3D &#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_push_guide.html">WP8.0 &#x6D88;&#x606F;&#x63A8;&#x9001;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="realtime_guide-dotnet.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="unity_statistics.html">Unity3D &#x7EDF;&#x8BA1;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="dotnet_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/dotnet/Help/index.html" target="_blank">.NET SDK API</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">Python</a>
+          <ul class="dropdown-menu">
+            <li><a href="python_guide.html">&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="python_faq.html">FAQ</a></li>
+            <li><a href="/api-docs/python/leancloud.html" target="_blank">Python SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">PHP</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api-docs/php/" target="_blank">PHP SDK API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">REST API</a>
+          <ul class="dropdown-menu">
+            <li><a href="rest_api.html">&#x6570;&#x636E;&#x5B58;&#x50A8; API</a></li>
+            <li><a href="rest_api.html#Push_&#x901A;&#x77E5;">&#x6D88;&#x606F;&#x63A8;&#x9001; API</a></li>
+            <li><a href="realtime_rest_api.html">&#x5B9E;&#x65F6;&#x901A;&#x4FE1; API</a></li>
+            <li><a href="rest_sms_api.html">&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1; API</a></li>
+            <li><a href="rest_api.html#&#x7EDF;&#x8BA1;&#x6570;&#x636E;_API">&#x6570;&#x636E;&#x7EDF;&#x8BA1; API</a></li>
+            <li><a href="cql_guide.html">CQL &#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8BE6;&#x89E3;</a></li>
+            <li><a href="oauth2_provider.html">&#x5F00;&#x653E;&#x5E73;&#x53F0;&#x63A5;&#x5165;</a></li>
+            <li><a href="rest_faq.html">FAQ</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x4E91;&#x5F15;&#x64CE;</a>
+          <ul class="dropdown-menu">
+          <li><a href="leanengine_guide-node.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Node.js &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-python.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;Python &#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_guide-cloudcode.html">&#x4E91;&#x5F15;&#x64CE;&#xFF08;&#x65E7;&#x7248;&#x4E91;&#x4EE3;&#x7801;&#x73AF;&#x5883;&#xFF09;</a></li>
+          <li><a href="leanengine_upgrade_3.html">&#x4E91;&#x5F15;&#x64CE; 2.0 &#x5347;&#x7EA7; 3.0 &#x6307;&#x5357;</a></li>
+          <li><a href="cloud_code_commandline.html">&#x4E91;&#x5F15;&#x64CE;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</a></li>
+          <li><a href="acl_guide_leanengine.html">&#x5728;&#x4E91;&#x5F15;&#x64CE;&#x4E2D;&#x7BA1;&#x7406; ACL</a></li>
+          <li><a href="cloud_code_faq.html">FAQ</a></li>
+          <li><a href="js_guide.html">JavaScript &#x6307;&#x5357;</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-hover="dropdown" href="#">&#x66F4;&#x591A;</a>
+          <ul class="dropdown-menu">
+            <li><a href="status_system.html">&#x5E94;&#x7528;&#x5185;&#x793E;&#x4EA4;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="app_search_guide.html">&#x5E94;&#x7528;&#x5185;&#x641C;&#x7D22;&#x548C; DeepLink &#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="app_data_share.html">&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;Class &#x7ED1;&#x5B9A;&#xFF09;</a></li>
+            <li><a href="user_groups.html">&#x7528;&#x6237;&#x7FA4;&#x5206;&#x6790;&#x6307;&#x5357;</a></li>
+            <li><a href="leaninsight_guide.html">&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+            <li><a href="sns.html">SNS &#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li><a href="feedback.html">&#x7528;&#x6237;&#x53CD;&#x9988;&#x5F00;&#x53D1;&#x6307;&#x5357;</a></li>
+            <li class="divider"></li>
+            <li><a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a></li>
+           <li><a href="demo.html">Demo</a></li>
+           <li><a href="http://leancloud.sexy" target="_blank">&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search" action="/search.html" method="get">
+        <div class="form-group">
+          <input name="q" type="text" class="form-control" placeholder="&#x641C;&#x7D22;&#x2026;">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search.html" method="get" target="_blank" class="search-form">
+            <input name="q" class="search-input" placeholder="搜索&hellip;">
+          </form>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="sidebar-gruntfile-trigger  col-sm-3" id="left-nav">
+
+      <div class="sidebar-affix-shadow sidebar-hover-off">
+
+        <div class="sidebar-wrapper" id="toc-wrapper">
+
+        </div>
+        <!-- .sidebar-wrapper -->
+
+      </div>
+      <!-- .sidebar-affix-shadow -->
+
+    </div>
+    <!-- .col-md-3 -->
+
+    <div class="col-sm-9 sidebar-gruntfile-trigger">
+      <div class="doc-content with-comment" id="content">
+        <h1 id="leancloud-javascript-sdk-">LeanCloud JavaScript SDK &#x5B89;&#x88C5;&#x6307;&#x5357;</h1>
+<h2 id="-sdk">&#x83B7;&#x53D6; SDK</h2>
+<p version="b4e7fde1b3228a8670668aca599cd722">&#x83B7;&#x53D6; SDK &#x6709;&#x591A;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x8F83;&#x4E3A;&#x63A8;&#x8350;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x901A;&#x8FC7;&#x5305;&#x4F9D;&#x8D56;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x7248;&#x672C;&#x3002;</p>
+<h3 id="-">&#x5305;&#x4F9D;&#x8D56;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#x5B89;&#x88C5;</h3>
+<h4 id="npm-">npm &#x5B89;&#x88C5;</h4>
+<p version="5a66f4c4dce28b20fc5f123d86d03b28">LeanCloud JavaScript SDK &#x4E5F;&#x53EF;&#x5728; Node.js &#x7B49;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x73AF;&#x5883;&#x8FD0;&#x884C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E91;&#x5F15;&#x64CE; &#x6765;&#x642D;&#x5EFA;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="https://leancloud.cn/docs/leanengine_guide-node.html">&#x76F8;&#x5173;&#x6587;&#x6863;</a>&#x3002;</p>
+<pre version="4a7b9a24c17b3ed2bb57adaaa5efc5a3"><code># &#x5B58;&#x50A8;&#x670D;&#x52A1;
+$ npm install avoscloud-sdk
+# &#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x670D;&#x52A1;
+$ npm install leancloud-realtime
+</code></pre><p version="01ba9ad37a5b983daee9318b358cfe79">&#x5982;&#x679C;&#x56E0;&#x4E3A;&#x7F51;&#x7EDC;&#x539F;&#x56E0;&#xFF0C;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x5B98;&#x65B9;&#x7684; npm &#x7AD9;&#x70B9;&#x4E0B;&#x8F7D;&#xFF0C;&#x63A8;&#x8350;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <a href="https://cnpmjs.org/">CNPM</a> &#x6765;&#x4E0B;&#x8F7D;&#xFF0C;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p version="a7af6cb87c9daf7088e035178d44377f">&#x9996;&#x5148;&#xFF0C;&#x5728;&#x672C;&#x5730;&#x5B89;&#x88C5; cnpm &#x5DE5;&#x5177;&#xFF0C;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre version="0864d9f1cfb6cece29e23f75ff067019"><code>$ npm install -g cnpm --registry=http://r.cnpmjs.org
+</code></pre><p version="1b519d1b936188643f4da2bd86a3dddc">&#x8BA9;&#x672C;&#x5730;&#x5B89;&#x88C5; cnpm &#x5DE5;&#x5177;&#x3002;</p>
+<p version="627ec20b9be4a28b9c36221c507d2ce4">&#x7136;&#x540E;&#x6267;&#x884C;&#xFF1A;</p>
+<pre version="8927e6234143ae9e8cd8602f1c932bd6"><code># &#x5B58;&#x50A8;&#x670D;&#x52A1;
+$ cnpm install -g avoscloud-sdk 
+# &#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x670D;&#x52A1;
+$ cnpm install leancloud-realtime
+</code></pre><h4 id="bower-">bower &#x5B89;&#x88C5;</h4>
+<p version="24e94a2017a6d65343d724c2f8f8a20a">&#x4E5F;&#x652F;&#x6301; bower &#x5B89;&#x88C5;</p>
+<pre version="59a51ea0ba86d5bbfebaaa88842462fa"><code>$ bower install leancloud-javascript-sdk
+</code></pre><h4 id="cdn-">CDN &#x52A0;&#x901F;</h4>
+<pre version="41890bd62de4fa71abd30fbf4d7a00ab"><code>&lt;script src=&quot;https://cdn1.lncld.net/static/js/av-mini-&lt;&#x7248;&#x672C;&#x53F7;&gt;.js&quot;&gt;&lt;/script&gt;
+// &#x6216;&#x8005;&#x4F60;&#x53EA;&#x662F;&#x7528;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x5B58;&#x50A8;&#x3001;&#x63A8;&#x9001;&#x7B49;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7CBE;&#x7B80;&#x7248;&#x7684;core.js
+&lt;script src=&quot;https://cdn1.lncld.net/static/js/av-core-mini-&lt;&#x7248;&#x672C;&#x53F7;&gt;.js&quot;&gt;&lt;/script&gt;
+</code></pre><h4 id="web-">Web &#x5B89;&#x5168;</h4>
+<p version="b2c05e58c15b1421b17bee8e31a1d059">&#x5982;&#x679C;&#x5728;&#x524D;&#x7AEF;&#x4F7F;&#x7528; JavaScript SDK&#xFF0C;&#x5F53;&#x4F60;&#x6253;&#x7B97;&#x6B63;&#x5F0F;&#x53D1;&#x5E03;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BF7;&#x52A1;&#x5FC5;&#x914D;&#x7F6E; <strong>Web &#x5B89;&#x5168;&#x57DF;&#x540D;</strong>&#xFF0C;&#x914D;&#x7F6E;&#x65B9;&#x5F0F;&#x4E3A;&#xFF1A;&#x8FDB;&#x5165;&#x63A7;&#x5236;&#x53F0;&#xFF0C;&#x9009;&#x62E9;&#x5E94;&#x7528;&#xFF0C;&#x518D;&#x9009;&#x62E9; <strong>&#x8BBE;&#x7F6E;</strong> &gt; <strong>&#x5B89;&#x5168;&#x4E2D;&#x5FC3;</strong> &gt; <strong>Web &#x5B89;&#x5168;&#x57DF;&#x540D;</strong>&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x9632;&#x6B62;&#x5176;&#x4ED6;&#x4EBA;&#xFF0C;&#x901A;&#x8FC7;&#x5916;&#x7F51;&#x5176;&#x4ED6;&#x5730;&#x5740;&#x76D7;&#x7528;&#x4F60;&#x7684;&#x670D;&#x52A1;&#x5668;&#x8D44;&#x6E90;&#x3002;</p>
+<p version="5cb4c9415f29f1959087caddd5a82ea2">&#x5177;&#x4F53;&#x5B89;&#x5168;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x4ED4;&#x7EC6;&#x9605;&#x8BFB;&#x6587;&#x6863; <a href="data_security.html">&#x6570;&#x636E;&#x548C;&#x5B89;&#x5168;</a> &#x3002;</p>
+<h3 id="-">&#x624B;&#x52A8;&#x5B89;&#x88C5;</h3>
+<p version="c593c5e26da474ca855d4f59345a19a3">&#x8BF7;&#x8BBF;&#x95EE; <a href="sdk_down.html">SDK &#x4E0B;&#x8F7D;</a> &#x6765;&#x83B7;&#x53D6; JavaScript &#x6700;&#x65B0;&#x7248;&#x672C;&#x7684; SDK&#x3002;</p>
+<p version="5bf212c805df613029636772df7dd81a">LeanCloud JavaScript SDK &#x662F;&#x5206;&#x6A21;&#x5757;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x53EF;&#x6839;&#x636E;&#x4E0B;&#x5217;&#x8868;&#x683C;&#x5BF9;&#x5E94;&#x9009;&#x62E9;&#x6240;&#x9700;&#x8981;&#x7684;&#x6A21;&#x5757;&#xFF1A;</p>
+<pre version="6a160c33376b5dc5c0ee8890f7a779a1"><code>&#x251C;&#x2500;&#x2500; av-core-mini.js      // LeanCloud &#x6838;&#x5FC3;&#x6846;&#x67B6;&#xFF08;&#x538B;&#x7F29;&#x7248;&#xFF0C;&#x5EFA;&#x8BAE;&#x7528;&#x4E8E;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#xFF09;
+&#x251C;&#x2500;&#x2500; av-core.js           // LeanCloud &#x6838;&#x5FC3;&#x6846;&#x67B6;&#xFF08;&#x672A;&#x538B;&#x7F29;&#x7248;&#xFF09;
+&#x251C;&#x2500;&#x2500; av-mini.js           // LeanCloud &#x63A5;&#x53E3;&#x6846;&#x67B6;&#xFF08;&#x538B;&#x7F29;&#x7248;&#xFF09;
+&#x251C;&#x2500;&#x2500; av.js                // LeanCloud &#x63A5;&#x53E3;&#x6846;&#x67B6;&#xFF08;&#x672A;&#x538B;&#x7F29;&#x7248;&#xFF09;
+&#x251C;&#x2500;&#x2500; AV.push.min.js       // LeanCloud &#x63A8;&#x9001;&#x6A21;&#x5757;&#xFF08;&#x538B;&#x7F29;&#x7248;&#xFF09;
+&#x251C;&#x2500;&#x2500; AV.push.js           // LeanCloud &#x63A8;&#x9001;&#x6A21;&#x677F;&#xFF08;&#x672A;&#x538B;&#x7F29;&#x7248;&#xFF09;
+&#x251C;&#x2500;&#x2500; AV.realtime.min.js   // LeanCloud &#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x6A21;&#x5757;&#xFF08;&#x538B;&#x7F29;&#x7248;&#xFF09;
+&#x2514;&#x2500;&#x2500; AV.realtime.js       // LeanCloud &#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x6A21;&#x5757;&#xFF08;&#x672A;&#x538B;&#x7F29;&#x7248;&#xFF09;
+</code></pre><p version="e559d75fe22d7e2f3c1cb4d292b98c9e"><strong>&#x4F7F;&#x7528;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x7684;&#x65F6;&#x5019;&#xFF0C;<code>av.js(min)</code> &#x548C; <code>av-core.js(min)</code>  &#x5FC5;&#x987B;&#x4E00;&#x8D77;&#x5F15;&#x7528;&#x3002;</strong></p>
+<p version="df44f6b80d42b1d72b2f81f8e68332c0">&#x804A;&#x5929;&#x548C;&#x63A8;&#x9001;&#x5404;&#x81EA;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x5F15;&#x7528;&#x3002;</p>
+<h2 id="-">&#x521D;&#x59CB;&#x5316;</h2>
+<p version="f7ec91ac11f6b2906e33d411ee4cd8e9">&#x9996;&#x5148;&#x6765;&#x83B7;&#x53D6;App ID&#x4EE5;&#x53CA;App Key&#x3002;</p>
+<p version="3f5a0ba234ced8c0a6fe90489a4c7421">&#x6253;&#x5F00;<a href="https://leancloud.cn/app.html?appid={{appid}}#/key"><strong>&#x8BBE;&#x7F6E;</strong> &gt; <strong>&#x5E94;&#x7528; Key</strong></a>&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
+<p><img src="images/setting_app_key.png" alt="setting_app_key"></p>
+<p version="43641b0be044c39fee81d6c2fd56a874">&#x83B7;&#x53D6; <code>App ID</code> &#x4EE5;&#x53CA; <code>App Key</code></p>
+<p version="8eee2863da846c3e4a6e7f85f6bb081a">&#x5982;&#x679C;&#x662F;&#x5728;&#x524D;&#x7AEF;&#x9879;&#x76EE;&#x91CC;&#x9762;&#x4F7F;&#x7528; LeanCloud JavaScript SDK&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x5728;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;&#x4E00;&#x4E0B;&#x521D;&#x59CB;&#x5316;&#x7684;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre version="558b27f8d8e9b8bb6cd9ed43291e522c"><code class="lang-">//&#x53C2;&#x6570;&#x4F9D;&#x6B21;&#x4E3A; AppId, AppKey
+AV.initialize(&apos;{{appid}}&apos;, &apos;{{appkey}}&apos;);
+</code></pre>
+<h3 id="leancloud-">LeanCloud &#x652F;&#x6301;&#x7684;&#x8282;&#x70B9;</h3>
+<p version="59cf52d85d6ea9bdb2f3e52443ec3c50">SDK &#x7684;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x8282;&#x70B9;&#xFF0C;&#x4F46;&#x662F;&#x968F;&#x7740;&#x5317;&#x7F8E;&#x3001;&#x6B27;&#x6D32;&#x3001;&#x6FB3;&#x6D32;&#x4EE5;&#x53CA;&#x4E1C;&#x5357;&#x4E9A;&#x7684;&#x5F00;&#x53D1;&#x8005;&#x6570;&#x91CF;&#x7684;&#x589E;&#x52A0;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x5728;&#x79EF;&#x6781;&#x5411;&#x6D77;&#x5916;&#x62D3;&#x5C55;&#x4E1A;&#x52A1;&#x3002;&#x76EE;&#x524D;&#x9664;&#x4E86;&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x4E4B;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x4E0A;&#x7EBF;&#x6216;&#x8005;&#x6B63;&#x5728;&#x8BA1;&#x5212;&#x5185;&#x7684;&#x8282;&#x70B9;&#x6709;&#xFF1A;</p>
+<ul>
+<li>&#x5317;&#x7F8E;&#x8282;&#x70B9;&#xFF08;&#x8BD5;&#x8FD0;&#x884C;&#x4E00;&#x5E74;&#xFF0C;&#x76EE;&#x524D;&#x5DF2;&#x6B63;&#x5F0F;&#x4E0A;&#x7EBF;&#xFF09;&#xFF0C;&#x4E3B;&#x8981;&#x4E3A;&#x5317;&#x7F8E;&#x5F00;&#x53D1;&#x8005;&#x63D0;&#x4F9B;&#x670D;&#x52A1;</li>
+<li>&#x9999;&#x6E2F;&#x8282;&#x70B9;&#xFF08;&#x6B63;&#x5728;&#x90E8;&#x7F72;&#xFF0C;&#x8FD1;&#x671F;&#x63A8;&#x51FA;&#xFF09;&#xFF0C;&#x4E3B;&#x8981;&#x4E3A;&#x4E1C;&#x5357;&#x4E9A;&#x5F00;&#x53D1;&#x8005;&#x63D0;&#x4F9B;&#x670D;&#x52A1;</li>
+</ul>
+<p version="2bba77eaf3ac7333be6cdca39a924f28">&#x6CE8;&#x610F;&#xFF0C;&#x76EE;&#x524D;&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x662F; <strong>&#x76F8;&#x4E92;&#x72EC;&#x7ACB;</strong> &#x7684;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x8D26;&#x53F7;&#x4E0D;&#x80FD;&#x8DE8;&#x533A;&#x57DF;&#x521B;&#x5EFA;&#x5E94;&#x7528;&#x6216;&#x8005;&#x8C03;&#x7528; API&#x3002;</p>
+<h4 id="-">&#x542F;&#x7528;&#x6307;&#x5B9A;&#x8282;&#x70B9;</h4>
+<p version="1b387cb247843cef6c2c66a763b1139a">&#x521D;&#x59CB;&#x5316; SDK &#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF0C;&#x544A;&#x77E5; SDK &#x5BF9;&#x5E94;&#x7684; App ID &#x4EE5;&#x53CA; App Key &#x5C5E;&#x4E8E;&#x54EA;&#x4E2A;&#x8282;&#x70B9;&#xFF1A;</p>
+<p version="bcf2888f8f6358c9299eb68551e3b85f">&#x542F;&#x7528;&#x5317;&#x7F8E;&#x8282;&#x70B9;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre version="a03a8186637e2cc75c59e56e2d0ef78e"><code>//&#x53C2;&#x6570;&#x4F9D;&#x6B21;&#x4E3A; AppId, AppKey
+AV.initialize(&apos;{{appid}}&apos;, &apos;{{appkey}}&apos;);
+// &#x542F;&#x7528;&#x7F8E;&#x56FD;&#x8282;&#x70B9;
+AV.useAVCloudUS()
+</code></pre><h2 id="-">&#x9A8C;&#x8BC1;</h2>
+<p version="15e916e8cb655467f27f7a421ebba59a">&#x9996;&#x5148;&#xFF0C;&#x786E;&#x8BA4;&#x672C;&#x5730;&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#x662F;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE; LeanCloud &#x670D;&#x52A1;&#x5668;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x884C;&#xFF1A;</p>
+<pre version="fa4e1a319ddd8fa7f8c51e2ed67e0a08"><code>ping api.leancloud.cn
+</code></pre><p version="db9c4f03c2c9b6f6a5ca8ad9cf0b76c2">&#x5982;&#x679C;&#x5F53;&#x524D;&#x7F51;&#x8DEF;&#x6B63;&#x5E38;&#x5C06;&#x4F1A;&#x5F97;&#x5230;&#x5982;&#x4E0B;&#x54CD;&#x5E94;&#xFF1A;</p>
+<pre version="75312479440ce5de9f15026c07cfc3f6"><code>PING api.leancloud.cn (120.132.49.239): 56 data bytes
+64 bytes from 120.132.49.239: icmp_seq=3 ttl=49 time=65.165 ms
+64 bytes from 120.132.49.239: icmp_seq=4 ttl=49 time=53.273 ms
+64 bytes from 120.132.49.239: icmp_seq=5 ttl=49 time=51.519 ms
+64 bytes from 120.132.49.239: icmp_seq=6 ttl=49 time=68.442 ms
+</code></pre><p version="7bf2d52a016fb1531678e5b9c62b63e2">&#x7136;&#x540E;&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x7F16;&#x5199;&#x5982;&#x4E0B;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre version="77ffe1eb9639924c51b8d84ea3e0170c"><code>var TestObject = AV.Object.extend(&apos;TestObject&apos;);
+var testObject = new TestObject();
+testObject.save({
+  words: &apos;Hello,World!&apos;
+}, {
+  success: function(object) {
+    alert(&apos;LeanCloud works!&apos;);
+  }
+});
+</code></pre><p version="855aff39aae67ae558e38fa04bf28e1d">&#x7136;&#x540E;&#x6253;&#x5F00;<a href="https://leancloud.cn/data.html?appid={{appid}}#/TestObject"><strong>&#x63A7;&#x5236;&#x53F0;</strong> &gt; <strong>&#x5B58;&#x50A8;</strong> &gt; <strong>TestObject</strong></a>
+&#x5982;&#x679C;&#x770B;&#x5230;&#x5982;&#x4E0B;&#x5185;&#x5BB9;&#xFF0C;&#x8BF4;&#x660E; SDK &#x5DF2;&#x7ECF;&#x6B63;&#x786E;&#x5730;&#x6267;&#x884C;&#x4E86;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#xFF0C;&#x5B89;&#x88C5;&#x5B8C;&#x6BD5;&#x3002;</p>
+<p><img src="images/testobject_saved.png" alt="testobject_saved"></p>
+<p version="c7675e86d99db24a2d5880a1db8a8e6d">&#x5982;&#x679C;&#x63A7;&#x5236;&#x53F0;&#x6CA1;&#x6709;&#x53D1;&#x73B0;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8BF7;&#x770B;&#x4E0B;&#x8282;&#x7684;<a href="#&#x95EE;&#x9898;&#x6392;&#x67E5;">&#x95EE;&#x9898;&#x6392;&#x67E5;</a>&#x3002;</p>
+<h2 id="-">&#x95EE;&#x9898;&#x6392;&#x67E5;</h2>
+<h3 id="app-id-app-key-">App ID &#x6216;&#x8005; App Key &#x6709;&#x8BEF;</h3>
+<p version="b281c6ee8bcfebdda43f94ad4a9ea5df">&#x5982;&#x679C; SDK &#x629B;&#x51FA; 401 &#x5F02;&#x5E38;&#x6216;&#x8005;&#x67E5;&#x770B;&#x672C;&#x5730;&#x7F51;&#x7EDC;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x5B58;&#x5728;&#xFF1A;</p>
+<pre version="56a1d5efc70e50b245d3a342b1883705"><code>{
+  &quot;code&quot;: 401,
+  &quot;error&quot;: &quot;Unauthorized.&quot;
+}
+</code></pre><p version="69fb7a6b5b183f21bcc618143f824e54">&#x5219;&#x53EF;&#x8BA4;&#x5B9A;&#x4E3A; App ID &#x6216;&#x8005; App Key &#x8F93;&#x5165;&#x6709;&#x8BEF;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x4E0D;&#x5339;&#x914D;&#xFF0C;&#x5F88;&#x591A;&#x5F00;&#x53D1;&#x8005;&#x540C;&#x65F6;&#x6CE8;&#x518C;&#x4E86;&#x591A;&#x4E2A;&#x5E94;&#x7528;&#xFF0C;&#x5BFC;&#x81F4;&#x62F7;&#x8D1D;&#x7C98;&#x8D34;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7528; A &#x5E94;&#x7528;&#x7684; App ID &#x5339;&#x914D; B &#x5E94;&#x7528;&#x7684; App Key&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x670D;&#x52A1;&#x7AEF;&#x9274;&#x6743;&#x5931;&#x8D25;&#x7684;&#x9519;&#x8BEF;&#x3002;</p>
+<h3 id="-">&#x5BA2;&#x6237;&#x7AEF;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x7F51;&#x7EDC;</h3>
+<p version="b9213b10a8941dd6599df68cd468632e">&#x5BA2;&#x6237;&#x7AEF;&#x5C24;&#x5176;&#x662F;&#x624B;&#x673A;&#x7AEF;&#xFF0C;&#x5E94;&#x7528;&#x5728;&#x8BBF;&#x95EE;&#x7F51;&#x7EDC;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x7533;&#x8BF7;&#x4E00;&#x5B9A;&#x7684;&#x6743;&#x9650;&#x3002;</p>
+
+
+      </div>
+    </div>
+    <!-- .col-md-9 -->
+  </div>
+  <!-- .row -->
+
+</div>
+<!-- .container-fluid -->
+
+<footer class="footer" role="contentinfo">
+  <div class="container-fluid">
+    <a href="http://leancloud.cn/" class="logo font-logo pull-left">
+      LeanCloud
+    </a>
+
+    <ul class="footer-links pull-right">
+      <li><a href="/docs/">&#x6587;&#x6863;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/pricing.html">&#x4EF7;&#x683C;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/docs/sdk_down.html">&#x4E0B;&#x8F7D;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="/apps.html" target="_self">App</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://leancloud.cn/docs/faq.html" target="_self">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://ticket.leancloud.cn/" target="_self"><span class="mobile-hide">&#x6280;&#x672F;</span>&#x652F;&#x6301;</a></li>
+      <!-- <li><a href="http://ticket.leancloud.cn/tickets?token={{user.session_token || 'Gs5Xw4vjyCznrP6OcgMheOWDuatVpbFPiL78eMo6JC0dENB8'}}" target="_blank"><span class="mobile-hide">用户</span>反馈</a></li> -->
+      <li class="muted">&#xB7;</li>
+      <li><a href="//status.leancloud.cn/"><span class="mobile-hide">&#x5065;&#x5EB7;</span>&#x72B6;&#x6001;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://forum.leancloud.cn/">&#x793E;&#x533A;</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="http://blog.leancloud.cn/">Blog</a></li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/leancloud/docs">&#x6587;&#x6863;&#x6E90;&#x7801;</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div id="comment-container" ng-class="{&apos;no-comments&apos;: currentComments.length&lt;1}">
+  <div class="comment-head">
+    {{allComment[version]}}
+    <span class="close" ng-click="closeCommentModal()">&#xD7;</span>
+  </div>
+  <div class="comment-body">
+    <div class="comment-list" ng-class="{&apos;no-login&apos;: !currentCommentUser.username}">
+      <ul>
+        <li ng-show="currentComments.length&lt;1">&#x6682;&#x65E0;&#x8BC4;&#x8BBA;</li>
+        <li ng-repeat="comment in currentComments">
+          <div class="comment-author">{{comment.author}}</div>
+          <div class="comment-timestamp">{{ comment.updatedAt | date: &apos;yyyy-MM-dd HH:mm:ss &apos;}}</div>
+          <div class="comment-content">{{comment.content}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="comment-compose" ng-show="currentCommentUser.username">
+    <div class="form-group"> <textarea class="form-control comment-content" ng-model="commentContent"></textarea></div>
+    <div class="form-meta">
+      <!-- 您已登录为 <b>{{currentCommentUser.username}}</b> -->
+      <button class="btn btn-sm btn-default create-comment pull-right" ng-click="createComment($event)">
+        <i class="icon icon-chat-bold"></i> &#x8BC4;&#x8BBA;
+      </button>
+    </div>
+  </div>
+  <div class="comment-compose no-login" ng-show="!currentCommentUser.username">
+    &#x60A8;&#x9700;&#x8981; <a class="comment-login" ng-click="loginComment()">&#x6388;&#x6743;</a> &#x540E;&#x624D;&#x80FD;&#x8BC4;&#x8BBA;
+  </div>
+</div>
+
+<script src="https://download.leancloud.cn/sdk/latest.js"></script>
+
+
+
+
+<script src="custom/js/lib/contents.js"></script>
+<script src="custom/js/md.js"></script>
+
+
+
+
+<script type="text/javascript">
+ZeroClipboard.setDefaults({
+    moviePath: 'custom/js/lib/zeroclipboard/zeroclipboard.swf'
+});
+$(function(){
+    // $('#content [version]').each(function(k,v){
+    //     var version = $(v).attr('version');
+    //     $(v).append('<div class="toggle-comment" ng-click="showCommentDialog(\''+version+'\''+',$event)">+ <span> {{}}</span> </div>');
+    // })
+
+    $('#content [version]').each(function(k,v){
+        var version = $(v).attr('version');
+        $(v).append('<div class="inline-comment-wrap" version="'+version+'" all-comment="allComment" showDialogMethod="showCommentDialog()" lc-comment> </div>');
+    });
+
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42629236-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>
