@@ -2945,6 +2945,9 @@ a.bg-light:focus {
 .text-xs {
   font-size: 12px;
 }
+.text-ellipsis span{
+  display: block;
+}
 .text-ellipsis {
  min-height: 40px;
   display: block;

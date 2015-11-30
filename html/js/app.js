@@ -374,14 +374,16 @@ Date.now = Date.now || function() { return +new Date; };
       $(this).parent('li').css("background","#ffffdb");
     });
 
-
+    localStorage.newTaskId = 1;
     $("body").on( 'keydown','.list-group-item .text-ellipsis span', function(e) {
       var shift =e.shiftKey;
       var key = e.keyCode;
       var me = $(this);
       var li = me.closest("li");
+      var id = localStorage.newTaskId;
       if (key == 13) {// ENTER
-        var newTask = '<li class="list-group-item dd-item dd3-item" data-id="1"> <div class="dd-handle dd3-handle">Drag</div> <div class="pull-right m-r"> <a href="#"><i class="icon-list"></i></a> </div> <a href="#" class="jp-play-me m-r-sm pull-left checkit"> <i class="icon-check text-muted text"></i> <i class="icon-check bg-success text-active"></i> </a> <div class="clear text-ellipsis"> <span  contenteditable="true"></span> </div><ol class="dd-list"></ol> </li>';
+        var newTask = '<li class="list-group-item dd-item dd3-item" data-id="'+id+'"> <div class="dd-handle dd3-handle">Drag</div> <div class="pull-right m-r"> <a href="#"><i class="icon-list"></i></a> </div> <a href="#" class="jp-play-me m-r-sm pull-left checkit"> <i class="icon-check text-muted text"></i> <i class="icon-check bg-success text-active"></i> </a> <div class="clear text-ellipsis"> <span  contenteditable="true"  id="'+id+'"></span> </div><ol class="dd-list"></ol> </li>';
+         localStorage.newTaskId = id+1;
         li.after(newTask);
         var next = li.next();
         next.find("span").focus();
