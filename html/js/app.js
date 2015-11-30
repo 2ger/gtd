@@ -382,7 +382,7 @@ Date.now = Date.now || function() { return +new Date; };
       var li = me.closest("li");
       var id = localStorage.newTaskId;
       if (key == 13) {// ENTER
-        var newTask = '<li class="list-group-item dd-item dd3-item" data-id="'+id+'"> <div class="dd-handle dd3-handle">Drag</div> <div class="pull-right m-r"> <a href="#"><i class="icon-list"></i></a> </div> <a href="#" class="jp-play-me m-r-sm pull-left checkit"> <i class="icon-check text-muted text"></i> <i class="icon-check bg-success text-active"></i> </a> <div class="clear text-ellipsis"> <span  contenteditable="true"  id="'+id+'"></span> </div><ol class="dd-list"></ol> </li>';
+        var newTask = '<li class="list-group-item dd-item dd3-item" data-id="'+id+'"> <button data-action="collapse" type="button">Collapse</button><button data-action="expand" type="button" style="display: none;">展</button> <div class="dd-handle dd3-handle">拖</div> <div class="pull-right m-r"> <a href="#"><i class="icon-list"></i></a> </div> <a href="#" class="jp-play-me m-r-sm pull-left"> <i class="icon-check text-muted text"></i> <i class="icon-check bg-success text-active"></i> </a> <div class="clear text-ellipsis"> <span  contenteditable="true"  id="'+id+'"></span> </div><ol class="dd-list"></ol> </li>';
          localStorage.newTaskId = id+1;
         li.after(newTask);
         var next = li.next();

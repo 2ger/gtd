@@ -1,16 +1,27 @@
 AV.initialize('1xp3XcR1Wh2euTYwFK7xD4qA', 'd7uNUfuJg3gUNnCtBfA0Sir5');
 Task = AV.Object.extend('Task');// 表名
+//用户是否登陆
+var currentUser = AV.User.current();
+if (currentUser) {
+  uid = currentUser.id;    
+  console.log('已登陆:'+currentUser.id);
+} else {
+  console.log('请先登陆！');
+  self.location.href="signin.html";
+}
 var query = new AV.Query(Task);
-query.notEqualTo("pubUser", "LeanCloud官方客服");// 查询条件
+query.equalTo("uid",uid);// 查询条件
 query.find({
   success: function(results) {
-    //alert("你有 " + results.length + " 个任务");
     var allTask ="";
     for (var i = 0; i < results.length; i++) {
       var object = results[i];// 列出所有数据
       var task =object.attributes;
       //alert(object.id + ' - ' +task.title);
-      allTask = allTask+'<li class="list-group-item dd-item dd3-item" data-id="'+object.id+'"><button data-action="collapse" type="button">Collapse</button><button data-action="expand" type="button" style="display: none;">展</button> <div class="dd-handle dd3-handle">拖</div> <div class="pull-right m-r"> <a href="#"><i class="icon-list"></i></a> </div> <a href="#" class="jp-play-me m-r-sm pull-left"> <i class="icon-check text-muted text"></i> <i class="icon-check bg-success text-active"></i> </a> <div class="clear text-ellipsis" data-id="3"> <span contenteditable="true" id="'+object.id+'" >'+task.title+'</span> </div><ol class="dd-list"></ol> </li>';
+      allTask = allTask+'<li class="list-group-item dd-item dd3-item" data-id="'+object.id+'"><button data-action="collapse" type="button">Collapse</button><button data-action="expand" type="button" style="display: none;">展</button> <div class="dd-handle dd3-handle">拖</div> <div class="pull-right m-r"> <a href="#"><i class="icon-list"></i></a> </div> <a href="#" class="jp-play-me m-r-sm pull-left"> <i class="icon-check text-muted text"></i> <i class="icon-check bg-success text-active"></i> </a> <div class="clear text-ellipsis"> <span contenteditable="true" id="'+object.id+'" >'+task.title+'</span> </div><ol class="dd-list"></ol> </li>';
+    }
+    if(allTask == ''){
+      allTask = '<li class="list-group-item dd-item dd3-item" data-id="999"><button data-action="collapse" type="button">Collapse</button><button data-action="expand" type="button" style="display: none;">展</button> <div class="dd-handle dd3-handle">拖</div> <div class="pull-right m-r"> <a href="#"><i class="icon-list"></i></a> </div> <a href="#" class="jp-play-me m-r-sm pull-left"> <i class="icon-check text-muted text"></i> <i class="icon-check bg-success text-active"></i> </a> <div class="clear text-ellipsis"> <span contenteditable="true" id="999" ></span> </div><ol class="dd-list"></ol> </li>';
     }
     //alert(allTask);
     $('ol#task').append(allTask);
@@ -45,9 +56,16 @@ function signup(){
   //user.set("phone", "15577729055");
   user.signUp(null, {
     success: function(user) {
-      alert("注册成功，可以使用了");
-      var currentUser = AV.User.current();
-      window.location.href="task.html";
+      console.log("注册成功");
+      AV.User.logIn(name, pass, {
+        success: function(user) {
+          window.location.href="task.html";
+          console.log(user);
+        },
+        error: function(user, error) {
+          console.log(error.message);
+        }
+      });
     },
     error: function(user, error) {
       alert("错误: " + error.code + " " + error.message);
@@ -55,20 +73,8 @@ function signup(){
   });
 }
 
-//用户是否登陆
-//function islogin(){
-var currentUser = AV.User.current();
-if (currentUser) {
-  uid = currentUser.id;    
-  //var user = request.user;
-  //alert('已登陆:'+currentUser.id);
-  //self.location.href="http://baidu.com";
-  //console.log(currentUser);
-} else {
-  alert('no login');
-  // show the signup or login page
-}
-//}
+
+// 任务操作
 $("body").delegate('.text-ellipsis span','focus',function(){
   var  title  =   $(this).text();
   var taskid = $(this).closest('li').attr('data-id');
@@ -85,7 +91,8 @@ $("body").delegate('.text-ellipsis span','blur',function(){
     console.log('新增');
     var task= new Task();
     task.save({
-      title: titlenow   // 字段名：值
+      title: titlenow,   // 字段名：值
+      uid: uid   
     }, {
       success: function(object) {
          console.log(object.id+' 新增成功');
